@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+/* Configuração de todos ul e li da página */
+ul, ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Configuração da barra lateral esquerda de opções */
+.barra-lateral {
+  background-color: #AEB2F2;
+  display: flex;
+  flex-direction: column;
+  height: 45rem;
+  width: 12rem;
+}
+
+.barra-lateral .foto-perfil {
+  background-image: linear-gradient(to right, rgb(136, 191, 54) , rgb(28, 75, 133), rgb(160, 148, 242));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 9rem;
+}
+
+.barra-lateral .foto-perfil .usuario img {
+  background-color: #ffffff;
+  border-radius: 100px;
+  width: 84px;
+}
+
+.barra-lateral .foto-perfil .botao-comunicacao img {
+  margin-top: 30px;
+  width: 32px;
+}
+
+.barra-lateral .foto-perfil .dados {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.barra-lateral .foto-perfil .dados a h6 {
+  margin: 3px 0;
+  padding: 0;
+}
+
+.barra-lateral .foto-perfil .dados a {
+  color: #ffffff;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.barra-lateral .opcoes {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.barra-lateral .opcoes a {
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 3.5rem;
+  width: 100%;
+  padding-left: 18px;
+}
+
+.barra-lateral .opcoes a:hover {
+  background-color: #A094F2;
+}
+
+.barra-lateral .opcoes a p {
+  color: #203573;
+  font-weight: 500;
+  margin: 0 2px;
+  padding: 0;
+}
+
+.barra-lateral .opcoes hr {
+  width: 11rem;
+  margin: 0 10px;
+  padding: 0;
+}
+
+/* Configuração da barra superior sessão atual */
+.barra-superior {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.barra-superior .sessao {
+  background-image: linear-gradient(to right,  rgb(160, 148, 242), rgb(28, 75, 133), rgb(136, 191, 54));
+  height: 3.5rem;
+}
+
+.barra-superior .sessao a {
+  background-color: #AEB2F2;
+  border-radius: 5px;
+  color: #203573;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.8rem 0.8rem;
+  height: 2rem;
+  width: 8rem;
+}
+
+.barra-superior .caminho-pagina {
+  background-color: #ffffff;
+  border-bottom-left-radius: 15px;
+}
+
+.barra-superior .caminho-pagina ul {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 15px;
+}
+
+.barra-superior .caminho-pagina ul li a{
+  color: #7159c1;
+  font-size: 0.8rem;
+  text-decoration: none;
+  margin: 0 2px;
+}
+
+/* Configuração para tela mobile */
+@media (max-width: 768px) {
+
+  /* Configuração da barra lateral esquerda de opções */
+  .barra-lateral {
+    background-color: #AEB2F2;
+    display: flex;
+    flex-direction: column;
+    height: 45rem;
+    width: 4rem;
+  }
+  
+  .barra-lateral .foto-perfil {
+    height: 7rem;
+  }
+  
+  .barra-lateral .foto-perfil .usuario img {
+    background-color: #ffffff;
+    border-radius: 100px;
+    width: 38px;
+  }
+  
+  .barra-lateral .foto-perfil .botao-comunicacao img {
+    display: none;
+  }
+
+  .barra-lateral .foto-perfil .dados a, h6 {
+    display: none;
+  }
+  
+  .barra-lateral .opcoes {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .barra-lateral .opcoes a {
+    display: flex;
+    justify-content: center;
+    height: 3.5rem;
+    width: 100%;
+    padding: 0;
+  }
+
+  .barra-lateral .opcoes a img {
+    width: 32px;
+  }
+
+  .barra-lateral .opcoes a p {
+    display: none;
+  }
+  
+  .barra-lateral .opcoes hr {
+    width: 3rem;
+    margin: 0 8px;
+    padding: 0;
+  }
+
+  /* Configuração da barra superior sessão atual */
+  .barra-superior .sessao {
+    height: 2.5rem;
+  }
+  
+  .barra-superior .sessao a {
+    font-size: 0.9rem;
+    margin: 0.4rem 0.4rem;
+    height: 1.5rem;
+    width: 6.5rem;
+  }
+  
+  .barra-superior .caminho-pagina {
+    background-color: #ffffff;
+    border-bottom-left-radius: 15px;
+  }
+  
+  .barra-superior .caminho-pagina ul {
+    margin-left: 10px;
+  }
+  
+  .barra-superior .caminho-pagina ul li a{
+    font-size: 0.6rem;
+  }
+}
+
+
+
