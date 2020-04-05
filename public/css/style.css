@@ -1,0 +1,53 @@
+/* padrao de fundo e fonte dos cards e li azuis */
+.cardUsuarioAzul, .cardUsuarioAzul ul li{
+    background: linear-gradient(53.97deg, #203573 51.16%, rgba(51, 89, 203, 0.81) 97.01%);
+    color: #ffffff;
+    font-size: 0.8rem;
+}
+/* padrao de fundo e fonte dos cards e li verdes */
+.cardUsuarioVerde, .cardUsuarioVerde ul li{
+    background: linear-gradient(55.49deg, #88BF36 70.88%, #A0FF13 97.13%);
+    color: #ffffff;
+    font-size: 0.8rem;
+}
+
+/* alteração da cor da fonte em cima da classe do bootstrap */
+.card-link{
+    color: #ffffff;
+}
+.card-link:hover{
+    color: #000000;
+}
+
+/* alteração do fundo hover em cima da classe bootstrap */
+.list-group-item-action:hover{
+    background-color: #7159C1;
+}
+
+/* mais informações dos cards */
+.card-body ul li span.badge-light{
+    background: none;
+    float: right;
+}
+.card-body ul li span img {
+    width: 15px;
+}
+
+/* cor das notificações status */
+.card-body ul li span.badge-success{
+    color: #28a745;
+    border: 1px solid #FFFFFF;
+}
+.card-body ul li span.badge-danger{
+    color: #dc3545;
+    border: 1px solid #FFFFFF;
+}
+.card-body ul li span.badge-info{
+    color: #17a2b8;
+    border: 1px solid #FFFFFF;
+}
+
+/* estrelas avaliação usuario */
+.starCard {
+    height: 18px;
+}
