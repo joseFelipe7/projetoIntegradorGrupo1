@@ -274,4 +274,53 @@ ul, ul li {
 .starCard {
     height: 18px;
 }
+
+/* Configuração responsiva */
+@media (max-width: 894px) {
+  /* textos dos cards */
+  .cardUsuarioAzul ul li, .cardUsuarioVerde ul li {
+    width: 100%;
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    font-size: 0.7rem;
+  }
+
+  /* titulo dos cards */
+  .cardUsuarioAzul h6, .cardUsuarioVerde h6 {
+    display: block;
+    font-size: 0.8rem;
+  }
+
+  /* estrelas avaliação usuario */
+  .starCard {
+    height: 13px;
+  }
+}
+
+/* card notificações mobile */
+.cardMobile {
+  display: none;
+}
+/* Configuração mobile */
+@media (max-width: 620px){
+  .cards {
+    display: none;
+  }
+  .cardMobile {
+    display: block;
+  }
+
+  /* setas slide */
+  .setaEsq{
+    position: absolute;
+    left: 10px;
+  }
+  .setaDir{
+    position: absolute;
+    right: 10px;
+  }
+}
 /* ------------------------------------------------------------------------- */
