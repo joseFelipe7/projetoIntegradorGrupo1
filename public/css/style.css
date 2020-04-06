@@ -3,6 +3,21 @@
 body {
   font-family: 'Ubuntu', sans-serif;
 }
+/*Inicio Header-------------------*/
+.navbar {
+  background-color: #7159C1;
+  height: 75px;
+}
+.navbar-brand {
+  font-size: 30px;
+}
+.btn-outline {
+  color: #A094F2;
+  border-color: #A094F2;
+  margin-right: 30px;
+}
+/*Fim Header-----------------------*/
+
 /*Menu Navegação*/
 .container-menu-principal{
   position: relative;
