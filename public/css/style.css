@@ -216,7 +216,31 @@ ul, ul li {
   text-decoration: none;
   margin: 0 2px;
 }
+/*footer*/
 
+
+.container-footer{
+  position: relative;
+  background-color: #A094F2;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  
+}
+.container-footer-head{
+  
+  font-weight: bold;
+  width: 100%;
+  padding: 0px;
+}
+.container-footer-itens{
+  width: 100%;
+  text-align: justify;
+  font-weight: normal;
+  padding: 40px;
+  
+}
 /* Configuração para tela mobile */
 @media (max-width: 768px) {
 
