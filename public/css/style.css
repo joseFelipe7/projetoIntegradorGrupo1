@@ -362,11 +362,6 @@ ul, ul li {
     color: #000000;
 }
 
-/* alteração do fundo hover em cima da classe bootstrap */
-.list-group-item-action:hover{
-    background-color: #7159C1;
-}
-
 /* mais informações dos cards */
 .card-body ul li span.badge-light{
     background: none;
@@ -444,3 +439,113 @@ ul, ul li {
   }
 }
 /* -------fim cards notificação---------------------------------------------- */
+/* -------subtela pedidos contratante---------------------------------------- */
+/* icon topo card pedido */
+.iconPedidos{
+  height: 95%;
+}
+.setaDetalhes{
+  background-blend-mode: soft-light;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+/* card pedidos */
+.topoCardPedido{
+  position: relative;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
+  height: 75px;
+  z-index: 2;
+}
+.statusCardPedido{
+  box-shadow: 9px 0px 10px rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  z-index: 1;
+}
+.dadosPrestador {
+  height: 40%;
+}
+.dadosServico {
+  height: 60%;
+}
+.iconPrestadorCard {
+  height: 100%;
+  padding: 5px 0;
+}
+.iconPrestadorCard img {
+  width: 90px;
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.5);
+}
+.valorCardPedido{
+  height: 40%;
+}
+.orcamentoCardPedido{
+  height: 60%;
+}
+.dadosListaPedido li{
+  height: 23px;
+}
+.datasListaPedido li:nth-child(odd){
+  height: 23px;
+  background-color: #AEB2F2;
+}
+.datasListaPedido li:nth-child(even){
+  background-color: rgb(193, 197, 252);
+}
+
+.tabelaParcelas {
+  font-size: 0.65rem;
+}
+.tabelaParcelas tbody tr td {
+  padding: 0;
+  margin: 0;
+}
+.tabelaParcelas tbody tr:nth-child(odd){
+  height: 23px;
+  background-color: #AEB2F2;
+}
+.tabelaParcelas tbody tr:nth-child(even){
+  height: 23px;
+  background-color: #FFFFFF;
+}
+.tabelaParcelas tbody tr td{
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+/* alteração do fundo hover em cima da classe bootstrap */
+.dadosListaPedido .list-group-item-action:hover:nth-child(even){
+  background-color: #AEB2F2;
+}
+.dadosListaPedido .list-group-item-action:hover:nth-child(odd){
+  background-color: #A094F2;
+}
+
+.iconValor{
+  height: 100%;
+  padding: 10px;
+}
+.iconValor img{
+  height: 70px;
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.5);
+}
+.valoresCardPedido{
+  height: 100%;
+  font-size: 0.8rem;
+}
+
+/* utilits cor */
+.bg-roxoClaro{
+  background-color: #AEB2F2 !important;
+}
+.bg-roxoRS{
+  background-color: #7159C1 !important;
+}
+.bg-azul{
+  background-color: #203573 !important;
+}
+.text-azul{
+  color: #203573 !important;
+}
+.text-roxoRS{
+  color: #7159C1 !important;
+}
+/* -------fim subtela pedidos contratante------------------------------------ */
