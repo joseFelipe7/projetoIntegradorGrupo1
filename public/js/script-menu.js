@@ -6,4 +6,7 @@ function toggleMenuPrincipal(){
 function abrirMenu(){
     document.querySelector('.menu-principal-mobile').classList.toggle('menu-principal-mobile-fechar')
     document.querySelector('.menu-principal-mobile').classList.toggle('menu-principal-mobile-abrir')
+    if(document.querySelector('.menu-principal-mobile').classList.contains('menu-principal-mobile-fechar')){
+        document.querySelector('#multiCollapseExample2').classList.remove('show')
+    }
 }
