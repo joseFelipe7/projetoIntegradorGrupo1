@@ -74,7 +74,9 @@ body {
   
 }
 .sub-menu-principal-enable{
+  position: relative;
   display: flex;
+  z-index: 5;
 }
 .sub-menu-itens-principal{
   flex: 1;
@@ -97,6 +99,85 @@ body {
   height: 60px;
   border-radius: 30px;
  
+}
+/*Menu mobile*/
+/*Botão mobile*/
+.btn-menu-hamburguer{
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 36px;
+  background-color: transparent;
+
+  border: none;
+  margin: 5px;
+  padding: 3px;
+}
+.btn-menu-hamburguer div{
+  width: 35px;
+  height: 6px;
+  background-color: #AEB2F2;
+  border-radius: 5px;
+}
+/*fim botao*/
+.nav-menu-principal-mobile{
+  display: none;
+  overflow: hidden; 
+  position: relative; 
+  z-index: 5;
+  
+}
+.menu-principal-mobile{
+  transition: 0.6s;
+  
+}
+.menu-principal-mobile li{
+  border-radius: 0;
+  transition: 1s;
+}
+.menu-principal-mobile-fechar{
+  margin-top: -100%;
+}
+.menu-principal-mobile-abrir{
+  margin-top: 0%;
+  
+}
+@media (max-width:768px){
+  .nav-menu-principal{
+    display: none;
+  }
+  .nav-menu-principal-mobile{
+     
+    display: block;
+  }
+  .menu-principal-itens, .menu-principal-itens-sub{
+    border-bottom: solid 1px #203573;
+  }
+  .btn-menu-hamburguer{
+    display: flex;
+   }
+   .sub-menu-mobile-color{
+    background-color: #AEB2F2; 
+    border-radius: 0;
+   }
+   .sub-menu-itens-principal{
+    flex: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 5px;
+    color: #203573;
+    font-weight: bold;
+    transition: 0.2s;
+    border-bottom: solid 1px #203573;
+  }
+  .sub-menu-itens-principal:last-child{
+    margin-bottom: 10px;
+  }
 }
 /*Fim menu navegação*/
 
@@ -415,4 +496,53 @@ nav a {
 .starCard {
     height: 18px;
 }
-/* ------------------------------------------------------------------------- */
+
+/* Configuração responsiva */
+@media (max-width: 894px) {
+  /* textos dos cards */
+  .cardUsuarioAzul ul li, .cardUsuarioVerde ul li {
+    width: 100%;
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    font-size: 0.7rem;
+  }
+
+  /* titulo dos cards */
+  .cardUsuarioAzul h6, .cardUsuarioVerde h6 {
+    display: block;
+    font-size: 0.8rem;
+  }
+
+  /* estrelas avaliação usuario */
+  .starCard {
+    height: 13px;
+  }
+}
+
+/* card notificações mobile */
+.cardMobile {
+  display: none;
+}
+/* Configuração mobile */
+@media (max-width: 620px){
+  .cards {
+    display: none;
+  }
+  .cardMobile {
+    display: block;
+  }
+
+  /* setas slide */
+  .setaEsq{
+    position: absolute;
+    left: 10px;
+  }
+  .setaDir{
+    position: absolute;
+    right: 10px;
+  }
+}
+/* -------fim cards notificação---------------------------------------------- */
