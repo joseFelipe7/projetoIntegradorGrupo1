@@ -22,8 +22,8 @@
                         <div class="card m-0 container-fluid p-0">
                             <div class="row no-gutters">
                                 <!-- coluna status -->
-                                <div class="col-md-4 bg-roxoRS statusCardPedido">
-                                    <h5 class="card-header">NOME_SERVIÇO</h5>
+                                <div class="col-md-3 bg-roxoRS statusCardPedido">
+                                    <h5 class="card-header">NOME SERVIÇO</h5>
                                     <div class="card-body">
                                         <h5 class="card-title">ATIVO</h5>
                                         <p class="card-text">SERVIÇO: #20200808</p>
@@ -32,7 +32,7 @@
                                     </div>
                                 </div>
                                 <!-- coluna dados -->
-                                <div class="col-md-4 m-0 p-0">
+                                <div class="col-md-5 m-0 p-0">
                                     <div class="card-body m-0 p-0 h-100">
                                         <div class="dadosPrestador row no-gutters">
                                             <div class="col-md-4 iconPrestadorCard">
@@ -64,7 +64,7 @@
                                         </div>
 
                                         <div class="dadosServico row-column no-gutters bg-roxoClaro">
-                                            <div class="col">
+                                            <div class="col-md-12">
                                             
                                                 <ul class="list-group list-group-flush datasListaPedido">
                                                     <li class="list-group-item list-group-item-action p-0 bg-roxoRS">
@@ -75,7 +75,7 @@
                                                     </li>
                             
                                                     <li class="list-group-item list-group-item-action p-0">
-                                                        Aceito pelo prestador: 04/02/2020
+                                                        Aceito em: 04/02/2020
                                                     </li>
                             
                                                     <li class="list-group-item list-group-item-action p-0">
@@ -119,7 +119,29 @@
                                             </div>
                                         </div>
                                         <div class="col orcamentoCardPedido">
-                                            
+<!-- -------------parte parcelas tablet---------------------------------------->
+<div class="col parcelaMobile p-0">
+    <div class="row no-gutters">
+        <div class="col-md-4 iconParcela">
+            <img src="/img/orcamentoDetalhe.png" alt="">
+        </div>
+        <div class="col-md-8 valoresCardPedido px-1 py-2">
+            <ul class="list-group list-group-flush datasListaPedido">
+                <li class="list-group-item list-group-item-action rounded p-0 pt-1">
+                    PARCELAS:
+                </li>
+
+                <li class="list-group-item list-group-item-action rounded p-0 text-azul">
+                    EM DIA
+                </li>
+
+                <button class="btn btn-light bg-roxoClaro m-1">Total: R$ 1.000,00</button>
+                <a href="/usuario/area-contratante/orcamentos"><button class="btn btn-dark bg-roxoRS m-1">DETALHES</button></a>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- ------------------------------------------------------------------------->
                                             <table class="table table-sm tabelaParcelas">
                                                 <thead>
                                                     <tr class="bg-azul text-white">
@@ -178,7 +200,204 @@
         </div>
     </div>
 </div>
-<!-- ----------------------------------------------------------------------- -->
 
 <!-- divisao: ativos --------------------------------------------------------->
 <div class="p-3 mb-0 bg-danger text-white">PEDIDOS/SERVIÇOS INTERROMPIDOS</div>
+
+<!-- pedido 2 ---------------------------------------------------------------->
+<div class="container-fluid p-0 cards">
+    <div class="row p-1 no-gutters text-center">
+        <!-- card 1 -->
+        <div class="col-sm-12">
+            
+            <div class="pos-f-t">
+
+                <!-- visivel apenas ao expandir -->
+                <div class="collapse" id="navbarToggleExternalContent-2">
+                    <div class="bg-light p-0">
+
+                        <div class="row no-gutters bg-roxoClaro topoCardPedido">
+                            <div class="col-md-12"></div>
+                        </div>
+                        
+                        <div class="card m-0 container-fluid p-0">
+                            <div class="row no-gutters">
+                                <!-- coluna status -->
+                                <div class="col-md-3 bg-roxoRS statusCardPedido">
+                                    <h5 class="card-header">NOME SERVIÇO</h5>
+                                    <div class="card-body">
+                                        <h5 class="card-title">PENDENTE</h5>
+                                        <p class="card-text">SERVIÇO: #20200808</p>
+                                        <p class="card-text">PRESTADOR: MARIO L.</p>
+                                        <p class="card-text">ENCANADOR</p>
+                                    </div>
+                                </div>
+                                <!-- coluna dados -->
+                                <div class="col-md-5 m-0 p-0">
+                                    <div class="card-body m-0 p-0 h-100">
+                                        <div class="dadosPrestador row no-gutters">
+                                            <div class="col-md-4 iconPrestadorCard">
+                                                <img src="/img/prestadorPedido.png" class="rounded-circle border-dark" alt="prestador">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <ul class="list-group list-group-flush dadosListaPedido">
+                                                    <li class="list-group-item list-group-item-action p-0 rounded">
+                                                        <a href="#" class="text-roxoRS text-decoration-none font-weight-bold">Mario Luigi Souza</a>
+                                                    </li>
+                            
+                                                    <li class="list-group-item list-group-item-action p-0 rounded">
+                                                        <p class="card-text">
+                                                            <small class="text-azul">2 anos na plataforma</small>
+                                                        </p>
+                                                    </li>
+                            
+                                                    <li class="list-group-item list-group-item-action p-0 rounded">
+                                                        <span class="text-muted">ENCANAMENTO</span>
+                                                    </li>
+                            
+                                                    <li class="list-group-item list-group-item-action p-0 rounded">
+                                                        <p class="card-text">
+                                                            <small class="text-danger">OFF-LINE</small>
+                                                        </p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="dadosServico row-column no-gutters bg-roxoClaro">
+                                            <div class="col-md-12">
+                                            
+                                                <ul class="list-group list-group-flush datasListaPedido">
+                                                    <li class="list-group-item list-group-item-action p-0 bg-roxoRS">
+                                                        <span class="text-white">TITULO_DO_PEDIDO</span>
+                                                    </li>
+                                                    <li class="list-group-item list-group-item-action p-0">
+                                                        Solicitação: 02/02/2020
+                                                    </li>
+                            
+                                                    <li class="list-group-item list-group-item-action p-0">
+                                                        Aceito em: 04/02/2020
+                                                    </li>
+                            
+                                                    <li class="list-group-item list-group-item-action p-0">
+                                                        Negociação: 05/02/2020
+                                                    </li>
+                            
+                                                    <li class="list-group-item list-group-item-action p-0">
+                                                        Orçamento: 05/02/2020
+                                                    </li>
+
+                                                    <li class="list-group-item list-group-item-action p-0">
+                                                        Serviço iniciado: 07/02/2020
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- coluna valores -->
+                                <div class="col-md-4">
+                                    <div class="row-column h-100">
+                                        <div class="col valorCardPedido p-0">
+                                            <div class="row no-gutters">
+                                                <div class="col-md-4 iconValor">
+                                                    <img src="/img/pagamento.png" class="rounded-circle border-dark" alt="">
+                                                </div>
+                                                <div class="col-md-8 valoresCardPedido px-1 py-2">
+                                                    <ul class="list-group list-group-flush datasListaPedido">
+                                                        <li class="list-group-item list-group-item-action rounded p-0 pt-1">
+                                                            PAGAMENTO:
+                                                        </li>
+                                
+                                                        <li class="list-group-item list-group-item-action rounded p-0 text-azul">
+                                                            CRÉDITO PARCELADO
+                                                        </li>
+
+                                                        <button class="btn btn-outline-success m-1">4x de 250,00</button>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col orcamentoCardPedido">
+<!-- -------------parte parcelas tablet---------------------------------------->
+<div class="col parcelaMobile p-0">
+    <div class="row no-gutters">
+        <div class="col-md-4 iconParcela">
+            <img src="/img/orcamentoDetalhe.png" alt="">
+        </div>
+        <div class="col-md-8 valoresCardPedido px-1 py-2">
+            <ul class="list-group list-group-flush datasListaPedido">
+                <li class="list-group-item list-group-item-action rounded p-0 pt-1">
+                    PARCELAS:
+                </li>
+
+                <li class="list-group-item list-group-item-action rounded p-0 text-azul">
+                    EM DIA
+                </li>
+
+                <button class="btn btn-light bg-roxoClaro m-1">Total: R$ 1.000,00</button>
+                <a href="/usuario/area-contratante/orcamentos"><button class="btn btn-dark bg-roxoRS m-1">DETALHES</button></a>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- ------------------------------------------------------------------------->
+                                            <table class="table table-sm tabelaParcelas">
+                                                <thead>
+                                                    <tr class="bg-azul text-white">
+                                                        <th scope="col">PARCELAS</th>
+                                                        <th scope="col">ORÇAMENTO</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Entrada</td>
+                                                        <td>R$ 200,<small>00</small></td>
+                                                        <td class="text-success">PAGO</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>10/03</td>
+                                                        <td>R$ 266,<small>66</small></td>
+                                                        <td class="text-warning">PENDENTE</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>10/04</td>
+                                                        <td>R$ 266,<small>66</small></td>
+                                                        <td class="text-azul">ABERTO</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>10/05</td>
+                                                        <td>R$ 266,<small>66</small></td>
+                                                        <td class="text-azul">ABERTO</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>TOTAL:</td>
+                                                        <td class="text-azul">R$ 1.000,<small>00</small></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                  
+                </div>
+
+                <!-- fita sempre visivel -->
+                <nav class="navbar bg-roxoClaro">
+                    <img class="iconPedidos" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent-2" aria-controls="navbarToggleExternalContent-2" aria-expanded="false" aria-label="Toggle navigation" src="/img/pedidosCard.png" alt="">
+
+                    <a href="/usuario/area-contratante/orcamentos"><img src="/img/setaDetalhes.png" class="setaDetalhes" alt="mais detalhes"></a>
+                </nav>
+            </div>
+
+        </div>
+    </div>
+</div>

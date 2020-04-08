@@ -570,10 +570,10 @@ nav a {
 }
 .iconPrestadorCard {
   height: 100%;
-  padding: 5px 0;
+  padding: 15px 0;
 }
 .iconPrestadorCard img {
-  width: 90px;
+  width: 70px;
   box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.5);
 }
 .valorCardPedido{
@@ -649,5 +649,44 @@ nav a {
 }
 .text-roxoRS{
   color: #7159C1 !important;
+}
+
+/* Configuração mobile */
+@media (max-width: 872px){
+  .orcamentoCardPedido {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+@media (max-width: 832px){
+  .tabelaParcelas {
+    margin-left: 5px;
+  }
+  .orcamentoCardPedido {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+.parcelaMobile{
+  display: none;
+}
+@media (max-width: 831px){
+  .tabelaParcelas
+  {
+    display: none;
+  }
+  .parcelaMobile{
+    display: block;
+  }
+  .orcamentoCardPedido{
+    padding: 0;
+  }
+  .iconParcela{
+    height: 100%;
+    padding: 10px;
+  }
+  .iconParcela img{
+    height: 70px;
+  }
 }
 /* -------fim subtela pedidos contratante------------------------------------ */
