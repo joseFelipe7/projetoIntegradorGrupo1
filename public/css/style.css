@@ -4,17 +4,27 @@ body {
   font-family: 'Ubuntu', sans-serif;
 }
 /*Inicio Header-------------------*/
-.navbar {
+.nav-custom {
+  display: flex;
   background-color: #7159C1;
   height: 75px;
 }
-.navbar-brand {
+.navB-custom {
   font-size: 30px;
 }
-.btn-outline {
+.btn-cadastro-custom {
   color: #A094F2;
   border-color: #A094F2;
   margin-right: 30px;
+}
+.btn-login-custom {
+  padding: 1px 15px 3px 2px;
+  border-radius: 50px;
+  background: #88BF36;
+}
+.btnI-custom {
+  padding: 8px;
+  /*background: #88BF36;*/
 }
 /*Fim Header-----------------------*/
 
