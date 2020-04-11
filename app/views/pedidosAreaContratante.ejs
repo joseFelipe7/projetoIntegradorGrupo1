@@ -4,7 +4,7 @@
 <div class="p-3 mb-0 bg-success text-white">PEDIDOS/SERVIÇOS SEM IMPEDIMENTOS</div>
 
 <!-- pedido 1 ---------------------------------------------------------------->
-<div class="container-fluid p-0 cards">
+<div class="container-fluid p-0">
     <div class="row p-1 no-gutters text-center">
         <!-- card 1 -->
         <div class="col-sm-12">
@@ -15,7 +15,8 @@
                 <div class="collapse" id="navbarToggleExternalContent-1">
                     <div class="bg-light p-0">
 
-                        <div class="row no-gutters bg-roxoClaro topoCardPedido">
+                        <div class="row no-gutters bg-roxoClaro topoCardPedido"
+                        data-toggle="collapse" data-target="#navbarToggleExternalContent-1" aria-controls="navbarToggleExternalContent-1" aria-expanded="false" aria-label="Toggle navigation">
                             <div class="col-md-12"></div>
                         </div>
                         
@@ -32,8 +33,8 @@
                                     </div>
                                 </div>
                                 <!-- coluna dados -->
-                                <div class="col-md-5 m-0 p-0">
-                                    <div class="card-body m-0 p-0 h-100">
+                                <div class="col-md-5 m-0 p-0 dadosPrestadorServicos">
+                                    <div class="card-body m-0 p-0">
                                         <div class="dadosPrestador row no-gutters">
                                             <div class="col-md-4 iconPrestadorCard">
                                                 <img src="/img/prestadorPedido.png" class="rounded-circle border-dark" alt="prestador">
@@ -96,14 +97,14 @@
                                     </div>
                                 </div>
                                 <!-- coluna valores -->
-                                <div class="col-md-4">
-                                    <div class="row-column h-100">
+                                <div class="col-md-4 col-sm-12 m-auto valoreParcelasMobile">
+                                    <div class="row-column h-100 w-100 d-flex flex-column align-items-center">
                                         <div class="col valorCardPedido p-0">
                                             <div class="row no-gutters">
-                                                <div class="col-md-4 iconValor">
+                                                <div class="col-sm-4 iconValor">
                                                     <img src="/img/pagamento.png" class="rounded-circle border-dark" alt="">
                                                 </div>
-                                                <div class="col-md-8 valoresCardPedido px-1 py-2">
+                                                <div class="col-sm-8 valoresCardPedido px-1 py-2">
                                                     <ul class="list-group list-group-flush datasListaPedido">
                                                         <li class="list-group-item list-group-item-action rounded p-0 pt-1">
                                                             PAGAMENTO:
@@ -118,7 +119,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col orcamentoCardPedido">
 <!-- -------------parte parcelas tablet---------------------------------------->
 <div class="col parcelaMobile p-0">
     <div class="row no-gutters">
@@ -141,7 +141,11 @@
         </div>
     </div>
 </div>
+<!-- -------------parte parcelas tablet--------------------------------------->
+
 <!-- ------------------------------------------------------------------------->
+                                        <div class="col orcamentoCardPedido">
+
                                             <table class="table table-sm tabelaParcelas">
                                                 <thead>
                                                     <tr class="bg-azul text-white">
@@ -201,11 +205,11 @@
     </div>
 </div>
 
-<!-- divisao: ativos --------------------------------------------------------->
+<!-- divisao: nao ativos ------------------------------------------------------>
 <div class="p-3 mb-0 bg-danger text-white">PEDIDOS/SERVIÇOS INTERROMPIDOS</div>
 
 <!-- pedido 2 ---------------------------------------------------------------->
-<div class="container-fluid p-0 cards">
+<div class="container-fluid p-0">
     <div class="row p-1 no-gutters text-center">
         <!-- card 1 -->
         <div class="col-sm-12">
@@ -216,7 +220,8 @@
                 <div class="collapse" id="navbarToggleExternalContent-2">
                     <div class="bg-light p-0">
 
-                        <div class="row no-gutters bg-roxoClaro topoCardPedido">
+                        <div class="row no-gutters bg-roxoClaro topoCardPedido"
+                        data-toggle="collapse" data-target="#navbarToggleExternalContent-2" aria-controls="navbarToggleExternalContent-2" aria-expanded="false" aria-label="Toggle navigation">
                             <div class="col-md-12"></div>
                         </div>
                         
@@ -226,15 +231,15 @@
                                 <div class="col-md-3 bg-roxoRS statusCardPedido">
                                     <h5 class="card-header">NOME SERVIÇO</h5>
                                     <div class="card-body">
-                                        <h5 class="card-title">PENDENTE</h5>
+                                        <h5 class="card-title">ATIVO</h5>
                                         <p class="card-text">SERVIÇO: #20200808</p>
                                         <p class="card-text">PRESTADOR: MARIO L.</p>
                                         <p class="card-text">ENCANADOR</p>
                                     </div>
                                 </div>
                                 <!-- coluna dados -->
-                                <div class="col-md-5 m-0 p-0">
-                                    <div class="card-body m-0 p-0 h-100">
+                                <div class="col-md-5 m-0 p-0 dadosPrestadorServicos">
+                                    <div class="card-body m-0 p-0">
                                         <div class="dadosPrestador row no-gutters">
                                             <div class="col-md-4 iconPrestadorCard">
                                                 <img src="/img/prestadorPedido.png" class="rounded-circle border-dark" alt="prestador">
@@ -297,14 +302,14 @@
                                     </div>
                                 </div>
                                 <!-- coluna valores -->
-                                <div class="col-md-4">
-                                    <div class="row-column h-100">
+                                <div class="col-md-4 col-sm-12 m-auto valoreParcelasMobile">
+                                    <div class="row-column h-100 w-100 d-flex flex-column align-items-center">
                                         <div class="col valorCardPedido p-0">
                                             <div class="row no-gutters">
-                                                <div class="col-md-4 iconValor">
+                                                <div class="col-sm-4 iconValor">
                                                     <img src="/img/pagamento.png" class="rounded-circle border-dark" alt="">
                                                 </div>
-                                                <div class="col-md-8 valoresCardPedido px-1 py-2">
+                                                <div class="col-sm-8 valoresCardPedido px-1 py-2">
                                                     <ul class="list-group list-group-flush datasListaPedido">
                                                         <li class="list-group-item list-group-item-action rounded p-0 pt-1">
                                                             PAGAMENTO:
@@ -319,7 +324,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col orcamentoCardPedido">
 <!-- -------------parte parcelas tablet---------------------------------------->
 <div class="col parcelaMobile p-0">
     <div class="row no-gutters">
@@ -342,7 +346,11 @@
         </div>
     </div>
 </div>
+<!-- -------------parte parcelas tablet--------------------------------------->
+
 <!-- ------------------------------------------------------------------------->
+                                        <div class="col orcamentoCardPedido">
+
                                             <table class="table table-sm tabelaParcelas">
                                                 <thead>
                                                     <tr class="bg-azul text-white">
