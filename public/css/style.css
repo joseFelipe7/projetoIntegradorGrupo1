@@ -21,7 +21,6 @@ body {
 }
 .btnI-custom {
   padding: 8px;
-  /*background: #88BF36;*/
 }
 /*Fim Header-----------------------*/
 
@@ -700,6 +699,71 @@ nav a {
     height: 70px;
   }
 }
+<<<<<<< HEAD
+/* -------fim subtela pedidos contratante------------------------------------ */
+
+/*--------inicio orcamento-usuario---------------*/
+.accordion{
+  background-color: #88BF36;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 0px;
+  width: 100%;
+  text-align: left;
+  border: 1px solid white;
+  transition: 0.4s;
+  font: 20px;
+  outline: none;
+}
+.accordion::after{
+  content: '\02C5';
+  font-size: 50px;
+  float: right;
+  margin: 20px;
+  margin-bottom: 0;
+}
+.active::after{
+  content: '\02C4';
+}
+.panel{
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+.titulob{
+  padding: 10px;
+  font-size: 20px;
+
+}
+.op1{
+  color: #FFFFFF;
+  background-color: #FFC327;
+  padding: 5px;
+
+}
+.op2{
+  color: #FFFFFF;
+  background-color: #203573;
+  padding: 5px;
+
+}
+.cardb{
+  background-color: #88BF36;
+  padding: 0%;
+  margin: 0%;
+}
+.card-headerb{
+  padding: 0%;
+  margin: 0%;
+}
+.btno{
+  color: #ffffff;
+  border-color: #ffffff;
+  border-radius: 30%;
+  padding: 2px 20px;
+}
+=======
 .dadosPrestadorServicos{
   height: 100%;
 }
@@ -754,3 +818,4 @@ nav a {
   }
 }
 /* -------fim subtela pedidos contratante------------------------------------ */
+>>>>>>> 670ee88a43338847e53c878f3dc144c244ebf366
