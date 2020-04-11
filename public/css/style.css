@@ -550,6 +550,9 @@ nav a {
 /* -------fim cards notificação---------------------------------------------- */
 /* -------subtela pedidos contratante---------------------------------------- */
 /* icon topo card pedido */
+.navExpandir{
+  height: 75px;
+}
 .iconPedidos{
   height: 95%;
 }
