@@ -6,14 +6,9 @@ body {
 /*Inicio Header-------------------*/
 .nav-custom {
   display: flex;
-  
   background-color: #7159C1;
-  height: 75px;
-}
-.navB-custom {
-  font-size: 30px;
-}
-
+  }
+  
 .btn-cadastro-custom {
   color: #A094F2;
   border-color: #A094F2;
