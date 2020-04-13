@@ -3,13 +3,20 @@
  - Tema: Sistema para prestação de serviço
  - Tecnologia: HTML, CSS, Bootstap NODE, Javascript
  ### Sobre
-O sitema busca facilitar a comunicação entre prestadores serviços e contratantes de maneira fácil intuitiva
+O sistema busca facilitar a comunicação entre prestadores de serviços e contratantes de maneira fácil e intuitiva.
 
  ### Aviso
  lembre de usar o comando `npm init` para iniciar o projeto
 ### informações adicionais
 
    - [Densenvolvido na Digital House](https://www.digitalhouse.com/br/)
+   - Densenvolvido por:
+   - [André](https://github.com/siqueiraandre88)
+   - [Bruna Oliveira](https://github.com/brunaoflofl)
+   - [José Felipe](https://github.com/joseFelipe7)
+   - [Kevin Christian](https://github.com/kevinnchristian)
+   - [Luana Lencina](https://github.com/LuanaLencinaS)
+   
 
     
 
