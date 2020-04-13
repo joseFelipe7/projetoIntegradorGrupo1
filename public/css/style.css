@@ -453,7 +453,7 @@ nav a {
 .accordion{
   background-color: #88BF36;
   color: #ffffff;
-  cursor: pointer;
+ 
   padding: 0px;
   width: 100%;
   text-align: left;
@@ -461,22 +461,29 @@ nav a {
   transition: 0.4s;
   font: 20px;
   outline: none;
+  -webkit-box-shadow: 0px 5px 5px rgba(50, 50, 50, 0.77);
+  -moz-box-shadow:    0px 5px 5px rgba(50, 50, 50, 0.77);
+  box-shadow:         0px 5px 5px rgba(50, 50, 50, 0.77);
 }
+
 .accordion::after{
   content: '\02C5';
   font-size: 50px;
   float: right;
-  margin: 20px;
+  
   margin-bottom: 0;
 }
 .active::after{
   content: '\02C4';
+      
 }
 .panel{
   
   background-color: white;
   display: none;
   overflow: hidden;
+  padding: 0%;
+  margin: 0px;
 }
 .descricao-servico-usuario{
   display: flex;
@@ -484,6 +491,8 @@ nav a {
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding: 0%;
+  margin: 0px;
   
   
   
@@ -493,24 +502,27 @@ nav a {
   background-color: #7159C1;
   color: #FFFFFF;    
   text-align: center;
-  padding: 60px 30px;
+  padding: 70px 30px;
   padding-bottom: 0%;
-  -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
-  -moz-box-shadow:    9px 7px 5px rgba(50, 50, 50, 0.77);
-  box-shadow:         9px 7px 5px rgba(50, 50, 50, 0.77);
+  -webkit-box-shadow: 9px 0px 5px rgba(50, 50, 50, 0.77);
+  -moz-box-shadow:    9px 0px 5px rgba(50, 50, 50, 0.77);
+  box-shadow:         9px 0px 5px rgba(50, 50, 50, 0.77);
   z-index: 1;
   width: 25%;
-  
+  margin: 0%;
 }
 .hr1{
   color: #FFFFFF;
   background-color: #FFFFFF;
   height: 1px;
+  
 }
 .dados-servicos-usuario{
   display: flex;
   flex-wrap: wrap;
   width: 75%;
+  padding-bottom: 0%;
+  margin: 0px;
   
 }
 .dados-servicos-usuario th{
@@ -523,6 +535,8 @@ nav a {
 .tabelaContratante{
   width: 50%;
   padding: 20px;
+  padding-bottom: 0px;
+  margin: 0px;
   
   
 }
@@ -530,29 +544,65 @@ nav a {
   border-left:1px solid #BDBDBD;
   width: 50%;
   padding: 20px;
+  padding-bottom: 0px;
+  margin: 0px;
   
   
 }
 .espaco-orcamento-usuario{
   width: 100%;
-  height: 40px;
+  height: 30px;
   background-color: #88BF36;
   z-index: 2;
-
+  -webkit-box-shadow: 0px 5px 5px rgba(50, 50, 50, 0.77);
+  -moz-box-shadow:    0px 5px 5px rgba(50, 50, 50, 0.77);
+  box-shadow:         0px 5px 5px rgba(50, 50, 50, 0.77);
+  
 }
 .rodape-orcamento-usuario{
   display: flex;
   flex-wrap: wrap;
   width: 100%;
 }
+.itens-orcamento-usuario{
+  width: 100%;
+  background-color: #AEB2F2;
+  padding: 10px;
+  color: #203573;
+  
+}
+.detalhes-orcamento-usuario{
+  width: 100%;
+  padding: 10px;
+  color: #203573;
+  }
+  .detalhes-orcamento-usuario p{
+    margin: 0px;
+    display: inline;
+  }
+  .itens-orcamento-usuario p{
+    margin: 0px;
+    display: inline;
+  }
+  .botaofinal-orcamento-usuario{
+
+    width: 100%;
+    background-color: #88BF36;
+    padding: 10px;
+    
+  }
+  .especificacoes-o-u{
+    float: right;
+
+  }
 .inicio-servico{
   width: 50%;
-  padding: 20px;
+  padding: 0px 20px;
   
 }
 .inicio-garantia{
   width: 50%;
-  padding: 20px;
+  padding: 0px 20px;
   
 }
 
