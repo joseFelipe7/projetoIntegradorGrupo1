@@ -891,3 +891,227 @@ nav a {
   }
 }
 /* -------fim subtela pedidos contratante LU------------------------------------------------ */
+/*---------Area Chat----------------------------------------------*/
+.container-chat{
+  background-color: #ffffff;
+  height: 90%;
+  width: 100%;
+  border-radius: 5px;
+  overflow-y: scroll;
+}
+.container-chat::-webkit-scrollbar{
+  width: 10px;
+}
+.container-chat::-webkit-scrollbar-track {
+  background: #A094F2 ; 
+  border-radius: 0px 5px 5px 0px;
+  
+}
+.container-chat::-webkit-scrollbar-thumb {
+  background: #7159C1; 
+  border-radius: 5px;
+}
+/*-----------header-chat------------------------------*/
+.item-list-chat-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 1px;
+}
+.title-header-chat{
+  color: #7159C1;
+}
+.search-input-chat{
+  border:solid 1px #000000;
+  border-radius: 4px;
+  height: 30px;
+}
+.search-input-chat input{
+  border:none;
+}
+.search-input-chat input:focus{
+  outline:none;
+}
+.search-input-chat img{
+  height: 20px;
+}
+/*------------------Fim Header--------------------*/
+.item-list-chat{
+  height: 25%;
+  display: flex;
+  border-bottom: solid 1px #000000;
+  
+}
+.img-thumb-chat-list{
+  width: 15%;
+  background-color: lavender;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img-thumb-chat-list img{
+  width: 110px;
+  border-radius: 80px;
+}
+.menssage-chat-list{
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+.menssage-chat-list h4{
+  height: 15%;
+}
+.menssage-chat-preview{
+  height: 60%;
+  background-color: lightblue;
+  display: block;
+  padding: 4px;
+  
+  
+}
+.menssage-chat-preview p{ /*
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;*/
+}
+.menssage-chat-footer{
+  height: 15%;
+  display: flex;
+  align-items: baseline;
+}
+.status-is-logged{
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: lightgreen;
+  margin-right:5px;
+}
+
+.notify-chat-list{
+  width: 15%;
+  background-color: lavender;
+}
+/*------------Fim Area Chat-----------------------------------------*/
+/*-----------Inicio Login Admin---------------------*/
+
+.register-user{
+  width: 100vw;
+  height: 100vh;
+  min-height: 440px;
+  background-image: linear-gradient(to right, #203573 , #A094F2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container-register{
+  display: flex;
+  width: 600px;
+  box-shadow: 10px 15px 45px #000000;
+  border-radius: 10px;
+}
+.left-register, .rigth-register{
+  display: flex;
+  flex-direction: column;
+}
+.left-register{
+  align-items: center;
+  background-color: #A094F2;
+  border-radius: 10px 0px 0px 10px;
+  width: 40%;
+}
+.left-register *{
+  color: #ffffff;
+}
+.left-register h1{
+  margin-top: 5px;
+  color: #ffffff;
+  border-bottom: solid 1px;
+  font-size: 32px;
+  
+}
+.tools-logo{
+  width: 120px;
+}
+.icon-login{
+  width: 200px;
+}
+.left-register p{
+  font-size: 14px;
+  text-align: center;
+}
+.right-register{
+  flex-wrap: wrap;
+  background-color: #ffffff;
+  border-radius: 0px 10px 10px 0px;
+  width: 60%;
+  padding: 30px;
+}
+.right-register form{
+  display: flex;
+  flex-direction: column;
+}
+.title-input{
+  font-size: 12px;
+  color: #bbbbbb;
+}
+.input-text{
+  padding: 10px;
+  border: none;
+  border-bottom: solid 1px #bbbbbb;
+  margin-bottom: 20px;
+}
+.input-text:focus{
+  outline: none;
+  border-color: #A094F2;   
+}
+.btn-register{
+  border-radius: 6px;
+  border: none;
+  color: #ffffff;
+  background-color: #203573;
+  padding: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn-register:hover{
+  background-color: #A094F2;
+}
+.alert-register{
+  margin-top: 4px;
+  font-size: 12px;
+  color: #bbbbbb;
+}
+.alert-register a{
+  text-decoration: none;
+  color: #203573;
+}
+.alert-register a:hover{
+  text-decoration: none;
+  color: #A094F2;
+}
+@media(max-width:610px){
+  .form-container-register{
+      flex-direction: column; 
+      max-width: 300px;
+  }
+  .left-register{
+      width: 100%;
+      border-radius: 10px 10px 0px 0px;
+      min-height: 80px;
+  }
+  .left-register img{
+      display: none;
+      
+  }
+  .right-register{
+      width: 100%;
+      padding: 0px;
+      border-radius: 0px 0px 10px 10px;
+  }
+  .right-register form{
+      padding: 30px;
+  }
+  
+}
+/*-----------Fim login Admin--------------------------*/
