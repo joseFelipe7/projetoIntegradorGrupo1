@@ -14,4 +14,8 @@ router.get("/prestador", (req, res) => {
     res.send("Login prestador");
 })
 
+router.get("/admin", (req, res) => {
+    res.render("loginAdmin");
+})
+
 module.exports = router;
