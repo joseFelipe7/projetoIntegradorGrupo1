@@ -3,9 +3,7 @@ const express = require("express");
 let router = express.Router();
 
 router.get("/area-contratante/meus-dados", (req, res) => {
-    // pagina para testar o include cards
     res.render("areaContratante", {view: "meusDadosContratante"});
-    // res.send("Área Usuário contratante");
 })
 // ...8080/usuario/area-contratante/meus-dados
 

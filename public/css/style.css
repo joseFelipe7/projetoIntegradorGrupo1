@@ -818,4 +818,115 @@ nav a {
     width: 100%;
   }
 }
-/* -------fim subtela pedidos contratante LU------------------------------------------------ */
+/* -------fim subtela pedidos contratante LU--------------------------------- */
+/* -------inicio subtela meus dados contratante LU--------------------------- */
+.sanfonaTopoMeusDados{
+  background-color: #203573;
+  padding: 5px 15px;
+}
+.sanfonaTopoMeusDados h5 button img{
+  height: 45px;
+  text-decoration: none;
+}
+.sanfonaTopoMeusDados h5 button:hover{
+  text-decoration: none;
+  color: #88BF36;
+}
+.sanfonaTopoMeusDados h5 button:focus{
+  text-decoration: none;
+  color: #88BF36;
+}
+.tituloSanfonaTopoMeusDados{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  letter-spacing: 0.29em;
+  text-transform: uppercase;
+
+  color: #FFFFFF;
+}
+
+.etiquetaCampo{
+  background-color: #7159C1;
+  border-color: #7159C1;
+  color: #ffffff;
+}
+.campoDadoReadonly[readonly] {
+  background-color: #ffffff;
+  opacity: 1;
+  color: #203573;
+}
+
+.campoMeusDadosStyle:focus {
+  border-color: rgb(113, 89, 193);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(113, 89, 193,.25);
+}
+.campoMeusDadosStyle{
+  padding: 6px 5px;
+}
+
+.botaoMeusDados{
+  background-color: #7159C1;
+  border-color: #7159C1;
+  color: #ffffff;
+
+  text-transform: uppercase;
+}
+button.botaoMeusDados:focus{
+  outline: 0;
+  border-color: #88BF36;
+  background-color: #88BF36;
+  border-color: #7159C1;
+  color: #203573;
+  font-weight: bold;
+  box-shadow: 0 0 0 0.2rem rgba(113, 89, 193,.25);
+}
+button.botaoMeusDados:active{
+  outline: 0;
+  border-color: #88BF36;
+  background-color: #88BF36;
+  border-color: #7159C1;
+  color: #203573;
+  font-weight: bold;
+  box-shadow: 0 0 0 0.2rem rgba(113, 89, 193,.25);
+}
+button.botaoMeusDados:hover{
+  border-color: #88BF36;
+  background-color: #88BF36;
+  border-color: #7159C1;
+  color: #203573;
+  font-weight: bold;
+  box-shadow: 0 0 0 0.2rem rgba(113, 89, 193,.25);
+}
+.botaoMeusDados img{
+  height: 24px;
+}
+
+.perfilMeusDados{
+  border-radius: 50%;
+  border: 3px solid #7159C1;
+}
+
+.rodapeMeusDadosSanfona{
+  width: 100%;
+  height: 50px;
+  border-radius: 0 0 5px 5px;
+}
+/* modal... */
+.fecharModal {
+  color: #ffffff;
+  text-shadow: 0 1px 0 #000;
+}
+
+.enviarFoto img{
+  height: 50px;
+  padding: 0 4px;
+}
+
+.custom-file-input:focus {
+  border-color: rgb(113, 89, 193);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(113, 89, 193,.25);
+}
+/* -------fim subtela meus dados contratante LU--------------------------------------------- */
