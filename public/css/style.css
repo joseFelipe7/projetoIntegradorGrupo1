@@ -419,6 +419,7 @@ nav a {
   height: 100%;
   margin-left: 40px;
  
+ 
 }
 .analise{
   width: 100%;
@@ -438,6 +439,15 @@ nav a {
   margin-left: 75px;
  
 }
+.negado-card{
+  display: block;
+  background-color: rgb(214, 69, 32);
+  border: 10px solid rgb(214, 69, 32);
+  color: white;
+  text-align: center;
+
+}
+
 
 /* Configuração para tela mobile */
 @media (max-width: 768px) {
