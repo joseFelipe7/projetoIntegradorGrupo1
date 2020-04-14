@@ -19,11 +19,6 @@ router.get("/area-contratante/acompanhe", (req, res) => {
 })
 // ...8080/usuario/area-contratante/acompanhe
 
-router.get("/area-usuario/acompanhe", (req, res) => {
-    res.render("areaUsuario", {view: "acompanheAreaUsuario"});
-})
-// ...8080/usuario/area-contratante/acompanhe
-
 router.get("/area-contratante/orcamentos", (req, res) => {
     res.render("areaContratante", {view: "orcamentosAreaContratante"});
 })
