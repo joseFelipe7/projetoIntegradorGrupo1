@@ -343,6 +343,8 @@ ul, ul li {
   padding: 40px;
   text-decoration: none;
 }
+
+
 a:link{
   color:black;
    text-decoration: none;
@@ -362,8 +364,81 @@ nav a {
   width: 100%;
   height: 100%;
 
+}
+/*acompanhe usuario*/
+.acompanheUsuario{
+  width: 100%;
+  height: 100%;
+}
+.itensAcompanheUsuario{
+  text-align: left;
+  padding: 20px;
+}
+.usuarioPedidos{
+  display: block;
+  background-color: #28a745;
+  padding: 20px;
+  border : 1px solid #28a745;
+  margin: 10px;
+}
+.enviado{
+  display: block;
+  background-color: rgb(131, 87, 172);
+  border: 10px solid rgb(131, 87, 172);
+  color: white;
+  text-align: center;
+  margin-left:15px;
 
 }
+.analise-card{
+  display: block;
+  background-color: rgb(245, 204, 20);
+  border: 10px solid rgb(245, 204, 20);
+  color: white;
+  text-align: center;
+
+}
+.aceito-card{
+  display: block;
+  background-color: rgb(46, 155, 37);
+  border: 10px solid rgb(46, 155, 37);
+  color: white;
+  text-align: center;
+
+}
+.andamento-card{
+  display: block;
+  background-color: rgb(37, 78, 155);
+  border: 10px solid rgb(37, 78, 155);
+  color: white;
+  text-align: center;
+
+}
+.confirm{
+  width: 100%;
+  height: 100%;
+  margin-left: 40px;
+ 
+}
+.analise{
+  width: 100%;
+  height: 100%;
+  margin-left: 55px;
+ 
+}
+.aceito{
+  width: 100%;
+  height: 100%;
+  margin-left: 70px;
+ 
+}
+.andamento{
+  width: 100%;
+  height: 100%;
+  margin-left: 75px;
+ 
+}
+
 /* Configuração para tela mobile */
 @media (max-width: 768px) {
 

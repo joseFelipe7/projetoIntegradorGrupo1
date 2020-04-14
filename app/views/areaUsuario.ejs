@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <%- include("./include/head.ejs", {title:"area usuario"}) %> 
+<body>
+    <!-- Área Usuário contratante -->
+    <%- include('include/header')%>
+    <%- include('include/menuNav') %>
+
+    <!-- aside area contratante com o include dos cards de notifacação -->
+    <%- include("./include/aside.ejs", {view}) %> 
+
+    <%- include('include/footer') %>
+
+    <script src="/js/script-menu.js"></script>
+    <!-- script e jquery bootstrap -->
+    <%- include("./include/script.ejs") %> 
+</body>
+</html>
