@@ -34,6 +34,11 @@ router.get("/area-contratante/historico", (req, res) => {
 })
 // ...8080/usuario/area-contratante/historico
 
+router.get("/area-contratante/chat", (req, res) => {
+    res.render("areaContratante", {view: "chat"});
+})
+// ...8080/usuario/area-contratante/historico
+
 router.get("/area-contratante/favoritos", (req, res) => {
     res.render("areaContratante", {view: "favoritosAreaContratante"});
 })
