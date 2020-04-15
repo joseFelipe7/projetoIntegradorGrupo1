@@ -343,8 +343,10 @@ ul, ul li {
   padding: 40px;
   text-decoration: none;
 }
-
-
+.footer-titulo{
+  text-align: left;
+  margin-left: 50px;
+}
 a:link{
   color:black;
    text-decoration: none;
@@ -356,13 +358,15 @@ nav a {
   color: #230a68;
 }
 .img-footer{
-  width: 100%;
-  height: 100%;
+  width: 30%;
+  height: 30%;
+  margin-left:930px;
+	margin-top:-350px;
   
 }
 .youtube{
-  width: 100%;
-  height: 100%;
+  width: 30%;
+  height: 30%;
 
 }
 /*acompanhe usuario*/
@@ -381,13 +385,37 @@ nav a {
   border : 1px solid #28a745;
   margin: 10px;
 }
+.icones-footer{
+  height: 5%;
+  width: 5%;
+  margin-left: 25px;
+}
+.imagem-prestador{
+  width: 30%;
+  height: 30%;
+  margin-left:750px;
+	margin-top:-180px;
+}
+.imagem-rodape{
+  width: 100%;
+  height: 100%;
+}
 .enviado{
   display: block;
   background-color: rgb(131, 87, 172);
   border: 10px solid rgb(131, 87, 172);
   color: white;
   text-align: center;
-  margin-left:15px;
+  height:350px;
+  width: 250px;
+  
+ 
+
+}
+.imagem-enviado{
+  width: 50%;
+  height: 35%;
+  margin-top:-60px;
 
 }
 .analise-card{
@@ -396,6 +424,11 @@ nav a {
   border: 10px solid rgb(245, 204, 20);
   color: white;
   text-align: center;
+  height:350px;
+  width: 250px;
+  
+
+  
 
 }
 .aceito-card{
@@ -404,7 +437,8 @@ nav a {
   border: 10px solid rgb(46, 155, 37);
   color: white;
   text-align: center;
-
+  height:350px;
+  width: 250px;
 }
 .andamento-card{
   display: block;
@@ -412,7 +446,8 @@ nav a {
   border: 10px solid rgb(37, 78, 155);
   color: white;
   text-align: center;
-
+  height:350px;
+  width: 250px;
 }
 .confirm{
   width: 100%;
@@ -445,9 +480,178 @@ nav a {
   border: 10px solid rgb(214, 69, 32);
   color: white;
   text-align: center;
-
+  height:350px;
+  width: 250px;
 }
 
+/*mobile footer e acompanhe*/
+
+@media (max-width:768px){
+
+  .container-footer{
+    position: relative;
+    background-color: #A094F2;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    
+  }
+  .container-footer-head{
+    
+    font-weight: bold;
+    width: 100%;
+    padding: 0px;
+  }
+  .container-footer-itens{
+    width: 100%;
+    text-align: justify;
+    font-weight: normal;
+    padding: 40px;
+    text-decoration: none;
+  }
+  .footer-titulo{
+    text-align: left;
+    margin-left: 50px;
+  }
+  a:link{
+    color:black;
+     text-decoration: none;
+  }
+  a:hover {
+    color:black;
+  }
+  nav a {
+    color: #230a68;
+  }
+  .img-footer{
+    width: 30%;
+    height: 30%;
+    margin-left:930px;
+    margin-top:-350px;
+    
+  }
+  .youtube{
+    width: 30%;
+    height: 30%;
+  
+  }
+  /*acompanhe usuario*/
+  .acompanheUsuario{
+    width: 100%;
+    height: 100%;
+  }
+  .itensAcompanheUsuario{
+    text-align: left;
+    padding: 20px;
+  }
+  .usuarioPedidos{
+    display: block;
+    background-color: #28a745;
+    padding: 20px;
+    border : 1px solid #28a745;
+    margin: 10px;
+  }
+  .icones-footer{
+    height: 5%;
+    width: 5%;
+    margin-left: 25px;
+  }
+  .imagem-prestador{
+    width: 30%;
+    height: 30%;
+    margin-left:750px;
+    margin-top:-180px;
+  }
+  .imagem-rodape{
+    width: 100%;
+    height: 100%;
+  }
+  .enviado{
+    display: block;
+    background-color: rgb(131, 87, 172);
+    border: 10px solid rgb(131, 87, 172);
+    color: white;
+    text-align: center;
+    height:350px;
+    width: 250px;
+    
+   
+  
+  }
+  .imagem-enviado{
+    width: 50%;
+    height: 35%;
+    margin-top:-60px;
+  
+  }
+  .analise-card{
+    display: block;
+    background-color: rgb(245, 204, 20);
+    border: 10px solid rgb(245, 204, 20);
+    color: white;
+    text-align: center;
+    height:350px;
+    width: 250px;
+    
+  
+    
+  
+  }
+  .aceito-card{
+    display: block;
+    background-color: rgb(46, 155, 37);
+    border: 10px solid rgb(46, 155, 37);
+    color: white;
+    text-align: center;
+    height:350px;
+    width: 250px;
+  }
+  .andamento-card{
+    display: block;
+    background-color: rgb(37, 78, 155);
+    border: 10px solid rgb(37, 78, 155);
+    color: white;
+    text-align: center;
+    height:350px;
+    width: 250px;
+  }
+  .confirm{
+    width: 100%;
+    height: 100%;
+    margin-left: 40px;
+   
+   
+  }
+  .analise{
+    width: 100%;
+    height: 100%;
+    margin-left: 55px;
+   
+  }
+  .aceito{
+    width: 100%;
+    height: 100%;
+    margin-left: 70px;
+   
+  }
+  .andamento{
+    width: 100%;
+    height: 100%;
+    margin-left: 75px;
+   
+  }
+  .negado-card{
+    display: block;
+    background-color: rgb(214, 69, 32);
+    border: 10px solid rgb(214, 69, 32);
+    color: white;
+    text-align: center;
+    height:350px;
+    width: 250px;
+  }
+
+}
 
 /* Configuração para tela mobile */
 @media (max-width: 768px) {
