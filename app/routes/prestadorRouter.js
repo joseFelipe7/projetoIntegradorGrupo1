@@ -9,5 +9,12 @@ router.get("/single", (req, res) => {
 router.get("/lista", (req, res) => {
     res.send("Lista de Prestadores");
 })
+router.get("/single/cadastro-servicos", (req, res) => {
+    res.render("areaPrestador", {view: "cadastroServiçosPrestador"});
+})
+
+router.get("/single/pedidos", (req, res) => {
+    res.render("areaPrestador", {view: "pedidosAreaPrestador"});
+})
 
 module.exports = router;
