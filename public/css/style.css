@@ -580,6 +580,10 @@ nav a {
     margin: 0px;
     display: inline;
   }
+  #calendario-ou{
+    /*background-image: url('/img/ou-bg-img1.png');*/
+    
+  }
   .itens-orcamento-usuario p{
     margin: 0px;
     display: inline;
@@ -630,6 +634,58 @@ nav a {
   padding: 5px;
 
 }
+.detalhes-orcamento-usuario{
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  
+  
+}
+
+.produtos-checkbox{
+  float: left;
+  width: 50%;
+ 
+}
+.form-itens-orca-usuario{
+  float: left;
+  width: 50%;
+}
+.resumo-ou-ap{
+  float: left;
+  width: 50%;
+  padding: 20px;
+  padding-bottom: 0%;
+  border-left: 1px solid #BDBDBD;
+  
+}
+.especificacoes-ou{
+  float: left;
+  width: 50%;
+  padding: 20px;
+  
+}
+td.td-ou{
+  padding: 2px;
+}
+thead.cabecalho-ou{
+  background-color: #203573;
+  color: #ffffff;
+}
+tr.tr-ou-bgcolor{
+  background-color: #AEB2F2;
+}
+
+table.table-bordered-2{
+  margin-bottom: 0%;
+}
+.bg-imgs-ou{
+  width: 100%;
+  color: #203573;
+  }
+
 
 
 /*fim orcamento-usuario---------------*/
