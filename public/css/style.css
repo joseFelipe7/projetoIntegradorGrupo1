@@ -1815,3 +1815,104 @@ input.campoBuscarStyle::placeholder{
 }
 
 /* -------fim home LU------------------------------------------------ */
+
+/* ------------Começo Login Selecione-----------------*/
+
+.login-selecione {
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(125deg, rgba(113,89,193,1) 48%, rgba(174,178,242,1) 50%);
+  height: 80vh;
+}
+
+section {
+  align-self: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 14rem;
+  width: 40rem;
+}
+
+section .texto-prestador {
+  align-self: flex-start;
+  color: #A094F2;
+  text-align: right;
+  width: 12rem;
+}
+
+section .texto-prestador h3 {
+  margin-bottom: 0;
+}
+
+section .texto-cliente {
+  align-self: flex-end;
+  color: #7159c1;
+  width: 12rem;
+  margin-left: 1rem;
+}
+
+section .texto-cliente h3 {
+  margin-bottom: 0;
+}
+
+.entre-prestador {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-start;
+  height: 50vh;
+  width: 27vw;
+  margin-top: 4rem;
+}
+
+.entre-prestador img {
+  width: 400px;
+}
+
+.entre-prestador a {
+  border: 2px solid #aeb2f2;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0.5rem 2.5rem;
+}
+
+.entre-prestador a:hover {
+  background-color: #aeb2f2;
+  color: #7159c1;
+}
+
+.entre-cliente {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-end;
+  height: 50vh;
+  width: 30vw;
+}
+
+.entre-cliente img {
+  width: 500px;
+}
+
+.entre-cliente a {
+  border: 2px solid #7159c1;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0.5rem 2.5rem;
+}
+
+.entre-cliente a:hover {
+  background-color: #7159c1;
+  color: #aeb2f2;
+}
+
+/* --------------Fim Login Selecione------------------*/

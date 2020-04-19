@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<%- include('include/head', {title:'ToolsHall - Entrar'}) %>
+
+<body>
+  <%- include('include/header')%>
+  <%- include('include/menuNav') %>
+
+  <main class="login-selecione">
+
+    <div class="entre-prestador">
+      <img src="/img/entre-prestador.png" alt="Prestador de Serviços">
+      <a href="/login/Prestador">ENTRE</a>
+    </div>
+
+
+    <section>
+
+      <div class="texto-prestador">
+        <h3>Prestador de Serviços</h3>
+      </div>
+
+      <div class="img-conexao">
+        <img src="/img/seta.png">
+      </div>
+
+      <div class="texto-cliente">
+        <h3>Cliente de Serviços</h3>
+      </div>
+      
+    </section>
+
+    <div class="entre-cliente">
+      <a href="/login/contratante">ENTRE</a>
+      <img src="/img/entre-cliente.png" alt="Cliente de Serviços">
+    </div>
+
+  </main>
+
+  <%- include('include/footer') %>
+  <%- include('include/script') %>
+</body>
+
+</html>
