@@ -35,6 +35,7 @@ const rotaPrestador = require("./app/routes/prestadorRouter");
 app.use("/home", rotaHome);
 //...8080/home
 //...8080/home/sobre
+//...8080/home/contato
 
 app.use("/usuario", rotaAreaUsuario);
 //...8080/usuario/area-contratante

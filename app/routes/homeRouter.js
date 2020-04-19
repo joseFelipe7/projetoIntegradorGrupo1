@@ -10,4 +10,8 @@ router.get("/sobre", (req, res) => {
     res.send("sobre");
 })
 
+router.get("/contato", (req, res) => {
+    res.render("contato");
+})
+
 module.exports = router;
