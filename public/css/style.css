@@ -2004,3 +2004,22 @@ section .texto-cliente h3 {
   background-color: #203573;
 
 }
+.info-servicos-pagamentos{
+  display: flex;
+  background-color: #7159C1;
+  color: #ffffff;
+
+}
+.pagdireita{
+  float: left;
+  width: 50%;
+  padding: 20px;
+  padding-right: 30px;
+  padding-bottom: 0%;
+}
+.pagesquerda{
+  width: 50%;
+  padding: 20px;
+  padding-right: 30px;
+  padding-bottom: 0%;
+}
