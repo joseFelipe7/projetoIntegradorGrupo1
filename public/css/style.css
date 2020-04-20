@@ -750,20 +750,20 @@ nav a {
   transition: 0.4s;
   font: 20px;
   outline: none;
-  -webkit-box-shadow: 0px 5px 5px rgba(50, 50, 50, 0.77);
-  -moz-box-shadow:    0px 5px 5px rgba(50, 50, 50, 0.77);
-  box-shadow:         0px 5px 5px rgba(50, 50, 50, 0.77);
+  -webkit-box-shadow: 0px 9px 5px rgba(50, 50, 50, 0.77);
+  -moz-box-shadow:    0px 9px 5px rgba(50, 50, 50, 0.77);
+  box-shadow:         0px 9px 5px rgba(50, 50, 50, 0.77);
 }
 
 .accordion::after{
-  content: '\02C5';
+  content:  url('/img/setaAbaixo.png');
+  padding-right: 15px;
   font-size: 50px;
   float: right;
-  
   margin-bottom: 0;
 }
 .active::after{
-  /* content: '\02C4'; */   
+ /* content: url('/img/setaAcima.png');*/ 
 }
 .panel{
   
@@ -842,9 +842,9 @@ nav a {
   height: 30px;
   background-color: #88BF36;
   z-index: 2;
-  -webkit-box-shadow: 0px 5px 5px rgba(50, 50, 50, 0.77);
-  -moz-box-shadow:    0px 5px 5px rgba(50, 50, 50, 0.77);
-  box-shadow:         0px 5px 5px rgba(50, 50, 50, 0.77);
+  -webkit-box-shadow: 0px 9px 5px rgba(50, 50, 50, 0.77);
+  -moz-box-shadow:    0px 9px 5px rgba(50, 50, 50, 0.77);
+  box-shadow:         0px 9px 5px rgba(50, 50, 50, 0.77);
   
 }
 .rodape-orcamento-usuario{
@@ -858,10 +858,11 @@ nav a {
   padding: 10px;
   color: #203573;
   
+  
 }
 .detalhes-orcamento-usuario{
   width: 100%;
-  padding: 10px;
+  padding: 30px 20px;
   color: #203573;
   }
   .detalhes-orcamento-usuario p{
@@ -880,11 +881,54 @@ nav a {
     display: inline;
   }
   .botaofinal-orcamento-usuario{
-
+    display: flex;
     width: 100%;
     background-color: #88BF36;
+    color: #ffffff;
     padding: 10px;
+    padding-right: 0px;
+    -webkit-box-shadow: 0px -9px 5px rgba(50, 50, 50, 0.77);
+    -moz-box-shadow:    0px -9px 5px rgba(50, 50, 50, 0.77);
+    box-shadow:         0px -9px 5px rgba(50, 50, 50, 0.77);
     
+  }
+  div.btns-ou{
+    width: 90%;
+  }
+  div.link-ou{
+    width: 10%;
+  }
+  button#btnrejeitar-ou{
+    background-color: #88BF36;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 15%;
+    padding: 0px 20px;
+    margin: 15px;
+  }
+  button#btnaceito-ou{
+    background-color: #203573;
+    color: #ffffff;
+    border: 2px solid #7159C1;
+    border-radius: 15%;
+    padding: 0px 20px;
+    margin: 15px;
+  }
+  button#btnpagar-ou{
+    background-color: #7159C1;
+    color: #ffffff;
+    border: 2px solid #A094F2;
+    border-radius: 15%;
+    padding: 0px 20px;
+    margin: 15px;
+    margin-right: 10px;
+    float: right;
+  }
+  .botaofinal-orcamento-usuario a{
+    content:  url('/img/setaDireitaou.png');
+    float: right;
+    padding-right: 0px;
+
   }
   .especificacoes-o-u{
     float: right;
@@ -934,6 +978,7 @@ nav a {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  padding: 30px 20px;
   
   
 }
@@ -941,11 +986,13 @@ nav a {
 .produtos-checkbox{
   float: left;
   width: 50%;
+  padding: 20px;
  
 }
 .form-itens-orca-usuario{
   float: left;
   width: 50%;
+  padding: 20px;
 }
 .resumo-ou-ap{
   float: left;
@@ -984,6 +1031,9 @@ div.resumo-ou{
 }
 table#tableButton-ou tr td{
   cursor: pointer;
+}
+div.calendario-ou{
+  width: 50%;
 }
 
 table#tableButton-ou td:hover {
