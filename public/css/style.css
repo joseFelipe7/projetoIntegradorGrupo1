@@ -1802,7 +1802,7 @@ input.campoBuscarStyle::placeholder{
  
 /* Handle */
 .scroolCardsPrestadorHome::-webkit-scrollbar-thumb {
-  background: rgb(113, 89, 193);; 
+  background: rgb(113, 89, 193); 
   border-radius: 10px;
   box-shadow: inset 0 0 6px rgba(113, 89, 193,.50);
 }
@@ -1813,6 +1813,21 @@ input.campoBuscarStyle::placeholder{
 }
 
 /* -------fim home LU------------------------------------------------ */
+/* -------inicio contato LU------------------------------------------------ */
+
+.corpoContato{
+  background-image: url(/img/ondaHomeTopo.svg);
+  background-repeat: no-repeat;
+  background-position: 100% 51%;
+}
+
+.formContatoSistema{
+  background-color: rgba(32, 53, 115,.50);
+  color: #203573;
+  font-weight: bold;
+}
+
+/* -------fim contato LU------------------------------------------------ */
 
 /* ------------Começo Login Selecione-----------------*/
 
@@ -1824,12 +1839,12 @@ input.campoBuscarStyle::placeholder{
 }
 
 section {
-  align-self: center;
+  /* align-self: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 14rem;
-  width: 40rem;
+  width: 40rem; */
 }
 
 section .texto-prestador {

@@ -1,11 +1,128 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <%- include('include/head', {title:'Contato'}) %>
-    <body>
+    <body class="corpoContato">
         <%- include('include/header')%>
         <%- include('include/menuNav') %>
         
-        
+        <!-- sessão contato com o sistema -->
+        <main class="container mx-auto my-5">
+            <div class="row d-flex justify-content-center">
+                <!-- card sanfona 3 ------------------------------------------------->
+                <div class="card formContatoSistema col-11 col-sm-11 col-lg-7 p-0 m-0">
+                    <!-- topo 3 sanfona -->
+                    <div class="card-header sanfonaTopoMeusDados" id="headingThree">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link tituloSanfonaTopoMeusDados" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                            <img src="/img/contato.png" alt="Meus dados" title="Meus dados">
+                            Fale conosco!
+                            </button>
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- formulario contato -->
+                        <form>
+                            <!-- input linha -->
+                            <div class="form-row">
+                                <!-- input Assunto -->
+                                <div class="form-group col">
+                                <label for="assunto">Assunto</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text etiquetaCampo">Assunto</span>
+                                    </div>
+                                    <input type="text" class="form-control campoMeusDadosStyle campoDadoReadonly" id="assunto" placeholder="Do que se trata?">
+                                </div>
+                                </div>
+                            </div>
+
+                            <!-- input linha -->
+                            <div class="form-row">
+                                <!-- input Nome -->
+                                <div class="form-group col">
+                                <label for="nomeContato">Nome</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text etiquetaCampo">Nome</span>
+                                    </div>
+                                    <input type="text" class="form-control campoMeusDadosStyle campoDadoReadonly" id="nomeContato" placeholder="Digite seu nome">
+                                </div>
+                                </div>
+                            </div>
+                
+                            <!-- input linha 3 -->
+                            <div class="form-row">
+                                <!-- input email -->
+                                <div class="form-group col">
+                                    <label for="emailContato">E-mail</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                        <span class="input-group-text etiquetaCampo">@</span>
+                                        </div>
+                                        <input type="email" class="form-control campoMeusDadosStyle campoDadoReadonly" id="emailContato" placeholder="seuemail@mail.com.br">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- input linha -->
+                            <div class="form-row">
+                                <!-- input cel1 -->
+                                <div class="form-group col-md-6">
+                                    <label for="celContato">Celular</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                        <span class="input-group-text etiquetaCampo">Celular</span>
+                                        </div>
+                                        <input type="tel" class="form-control campoMeusDadosStyle campoDadoReadonly" id="celContato" placeholder="XX XXXXX-XXXX" maxlength="11">
+                                    </div>
+                                </div>
+                
+                                <!-- input TEL -->
+                                <div class="form-group col-md-6">
+                                    <label for="telContato">Telefone</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                        <span class="input-group-text etiquetaCampo">Telefone</span>
+                                        </div>
+                                        <input type="tel" class="form-control campoMeusDadosStyle campoDadoReadonly" id="telContato" placeholder="XX XXXX-XXXX" maxlength="11">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="mensagemContato">Mensagem</label>
+                                <textarea class="form-control campoMeusDadosStyle campoDadoReadonly" id="mensagemContato" rows="4" placeholder="Digite uma breve mensagem. Caso necessário te retornamos!"></textarea>
+                            </div>
+
+                            <label for="mensagemContato text-white">Na plataforma, você se encaixa em...</label>
+                            <div class="form-group text-white">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="visitante" value="option1">
+                                    <label class="form-check-label" for="visitante">
+                                        Visitante
+                                    </label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="prestador" value="option2">
+                                    <label class="form-check-label" for="prestador">
+                                        Prestador
+                                    </label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="contratante" value="option3">
+                                    <label class="form-check-label" for="contratante">
+                                        Contratante
+                                    </label>
+                                </div>
+                            </div>
+            
+                            <div class="d-flex justify-content-end"><button type="button" class="btn botaoMeusDados">ENVIAR</button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
         
         <%- include('include/footer') %>
         <%- include('include/script') %>
