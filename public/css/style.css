@@ -870,7 +870,10 @@ nav a {
     display: inline;
   }
   #calendario-ou{
-    /*background-image: url('/img/ou-bg-img1.png');*/
+    background-image: url('/img/ou-bg-img1.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    
     
   }
   .itens-orcamento-usuario p{
@@ -887,6 +890,9 @@ nav a {
   .especificacoes-o-u{
     float: right;
 
+  }
+  .tr-ou-bgcolor1{
+    background-color: #ffffff;
   }
 .inicio-servico{
   width: 50%;
@@ -974,6 +980,22 @@ table.table-bordered-2{
   width: 100%;
   color: #203573;
   }
+div.resumo-ou{
+  padding: 30px 20px;
+}
+table#tableButton-ou tr td{
+  cursor: pointer;
+}
+
+table#tableButton-ou td:hover {
+  background-color: #CFCFCF;
+}
+table#tableButton-ou td.selecionado {
+  background-color: #28a745;
+  -webkit-box-shadow: 5px 5px 5px rgba(50, 50, 50, 0.77);
+  -moz-box-shadow:    5px 5px 5px rgba(50, 50, 50, 0.77);
+  box-shadow:         5px 5px 5px rgba(50, 50, 50, 0.77);
+}
 
 
 
