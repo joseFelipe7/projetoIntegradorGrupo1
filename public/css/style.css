@@ -1475,6 +1475,9 @@ font-size: 0.8rem;
 .bg-roxoClaro{
 background-color: #AEB2F2 !important;
 }
+.bg-roxoFundo{
+  background-color: rgb(213, 216, 255) !important;
+  }
 .bg-roxoRS{
   background-color: #7159C1 !important;
   }
