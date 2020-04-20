@@ -1,47 +1,33 @@
-<main class="container-fluid w-100 h-100 d-flex justify-content-center align-items-center bg-primary">
-    <!-- <ul class="row container-chat">
-        <li class="col-12 item-list-chat-header">
-            <h2 class="title-header-chat">Chat</h2> 
-            <div class="search-input-chat">
-                <img src="/img/search-icon.png" alt="">
-                <input type="text" placeholder="Pesquisar">
+<main class="container-fluid w-100 h-100 d-flex justify-content-center align-items-center">
+   
+    <div class="container-chat">
+        <% for(let i=0; i < 10; i++){ %>
+        <div class="container-menssage">
+            <div class="avatar-chat p-1">
+                <img src="/img/mario-perfil.png" class="img-fluid rounded-circle" alt="">
             </div>
-        </li>
-        <li class="col-12 item-list-chat">
-            
-            <div class="img-thumb-chat-list">
-                <img src="/img/mario-perfil.png" alt="">
-            </div>
-            <div class="menssage-chat-list">
-                <h4>Mario Bros Mamamia Silva</h4>
-                <div class="menssage-chat-preview">
-                    <p>
-                        Podemos conversa mais sobre aquele problema com canos e tartarugas?Podemos conversa mais sobre aquele problema com canos e tartarugas? 
-                        Podemos conversa mais sobre aquele problema com canos e tartarugas? 
-                    </p>
+            <div class="chat-content-main">
+                <h4 class="title">
+                    Mario Luigi Mamamia
+                </h4>
+                <div class="menssage">
+                    Podemos conversa mais sobre aquele problema com canos e tartarugas?
                 </div>
-                <div class="menssage-chat-footer">
-                    <div class="status-is-logged"></div> <span>online</span>
+                <div class="status">
+                    <div class="d-flex aling-items-center"><div class="color-notification"></div><span> Online</span></div>
+                    <div class="last-menssage">
+                        08/08/2020
+                    </div>
                 </div>
             </div>
-            <div class="notify-chat-list">
+            <div class="notify-new-menssage">
+                <div class="news">
+                    2 <img src="/img/notificacao-icon.png" alt="icone de novas mensagens">
+                </div>
                 
             </div>
-        </li>
-        <li class="col-12 item-list-chat">oi</li>
-        <li class="col-12 item-list-chat">oi</li>
-        <li class="col-12 item-list-chat">oi</li>
-    </ul> -->
-    <div class="container-chat">
-        <div class="row">
-            <div class="col-12 item-list-chat-header">
-                <h2 class="title-header-chat">Chat</h2> 
-                <div class="search-input-chat">
-                    <img src="/img/search-icon.png" alt="">
-                    <input type="text" placeholder="Pesquisar">
-                </div>
-            </div>
         </div>
+        <% } %> 
     </div>
-
 </main>
+
