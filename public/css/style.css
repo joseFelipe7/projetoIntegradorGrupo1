@@ -1993,3 +1993,14 @@ section .texto-cliente h3 {
 }
 
 /* --------------Fim Login Selecione------------------*/
+
+/*pagamentos--------------------------------------------*/
+
+.btn.btn-primary.btn-lg.btn-block{
+  background-color: #88BF36;
+  border-color: #88BF36;
+}
+.btn.btn-pagamentos {
+  background-color: #203573;
+
+}
