@@ -1,12 +1,148 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<%- include('include/head', {title:'home'}) %>
-<body>
-    <%- include('include/header')%>
-    <%- include('include/menuNav') %>
-    
-    
-    <%- //include('include/footer') %>
-    <%- include('include/script') %>
-</body>
+    <%- include('include/head', {title:'Home'}) %>
+
+    <body>
+        <%- include('include/header')%>
+        <%- include('include/menuNav') %>
+        <main>
+            <!-- carrossel -->
+            <div class="carousel slide" id="slideHome" data-ride="carousel">
+
+                <!-- controles do slide -->
+                <ol class="carousel-indicators">
+                    <li data-target="#slideHome" data-slide-to="0" class="active"></li>
+                    <li data-target="#slideHome" data-slide-to="1"></li>
+                    <li data-target="#slideHome" data-slide-to="2"></li>
+                    <li data-target="#slideHome" data-slide-to="3"></li>
+                </ol>
+
+                <!-- data-ride="carousel" = começar a animação assim que a página carregar -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/img/slide1.jpg" alt="Conheça!" class="img-fluid d-block">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/img/slide2.jpg" alt="Orçamento gratis!" class="img-fluid d-block">
+
+                        <!-- texto sobre o slide -->
+                        <!-- <div class="carousel-caption">
+                            <h3>Lorem ipsum</h3>
+                        </div> -->
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/img/slide3.jpg" alt="Cadastre-se!" class="img-fluid d-block">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/img/slide4.jpg" alt="Cadastre-se!" class="img-fluid d-block">
+                    </div>
+                </div>
+
+                <!-- seta voltar... -->
+                <a href="#slideHome" class="carousel-control-prev" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <!-- seta ir... -->
+                <a href="#slideHome" class="carousel-control-next" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+            </div>
+
+            <section class="container-fluid sessaoHomeBuscar">
+                <div class="container-fluid pt-3">
+                    <div class="row m-0 d-flex justify-content-center">
+                        <!-- input buscar -->
+                        <div class="col-8 colunaBuscarInput d-flex align-items-center">
+                            <div class="card text-center border-0 bg-transparent">
+                                    <h5 class="card-title ">
+                                        Procure por um serviço, escolha um prossional qualificado e contrate com segurança!
+                                    </h5>
+                                <form>
+                                    <!-- input linha 1 -->
+                                    <div class="form-row m-auto p-2">
+                                    <!-- input buscar -->
+                                        <div class="form-group col-md-10 m-0">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control campoBuscarStyle campoDadoReadonly" id="buscar" placeholder="PROCURE POR PROFISSIONAIS, CATEGORIAS...">
+                                            </div>
+                                        </div>
+                            
+                                        <!-- buscar botao -->
+                                        <div class="form-group col-md-2 m-0">
+                                            <div class="input-group">
+                                                <!-- Button -->
+                                                <div class="d-flex justify-content-end">
+                                                    <button type="button" class="btn botaoBuscar">Buscar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <h6 class="card-subtitle mb-2 mt-2">
+                                    <small>Do que você está precisando hoje? Nós te ajudamos!</small>
+                                </h6>
+                            </div>
+                        </div>
+
+                        <!-- imagem -->
+                        <div class="col-4 colunaBuscarImg p-0 m-0 d-flex align-items-center">
+                            <img src="/img/homeBuscar.png" alt="Faça uma busca">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- scroll de cards -->
+            <section class="container-fluid sessaoHomePrestadores">
+                <div class="scroolCardsPrestadorHome py-2">
+                    <% for(let i=0; i < 10; i++) { %> 
+                        <div class="cardPrestador h-100 mx-3 py-3 px-1">
+                            <!-- card unico -->
+                            <div class="container-fluid m-100 h-100 m-0 p-0 pt-2">
+                                <!-- foto prestador... -->
+                                <div class="row h-35 w-100 p-0 m-0">
+                                    <div class="col w-100 d-flex justify-content-center">
+                                        <img src="/img/mario-perfil.png" alt="Foto prestador" class="avatarCardPrestador rounded-circle">
+                                    </div>
+                                </div>
+                                <!-- nota prestador... -->
+                                <div class="row h-13 w-75 mt-1 p-0 mx-auto">
+                                    <div class="col w-100">
+                                        <div class="card border-0 h-100 w-100 rounded d-flex flex-row justify-content-center align-items-center bg-roxo">
+                                            <h5 class="card-title border-0 m-0 text-center">Ótimo</h5>
+                                            <img src="/img/estrela5.png" alt="" class="m-0 notaCardPrestador">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- nome prestador... -->
+                                <div class="row h-13 w-100 mt-1 p-0 m-0">
+                                    <div class="col w-100">
+                                        <div class="card border-0 h-100 w-100 rounded d-flex justify-content-center bg-roxo">
+                                            <h5 class="card-title border-0 m-0 text-center">Mario Luigi</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- descrição serviço... -->
+                                <div class="row h-30 w-100 mt-1 p-0 m-0">
+                                    <div class="col w-100">
+                                        <div class="card border-0 h-100 w-100 rounded bg-roxo d-flex justify-content-center align-items-center">
+                                            <p class="card-text border-0 text-center p-1">Sobre o serviço Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- fim card unico -->
+                        </div>
+                    <% } %> 
+                </div>
+            </section>
+            
+        </main>
+        
+        <%- include('include/footer') %>
+        <%- include('include/script') %>
+    </body>
 </html>

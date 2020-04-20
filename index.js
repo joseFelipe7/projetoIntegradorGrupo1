@@ -33,26 +33,27 @@ const rotaLogin = require("./app/routes/loginRouter");
 const rotaPrestador = require("./app/routes/prestadorRouter");
 
 app.use("/home", rotaHome);
-//...8080/home
-//...8080/home/sobre
+//...5620/home
+//...5620/home/sobre
+//...5620/home/contato
 
 app.use("/usuario", rotaAreaUsuario);
-//...8080/usuario/area-contratante
-//...8080/usuario/area-prestador
+//...5620/usuario/area-contratante
+//...5620/usuario/area-prestador
 
 app.use("/cadastro", rotaCadastro);
-//...8080/cadastro/prestador
-//...8080/cadastro/usuario
+//...5620/cadastro/prestador
+//...5620/cadastro/usuario
 
 app.use("/login", rotaLogin);
-//...8080/login
-//...8080/login/prestador
-//...8080/login/contratante
+//...5620/login
+//...5620/login/prestador
+//...5620/login/contratante
 
 app.use("/prestador", rotaPrestador);
-//...8080/prestador/lista
-//...8080/prestador/single
+//...5620/prestador/lista
+//...5620/prestador/single
 
-app.listen(8080, () => {
-    console.log("servidor rodando na porta 8080")
+app.listen(5620, () => {
+    console.log("servidor rodando na porta 5620")
 })

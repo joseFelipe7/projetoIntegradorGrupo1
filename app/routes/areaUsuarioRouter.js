@@ -3,9 +3,7 @@ const express = require("express");
 let router = express.Router();
 
 router.get("/area-contratante/meus-dados", (req, res) => {
-    // pagina para testar o include cards
     res.render("areaContratante", {view: "meusDadosContratante"});
-    // res.send("Área Usuário contratante");
 })
 // ...8080/usuario/area-contratante/meus-dados
 
@@ -32,7 +30,7 @@ router.get("/area-contratante/historico", (req, res) => {
 router.get("/area-contratante/chat", (req, res) => {
     res.render("areaContratante", {view: "chat"});
 })
-// ...8080/usuario/area-contratante/historico
+// ...8080/usuario/area-contratante/chat
 
 router.get("/area-contratante/favoritos", (req, res) => {
     res.render("areaContratante", {view: "favoritosAreaContratante"});

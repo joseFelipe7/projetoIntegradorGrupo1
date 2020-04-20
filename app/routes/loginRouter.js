@@ -3,15 +3,15 @@ const express = require("express");
 let router = express.Router();
 
 router.get("/", (req, res) => {
-    res.send("Login selecione");
+    res.render("loginSelecione");
 })
 
 router.get("/contratante", (req, res) => {
-    res.send("Login contratante");
+    res.send("loginContratante");
 })
 
 router.get("/prestador", (req, res) => {
-    res.send("Login prestador");
+    res.send("loginPrestador");
 })
 
 router.get("/admin", (req, res) => {
