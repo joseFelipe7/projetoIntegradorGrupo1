@@ -46,6 +46,9 @@ router.get("/area-contratante/orcamentoUsuario-Bruna", (req, res) => {
     res.render("areaContratante", {view: "orcamentoUsuario"});
 })
 // ...8080/usuario/area-contratante/orcamentoUsuario-Bruna
+router.get("/area-contratante/pagamentos-Bruna", (req, res) => {
+    res.render("areaContratante", {view: "pagamentos"});
+})
 
 router.get("/area-prestador", (req, res) => {
     res.send("Área Usuario Prestador");
