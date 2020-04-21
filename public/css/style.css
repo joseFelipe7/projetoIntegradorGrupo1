@@ -1885,6 +1885,59 @@ input.campoBuscarStyle::placeholder{
   background: rgb(32, 53, 115);
 }
 
+.sessaoGradienteRB{
+  height: 90vh;
+  background: linear-gradient(360deg, #FFFFFF 17.71%, rgba(255, 255, 255, 0.39) 66.15%, rgba(160, 148, 242, 0.49) 82.29%, #A094F2 100%);
+}
+.sessaoComoFuncionaContratante{
+  width: 100%;
+  height: 100%;
+
+  background-image: url(/img/ondaHomeTopo.svg);
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  background-size: contain;
+}
+
+.h-90px {
+  height: 90px!important;
+}
+
+.circuloEtapas {
+  width: 60px;
+  height: 60px;
+
+  font-size: 2.5rem;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+}
+
+.etapaContratante{
+  height: 60px;
+  width: 100%;
+  background-color: #A094F2;
+  border-color: #A094F2;
+  color: #203573;
+
+  border-radius: 10px;
+
+  font-weight: bold;
+  text-align: center;
+}
+
+.etapa:hover div.circuloEtapas, .etapa:hover div.etapaContratante{
+  border-color: #88BF36;
+  background-color: #88BF36;
+  border-color: #7159C1;
+  color: #203573;
+  font-weight: bold;
+  box-shadow: 0 0 0 0.2rem rgba(113, 89, 193,.25);
+}
+
+.imgEtapaContratante img{
+  height: 280px;
+
 /* -------fim home LU------------------------------------------------ */
 /* -------inicio contato LU------------------------------------------------ */
 
