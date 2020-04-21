@@ -358,17 +358,35 @@ nav a {
   color: #230a68;
 }
 .img-footer{
-  width: 30%;
-  height: 30%;
-  margin-left:930px;
-	margin-top:-350px;
-  
+  width: 320px;
+  margin-left:1030px; 
+  margin-top: -300px;
 }
+
 .youtube{
   width: 30%;
   height: 30%;
 
 }
+
+.imagem-rodape{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #203573;
+  color: #ffffff;
+  font-size: 11pt;
+  font-weight: 500;
+  width: 100%;
+  height: 3rem;
+}
+
+.imagem-rodape img{
+  width: 80px;
+  margin-right: 10px;
+}
+
+
 /*acompanhe usuario*/
 .acompanheUsuario{
   width: 100%;
@@ -396,10 +414,7 @@ nav a {
   margin-left:750px;
 	margin-top:-180px;
 }
-.imagem-rodape{
-  width: 100%;
-  height: 100%;
-}
+
 .enviado{
   display: block;
   background-color: rgb(131, 87, 172);
@@ -408,10 +423,8 @@ nav a {
   text-align: center;
   height:350px;
   width: 250px;
-  
- 
-
 }
+
 .imagem-enviado{
   width: 50%;
   height: 35%;
@@ -1816,16 +1829,16 @@ input.campoBuscarStyle::placeholder{
 
 /* -------fim home LU------------------------------------------------ */
 
-/* ------------Começo Login Selecione-----------------*/
+/* ----------Começo Login Selecione - Kevin--------------*/
 
 .login-selecione {
   display: flex;
   justify-content: space-between;
   background: linear-gradient(125deg, rgba(113,89,193,1) 48%, rgba(174,178,242,1) 50%);
-  height: 80vh;
+  height: 40rem;
 }
 
-section {
+.titulos-setas {
   align-self: center;
   display: flex;
   justify-content: space-between;
@@ -1834,25 +1847,25 @@ section {
   width: 40rem;
 }
 
-section .texto-prestador {
+.titulos-setas .texto-prestador {
   align-self: flex-start;
   color: #A094F2;
   text-align: right;
-  width: 12rem;
+  width: 13rem;
 }
 
-section .texto-prestador h3 {
+.titulos-setas .texto-prestador h3 {
   margin-bottom: 0;
 }
 
-section .texto-cliente {
+.titulos-setas .texto-contratante {
   align-self: flex-end;
   color: #7159c1;
   width: 12rem;
   margin-left: 1rem;
 }
 
-section .texto-cliente h3 {
+.titulos-setas .texto-contratante h3 {
   margin-bottom: 0;
 }
 
@@ -1863,7 +1876,7 @@ section .texto-cliente h3 {
   align-items: center;
   align-self: flex-start;
   height: 50vh;
-  width: 27vw;
+  width: 28vw;
   margin-top: 4rem;
 }
 
@@ -1886,7 +1899,7 @@ section .texto-cliente h3 {
   color: #7159c1;
 }
 
-.entre-cliente {
+.entre-contratante {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1896,11 +1909,11 @@ section .texto-cliente h3 {
   width: 30vw;
 }
 
-.entre-cliente img {
+.entre-contratante img {
   width: 500px;
 }
 
-.entre-cliente a {
+.entre-contratante a {
   border: 2px solid #7159c1;
   border-radius: 5px;
   color: #ffffff;
@@ -1910,9 +1923,490 @@ section .texto-cliente h3 {
   padding: 0.5rem 2.5rem;
 }
 
-.entre-cliente a:hover {
+.entre-contratante a:hover {
   background-color: #7159c1;
   color: #aeb2f2;
 }
 
-/* --------------Fim Login Selecione------------------*/
+/* ------------Fim Login Selecione - Kevin---------------*/
+
+/* -----------Começo Login Prestador - Kevin-------------*/
+
+.login-prestador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #7159c1;
+  height: 40rem;
+}
+
+.login-prestador .img-prestador {
+  max-width: 580px;
+  margin-right: 2rem;
+}
+
+.form-prestador h2 {
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.form-prestador {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #AEB2F2;
+  border-radius: 5px;
+  height: 35rem;
+  width: 23rem;
+  margin-left: 2rem;
+}
+
+.form-prestador form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-prestador form .campo-prestador {
+  background-color: #7159c1;
+  border: 2px solid #7159c1;
+  border-radius: 5px;
+  color: #AEB2F2;
+  font-size: 12pt;
+  font-weight: 500;
+  margin-bottom: 15px;
+  height: 2.5rem;
+  width: 18rem;
+  padding-left: 5px;
+}
+
+ .form-prestador form .campo-prestador::placeholder {
+  color: #AEB2F2;
+  font-weight: 500;
+  padding-left: 2px;
+}
+
+.form-prestador form .check-prestador {
+  align-self: flex-start;
+  color: #7156c1;
+  cursor: pointer;
+  font-size: 11pt;
+  font-weight: 500;
+  margin-left: 8px;
+  margin-bottom: 10px;
+}
+
+.form-prestador form .check-prestador:hover {
+  color: #ffffff;
+}
+
+.form-prestador form .check-prestador #checkbox-lembrePrestador[type=checkbox] {
+  cursor: pointer;
+}
+
+.form-prestador form .entrar-prestador {
+  background-color: #AEB2F2;
+  border: 3px solid #7156c1;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0.2rem 2rem;
+}
+
+.form-prestador .entrar-prestador:hover {
+  background-color: #7156c1;
+  color: #AEB2F2;
+}
+
+.form-prestador p {
+  color: #ffffff;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 2px;
+}
+
+.form-prestador .faca-loginPrestador {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #ffffff;
+  border: 5px solid #7159c1;
+  border-radius: 5px;
+  height: 3rem;
+  width: 10rem;
+}
+
+.form-prestador .faca-loginPrestador img, a+img{
+  width: 28px;
+}
+
+.form-prestador #esqueceu-prestador {
+  color: #ffffff;
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: 2rem;
+}
+
+.form-prestador #esqueceu-prestador:hover {
+  color: #7159c1;
+}
+
+/* -----------Fim Login Prestador - Kevin--------------*/
+
+/* ---------Começo Login Contratante - Kevin-----------*/
+
+.login-contratante {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #AEB2F2;
+  height: 40rem;
+}
+
+.login-contratante .img-contratante {
+  max-width: 600px;
+  margin-left: 2rem;
+}
+
+.form-contratante h2 {
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.form-contratante {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #7159c1;
+  border-radius: 5px;
+  height: 35rem;
+  width: 23rem;
+  margin-right: 2rem;
+}
+
+.form-contratante form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-contratante form .campo-contratante {
+  background-color: #aeb2f2;
+  border: 2px solid #aeb2f2;
+  border-radius: 5px;
+  color: #7159c1;
+  font-size: 12pt;
+  font-weight: 500;
+  margin-bottom: 15px;
+  height: 2.5rem;
+  width: 18rem;
+  padding-left: 5px;
+}
+
+ .form-contratante form .campo-contratante::placeholder {
+  color: #7159c1;
+  font-weight: 500;
+  padding-left: 2px;
+}
+
+.form-contratante form .check-contratante {
+  align-self: flex-start;
+  color: #aeb2f2;
+  cursor: pointer;
+  font-size: 11pt;
+  font-weight: 500;
+  margin-left: 8px;
+  margin-bottom: 10px;
+}
+
+.form-contratante form .check-contratante:hover {
+  color: #ffffff;
+}
+
+.form-contratante form .check-contratante #checkbox-lembreContratante[type=checkbox] {
+  cursor: pointer;
+}
+
+.form-contratante form .entrar-contratante {
+  background-color: #7156c1;
+  border: 3px solid #aeb2f2;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0.2rem 2rem;
+}
+
+.form-contratante .entrar-contratante:hover {
+  background-color: #aeb2f2;
+  color: #7156c1;
+}
+
+.form-contratante p {
+  color: #ffffff;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 2px;
+}
+
+.form-contratante .faca-loginContratante {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #ffffff;
+  border: 5px solid #aeb2f2;
+  border-radius: 5px;
+  height: 3rem;
+  width: 10rem;
+}
+
+.form-contratante .faca-loginContratante img, a+img{
+  width: 28px;
+}
+
+.form-contratante #esqueceu-contratante {
+  color: #ffffff;
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: 2rem;
+}
+
+.form-contratante #esqueceu-contratante:hover {
+  color: #aeb2f2;
+}
+
+/* ---------Fim Login Contratante - Kevin-----------*/
+
+/* -------Começo Cadastro selecione - Kevin---------*/
+
+.cadastro-selecione {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40rem;
+  width: 99vw;
+}
+
+.cadastro-selecione1 {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  background-color: #7156c1;
+  color: #ffffff;
+  height: 100%;
+  width: 50%;
+}
+
+.cadastro-selecione1 h3 {
+  border: 3px solid #aeb2f2;
+  border-radius: 7px;
+  padding: 0.5rem;
+}
+
+.cadastro-selecione1 img {
+  width: 450px;
+}
+
+.cadastro-selecione1:hover {
+  color: #aeb2f2;
+  transition: 0.3s;
+  transform: scale(1.1);
+  z-index: 5;
+}
+
+.cadastro-selecione2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #aeb2f2;
+  color: #ffffff;
+  height: 100%;
+  width: 50%;
+}
+
+.cadastro-selecione2 h3 {
+  border: 3px solid #7159C1;
+  border-radius: 7px;
+  padding: 0.5rem;
+}
+
+.cadastro-selecione2 img {
+  width: 600px;
+}
+
+.cadastro-selecione2:hover {
+  color: #7a63c0;
+  transition: 0.3s;
+  transform: scale(1.1);
+  z-index: 5;
+}
+
+/* ---------Fim Cadastro selecione - Kevin----------*/
+
+/* -------Começo Cadastro prestador - Kevin---------*/
+
+.cadastro-prestador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #aeb2f2;
+  height: 85rem;
+}
+
+.form-cadastroPrestador {
+  background-color: #7159c1;
+  border-radius: 1rem;
+  box-shadow: -10px 12px 10px 5px #000000a1;
+  height: 78rem;
+}
+
+.form-cadastroPrestador > .prestador-titulo, .prestador-subTitulo {
+  color: #88BF36;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-cadastroPrestador > form > .form-row > .form-group > label {
+  color: #a094f2;
+  cursor: pointer;
+  margin-left: 0.2rem;
+  margin-bottom: 0.1rem;
+}
+
+.form-cadastroPrestador > form > .form-row > .form-group > input {
+  border: 3px solid #a094f2;
+  border-radius: 5px;
+  color: #7156c1;
+  cursor: pointer;
+  font-size: 11pt;
+  font-weight: 500;
+}
+
+.form-cadastroPrestador > form > .form-row > .form-group > input::placeholder {
+  color: #7156c1;
+  font-size: 11pt;
+  font-weight: 500;
+}
+
+.form-cadastroPrestador > form > .form-row > .form-group > select {
+  border: 3px solid #a094f2;
+  border-radius: 5px;
+  color: #7156c1;
+  cursor: pointer;
+  font-size: 11pt;
+  font-weight: 500;
+}
+
+.form-cadastroPrestador > form > .form-row > .form-group > select > option {
+  color: #7156c1;
+  font-size: 11pt;
+  font-weight: 500;
+}
+
+.form-cadastroPrestador > form > button {
+  background-color: #88BF36;
+  border: 1px solid #88BF36;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 14pt;
+  font-weight: 500;
+  height: 2.5rem;
+  width: 8rem;
+  margin-top: 1rem;
+}
+
+.form-cadastroPrestador > form > button:hover {
+  background-color: #89b645;
+  transition: 0.2s;
+}
+
+/* ---------Fim Cadastro prestador - Kevin----------*/
+
+/* -----Começo Cadastro contratante - Kevin--------*/
+
+.cadastro-contratante {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #7156c1;
+  height: 70rem;
+}
+
+.form-cadastroContratante {
+  background-color: #aeb2f2;
+  border-radius: 1rem;
+  box-shadow: -10px 12px 10px 5px #000000a1;
+  height: 60rem;
+}
+
+.form-cadastroContratante > .contratante-titulo, .contratante-subTitulo {
+  color: #638a29;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-cadastroContratante > form > .form-row > .form-group > label {
+  color: #7156c1;
+  cursor: pointer;
+  margin-left: 0.2rem;
+  margin-bottom: 0.1rem;
+}
+
+.form-cadastroContratante > form > .form-row > .form-group > input {
+  border: 3px solid #7156c1;
+  border-radius: 5px;
+  color: #a094f2;
+  cursor: pointer;
+  font-size: 11pt;
+  font-weight: 500;
+}
+
+.form-cadastroContratante > form > .form-row > .form-group > input::placeholder {
+  color: #a094f2;
+  font-size: 11pt;
+  font-weight: 500;
+}
+
+.form-cadastroContratante > form > .form-row > .form-group > select {
+  border: 3px solid #7156c1;
+  border-radius: 5px;
+  color: #a094f2;
+  cursor: pointer;
+  font-size: 11pt;
+  font-weight: 500;
+}
+
+.form-cadastroContratante > form > .form-row > .form-group > select > option {
+  color: #a094f2;
+  font-size: 11pt;
+  font-weight: 500;
+}
+
+.form-cadastroContratante > form > button {
+  background-color: #89b645;
+  border: 1px solid #89b645;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 14pt;
+  font-weight: 500;
+  height: 2.5rem;
+  width: 8rem;
+  margin-top: 1.5rem;
+}
+
+.form-cadastroContratante > form > button:hover {
+  background-color: #93c549;
+  border: 1px solid #93c549;
+  transition: 0.2s;
+}
+
+/* ------Fim Cadastro contratante - Kevin-------*/

@@ -7,11 +7,11 @@ router.get("/", (req, res) => {
 })
 
 router.get("/contratante", (req, res) => {
-    res.send("loginContratante");
+    res.render("loginContratante");
 })
 
 router.get("/prestador", (req, res) => {
-    res.send("loginPrestador");
+    res.render("loginPrestador");
 })
 
 router.get("/admin", (req, res) => {
