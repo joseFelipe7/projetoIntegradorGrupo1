@@ -1,58 +1,60 @@
-<aside class="conatiner d-flex">
+  <div class="row w-100 d-flex justify-content-center m-0">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-8 p-0 m-0 bg-light">
+      <aside class="conatiner d-flex" >
+        <section class="barra-lateral">
+          <div class="foto-perfil">
+            <div class="icones">
+              <a href="#" class="botao-comunicacao"><img src="/img/phone.png" alt="Telefone"></a>
+              <a href="#" class="usuario"><img src="/img/user.png" alt="Usuário"></a>
+              <a href="#" class="botao-comunicacao"><img src="/img/mail.png" alt="Email"></a>
+            </div>
+            <div class="dados">
+              <a href="#">
+                <h6>Jane Doe</h6>
+              </a>
+              <a href="#">Alguma Informação</a>
+            </div>
+          </div>
 
-  <section class="barra-lateral">
+          <div class="opcoes">
+              <a href="/usuario/area-contratante/meus-dados"><img src="/img/meus-dados.png" alt="Meus Dados"><p>Meus Dados</p></a>
+              <hr>
+              <a href="/usuario/area-contratante/pedidos"><img src="/img/pedidos.png" alt="Pedidos"><p>Pedidos</p></a>
+              <hr>
+              <a href="/usuario/area-contratante/acompanhe"><img src="/img/acompanhe.png" alt="Acompanhe"><p>Acompanhe</p></a>
+              <hr>
+              <a href="/usuario/area-contratante/orcamentos"><img src="/img/orcamento.png" alt="Orçamentos"><p>Orçamentos</p></a>
+              <hr>
+              <a href="/usuario/area-contratante/historico"><img src="/img/historico.png" alt="Históricos"><p>Histórico</p></a>
+              <hr>
+              <a href="/usuario/area-contratante/favoritos"><img src="/img/favorito.png" alt="Favoritos"><p>Favoritos</p></a>
+              <hr>
+              <a href="/usuario/area-contratante/cupons"><img src="/img/cupons.png" alt="Cupons"><p>Cupons</p></a>
+              <hr>
+          </div>
+          
+        </section>
 
-    <div class="foto-perfil">
-      <div class="icones">
-        <a href="#" class="botao-comunicacao"><img src="/img/phone.png" alt="Telefone"></a>
-        <a href="#" class="usuario"><img src="/img/user.png" alt="Usuário"></a>
-        <a href="#" class="botao-comunicacao"><img src="/img/mail.png" alt="Email"></a>
-      </div>
-      <div class="dados">
-        <a href="#">
-          <h6>Jane Doe</h6>
-        </a>
-        <a href="#">Alguma Informação</a>
-      </div>
+        <section class="barra-superior">
+          <div class="sessao">
+            <a href="#">Sessão Atual</a>
+          </div>
+          <div class="caminho-pagina">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">/ Login</a></li>
+              <li><a href="#">/ Área Usuário</a></li>
+            </ul>
+          </div>
+
+          <!-- cards área usuario -->
+          <%- include("../include/cardsUsuario.ejs") %> 
+
+          <!-- subtela carregada de acordo com a rota acessada -->
+          <%- include("../"+view+".ejs") %> 
+
+        </section>
+
+      </aside>
     </div>
-
-    <div class="opcoes">
-        <a href="/usuario/area-contratante/meus-dados"><img src="/img/meus-dados.png" alt="Meus Dados"><p>Meus Dados</p></a>
-        <hr>
-        <a href="/usuario/area-contratante/pedidos"><img src="/img/pedidos.png" alt="Pedidos"><p>Pedidos</p></a>
-        <hr>
-        <a href="/usuario/area-contratante/acompanhe"><img src="/img/acompanhe.png" alt="Acompanhe"><p>Acompanhe</p></a>
-        <hr>
-        <a href="/usuario/area-contratante/orcamentos"><img src="/img/orcamento.png" alt="Orçamentos"><p>Orçamentos</p></a>
-        <hr>
-        <a href="/usuario/area-contratante/historico"><img src="/img/historico.png" alt="Históricos"><p>Histórico</p></a>
-        <hr>
-        <a href="/usuario/area-contratante/favoritos"><img src="/img/favorito.png" alt="Favoritos"><p>Favoritos</p></a>
-        <hr>
-        <a href="/usuario/area-contratante/cupons"><img src="/img/cupons.png" alt="Cupons"><p>Cupons</p></a>
-        <hr>
-    </div>
-    
-  </section>
-
-  <section class="barra-superior">
-    <div class="sessao">
-      <a href="#">Sessão Atual</a>
-    </div>
-    <div class="caminho-pagina">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">/ Login</a></li>
-        <li><a href="#">/ Área Usuário</a></li>
-      </ul>
-    </div>
-
-    <!-- cards área usuario -->
-    <%- include("../include/cardsUsuario.ejs") %> 
-
-    <!-- subtela carregada de acordo com a rota acessada -->
-    <%- include("../"+view+".ejs") %> 
-
-  </section>
-
-</aside>
+  </div>

@@ -763,20 +763,20 @@ nav a {
   transition: 0.4s;
   font: 20px;
   outline: none;
-  -webkit-box-shadow: 0px 5px 5px rgba(50, 50, 50, 0.77);
-  -moz-box-shadow:    0px 5px 5px rgba(50, 50, 50, 0.77);
-  box-shadow:         0px 5px 5px rgba(50, 50, 50, 0.77);
+  -webkit-box-shadow: 0px 9px 5px rgba(50, 50, 50, 0.77);
+  -moz-box-shadow:    0px 9px 5px rgba(50, 50, 50, 0.77);
+  box-shadow:         0px 9px 5px rgba(50, 50, 50, 0.77);
 }
 
 .accordion::after{
-  content: '\02C5';
+  content:  url('/img/setaAbaixo.png');
+  padding-right: 15px;
   font-size: 50px;
   float: right;
-  
   margin-bottom: 0;
 }
 .active::after{
-  /* content: '\02C4'; */   
+ /* content: url('/img/setaAcima.png');*/ 
 }
 .panel{
   
@@ -855,9 +855,9 @@ nav a {
   height: 30px;
   background-color: #88BF36;
   z-index: 2;
-  -webkit-box-shadow: 0px 5px 5px rgba(50, 50, 50, 0.77);
-  -moz-box-shadow:    0px 5px 5px rgba(50, 50, 50, 0.77);
-  box-shadow:         0px 5px 5px rgba(50, 50, 50, 0.77);
+  -webkit-box-shadow: 0px 9px 5px rgba(50, 50, 50, 0.77);
+  -moz-box-shadow:    0px 9px 5px rgba(50, 50, 50, 0.77);
+  box-shadow:         0px 9px 5px rgba(50, 50, 50, 0.77);
   
 }
 .rodape-orcamento-usuario{
@@ -871,10 +871,11 @@ nav a {
   padding: 10px;
   color: #203573;
   
+  
 }
 .detalhes-orcamento-usuario{
   width: 100%;
-  padding: 10px;
+  padding: 30px 20px;
   color: #203573;
   }
   .detalhes-orcamento-usuario p{
@@ -882,7 +883,10 @@ nav a {
     display: inline;
   }
   #calendario-ou{
-    /*background-image: url('/img/ou-bg-img1.png');*/
+    background-image: url('/img/ou-bg-img1.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    
     
   }
   .itens-orcamento-usuario p{
@@ -890,15 +894,61 @@ nav a {
     display: inline;
   }
   .botaofinal-orcamento-usuario{
-
+    display: flex;
     width: 100%;
     background-color: #88BF36;
+    color: #ffffff;
     padding: 10px;
+    padding-right: 0px;
+    -webkit-box-shadow: 0px -9px 5px rgba(50, 50, 50, 0.77);
+    -moz-box-shadow:    0px -9px 5px rgba(50, 50, 50, 0.77);
+    box-shadow:         0px -9px 5px rgba(50, 50, 50, 0.77);
     
+  }
+  div.btns-ou{
+    width: 90%;
+  }
+  div.link-ou{
+    width: 10%;
+  }
+  button#btnrejeitar-ou{
+    background-color: #88BF36;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 15%;
+    padding: 0px 20px;
+    margin: 15px;
+  }
+  button#btnaceito-ou{
+    background-color: #203573;
+    color: #ffffff;
+    border: 2px solid #7159C1;
+    border-radius: 15%;
+    padding: 0px 20px;
+    margin: 15px;
+  }
+  button#btnpagar-ou{
+    background-color: #7159C1;
+    color: #ffffff;
+    border: 2px solid #A094F2;
+    border-radius: 15%;
+    padding: 0px 20px;
+    margin: 15px;
+    margin-right: 10px;
+    float: right;
+  }
+  .botaofinal-orcamento-usuario a{
+    content:  url('/img/setaDireitaou.png');
+    float: right;
+    padding-right: 0px;
+
   }
   .especificacoes-o-u{
     float: right;
 
+  }
+  .tr-ou-bgcolor1{
+    background-color: #ffffff;
   }
 .inicio-servico{
   width: 50%;
@@ -941,6 +991,7 @@ nav a {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  padding: 30px 20px;
   
   
 }
@@ -948,11 +999,13 @@ nav a {
 .produtos-checkbox{
   float: left;
   width: 50%;
+  padding: 20px;
  
 }
 .form-itens-orca-usuario{
   float: left;
   width: 50%;
+  padding: 20px;
 }
 .resumo-ou-ap{
   float: left;
@@ -986,6 +1039,25 @@ table.table-bordered-2{
   width: 100%;
   color: #203573;
   }
+div.resumo-ou{
+  padding: 30px 20px;
+}
+table#tableButton-ou tr td{
+  cursor: pointer;
+}
+div.calendario-ou{
+  width: 50%;
+}
+
+table#tableButton-ou td:hover {
+  background-color: #CFCFCF;
+}
+table#tableButton-ou td.selecionado {
+  background-color: #28a745;
+  -webkit-box-shadow: 5px 5px 5px rgba(50, 50, 50, 0.77);
+  -moz-box-shadow:    5px 5px 5px rgba(50, 50, 50, 0.77);
+  box-shadow:         5px 5px 5px rgba(50, 50, 50, 0.77);
+}
 
 
 
@@ -994,7 +1066,7 @@ table.table-bordered-2{
 /*---------Area Chat----------------------------------------------*/
 .container-chat{
   background-color: #ffffff;
-  height: 90%;
+  height: 400px;
   width: 100%;
   border-radius: 5px;
   overflow-y: scroll;
@@ -1011,85 +1083,83 @@ table.table-bordered-2{
   background: #7159C1; 
   border-radius: 5px;
 }
-/*-----------header-chat------------------------------*/
-.item-list-chat-header{
+
+.container-menssage{
+  height: 120px;
+  width: 100%;
+  margin-bottom: 1px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: solid 1px;
+ 
 }
-.title-header-chat{
-  color: #7159C1;
-}
-.search-input-chat{
-  border:solid 1px #000000;
-  border-radius: 4px;
-  height: 30px;
-}
-.search-input-chat input{
-  border:none;
-}
-.search-input-chat input:focus{
-  outline:none;
-}
-.search-input-chat img{
-  height: 20px;
-}
-/*------------------Fim Header--------------------*/
-.item-list-chat{
-  height: 25%;
+/*Lista do chat*/
+.avatar-chat{
+  width: 20%;
+  height: 100%;
   display: flex;
-  border-bottom: solid 1px #000000;
-  
-}
-.img-thumb-chat-list{
-  width: 15%;
-  background-color: lavender;
-  display: flex;
-  align-items: center;
   justify-content: center;
-}
-.img-thumb-chat-list img{
-  width: 110px;
-  border-radius: 80px;
-}
-.menssage-chat-list{
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-}
-.menssage-chat-list h4{
-  height: 15%;
-}
-.menssage-chat-preview{
-  height: 60%;
-  background-color: lightblue;
-  display: block;
-  padding: 4px;
-  
-  
-}
-.menssage-chat-preview p{ /*
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;*/
-}
-.menssage-chat-footer{
-  height: 15%;
-  display: flex;
-  align-items: baseline;
-}
-.status-is-logged{
-  width: 10px;
-  height: 10px;
-  border-radius: 5px;
-  background-color: lightgreen;
-  margin-right:5px;
+  align-items: center;
+  background-color: #203573;
+} 
+.avatar-chat img{
+  max-width: 90px;
 }
 
-.notify-chat-list{
-  width: 15%;
-  background-color: lavender;
+.chat-content-main{
+  width: 70%;
+  height: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  
+}
+
+.chat-content-main .title, .chat-content-main .menssage, .chat-content-main .status{
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.chat-content-main .menssage{
+  color: rgb(97, 97, 97);
+}
+.chat-content-main .status{
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+  justify-content: space-between;
+}
+.color-notification{
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  background-color: #28a745;
+  margin-right: 4px;
+}
+
+.notify-new-menssage{
+  width: 10%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  border-left: solid 1px #203573;
+}
+.notify-new-menssage .news{
+  width: 90%;
+  height: 30px;
+  background-color: #A094F2;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.notify-new-menssage .news img{
+  width: 20px;
+  height: 20px;
 }
 /*------------Fim Area Chat-----------------------------------------*/
 /*-----------Inicio Login Admin---------------------*/
@@ -1418,6 +1488,9 @@ font-size: 0.8rem;
 .bg-roxoClaro{
 background-color: #AEB2F2 !important;
 }
+.bg-roxoFundo{
+  background-color: rgb(213, 216, 255) !important;
+  }
 .bg-roxoRS{
   background-color: #7159C1 !important;
   }
@@ -1775,8 +1848,6 @@ input.campoBuscarStyle::placeholder{
 
   
 }
-
-
 .scroolCardsPrestadorHome{
   width: 100%;
   height: 400px;
@@ -1817,7 +1888,7 @@ input.campoBuscarStyle::placeholder{
  
 /* Handle */
 .scroolCardsPrestadorHome::-webkit-scrollbar-thumb {
-  background: rgb(113, 89, 193);; 
+  background: rgb(113, 89, 193); 
   border-radius: 10px;
   box-shadow: inset 0 0 6px rgba(113, 89, 193,.50);
 }
@@ -1827,7 +1898,75 @@ input.campoBuscarStyle::placeholder{
   background: rgb(32, 53, 115);
 }
 
+.sessaoGradienteRB{
+  height: 90vh;
+  background: linear-gradient(360deg, #FFFFFF 17.71%, rgba(255, 255, 255, 0.39) 66.15%, rgba(160, 148, 242, 0.49) 82.29%, #A094F2 100%);
+}
+.sessaoComoFuncionaContratante{
+  width: 100%;
+  height: 100%;
+
+  background-image: url(/img/ondaHomeTopo.svg);
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  background-size: contain;
+}
+
+.h-90px {
+  height: 90px!important;
+}
+
+.circuloEtapas {
+  width: 60px;
+  height: 60px;
+
+  font-size: 2.5rem;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+}
+
+.etapaContratante{
+  height: 60px;
+  width: 100%;
+  background-color: #A094F2;
+  border-color: #A094F2;
+  color: #203573;
+
+  border-radius: 10px;
+
+  font-weight: bold;
+  text-align: center;
+}
+
+.etapa:hover div.circuloEtapas, .etapa:hover div.etapaContratante{
+  border-color: #88BF36;
+  background-color: #88BF36;
+  border-color: #7159C1;
+  color: #203573;
+  font-weight: bold;
+  box-shadow: 0 0 0 0.2rem rgba(113, 89, 193,.25);
+}
+
+.imgEtapaContratante img{
+  height: 280px;
+
 /* -------fim home LU------------------------------------------------ */
+/* -------inicio contato LU------------------------------------------------ */
+
+.corpoContato{
+  background-image: url(/img/ondaHomeTopo.svg);
+  background-repeat: no-repeat;
+  background-position: 100% 51%;
+}
+
+.formContatoSistema{
+  background-color: rgba(32, 53, 115,.50);
+  color: #203573;
+  font-weight: bold;
+}
+
+/* -------fim contato LU------------------------------------------------ */
 
 /* ----------Começo Login Selecione - Kevin--------------*/
 
@@ -1838,6 +1977,7 @@ input.campoBuscarStyle::placeholder{
   height: 40rem;
 }
 
+<<<<<<< HEAD
 .titulos-setas {
   align-self: center;
   display: flex;
@@ -1848,6 +1988,9 @@ input.campoBuscarStyle::placeholder{
 }
 
 .titulos-setas .texto-prestador {
+=======
+section .texto-prestador {
+>>>>>>> c04aa77d087a8efea7b7d0125dbd7f4ca8e7428f
   align-self: flex-start;
   color: #A094F2;
   text-align: right;
@@ -2182,6 +2325,7 @@ input.campoBuscarStyle::placeholder{
   color: #aeb2f2;
 }
 
+<<<<<<< HEAD
 /* ---------Fim Login Contratante - Kevin-----------*/
 
 /* -------Começo Cadastro selecione - Kevin---------*/
@@ -2410,3 +2554,51 @@ input.campoBuscarStyle::placeholder{
 }
 
 /* ------Fim Cadastro contratante - Kevin-------*/
+=======
+/* --------------Fim Login Selecione------------------*/
+
+/*pagamentos--------------------------------------------*/
+
+.btn.btn-primary.btn-lg.btn-block{
+  background-color: #88BF36;
+  border-color: #88BF36;
+}
+.btn.btn-pagamentos {
+  background-color: #203573;
+
+}
+.info-servicos-pagamentos{
+  display: flex;
+  background-color: #7159C1;
+  color: #ffffff;
+  width: 100%;
+  margin-bottom: 15px;
+  -webkit-box-shadow: 0px 5px 5px rgba(50, 50, 50, 0.77);
+  -moz-box-shadow:    0px 5px 5px rgba(50, 50, 50, 0.77);
+  box-shadow:         0px 5px 5px rgba(50, 50, 50, 0.77);
+
+
+}
+.espaco-orcamento-pagamentos{
+  width: 100%;
+  background-color: #7159C1;
+  height: 30px;
+  -webkit-box-shadow: 0px -5px 5px rgba(50, 50, 50, 0.77);
+  -moz-box-shadow:    0px -5px 5px rgba(50, 50, 50, 0.77);
+  box-shadow:         0px -5px 5px rgba(50, 50, 50, 0.77);
+
+}
+.pagdireita{
+  float: left;
+  width: 50%;
+  padding: 20px;
+  padding-right: 30px;
+  padding-bottom: 0%;
+}
+.pagesquerda{
+  width: 50%;
+  padding: 20px;
+  padding-right: 30px;
+  padding-bottom: 0%;
+}
+>>>>>>> c04aa77d087a8efea7b7d0125dbd7f4ca8e7428f

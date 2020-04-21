@@ -30,7 +30,7 @@ router.get("/area-contratante/historico", (req, res) => {
 router.get("/area-contratante/chat", (req, res) => {
     res.render("areaContratante", {view: "chat"});
 })
-// ...8080/usuario/area-contratante/historico
+// ...8080/usuario/area-contratante/chat
 
 router.get("/area-contratante/favoritos", (req, res) => {
     res.render("areaContratante", {view: "favoritosAreaContratante"});
@@ -46,6 +46,9 @@ router.get("/area-contratante/orcamentoUsuario-Bruna", (req, res) => {
     res.render("areaContratante", {view: "orcamentoUsuario"});
 })
 // ...8080/usuario/area-contratante/orcamentoUsuario-Bruna
+router.get("/area-contratante/pagamentos-Bruna", (req, res) => {
+    res.render("areaContratante", {view: "pagamentos"});
+})
 
 router.get("/area-prestador", (req, res) => {
     res.send("Área Usuario Prestador");
