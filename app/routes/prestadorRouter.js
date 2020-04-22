@@ -7,8 +7,9 @@ router.get("/single", (req, res) => {
 })
 
 router.get("/lista", (req, res) => {
-    res.send("Lista de Prestadores");
+    res.render("listaPrestadores");
 })
+
 router.get("/single/cadastro-servicos", (req, res) => {
     res.render("areaPrestador", {view: "cadastroServiçosPrestador"});
 })

@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 
-body {
+html, body {
   font-family: 'Ubuntu', sans-serif;
+  margin: 0;
+  padding: 0;
 }
+
 /*Inicio Header-------------------*/
 .nav-custom {
   display: flex;
@@ -1737,8 +1740,9 @@ input.campoBuscarStyle::placeholder{
   box-shadow: 0 0 0 0.2rem rgba(113, 89, 193,.25);
 }
 
-.imgEtapaContratante img{
+.imgEtapaContratante img {
   height: 280px;
+}
 
 /* -------fim home LU------------------------------------------------ */
 /* -------inicio contato LU------------------------------------------------ */
