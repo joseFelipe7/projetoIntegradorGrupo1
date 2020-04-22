@@ -1722,6 +1722,8 @@ input.campoBuscarStyle::placeholder{
   color: #ffffff;
   font-weight: bold;
   text-align: center;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
 }
 
 .etapaContratante{
@@ -1735,6 +1737,10 @@ input.campoBuscarStyle::placeholder{
 
   font-weight: bold;
   text-align: center;
+
+  font-style: normal;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
 }
 
 .etapa:hover div.circuloEtapas, .etapa:hover div.etapaContratante{
@@ -1778,20 +1784,138 @@ input.campoBuscarStyle::placeholder{
   position: absolute;
   top: 15px;
   
-  width: 70%;
+  width: 60%;
+  height: 60px;
+
+  color: #203573;
+
+  font-weight: bold;
+  text-align: center;
 
   font-style: normal;
   font-weight: bold;
   font-size: 1.5rem;
   line-height: 1.5rem;
-  
-  text-align: center;
 
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
   background-color: #88BF36;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
-  border-radius: 15px;
+  border-radius: 30px;
+}
+.faixaAtras:hover {
+  border-color: #7159C1;
+  background-color: #7159C1;
+  border-color: rgb(136, 191, 54);
+  color: #ffffff;
+  box-shadow: 0 0 0 0.2rem rgba(136, 191, 54,.25);
+}
+
+.faixaNumPrestadores{
+  position: absolute;
+  top: 15px;
+
+  width: 80%;
+  height: 60px;
+
+  color: #ffffff;
+
+  font-weight: bold;
+  text-align: center;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  background-color: #7159C1;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 30px;
+}
+.faixaNumPrestadores:hover {
+  border-color: #7159C1;
+  background-color: #88BF36;
+  border-color: rgb(136, 191, 54);
+  color: #203573;
+  box-shadow: 0 0 0 0.2rem rgba(136, 191, 54,.25);
+}
+
+/* sessao prestador */
+.sessaoGradienteRBprestador{
+  height: 90vh;
+  background-color: #ffffff;
+}
+@media(max-width:768px){
+  .sessaoGradienteRBprestador{
+    height: auto;
+  }
+  .contemColsPrestador{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+.sessaoComoFuncionaPrestador{
+  width: 100%;
+  height: 100%;
+
+  background-image: url(/img/ondaHomeTopoVerde.svg);
+  background-repeat: no-repeat;
+  background-position: 0% 100%;
+  background-size: contain;
+}
+
+.circuloEtapasPrestador {
+  width: 60px;
+  height: 60px;
+
+  font-size: 2.5rem;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+
+  background-color: #88BF36;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+.etapaPrestador{
+  height: 60px;
+  width: 100%;
+  background-color: #88BF36;
+  border-color: #88BF36;
+  color: #233A00;
+
+  border-radius: 10px;
+
+  font-weight: bold;
+  text-align: center;
+
+  font-style: normal;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+.etapa:hover div.circuloEtapasPrestador, .etapa:hover div.etapaPrestador{
+  color: #203573;
+  font-weight: bold;
+  box-shadow: 0 0 0 0.2rem rgba(113, 89, 193,.25);
+}
+.etapa:hover div.etapaPrestador{
+  border-color: #88BF36;
+  background-color: #7159C1;
+  color: #FFFFFF;
+}
+
+.sessaoHomeHM{
+  width: 100%;
+  height: 100%;
+
+  background-image: url(/img/ondaHomeInversoVerde.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: contain;
 }
 
 /* -------fim home LU------------------------------------------------ */
