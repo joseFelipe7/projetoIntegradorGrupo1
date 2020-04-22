@@ -1925,6 +1925,19 @@ input.campoBuscarStyle::placeholder{
 
 /* -------fim home LU------------------------------------------------ */
 /* -------inicio contato LU------------------------------------------------ */
+.corpoContato{
+  background-image: url(/img/ondaHomeTopo.svg);
+  background-repeat: no-repeat;
+  background-position: 100% 52%;
+}
+
+.formContatoSistema{
+  background-color: rgba(32, 53, 115,.50);
+  color: #203573;
+  font-weight: bold;
+}
+
+/* -------fim contato LU------------------------------------------------ */
 
 .btn.btn-primary.btn-lg.btn-block.bbpbl-bofl{
   background-color: #88BF36;
@@ -1945,20 +1958,6 @@ input.campoBuscarStyle::placeholder{
   -moz-box-shadow:    0px 5px 5px rgba(50, 50, 50, 0.77);
   box-shadow:         0px 5px 5px rgba(50, 50, 50, 0.77);
 }
-.corpoContato{
-  background-image: url(/img/ondaHomeTopo.svg);
-  background-repeat: no-repeat;
-  background-position: 100% 51%;
-}
-
-.formContatoSistema{
-  background-color: rgba(32, 53, 115,.50);
-  color: #203573;
-  font-weight: bold;
-}
-
-/* -------fim contato LU------------------------------------------------ */
-
 
 .espaco-orcamento-pagamentos-bofl{
 

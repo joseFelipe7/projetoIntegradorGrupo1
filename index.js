@@ -43,7 +43,7 @@ app.use("/usuario", rotaAreaUsuario);
 
 app.use("/cadastro", rotaCadastro);
 //...5620/cadastro/prestador
-//...5620/cadastro/usuario
+//...5620/cadastro/contratante
 
 app.use("/login", rotaLogin);
 //...5620/login
