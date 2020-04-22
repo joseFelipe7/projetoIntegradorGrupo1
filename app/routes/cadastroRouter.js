@@ -2,12 +2,16 @@ const express = require("express");
 
 let router = express.Router();
 
+router.get("/", (req, res) => {
+    res.render("cadastroSelecione");
+})
+
 router.get("/contratante", (req, res) => {
-    res.send("cadastro do contratante");
+    res.render("cadastroContratante");
 })
 
 router.get("/prestador", (req, res) => {
-    res.send("cadastro do prestador");
+    res.render("cadastroPrestador");
 })
 
 module.exports = router;

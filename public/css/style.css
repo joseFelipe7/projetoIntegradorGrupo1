@@ -187,140 +187,14 @@ body {
 }
 /*Fim menu navegação*/
 
-/* Configuração de todos ul e li da página */
+/* Configuração de todos ul e li */
 ul, ul li {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* Configuração da barra lateral esquerda de opções */
-.barra-lateral {
-  background-color: #AEB2F2;
-  display: flex;
-  flex-direction: column;
-  height: 45rem;
-  width: 12rem;
-}
-
-.barra-lateral .foto-perfil {
-  background-image: linear-gradient(to right, rgb(136, 191, 54) , rgb(28, 75, 133), rgb(160, 148, 242));
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 9rem;
-}
-
-.barra-lateral .foto-perfil .usuario img {
-  background-color: #ffffff;
-  border-radius: 100px;
-  width: 84px;
-}
-
-.barra-lateral .foto-perfil .botao-comunicacao img {
-  margin-top: 30px;
-  width: 32px;
-}
-
-.barra-lateral .foto-perfil .dados {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.barra-lateral .foto-perfil .dados a h6 {
-  margin: 3px 0;
-  padding: 0;
-}
-
-.barra-lateral .foto-perfil .dados a {
-  color: #ffffff;
-  font-size: 0.8rem;
-  text-decoration: none;
-}
-
-.barra-lateral .opcoes {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.barra-lateral .opcoes a {
-  cursor: pointer;
-  text-decoration: none;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  height: 3.5rem;
-  width: 100%;
-  padding-left: 18px;
-}
-
-.barra-lateral .opcoes a:hover {
-  background-color: #A094F2;
-}
-
-.barra-lateral .opcoes a p {
-  color: #203573;
-  font-weight: 500;
-  margin: 0 2px;
-  padding: 0;
-}
-
-.barra-lateral .opcoes hr {
-  width: 11rem;
-  margin: 0 10px;
-  padding: 0;
-}
-
-/* Configuração da barra superior sessão atual */
-.barra-superior {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.barra-superior .sessao {
-  background-image: linear-gradient(to right,  rgb(160, 148, 242), rgb(28, 75, 133), rgb(136, 191, 54));
-  height: 3.5rem;
-}
-
-.barra-superior .sessao a {
-  background-color: #AEB2F2;
-  border-radius: 5px;
-  color: #203573;
-  font-weight: 700;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0.8rem 0.8rem;
-  height: 2rem;
-  width: 8rem;
-}
-
-.barra-superior .caminho-pagina {
-  background-color: #ffffff;
-  border-bottom-left-radius: 15px;
-}
-
-.barra-superior .caminho-pagina ul {
-  display: flex;
-  justify-content: flex-start;
-  margin-left: 15px;
-}
-
-.barra-superior .caminho-pagina ul li a{
-  color: #7159c1;
-  font-size: 0.8rem;
-  text-decoration: none;
-  margin: 0 2px;
-}
 /*footer*/
-
-
 .container-footer{
   position: relative;
   background-color: #A094F2;
@@ -358,17 +232,35 @@ nav a {
   color: #230a68;
 }
 .img-footer{
-  width: 30%;
-  height: 30%;
-  margin-left:930px;
-	margin-top:-350px;
-  
+  width: 320px;
+  margin-left:1030px; 
+  margin-top: -300px;
 }
+
 .youtube{
   width: 30%;
   height: 30%;
 
 }
+
+.imagem-rodape{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #203573;
+  color: #ffffff;
+  font-size: 11pt;
+  font-weight: 500;
+  width: 100%;
+  height: 3rem;
+}
+
+.imagem-rodape img{
+  width: 80px;
+  margin-right: 10px;
+}
+
+
 /*acompanhe usuario*/
 .acompanheUsuario{
   width: 100%;
@@ -396,10 +288,7 @@ nav a {
   margin-left:750px;
 	margin-top:-180px;
 }
-.imagem-rodape{
-  width: 100%;
-  height: 100%;
-}
+
 .enviado{
   display: block;
   background-color: rgb(131, 87, 172);
@@ -408,10 +297,8 @@ nav a {
   text-align: center;
   height:350px;
   width: 250px;
-  
- 
-
 }
+
 .imagem-enviado{
   width: 50%;
   height: 35%;
@@ -652,91 +539,6 @@ nav a {
   }
 
 }
-
-/* Configuração para tela mobile */
-@media (max-width: 768px) {
-
-  /* Configuração da barra lateral esquerda de opções */
-  .barra-lateral {
-    background-color: #AEB2F2;
-    display: flex;
-    flex-direction: column;
-    height: 45rem;
-    width: 4rem;
-  }
-  
-  .barra-lateral .foto-perfil {
-    height: 7rem;
-  }
-  
-  .barra-lateral .foto-perfil .usuario img {
-    background-color: #ffffff;
-    border-radius: 100px;
-    width: 38px;
-  }
-  
-  .barra-lateral .foto-perfil .botao-comunicacao img {
-    display: none;
-  }
-
-  .barra-lateral .foto-perfil .dados a, h6 {
-    display: none;
-  }
-  
-  .barra-lateral .opcoes {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-  
-  .barra-lateral .opcoes a {
-    display: flex;
-    justify-content: center;
-    height: 3.5rem;
-    width: 100%;
-    padding: 0;
-  }
-
-  .barra-lateral .opcoes a img {
-    width: 32px;
-  }
-
-  .barra-lateral .opcoes a p {
-    display: none;
-  }
-  
-  .barra-lateral .opcoes hr {
-    width: 3rem;
-    margin: 0 8px;
-    padding: 0;
-  }
-
-  /* Configuração da barra superior sessão atual */
-  .barra-superior .sessao {
-    height: 2.5rem;
-  }
-  
-  .barra-superior .sessao a {
-    font-size: 0.9rem;
-    margin: 0.4rem 0.4rem;
-    height: 1.5rem;
-    width: 6.5rem;
-  }
-  
-  .barra-superior .caminho-pagina {
-    background-color: #ffffff;
-    border-bottom-left-radius: 15px;
-  }
-  
-  .barra-superior .caminho-pagina ul {
-    margin-left: 10px;
-  }
-  
-  .barra-superior .caminho-pagina ul li a{
-    font-size: 0.6rem;
-  }
-}
-
 
 /*inicio orcamento-usuario---------------*/
 .accordion{
@@ -1886,8 +1688,17 @@ input.campoBuscarStyle::placeholder{
 }
 
 .sessaoGradienteRB{
-  height: 90vh;
+  height: 100vh;
   background: linear-gradient(360deg, #FFFFFF 17.71%, rgba(255, 255, 255, 0.39) 66.15%, rgba(160, 148, 242, 0.49) 82.29%, #A094F2 100%);
+}
+@media(max-width:768px){
+  .sessaoGradienteRB{
+    height: auto;
+  }
+  .contemColsContratante{
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
 .sessaoComoFuncionaContratante{
   width: 100%;
@@ -1937,6 +1748,51 @@ input.campoBuscarStyle::placeholder{
 
 .imgEtapaContratante img{
   height: 280px;
+}
+
+/* sessao numero de prestadores */
+.sessaoGradienteRT{
+  height: 100vh;
+  background-color: #ffffff;
+}
+@media(max-width:768px){
+  .sessaoGradienteRT{
+    height: auto;
+  }
+  .contemColsNumeroPrestadores{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+.sessaoNumeroPrestadores{
+  width: 100%;
+  height: 100%;
+
+  background-image: url(/img/ondaHomeInverso.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: contain;
+}
+
+.faixaAtras{
+  position: absolute;
+  top: 15px;
+  
+  width: 70%;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  
+  text-align: center;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  background-color: #88BF36;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+}
 
 /* -------fim home LU------------------------------------------------ */
 /* -------inicio contato LU------------------------------------------------ */
@@ -1955,119 +1811,7 @@ input.campoBuscarStyle::placeholder{
 
 /* -------fim contato LU------------------------------------------------ */
 
-/* ------------Começo Login Selecione-----------------*/
-
-.login-selecione {
-  display: flex;
-  justify-content: space-between;
-  background: linear-gradient(125deg, rgba(113,89,193,1) 48%, rgba(174,178,242,1) 50%);
-  height: 80vh;
-}
-
-section .texto-prestador {
-  align-self: flex-start;
-  color: #A094F2;
-  text-align: right;
-  width: 12rem;
-}
-
-section .texto-prestador h3 {
-  margin-bottom: 0;
-}
-
-section .texto-cliente {
-  align-self: flex-end;
-  color: #7159c1;
-  width: 12rem;
-  margin-left: 1rem;
-}
-
-section .texto-cliente h3 {
-  margin-bottom: 0;
-}
-
-.entre-prestador {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-self: flex-start;
-  height: 50vh;
-  width: 27vw;
-  margin-top: 4rem;
-}
-
-.entre-prestador img {
-  width: 400px;
-}
-
-.entre-prestador a {
-  border: 2px solid #aeb2f2;
-  border-radius: 5px;
-  color: #ffffff;
-  cursor: pointer;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 0.5rem 2.5rem;
-}
-
-.entre-prestador a:hover {
-  background-color: #aeb2f2;
-  color: #7159c1;
-}
-
-.entre-cliente {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-self: flex-end;
-  height: 50vh;
-  width: 30vw;
-}
-
-.entre-cliente img {
-  width: 500px;
-}
-
-.entre-cliente a {
-  border: 2px solid #7159c1;
-  border-radius: 5px;
-  color: #ffffff;
-  cursor: pointer;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 0.5rem 2.5rem;
-}
-
-.entre-cliente a:hover {
-  background-color: #7159c1;
-  color: #aeb2f2;
-}
-
-/* --------------Fim Login Selecione------------------*/
-
-/*pagamentos--------------------------------------------*/
-
-.btn.btn-primary.btn-lg.btn-block{
-  background-color: #88BF36;
-  border-color: #88BF36;
-}
-.btn.btn-pagamentos {
-  background-color: #203573;
-
-}
-.info-servicos-pagamentos{
-  display: flex;
-  background-color: #7159C1;
-  color: #ffffff;
-  width: 100%;
-  margin-bottom: 15px;
-  -webkit-box-shadow: 0px 5px 5px rgba(50, 50, 50, 0.77);
-  -moz-box-shadow:    0px 5px 5px rgba(50, 50, 50, 0.77);
-  box-shadow:         0px 5px 5px rgba(50, 50, 50, 0.77);
-
-
+<<<<<<< HEAD
 }
 .espaco-orcamento-pagamentos{
   
@@ -2077,18 +1821,6 @@ section .texto-cliente h3 {
   -webkit-box-shadow: 0px -5px 5px rgba(50, 50, 50, 0.77);
   -moz-box-shadow:    0px -5px 5px rgba(50, 50, 50, 0.77);
   box-shadow:         0px -5px 5px rgba(50, 50, 50, 0.77);
+=======
+>>>>>>> 35dbd36fd20daaa86771bb5d2e54ad82f1af4539
 
-}
-.pagdireita{
-  float: left;
-  width: 50%;
-  padding: 20px;
-  padding-right: 30px;
-  padding-bottom: 0%;
-}
-.pagesquerda{
-  width: 50%;
-  padding: 20px;
-  padding-right: 30px;
-  padding-bottom: 0%;
-}

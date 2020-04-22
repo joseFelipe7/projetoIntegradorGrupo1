@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<%- include('include/head', {title:'ToolsHall - Entrar Contratante'}) %>
+
+<body>
+  <%- include('include/header')%>
+  <%- include('include/menuNav') %>
+
+  <main class="login-contratante">
+
+    <div class="form-contratante">
+
+      <h2>Contratante</h2>
+      <form action="">
+
+        <input class="campo-contratante" type="email" name="email" id="email" placeholder="Email">
+        <input class="campo-contratante" type="password" name="senha" id="senha" placeholder="Senha">
+
+        <label class="check-contratante" for="checkbox-lembreContratante">
+          <input id="checkbox-lembreContratante" type="checkbox" name="selecione" value="Lembre">
+          Lembre de mim
+        </label>
+
+
+        <button class="entrar-contratante" type="submit">ENTRE</button>
+
+      </form>
+
+      <p>Faça login com:</p>
+      <div class="faca-loginContratante">
+        <a href="#"><img src="/img/login-google.png"></a>
+        <a href="#"><img src="/img/login-linkedin.png"></a>
+        <a href="#"><img src="/img/login-facebook.png"></a>
+      </div>
+
+      <a id="esqueceu-contratante" href="#">Esqueceu a senha?</a>
+
+    </div>
+
+    <img class="img-contratante" src="/img/entre-contratante.png" alt="Contratante de Serviços">
+
+  </main>
+
+  <%- include('include/footer') %>
+  <%- include('include/script') %>
+
+</body>
+
+</html>
