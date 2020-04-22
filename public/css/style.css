@@ -7,22 +7,24 @@ html, body {
 }
 
 /*Inicio Header-------------------*/
-.nav-custom {
+.nav-custom-bofl {
   display: flex;
   background-color: #7159C1;
   }
   
-.btn-cadastro-custom {
+.btn-cadastro-custom-bofl {
   color: #A094F2;
   border-color: #A094F2;
   margin-right: 30px;
+  color: #ffffff;
 }
-.btn-login-custom {
+.btn-login-custom-bofl {
   padding: 1px 15px 3px 2px;
   border-radius: 50px;
   background: #88BF36;
+  color: #ffffff;
 }
-.btnI-custom {
+.btnI-custom-bofl {
   padding: 8px;
 }
 /*Fim Header-----------------------*/
@@ -544,7 +546,7 @@ nav a {
 }
 
 /*inicio orcamento-usuario---------------*/
-.accordion{
+.ac-bofl{
   background-color: #88BF36;
   color: #ffffff;
  
@@ -560,7 +562,7 @@ nav a {
   box-shadow:         0px 9px 5px rgba(50, 50, 50, 0.77);
 }
 
-.accordion::after{
+.ac-bofl::after{
   content:  url('/img/setaAbaixo.png');
   padding-right: 15px;
   font-size: 50px;
@@ -570,7 +572,7 @@ nav a {
 .active::after{
  /* content: url('/img/setaAcima.png');*/ 
 }
-.panel{
+.pe-bofl{
   
   background-color: white;
   display: none;
@@ -578,7 +580,7 @@ nav a {
   padding: 0%;
   margin: 0px;
 }
-.descricao-servico-usuario{
+.descricao-servico-usuario-bofl{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -590,7 +592,7 @@ nav a {
   
   
 }
-.info-servicos-usuario{
+.info-servicos-usuario-bofl{
   
   background-color: #7159C1;
   color: #FFFFFF;    
@@ -604,13 +606,13 @@ nav a {
   width: 25%;
   margin: 0%;
 }
-.hr1{
+.hr1-bofl{
   color: #FFFFFF;
   background-color: #FFFFFF;
   height: 1px;
   
 }
-.dados-servicos-usuario{
+.dados-servicos-usuario-bofl{
   display: flex;
   flex-wrap: wrap;
   width: 75%;
@@ -618,14 +620,14 @@ nav a {
   margin: 0px;
   
 }
-.dados-servicos-usuario th{
+.dados-servicos-usuario-bofl th{
   text-align: left;
   color: #203573;
   
   
   
 }
-.tabelaContratante{
+.tabelaContratante-bofl{
   width: 50%;
   padding: 20px;
   padding-bottom: 0px;
@@ -633,7 +635,7 @@ nav a {
   
   
 }
-.tabelaPrestador{
+.tabelaPrestador-bofl{
   border-left:1px solid #BDBDBD;
   width: 50%;
   padding: 20px;
@@ -642,7 +644,7 @@ nav a {
   
   
 }
-.espaco-orcamento-usuario{
+.espaco-orcamento-usuario-bofl{
   width: 100%;
   height: 30px;
   background-color: #88BF36;
@@ -652,12 +654,12 @@ nav a {
   box-shadow:         0px 9px 5px rgba(50, 50, 50, 0.77);
   
 }
-.rodape-orcamento-usuario{
+.rodape-orcamento-usuario-bofl{
   display: flex;
   flex-wrap: wrap;
   width: 100%;
 }
-.itens-orcamento-usuario{
+.itens-orcamento-usuario-bofl{
   width: 100%;
   background-color: #AEB2F2;
   padding: 10px;
@@ -665,27 +667,27 @@ nav a {
   
   
 }
-.detalhes-orcamento-usuario{
+.detalhes-orcamento-usuario-bofl{
   width: 100%;
   padding: 30px 20px;
   color: #203573;
   }
-  .detalhes-orcamento-usuario p{
+  .detalhes-orcamento-usuario-bofl p{
     margin: 0px;
     display: inline;
   }
-  #calendario-ou{
+  #calendario-ou-bofl{
     background-image: url('/img/ou-bg-img1.png');
     background-repeat: no-repeat;
     background-size: 100%;
     
     
   }
-  .itens-orcamento-usuario p{
+  .itens-orcamento-usuario-bofl p{
     margin: 0px;
     display: inline;
   }
-  .botaofinal-orcamento-usuario{
+  .botaofinal-orcamento-usuario-bofl{
     display: flex;
     width: 100%;
     background-color: #88BF36;
@@ -697,13 +699,13 @@ nav a {
     box-shadow:         0px -9px 5px rgba(50, 50, 50, 0.77);
     
   }
-  div.btns-ou{
+  div.btns-ou-bofl{
     width: 90%;
   }
-  div.link-ou{
+  div.link-ou-bofl{
     width: 10%;
   }
-  button#btnrejeitar-ou{
+  button#btnrejeitar-ou-bofl{
     background-color: #88BF36;
     color: #ffffff;
     border: 2px solid #ffffff;
@@ -711,7 +713,7 @@ nav a {
     padding: 0px 20px;
     margin: 15px;
   }
-  button#btnaceito-ou{
+  button#btnaceito-ou-bofl{
     background-color: #203573;
     color: #ffffff;
     border: 2px solid #7159C1;
@@ -719,7 +721,7 @@ nav a {
     padding: 0px 20px;
     margin: 15px;
   }
-  button#btnpagar-ou{
+  #btnpagar-ou-bofl{
     background-color: #7159C1;
     color: #ffffff;
     border: 2px solid #A094F2;
@@ -729,55 +731,55 @@ nav a {
     margin-right: 10px;
     float: right;
   }
-  .botaofinal-orcamento-usuario a{
+  #iconeSetadireira-bofl{
     content:  url('/img/setaDireitaou.png');
     float: right;
     padding-right: 0px;
 
   }
-  .especificacoes-o-u{
+  .especificacoes-o-u-bofl{
     float: right;
 
   }
-  .tr-ou-bgcolor1{
+  .tr-ou-bgcolor1-bofl{
     background-color: #ffffff;
   }
-.inicio-servico{
+.inicio-servico-bofl{
   width: 50%;
   padding: 0px 20px;
   
 }
-.inicio-garantia{
+.inicio-garantia-bofl{
   width: 50%;
   padding: 0px 20px;
   
 }
 
-.hr2{
+.hr2-bofl{
   color: #BDBDBD;
   background-color: #BDBDBD;
   height: 1px;
   width: 100%;
 
 }
-.titulob{
+.titulob-bofl{
   padding: 10px;
   font-size: 20px;
 
 }
-.op1{
+.op1-bofl{
   color: #FFFFFF;
   background-color: #FFC327;
   padding: 5px;
 
 }
-.op2{
+.op2-bofl{
   color: #FFFFFF;
   background-color: #203573;
   padding: 5px;
 
 }
-.detalhes-orcamento-usuario{
+.detalhes-orcamento-usuario-bofl{
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
@@ -788,18 +790,18 @@ nav a {
   
 }
 
-.produtos-checkbox{
+.produtos-checkbox-bofl{
   float: left;
   width: 50%;
   padding: 20px;
  
 }
-.form-itens-orca-usuario{
+.form-itens-orca-usuario-bofl{
   float: left;
   width: 50%;
   padding: 20px;
 }
-.resumo-ou-ap{
+.resumo-ou-ap-bofl{
   float: left;
   width: 50%;
   padding: 20px;
@@ -807,44 +809,44 @@ nav a {
   border-left: 1px solid #BDBDBD;
   
 }
-.especificacoes-ou{
+.especificacoes-ou-bofl{
   float: left;
   width: 50%;
   padding: 20px;
   
 }
-td.td-ou{
+td.td-ou-bofl{
   padding: 2px;
 }
-thead.cabecalho-ou{
+thead.cabecalho-ou-bofl{
   background-color: #203573;
   color: #ffffff;
 }
-tr.tr-ou-bgcolor{
+tr.tr-ou-bgcolor-bofl{
   background-color: #AEB2F2;
 }
 
-table.table-bordered-2{
+table.table-bordered-2-bofl{
   margin-bottom: 0%;
 }
-.bg-imgs-ou{
+.bg-imgs-ou-bofl{
   width: 100%;
   color: #203573;
   }
-div.resumo-ou{
+div.resumo-ou-bofl{
   padding: 30px 20px;
 }
-table#tableButton-ou tr td{
+table#tableButton-ou-bofl tr td{
   cursor: pointer;
 }
-div.calendario-ou{
+div.calendario-ou-bofl{
   width: 50%;
 }
 
-table#tableButton-ou td:hover {
+table#tableButton-ou-bofl td:hover {
   background-color: #CFCFCF;
 }
-table#tableButton-ou td.selecionado {
+table#tableButton-ou-bofl td.selecionado {
   background-color: #28a745;
   -webkit-box-shadow: 5px 5px 5px rgba(50, 50, 50, 0.77);
   -moz-box-shadow:    5px 5px 5px rgba(50, 50, 50, 0.77);
@@ -1691,8 +1693,17 @@ input.campoBuscarStyle::placeholder{
 }
 
 .sessaoGradienteRB{
-  height: 90vh;
+  height: 100vh;
   background: linear-gradient(360deg, #FFFFFF 17.71%, rgba(255, 255, 255, 0.39) 66.15%, rgba(160, 148, 242, 0.49) 82.29%, #A094F2 100%);
+}
+@media(max-width:768px){
+  .sessaoGradienteRB{
+    height: auto;
+  }
+  .contemColsContratante{
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
 .sessaoComoFuncionaContratante{
   width: 100%;
@@ -1716,6 +1727,8 @@ input.campoBuscarStyle::placeholder{
   color: #ffffff;
   font-weight: bold;
   text-align: center;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
 }
 
 .etapaContratante{
@@ -1729,6 +1742,10 @@ input.campoBuscarStyle::placeholder{
 
   font-weight: bold;
   text-align: center;
+
+  font-style: normal;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
 }
 
 .etapa:hover div.circuloEtapas, .etapa:hover div.etapaContratante{
@@ -1744,9 +1761,190 @@ input.campoBuscarStyle::placeholder{
   height: 280px;
 }
 
+/* sessao numero de prestadores */
+.sessaoGradienteRT{
+  height: 100vh;
+  background-color: #ffffff;
+}
+@media(max-width:768px){
+  .sessaoGradienteRT{
+    height: auto;
+  }
+  .contemColsNumeroPrestadores{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+.sessaoNumeroPrestadores{
+  width: 100%;
+  height: 100%;
+
+  background-image: url(/img/ondaHomeInverso.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: contain;
+}
+
+.faixaAtras{
+  position: absolute;
+  top: 15px;
+  
+  width: 60%;
+  height: 60px;
+
+  color: #203573;
+
+  font-weight: bold;
+  text-align: center;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  background-color: #88BF36;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 30px;
+}
+.faixaAtras:hover {
+  border-color: #7159C1;
+  background-color: #7159C1;
+  border-color: rgb(136, 191, 54);
+  color: #ffffff;
+  box-shadow: 0 0 0 0.2rem rgba(136, 191, 54,.25);
+}
+
+.faixaNumPrestadores{
+  position: absolute;
+  top: 15px;
+
+  width: 80%;
+  height: 60px;
+
+  color: #ffffff;
+
+  font-weight: bold;
+  text-align: center;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  background-color: #7159C1;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 30px;
+}
+.faixaNumPrestadores:hover {
+  border-color: #7159C1;
+  background-color: #88BF36;
+  border-color: rgb(136, 191, 54);
+  color: #203573;
+  box-shadow: 0 0 0 0.2rem rgba(136, 191, 54,.25);
+}
+
+/* sessao prestador */
+.sessaoGradienteRBprestador{
+  height: 90vh;
+  background-color: #ffffff;
+}
+@media(max-width:768px){
+  .sessaoGradienteRBprestador{
+    height: auto;
+  }
+  .contemColsPrestador{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+.sessaoComoFuncionaPrestador{
+  width: 100%;
+  height: 100%;
+
+  background-image: url(/img/ondaHomeTopoVerde.svg);
+  background-repeat: no-repeat;
+  background-position: 0% 100%;
+  background-size: contain;
+}
+
+.circuloEtapasPrestador {
+  width: 60px;
+  height: 60px;
+
+  font-size: 2.5rem;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+
+  background-color: #88BF36;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+.etapaPrestador{
+  height: 60px;
+  width: 100%;
+  background-color: #88BF36;
+  border-color: #88BF36;
+  color: #233A00;
+
+  border-radius: 10px;
+
+  font-weight: bold;
+  text-align: center;
+
+  font-style: normal;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+.etapa:hover div.circuloEtapasPrestador, .etapa:hover div.etapaPrestador{
+  color: #203573;
+  font-weight: bold;
+  box-shadow: 0 0 0 0.2rem rgba(113, 89, 193,.25);
+}
+.etapa:hover div.etapaPrestador{
+  border-color: #88BF36;
+  background-color: #7159C1;
+  color: #FFFFFF;
+}
+
+.sessaoHomeHM{
+  width: 100%;
+  height: 100%;
+
+  background-image: url(/img/ondaHomeInversoVerde.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: contain;
+}
+
 /* -------fim home LU------------------------------------------------ */
 /* -------inicio contato LU------------------------------------------------ */
 
+.btn.btn-primary.btn-lg.btn-block.bbpbl-bofl{
+  background-color: #88BF36;
+  border-color: #88BF36;
+  /*ok*/
+}
+.btn.btn-pagamentos-bofl.bbpb-bofl {
+  background-color: #203573;
+/*ok*/
+}
+.info-servicos-pagamentos-bofl{
+  display: flex;
+  background-color: #7159C1;
+  color: #ffffff;
+  width: 100%;
+  margin-bottom: 15px;
+  -webkit-box-shadow: 0px 5px 5px rgba(50, 50, 50, 0.77);
+  -moz-box-shadow:    0px 5px 5px rgba(50, 50, 50, 0.77);
+  box-shadow:         0px 5px 5px rgba(50, 50, 50, 0.77);
+}
 .corpoContato{
   background-image: url(/img/ondaHomeTopo.svg);
   background-repeat: no-repeat;
@@ -1762,3 +1960,122 @@ input.campoBuscarStyle::placeholder{
 /* -------fim contato LU------------------------------------------------ */
 
 
+.espaco-orcamento-pagamentos-bofl{
+
+
+  
+
+  width: 100%;
+  background-color: #7159C1;
+  height: 30px;
+  -webkit-box-shadow: 0px -5px 5px rgba(50, 50, 50, 0.77);
+  -moz-box-shadow:    0px -5px 5px rgba(50, 50, 50, 0.77);
+  box-shadow:         0px -5px 5px rgba(50, 50, 50, 0.77);
+
+
+}
+.pagdireita-bofl{
+  float: left;
+  width: 50%;
+  padding: 20px;
+  padding-right: 30px;
+  padding-bottom: 0%;
+}
+.pagesquerda-bofl{
+  width: 50%;
+  padding: 20px;
+  padding-right: 30px;
+  padding-bottom: 0%;
+}
+/*pagamentos-FIM-------------------------------------------*/
+
+
+/*meus dados prestador-------------------------------------------*/
+
+#formControlSelectPrestador{
+  width: 100%;
+}
+
+/*historico usuario-------------------------------------------*/
+
+
+
+div#historico-header-andamento-bofl{
+  padding: 5px 10px;
+  text-align: right;
+  background-color: #FFC327;
+ 
+  color: #ffffff;
+  -webkit-box-shadow: 0px 5px 5px rgba(50, 50, 50, 0.77);
+  -moz-box-shadow:    0px 5px 5px rgba(50, 50, 50, 0.77);
+  box-shadow:         0px 5px 5px rgba(50, 50, 50, 0.77);
+
+}
+
+div#historico-header-finalizado-bofl{
+  background-color: #88BF36;
+padding: 5px 10px;
+  text-align: right;
+  
+  color: #ffffff;
+  -webkit-box-shadow: 0px 5px 5px rgba(50, 50, 50, 0.77);
+  -moz-box-shadow:    0px 5px 5px rgba(50, 50, 50, 0.77);
+  box-shadow:         0px 5px 5px rgba(50, 50, 50, 0.77);
+}
+
+div#historico-header-cancelado-bofl{
+  background-color: #FF3721;
+  padding: 5px 10px;
+    text-align: right;
+    
+    color: #ffffff;
+    -webkit-box-shadow: 0px 5px 5px rgba(50, 50, 50, 0.77);
+  -moz-box-shadow:    0px 5px 5px rgba(50, 50, 50, 0.77);
+  box-shadow:         0px 5px 5px rgba(50, 50, 50, 0.77);
+}
+
+#historico-body-bofl{
+  padding: 5px 10px;
+  display: flex;
+  
+  
+  
+  
+  
+}
+#btns-historico-bofl{
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 30%;
+
+}
+#btn-avaliar-bofl{
+    background-color: #88BF36;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+     border-radius: 0.25rem;
+    padding: 2px 20px;
+    margin: 5px;
+    
+    
+
+}
+#btn-chat-bofl{
+  
+  background-color: #203573;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+     border-radius: 0.25rem;
+    padding: 2px 20px;
+    margin: 5px;
+    
+}
+ #fundo-bofl{
+   z-index: 1;
+   
+ 
+ }
+ #descricao-bofl{
+   width: 70%;
+ }
