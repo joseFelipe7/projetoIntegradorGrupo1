@@ -1688,8 +1688,17 @@ input.campoBuscarStyle::placeholder{
 }
 
 .sessaoGradienteRB{
-  height: 90vh;
+  height: 100vh;
   background: linear-gradient(360deg, #FFFFFF 17.71%, rgba(255, 255, 255, 0.39) 66.15%, rgba(160, 148, 242, 0.49) 82.29%, #A094F2 100%);
+}
+@media(max-width:768px){
+  .sessaoGradienteRB{
+    height: auto;
+  }
+  .contemColsContratante{
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
 .sessaoComoFuncionaContratante{
   width: 100%;
@@ -1739,6 +1748,51 @@ input.campoBuscarStyle::placeholder{
 
 .imgEtapaContratante img{
   height: 280px;
+}
+
+/* sessao numero de prestadores */
+.sessaoGradienteRT{
+  height: 100vh;
+  background-color: #ffffff;
+}
+@media(max-width:768px){
+  .sessaoGradienteRT{
+    height: auto;
+  }
+  .contemColsNumeroPrestadores{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+.sessaoNumeroPrestadores{
+  width: 100%;
+  height: 100%;
+
+  background-image: url(/img/ondaHomeInverso.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: contain;
+}
+
+.faixaAtras{
+  position: absolute;
+  top: 15px;
+  
+  width: 70%;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  
+  text-align: center;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  background-color: #88BF36;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+}
 
 /* -------fim home LU------------------------------------------------ */
 /* -------inicio contato LU------------------------------------------------ */
