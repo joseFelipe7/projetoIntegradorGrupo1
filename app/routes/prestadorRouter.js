@@ -3,7 +3,7 @@ const express = require("express");
 let router = express.Router();
 
 router.get("/single", (req, res) => {
-    res.send("Single Prestador");
+    res.render("singleprestador");
 })
 
 router.get("/lista", (req, res) => {

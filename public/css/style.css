@@ -1739,7 +1739,7 @@ input.campoBuscarStyle::placeholder{
 
 .imgEtapaContratante img{
   height: 280px;
-
+}
 /* -------fim home LU------------------------------------------------ */
 /* -------inicio contato LU------------------------------------------------ */
 
@@ -1758,3 +1758,133 @@ input.campoBuscarStyle::placeholder{
 /* -------fim contato LU------------------------------------------------ */
 
 
+/*-----------single prestador*/
+.cards-single div.card-header{
+  background-color: #203573;
+  color:#A094F2;
+}
+.avatar-about-single{
+  max-width: 80px;
+}
+.about-prestador h5{
+  border-bottom: 3px solid #203573;
+}
+.about-prestador p{
+  background-color:  #A094F2;
+  padding: 5px;
+  border-radius: 5px;
+}
+.method-payment{
+  padding: 5px;
+  border: 1px solid #A094F2;
+  border-radius: 5px;
+}
+.method-payment img{
+  border-bottom: 5px;
+  max-width: 300px;
+  margin: auto;
+}
+.method-payment p{
+  border-bottom: 3px solid #203573;
+  padding: 4px;
+  text-align: start;
+}
+.method-payment button{
+  margin: auto;
+  padding: 5px;
+  background-color: #203573;
+  color:#A094F2;
+  border: none;
+  border-radius: 5px;
+  width: 200px;
+  margin: 5px;
+}
+
+.location h5{
+  text-align: start;
+  border-bottom: 3px solid #203573;
+}
+
+.location iframe{
+  width: 100%;
+}
+.img-galeria{
+  border: 1px solid #A094F2;
+  border-radius: 5px;
+}
+.img-galeria img{
+  height: 150px;
+}
+.container-avatar-single-desk{
+  display: none;
+}
+.container-social{
+  display: flex;
+  flex-direction: column-reverse;
+}
+.container-social img{
+  width: 50px;
+}
+.card-payment{
+  display: none;
+}
+
+.rating-single{
+  background-color: #F8F8F8;
+}
+.avatar-rating div.col-9{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width:768px){
+  .container-payment{
+    display: none;
+  }
+  .card-payment{
+    display: block;
+  }
+  .container-payment-desk{
+    display: block;
+    height: 100%;
+  }
+  .card-payment{
+    height: 97%;
+  }
+  .method-payment{
+    padding: 0px;
+    border: none;
+    border-radius: 5px;
+  }
+  .method-payment button{
+    max-width: 100%;
+  }
+  .method-payment img{
+    border-bottom: 5px;
+    width: 150px;
+    margin: auto;
+  }
+  .container-avatar-single{
+    display: none;
+  }
+  .container-avatar-single-desk{
+    display: block;
+    position: absolute;
+    top:-80px;
+    right: 10px;
+  }
+  .container-social{
+    display: flex;
+    flex-direction: column;
+  }
+  .container-social img{
+    width: 50px;
+  }
+}
+@media(max-width:992px){
+  .container-main-single{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
