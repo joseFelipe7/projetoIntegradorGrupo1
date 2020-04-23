@@ -1567,11 +1567,11 @@ box-shadow: 0 0 0 0.2rem rgba(113, 89, 193,.25);
 }
 
 .sessaoHomeBuscar{
-  height: 450px;
+  height: 80vh;
   background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 0.01%, #FFFFFF 58.33%, #A094F2 100%);
 }
-.sessaoHomeBuscar div.container-fluid,  
-.sessaoHomeBuscar div.container-fluid div.row
+.sessaoHomeBuscar div.container,  
+.sessaoHomeBuscar div.container div.row
 {
   height: 100%;
   width: 100%;
@@ -1582,8 +1582,52 @@ box-shadow: 0 0 0 0.2rem rgba(113, 89, 193,.25);
 }
 
 .colunaBuscarImg img {
-  width: 100%;
+  width: 90%;
   margin: 0;
+}
+@media(max-width:768px){
+  .sessaoHomeBuscar div.container,  
+  .sessaoHomeBuscar div.container div.row
+  {
+    height: auto;
+  }
+  .colunaBuscarImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .colunaBuscarImg img {
+    width: 350px;
+    margin: auto;
+  }
+}
+
+@media(max-width:390px){
+  .etapaPrestador, .etapaContratante{
+    font-size: 0.9rem;
+  }
+}
+
+@media(max-width:769px){
+  .etapaPrestador, .etapaContratante{
+    border-radius: 0px 10px 10px 0px;
+    font-size: 0.9rem;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.3);
+  }
+  .circuloEtapas, .circuloEtapasPrestador{
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.3);
+  }
+}
+@media(min-width:769px){
+  .etapaPrestador, .etapaContratante{
+    border-radius:10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+  }
+  .circuloEtapas, .circuloEtapasPrestador{
+    border-radius: 50%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+  }
 }
 
 .campoBuscarStyle{
@@ -1638,10 +1682,28 @@ input.campoBuscarStyle::placeholder{
   
 .sessaoHomePrestadores{
   height: 90vh;
-  background-color: #A094F2;
-
-  
+  background-color: #A094F2;  
 }
+@media(max-width:769px){
+  .sessaoHomeBuscar{
+    height: 100%;
+  }
+  .sessaoHomeBuscar .container{
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .sessaoHomeBuscar .container .row{
+    display: flex;
+    align-items: center;
+  }
+  .colunaBuscarImg img {
+    width: 280px;
+  }
+  .sessaoHomePrestadores {
+    height: 100%;
+  }
+}
+
 .scroolCardsPrestadorHome{
   width: 100%;
   height: 400px;
@@ -1727,8 +1789,6 @@ input.campoBuscarStyle::placeholder{
   color: #ffffff;
   font-weight: bold;
   text-align: center;
-
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
 }
 
 .etapaContratante{
@@ -1738,14 +1798,10 @@ input.campoBuscarStyle::placeholder{
   border-color: #A094F2;
   color: #203573;
 
-  border-radius: 10px;
-
   font-weight: bold;
   text-align: center;
 
   font-style: normal;
-
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
 }
 
 .etapa:hover div.circuloEtapas, .etapa:hover div.etapaContratante{
@@ -1759,6 +1815,11 @@ input.campoBuscarStyle::placeholder{
 
 .imgEtapaContratante img {
   height: 280px;
+}
+@media(max-width:415px){
+  .imgEtapaContratante img {
+    height: 200px;
+  }
 }
 
 /* sessao numero de prestadores */
@@ -1881,8 +1942,6 @@ input.campoBuscarStyle::placeholder{
   text-align: center;
 
   background-color: #88BF36;
-
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
 }
 
 .etapaPrestador{
@@ -1892,14 +1951,10 @@ input.campoBuscarStyle::placeholder{
   border-color: #88BF36;
   color: #233A00;
 
-  border-radius: 10px;
-
   font-weight: bold;
   text-align: center;
 
   font-style: normal;
-
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
 }
 
 .etapa:hover div.circuloEtapasPrestador, .etapa:hover div.etapaPrestador{
