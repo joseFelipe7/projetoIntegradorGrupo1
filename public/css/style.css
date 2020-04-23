@@ -1992,6 +1992,16 @@ input.campoBuscarStyle::placeholder{
   font-weight: bold;
 }
 
+.sessaoContratanteContato{
+  width: 100%;
+  height: 100%;
+
+  background-image: url(/img/ondaHomeInverso.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: contain;
+}
+
 /* -------fim contato LU------------------------------------------------ */
 
 .btn.btn-primary.btn-lg.btn-block.bbpbl-bofl{
@@ -2015,10 +2025,6 @@ input.campoBuscarStyle::placeholder{
 }
 
 .espaco-orcamento-pagamentos-bofl{
-
-
-  
-
   width: 100%;
   background-color: #7159C1;
   height: 30px;
