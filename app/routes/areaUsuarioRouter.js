@@ -4,50 +4,56 @@ let router = express.Router();
 
 router.get("/area-contratante/meus-dados", (req, res) => {
     res.render("areaContratante", {view: "meusDadosContratante"});
+    // ...5620/usuario/area-contratante/meus-dados
 })
-// ...8080/usuario/area-contratante/meus-dados
+
 
 router.get("/area-contratante/pedidos", (req, res) => {
     res.render("areaContratante", {view: "pedidosAreaContratante"});
+    // ...5620/usuario/area-contratante/pedidos
 })
-// ...8080/usuario/area-contratante/pedidos
+
 
 router.get("/area-contratante/acompanhe", (req, res) => {
     res.render("areaContratante", {view: "acompanheAreaContratante"});
+    // ...5620/usuario/area-contratante/acompanhe
 })
-// ...8080/usuario/area-contratante/acompanhe
 
-router.get("/area-contratante/orcamentos", (req, res) => {
-    res.render("areaContratante", {view: "orcamentosAreaContratante"});
+
+router.get("/area-contratante/orcamentos-bru", (req, res) => {
+    res.render("areaContratante", {view: "orcamentoUsuario"});
+    // ...5620/usuario/area-contratante/orcamento-bru
 })
-// ...8080/usuario/area-contratante/orcamento
 
-router.get("/area-contratante/historico", (req, res) => {
+
+router.get("/area-contratante/historico-bru", (req, res) => {
     res.render("areaContratante", {view: "historicoAreaContratante"});
+    // ...5620/usuario/area-contratante-bru/historico
 })
-// ...8080/usuario/area-contratante/historico
+
 
 router.get("/area-contratante/chat", (req, res) => {
     res.render("areaContratante", {view: "chat"});
+    // ...5620/usuario/area-contratante/chat
 })
-// ...8080/usuario/area-contratante/chat
+
 
 router.get("/area-contratante/favoritos", (req, res) => {
     res.render("areaContratante", {view: "favoritosAreaContratante"});
+    // ...5620/usuario/area-contratante/favoritos
 })
-// ...8080/usuario/area-contratante/favoritos
+
 
 router.get("/area-contratante/cupons", (req, res) => {
     res.render("areaContratante", {view: "cuponsAreaContratante"});
+    // ...5620/usuario/area-contratante/cupons
 })
-// ...8080/usuario/area-contratante/cupons
 
-router.get("/area-contratante/orcamentoUsuario-Bruna", (req, res) => {
-    res.render("areaContratante", {view: "orcamentoUsuario"});
-})
-// ...8080/usuario/area-contratante/orcamentoUsuario-Bruna
-router.get("/area-contratante/pagamentos-Bruna", (req, res) => {
+
+
+router.get("/area-contratante/pagamentos-bru", (req, res) => {
     res.render("areaContratante", {view: "pagamentos"});
+    // ...5620/usuario/area-contratante/pagamentos-bru
 })
 
 router.get("/area-prestador", (req, res) => {

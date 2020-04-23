@@ -7,8 +7,9 @@ router.get("/single", (req, res) => {
 })
 
 router.get("/lista", (req, res) => {
-    res.send("Lista de Prestadores");
+    res.render("listaPrestadores");
 })
+
 router.get("/single/cadastro-servicos", (req, res) => {
     res.render("areaPrestador", {view: "cadastroServiçosPrestador"});
 })
@@ -16,5 +17,10 @@ router.get("/single/cadastro-servicos", (req, res) => {
 router.get("/single/pedidos", (req, res) => {
     res.render("areaPrestador", {view: "pedidosAreaPrestador"});
 })
+router.get("/single/meusDados-prestador-bru", (req, res) => {
+    res.render("areaPrestador", {view: "meusDados-prestador"});
+    // ...5620/prestador/single/meusDados-prestador-Bru
+})
+
 
 module.exports = router;
