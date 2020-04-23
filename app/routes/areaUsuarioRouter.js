@@ -56,8 +56,18 @@ router.get("/area-contratante/pagamentos-bru", (req, res) => {
     // ...5620/usuario/area-contratante/pagamentos-bru
 })
 
-router.get("/area-prestador", (req, res) => {
-    res.send("Área Usuario Prestador");
+
+
+router.get("/area-prestador/cadastro-servicos", (req, res) => {
+    res.render("areaPrestador", {view: "cadastroServiçosPrestador"});
+})
+
+router.get("/area-prestador/pedidos", (req, res) => {
+    res.render("areaPrestador", {view: "pedidosAreaPrestador"});
+})
+
+router.get("/area-prestador/meusDados", (req, res) => {
+    res.render("areaPrestador", {view: "meusDados-prestador"});
 })
 
 module.exports = router;
