@@ -136,59 +136,9 @@
 
   /* Configuração da barra lateral esquerda de opções */
   .barra-lateral {
-    background-color: #AEB2F2;
-    display: flex;
-    flex-direction: column;
-    height: 45rem;
-    width: 4rem;
-  }
-  
-  .barra-lateral .foto-perfil {
-    height: 7rem;
-  }
-  
-  .barra-lateral .foto-perfil .usuario img {
-    background-color: #ffffff;
-    border-radius: 100px;
-    width: 38px;
-  }
-  
-  .barra-lateral .foto-perfil .botao-comunicacao img {
-    display: none;
-  }
-
-  .barra-lateral .foto-perfil .dados a, h6 {
     display: none;
   }
   
-  .barra-lateral .opcoes {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-  
-  .barra-lateral .opcoes a {
-    display: flex;
-    justify-content: center;
-    height: 3.5rem;
-    width: 100%;
-    padding: 0;
-  }
-
-  .barra-lateral .opcoes a img {
-    width: 32px;
-  }
-
-  .barra-lateral .opcoes a p {
-    display: none;
-  }
-  
-  .barra-lateral .opcoes hr {
-    width: 3rem;
-    margin: 0 8px;
-    padding: 0;
-  }
-
   /* Configuração da barra superior sessão atual */
   .barra-superior .sessao {
     height: 2.5rem;
