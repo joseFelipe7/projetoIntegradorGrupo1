@@ -3,42 +3,47 @@
 <%- include('include/head', {title:'ToolsHall - Entrar'}) %>
 
 <body>
-  <%- include('include/header')%>
-  <%- include('include/menuNav') %>
+  <div class="container-page">
+    <%- include('include/header')%>
+    <%- include('include/menuNav') %>
 
-  <main class="login-selecione">
-
-    <div class="entre-prestador">
-      <img src="/img/entre-prestador.png" alt="Prestador de Serviços">
-      <a href="/login/Prestador">ENTRE</a>
-    </div>
-
-
-    <section class="titulos-setas">
-
-      <div class="texto-prestador">
-        <h3>Prestador de Serviços</h3>
-      </div>
-
-      <div class="img-conexao">
+    <main class="container login-selecione col-12 m-0 p-0">
+      <div class="img-direcao">
         <img src="/img/seta.png">
       </div>
 
-      <div class="texto-contratante">
-        <h3>Contratante de Serviços</h3>
+      <div class="content-ls row col-sm-12 col-md-12 col-lg-9 col-xl-8 m-0 p-0"> 
+        <div class="conatiner-fluid col-12 m-0 p-0">
+
+          <div class="row entre-prestador col-sm-12 h-50 m-0 p-0">
+
+            <img src="/img/entre-prestador.png" alt="Prestador de Serviços">
+            <div class="menuP">
+              <h4 class="texto-prestador">Prestador de Serviços</h4>
+              <a href="/login/Prestador/#login-prestador">ENTRE</a>
+            </div>
+
+          </div>
+
+
+          <div class="row entre-contratante col-sm-12 h-50 m-0 p-0">
+
+            <div class="menuC">
+              <h4 class="texto-contratante">Contratante de Serviços</h4>
+              <a href="/login/contratante/#login-contratante">ENTRE</a>
+            </div>
+            <img src="/img/entre-contratante.png" alt="Contratante de Serviços">
+
+          </div>
+
+        </div>
       </div>
-      
-    </section>
 
-    <div class="entre-contratante">
-      <a href="/login/contratante">ENTRE</a>
-      <img src="/img/entre-contratante.png" alt="Contratante de Serviços">
-    </div>
+    </main>
 
-  </main>
-
-  <%- include('include/footer') %>
-  <%- include('include/script') %>
+    <%- include('include/footer') %>
+    <%- include('include/script') %>
+  </div>
 </body>
 
 </html>
