@@ -2279,3 +2279,36 @@ div#historico-header-cancelado-bofl{
   }
 }
 /*Fim single*/
+/*modal pre orçamento*/
+.modal-pre-ocarmento{
+  background-color: #AEB2F2;
+}
+.card-hd-orcamento{
+background-color: #203573;
+color:#A094F2;
+}
+.btn-form-preorcamento{
+margin: auto;
+padding: 5px;
+background-color: #203573;
+color:#A094F2;
+border: none;
+border-radius: 5px;
+width: 200px;
+margin: 5px;
+}
+.input-form-preocarmento{
+  background-color: #AEB2F2;
+  box-shadow: inset #AEB2F2;
+  border: solid 4px #AEB2F2;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.titulo-preorcamento{
+  color: #ffffff;
+}
+@media(max-width: 991px){
+  .figure-preorcamento{
+      display: none;
+  }
+}
+/*fim modal pre orçamento*/
