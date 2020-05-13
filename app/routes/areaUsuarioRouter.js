@@ -2,6 +2,7 @@ const express = require("express");
 
 let router = express.Router();
 
+// rotas contratante
 router.get("/area-contratante/meus-dados", (req, res) => {
     res.render("areaContratante", {view: "meusDadosContratante"});
     // ...5620/usuario/area-contratante/meus-dados
@@ -49,15 +50,13 @@ router.get("/area-contratante/cupons", (req, res) => {
     // ...5620/usuario/area-contratante/cupons
 })
 
-
-
 router.get("/area-contratante/pagamentos-bru", (req, res) => {
     res.render("areaContratante", {view: "pagamentos"});
     // ...5620/usuario/area-contratante/pagamentos-bru
 })
 
 
-
+// rotas prestador
 router.get("/area-prestador/cadastro-servicos", (req, res) => {
     res.render("areaPrestador", {view: "cadastroServiçosPrestador"});
 })
@@ -68,6 +67,10 @@ router.get("/area-prestador/pedidos", (req, res) => {
 
 router.get("/area-prestador/meusDados", (req, res) => {
     res.render("areaPrestador", {view: "meusDados-prestador"});
+})
+
+router.get("/area-prestador/requisicoes", (req, res) => {
+    res.render("areaPrestador", {view: "requisicoes-prestador"});
 })
 
 module.exports = router;
