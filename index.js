@@ -31,7 +31,7 @@ const rotaLogin = require("./app/routes/loginRouter");
 
 //single e lista do prestador
 const rotaPrestador = require("./app/routes/prestadorRouter");
-
+ 
 app.use("/home", rotaHome);
 //...5620/home
 //...5620/home/sobre
