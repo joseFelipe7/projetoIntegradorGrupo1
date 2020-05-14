@@ -6,39 +6,38 @@
   <%- include('include/header')%>
   <%- include('include/menuNav') %>
 
-  <main class="login-contratante" id="login-contratante">
+  <main class="container login-contratante col-12 m-0 p-0" id="login-contratante">
+    <div class="content-ls row col-md-12 col-lg-10 col-xl-8 justify-content-around align-items-center m-0 p-0">
 
-    <div class="form-contratante">
+      <div class="form-contratante">
+        <h2>Contratante</h2>
+        <form action="">
+          <input class="campo-contratante" type="email" name="email" id="email" placeholder="Email">
+          <input class="campo-contratante" type="password" name="senha" id="senha" placeholder="Senha">
+          <label class="check-contratante" for="checkbox-lembreContratante">
+            <input id="checkbox-lembreContratante" type="checkbox" name="selecione" value="Lembre">
+            Lembre de mim
+          </label>
 
-      <h2>Contratante</h2>
-      <form action="">
+          <button class="entrar-contratante" type="submit">ENTRE</button>
 
-        <input class="campo-contratante" type="email" name="email" id="email" placeholder="Email">
-        <input class="campo-contratante" type="password" name="senha" id="senha" placeholder="Senha">
+        </form>
 
-        <label class="check-contratante" for="checkbox-lembreContratante">
-          <input id="checkbox-lembreContratante" type="checkbox" name="selecione" value="Lembre">
-          Lembre de mim
-        </label>
+        <p>Faça login com:</p>
+        <div class="faca-loginContratante">
+          <a href="#"><img src="/img/login-google.png"></a>
+          <a href="#"><img src="/img/login-linkedin.png"></a>
+          <a href="#"><img src="/img/login-facebook.png"></a>
+        </div>
 
-
-        <button class="entrar-contratante" type="submit">ENTRE</button>
-
-      </form>
-
-      <p>Faça login com:</p>
-      <div class="faca-loginContratante">
-        <a href="#"><img src="/img/login-google.png"></a>
-        <a href="#"><img src="/img/login-linkedin.png"></a>
-        <a href="#"><img src="/img/login-facebook.png"></a>
+        <a id="esqueceu-contratante" href="#">Esqueceu a senha?</a>
       </div>
 
-      <a id="esqueceu-contratante" href="#">Esqueceu a senha?</a>
+      <div class="img-contratante">
+        <img src="/img/entre-contratante.png" alt="Contratante de Serviços">
+      </div>
 
     </div>
-
-    <img class="img-contratante" src="/img/entre-contratante.png" alt="Contratante de Serviços">
-
   </main>
 
   <%- include('include/footer') %>

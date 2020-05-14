@@ -6,36 +6,32 @@
   <%- include('include/header')%>
   <%- include('include/menuNav') %>
 
-  <main class="login-prestador" id="login-prestador">
+  <main class="container login-prestador col-12 m-0 p-0" id="login-prestador">
+    <div class="content-ls row col-md-12 col-lg-10 col-xl-8 justify-content-around align-items-center m-0 p-0">
 
-    <img class="img-prestador" src="/img/entre-prestador.png" alt="Prestador de Serviços">
-
-    <div class="form-prestador">
-
-      <h2>Prestador</h2>
-      <form action="">
-
-        <input class="campo-prestador" type="email" name="email" id="email" placeholder="Email">
-        <input class="campo-prestador" type="password" name="senha" id="senha" placeholder="Senha">
-
-        <label class="check-prestador" for="checkbox-lembrePrestador">
-          <input id="checkbox-lembrePrestador" type="checkbox" name="selecione" value="Lembre">
-          Lembre de mim
-        </label>
-
-
-        <button class="entrar-prestador" type="submit">ENTRE</button>
-
-      </form>
-
-      <p>Faça login com:</p>
-      <div class="faca-loginPrestador">
-        <a href="#"><img src="/img/login-google.png"></a>
-        <a href="#"><img src="/img/login-linkedin.png"></a>
-        <a href="#"><img src="/img/login-facebook.png"></a>
+      <div class="img-prestador">
+        <img src="/img/entre-prestador.png" alt="Prestador de Serviços">
       </div>
 
-      <a id="esqueceu-prestador" href="#">Esqueceu a senha?</a>
+        <div class="form-prestador">
+          <h2>Prestador</h2>
+          <form action="">
+            <input class="campo-prestador" type="email" name="email" id="email" placeholder="Email">
+            <input class="campo-prestador" type="password" name="senha" id="senha" placeholder="Senha">
+            <label class="check-prestador" for="checkbox-lembrePrestador">
+              <input id="checkbox-lembrePrestador" type="checkbox" name="selecione" value="Lembre">
+              Lembre de mim
+            </label>
+            <button class="entrar-prestador" type="submit">ENTRE</button>
+          </form>
+          <p>Faça login com:</p>
+          <div class="faca-loginPrestador">
+            <a href="#"><img src="/img/login-google.png"></a>
+            <a href="#"><img src="/img/login-linkedin.png"></a>
+            <a href="#"><img src="/img/login-facebook.png"></a>
+          </div>
+          <a id="esqueceu-prestador" href="#">Esqueceu a senha?</a>
+        </div>
 
     </div>
   </main>

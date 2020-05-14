@@ -6,18 +6,24 @@
   <%- include('include/header')%>
   <%- include('include/menuNav') %>
 
-  <main class="cadastro-selecione">
-  
-    <a href="/cadastro/prestador" class="cadastro-selecione1">
-      <h3>Prestador de Serviços</h3>
-      <img src="/img/entre-prestador.png" alt="Prestador de Serviços">
-    </a>
+  <main class="container cadastro-selecione col-12 m-0 p-0" id="cadastro-selecione">
+    <div class="content-ls row row-cadSelecione col-md-12">
 
-    <a href="/cadastro/contratante" class="cadastro-selecione2">
-      <h3 class="selecione2">Contratante de Serviços</h3>
-      <img class="selecione2"src="/img/entre-contratante.png" alt="Cliente de Serviços">
-    </a>
+      <div class="conatiner cadastro-selecione1 col-sm-12 col-md-6">
+        <a href="/cadastro/prestador">
+          <img src="/img/entre-prestador.png" alt="Prestador de Serviços">
+          <p>Prestador</p>
+        </a>
+      </div>
 
+      <div class="conatiner cadastro-selecione2 col-sm-12 col-md-6">
+        <a href="/cadastro/contratante">
+          <img class="selecione2" src="/img/entre-contratante.png" alt="Cliente de Serviços">
+          <p class="selecione2">Contratante</p>
+        </a>
+      </div>
+
+    </div>
   </main>
 
   <%- include('include/footer') %>

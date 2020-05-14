@@ -489,23 +489,16 @@
 /* ------------Fim Login Selecione - Kevin---------------*/
 
 /* -----------Começo Login Prestador - Kevin-------------*/
-
 .login-prestador {
   display: flex;
   justify-content: center;
-  align-items: center;
   background-color: #7159c1;
   height: 40rem;
 }
 
-.login-prestador .img-prestador {
-  max-width: 580px;
-  margin-right: 2rem;
-}
-
-.form-prestador h2 {
-  color: #ffffff;
-  margin-bottom: 15px;
+.img-prestador img {
+  width: 480px;
+  max-width: 480px;
 }
 
 .form-prestador {
@@ -516,8 +509,13 @@
   background-color: #aeb2f2;
   border-radius: 5px;
   height: 35rem;
-  width: 23rem;
-  margin-left: 2rem;
+  width: 22rem;
+  max-width: 22rem;
+}
+
+.form-prestador h2 {
+  color: #ffffff;
+  margin-bottom: 15px;
 }
 
 .form-prestador form {
@@ -617,10 +615,33 @@ a + img {
   color: #7159c1;
 }
 
+@media(max-width: 850px) {
+  .img-prestador {
+    display: none;
+  }
+
+  .form-prestador {
+    margin: 0;
+  }
+}
+
+@media(max-width: 450px) {
+  .login-prestador {
+    background-color: #aeb2f2;
+    height: 32rem;
+  }
+  
+  .form-prestador {
+    background-color: transparent;
+    border-radius: none;
+    height: 32rem;
+  } 
+
+}
+
 /* -----------Fim Login Prestador - Kevin--------------*/
 
 /* ---------Começo Login Contratante - Kevin-----------*/
-
 .login-contratante {
   display: flex;
   justify-content: center;
@@ -629,9 +650,9 @@ a + img {
   height: 40rem;
 }
 
-.login-contratante .img-contratante {
-  max-width: 600px;
-  margin-left: 2rem;
+.img-contratante img {
+  width: 480px;
+  max-width: 480px;
 }
 
 .form-contratante h2 {
@@ -647,8 +668,8 @@ a + img {
   background-color: #7159c1;
   border-radius: 5px;
   height: 35rem;
-  width: 23rem;
-  margin-right: 2rem;
+  width: 22rem;
+  max-width: 22rem;
 }
 
 .form-contratante form {
@@ -748,45 +769,66 @@ a + img {
   color: #aeb2f2;
 }
 
+@media(max-width: 850px) {
+  .img-contratante {
+    display: none;
+  }
+
+  .form-contratante {
+    margin: 0;
+  }
+}
+
+@media(max-width: 450px) {
+  .login-contratante {
+    background-color: #7156c1;
+    height: 32rem;
+  }
+  
+  .form-contratante {
+    background-color: transparent;
+    border-radius: none;
+    height: 32rem;
+  } 
+}
+
 /* ---------Fim Login Contratante - Kevin-----------*/
 
 /* -------Começo Cadastro selecione - Kevin---------*/
 
 .cadastro-selecione {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 40rem;
-  width: 99vw;
+  justify-content: center;
+  background: rgba(113, 89, 193, 1);
+  background: linear-gradient(
+      90deg,
+      rgba(113, 89, 193, 1) 50%,
+      rgba(174, 178, 242, 1) 50%
+    );
+  height: 35rem;
+  width: 100vw;
 }
 
 .cadastro-selecione1 {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #7156c1;
-  color: #ffffff;
   height: 100%;
-  width: 50%;
-  max-width: 49.5rem;
+  width: 31.25rem;
 }
 
-.cadastro-selecione1 h3 {
-  border: 3px solid #aeb2f2;
-  border-radius: 7px;
-  padding: 0.5rem;
+.cadastro-selecione1 a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-right: 4rem;
 }
 
 .cadastro-selecione1 img {
-  width: 450px;
-}
-
-.cadastro-selecione1:hover {
-  color: #aeb2f2;
-  transition: 0.3s;
-  transform: scale(1.1);
-  z-index: 5;
+  max-width: 380px;
 }
 
 .cadastro-selecione2 {
@@ -794,28 +836,152 @@ a + img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #aeb2f2;
-  color: #ffffff;
   height: 100%;
-  width: 50%;
-  max-width: 49.5rem;
+  width: 31.25rem;
 }
 
-.cadastro-selecione2 h3 {
-  border: 3px solid #7159c1;
-  border-radius: 7px;
-  padding: 0.5rem;
+.cadastro-selecione2 a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 10.293125rem;
+  padding-left: 4rem;
 }
 
 .cadastro-selecione2 img {
-  width: 600px;
+  max-width: 420px;
+}
+
+.cadastro-selecione1:hover {
+  color: #aeb2f2;
+  transition: 0.3s;
+  transform: scale(1.1);
+}
+
+.cadastro-selecione1 p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #aeb2f2;
+  border-radius: 7px;
+  color: #aeb2f2;
+  font-size: 1.5em;
+  width: 10rem;
+  padding: 0.2rem;
+}
+
+.cadastro-selecione1 p:hover {
+  background-color: #aeb2f2;
+  color: #ffffff;
 }
 
 .cadastro-selecione2:hover {
   color: #7a63c0;
   transition: 0.3s;
   transform: scale(1.1);
-  z-index: 5;
+}
+
+.cadastro-selecione2 p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #7159c1;
+  border-radius: 7px;
+  color: #7159c1;
+  font-size: 1.5em;
+  width: 10rem;
+  padding: 0.2rem;
+}
+
+.cadastro-selecione2 p:hover {
+  background-color: #7159c1;
+  color: #ffffff;
+}
+
+@media(max-width: 850px) { 
+  .cadastro-selecione1 a {
+    padding-right: 1rem;
+  }
+  
+  .cadastro-selecione1 img {
+    width: 290px;
+  } 
+  
+  .cadastro-selecione2 a {
+    margin-top: 7.5rem;
+    padding-left: 1rem;
+  }
+  
+  .cadastro-selecione2 img {
+    width: 320px;
+  } 
+}
+
+@media(max-width: 768px) { 
+  .cadastro-selecione2 a {
+    margin-top: 7.875rem;
+  }
+}
+
+@media(max-width: 450px) { 
+  .cadastro-selecione {
+    background: linear-gradient(
+        180deg,
+        rgba(113, 89, 193, 1) 50%,
+        rgba(174, 178, 242, 1) 50%
+      );
+    height: 40rem;
+  }
+
+  .row-cadSelecione {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cadastro-selecione1 {
+    height: 20rem;
+    width: 100%;
+  }
+
+  .cadastro-selecione2 {
+    height: 20rem;
+    width: 100%;
+  }
+
+  .cadastro-selecione1 p {
+    font-size: 1.2em;
+    width: 8rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    padding: 0.1rem;
+  }
+
+  .cadastro-selecione1 a {
+    padding-right: 0;
+  }
+  
+  .cadastro-selecione1 img {
+    width: 190px;
+  } 
+
+  .cadastro-selecione2 p {
+    font-size: 1.2em;
+    width: 8rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    padding: 0.1rem;
+  }
+
+  .cadastro-selecione2 a {
+    margin-top: 0;
+    padding-left: 0;
+  }
+  
+  .cadastro-selecione2 img {
+    width: 220px;
+  } 
 }
 
 /* ---------Fim Cadastro selecione - Kevin----------*/
