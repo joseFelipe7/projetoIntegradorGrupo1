@@ -6,227 +6,179 @@
   <%- include('include/header')%>
   <%- include('include/menuNav') %>
 
-  <main class="cadastro-contratante">
+  <main class="cadastro-contratante col-12 m-0 p-0">
+    <div class="content-ls">
 
-    <div
-      class="container d-flex flex-column justify-content-center align-items-center p-5 col-md-6 form-cadastroContratante">
+      <div class="form-cadastroContratante">
+        <h3 class="contratante-titulo">CADASTRE-SE:</h3>
 
-      <h3 class="contratante-titulo">CADASTRE-SE:</h3>
+        <form action="#" class="d-flex flex-column justify-content-center">
 
-      <form action="#" class="d-flex flex-column justify-content-center">
+          <div class="form-row">
+            <div class="form-group col-md-7">
+              <label for="contratante-inputEmail">Email</label>
+              <input type="email" name="contratante-inputEmail" class="form-control" id="contratante-inputEmail">
+              <label for="contratante-inputEmail2">Repetir email</label>
+              <input type="email" name="contratante-inputEmail" class="form-control" id="contratante-inputEmail">
+            </div>
 
-        <div class="form-row">
-
-          <div class="form-group col-md-7">
-
-            <label for="contratante-inputEmail">Email</label>
-            <input type="email" name="contratante-inputEmail" class="form-control" id="contratante-inputEmail">
-
-            <label for="contratante-inputEmail2">Repetir email</label>
-            <input type="email" name="contratante-inputEmail" class="form-control" id="contratante-inputEmail">
-
+            <div class="form-group col-md-5">
+              <label for="contratante-inputSenha">Senha</label>
+              <input type="password" name="contratante-inputSenha" class="form-control" id="contratante-inputSenha">
+              <label for="contratante-inputSenha2">Repetir senha</label>
+              <input type="password" name="contratante-inputSenha" class="form-control" id="contratante-inputSenha">
+            </div>
           </div>
 
-          <div class="form-group col-md-5">
+          <h4 class="align-self-center contratante-subTitulo">Dados Pessoais</h4>
 
-            <label for="contratante-inputSenha">Senha</label>
-            <input type="password" name="contratante-inputSenha" class="form-control" id="contratante-inputSenha">
-            <label for="contratante-inputSenha2">Repetir senha</label>
-            <input type="password" name="contratante-inputSenha" class="form-control" id="contratante-inputSenha">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="contratante-inputNome">Nome</label>
+              <input type="text" name="contratante-inputNome" class="form-control" id="contratante-inputNome">
+            </div>
 
+            <div class="form-group col-md-6">
+              <label for="contratante-inputSobrenome">Sobrenome</label>
+              <input type="text" name="contratante-inputSobrenome" class="form-control" id="contratante-inputSobrenome">
+            </div>
           </div>
 
-        </div>
+          <div class="form-row">
+            <div class="form-group col-md-3">
+              <label for="contratante-inputSexo">Sexo</label>
+              <select name="contratante-inputSexo" class="form-control" id="contratante-inputSexo">
+                <option selected value="">Selecione</option>
+                <option value="">Masculino</option>
+                <option value="">Feminino</option>
+                <option value="">Outros...</option>
+              </select>
+            </div>
 
-        <h4 class="align-self-center contratante-subTitulo">Dados Pessoais</h4>
-        <div class="form-row">
+            <div class="form-group col-md-3">
+              <label for="contratante-inputNascimento">Nascimento</label>
+              <input type="date" name="contratante-inputNascimento" class="form-control"
+                id="contratante-inputNascimento">
+            </div>
 
-          <div class="form-group col-md-6">
-
-            <label for="contratante-inputNome">Nome</label>
-            <input type="text" name="contratante-inputNome" class="form-control" id="contratante-inputNome">
-
+            <div class="form-group col-md-6">
+              <label for="contratante-inputCpf">CPF</label>
+              <input type="number" name="contratante-inputCpf" class="form-control" id="contratante-inputCpf">
+            </div>
           </div>
 
-          <div class="form-group col-md-6">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="contratante-inputRg">RG</label>
+              <input type="number" name="contratante-inputRg" class="form-control" id="contratante-inputRg">
+            </div>
 
-            <label for="contratante-inputSobrenome">Sobrenome</label>
-            <input type="text" name="contratante-inputSobrenome" class="form-control" id="contratante-inputSobrenome">
+            <div class="form-group col-md-3">
+              <label for="contratante-inputEmissor">Emissor</label>
+              <select name="contratante-inputEmissor" class="form-control" id="contratante-inputEmissor">
+                <option selected value="">Selecione</option>
+                <option value="">SSP</option>
+                <option value="">Outros...</option>
+              </select>
+            </div>
 
+            <div class="form-group col-md-3">
+              <label for="contratante-inputDataEmissor">Data de Emissão</label>
+              <input type="date" name="contratante-inputDataEmissor" class="form-control"
+                id="contratante-inputDataEmissor">
+            </div>
           </div>
 
-        </div>
+          <div class="form-row">
+            <div class="form-group col-md-3">
+              <label for="contratante-inputTelefone">Telefone</label>
+              <input type="number" name="contratante-inputTelefone" class="form-control" id="contratante-inputTelefone">
+            </div>
 
-        <div class="form-row">
+            <div class="form-group col-md-3">
+              <label for="contratante-inputCelular">Celular</label>
+              <input type="number" name="contratante-inputCelular" class="form-control" id="contratante-inputCelular">
+            </div>
 
-          <div class="form-group col-md-3">
-
-            <label for="contratante-inputSexo">Sexo</label>
-            <select name="contratante-inputSexo" class="form-control" id="contratante-inputSexo">
-              <option selected value="">Selecione</option>
-              <option value="">Masculino</option>
-              <option value="">Feminino</option>
-              <option value="">Outros...</option>
-            </select>
-
+            <div class="form-group col-md-6">
+              <label for="contratante-inputEmail">Email</label>
+              <input type="email" name="contratante-inputEmail" class="form-control" id="contratante-inputEmail">
+            </div>
           </div>
 
-          <div class="form-group col-md-3">
+          <h4 class="align-self-center contratante-subTitulo">Dados Endereço</h4>
 
-            <label for="contratante-inputNascimento">Nascimento</label>
-            <input type="date" name="contratante-inputNascimento" class="form-control" id="contratante-inputNascimento">
+          <div class="form-row">
+            <div class="form-group col-md-7">
+              <label for="contratante-inputEndereço">Endereço</label>
+              <input type="text" name="contratante-inputEndereço" class="form-control" id="contratante-inputEndereço"
+                placeholder="Av., Rua, Alameda, Estrada...">
+            </div>
 
+            <div class="form-group col-md-1">
+              <label for="contratante-inputNumero">N°</label>
+              <input type="number" name="contratante-inputNumero" class="form-control" id="contratante-inputNumero">
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="contratante-inputBairro">Bairro</label>
+              <input type="text" name="contratante-inputBairro" class="form-control" id="contratante-inputBairro">
+            </div>
           </div>
 
-          <div class="form-group col-md-6">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="contratante-inputCidade">Cidade</label>
+              <input type="text" name="contratante-inputCidade" class="form-control" id="contratante-inputCidade">
+            </div>
 
-            <label for="contratante-inputCpf">CPF</label>
-            <input type="number" name="contratante-inputCpf" class="form-control" id="contratante-inputCpf">
+            <div class="form-group col-md-2">
+              <label for="contratante-inputEstado">Estado</label>
+              <select name="contratante-inputEstado" class="form-control" id="contratante-inputEstado">
+                <option selected value="">Selecione</option>
+                <option value="">AC</option>
+                <option value="">AL</option>
+                <option value="">AP</option>
+                <option value="">AM</option>
+                <option value="">BA</option>
+                <option value="">CE</option>
+                <option value="">DF</option>
+                <option value="">ES</option>
+                <option value="">GO</option>
+                <option value="">MA</option>
+                <option value="">MT</option>
+                <option value="">MS</option>
+                <option value="">MG</option>
+                <option value="">PA</option>
+                <option value="">PB</option>
+                <option value="">PR</option>
+                <option value="">PE</option>
+                <option value="">PI</option>
+                <option value="">RJ</option>
+                <option value="">RN</option>
+                <option value="">RS</option>
+                <option value="">RO</option>
+                <option value="">RR</option>
+                <option value="">SC</option>
+                <option value="">SP</option>
+                <option value="">SE</option>
+                <option value="">TO</option>
+              </select>
+            </div>
 
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group col-md-6">
-
-            <label for="contratante-inputRg">RG</label>
-            <input type="number" name="contratante-inputRg" class="form-control" id="contratante-inputRg">
-
-          </div>
-
-          <div class="form-group col-md-3">
-
-            <label for="contratante-inputEmissor">Emissor</label>
-            <select name="contratante-inputEmissor" class="form-control" id="contratante-inputEmissor">
-              <option selected value="">Selecione</option>
-              <option value="">SSP</option>
-              <option value="">Outros...</option>
-            </select>
-
-          </div>
-
-          <div class="form-group col-md-3">
-
-            <label for="contratante-inputDataEmissor">Data de Emissão</label>
-            <input type="date" name="contratante-inputDataEmissor" class="form-control" id="contratante-inputDataEmissor">
-
-          </div>
-
-        </div>
-
-        <div class="form-row">
-
-          <div class="form-group col-md-3">
-
-            <label for="contratante-inputTelefone">Telefone</label>
-            <input type="number" name="contratante-inputTelefone" class="form-control" id="contratante-inputTelefone">
-
-          </div>
-
-          <div class="form-group col-md-3">
-
-            <label for="contratante-inputCelular">Celular</label>
-            <input type="number" name="contratante-inputCelular" class="form-control" id="contratante-inputCelular">
-
+            <div class="form-group col-md-4">
+              <label for="contratante-inputCep">CEP</label>
+              <input type="text" name="contratante-inputCep" class="form-control" id="contratante-inputCep">
+            </div>
           </div>
 
-          <div class="form-group col-md-6">
+          <button type="submit" class="align-self-center">Cadastrar</button>
 
-            <label for="contratante-inputEmail">Email</label>
-            <input type="email" name="contratante-inputEmail" class="form-control" id="contratante-inputEmail">
+        </form>
 
-          </div>
-
-        </div>
-
-        <h4 class="align-self-center contratante-subTitulo">Dados Endereço</h4>
-
-        <div class="form-row">
-
-          <div class="form-group col-md-7">
-
-            <label for="contratante-inputEndereço">Endereço</label>
-            <input type="text" name="contratante-inputEndereço" class="form-control" id="contratante-inputEndereço"
-              placeholder="Av., Rua, Alameda, Estrada...">
-
-          </div>
-
-          <div class="form-group col-md-1">
-
-            <label for="contratante-inputNumero">N°</label>
-            <input type="number" name="contratante-inputNumero" class="form-control" id="contratante-inputNumero">
-
-          </div>
-
-          <div class="form-group col-md-4">
-
-            <label for="contratante-inputBairro">Bairro</label>
-            <input type="text" name="contratante-inputBairro" class="form-control" id="contratante-inputBairro">
-
-          </div>
-
-        </div>
-
-        <div class="form-row">
-
-          <div class="form-group col-md-6">
-
-            <label for="contratante-inputCidade">Cidade</label>
-            <input type="text" name="contratante-inputCidade" class="form-control" id="contratante-inputCidade">
-
-          </div>
-
-          <div class="form-group col-md-2">
-
-            <label for="contratante-inputEstado">Estado</label>
-            <select name="contratante-inputEstado" class="form-control" id="contratante-inputEstado">
-              <option selected value="">Selecione</option>
-              <option value="">AC</option>
-              <option value="">AL</option>
-              <option value="">AP</option>
-              <option value="">AM</option>
-              <option value="">BA</option>
-              <option value="">CE</option>
-              <option value="">DF</option>
-              <option value="">ES</option>
-              <option value="">GO</option>
-              <option value="">MA</option>
-              <option value="">MT</option>
-              <option value="">MS</option>
-              <option value="">MG</option>
-              <option value="">PA</option>
-              <option value="">PB</option>
-              <option value="">PR</option>
-              <option value="">PE</option>
-              <option value="">PI</option>
-              <option value="">RJ</option>
-              <option value="">RN</option>
-              <option value="">RS</option>
-              <option value="">RO</option>
-              <option value="">RR</option>
-              <option value="">SC</option>
-              <option value="">SP</option>
-              <option value="">SE</option>
-              <option value="">TO</option>
-            </select>
-
-          </div>
-
-          <div class="form-group col-md-4">
-
-            <label for="contratante-inputCep">CEP</label>
-            <input type="text" name="contratante-inputCep" class="form-control" id="contratante-inputCep">
-
-          </div>
-
-        </div>
-
-        <button type="submit" class="align-self-center">Cadastrar</button>
-
-      </form>
+      </div>
 
     </div>
-
   </main>
 
   <%- include('include/footer') %>

@@ -1128,10 +1128,16 @@ a + img {
 }
 
 .form-cadastroContratante {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #aeb2f2;
   border-radius: 1rem;
   box-shadow: -10px 12px 10px 5px #000000a1;
   height: 60rem;
+  width: 100%;
+  padding: 0 3rem;
 }
 
 .form-cadastroContratante > .contratante-titulo,
@@ -1198,6 +1204,56 @@ a + img {
   background-color: #93c549;
   border: 1px solid #93c549;
   transition: 0.2s;
+}
+
+@media(max-width: 1024px) {
+  .form-cadastroContratante {
+    padding: 0 2rem;
+  }
+}
+
+@media(max-width: 850px) {
+  .form-cadastroContratante {
+    border-radius: 0;
+    box-shadow: 0 0 0 0 #000000a1;
+    height: 58rem;
+  }
+}
+
+@media(max-width: 450px) {
+  .cadastro-contratante {
+    height: 124rem;
+  }
+
+  .form-cadastroContratante {
+    height: 120rem;
+    padding: 0 1.5rem;
+  }
+
+  .form-cadastroContratante > .prestador-titulo,
+  .contratante-subTitulo {
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .form-cadastroContratante > form > .form-row > .form-group > input {
+    border: 2px solid #a094f2;
+    border-radius: 3px;
+    font-size: 1em;
+  }
+
+  .form-cadastroContratante > form > .form-row > .form-group > select {
+    border: 2px solid #a094f2;
+    border-radius: 3px;
+    font-size: 1em;
+  }
+  
+  .form-cadastroContratante > form > button {
+    font-size: 1em;
+    height: 2.2rem;
+    width: 6.5rem;
+    margin-top: 0.5rem;
+  }
 }
 
 /* ------Fim Cadastro contratante - Kevin-------*/
