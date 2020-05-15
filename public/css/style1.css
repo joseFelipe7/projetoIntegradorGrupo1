@@ -997,10 +997,16 @@ a + img {
 }
 
 .form-cadastroPrestador {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #7159c1;
   border-radius: 1rem;
   box-shadow: -10px 12px 10px 5px #000000a1;
   height: 78rem;
+  width: 100%;
+  padding: 0 3rem;
 }
 
 .form-cadastroPrestador > .prestador-titulo,
@@ -1022,13 +1028,13 @@ a + img {
   border-radius: 5px;
   color: #7156c1;
   cursor: pointer;
-  font-size: 11pt;
+  font-size: 1em;
   font-weight: 500;
 }
 
 .form-cadastroPrestador > form > .form-row > .form-group > input::placeholder {
   color: #7156c1;
-  font-size: 11pt;
+  font-size: 1em;
   font-weight: 500;
 }
 
@@ -1037,13 +1043,13 @@ a + img {
   border-radius: 5px;
   color: #7156c1;
   cursor: pointer;
-  font-size: 11pt;
+  font-size: 1em;
   font-weight: 500;
 }
 
 .form-cadastroPrestador > form > .form-row > .form-group > select > option {
   color: #7156c1;
-  font-size: 11pt;
+  font-size: 1em;
   font-weight: 500;
 }
 
@@ -1052,7 +1058,7 @@ a + img {
   border: 1px solid #88bf36;
   border-radius: 5px;
   color: #ffffff;
-  font-size: 14pt;
+  font-size: 1.2em;
   font-weight: 500;
   height: 2.5rem;
   width: 8rem;
@@ -1062,6 +1068,51 @@ a + img {
 .form-cadastroPrestador > form > button:hover {
   background-color: #89b645;
   transition: 0.2s;
+}
+
+@media(max-width: 850px) {
+  .form-cadastroPrestador {
+    border-radius: 0;
+    box-shadow: 0 0 0 0 #000000a1;
+    height: 76rem;
+    padding: 0 2rem;
+  }
+}
+
+@media(max-width: 450px) {
+  .cadastro-prestador {
+    height: 182rem;
+  }
+
+  .form-cadastroPrestador {
+    height: 178rem;
+    padding: 0 1.5rem;
+  }
+
+  .form-cadastroPrestador > .prestador-titulo,
+  .prestador-subTitulo {
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .form-cadastroPrestador > form > .form-row > .form-group > input {
+    border: 2px solid #a094f2;
+    border-radius: 3px;
+    font-size: 1em;
+  }
+
+  .form-cadastroPrestador > form > .form-row > .form-group > select {
+    border: 2px solid #a094f2;
+    border-radius: 3px;
+    font-size: 1em;
+  }
+  
+  .form-cadastroPrestador > form > button {
+    font-size: 1em;
+    height: 2.2rem;
+    width: 6.5rem;
+    margin-top: 0.5rem;
+  }
 }
 
 /* ---------Fim Cadastro prestador - Kevin----------*/
