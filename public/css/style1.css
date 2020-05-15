@@ -615,7 +615,7 @@ a + img {
   color: #7159c1;
 }
 
-@media(max-width: 850px) {
+@media (max-width: 850px) {
   .img-prestador {
     display: none;
   }
@@ -625,18 +625,17 @@ a + img {
   }
 }
 
-@media(max-width: 450px) {
+@media (max-width: 450px) {
   .login-prestador {
     background-color: #aeb2f2;
     height: 32rem;
   }
-  
+
   .form-prestador {
     background-color: transparent;
     border-radius: none;
     height: 32rem;
-  } 
-
+  }
 }
 
 /* -----------Fim Login Prestador - Kevin--------------*/
@@ -769,7 +768,7 @@ a + img {
   color: #aeb2f2;
 }
 
-@media(max-width: 850px) {
+@media (max-width: 850px) {
   .img-contratante {
     display: none;
   }
@@ -779,17 +778,17 @@ a + img {
   }
 }
 
-@media(max-width: 450px) {
+@media (max-width: 450px) {
   .login-contratante {
     background-color: #7156c1;
     height: 32rem;
   }
-  
+
   .form-contratante {
     background-color: transparent;
     border-radius: none;
     height: 32rem;
-  } 
+  }
 }
 
 /* ---------Fim Login Contratante - Kevin-----------*/
@@ -801,10 +800,10 @@ a + img {
   justify-content: center;
   background: rgba(113, 89, 193, 1);
   background: linear-gradient(
-      90deg,
-      rgba(113, 89, 193, 1) 50%,
-      rgba(174, 178, 242, 1) 50%
-    );
+    90deg,
+    rgba(113, 89, 193, 1) 50%,
+    rgba(174, 178, 242, 1) 50%
+  );
   height: 35rem;
   width: 100vw;
 }
@@ -900,38 +899,38 @@ a + img {
   color: #ffffff;
 }
 
-@media(max-width: 850px) { 
+@media (max-width: 850px) {
   .cadastro-selecione1 a {
     padding-right: 1rem;
   }
-  
+
   .cadastro-selecione1 img {
     width: 290px;
-  } 
-  
+  }
+
   .cadastro-selecione2 a {
     margin-top: 7.5rem;
     padding-left: 1rem;
   }
-  
+
   .cadastro-selecione2 img {
     width: 320px;
-  } 
+  }
 }
 
-@media(max-width: 768px) { 
+@media (max-width: 768px) {
   .cadastro-selecione2 a {
     margin-top: 7.875rem;
   }
 }
 
-@media(max-width: 450px) { 
+@media (max-width: 450px) {
   .cadastro-selecione {
     background: linear-gradient(
-        180deg,
-        rgba(113, 89, 193, 1) 50%,
-        rgba(174, 178, 242, 1) 50%
-      );
+      180deg,
+      rgba(113, 89, 193, 1) 50%,
+      rgba(174, 178, 242, 1) 50%
+    );
     height: 40rem;
   }
 
@@ -961,10 +960,10 @@ a + img {
   .cadastro-selecione1 a {
     padding-right: 0;
   }
-  
+
   .cadastro-selecione1 img {
     width: 190px;
-  } 
+  }
 
   .cadastro-selecione2 p {
     font-size: 1.2em;
@@ -978,10 +977,10 @@ a + img {
     margin-top: 0;
     padding-left: 0;
   }
-  
+
   .cadastro-selecione2 img {
     width: 220px;
-  } 
+  }
 }
 
 /* ---------Fim Cadastro selecione - Kevin----------*/
@@ -1070,7 +1069,7 @@ a + img {
   transition: 0.2s;
 }
 
-@media(max-width: 850px) {
+@media (max-width: 850px) {
   .form-cadastroPrestador {
     border-radius: 0;
     box-shadow: 0 0 0 0 #000000a1;
@@ -1079,7 +1078,7 @@ a + img {
   }
 }
 
-@media(max-width: 450px) {
+@media (max-width: 450px) {
   .cadastro-prestador {
     height: 182rem;
   }
@@ -1094,7 +1093,7 @@ a + img {
     margin-top: 0.8rem;
     margin-bottom: 0.8rem;
   }
-  
+
   .form-cadastroPrestador > form > .form-row > .form-group > input {
     border: 2px solid #a094f2;
     border-radius: 3px;
@@ -1106,7 +1105,7 @@ a + img {
     border-radius: 3px;
     font-size: 1em;
   }
-  
+
   .form-cadastroPrestador > form > button {
     font-size: 1em;
     height: 2.2rem;
@@ -1206,13 +1205,13 @@ a + img {
   transition: 0.2s;
 }
 
-@media(max-width: 1024px) {
+@media (max-width: 1024px) {
   .form-cadastroContratante {
     padding: 0 2rem;
   }
 }
 
-@media(max-width: 850px) {
+@media (max-width: 850px) {
   .form-cadastroContratante {
     border-radius: 0;
     box-shadow: 0 0 0 0 #000000a1;
@@ -1220,7 +1219,7 @@ a + img {
   }
 }
 
-@media(max-width: 450px) {
+@media (max-width: 450px) {
   .cadastro-contratante {
     height: 124rem;
   }
@@ -1235,7 +1234,7 @@ a + img {
     margin-top: 0.8rem;
     margin-bottom: 0.8rem;
   }
-  
+
   .form-cadastroContratante > form > .form-row > .form-group > input {
     border: 2px solid #a094f2;
     border-radius: 3px;
@@ -1247,7 +1246,7 @@ a + img {
     border-radius: 3px;
     font-size: 1em;
   }
-  
+
   .form-cadastroContratante > form > button {
     font-size: 1em;
     height: 2.2rem;
@@ -1261,12 +1260,20 @@ a + img {
 /* -----Começo Lista de Prestadores - Kevin-----*/
 
 .fundo-listaPrestadores {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: url("../img/fundo-listaPrestadores.png"), #aeb2f2;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
-  font-weight: 500;
+  background-size: contain;
   height: 100rem;
+  max-height: 100rem;
+  width: 100%;
+}
+
+.row-lp {
+  width: 65rem;
 }
 
 #pesquisa-listaPrestadores {
@@ -1294,7 +1301,8 @@ a + img {
   border: 0.2rem solid #a094f2;
   border-radius: 0.5rem;
   height: 90rem;
-  max-width: 16.8rem;
+  width: 14rem;
+  margin-right: 0.5rem;
 }
 
 .filtro-prestadores .titulo-filtroPrestadores {
@@ -1309,7 +1317,7 @@ a + img {
 .linha-separar {
   background-color: #a094f2;
   height: 0.1rem;
-  margin: 0.2rem 0;
+  margin: 1rem 1rem;
 }
 
 .filtro-prestadores .filtro-parte1 {
@@ -1317,6 +1325,7 @@ a + img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0;
   margin-top: 1.5rem;
 }
 
@@ -1329,6 +1338,7 @@ a + img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0;
 }
 
 .filtro-prestadores .filtro-parte2 ul {
@@ -1344,6 +1354,7 @@ a + img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0;
 }
 
 .filtro-prestadores .filtro-parte3 ul {
@@ -1359,6 +1370,7 @@ a + img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0;
 }
 
 .filtro-prestadores .filtro-parte4 ul {
@@ -1375,8 +1387,10 @@ a + img {
   border-radius: 0.5rem;
   color: #203573;
   cursor: pointer;
+  font-size: 1.2em;
   font-weight: 500;
-  width: 5rem;
+  width: 7rem;
+  max-width: 7rem;
   margin-top: 0.8rem;
 }
 
@@ -1407,8 +1421,9 @@ a + img {
   border: none;
   border-radius: 0.5rem;
   box-shadow: 0 6px 8px 2px #000000;
-  height: 23.5rem;
-  width: 18rem;
+  height: 18rem;
+  width: 13.2rem;
+  max-width: 13.2rem;
 }
 
 .card-listaPrestadores > .card-parteSuperior {
@@ -1420,6 +1435,7 @@ a + img {
   border-top-right-radius: 0.5rem;
   height: 9rem;
   width: 100%;
+  position: relative;
 }
 
 .card-listaPrestadores .card-parteInferior {
@@ -1428,7 +1444,7 @@ a + img {
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 15rem;
+  height: 14rem;
   width: 100%;
 }
 
@@ -1436,46 +1452,55 @@ a + img {
   position: absolute;
   top: 1.5rem;
   z-index: 2;
-  max-width: 152px;
+  max-width: 120px;
 }
 
 .card-parteSuperior .img-notaPrestador {
   position: absolute;
-  top: 10rem;
-  left: 11.2rem;
+  top: 8rem;
+  left: 9rem;
   z-index: 2;
-  max-width: 60px;
+  max-width: 50px;
 }
 
 .card-parteInferior .nota-cardPrestador {
   position: absolute;
-  top: 12rem;
+  top: 9.2rem;
   background-color: #a094f2;
-  border-radius: 0.6rem;
+  border-radius: 0.3rem;
+  color: #ffffff;
+  font-size: 1em;
   font-weight: 500;
-  width: 8rem;
+  width: 7rem;
+  max-width: 7rem;
   padding: 0.3rem;
 }
 
 .card-parteInferior .nome-cardPrestador {
   position: absolute;
-  top: 14.5rem;
+  top: 11.6rem;
   background-color: #a094f2;
-  border-radius: 0.6rem;
+  border-radius: 0.3rem;
+  color: #ffffff;
+  font-size: 1em;
   font-weight: 500;
-  width: 15rem;
-  padding: 0.4rem;
+  width: 12rem;
+  max-width: 12rem;
+  padding: 0.3rem;
 }
 
 .card-parteInferior .sobre-cardPrestador {
   position: absolute;
-  top: 17.5rem;
+  top: 14rem;
   background-color: #a094f2;
-  border-radius: 0.6rem;
+  border-radius: 0.3rem;
+  color: #ffffff;
+  font-size: 1em;
   font-weight: 500;
-  height: 5rem;
-  width: 15rem;
-  padding: 0.4rem;
+  height: 3rem;
+  width: 12rem;
+  max-width: 12rem;
+  padding: 0.3rem;
 }
 
 .lista-cardsPrestadores .row-paginacaoPrestadores {

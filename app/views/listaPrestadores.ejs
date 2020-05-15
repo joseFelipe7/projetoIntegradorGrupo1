@@ -6,22 +6,19 @@
   <%- include('./include/header') %>
   <%- include('./include/menuNav') %>
 
-  <main class="fundo-listaPrestadores d-flex justify-content-center align-items-center">
+  <main class="fundo-listaPrestadores col-12 m-0 p-0">
+    <div class="content-ls">
 
-    <div class="container col-12 lista-prestadores">
-
-      <div class="form-row d-flex justify-content-end col-12 m-0">
+      <div class="form-row row-lp d-flex justify-content-end m-0 p-2">
         <div class="form-group col-md-3">
-
           <input type="text" name="pesquisa-listaPrestadores" class="form-control" id="pesquisa-listaPrestadores"
-            placeholder="Procure por categorias, profissionais...">
-
+            placeholder="Procurar...">
         </div>
       </div>
 
-      <div class="row d-flex justify-content-center align-items-center">
+      <div class="row row-lp d-flex justify-content-center align-items-center m-0 p-0">
 
-        <div class="container col-md-2 filtro-prestadores">
+        <div class="filtro-prestadores">
 
           <div class="row p-2 filtro-parte1">
             <h4 class="titulo-filtroPrestadores">Filtros</h4>
@@ -29,7 +26,7 @@
           </div>
           <hr class="linha-separar">
 
-          <div class="row d-flex flex-column p-3 filtro-parte2">
+          <div class="row d-flex flex-column p-2 filtro-parte2">
             <h5 class="subtitulo-filtroPrestadores">Região</h5>
             <ul>
               <li><input type="checkbox"><label for="">São Paulo (200)</label></li>
@@ -46,7 +43,7 @@
           </div>
           <hr class="linha-separar">
 
-          <div class="row d-flex flex-column p-3 filtro-parte3">
+          <div class="row d-flex flex-column p-2 filtro-parte3">
             <h5 class="subtitulo-filtroPrestadores">Área de Atuação</h5>
             <ul>
               <li><input type="checkbox"><label for="">Diarista</label></li>
@@ -60,153 +57,61 @@
           </div>
           <hr class="linha-separar">
 
-          <div class="row d-flex flex-column p-3 filtro-parte4">
+          <div class="row d-flex flex-column p-2 filtro-parte4">
             <h5 class="subtitulo-filtroPrestadores">Avaliação</h5>
             <ul>
-              <li><input type="checkbox"><label for=""><span>&#11088;&#11088;&#11088;&#11088;&#11088;</span></label>
+              <li>
+                <input type="checkbox">
+                <label for="">&#11088;&#11088;&#11088;&#11088;&#11088;</label>
               </li>
-
-              <li><input type="checkbox"><label for=""><span>&#11088;&#11088;&#11088;&#11088;</span></label></li>
-
-              <li><input type="checkbox"><label for=""><span>&#11088;&#11088;&#11088;</span></label></li>
-
-              <li><input type="checkbox"><label for=""><span>&#11088;&#11088;</span></label></li>
-
-              <li><input type="checkbox"><label for=""><span>&#11088;</span></label></li>
+              <li>
+                <input type="checkbox">
+                <label for="">&#11088;&#11088;&#11088;&#11088;</label>
+              </li>
+              <li>
+                <input type="checkbox">
+                <label for="">&#11088;&#11088;&#11088;</label>
+              </li>
+              <li>
+                <input type="checkbox">
+                <label for="">&#11088;&#11088;</label>
+              </li>
+              <li>
+                <input type="checkbox">
+                <label for="">&#11088;</label>
+              </li>
             </ul>
           </div>
           <hr class="linha-separar">
 
         </div>
 
-        <div class="container col-md-9 lista-cardsPrestadores">
-
+        <div class="col-md-9 lista-cardsPrestadores">
           <div class="row d-flex flex-column m-0 p-0">
             <h4 class="titulo-listaPrestadores">Resultado para a pesquisa: Professor de Matemática</h4>
           </div>
+
           <hr class="linha-separar">
 
-          <div class="row d-flex justify-content-around m-5 p-0">
+          <div class="row d-flex justify-content-around m-0 p-0">
 
-            <div class="card col-md-3 p-0 m-0 card-listaPrestadores">
+            <% for(let i = 0; i <= 11; i++) { %> 
+            <div class="card card-listaPrestadores col-4 my-3 p-0">
               <div class="card-parteSuperior">
                 <img class="boneco-prestador" src="/img/boneco-prestador.png">
                 <img class="img-notaPrestador" src="/img/estrela5.png">
               </div>
-              <div class="card-body card-parteInferior">
+              <div class="card-body card-parteInferior p-0 m-0">
                 <p class="nota-cardPrestador">NOTA</p>
                 <p class="nome-cardPrestador">NOME</p>
                 <p class="sobre-cardPrestador">Sobre/Serviços</p>
               </div>
             </div>
-
-            <div class="card col-md-3 p-0 m-0 card-listaPrestadores">
-              <div class="card-parteSuperior">
-                <img class="boneco-prestador" src="/img/boneco-prestador.png">
-                <img class="img-notaPrestador" src="/img/estrela5.png">
-              </div>
-              <div class="card-body card-parteInferior">
-                <p class="nota-cardPrestador">NOTA</p>
-                <p class="nome-cardPrestador">NOME</p>
-                <p class="sobre-cardPrestador">Sobre/Serviços</p>
-              </div>
-            </div>
-
-            <div class="card col-md-3 p-0 m-0 card-listaPrestadores">
-              <div class="card-parteSuperior">
-                <img class="boneco-prestador" src="/img/boneco-prestador.png">
-                <img class="img-notaPrestador" src="/img/estrela5.png">
-              </div>
-              <div class="card-body card-parteInferior">
-                <p class="nota-cardPrestador">NOTA</p>
-                <p class="nome-cardPrestador">NOME</p>
-                <p class="sobre-cardPrestador">Sobre/Serviços</p>
-              </div>
-            </div>
+          <% } %> 
 
           </div>
 
-          <div class="row d-flex justify-content-around m-5 p-0">
-
-            <div class="card col-md-3 p-0 m-0 card-listaPrestadores">
-              <div class="card-parteSuperior">
-                <img class="boneco-prestador" src="/img/boneco-prestador.png">
-                <img class="img-notaPrestador" src="/img/estrela5.png">
-              </div>
-              <div class="card-body card-parteInferior">
-                <p class="nota-cardPrestador">NOTA</p>
-                <p class="nome-cardPrestador">NOME</p>
-                <p class="sobre-cardPrestador">Sobre/Serviços</p>
-              </div>
-            </div>
-
-            <div class="card col-md-3 p-0 m-0 card-listaPrestadores">
-              <div class="card-parteSuperior">
-                <img class="boneco-prestador" src="/img/boneco-prestador.png">
-                <img class="img-notaPrestador" src="/img/estrela5.png">
-              </div>
-              <div class="card-body card-parteInferior">
-                <p class="nota-cardPrestador">NOTA</p>
-                <p class="nome-cardPrestador">NOME</p>
-                <p class="sobre-cardPrestador">Sobre/Serviços</p>
-              </div>
-            </div>
-
-            <div class="card col-md-3 p-0 m-0 card-listaPrestadores">
-              <div class="card-parteSuperior">
-                <img class="boneco-prestador" src="/img/boneco-prestador.png">
-                <img class="img-notaPrestador" src="/img/estrela5.png">
-              </div>
-              <div class="card-body card-parteInferior">
-                <p class="nota-cardPrestador">NOTA</p>
-                <p class="nome-cardPrestador">NOME</p>
-                <p class="sobre-cardPrestador">Sobre/Serviços</p>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="row d-flex justify-content-around m-5 p-0">
-
-            <div class="card col-md-3 p-0 m-0 card-listaPrestadores">
-              <div class="card-parteSuperior">
-                <img class="boneco-prestador" src="/img/boneco-prestador.png">
-                <img class="img-notaPrestador" src="/img/estrela5.png">
-              </div>
-              <div class="card-body card-parteInferior">
-                <p class="nota-cardPrestador">NOTA</p>
-                <p class="nome-cardPrestador">NOME</p>
-                <p class="sobre-cardPrestador">Sobre/Serviços</p>
-              </div>
-            </div>
-
-            <div class="card col-md-3 p-0 m-0 card-listaPrestadores">
-              <div class="card-parteSuperior">
-                <img class="boneco-prestador" src="/img/boneco-prestador.png">
-                <img class="img-notaPrestador" src="/img/estrela5.png">
-              </div>
-              <div class="card-body card-parteInferior">
-                <p class="nota-cardPrestador">NOTA</p>
-                <p class="nome-cardPrestador">NOME</p>
-                <p class="sobre-cardPrestador">Sobre/Serviços</p>
-              </div>
-            </div>
-
-            <div class="card col-md-3 p-0 m-0 card-listaPrestadores">
-              <div class="card-parteSuperior">
-                <img class="boneco-prestador" src="/img/boneco-prestador.png">
-                <img class="img-notaPrestador" src="/img/estrela5.png">
-              </div>
-              <div class="card-body card-parteInferior">
-                <p class="nota-cardPrestador">NOTA</p>
-                <p class="nome-cardPrestador">NOME</p>
-                <p class="sobre-cardPrestador">Sobre/Serviços</p>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="row d-flex justify-content-around m-0 p-0 row-paginacaoPrestadores">
+          <div class="row d-flex justify-content-around my-2 p-0 row-paginacaoPrestadores">
             <ul class="pagination justify-content-center">
               <li class="page-item">
                 <a class="page-link" href="#">Primeira</a>
@@ -224,9 +129,10 @@
               </li>
             </ul>
           </div>
-
         </div>
+
       </div>
+
     </div>
   </main>
 
