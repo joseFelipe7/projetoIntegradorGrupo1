@@ -82,7 +82,6 @@ html, body {
   padding: 0;
   margin: 0 auto;
   border-radius:  0px 0px 10px 10px;
-  
 }
 .sub-menu-principal-enable{
   position: relative;
@@ -199,62 +198,84 @@ ul, ul li {
   padding: 0;
 }
 
-/*footer*/
-.container-footer{
-  background-color: #A094F2;
-  width: 100%;
+/* Configuração usar como margin dos includes padrão*/
+.content-includes {
   height: 100%;
-  text-align: center;
-  position: relative;
+  width: 100%;
+  max-width: 71.25rem;
 }
 
-.container-footer-head{
-  
-  font-weight: bold;
+/*---------Footer-------------*/
+.container-footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #A094F2;
+  height: 23.75rem;
+  max-height: 23.75rem;
   width: 100%;
-  padding: 0px;
 }
-.container-footer-itens{
-  width: 100%;
-  text-align: justify;
-  font-weight: normal;
-  padding: 40px;
+
+.linksFooter {
+  height: 12rem;
+}
+
+.linksFooter ul {
+  width: 200px;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+}
+
+.linksFooter ul p {
+  color: #7159C1;
+  font-size: 1.2em;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.linksFooter ul li a img {
+  width: 24px;
+  max-width: 24px;
+}
+
+.linksFooter ul li a {
+  display: flex;
+  align-items: center;
+  color: #000000;
+  font-size: 1em;
+  font-weight: 500;
   text-decoration: none;
-}
-.footer-titulo{
-  text-align: left;
-  margin-left: 50px;
-}
-a:link{
-  color:black;
-   text-decoration: none;
-}
-a:hover {
-  color:black;
-}
-nav a {
-  color: #230a68;
+  margin: 0.1rem 0;
+  width: 4rem;
 }
 
-.img-footer{
-  width: 280px;
-  max-width: 300px;
-  margin: 0;
-  position: absolute;
-  top: 1rem;
-  right: 0.3rem;
+.linksFooter ul li a:hover {
+  color: #88BF36;
 }
 
-@media(max-width:800px) {
-  .img-footer {
-    display: none;
-  }
+.subtituloImg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 8rem;
+  max-height: 8rem;
 }
 
-.youtube{
-  width: 30%;
-  height: 30%;
+.subtituloImg .footer-icons a {
+  height: 60px;
+  width: 60px;
+  margin: 0 0.5rem;
+}
 
+.subtituloImg .footer-icons a img {
+  height: 100%;
+  width: 100%;
+}
+
+.img-footer {
+  max-width: 290px;
+  margin-top: 1rem;
 }
 
 .imagem-rodape{
@@ -267,6 +288,7 @@ nav a {
   font-weight: 500;
   width: 100%;
   height: 3rem;
+  max-height: 3rem;
 }
 
 .imagem-rodape img{
@@ -274,6 +296,96 @@ nav a {
   margin-right: 10px;
 }
 
+@media(max-width: 1024px) {
+  .linksFooter ul {
+    padding: 1rem 0 0 3rem;
+    margin: 0;
+  }
+
+  .subtituloImg  p, .subtituloImg  .footer-icons {
+    padding-left: 3rem;
+  }
+}
+
+@media(max-width: 850px) {
+  .img-footer {
+    display: none;
+  }
+
+  #linksFooter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .linksFooter ul {
+    padding-left: 4rem;
+  }
+
+  .linksFooter ul p {
+    font-size: 1em;
+  }
+
+  .subtituloImg  p, .subtituloImg  .footer-icons {
+    padding-left: 0;
+  }
+
+  .footer-icons {
+    justify-content: center;
+  }
+
+  .subtituloImg  p {
+    font-size: 0.8em;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+  }
+
+  .subtituloImg .footer-icons a {
+    height: 40px;
+    width: 40px;
+    margin: 0 0.2rem;
+  }
+
+  .subtituloImg {
+    height: 6rem;
+  }
+}
+
+@media(max-width: 450px) {
+  .linksFooter {
+    justify-content: space-around;
+    width: 100vw;
+  }
+
+  .linksFooter ul {
+    width: 120px;
+    padding: 0.8rem 0 0 0.8rem;
+    margin: 0;
+  }
+
+  .linksFooter ul p {
+    font-size: 0.8em;
+  }
+
+  .linksFooter ul li a {
+    font-size: 0.8em;
+    font-weight: 500;
+  }
+}
+
+@media(max-width: 320px) {
+  .linksFooter ul {
+    width: 90px;
+    padding: 0.8rem 0 0 0.2rem;
+    margin: 0;
+  }
+
+  .linksFooter ul p {
+    font-size: 0.7em;
+  }
+}
+/* -------- Fim footer ---------- */
 
 /*acompanhe usuario*/
 .acompanheUsuario{
@@ -290,11 +402,6 @@ nav a {
   padding: 20px;
   border : 1px solid #28a745;
   margin: 10px;
-}
-.icones-footer{
-  height: 5%;
-  width: 5%;
-  margin-left: 25px;
 }
 .imagem-prestador{
   width: 30%;
@@ -327,9 +434,6 @@ nav a {
   text-align: center;
   height:350px;
   width: 250px;
-  
-
-  
 
 }
 .aceito-card{
@@ -385,58 +489,10 @@ nav a {
   width: 250px;
 }
 
-/*mobile footer e acompanhe*/
+/*mobile  acompanhe*/
 
 @media (max-width:768px){
-
-  .container-footer{
-    position: relative;
-    background-color: #A094F2;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    
-  }
-  .container-footer-head{
-    
-    font-weight: bold;
-    width: 100%;
-    padding: 0px;
-  }
-  .container-footer-itens{
-    width: 100%;
-    text-align: justify;
-    font-weight: normal;
-    padding: 40px;
-    text-decoration: none;
-  }
-  .footer-titulo{
-    text-align: left;
-    margin-left: 50px;
-  }
-  a:link{
-    color:black;
-     text-decoration: none;
-  }
-  a:hover {
-    color:black;
-  }
-  nav a {
-    color: #230a68;
-  }
-  .img-footer{
-    width: 30%;
-    height: 30%;
-    margin-left:930px;
-    margin-top:-350px;
-    
-  }
-  .youtube{
-    width: 30%;
-    height: 30%;
   
-  }
   /*acompanhe usuario*/
   .acompanheUsuario{
     width: 100%;
@@ -453,20 +509,11 @@ nav a {
     border : 1px solid #28a745;
     margin: 10px;
   }
-  .icones-footer{
-    height: 5%;
-    width: 5%;
-    margin-left: 25px;
-  }
   .imagem-prestador{
     width: 30%;
     height: 30%;
     margin-left:750px;
     margin-top:-180px;
-  }
-  .imagem-rodape{
-    width: 100%;
-    height: 100%;
   }
   .enviado{
     display: block;
