@@ -1258,7 +1258,6 @@ a + img {
 /* ------Fim Cadastro contratante - Kevin-------*/
 
 /* -----Começo Lista de Prestadores - Kevin-----*/
-
 .fundo-listaPrestadores {
   display: flex;
   justify-content: center;
@@ -1266,14 +1265,32 @@ a + img {
   background: url("../img/fundo-listaPrestadores.png"), #aeb2f2;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
   height: 100rem;
-  max-height: 100rem;
   width: 100%;
+}
+
+@media (max-width: 3500px) {
+  .fundo-listaPrestadores {
+    background-size: contain;
+  }
+}
+
+@media (max-width: 1600px) {
+  .fundo-listaPrestadores {
+    background-size: cover;
+  }
 }
 
 .row-lp {
   width: 65rem;
+}
+
+.fp-mobile {
+  display: none;
+}
+
+.linha-pesqPrestadores {
+  margin-right: 0.5rem;
 }
 
 #pesquisa-listaPrestadores {
@@ -1302,6 +1319,7 @@ a + img {
   border-radius: 0.5rem;
   height: 90rem;
   width: 14rem;
+  max-width: 14rem;
   margin-right: 0.5rem;
 }
 
@@ -1317,7 +1335,7 @@ a + img {
 .linha-separar {
   background-color: #a094f2;
   height: 0.1rem;
-  margin: 1rem 1rem;
+  margin: 0.6rem 0.6rem;
 }
 
 .filtro-prestadores .filtro-parte1 {
@@ -1401,16 +1419,20 @@ a + img {
 }
 
 .lista-cardsPrestadores {
+  display: flex;
+  flex-direction: column;
   background-color: #ffffff;
   border: 0.2rem solid #a094f2;
   border-radius: 0.5rem;
   height: 90rem;
+  width: 50rem;
 }
 
 .lista-cardsPrestadores .titulo-listaPrestadores {
   color: #203573;
   padding-top: 1rem;
-  padding-left: 0.4rem;
+  padding-left: 1rem;
+  margin: 0;
 }
 
 .card-listaPrestadores {
@@ -1423,7 +1445,7 @@ a + img {
   box-shadow: 0 6px 8px 2px #000000;
   height: 18rem;
   width: 13.2rem;
-  max-width: 13.2rem;
+  max-width: 14rem;
 }
 
 .card-listaPrestadores > .card-parteSuperior {
@@ -1504,7 +1526,10 @@ a + img {
 }
 
 .lista-cardsPrestadores .row-paginacaoPrestadores {
-  height: 2.5rem;
+  align-self: center;
+  max-width: 20rem;
+  margin: 1rem 0;
+  padding: 0;
 }
 
 .row-paginacaoPrestadores .page-link {
@@ -1516,6 +1541,146 @@ a + img {
 .row-paginacaoPrestadores .page-link:hover {
   background-color: #b7bbf6;
   color: #203573;
+}
+
+@media(max-width: 1024px) {
+  .fundo-listaPrestadores {
+    background: url("../img/fundo-listaPrestadoresMD.png"), #aeb2f2;
+    background-size: cover;
+  }
+
+  .row-lp {
+    width: 100%;
+  }
+
+  .linha-pesqPrestadores {
+    margin-right: 0.8rem;
+  }
+
+  .linha-separar {
+    margin: 0.5rem 0.5rem;
+  }
+
+  .filtro-prestadores {
+    width: 13rem;
+    font-size: 0.9em;
+  }
+  
+  .filtro-prestadores .filtro-parte1 {
+    margin-top: 1rem;
+  }
+  
+  .filtro-prestadores .filtro-parte1 img {
+    max-width: 100px;
+  }
+
+  .card-listaPrestadores {
+    height: 18rem;
+    width: 11rem;
+  }
+  
+  .card-parteSuperior .img-notaPrestador {
+    left: 8.5rem;
+  }
+}
+
+@media(max-width: 850px) {
+  .fundo-listaPrestadores {
+    height: 100rem;
+  }
+
+  .linha-pesqPrestadores {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .filtro-prestadores {
+    display: none;
+  }
+
+  .fp-mobile {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 3.2rem;
+    width: 100%;
+  }
+
+  .fp-mobile p {
+    padding-right: 0.8rem;
+    margin: 0;
+  }
+
+  .fp-mobile .fp-filterOrder {
+    display: flex;
+    color: #a094f2;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .fp-mobile .fp-filterOrder img {
+    height: 20px;
+    width: 20px;
+    margin-right: 0.1rem;
+  }
+
+  .filtro-prestadores * {
+    display: none;
+  }
+  
+  .botao-vejaMais {
+    display: none;
+  }
+
+  .titulo-listaPrestadores {
+    font-size: 1.2em;
+  }
+
+  .lista-cardsPrestadores {
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    height: 92rem;
+    width: 100%;
+  }
+  
+  .lista-cardsPrestadores .row-paginacaoPrestadores {
+    margin-top: 1rem;
+  }
+}
+
+@media(max-width: 450px) {
+  .fundo-listaPrestadores {
+    background-image: none;
+    height: 260rem;
+  }
+
+  .linha-pesqPrestadores {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  #pesquisa-listaPrestadores {
+    width: 15rem;
+  }
+
+  .lista-cardsPrestadores {
+    height: 255rem;
+    width: 100%;
+  }
+
+  .card-listaPrestadores {
+    width: 13.5rem;
+  }
+}
+
+@media(max-width: 360px) {
+  .card-listaPrestadores {
+    width: 13rem;
+  }
 }
 
 /* -------Fim Lista de Prestadores - Kevin--------*/

@@ -9,8 +9,8 @@
   <main class="fundo-listaPrestadores col-12 m-0 p-0">
     <div class="content-ls">
 
-      <div class="form-row row-lp d-flex justify-content-end m-0 p-2">
-        <div class="form-group col-md-3">
+      <div class="form-row row-lp d-flex justify-content-end m-0 p-0">
+        <div class="form-group linha-pesqPrestadores col-md-3">
           <input type="text" name="pesquisa-listaPrestadores" class="form-control" id="pesquisa-listaPrestadores"
             placeholder="Procurar...">
         </div>
@@ -86,7 +86,20 @@
 
         </div>
 
-        <div class="col-md-9 lista-cardsPrestadores">
+
+        <div class="lista-cardsPrestadores">
+
+          <div class="fp-mobile">
+            <a href="#" class="fp-filterOrder">
+              <img src="/img/filter-mobile.png">
+              <p>Filtrar</p>
+            </a>
+            <a href="#" class="fp-filterOrder">
+              <img src="/img/order-mobile.png">
+              <p>Ordenar</p>
+            </a>
+          </div>
+
           <div class="row d-flex flex-column m-0 p-0">
             <h4 class="titulo-listaPrestadores">Resultado para a pesquisa: Professor de Matemática</h4>
           </div>
@@ -94,9 +107,8 @@
           <hr class="linha-separar">
 
           <div class="row d-flex justify-content-around m-0 p-0">
-
-            <% for(let i = 0; i <= 11; i++) { %> 
-            <div class="card card-listaPrestadores col-4 my-3 p-0">
+            <% for(let i = 0; i <= 11; i++) { %>
+            <div class="card card-listaPrestadores col-sm-12 col-md-6 col-lg-4 my-3 p-0">
               <div class="card-parteSuperior">
                 <img class="boneco-prestador" src="/img/boneco-prestador.png">
                 <img class="img-notaPrestador" src="/img/estrela5.png">
@@ -107,11 +119,11 @@
                 <p class="sobre-cardPrestador">Sobre/Serviços</p>
               </div>
             </div>
-          <% } %> 
+            <% } %>
 
           </div>
 
-          <div class="row d-flex justify-content-around my-2 p-0 row-paginacaoPrestadores">
+          <div class="row row-paginacaoPrestadores">
             <ul class="pagination justify-content-center">
               <li class="page-item">
                 <a class="page-link" href="#">Primeira</a>
@@ -120,15 +132,12 @@
               <li class="page-item"><a class="page-link" href="#">2</a></li>
               <li class="page-item"><a class="page-link" href="#">3</a></li>
               <li class="page-item"><a class="page-link" href="#">4</a></li>
-              <li class="page-item"><a class="page-link" href="#">5</a></li>
-              <li class="page-item"><a class="page-link" href="#">6</a></li>
-              <li class="page-item"><a class="page-link" href="#">7</a></li>
-              <li class="page-item"><a class="page-link" href="#">8</a></li>
               <li class="page-item">
                 <a class="page-link" href="#">Última</a>
               </li>
             </ul>
           </div>
+
         </div>
 
       </div>
