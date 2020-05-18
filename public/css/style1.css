@@ -1,6 +1,8 @@
 /* --------Começo configuração ASIDE - Kevin------- */
 /* Configuração da barra lateral esquerda de opções */
-.barra-lateral {
+.barra-lateralCont,
+.barra-lateralPrest,
+.barra-lateralAdmin {
   background-color: #aeb2f2;
   display: flex;
   flex-direction: column;
@@ -8,13 +10,8 @@
   width: 12rem;
 }
 
-.barra-lateral .foto-perfil {
-  background-image: linear-gradient(
-    to right,
-    rgb(136, 191, 54),
-    rgb(28, 75, 133),
-    rgb(160, 148, 242)
-  );
+.barra-lateralCont .foto-perfilCont {
+  background: rgb(113, 86, 193);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,42 +19,74 @@
   height: 9rem;
 }
 
-.barra-lateral .foto-perfil .usuario img {
+.barra-lateralPrest .foto-perfilPrest {
+  background: rgb(136, 191, 54);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 9rem;
+}
+
+.barra-lateralAdmin .foto-perfilAdmin {
+  background: rgb(28, 75, 133);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 9rem;
+}
+
+.barra-lateralCont .foto-perfilCont .usuarioCont img,
+.barra-lateralPrest .foto-perfilPrest .usuarioPrest img,
+.barra-lateralAdmin .foto-perfilAdmin .usuarioAdmin img {
   background-color: #ffffff;
   border-radius: 100px;
   width: 84px;
 }
 
-.barra-lateral .foto-perfil .botao-comunicacao img {
+.barra-lateralCont .foto-perfilCont .botao-comunicacaoCont img,
+.barra-lateralPrest .foto-perfilPrest .botao-comunicacaoPrest img,
+.barra-lateralAdmin .foto-perfilAdmin .botao-comunicacaoAdmin img {
   margin-top: 30px;
   width: 32px;
 }
 
-.barra-lateral .foto-perfil .dados {
+.barra-lateralCont .foto-perfilCont .dadosCont,
+.barra-lateralPrest .foto-perfilPrest .dadosPrest,
+.barra-lateralAdmin .foto-perfilAdmin .dadosAdmin {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.barra-lateral .foto-perfil .dados a h6 {
+.barra-lateralCont .foto-perfilCont .dadosCont a h6,
+.barra-lateralPrest .foto-perfilPrest .dadosPrest a h6,
+.barra-lateralAdmin .foto-perfilAdmin .dadosAdmin a h6 {
   margin: 3px 0;
   padding: 0;
 }
 
-.barra-lateral .foto-perfil .dados a {
+.barra-lateralCont .foto-perfilCont .dadosCont a,
+.barra-lateralPrest .foto-perfilPrest .dadosPrest a,
+.barra-lateralAdmin .foto-perfilAdmin .dadosAdmin a {
   color: #ffffff;
   font-size: 0.8rem;
   text-decoration: none;
 }
 
-.barra-lateral .opcoes {
+.barra-lateralCont .opcoesCont,
+.barra-lateralPrest .opcoesPrest,
+.barra-lateralAdmin .opcoesAdmin {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.barra-lateral .opcoes a {
+.barra-lateralCont .opcoesCont a,
+.barra-lateralPrest .opcoesPrest a,
+.barra-lateralAdmin .opcoesAdmin a {
   cursor: pointer;
   text-decoration: none;
   display: flex;
@@ -68,18 +97,24 @@
   padding-left: 18px;
 }
 
-.barra-lateral .opcoes a:hover {
+.barra-lateralCont .opcoesCont a:hover,
+.barra-lateralPrest .opcoesPrest a:hover,
+.barra-lateralAdmin .opcoesAdmin a:hover {
   background-color: #a094f2;
 }
 
-.barra-lateral .opcoes a p {
+.barra-lateralCont .opcoesCont a p,
+.barra-lateralPrest .opcoesPrest a p,
+.barra-lateralAdmin .opcoesAdmin a p {
   color: #203573;
   font-weight: 500;
   margin: 0 2px;
   padding: 0;
 }
 
-.barra-lateral .opcoes hr {
+.barra-lateralCont .opcoesCont hr,
+.barra-lateralPrest .opcoesPrest hr,
+.barra-lateralAdmin .opcoesAdmin hr {
   width: 11rem;
   margin: 0 10px;
   padding: 0;
@@ -89,23 +124,48 @@
 /* ---Começo configuração BARRA SUPERIOR - Kevin--- */
 
 /* Configuração da barra superior sessão atual */
-.barra-superior {
+.barra-superiorCont,
+.barra-superiorPrest,
+.barra-superiorAdmin {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.barra-superior .sessao {
-  background-image: linear-gradient(
-    to right,
-    rgb(160, 148, 242),
-    rgb(28, 75, 133),
-    rgb(136, 191, 54)
+.barra-superiorCont .sessaoCont {
+  background: rgb(113, 86, 193);
+  background: linear-gradient(
+    90deg,
+    rgba(113, 86, 193, 1) 72%,
+    rgba(28, 75, 133, 1) 86%,
+    rgba(136, 191, 54, 1) 100%
   );
   height: 3.5rem;
 }
 
-.barra-superior .sessao a {
+.barra-superiorPrest .sessaoPrest {
+  background: rgb(136, 191, 54);
+  background: linear-gradient(
+    90deg,
+    rgba(136, 191, 54, 1) 72%,
+    rgba(160, 148, 242, 1) 86%,
+    rgba(28, 75, 133, 1) 100%
+  );
+  height: 3.5rem;
+}
+
+.barra-superiorAdmin .sessaoAdmin {
+  background: rgb(28, 75, 133);
+  background: linear-gradient(
+    90deg,
+    rgba(28, 75, 133, 1) 72%,
+    rgba(136, 191, 54, 1) 86%,
+    rgba(160, 148, 242, 1) 100%
+  );
+  height: 3.5rem;
+}
+
+.barra-superiorCont .sessaoCont a {
   background-color: #aeb2f2;
   border-radius: 5px;
   color: #203573;
@@ -119,18 +179,52 @@
   width: 8rem;
 }
 
-.barra-superior .caminho-pagina {
+.barra-superiorPrest .sessaoPrest a {
+  background-color: #203573;
+  border-radius: 5px;
+  color: #88bf36;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.8rem 0.8rem;
+  height: 2rem;
+  width: 8rem;
+}
+
+.barra-superiorAdmin .sessaoAdmin a {
+  background-color: #a094f2;
+  border-radius: 5px;
+  color: #203573;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.8rem 0.8rem;
+  height: 2rem;
+  width: 8rem;
+}
+
+.barra-superiorCont .caminho-paginaCont,
+.barra-superiorPrest .caminho-paginaPrest,
+.barra-superiorAdmin .caminho-paginaAdmin {
   background-color: #ffffff;
   border-bottom-left-radius: 15px;
 }
 
-.barra-superior .caminho-pagina ul {
+.barra-superiorCont .caminho-paginaCont ul,
+.barra-superiorPrest .caminho-paginaPrest ul,
+.barra-superiorAdmin .caminho-paginaAdmin ul {
   display: flex;
   justify-content: flex-start;
   margin-left: 15px;
 }
 
-.barra-superior .caminho-pagina ul li a {
+.barra-superiorCont .caminho-paginaCont ul li a,
+.barra-superiorPrest .caminho-paginaPrest ul li a,
+.barra-superiorAdmin .caminho-paginaAdmin ul li a {
   color: #7159c1;
   font-size: 0.8rem;
   text-decoration: none;
@@ -143,32 +237,44 @@
 
 @media (max-width: 768px) {
   /* Configuração da barra lateral esquerda de opções */
-  .barra-lateral {
+  .barra-lateralCont,
+  .barra-lateralPrest,
+  .barra-lateralAdmin {
     display: none;
   }
 
   /* Configuração da barra superior sessão atual */
-  .barra-superior .sessao {
+  .barra-superiorCont .sessaoCont,
+  .barra-superiorPrest .sessaoPrest,
+  .barra-superiorAdmin .sessaoAdmin {
     height: 2.5rem;
   }
 
-  .barra-superior .sessao a {
+  .barra-superiorCont .sessaoCont a,
+  .barra-superiorPrest .sessaoPrest a,
+  .barra-superiorAdmin .sessaoAdmin a {
     font-size: 0.9rem;
     margin: 0.4rem 0.4rem;
     height: 1.5rem;
     width: 6.5rem;
   }
 
-  .barra-superior .caminho-pagina {
+  .barra-superiorCont .caminho-paginaCont,
+  .barra-superiorPrest .caminho-paginaPrest,
+  .barra-superiorAdmin .caminho-paginaAdmin {
     background-color: #ffffff;
     border-bottom-left-radius: 15px;
   }
 
-  .barra-superior .caminho-pagina ul {
+  .barra-superiorCont .caminho-paginaCont ul,
+  .barra-superiorPrest .caminho-paginaPrest ul,
+  .barra-superiorAdmin .caminho-paginaAdmin ul {
     margin-left: 10px;
   }
 
-  .barra-superior .caminho-pagina ul li a {
+  .barra-superiorCont .caminho-paginaCont ul li a,
+  .barra-superiorPrest .caminho-paginaPrest ul li a,
+  .barra-superiorAdmin .caminho-paginaAdmin ul li a {
     font-size: 0.6rem;
   }
 }
@@ -1543,7 +1649,7 @@ a + img {
   color: #203573;
 }
 
-@media(max-width: 1024px) {
+@media (max-width: 1024px) {
   .fundo-listaPrestadores {
     background: url("../img/fundo-listaPrestadoresMD.png"), #aeb2f2;
     background-size: cover;
@@ -1565,11 +1671,11 @@ a + img {
     width: 13rem;
     font-size: 0.9em;
   }
-  
+
   .filtro-prestadores .filtro-parte1 {
     margin-top: 1rem;
   }
-  
+
   .filtro-prestadores .filtro-parte1 img {
     max-width: 100px;
   }
@@ -1578,13 +1684,13 @@ a + img {
     height: 18rem;
     width: 11rem;
   }
-  
+
   .card-parteSuperior .img-notaPrestador {
     left: 8.5rem;
   }
 }
 
-@media(max-width: 850px) {
+@media (max-width: 850px) {
   .fundo-listaPrestadores {
     height: 100rem;
   }
@@ -1628,7 +1734,7 @@ a + img {
   .filtro-prestadores * {
     display: none;
   }
-  
+
   .botao-vejaMais {
     display: none;
   }
@@ -1644,13 +1750,13 @@ a + img {
     height: 92rem;
     width: 100%;
   }
-  
+
   .lista-cardsPrestadores .row-paginacaoPrestadores {
     margin-top: 1rem;
   }
 }
 
-@media(max-width: 450px) {
+@media (max-width: 450px) {
   .fundo-listaPrestadores {
     background-image: none;
     height: 260rem;
@@ -1677,7 +1783,7 @@ a + img {
   }
 }
 
-@media(max-width: 360px) {
+@media (max-width: 360px) {
   .card-listaPrestadores {
     width: 13rem;
   }
