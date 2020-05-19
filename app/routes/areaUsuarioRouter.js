@@ -73,4 +73,6 @@ router.get("/area-prestador/requisicoes", (req, res) => {
     res.render("areaPrestador", {view: "requisicoes-prestador"});
 })
 
+
+
 module.exports = router;
