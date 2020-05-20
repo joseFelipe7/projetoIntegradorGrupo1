@@ -12,21 +12,21 @@
       <div class="form-cadastroPrestador">
         <h3 class="prestador-titulo">CADASTRE-SE:</h3>
 
-        <form action="area-prestador/cadastrar" class="d-flex flex-column justify-content-center" method="POST">
+        <form action="area-prestador/cadastrar" class="d-flex flex-column justify-content-center" method="POST" enctype="multipart/form-data">
 
           <div class="form-row">
             <div class="form-group col-md-7">
               <label for="prestador-inputEmail1">Email</label>
-              <input type="email" name="prestadorInputEmail1" class="form-control" id="prestador-inputEmail1">
+              <input type="email" name="email" class="form-control" id="prestador-inputEmail1">
               <label for="prestador-inputEmail2">Repetir email</label>
-              <input type="email" name="prestadorInputEmail2" class="form-control" id="prestador-inputEmail2">
+              <input type="email" name="email2" class="form-control" id="prestador-inputEmail2">
             </div>
 
             <div class="form-group col-md-5">
               <label for="prestador-inputSenha1">Senha</label>
-              <input type="password" name="prestadorInputSenha1" class="form-control" id="prestador-inputSenha1">
+              <input type="password" name="password" class="form-control" id="prestador-inputSenha1">
               <label for="prestador-inputSenha2">Repetir senha</label>
-              <input type="password" name="prestadorInputSenha2" class="form-control" id="prestador-inputSenha2">
+              <input type="password" name="password22" class="form-control" id="prestador-inputSenha2">
             </div>
           </div>
 
@@ -35,17 +35,17 @@
           <div class="form-row">
             <div class="form-group col-md-5">
               <label for="prestador-inputNome1">Nome</label>
-              <input type="text" name="prestadorInputNome1" class="form-control" id="prestador-inputNome1">
+              <input type="text" name="name" class="form-control" id="prestador-inputNome1">
             </div>
 
             <div class="form-group col-md-5">
               <label for="prestador-inputSobrenome1">Sobrenome</label>
-              <input type="text" name="prestadorInputSobrenome1" class="form-control" id="prestador-inputSobrenome1">
+              <input type="text" name="Sobrenome" class="form-control" id="prestador-inputSobrenome1">
             </div>
 
             <div class="form-group col-md-2">
               <label for="prestador-inputSexo">Sexo</label>
-              <select name="prestadorInputSexo" class="form-control" id="prestador-inputSexo">
+              <select name="sexo" class="form-control" id="prestador-inputSexo">
                 <option selected value="">Selecione</option>
                 <option value="">Masculino</option>
                 <option value="">Feminino</option>
@@ -58,17 +58,17 @@
           <div class="form-row">
             <div class="form-group col-md-3">
               <label for="prestador-inputNascimento">Nascimento</label>
-              <input type="date" name="prestadorInputNascimento" class="form-control" id="prestador-inputNascimento">
+              <input type="date" name="data_nascimento" class="form-control" id="prestador-inputNascimento">
             </div>
 
             <div class="form-group col-md-4">
               <label for="prestador-inputRg">RG</label>
-              <input type="number" name="prestadorInputRg" class="form-control" id="prestador-inputRg">
+              <input type="number" name="rg" class="form-control" id="prestador-inputRg">
             </div>
 
             <div class="form-group col-md-2">
               <label for="prestador-inputEmissor">Emissor</label>
-              <select name="prestadorInputEmissor" class="form-control" id="prestador-inputEmissor">
+              <select name="emissor" class="form-control" id="prestador-inputEmissor">
                 <option selected value="">Selecione</option>
                 <option value="">SSP</option>
                 <option value="">Outros...</option>
@@ -77,7 +77,7 @@
 
             <div class="form-group col-md-3">
               <label for="prestador-inputDataEmissor">Data de Emissão</label>
-              <input type="date" name="prestadorInputDataEmissor" class="form-control" id="prestador-inputDataEmissor">
+              <input type="date" name="data_emissao" class="form-control" id="prestador-inputDataEmissor">
             </div>
 
           </div>
@@ -85,17 +85,17 @@
           <div class="form-row">
             <div class="form-group col-md-3">
               <label for="prestador-inputTelefone1">Telefone</label>
-              <input type="number" name="prestadorInputTelefone1" class="form-control" id="prestador-inputTelefone1">
+              <input type="number" name="telefone" class="form-control" id="prestador-inputTelefone1">
             </div>
 
             <div class="form-group col-md-3">
               <label for="prestador-inputCelular1">Celular</label>
-              <input type="number" name="prestadorInputCelular1" class="form-control" id="prestador-inputCelular1">
+              <input type="number" name="celular" class="form-control" id="prestador-inputCelular1">
             </div>
 
             <div class="form-group col-md-6">
               <label for="prestador-inputEmail3">Email</label>
-              <input type="email" name="prestadorInputEmail3" class="form-control" id="prestador-inputEmail1">
+              <input type="email" name="email3" class="form-control" id="prestador-inputEmail3">
             </div>
 
           </div>
@@ -105,18 +105,18 @@
           <div class="form-row">
             <div class="form-group col-md-7">
               <label for="prestador-inputEndereco1">Endereço</label>
-              <input type="text" name="prestadorInputEndereço1" class="form-control" id="prestador-inputEndereço1"
+              <input type="text" name="endereco" class="form-control" id="prestador-inputEndereço1"
                 placeholder="Av., Rua, Alameda, Estrada...">
             </div>
 
             <div class="form-group col-md-1">
               <label for="prestador-inputNumero1">N°</label>
-              <input type="number" name="prestadorInputNumero1" class="form-control" id="prestador-inputNumero1">
+              <input type="number" name="numero" class="form-control" id="prestador-inputNumero1">
             </div>
 
             <div class="form-group col-md-4">
               <label for="prestador-inputBairro1">Bairro</label>
-              <input type="text" name="prestadorInputBairro1" class="form-control" id="prestador-inputBairro1">
+              <input type="text" name="bairro" class="form-control" id="prestador-inputBairro1">
             </div>
 
           </div>
@@ -124,12 +124,12 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="prestador-inputCidade1">Cidade</label>
-              <input type="text" name="prestadorInputCidade1" class="form-control" id="prestador-inputCidade1">
+              <input type="text" name="cidade" class="form-control" id="prestador-inputCidade1">
             </div>
 
             <div class="form-group col-md-2">
               <label for="prestador-inputEstado1">Estado</label>
-              <select name="prestadorInputEstado1" class="form-control" id="prestador-inputEstado1">
+              <select name="estado" class="form-control" id="prestador-inputEstado1">
                 <option selected value="">Selecione</option>
                 <option value="">AC</option>
                 <option value="">AL</option>
@@ -163,7 +163,7 @@
 
             <div class="form-group col-md-4">
               <label for="prestador-inputCep1">CEP</label>
-              <input type="text" name="prestadorInputCep1" class="form-control" id="prestador-inputCep1">
+              <input type="text" name="cep" class="form-control" id="prestador-inputCep1">
             </div>
 
           </div>
@@ -173,17 +173,17 @@
           <div class="form-row">
             <div class="form-group col-md-3">
               <label for="prestador-inputCpf">CPF</label>
-              <input type="number" name="prestadorInputCpf" class="form-control" id="prestador-inputCpf">
+              <input type="number" name="cpf" class="form-control" id="prestador-inputCpf">
             </div>
 
             <div class="form-group col-md-3">
               <label for="prestador-inputCnpj">CNPJ</label>
-              <input type="number" name="prestadorInputCnpj" class="form-control" id="prestador-inputCnpj">
+              <input type="number" name="cnpj" class="form-control" id="prestador-inputCnpj">
             </div>
 
             <div class="form-group  col-md-6">
               <label for="prestador-inputFantasia">Nome Fantasia</label>
-              <input type="text" name="prestadorInputFantasia" class="form-control" id="prestador-inputFantasia"
+              <input type="text" name="nome_fantasia" class="form-control" id="prestador-inputFantasia"
                 placeholder="Nome fantasia do seu negócio">
             </div>
 
@@ -192,18 +192,18 @@
           <div class="form-row">
             <div class="form-group col-md-7">
               <label for="prestador-inputEndereco2">Endereço</label>
-              <input type="text" name="prestadorInputEndereco2" class="form-control" id="prestador-inputEndereco2"
+              <input type="text" name="endereco2" class="form-control" id="prestador-inputEndereco2"
                 placeholder="Av., Rua, Alameda, Estrada...">
             </div>
 
             <div class="form-group col-md-1">
               <label for="prestador-inputNumero2">N°</label>
-              <input type="number" name="prestadorInputNumero2" class="form-control" id="prestador-inputNumero2">
+              <input type="number" name="numero2" class="form-control" id="prestador-inputNumero2">
             </div>
 
             <div class="form-group col-md-4">
               <label for="prestador-inputBairro2">Bairro</label>
-              <input type="text" name="prestadorInputBairro2" class="form-control" id="prestador-inputBairro2">
+              <input type="text" name="bairro2" class="form-control" id="prestador-inputBairro2">
             </div>
 
           </div>
@@ -211,12 +211,12 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="prestador-inputCidade2">Cidade</label>
-              <input type="text" name="prestadorInputCidade2" class="form-control" id="prestador-inputCidade2">
+              <input type="text" name="cidade2" class="form-control" id="prestador-inputCidade2">
             </div>
 
             <div class="form-group col-md-2">
               <label for="prestador-inputEstado2">Estado</label>
-              <select name="prestadorInputEstado2" class="form-control" id="prestador-inputEstado2">
+              <select name="estado2" class="form-control" id="prestador-inputEstado2">
                 <option selected value="">Selecione</option>
                 <option value="">AC</option>
                 <option value="">AL</option>
@@ -250,7 +250,7 @@
 
             <div class="form-group col-md-4">
               <label for="prestador-inputCep2">CEP</label>
-              <input type="number" name="prestadorInputCep2" class="form-control" id="prestador-inputCep2">
+              <input type="number" name="cep2" class="form-control" id="prestador-inputCep2">
             </div>
 
           </div>
@@ -259,17 +259,17 @@
           <div class="form-row">
             <div class="form-group col-md-3">
               <label for="prestador-inputTelefone2">Telefone</label>
-              <input type="number" name="prestadorInputTelefone2" class="form-control" id="prestador-inputTelefone2">
+              <input type="number" name="telefone2" class="form-control" id="prestador-inputTelefone2">
             </div>
 
             <div class="form-group col-md-3">
-              <label for="prestador-inputCelular2">Celular</label>
-              <input type="number" name="prestadorInputCelular2" class="form-control" id="prestador-inputCelular2">
+              <label for="prestador-inputCelular3">Celular</label>
+              <input type="number" name="celular2" class="form-control" id="prestador-inputCelular3">
             </div>
 
             <div class="form-group col-md-6">
               <label for="prestador-inputEmail4">Email</label>
-              <input type="email" name="prestadorInputEmail4" class="form-control" id="prestador-inputEmail2">
+              <input type="email" name="email4" class="form-control" id="prestador-inputEmail4 ">
             </div>
 
           </div>
