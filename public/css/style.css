@@ -54,6 +54,11 @@ svg.icon-bofl{
   text-align: center;
   margin-right: 5px;
 }
+a.icon-bofl{
+  padding-top: 8px;
+  text-align: center;
+  margin-right: 8px;
+}
 
 
 @media (min-width:768px){

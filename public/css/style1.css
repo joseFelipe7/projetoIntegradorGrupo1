@@ -1224,7 +1224,7 @@ a + img {
   justify-content: center;
   align-items: center;
   background-color: #7156c1;
-  height: 70rem;
+  height: 42rem;
 }
 
 .form-cadastroContratante {
@@ -1233,10 +1233,10 @@ a + img {
   justify-content: center;
   align-items: center;
   background-color: #aeb2f2;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   box-shadow: -10px 12px 10px 5px #000000a1;
-  height: 60rem;
-  width: 100%;
+  height: 36rem;
+  width: 25rem;
   padding: 0 3rem;
 }
 
@@ -1259,8 +1259,10 @@ a + img {
   border-radius: 5px;
   color: #a094f2;
   cursor: pointer;
-  font-size: 11pt;
+  font-size: 1em;
   font-weight: 500;
+  width: 20rem;
+  max-width: 20rem;
 }
 
 .form-cadastroContratante
@@ -1269,7 +1271,7 @@ a + img {
   > .form-group
   > input::placeholder {
   color: #a094f2;
-  font-size: 11pt;
+  font-size: 1em;
   font-weight: 500;
 }
 
@@ -1284,7 +1286,7 @@ a + img {
 
 .form-cadastroContratante > form > .form-row > .form-group > select > option {
   color: #a094f2;
-  font-size: 11pt;
+  font-size: 1em;
   font-weight: 500;
 }
 
@@ -1293,11 +1295,11 @@ a + img {
   border: 1px solid #89b645;
   border-radius: 5px;
   color: #ffffff;
-  font-size: 14pt;
+  font-size: 1.2em;
   font-weight: 500;
   height: 2.5rem;
   width: 8rem;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 .form-cadastroContratante > form > button:hover {
@@ -1306,28 +1308,18 @@ a + img {
   transition: 0.2s;
 }
 
-@media (max-width: 1024px) {
-  .form-cadastroContratante {
-    padding: 0 2rem;
-  }
-}
 
-@media (max-width: 850px) {
-  .form-cadastroContratante {
-    border-radius: 0;
-    box-shadow: 0 0 0 0 #000000a1;
-    height: 58rem;
-  }
-}
 
 @media (max-width: 450px) {
   .cadastro-contratante {
-    height: 124rem;
+    height: 40rem;
   }
 
   .form-cadastroContratante {
-    height: 120rem;
-    padding: 0 1.5rem;
+    border-radius: 0;
+    box-shadow: 0 0 0 ;
+    width: 100vw;
+    padding: 0;
   }
 
   .form-cadastroContratante > .prestador-titulo,
