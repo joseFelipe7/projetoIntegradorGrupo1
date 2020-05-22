@@ -1098,7 +1098,7 @@ a + img {
   justify-content: center;
   align-items: center;
   background-color: #aeb2f2;
-  height: 85rem;
+  height: 42rem;
 }
 
 .form-cadastroPrestador {
@@ -1107,11 +1107,11 @@ a + img {
   justify-content: center;
   align-items: center;
   background-color: #7159c1;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   box-shadow: -10px 12px 10px 5px #000000a1;
-  height: 78rem;
-  width: 100%;
-  padding: 0 3rem;
+  height: 36rem;
+  width: 25rem;
+  padding: 0;
 }
 
 .form-cadastroPrestador > .prestador-titulo,
@@ -1135,6 +1135,8 @@ a + img {
   cursor: pointer;
   font-size: 1em;
   font-weight: 500;
+  width: 20rem;
+  max-width: 20rem;
 }
 
 .form-cadastroPrestador > form > .form-row > .form-group > input::placeholder {
@@ -1175,23 +1177,16 @@ a + img {
   transition: 0.2s;
 }
 
-@media (max-width: 850px) {
-  .form-cadastroPrestador {
-    border-radius: 0;
-    box-shadow: 0 0 0 0 #000000a1;
-    height: 76rem;
-    padding: 0 2rem;
-  }
-}
-
 @media (max-width: 450px) {
   .cadastro-prestador {
-    height: 182rem;
+    height: 40rem;
   }
 
   .form-cadastroPrestador {
-    height: 178rem;
-    padding: 0 1.5rem;
+    border-radius: 0;
+    box-shadow: 0 0 0 ;
+    width: 100vw;
+    padding: 0;
   }
 
   .form-cadastroPrestador > .prestador-titulo,
