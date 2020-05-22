@@ -12,10 +12,13 @@ router.get("/contratante", (req, res) => {
     res.render("cadastroContratante");
 })
 
-router.get("/prestador", (req, res) => {
-    res.render("cadastroPrestador");
-})
-router.get("/area-prestador/cadastrar", prestadorController.viewFormCadastro);
-router.post("/area-prestador/cadastrar", upload.any(), prestadorController.cadastrar)
+//router.get("/prestador", (req, res) => {
+  //  res.render("cadastroPrestador");
+//})
+//router.get("/area-prestador/cadastrar", prestadorController.viewFormCadastro);
+//router.post("/area-prestador/cadastrar", upload.any(), prestadorController.cadastrar)
+
+router.get("/prestador", prestadorController.viewFormCadastro);
+router.post("/prestador", prestadorController.cadastrar)
 
 module.exports = router;
