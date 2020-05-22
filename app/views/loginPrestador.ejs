@@ -13,25 +13,33 @@
         <img src="/img/entre-prestador.png" alt="Prestador de Serviços">
       </div>
 
-        <div class="form-prestador">
-          <h2>Prestador</h2>
-          <form action="">
-            <input class="campo-prestador" type="email" name="email" id="email" placeholder="Email">
-            <input class="campo-prestador" type="password" name="password" id="password" placeholder="Senha">
-            <label class="check-prestador" for="checkbox-lembrePrestador">
-              <input id="checkbox-lembrePrestador" type="checkbox" name="selecione" value="Lembre">
-              Lembre de mim
-            </label>
-            <button class="entrar-prestador" type="submit">ENTRE</button>
-          </form>
-          <p>Faça login com:</p>
-          <div class="faca-loginPrestador">
-            <a href="#"><img src="/img/login-google.png"></a>
-            <a href="#"><img src="/img/login-linkedin.png"></a>
-            <a href="#"><img src="/img/login-facebook.png"></a>
+      <div class="form-prestador">
+        <h2>Prestador</h2>
+        <form action="/login/Prestador" method="POST">
+          <input class="campo-prestador" type="email" name="email" id="email" placeholder="Email">
+          <input class="campo-prestador" type="password" name="password" id="password" placeholder="Senha">
+
+          <div class="msg-errorLogin">
+            <% if (typeof msg !== "undefined") { %>
+            <p> <%= msg %> </p>
+            <% } %>
           </div>
-          <a id="esqueceu-prestador" href="#">Esqueceu a senha?</a>
+
+          <div class="check-prestador">
+            <input id="checkbox-lembrePrestador" type="checkbox" name="selecione" value="Lembre">
+            <label for="checkbox-lembrePrestador">Lembre de mim</label>
+          </div>
+
+          <button class="entrar-prestador" type="submit">ENTRE</button>
+        </form>
+        <p>Faça login com:</p>
+        <div class="faca-loginPrestador">
+          <a href="#"><img src="/img/login-google.png"></a>
+          <a href="#"><img src="/img/login-linkedin.png"></a>
+          <a href="#"><img src="/img/login-facebook.png"></a>
         </div>
+        <a id="esqueceu-prestador" href="#">Esqueceu a senha?</a>
+      </div>
 
     </div>
   </main>

@@ -1,5 +1,6 @@
-const bcrypt = require('bcrypt');
-const { Prestador } = require('../models/Prestador');
+const Sequelize = require("sequelize");
+const config = require("../../config/database");
+const bcrypt = require("bcrypt");
 
 module.exports = {
   create: (_req, res) => {
@@ -8,26 +9,27 @@ module.exports = {
 
   store: async (req, res) => {
     const { email, password } = req.body;
+    const con = new Sequelize(config);
     
-    // select passqord é pra trazer o campo de password, pois o BD está com select: false
-    const umPrestador = await Prestador.findOne({ email }).select('+password');
+    const [user] = await con.query(
+      "SELECT * FROM prestador WHERE email=:email LIMIT 1",
+      {
+        replacements: {
+          email
+        },
 
-    // Se não exister o email return mensagem de erro!!!
-    if (!umPrestador) {
+        type: Sequelize.QueryTypes.SELECT
+      }
+    );
+
+    // Se não exister email ou password return mensagem de erro!!!
+    if (!user || !bcrypt.compareSync(password, user.password)) {
       return res.render('loginPrestador', {
         msg: "Email ou password errados!!!"
       });
     }
 
-    // Se não exister o password return mensagem de erro!!!
-    if (!await bcrypt.compare(password, umPrestador.password)) {
-      return res.render('loginPrestador', {
-        msg: "Email ou password errados!!!"
-      });
-    }
-
-    // return res.redirect('/prestador/lista', { umPrestador })
-    return res.send({ umPrestador });
+    return res.redirect('/prestador/single');
 
   }
 

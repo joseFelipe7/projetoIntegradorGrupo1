@@ -667,7 +667,7 @@
 .form-prestador
   form
   .check-prestador
-  #checkbox-lembrePrestador[type="checkbox"] {
+  input, label {
   cursor: pointer;
 }
 
