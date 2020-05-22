@@ -5,26 +5,29 @@ const { Prestador } = require('../models')
 
 const prestadorController = {
 
-    viewFormCadastro: (req, res)=>{
-       return res.render('cadastroPrestador')
+    create:(req, res) => {
+            res.render("cadastroPrestador");
     },
-    cadastrar: async (req, res) => {
-         let {...dados } = req.body;
-        console.log(dados)
-         //let dados.password = bcrypt.hashSync(password, 10)
-
-         const newPrestador = await Prestador.create(dados)
-         console.log(newPrestador)
-         
-         
-         return res.send("Olá " + dados.name + ", seu cadastro foi realizado com sucesso!");
-
-    }/*,
-    listarPrestadores: (req, res) => {
-        let cadastroPrestador = fs.readFileSync(cadastroPrestadorJson, {encoding: 'utf-8'})
-        cadastroPrestador = JSON.parse(cadastroPrestador)
-        res.render("listaPrestadores", {listaPrestadores:cadastroPrestador});
-    }*/
+    store:(req,res)=>{
+        let {   
+            prestadorEmail, 
+            prestadorNome,
+            prestadorSenha, 
+            prestadorCpf,
+            prestadorNascimento
+        } = req.body
+        console.log(bcrypt.hashSync(prestadorSenha,10))
+            Prestador.create({
+                nome:prestadorNome,
+                email:prestadorEmail,
+                senha:bcrypt.hashSync(prestadorSenha,10),
+                cpf:prestadorCpf,
+                status_:'A',
+                data_nascimento:prestadorNascimento,
+                data_cadastro:Date.now()
+            })
+        res.redirect('/login/Prestador/#login-prestador')
+    }
 }
 module.exports = prestadorController;
 

@@ -16,31 +16,41 @@ html, body {
  
 .btn-cadastro-custom-bofl {
   color: #A094F2;
-  border: 3px solid #A094F2;
+  border: 2px solid #A094F2;
+  border-radius: 5px;
+  font-weight: bold;
   margin-left: 10px;
   color: #ffffff;
   margin-right: 10px;
+  font-size: 1em;
 }
 .btn-cadastro-custom-bofl:hover {
-  color: #7159C1;
-  border: 3px solid #A094F2;
-  background-color: #A094F2;
+  color: #A094F2;
+  border: 2px solid #A094F2;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-left: 10px;
+  color: #ffffff;
+  margin-right: 10px;
+  font-size: 1em;
 }
 
 .btn-login-custom-bofl  {
-  padding: 6px 15px 1px 3px;
+  padding: 4px 15px 1px 2px;
   border-radius: 50px;
   background: #88BF36;
   color: #ffffff;
-  margin-right: 10px;
+  font-size: 1em;
+  
   
  
 }
 .btn-login-custom-bofl:hover  {
   color: #7159C1;
-  padding: 6px 15px 1px 3px;
+  padding: 4px 15px 1px 2px;
   border-radius: 50px;
   background: #88BF36;
+  font-size: 1em;
   
   
  
@@ -50,7 +60,7 @@ html, body {
   padding: 8px;
 }
 svg.icon-bofl{
-  padding-bottom: 3px;
+  
   text-align: center;
   margin-right: 5px;
 }
