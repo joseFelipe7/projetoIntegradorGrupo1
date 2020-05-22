@@ -1,5 +1,6 @@
 const express = require("express");
 const methodOverride = require("method-override");
+const session = require('express-session');
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.use(express.urlencoded({
 }));
 
 app.use(express.json());
+app.use(session({secret: "6305949ee9e82b7e8aa68792a5302c44"}));
 
 //área usuario contratante e prestador
 const rotaAreaUsuario = require("./app/routes/areaUsuarioRouter");

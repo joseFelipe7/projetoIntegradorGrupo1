@@ -1,14 +1,15 @@
 const express = require("express");
 
+const loginClienteController = require('../controllers/loginClienteController');
+
 let router = express.Router();
 
 router.get("/", (req, res) => {
     res.render("loginSelecione");
 })
 
-router.get("/contratante", (req, res) => {
-    res.render("loginContratante");
-})
+router.get("/contratante", loginClienteController.create);
+router.post("/contratante", loginClienteController.store);
 
 router.get("/prestador", (req, res) => {
     res.render("loginPrestador");
