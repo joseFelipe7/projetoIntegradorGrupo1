@@ -1,5 +1,3 @@
-
-
 const express = require("express");
 const router = express.Router();
 
@@ -12,8 +10,5 @@ router.get("/single", (req, res) => {
 router.get("/lista", (req, res) => {
     res.render("listaPrestadores");
 })
-
-
-
 
 module.exports = router;

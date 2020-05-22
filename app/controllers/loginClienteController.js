@@ -30,18 +30,18 @@ module.exports = {
             //compara senha db com a digitada
             let checkSenha = bcrypt.compareSync(senha, senhaCliente);
             if (checkSenha) {
-                console.log("Aeeee!");
+                // console.log("Aeeee, loggado!");
 
                 //cria a sessao cliente com os valores do cliente no banco
                 req.session.cliente = umCliente.dataValues;
 
                 res.redirect('/prestador/lista');
             } else {
-                console.log("awnnn :( !");
+                // console.log("nao loggou!");
                 res.render('loginContratante');
             }
         } else { //nao existe cliente
-            console.log('nao tem cliente pla compla')
+            // console.log('nao tem cliente')
             res.render('loginContratante');
         }
     }

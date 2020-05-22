@@ -5,7 +5,7 @@ let router = express.Router();
 
 // rotas contratante
 router.get("/area-contratante/meus-dados", authCliente, (req, res) => {
-    res.render("areaContratante", {view: "meusDadosContratante"});
+    res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente});
     // ...5620/usuario/area-contratante/meus-dados
 })
 
