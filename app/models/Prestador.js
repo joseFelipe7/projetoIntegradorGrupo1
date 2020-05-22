@@ -24,7 +24,8 @@ module.exports = (sequelize, DataTypes) => {
         cnpj: {type: DataTypes.INTEGER, allowNull: false},
         nome_fantasia: DataTypes.STRING,
     }, {
-        tableName: 'prestador'
+        tableName: 'prestador',
+        timestamps: false
     });
     return Prestador;
 };

@@ -6,14 +6,14 @@ const { Prestador } = require('../models')
 const prestadorController = {
 
     viewFormCadastro: (req, res)=>{
-       return res.render('areaPrestador', {view: "cadastroPrestador"})
+       return res.render('cadastroPrestador')
     },
     cadastrar: async (req, res) => {
-         let { password, ...dados } = req.body;
+         let {...dados } = req.body;
         console.log(dados)
          //let dados.password = bcrypt.hashSync(password, 10)
 
-         const newPrestador = await Prestador.create({dados})
+         const newPrestador = await Prestador.create(dados)
          console.log(newPrestador)
          
          

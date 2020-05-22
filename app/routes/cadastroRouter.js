@@ -11,10 +11,13 @@ router.get("/", (req, res) => {
 router.get("/contratante", registroClienteController.create)
 router.post("/contratante", registroClienteController.store)
 
-router.get("/prestador", (req, res) => {
-    res.render("cadastroPrestador");
-})
-router.get("/area-prestador/cadastrar", prestadorController.viewFormCadastro);
-router.post("/area-prestador/cadastrar", upload.any(), prestadorController.cadastrar)
+//router.get("/prestador", (req, res) => {
+  //  res.render("cadastroPrestador");
+//})
+//router.get("/area-prestador/cadastrar", prestadorController.viewFormCadastro);
+//router.post("/area-prestador/cadastrar", upload.any(), prestadorController.cadastrar)
+
+router.get("/prestador", prestadorController.viewFormCadastro);
+router.post("/prestador", prestadorController.cadastrar)
 
 module.exports = router;
