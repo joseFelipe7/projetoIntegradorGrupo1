@@ -28,7 +28,7 @@ html, body {
 }
 
 .btn-login-custom-bofl  {
-  padding: 7px 15px 1px 4px;
+  padding: 6px 15px 1px 3px;
   border-radius: 50px;
   background: #88BF36;
   color: #ffffff;
@@ -38,7 +38,7 @@ html, body {
 }
 .btn-login-custom-bofl:hover  {
   color: #7159C1;
-  padding: 7px 15px 1px 4px;
+  padding: 6px 15px 1px 3px;
   border-radius: 50px;
   background: #88BF36;
   
@@ -49,10 +49,10 @@ html, body {
 .btnI-custom-bofl {
   padding: 8px;
 }
-a.icon-bofl{
-  padding-top: 8px;
+svg.icon-bofl{
+  padding-bottom: 3px;
   text-align: center;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 
