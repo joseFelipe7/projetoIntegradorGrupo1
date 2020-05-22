@@ -22,6 +22,6 @@ module.exports = {
                 data_nascimento:contratanteNascimento,
                 data_cadastro:Date.now()
             })
-        //res.redirect('/login/contratante/#login-contratante')
+        res.redirect('/login/contratante/#login-contratante')
     }
 }
