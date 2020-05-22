@@ -6,7 +6,8 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement:true
         },
         email: {type: DataTypes.STRING, allowNull: false},
-        password: {type: DataTypes.INTEGER, allowNull: false},
+        // select: false é para não passar o campo password em uma consulta publica
+        password: {type: DataTypes.INTEGER, allowNull: false, select: false},
         name: {type: DataTypes.STRING, allowNull: false},
         data_nascimento: DataTypes.DATE,
         cpf: {type: DataTypes.INTEGER, allowNull: false}, 

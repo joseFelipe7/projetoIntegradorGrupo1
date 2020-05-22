@@ -58,24 +58,24 @@ svg.icon-bofl{
 
 @media (min-width:768px){
 
-  .nav-mob-bofl {
-    display: none;
-    overflow: hidden; 
-    position: relative; 
-    
- }
+    .nav-mob-bofl {
+      display: none;
+      overflow: hidden; 
+      position: relative; 
+      
+  }
 
- .btn-cadastro-custom-bofl {
-  color: #A094F2;
-  border: 3px solid #A094F2;
-  margin-left: 10px;
-  color: #ffffff;
-  
-}
-.btn-cadastro-custom-bofl:hover {
-  color: #7159C1;  
-  background-color: #A094F2;
-}
+  .btn-cadastro-custom-bofl {
+    color: #A094F2;
+    border: 3px solid #A094F2;
+    margin-left: 10px;
+    color: #ffffff;
+    
+  }
+  .btn-cadastro-custom-bofl:hover {
+    color: #7159C1;  
+    background-color: #A094F2;
+  }
 }
 
 @media (max-width:768px){
@@ -366,11 +366,12 @@ ul, ul li {
   }
 }
 
-@media(max-width: 850px) {
+@media(max-width: 995px) {
   .img-footer {
     display: none;
   }
 
+@media(max-width: 850px) {
   #linksFooter {
     display: flex;
     flex-direction: column;
@@ -411,7 +412,7 @@ ul, ul li {
   }
 }
 
-@media(max-width: 450px) {
+@media(max-width: 575px) {
   .linksFooter {
     justify-content: space-around;
     width: 100vw;
@@ -433,7 +434,7 @@ ul, ul li {
   }
 }
 
-@media(max-width: 320px) {
+@media(max-width: 360px) {
   .linksFooter ul {
     width: 90px;
     padding: 0.8rem 0 0 0.2rem;
@@ -689,9 +690,9 @@ ul, ul li {
   margin-bottom: 0;
   color: #ffffff;
 }
-.active::after{
- /*content: url('/img/setaAcima.png'); */
-}
+/*.active::after{
+ /*content: url('/img/setaAcima.png'); 
+}*/
 .pe-bofl{
   
   background-color: white;
@@ -1755,10 +1756,10 @@ margin: 5px;
 .titulo-preorcamento{
   color: #ffffff;
 }
+
 @media(max-width: 991px){
   .figure-preorcamento{
       display: none;
   }
 }
-/*fim modal pre orçamento*/
-
+/*------------------fim modal pre orçamento*/
