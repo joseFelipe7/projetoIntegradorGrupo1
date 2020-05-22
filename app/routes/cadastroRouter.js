@@ -1,16 +1,15 @@
 const express = require("express");
 const upload = require("../../config/upload")
 const prestadorController = require("../../controllers/prestadorController");
-
+const registroClienteController = require("../../controllers/registroClienteController")
 let router = express.Router();
 
 router.get("/", (req, res) => {
     res.render("cadastroSelecione");
 })
 
-router.get("/contratante", (req, res) => {
-    res.render("cadastroContratante");
-})
+router.get("/contratante", registroClienteController.create)
+router.post("/contratante", registroClienteController.store)
 
 router.get("/prestador", (req, res) => {
     res.render("cadastroPrestador");

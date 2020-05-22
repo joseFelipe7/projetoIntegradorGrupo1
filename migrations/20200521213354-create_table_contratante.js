@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('cliente', {
+    return queryInterface.createTable('clientes', {
        id:{
          primaryKey:true,
          autoIncrement:true,
@@ -22,14 +22,15 @@ module.exports = {
        },
         data_nascimento:Sequelize.DATE,
         status_:Sequelize.CHAR(1),
-        cpf:Sequelize.INTEGER,
+        cpf:Sequelize.STRING(11),
         avatar:Sequelize.STRING(190),
         extensao_avatar:Sequelize.CHAR(5),
+        data_cadastro:Sequelize.DATE
       });
     
   },
 
   down: (queryInterface, Sequelize) => {
-      return queryInterface.dropTable('cliente');
+      return queryInterface.dropTable('clientes');
   }
 };

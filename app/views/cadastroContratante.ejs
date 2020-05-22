@@ -12,21 +12,21 @@
       <div class="form-cadastroContratante">
         <h3 class="contratante-titulo">CADASTRE-SE:</h3>
 
-        <form action="#" class="d-flex flex-column justify-content-center">
+        <form method="POST" class="d-flex flex-column justify-content-center">
 
           <div class="form-row">
             <div class="form-group col-md-7">
               <label for="contratante-inputEmail">Email</label>
-              <input type="email" name="contratante-inputEmail" class="form-control" id="contratante-inputEmail">
+              <input type="email" name="contratanteEmail" class="form-control" id="contratante-inputEmail">
               <label for="contratante-inputEmail2">Repetir email</label>
-              <input type="email" name="contratante-inputEmail" class="form-control" id="contratante-inputEmail">
+              <input type="email" name="contratanteEmailRepetido" class="form-control" id="contratante-inputEmail">
             </div>
 
             <div class="form-group col-md-5">
               <label for="contratante-inputSenha">Senha</label>
-              <input type="password" name="contratante-inputSenha" class="form-control" id="contratante-inputSenha">
+              <input type="password" name="contratanteSenha" class="form-control" id="contratante-inputSenha">
               <label for="contratante-inputSenha2">Repetir senha</label>
-              <input type="password" name="contratante-inputSenha" class="form-control" id="contratante-inputSenha">
+              <input type="password" name="contratanteSenhaRepetido" class="form-control" id="contratante-inputSenha">
             </div>
           </div>
 
@@ -35,19 +35,19 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="contratante-inputNome">Nome</label>
-              <input type="text" name="contratante-inputNome" class="form-control" id="contratante-inputNome">
+              <input type="text" name="contratanteNome" class="form-control" id="contratante-inputNome">
             </div>
 
             <div class="form-group col-md-6">
               <label for="contratante-inputSobrenome">Sobrenome</label>
-              <input type="text" name="contratante-inputSobrenome" class="form-control" id="contratante-inputSobrenome">
+              <input type="text" name="contratanteSobrenome" class="form-control" id="contratante-inputSobrenome">
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-3">
               <label for="contratante-inputSexo">Sexo</label>
-              <select name="contratante-inputSexo" class="form-control" id="contratante-inputSexo">
+              <select name="contratanteSexo" class="form-control" id="contratante-inputSexo">
                 <option selected value="">Selecione</option>
                 <option value="">Masculino</option>
                 <option value="">Feminino</option>
@@ -57,25 +57,25 @@
 
             <div class="form-group col-md-3">
               <label for="contratante-inputNascimento">Nascimento</label>
-              <input type="date" name="contratante-inputNascimento" class="form-control"
+              <input type="date" name="contratanteNascimento" class="form-control"
                 id="contratante-inputNascimento">
             </div>
 
             <div class="form-group col-md-6">
               <label for="contratante-inputCpf">CPF</label>
-              <input type="number" name="contratante-inputCpf" class="form-control" id="contratante-inputCpf">
+              <input type="number" name="contratanteCpf" class="form-control" id="contratante-inputCpf">
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="contratante-inputRg">RG</label>
-              <input type="number" name="contratante-inputRg" class="form-control" id="contratante-inputRg">
+              <input type="number" name="contratanteRg" class="form-control" id="contratante-inputRg">
             </div>
 
             <div class="form-group col-md-3">
               <label for="contratante-inputEmissor">Emissor</label>
-              <select name="contratante-inputEmissor" class="form-control" id="contratante-inputEmissor">
+              <select name="contratanteEmissor" class="form-control" id="contratante-inputEmissor">
                 <option selected value="">Selecione</option>
                 <option value="">SSP</option>
                 <option value="">Outros...</option>
@@ -84,7 +84,7 @@
 
             <div class="form-group col-md-3">
               <label for="contratante-inputDataEmissor">Data de Emissão</label>
-              <input type="date" name="contratante-inputDataEmissor" class="form-control"
+              <input type="date" name="contratanteDataEmissor" class="form-control"
                 id="contratante-inputDataEmissor">
             </div>
           </div>
@@ -92,17 +92,17 @@
           <div class="form-row">
             <div class="form-group col-md-3">
               <label for="contratante-inputTelefone">Telefone</label>
-              <input type="number" name="contratante-inputTelefone" class="form-control" id="contratante-inputTelefone">
+              <input type="number" name="contratanteTelefone" class="form-control" id="contratante-inputTelefone">
             </div>
 
             <div class="form-group col-md-3">
               <label for="contratante-inputCelular">Celular</label>
-              <input type="number" name="contratante-inputCelular" class="form-control" id="contratante-inputCelular">
+              <input type="number" name="contratanteCelular" class="form-control" id="contratante-inputCelular">
             </div>
 
             <div class="form-group col-md-6">
               <label for="contratante-inputEmail">Email</label>
-              <input type="email" name="contratante-inputEmail" class="form-control" id="contratante-inputEmail">
+              <input type="email" name="contratanteEmailDados" class="form-control" id="contratante-inputEmail">
             </div>
           </div>
 
@@ -111,30 +111,30 @@
           <div class="form-row">
             <div class="form-group col-md-7">
               <label for="contratante-inputEndereço">Endereço</label>
-              <input type="text" name="contratante-inputEndereço" class="form-control" id="contratante-inputEndereço"
+              <input type="text" name="contratanteEndereco" class="form-control" id="contratante-inputEndereço"
                 placeholder="Av., Rua, Alameda, Estrada...">
             </div>
 
             <div class="form-group col-md-1">
               <label for="contratante-inputNumero">N°</label>
-              <input type="number" name="contratante-inputNumero" class="form-control" id="contratante-inputNumero">
+              <input type="number" name="contratanteNumero" class="form-control" id="contratante-inputNumero">
             </div>
 
             <div class="form-group col-md-4">
               <label for="contratante-inputBairro">Bairro</label>
-              <input type="text" name="contratante-inputBairro" class="form-control" id="contratante-inputBairro">
+              <input type="text" name="contratanteBairro" class="form-control" id="contratante-inputBairro">
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="contratante-inputCidade">Cidade</label>
-              <input type="text" name="contratante-inputCidade" class="form-control" id="contratante-inputCidade">
+              <input type="text" name="contratanteCidade" class="form-control" id="contratante-inputCidade">
             </div>
 
             <div class="form-group col-md-2">
               <label for="contratante-inputEstado">Estado</label>
-              <select name="contratante-inputEstado" class="form-control" id="contratante-inputEstado">
+              <select name="contratanteEstado" class="form-control" id="contratante-inputEstado">
                 <option selected value="">Selecione</option>
                 <option value="">AC</option>
                 <option value="">AL</option>
@@ -168,7 +168,7 @@
 
             <div class="form-group col-md-4">
               <label for="contratante-inputCep">CEP</label>
-              <input type="text" name="contratante-inputCep" class="form-control" id="contratante-inputCep">
+              <input type="text" name="contratanteCep" class="form-control" id="contratante-inputCep">
             </div>
           </div>
 
