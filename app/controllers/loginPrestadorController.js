@@ -1,6 +1,7 @@
-const Sequelize = require("sequelize");
-const config = require("../../config/database");
-const bcrypt = require("bcrypt");
+const { Op } = require('sequelize');
+const bcrypt = require('bcrypt');
+
+const { Prestador } = require('../models');
 
 module.exports = {
   create: (_req, res) => {
@@ -8,29 +9,26 @@ module.exports = {
   },
 
   store: async (req, res) => {
-    const { email, password } = req.body;
-    const con = new Sequelize(config);
-    
-    const [user] = await con.query(
-      "SELECT * FROM prestador WHERE email=:email LIMIT 1",
-      {
-        replacements: {
-          email
-        },
+    const { email, senha } = req.body;
 
-        type: Sequelize.QueryTypes.SELECT
+    let prestador = await Prestador.findOne({
+      where: {
+        email: {
+          [Op.eq]: email 
+        }
       }
-    );
-
+    });
+ 
     // Se não exister email ou password return mensagem de erro!!!
-    if (!user || !bcrypt.compareSync(password, user.password)) {
+    if (!prestador || !bcrypt.compareSync(senha, prestador.senha)) {
       return res.render('loginPrestador', {
         msg: "Email ou password errados!!!"
       });
-    }
+    } 
 
-    return res.redirect('/prestador/single');
-
+    req.session.prestador = prestador.dataValues;
+    return res.redirect('/usuario/area-prestador/meusDados');
+    
   }
 
 }

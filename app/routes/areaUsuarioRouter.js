@@ -1,5 +1,6 @@
 const express = require("express");
 const authCliente = require('../middlewares/authCliente')
+const authPrestador = require('../middlewares/authPrestador')
 
 let router = express.Router();
 
@@ -58,19 +59,19 @@ router.get("/area-contratante/pagamentos-bru", authCliente, (req, res) => {
 
 
 // rotas prestador
-router.get("/area-prestador/cadastro-servicos", (req, res) => {
+router.get("/area-prestador/cadastro-servicos", authPrestador,(req, res) => {
     res.render("areaPrestador", {view: "cadastroServiçosPrestador"});
 })
 
-router.get("/area-prestador/pedidos", (req, res) => {
+router.get("/area-prestador/pedidos", authPrestador,(req, res) => {
     res.render("areaPrestador", {view: "pedidosAreaPrestador"});
 })
 
-router.get("/area-prestador/meusDados", (req, res) => {
+router.get("/area-prestador/meusDados", authPrestador,(req, res) => {
     res.render("areaPrestador", {view: "meusDados-prestador"});
 })
 
-router.get("/area-prestador/requisicoes", (req, res) => {
+router.get("/area-prestador/requisicoes", authPrestador,(req, res) => {
     res.render("areaPrestador", {view: "requisicoes-prestador"});
 })
 
