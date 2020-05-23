@@ -963,6 +963,7 @@ a + img {
   color: #aeb2f2;
   transition: 0.3s;
   transform: scale(1.1);
+  text-decoration:none;
 }
 
 .cadastro-selecione1 p {
@@ -980,12 +981,14 @@ a + img {
 .cadastro-selecione1 p:hover {
   background-color: #aeb2f2;
   color: #ffffff;
+  text-decoration:none;
 }
 
 .cadastro-selecione2:hover {
   color: #7a63c0;
   transition: 0.3s;
   transform: scale(1.1);
+  text-decoration:none;
 }
 
 .cadastro-selecione2 p {
@@ -1003,6 +1006,7 @@ a + img {
 .cadastro-selecione2 p:hover {
   background-color: #7159c1;
   color: #ffffff;
+  text-decoration:none;
 }
 
 @media (max-width: 850px) {

@@ -34,9 +34,13 @@ html, body {
   margin-right: 10px;
   font-size: 1em;
 }
+a.btn.btn-outline.my-2.my-sm-0.btn-cadastro-custom-bofl{
+  height: 35px;
+  padding-top: 2px;
+}
 
 .btn-login-custom-bofl  {
-  padding: 4px 15px 1px 2px;
+  padding: 3.2px 10px 1px 2px;
   border-radius: 50px;
   background: #88BF36;
   color: #ffffff;
@@ -47,13 +51,17 @@ html, body {
 }
 .btn-login-custom-bofl:hover  {
   color: #7159C1;
-  padding: 4px 15px 1px 2px;
+  padding: 3.2px 10px 1px 2px;
   border-radius: 50px;
   background: #88BF36;
   font-size: 1em;
   
   
  
+}
+a.btn.btn-login-custom-bofl{
+  height: 35px;
+
 }
 
 .btnI-custom-bofl {
@@ -270,8 +278,12 @@ ul, ul li {
   list-style: none;
   margin: 0;
   padding: 0;
+  
 }
-
+a.btnContatoMN{
+  text-decoration:none;
+  color: #212529;;
+}
 /* Configuração usar como margin dos includes padrão*/
 .content-includes {
   height: 100%;
@@ -316,7 +328,7 @@ ul, ul li {
 .linksFooter ul li a {
   display: flex;
   align-items: center;
-  color: #000000;
+  color: #212529;;
   font-size: 1em;
   font-weight: 500;
   text-decoration: none;
