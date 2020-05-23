@@ -1143,3 +1143,17 @@ button.botaoBuscar:hover {
     }
 }
 /* --------fim Requisições - Prestador LU------------------------------- */
+.msgErroLogin{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0.4rem;
+
+    text-align: center;
+}
+.msgErroLogin img{
+    height: 25px;
+    margin-right: 15px;
+}

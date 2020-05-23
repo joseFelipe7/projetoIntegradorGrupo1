@@ -12,12 +12,57 @@
       <div class="form-contratante">
         <h2>Contratante</h2>
         <form action="/login/contratante" method="POST">
+          <% if(typeof(msg) != "undefined"){ %>
+            <div class="row alert alert-warning msgErroLogin">
+              <img src="/img/alert.svg" alt="erro">
+              <ul>
+                  <li> <%- msg %> </li>
+              </ul>
+            </div>
+          <% } %>
+
           <input class="campo-contratante" type="email" name="email" id="email" placeholder="Email">
+
+          <% if(typeof(errors) != "undefined"){ %>
+            <!-- ou seja, se houver erro... -->
+            <% errors.forEach( error => { %>
+              <% if(error.param == "email"){ %>
+                <div class="row alert alert-warning msgErroLogin">
+                  <img src="/img/alert.svg" alt="erro">
+                  <% console.log(errors) %>
+                  <!-- posso utilizar o array errors para informar a mensagem de erro, atravéz da prop msg... -->
+                  <ul>
+                      <li> <%- error.msg %> </li>
+                  </ul>
+                </div>
+              <% } %>
+            <% }) %>
+          <% } %>
+
           <input class="campo-contratante" type="password" name="senha" id="senha" placeholder="Senha">
+
+          <% if(typeof(errors) != "undefined"){ %>
+            <!-- ou seja, se houver erro... -->
+            <% errors.forEach( error => { %>
+              <% if(error.param == "senha"){ %>
+                <div class="row alert alert-warning msgErroLogin">
+                  <img src="/img/alert.svg" alt="erro">
+                  <% console.log(errors) %>
+                  <!-- posso utilizar o array errors para informar a mensagem de erro, atravéz da prop msg... -->
+                  <ul>
+                      <li> <%- error.msg %> </li>
+                  </ul>
+                </div>
+              <% } %>
+            <% }) %>
+          <% } %>
+
           <label class="check-contratante" for="checkbox-lembreContratante">
             <input id="checkbox-lembreContratante" type="checkbox" name="selecione" value="Lembre">
             Lembre de mim
           </label>
+
+          
 
           <button class="entrar-contratante" type="submit">ENTRE</button>
 
