@@ -17,9 +17,9 @@
         <h2>Prestador</h2>
         <form action="/login/Prestador" method="POST">
           <input class="campo-prestador" type="email" name="email" id="email" placeholder="Email">
-          <input class="campo-prestador" type="password" name="password" id="password" placeholder="Senha">
+          <input class="campo-prestador" type="password" name="senha" id="senha" placeholder="Senha">
 
-          <div class="msg-errorLogin">
+          <div class="msg-errorLoginPrestador">
             <% if (typeof msg !== "undefined") { %>
             <p> <%= msg %> </p>
             <% } %>
@@ -31,6 +31,7 @@
           </div>
 
           <button class="entrar-prestador" type="submit">ENTRE</button>
+
         </form>
         <p>Faça login com:</p>
         <div class="faca-loginPrestador">
