@@ -619,6 +619,11 @@
   max-width: 22rem;
 }
 
+form .msg-errorLoginPrestador p {
+  margin: 0 0 5px 0;
+  padding: 0;
+}
+
 .form-prestador h2 {
   color: #ffffff;
   margin-bottom: 15px;
@@ -900,7 +905,6 @@ a + img {
 /* ---------Fim Login Contratante - Kevin-----------*/
 
 /* -------Começo Cadastro selecione - Kevin---------*/
-
 .cadastro-selecione {
   display: flex;
   justify-content: center;
@@ -928,6 +932,7 @@ a + img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
   width: 100%;
   padding-right: 4rem;
 }
@@ -950,6 +955,7 @@ a + img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
   width: 100%;
   margin-top: 10.293125rem;
   padding-left: 4rem;
