@@ -22,7 +22,10 @@ module.exports = {
        },
         data_nascimento:Sequelize.DATE,
         status_:Sequelize.CHAR(1),
-        cpf:Sequelize.STRING(11),
+        cpf:{
+          type:Sequelize.STRING(11),
+          unique:true
+        } ,
         avatar:Sequelize.STRING(190),
         extensao_avatar:Sequelize.CHAR(5),
         data_cadastro:Sequelize.DATE

@@ -19,7 +19,10 @@ module.exports = (sequelize, DataTypes) => {
           },
         data_nascimento:DataTypes.DATE,
         status_:DataTypes.CHAR(1),
-        cpf:DataTypes.INTEGER,
+        cpf:{
+          type:DataTypes.STRING(11),
+          unique:true
+        },
         avatar:DataTypes.STRING(190),
         extensao_avatar:DataTypes.CHAR(5),
         data_cadastro:DataTypes.DATE
