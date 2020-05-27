@@ -7,7 +7,7 @@ module.exports = {
         type:Sequelize.INTEGER 
       },
       valor:{
-       type:Sequelize.INTEGER
+       type:Sequelize.DECIMAL(14,2)
       },
       item:{
         type:Sequelize.STRING(45)
