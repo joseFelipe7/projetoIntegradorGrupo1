@@ -1,14 +1,14 @@
 const express = require("express");
 const authCliente = require('../middlewares/authCliente')
 const authPrestador = require('../middlewares/authPrestador')
+const registroClienteController = require("../controllers/registroClienteController")
 
 let router = express.Router();
 
 // rotas contratante
-router.get("/area-contratante/meus-dados", authCliente, (req, res) => {
-    res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente});
+router.get("/area-contratante/meus-dados/:id", authCliente, registroClienteController.editar);
+router.post("/area-contratante/meus-dados/:id", authCliente, registroClienteController.update);
     // ...5620/usuario/area-contratante/meus-dados
-})
 
 
 router.get("/area-contratante/pedidos", authCliente, (req, res) => {

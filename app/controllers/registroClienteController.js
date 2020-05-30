@@ -23,5 +23,14 @@ module.exports = {
                 data_cadastro:Date.now()
             })
         res.redirect('/login/contratante/#login-contratante')
+    },
+    editar: async (req,res) => {
+        const {id} = req.params
+
+        const cliente = await Cliente.findByPk(id)
+        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, cliente})
+    },
+    update: async (req, res) => {
+        res.send("oi")
     }
 }
