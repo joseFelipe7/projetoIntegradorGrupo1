@@ -6,8 +6,8 @@ const registroClienteController = require("../controllers/registroClienteControl
 let router = express.Router();
 
 // rotas contratante
-router.get("/area-contratante/meus-dados/:id", authCliente, registroClienteController.editar);
-router.post("/area-contratante/meus-dados/:id", authCliente, registroClienteController.update);
+router.get("/area-contratante/meus-dados/:id", authCliente, registroClienteController.viewEditorForm);
+router.put("/area-contratante/meus-dados/:id", authCliente, registroClienteController.update);
     // ...5620/usuario/area-contratante/meus-dados
 
 

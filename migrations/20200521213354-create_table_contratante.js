@@ -24,6 +24,7 @@ module.exports = {
         status_:Sequelize.CHAR(1),
         cpf:{
           type:Sequelize.STRING(11),
+          allowNull:false,
           unique:true
         } ,
         avatar:Sequelize.STRING(190),

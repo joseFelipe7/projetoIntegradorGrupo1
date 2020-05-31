@@ -18,7 +18,11 @@ app.use(express.urlencoded({
 }));
 
 app.use(express.json());
-app.use(session({secret: "6305949ee9e82b7e8aa68792a5302c44"}));
+app.use(session({
+    secret: "toolsHall",
+    sesave: true,
+    saveUninitialized: true
+}));
 
 //área usuario contratante e prestador
 const rotaAreaUsuario = require("./app/routes/areaUsuarioRouter");

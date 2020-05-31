@@ -1,14 +1,14 @@
 const express = require("express");
+const authCliente = require('../middlewares/authCliente')
 const router = express.Router();
 
-const prestadorController = require('../controllers/prestadorController');
 
 router.get("/single", (req, res) => {
     res.render("singleprestador");
 })
 
-router.get("/lista", (req, res) => {
-    res.render("listaPrestadores");
+router.get("/lista", authCliente, (req, res) => {
+    res.render("listaPrestadores", {loggado: req.session.cliente});
 })
 
 module.exports = router;
