@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <%- include('include/head', {title:'Home'}) %>
+
+    <body>
+        <%- include('include/header')%>
+        <%- include('include/menuNav') %>
+        <main>
+            
+            <% if (typeof mensagemToken != 'undefined') { %>
+                <div class="row alert alert-warning msgErroLogin">
+                    <img src="/img/alert.svg" alt="ok">
+                    <%= mensagemToken  %> 
+                </div>
+            <% } else if (typeof mensagemSenhaSalva != 'undefined') { %>
+                <div class="row alert alert-success msgErroLogin">
+                    <img src="/img/alert.svg" alt="ok">
+                    <%= mensagemSenhaSalva  %>
+                </div>
+            <% } else { %>
+                <form action="/login/contratante/redefinir-senha?_method=PUT" method="post">
+                    <input type="password" name="novaSenha" id="novaSenha">
+                    <!-- envia o token... -->
+                    <input type="text" name="token" id="token" value="<%= token %>"
+                    hidden>
+                    <button type="submit">ENVIAR</button>
+                </form>
+            <% } %>
+        </main>
+        
+        <%- include('include/footer') %>
+        <%- include('include/script') %>
+    </body>
+</html>
