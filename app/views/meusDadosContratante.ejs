@@ -16,7 +16,7 @@
       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
         <div class="card-body">
           <!-- formulario dados pessoais -->
-          <form action="/usuario/area-contratante/meus-dados/<%=cliente.id_cliente%>?_method=PUT" method="POST"> 
+          <form action="/usuario/area-contratante/meus-dados/<%=cliente.id%>" method="GET"> 
             <!-- linha foto -->
             <div class="form-row">
               <!-- input data nascimento -->
@@ -37,7 +37,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">Nome</span>
                   </div>
-                  <input type="text" class="form-control campoMeusDadosStyle campoDadoReadonly" id="nome" value="Mario Souza Silva" readonly>
+                  <input type="text" name="contratanteNome" class="form-control campoMeusDadosStyle campoDadoReadonly" id="nome" value="<%= cliente.nome %>" readonly>
                 </div>
               </div>
 
@@ -48,7 +48,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">CPF</span>
                   </div>
-                  <input type="number" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cpf" value="00000000000" readonly maxlength="11" pattern="[0-9]+$">
+                  <input type="number" name="contratanteCpf" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cpf" value="<%= cliente.cpf %>" readonly maxlength="11" pattern="[0-9]+$">
                 </div>
               </div>
             </div>
@@ -62,14 +62,16 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">Data Nascimento</span>
                   </div>
-                  <input type="date" class="form-control campoMeusDadosStyle campoDadoReadonly" id="nascimento" value="2020-08-08" readonly>
+                  <input type="date" name="contratanteNascimento" class="form-control campoMeusDadosStyle campoDadoReadonly" id="nascimento" value="<%= cliente.data_nascimento %>" readonly>
                 </div>
               </div>
             </div>
 
             <!-- botao editar ABRE O MODAL-->
             <!-- Button trigger modal -->
-            <div class="d-flex justify-content-end"><button type="button" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosPessoaisContratante">Editar</button></div>
+            <div class="d-flex justify-content-end">
+              <button type="button" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosPessoaisContratante">Editar</button>
+            </div>
           </form>
         </div>
       </div>
@@ -88,14 +90,14 @@
       </div>
       <div class="modal-body bg-roxoClaro">
         <!-- ................................. -->
-        <form action="/usuario/area-contratante/meus-dados/<%=cliente.id_cliente%>?_method=PUT" method="POST"> 
+        <form action="/usuario/area-contratante/meus-dados/<%=cliente.id%>?_method=PUT" method="POST"> 
           <!-- linha foto -->
           <div class="form-row">
             <!-- input foto escolhida -->
             <div class="form-group col-3">
               <label for="nascimento">Perfil</label>
               <div class="input-group">
-                <img src="/img/envio.png" alt="Meu Perfil" title="Meu Perfil" class="img-thumbnail perfilMeusDados">
+                <img src="/img/envio.png" alt="Meu Perfil" title="Meu Perfil" class="img-thumbnail perfilMeusDados"> 
               </div>
             </div>
             <!-- input escolher perfil -->
@@ -118,7 +120,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">Nome</span>
                 </div>
-                <input type="text" class="form-control campoMeusDadosStyle campoDadoReadonly" id="nome" placeholder="Digite seu nome completo">
+                <input type="text" name="contratanteNome" class="form-control campoMeusDadosStyle campoDadoReadonly" id="nome" value="<%= cliente.nome %>">
               </div>
             </div>
             <!-- input cpf -->
@@ -128,7 +130,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">CPF</span>
                 </div>
-                <input type="number" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cpf" placeholder="Digite seu cpf - apenas números" maxlength="11" pattern="[0-9]+$">
+                <input type="number" name="contratanteCpf" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cpf" value="<%= cliente.cpf %>" maxlength="11" pattern="[0-9]+$">
               </div>
             </div>
           </div>
@@ -141,13 +143,15 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">Data Nascimento</span>
                 </div>
-                <input type="date" class="form-control campoMeusDadosStyle campoDadoReadonly" id="nascimento">
+                <input type="date" name="contratanteNascimento" class="form-control campoMeusDadosStyle campoDadoReadonly" id="nascimento" value="<%= cliente.data_nascimento %>">
               </div>
             </div>
           </div>
           <!-- botao editar ABRE O MODAL-->
           <!-- Button trigger modal -->
-          <div class="d-flex justify-content-end"><button type="button" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosPessoaisContratante">SALVAR</button></div>
+          <div class="d-flex justify-content-end">
+            <button type="submit" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosPessoaisContratante">SALVAR</button>
+          </div>
         </form>
         <!-- ................................. -->
       </div>
@@ -176,7 +180,7 @@
       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
         <div class="card-body">
           <!-- formulario endereço -->
-          <form>
+          <form action="/usuario/area-contratante/meus-dados/<%=cliente.id_cliente%>" method="GET"> 
             <!-- input linha 1 -->
             <div class="form-row">
               <!-- input data cep -->
@@ -186,7 +190,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">CEP</span>
                   </div>
-                  <input type="number" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cep" value="00000090" readonly maxlength="8" pattern="[0-9]+$">
+                  <input type="number" name="contratanteCep" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cep" value="<%= cliente.cep %>" readonly maxlength="8" pattern="[0-9]+$">
                 </div>
               </div>
             </div>
@@ -199,7 +203,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">UF</span>
                   </div>
-                  <input type="text" class="form-control campoMeusDadosStyle campoDadoReadonly" id="UF" value="SP" readonly>
+                  <input type="text" name="contratanteUf" class="form-control campoMeusDadosStyle campoDadoReadonly" id="UF" value="<%= cliente.uf %>" readonly>
                 </div>
               </div>
 
@@ -210,7 +214,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">Cidade</span>
                   </div>
-                  <input type="text" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cidade" value="São Paulo" readonly>
+                  <input type="text" name="contratanteCidade" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cidade" value="<%= cliente.cidade %>" readonly>
                 </div>
               </div>
             </div>
@@ -224,7 +228,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">Rua</span>
                   </div>
-                  <input type="text" class="form-control campoMeusDadosStyle campoDadoReadonly" id="rua" value="Rua dos Bobos" readonly>
+                  <input type="text" name="contratanteRua" class="form-control campoMeusDadosStyle campoDadoReadonly" id="rua" value="<%= cliente.logradouro %>" readonly>
                 </div>
               </div>
 
@@ -235,7 +239,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">Nº</span>
                   </div>
-                  <input type="number" class="form-control campoMeusDadosStyle campoDadoReadonly" id="numero" value="0" readonly pattern="[0-9]+$">
+                  <input type="number" name="contratanteN" class="form-control campoMeusDadosStyle campoDadoReadonly" id="numero" value="<%= cliente.numero %>" readonly pattern="[0-9]+$">
                 </div>
               </div>
 
@@ -246,7 +250,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">Complemento</span>
                   </div>
-                  <input type="text" class="form-control campoMeusDadosStyle campoDadoReadonly" id="complemento" value="A-Cond.2" readonly>
+                  <input type="text" name="contratanteComplemento" class="form-control campoMeusDadosStyle campoDadoReadonly" id="complemento" value="<%= cliente.complemento %>" readonly>
                 </div>
               </div>
             </div>
@@ -273,7 +277,7 @@
       </div>
       <div class="modal-body bg-roxoClaro">
         <!-- formulario editar endereço -->
-        <form>
+        <form action="/usuario/area-contratante/meus-dados/<%=cliente.id_cliente%>?_method=PUT" method="POST"> 
           <!-- input linha 1 -->
           <div class="form-row">
             <!-- input data cep -->
@@ -283,7 +287,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">CEP</span>
                 </div>
-                <input type="number" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cep" placeholder="CEP - apenas números" maxlength="8" pattern="[0-9]+$">
+                <input type="number" name="contratanteCep" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cep" placeholder="CEP - apenas números" maxlength="8" pattern="[0-9]+$" value="<%= cliente.cep %>"> 
               </div>
             </div>
 
@@ -305,7 +309,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">UF</span>
                 </div>
-                <input type="text" class="form-control campoMeusDadosStyle campoDadoReadonly" id="UF" placeholder="Estado - UF" maxlength="2">
+                <input type="text" name="contratanteUf" class="form-control campoMeusDadosStyle campoDadoReadonly" id="UF" placeholder="Estado - UF" maxlength="2" value="<%= cliente.uf %>">
               </div>
             </div>
             <!-- input cidade -->
@@ -315,7 +319,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">Cidade</span>
                 </div>
-                <input type="text" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cidade" placeholder="Digite sua cidade">
+                <input type="text" name="contratanteCidade" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cidade" placeholder="Digite sua cidade" value="<%= cliente.cidade %>">
               </div>
             </div>
           </div>
@@ -329,7 +333,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">Rua</span>
                 </div>
-                <input type="text" class="form-control campoMeusDadosStyle campoDadoReadonly" id="rua" placeholder="Digite sua rua">
+                <input type="text" name="contratanteRua" class="form-control campoMeusDadosStyle campoDadoReadonly" id="rua" placeholder="Digite sua rua" value="<%= cliente.logradouro %>">
               </div>
             </div>
           </div>
@@ -343,7 +347,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">Nº</span>
                 </div>
-                <input type="number" class="form-control campoMeusDadosStyle campoDadoReadonly" id="numero" placeholder="Número" pattern="[0-9]+$">
+                <input type="number" name="contratanteN" class="form-control campoMeusDadosStyle campoDadoReadonly" id="numero" placeholder="Número" pattern="[0-9]+$" value="<%= cliente.numero %>">
               </div>
             </div>
             <!-- input complemento -->
@@ -353,14 +357,14 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">Complemento</span>
                 </div>
-                <input type="text" class="form-control campoMeusDadosStyle campoDadoReadonly" id="complemento" placeholder="Complemento">
+                <input type="text" name="contratanteComplemento" class="form-control campoMeusDadosStyle campoDadoReadonly" id="complemento" placeholder="Complemento" value="<%= cliente.complemento %>">
               </div>
             </div>
           </div>
 
           <!-- botao editar ABRE O MODAL-->
           <!-- Button trigger modal -->
-          <div class="d-flex justify-content-end"><button type="button" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosEnderecoContratante">SALVAR</button></div>
+          <div class="d-flex justify-content-end"><button type="submit" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosEnderecoContratante">SALVAR</button></div>
         </form>
 
       </div>
@@ -389,8 +393,8 @@
         <div class="card-body">
 
           <!-- formulario contato -->
-          <form>
-          <!-- input linha 1 -->
+          <form action="/usuario/area-contratante/meus-dados/<%=cliente.id_cliente%>" method="GET"> 
+            <!-- input linha 1 -->
             <div class="form-row">
               <!-- input cel1 -->
               <div class="form-group col-md-6">
@@ -399,7 +403,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">Celular 1</span>
                   </div>
-                  <input type="tel" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel1" value="11 94002-8922" readonly maxlength="11" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
+                  <input type="tel" name="contratanteCelular1" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel1" value="<%= cliente.celular_principal %>" readonly maxlength="11" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
                 </div>
               </div>
 
@@ -410,7 +414,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">Celular 2</span>
                   </div>
-                  <input type="tel" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel2" value="11 94002-8922" readonly maxlength="11" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
+                  <input type="tel" name="contratanteCelular2" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel2" value="<%= cliente.celular_secundario %>" readonly maxlength="11" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
                 </div>
               </div>
             </div>
@@ -424,7 +428,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">Telefone</span>
                   </div>
-                  <input type="tel" class="form-control campoMeusDadosStyle campoDadoReadonly" id="tel" value="11 4002-8922" readonly maxlength="10" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
+                  <input type="tel" name="contratanteTelefone" class="form-control campoMeusDadosStyle campoDadoReadonly" id="tel" value="<%= cliente.telefone_residencial %>" readonly maxlength="10" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
                 </div>
               </div>
             </div>
@@ -438,7 +442,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">@</span>
                   </div>
-                  <input type="email" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" value="mario@encanador.com.br" readonly>
+                  <input type="email" name="contratanteEmail" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" value="<%= cliente.email_principal %>" readonly>
                 </div>
               </div>
             </div>
@@ -451,7 +455,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">@</span>
                   </div>
-                  <input type="email" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" value="mario_nts@mail.com.br" readonly>
+                  <input type="email" name="contratanteEmail2" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" value="<%= cliente.email_secundario %>" readonly>
                 </div>
               </div>
             </div>
@@ -477,7 +481,7 @@
       <div class="modal-body bg-roxoClaro">
         
         <!-- formulario contato -->
-        <form>
+        <form action="/usuario/area-contratante/meus-dados/<%=cliente.id_cliente%>?_method=PUT" method="POST"> 
           <!-- input linha 1 -->
             <div class="form-row">
               <!-- input cel1 -->
@@ -487,7 +491,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">Celular 1</span>
                   </div>
-                  <input type="tel" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel1" placeholder="Digite seu celular - apenas números" maxlength="11" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
+                  <input type="tel" name="contratanteCelular1" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel1" placeholder="Digite seu celular - apenas números" maxlength="11" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$" value="<%= cliente.celular_principal %>">
                 </div>
               </div>
 
@@ -498,7 +502,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">Celular 2</span>
                   </div>
-                  <input type="tel" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel2" placeholder="Digite seu celular - apenas números" maxlength="11" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
+                  <input type="tel" name="contratanteCelular2" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel2" placeholder="Digite seu celular - apenas números" maxlength="11" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$" value="<%= cliente.celular_secundario %>">
                 </div>
               </div>
             </div>
@@ -512,7 +516,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">Telefone</span>
                   </div>
-                  <input type="tel" class="form-control campoMeusDadosStyle campoDadoReadonly" id="tel" placeholder="Digite seu telefone - apenas números" maxlength="10" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
+                  <input type="tel" name="contratanteTelefone" class="form-control campoMeusDadosStyle campoDadoReadonly" id="tel" placeholder="Digite seu telefone - apenas números" maxlength="10" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$" value="<%= cliente.telefone_residencial %>">
                 </div>
               </div>
             </div>
@@ -526,7 +530,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">@</span>
                   </div>
-                  <input type="email" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" placeholder="Digite seu e-mail">
+                  <input type="email" name="contratanteEmail" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" value="<%= cliente.email_principal %>">
                 </div>
               </div>
             </div>
@@ -539,14 +543,14 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">@</span>
                   </div>
-                  <input type="email" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" placeholder="Digite seu e-mail">
+                  <input type="email" name="contratanteEmail2" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" placeholder="Digite seu e-mail" value="<%= cliente.email_secundario %>">
                 </div>
               </div>
             </div>
 
             <!-- botao editar ABRE O MODAL-->
             <!-- Button trigger modal -->
-            <div class="d-flex justify-content-end"><button type="button" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosContatoContratante">SALVAR</button></div>
+            <div class="d-flex justify-content-end"><button type="submit" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosContatoContratante">SALVAR</button></div>
           </form>
 
       </div>
@@ -575,8 +579,8 @@
         <div class="card-body">
           
           <!-- formulario conta -->
-          <form>
-              <!-- input linha 1 -->
+          <form action="/usuario/area-contratante/meus-dados/<%=cliente.id_cliente%>" method="GET"> 
+            <!-- input linha 1 -->
               <div class="form-row">
                 <!-- input senha -->
                 <div class="form-group col">
@@ -585,7 +589,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text etiquetaCampo">Senha</span>
                     </div>
-                    <input type="password" class="form-control campoMeusDadosStyle campoDadoReadonly" id="senha" value="000000" readonly minlength="8">
+                    <input type="password" name="contratanteSenha" class="form-control campoMeusDadosStyle campoDadoReadonly" id="senha" value="000000" readonly minlength="8">
                   </div>
                 </div>
               </div>
@@ -599,7 +603,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text etiquetaCampo">@</span>
                     </div>
-                    <input type="email" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" value="mario@encanador.com.br" readonly>
+                    <input type="email" name="contratanteEmail" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" value="<%= cliente.email %>" readonly>
                   </div>
                 </div>
               </div>
@@ -627,7 +631,7 @@
       <div class="modal-body bg-roxoClaro">
         
         <!-- formulario conta -->
-        <form>
+        <form action="/usuario/area-contratante/meus-dados/<%=cliente.id_cliente%>?_method=PUT" method="POST"> 
           <!-- input linha 1 -->
           <div class="form-row">
             <!-- input senha -->
@@ -637,7 +641,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">Senha</span>
                 </div>
-                <input type="password" class="form-control campoMeusDadosStyle campoDadoReadonly" id="senha" placeholder="Digite sua senha atual" minlength="8">
+                <input type="password" name="contratanteSenha" class="form-control campoMeusDadosStyle campoDadoReadonly" id="senha" placeholder="Digite sua senha atual" minlength="8">
               </div>
             </div>
           </div>
@@ -650,7 +654,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">Senha</span>
                 </div>
-                <input type="password" class="form-control campoMeusDadosStyle campoDadoReadonly" id="senha" placeholder="Digite sua nova senha" minlength="8">
+                <input type="password" name="contratanteNovaSenha" class="form-control campoMeusDadosStyle campoDadoReadonly" id="senha" placeholder="Digite sua nova senha" minlength="8">
               </div>
             </div>
           </div>
@@ -664,14 +668,14 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">@</span>
                 </div>
-                <input type="email" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" placeholder="Digite seu e-mail">
+                <input type="email" name="contratanteEmail" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" value="<%= cliente.email %>">
               </div>
             </div>
           </div>
 
           <!-- botao editar ABRE O MODAL-->
         <!-- Button trigger modal -->
-        <div class="d-flex justify-content-end"><button type="button" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosContaContratante">SALVAR</button></div>
+        <div class="d-flex justify-content-end"><button type="submit" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosContaContratante">SALVAR</button></div>
         </form>
 
       </div>

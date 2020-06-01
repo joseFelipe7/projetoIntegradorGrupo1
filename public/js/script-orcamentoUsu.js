@@ -14,7 +14,7 @@ for(i=0;i<acc.length;i++){
 }; 
 
 var tabela = document.getElementById('tableButton-ou');
-//var dias = tabela.getElementsByTagName('td');
+var dias = tabela.getElementsByTagName('td');
 
 for(var i=0; i< dias.length; i++){
   var dia = dias[i];

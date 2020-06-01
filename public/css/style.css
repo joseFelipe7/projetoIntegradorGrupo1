@@ -691,316 +691,6 @@ a.btnContatoMN{
   }
 
 }
-
-/*inicio orcamento-usuario---------------*/
-.ac-bofl{
-  background-color: #88BF36;
-  color: #ffffff;
- 
-  padding: 0px;
-  width: 100%;
-  text-align: left;
-  border: 1px solid white;
-  transition: 0.4s;
-  font: 20px;
-  outline: none;
-  -webkit-box-shadow: 0px 9px 5px rgba(50, 50, 50, 0.77);
-  -moz-box-shadow:    0px 9px 5px rgba(50, 50, 50, 0.77);
-  box-shadow:         0px 9px 5px rgba(50, 50, 50, 0.77);
-}
-
-.ac-bofl::after{
-  content:  url("data:image/svg+xml, <svg class='bi bi-chevron-compact-down' width='2em' height='2em' viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M1.553 6.776a.5.5 0 01.67-.223L8 9.44l5.776-2.888a.5.5 0 11.448.894l-6 3a.5.5 0 01-.448 0l-6-3a.5.5 0 01-.223-.67z' clip-rule='evenodd'/></svg>");
-  padding-right: 15px;
-  font-size: 50px;
-  float: right;
-  margin-bottom: 0;
-  color: #ffffff;
-}
-/*.active::after{
- /*content: url('/img/setaAcima.png'); 
-}*/
-.pe-bofl{
-  
-  background-color: white;
-  display: none;
-  overflow: hidden;
-  padding: 0%;
-  margin: 0px;
-}
-.descricao-servico-usuario-bofl{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 0%;
-  margin: 0px;
-  
-  
-  
-}
-.info-servicos-usuario-bofl{
-  
-  background-color: #7159C1;
-  color: #FFFFFF;    
-  text-align: center;
-  padding: 70px 30px;
-  padding-bottom: 0%;
-  -webkit-box-shadow: 9px 0px 5px rgba(50, 50, 50, 0.77);
-  -moz-box-shadow:    9px 0px 5px rgba(50, 50, 50, 0.77);
-  box-shadow:         9px 0px 5px rgba(50, 50, 50, 0.77);
-  z-index: 1;
-  width: 25%;
-  margin: 0%;
-}
-.hr1-bofl{
-  color: #FFFFFF;
-  background-color: #FFFFFF;
-  height: 1px;
-  
-}
-.dados-servicos-usuario-bofl{
-  display: flex;
-  flex-wrap: wrap;
-  width: 75%;
-  padding-bottom: 0%;
-  margin: 0px;
-  
-}
-.dados-servicos-usuario-bofl th{
-  text-align: left;
-  color: #203573;
-  
-  
-  
-}
-.tabelaContratante-bofl{
-  width: 50%;
-  padding: 20px;
-  padding-bottom: 0px;
-  margin: 0px;
-  
-  
-}
-.tabelaPrestador-bofl{
-  border-left:1px solid #BDBDBD;
-  width: 50%;
-  padding: 20px;
-  padding-bottom: 0px;
-  margin: 0px;
-  
-  
-}
-.espaco-orcamento-usuario-bofl{
-  width: 100%;
-  height: 30px;
-  background-color: #88BF36;
-  z-index: 2;
-  -webkit-box-shadow: 0px 9px 5px rgba(50, 50, 50, 0.77);
-  -moz-box-shadow:    0px 9px 5px rgba(50, 50, 50, 0.77);
-  box-shadow:         0px 9px 5px rgba(50, 50, 50, 0.77);
-  
-}
-.rodape-orcamento-usuario-bofl{
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-}
-.itens-orcamento-usuario-bofl{
-  width: 100%;
-  background-color: #AEB2F2;
-  padding: 10px;
-  color: #203573;
-  
-  
-}
-.detalhes-orcamento-usuario-bofl{
-  width: 100%;
-  padding: 30px 20px;
-  color: #203573;
-  }
-  .detalhes-orcamento-usuario-bofl p{
-    margin: 0px;
-    display: inline;
-  }
-  #calendario-ou-bofl{
-    background-image: url('/img/ou-bg-img1.png');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    
-    
-  }
-  .itens-orcamento-usuario-bofl p{
-    margin: 0px;
-    display: inline;
-  }
-  .botaofinal-orcamento-usuario-bofl{
-    display: flex;
-    width: 100%;
-    background-color: #88BF36;
-    color: #ffffff;
-    padding: 10px;
-    padding-right: 0px;
-    -webkit-box-shadow: 0px -9px 5px rgba(50, 50, 50, 0.77);
-    -moz-box-shadow:    0px -9px 5px rgba(50, 50, 50, 0.77);
-    box-shadow:         0px -9px 5px rgba(50, 50, 50, 0.77);
-    
-  }
-  div.btns-ou-bofl{
-    width: 90%;
-  }
-  div.link-ou-bofl{
-    width: 10%;
-  }
-  button#btnrejeitar-ou-bofl{
-    background-color: #88BF36;
-    color: #ffffff;
-    border: 2px solid #ffffff;
-    border-radius: 15%;
-    padding: 0px 20px;
-    margin: 15px;
-  }
-  button#btnaceito-ou-bofl{
-    background-color: #203573;
-    color: #ffffff;
-    border: 2px solid #7159C1;
-    border-radius: 15%;
-    padding: 0px 20px;
-    margin: 15px;
-  }
-  #btnpagar-ou-bofl{
-    background-color: #7159C1;
-    color: #ffffff;
-    border: 2px solid #A094F2;
-    border-radius: 15%;
-    padding: 0px 20px;
-    margin: 15px;
-    margin-right: 10px;
-    float: right;
-  }
-  #iconeSetadireira-bofl{
-    content:  url('/img/setaDireitaou.png');
-    float: right;
-    padding-right: 0px;
-
-  }
-  .especificacoes-o-u-bofl{
-    float: right;
-
-  }
-  .tr-ou-bgcolor1-bofl{
-    background-color: #ffffff;
-  }
-.inicio-servico-bofl{
-  width: 50%;
-  padding: 0px 20px;
-  
-}
-.inicio-garantia-bofl{
-  width: 50%;
-  padding: 0px 20px;
-  
-}
-
-.hr2-bofl{
-  color: #BDBDBD;
-  background-color: #BDBDBD;
-  height: 1px;
-  width: 100%;
-
-}
-.titulob-bofl{
-  padding: 10px;
-  font-size: 20px;
-
-}
-.op1-bofl{
-  color: #FFFFFF;
-  background-color: #FFC327;
-  padding: 5px;
-
-}
-.op2-bofl{
-  color: #FFFFFF;
-  background-color: #203573;
-  padding: 5px;
-
-}
-.detalhes-orcamento-usuario-bofl{
-  overflow: hidden;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  padding: 30px 20px;
-  
-  
-}
-
-.produtos-checkbox-bofl{
-  float: left;
-  width: 50%;
-  padding: 20px;
- 
-}
-.form-itens-orca-usuario-bofl{
-  float: left;
-  width: 50%;
-  padding: 20px;
-}
-.resumo-ou-ap-bofl{
-  float: left;
-  width: 50%;
-  
-  padding-bottom: 0%;
-  border-left: 1px solid #BDBDBD;
-  
-}
-.especificacoes-ou-bofl{
-  float: left;
-  width: 50%;
-  padding: 20px;
-  
-}
-td.td-ou-bofl{
-  padding: 2px;
-}
-thead.cabecalho-ou-bofl{
-  background-color: #203573;
-  color: #ffffff;
-}
-tr.tr-ou-bgcolor-bofl{
-  background-color: #AEB2F2;
-}
-
-table.table-bordered-2-bofl{
-  margin-bottom: 0%;
-}
-.bg-imgs-ou-bofl{
-  width: 100%;
-  color: #203573;
-  }
-div.resumo-ou-bofl{
-  padding: 30px 20px;
-}
-table#tableButton-ou-bofl tr td{
-  cursor: pointer;
-}
-div.calendario-ou-bofl{
-  width: 50%;
-}
-
-table#tableButton-ou-bofl td:hover {
-  background-color: #CFCFCF;
-}
-table#tableButton-ou-bofl td.selecionado {
-  background-color: #28a745;
-  -webkit-box-shadow: 5px 5px 5px rgba(50, 50, 50, 0.77);
-  -moz-box-shadow:    5px 5px 5px rgba(50, 50, 50, 0.77);
-  box-shadow:         5px 5px 5px rgba(50, 50, 50, 0.77);
-}
-
 /*----------------orcamento usuario - mobile ---------------*/
 @media(max-width:724px){ 
 
@@ -1266,6 +956,318 @@ table#tableButton-ou-bofl td.selecionado {
 }
 
 /*fim orcamento-usuario---------------*/
+
+/*inicio orcamento-usuario---------------*/
+
+  .ac-bofl{
+    background-color: #88BF36;
+    color: #ffffff;
+  
+    padding: 0px;
+    width: 100%;
+    text-align: left;
+    border: 1px solid white;
+    transition: 0.4s;
+    font: 20px;
+    outline: none;
+    -webkit-box-shadow: 0px 9px 5px rgba(50, 50, 50, 0.77);
+    -moz-box-shadow:    0px 9px 5px rgba(50, 50, 50, 0.77);
+    box-shadow:         0px 9px 5px rgba(50, 50, 50, 0.77);
+  }
+
+  .ac-bofl::after{
+    content:  url("data:image/svg+xml, <svg class='bi bi-chevron-compact-down' width='2em' height='2em' viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M1.553 6.776a.5.5 0 01.67-.223L8 9.44l5.776-2.888a.5.5 0 11.448.894l-6 3a.5.5 0 01-.448 0l-6-3a.5.5 0 01-.223-.67z' clip-rule='evenodd'/></svg>");
+    padding-right: 15px;
+    font-size: 50px;
+    float: right;
+    margin-bottom: 0;
+    color: #ffffff;
+  }
+  /*.active::after{
+  /*content: url('/img/setaAcima.png'); 
+  }*/
+  .pe-bofl{
+    
+    background-color: white;
+    display: none;
+    overflow: hidden;
+    padding: 0%;
+    margin: 0px;
+  }
+  .descricao-servico-usuario-bofl{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0%;
+    margin: 0px;
+    
+    
+    
+  }
+  .info-servicos-usuario-bofl{
+    
+    background-color: #7159C1;
+    color: #FFFFFF;    
+    text-align: center;
+    padding: 70px 30px;
+    padding-bottom: 0%;
+    -webkit-box-shadow: 9px 0px 5px rgba(50, 50, 50, 0.77);
+    -moz-box-shadow:    9px 0px 5px rgba(50, 50, 50, 0.77);
+    box-shadow:         9px 0px 5px rgba(50, 50, 50, 0.77);
+    z-index: 1;
+    width: 25%;
+    margin: 0%;
+  }
+  .hr1-bofl{
+    color: #FFFFFF;
+    background-color: #FFFFFF;
+    height: 1px;
+    
+  }
+  .dados-servicos-usuario-bofl{
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+    padding-bottom: 0%;
+    margin: 0px;
+    
+  }
+  .dados-servicos-usuario-bofl th{
+    text-align: left;
+    color: #203573;
+    
+    
+    
+  }
+  .tabelaContratante-bofl{
+    width: 50%;
+    padding: 20px;
+    padding-bottom: 0px;
+    margin: 0px;
+    
+    
+  }
+  .tabelaPrestador-bofl{
+    border-left:1px solid #BDBDBD;
+    width: 50%;
+    padding: 20px;
+    padding-bottom: 0px;
+    margin: 0px;
+    
+    
+  }
+  .espaco-orcamento-usuario-bofl{
+    width: 100%;
+    height: 30px;
+    background-color: #88BF36;
+    z-index: 2;
+    -webkit-box-shadow: 0px 9px 5px rgba(50, 50, 50, 0.77);
+    -moz-box-shadow:    0px 9px 5px rgba(50, 50, 50, 0.77);
+    box-shadow:         0px 9px 5px rgba(50, 50, 50, 0.77);
+    
+  }
+  .rodape-orcamento-usuario-bofl{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .itens-orcamento-usuario-bofl{
+    width: 100%;
+    background-color: #AEB2F2;
+    padding: 10px;
+    color: #203573;
+    
+    
+  }
+  .detalhes-orcamento-usuario-bofl{
+    width: 100%;
+    padding: 30px 20px;
+    color: #203573;
+    }
+    .detalhes-orcamento-usuario-bofl p{
+      margin: 0px;
+      display: inline;
+    }
+    #calendario-ou-bofl{
+      background-image: url('/img/ou-bg-img1.png');
+      background-repeat: no-repeat;
+      background-size: 100%;
+      
+      
+    }
+    .itens-orcamento-usuario-bofl p{
+      margin: 0px;
+      display: inline;
+    }
+    .botaofinal-orcamento-usuario-bofl{
+      display: flex;
+      width: 100%;
+      background-color: #88BF36;
+      color: #ffffff;
+      padding: 10px;
+      padding-right: 0px;
+      -webkit-box-shadow: 0px -9px 5px rgba(50, 50, 50, 0.77);
+      -moz-box-shadow:    0px -9px 5px rgba(50, 50, 50, 0.77);
+      box-shadow:         0px -9px 5px rgba(50, 50, 50, 0.77);
+      
+    }
+    div.btns-ou-bofl{
+      width: 90%;
+    }
+    div.link-ou-bofl{
+      width: 10%;
+    }
+    button#btnrejeitar-ou-bofl{
+      background-color: #88BF36;
+      color: #ffffff;
+      border: 2px solid #ffffff;
+      border-radius: 15%;
+      padding: 0px 20px;
+      margin: 15px;
+    }
+    button#btnaceito-ou-bofl{
+      background-color: #203573;
+      color: #ffffff;
+      border: 2px solid #7159C1;
+      border-radius: 15%;
+      padding: 0px 20px;
+      margin: 15px;
+    }
+    #btnpagar-ou-bofl{
+      background-color: #7159C1;
+      color: #ffffff;
+      border: 2px solid #A094F2;
+      border-radius: 15%;
+      padding: 0px 20px;
+      margin: 15px;
+      margin-right: 10px;
+      float: right;
+    }
+    #iconeSetadireira-bofl{
+      content:  url('/img/setaDireitaou.png');
+      float: right;
+      padding-right: 0px;
+
+    }
+    .especificacoes-o-u-bofl{
+      float: right;
+
+    }
+    .tr-ou-bgcolor1-bofl{
+      background-color: #ffffff;
+    }
+  .inicio-servico-bofl{
+    width: 50%;
+    padding: 0px 20px;
+    
+  }
+  .inicio-garantia-bofl{
+    width: 50%;
+    padding: 0px 20px;
+    
+  }
+
+  .hr2-bofl{
+    color: #BDBDBD;
+    background-color: #BDBDBD;
+    height: 1px;
+    width: 100%;
+
+  }
+  .titulob-bofl{
+    padding: 10px;
+    font-size: 20px;
+
+  }
+  .op1-bofl{
+    color: #FFFFFF;
+    background-color: #FFC327;
+    padding: 5px;
+
+  }
+  .op2-bofl{
+    color: #FFFFFF;
+    background-color: #203573;
+    padding: 5px;
+
+  }
+  .detalhes-orcamento-usuario-bofl{
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    
+    
+  }
+
+  .produtos-checkbox-bofl{
+    float: left;
+    width: 50%;
+    padding: 20px;
+  
+  }
+  .form-itens-orca-usuario-bofl{
+    float: left;
+    width: 50%;
+    padding: 20px;
+  }
+  .resumo-ou-ap-bofl{
+    float: left;
+    width: 50%;
+    
+    padding-bottom: 0%;
+    border-left: 1px solid #BDBDBD;
+    
+  }
+  .especificacoes-ou-bofl{
+    float: left;
+    width: 50%;
+    padding: 20px;
+    
+  }
+  td.td-ou-bofl{
+    padding: 2px;
+  }
+  thead.cabecalho-ou-bofl{
+    background-color: #203573;
+    color: #ffffff;
+  }
+  tr.tr-ou-bgcolor-bofl{
+    background-color: #AEB2F2;
+  }
+
+  table.table-bordered-2-bofl{
+    margin-bottom: 0%;
+  }
+  .bg-imgs-ou-bofl{
+    width: 100%;
+    color: #203573;
+    }
+  div.resumo-ou-bofl{
+    padding: 30px 20px;
+  }
+  table#tableButton-ou-bofl tr td{
+    cursor: pointer;
+  }
+  div.calendario-ou-bofl{
+    width: 50%;
+  }
+
+  table#tableButton-ou-bofl td:hover {
+    background-color: #CFCFCF;
+  }
+  table#tableButton-ou-bofl td.selecionado {
+    background-color: #28a745;
+    -webkit-box-shadow: 5px 5px 5px rgba(50, 50, 50, 0.77);
+    -moz-box-shadow:    5px 5px 5px rgba(50, 50, 50, 0.77);
+    box-shadow:         5px 5px 5px rgba(50, 50, 50, 0.77);
+  }
+
+
 
 /*---------Area Chat----------------------------------------------*/
 .container-chat{
