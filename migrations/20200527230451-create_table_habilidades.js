@@ -6,14 +6,25 @@ module.exports = {
         autoIncrement:true,
         type:Sequelize.INTEGER 
       },
-      descricao:{
-       type:Sequelize.STRING(190)
-      },
       titulo:{
         type:Sequelize.STRING(190)
       },
-      prestadores_idprestadores:{
-        type:Sequelize.INTEGER
+      inicio_profissao:{
+        type:Sequelize.DATE,
+        allowNull:false
+      },
+      descricao:{
+       type:Sequelize.STRING(290)
+      },
+      
+      fk_prestador: { 
+        type: Sequelize.INTEGER, 
+        references:{
+          model:{
+            tableName: 'prestador'
+          },
+          key:'id'
+        }
       }
     });
   },
