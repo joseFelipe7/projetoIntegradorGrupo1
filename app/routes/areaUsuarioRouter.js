@@ -2,6 +2,7 @@ const express = require("express");
 const authCliente = require('../middlewares/authCliente')
 const authPrestador = require('../middlewares/authPrestador')
 const registroClienteController = require("../controllers/registroClienteController")
+const prestadorController = require("../controllers/prestadorController")
 
 let router = express.Router();
 
@@ -67,9 +68,7 @@ router.get("/area-prestador/pedidos", authPrestador,(req, res) => {
     res.render("areaPrestador", {view: "pedidosAreaPrestador", loggado: req.session.prestador});
 })
 
-router.get("/area-prestador/meusDados", authPrestador,(req, res) => {
-    res.render("areaPrestador", {view: "meusDados-prestador", loggado: req.session.prestador});
-})
+router.get("/area-prestador/meusDados/:id", authPrestador, prestadorController.editorForm);
 
 router.get("/area-prestador/requisicoes", authPrestador,(req, res) => {
     res.render("areaPrestador", {view: "requisicoes-prestador", loggado: req.session.prestador});

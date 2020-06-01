@@ -27,7 +27,16 @@ const prestadorController = {
                 data_cadastro:Date.now()
             })
         res.redirect('/login/Prestador/#login-prestador')
+    },
+    editorForm: async (req, res) => {
+        const {id} = req.params
+
+        const prestador = await Prestador.findByPk(id)
+        return res.render("areaPrestador", {view: "meusDados-prestador", loggado: req.session.prestador, prestador});
+         
     }
+
+    
 }
 module.exports = prestadorController;
 
