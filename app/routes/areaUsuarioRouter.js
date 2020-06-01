@@ -60,19 +60,19 @@ router.get("/area-contratante/pagamentos-bru", authCliente, (req, res) => {
 
 // rotas prestador
 router.get("/area-prestador/cadastro-servicos", authPrestador,(req, res) => {
-    res.render("areaPrestador", {view: "cadastroServiçosPrestador"});
+    res.render("areaPrestador", {view: "cadastroServiçosPrestador", loggado: req.session.prestador});
 })
 
 router.get("/area-prestador/pedidos", authPrestador,(req, res) => {
-    res.render("areaPrestador", {view: "pedidosAreaPrestador"});
+    res.render("areaPrestador", {view: "pedidosAreaPrestador", loggado: req.session.prestador});
 })
 
 router.get("/area-prestador/meusDados", authPrestador,(req, res) => {
-    res.render("areaPrestador", {view: "meusDados-prestador"});
+    res.render("areaPrestador", {view: "meusDados-prestador", loggado: req.session.prestador});
 })
 
 router.get("/area-prestador/requisicoes", authPrestador,(req, res) => {
-    res.render("areaPrestador", {view: "requisicoes-prestador"});
+    res.render("areaPrestador", {view: "requisicoes-prestador", loggado: req.session.prestador});
 })
 
 

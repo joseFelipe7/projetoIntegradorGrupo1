@@ -9,7 +9,7 @@ module.exports = {
       },
       celular_principal: { 
         type: Sequelize.STRING(11),
-        allowNull: true
+        allowNull: false
       },
       celular_secundario: { 
         type: Sequelize.STRING(11),
@@ -23,18 +23,23 @@ module.exports = {
         type: Sequelize.STRING(10),
         allowNull: true
       },
+      email_principal: { 
+        type: Sequelize.STRING(190),
+        allowNull: false
+      },
       email_secundario: { 
         type: Sequelize.STRING(190),
         allowNull: true
       },
-      clientes_id: { 
+      fk_prestador: { 
         type: Sequelize.INTEGER, 
-        allowNull: true 
-      },
-      prestadores_id: { 
-        type: Sequelize.INTEGER, 
-        allowNull: true 
-      },
+        references:{
+          model:{
+            tableName: 'prestador'
+          },
+          key:'id'
+        }
+      }
     });
   },
 
