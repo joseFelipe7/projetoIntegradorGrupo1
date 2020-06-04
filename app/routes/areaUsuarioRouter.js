@@ -39,7 +39,7 @@ router.get("/area-contratante/historico-bru", authCliente, (req, res) => {
 router.get("/area-contratante/chat", authCliente, (req, res) => {
     res.render("areaContratante", {view: "chat", loggado: req.session.cliente});
     // ...5620/usuario/area-contratante/chat
-})
+}) 
 
 
 router.get("/area-contratante/favoritos", authCliente, (req, res) => {
