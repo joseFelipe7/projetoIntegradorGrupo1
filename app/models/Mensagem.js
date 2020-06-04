@@ -33,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
     //Mensagem pertence a um chat por isso ele carrega a relação
     //BelongsTo (Pertecem a Um)
     Mensagem.associate = (listaModels) => {
-        Mensagem.BelongsTo(listaModels.Chat, {
+        Mensagem.belongsTo(listaModels.Chat, {
             foreignKey: 'id_chats',
             as: 'chat'
         })
