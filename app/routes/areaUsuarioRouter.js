@@ -3,6 +3,7 @@ const authCliente = require('../middlewares/authCliente')
 const authPrestador = require('../middlewares/authPrestador')
 const registroClienteController = require("../controllers/registroClienteController")
 const prestadorController = require("../controllers/prestadorController")
+const chatClienteController = require("../controllers/chatClienteController")
 
 let router = express.Router();
 
@@ -36,8 +37,8 @@ router.get("/area-contratante/historico-bru", authCliente, (req, res) => {
 })
 
 
-router.get("/area-contratante/chat", authCliente, (req, res) => {
-    res.render("areaContratante", {view: "chat", loggado: req.session.cliente});
+router.get("/area-contratante/chat", authCliente, chatClienteController, (req, res) => {
+    res.render("areaContratante", {view: "chatCliente", loggado: req.session.cliente});
     // ...5620/usuario/area-contratante/chat
 }) 
 

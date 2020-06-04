@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
         datainicio: DataTypes.DATE,
     }, {
         timestamps:false,//terá create_at e update_at criada automaticamente? Não
-        tableName: 'token_cliente'
+        tableName: 'chats'
     });
 
     /*
