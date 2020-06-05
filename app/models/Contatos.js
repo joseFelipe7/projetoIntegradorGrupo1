@@ -1,3 +1,4 @@
+
 module.exports = (sequelize, DataTypes) => {
     const Contatos = sequelize.define("Contatos", {
         id:{
@@ -24,17 +25,18 @@ module.exports = (sequelize, DataTypes) => {
         email_secundario: { 
             type: DataTypes.STRING(190),
             allowNull: true
-        },
-        fk_clientes:{
-            type: DataTypes.INTEGER
         }
-        
     }, {
         timestamps:false,
         tableName: 'contatos'
     });
 
-  
+    Contatos.associate = (listaDeModelos) => {
+        Contatos.belongsTo(listaDeModelos.Cliente, {
+          foreignKey: 'fk_clientes',
+          as: 'cliente'
+        })
+      }
  
     return Contatos;
 };

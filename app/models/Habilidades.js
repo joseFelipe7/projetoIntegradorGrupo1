@@ -16,11 +16,7 @@ id:{
   descricao:{
     type:DataTypes.STRING(290),
     allowNull:false
-  },
-  fk_prestador:{
-    type: DataTypes.INTEGER
-}
-
+  }
 }, {
 timestamps:false,
 tableName: 'habilidades'

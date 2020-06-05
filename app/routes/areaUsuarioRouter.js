@@ -1,14 +1,15 @@
 const express = require("express");
 const authCliente = require('../middlewares/authCliente')
 const authPrestador = require('../middlewares/authPrestador')
-const registroClienteController = require("../controllers/registroClienteController")
-const prestadorController = require("../controllers/prestadorController")
+const meusDadosClienteController = require('../controllers/meus-dados-ClienteController') 
+const meusDadosPrestadorController = require('../controllers/meus-dados-PrestadorController')
 
 let router = express.Router();
 
 // rotas contratante
-router.get("/area-contratante/meus-dados/:id", authCliente, registroClienteController.viewEditorForm);
-router.put("/area-contratante/meus-dados/:id", authCliente, registroClienteController.update);
+router.get("/area-contratante/meus-dados/:id", authCliente, meusDadosClienteController.viewEditorForm);
+router.put("/area-contratante/meus-dados/:id", authCliente, meusDadosClienteController.update);
+
     // ...5620/usuario/area-contratante/meus-dados
 
 
@@ -68,7 +69,7 @@ router.get("/area-prestador/pedidos", authPrestador,(req, res) => {
     res.render("areaPrestador", {view: "pedidosAreaPrestador", loggado: req.session.prestador});
 })
 
-router.get("/area-prestador/meusDados/:id", authPrestador, prestadorController.editorForm);
+router.get("/area-prestador/meusDados/:id", authPrestador, meusDadosPrestadorController.editorForm);
 
 router.get("/area-prestador/requisicoes", authPrestador,(req, res) => {
     res.render("areaPrestador", {view: "requisicoes-prestador", loggado: req.session.prestador});
