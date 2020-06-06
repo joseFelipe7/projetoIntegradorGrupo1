@@ -9,30 +9,25 @@ module.exports = {
     index: async (req, res) => {
         let loggado = req.session.cliente;
 
-        loggado.id == clientes_id //cliente
+        //clientes_id == cliente
 
-        let cliente = await Chat.findOne({
+        let prestadores = await Chat.findAll({
             where: {
                 cliente:{ 
                     [Op.eq]: loggado.id,
                 }
             }
         })
-
-        let prestadores = await Chat.findAll({
-            where: {
-                email:{ 
-                    [Op.eq]: email,
-                }
-            }
-        })
-
-        res.render("loginContratante");
-    },
-
-    //logga
-    store: async (req, res) => {
+        console.log(prestadores.dataValues)
         
+        produtos.forEach(item => {
+            console.log(item.dataValues)
+            //dataValues contém as colunas da tabela selecionada
+            console.log(item.nome)
+            //também é possivel acessar os atributos separados
+        });
+
+        res.render("chatCliente");
     }
 }
 */
