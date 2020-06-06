@@ -41,12 +41,15 @@ module.exports = {
         },
         fk_clientes: { 
           type: Sequelize.INTEGER, 
+          allowNull: false,
           references:{
             model:{
               tableName: 'clientes'
             },
             key:'id'
-          }
+          },
+          onUpdate: 'CASCADE',
+          onDelete: 'CASCADE'
         }
           
       });

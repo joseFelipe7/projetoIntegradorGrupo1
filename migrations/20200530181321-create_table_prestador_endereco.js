@@ -31,12 +31,15 @@ module.exports = {
         },
         fk_prestador: { 
           type: Sequelize.INTEGER, 
+          allowNull: false,
           references:{
             model:{
               tableName: 'prestador'
             },
             key:'id'
-          }
+          },
+          onUpdate: 'CASCADE',
+          onDelete: 'CASCADE'
         }
           
       });

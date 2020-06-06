@@ -1,3 +1,5 @@
+//cliente_endereco pertence a um cliente
+
 module.exports = (sequelize, DataTypes) => {
     const Clientes_endereco = sequelize.define("Clientes_endereco", {
 id:{
@@ -33,16 +35,19 @@ id:{
   },
   tipo_endereco:{
     type:DataTypes.CHAR(1)
-  },
-  fk_clientes:{
-    type: DataTypes.INTEGER
-}
+  }
 
 }, {
 timestamps:false,
 tableName: 'clientes_endereco'
 });
 
+Clientes_endereco.associate = (listaDeModelos) => {
+  Clientes_endereco.belongsTo(listaDeModelos.Cliente, {
+    foreignKey: 'fk_clientes',
+    as: 'cliente'
+  })
+}
 
 
 return Clientes_endereco;
