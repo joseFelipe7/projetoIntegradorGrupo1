@@ -180,7 +180,7 @@
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
             <div class="card-body">
               <!-- formulario endereço -->
-              <form> <!-- action="/usuario/area-contratante/meus-dados/<" method="GET"> -->
+              <form action="/usuario/area-contratante/meus-dados/<%=cliente.id%>/enderecos" method="GET">
                 <!-- input linha 1 -->
                 <div class="form-row">
                   <!-- input data cep -->
@@ -277,7 +277,8 @@
           </div>
           <div class="modal-body bg-roxoClaro">
             <!-- formulario editar endereço -->
-            <form action="/usuario/area-contratante/meus-dados/<%=cliente.clientes_endereco.id%>?_method=PUT" method="POST"> 
+            <form action="/usuario/area-contratante/meus-dados/<%=cliente.clientes_endereco.id%>?_method=PUT/endereco" method="POST"> 
+             
               <!-- input linha 1 -->
               <div class="form-row">
                 <!-- input data cep -->

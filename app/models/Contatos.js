@@ -25,6 +25,9 @@ module.exports = (sequelize, DataTypes) => {
         email_secundario: { 
             type: DataTypes.STRING(190),
             allowNull: true
+        },
+        fk_cliente:{
+            type: DataTypes.INTEGER
         }
     }, {
         timestamps:false,
@@ -33,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
 
     Contatos.associate = (listaDeModelos) => {
         Contatos.belongsTo(listaDeModelos.Cliente, {
-          foreignKey: 'fk_clientes',
+          foreignKey: 'fk_cliente',
           as: 'cliente'
         })
       }

@@ -35,6 +35,9 @@ id:{
   },
   tipo_endereco:{
     type:DataTypes.CHAR(1)
+  }, 
+  fk_cliente: {
+    type: DataTypes.INTEGER
   }
 
 }, {
@@ -44,7 +47,7 @@ tableName: 'clientes_endereco'
 
 Clientes_endereco.associate = (listaDeModelos) => {
   Clientes_endereco.belongsTo(listaDeModelos.Cliente, {
-    foreignKey: 'fk_clientes',
+    foreignKey: 'fk_cliente',
     as: 'cliente'
   })
 }

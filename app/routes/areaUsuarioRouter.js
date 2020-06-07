@@ -4,12 +4,18 @@ const authPrestador = require('../middlewares/authPrestador')
 const meusDadosClienteController = require('../controllers/meus-dados-ClienteController') 
 const meusDadosPrestadorController = require('../controllers/meus-dados-PrestadorController')
 const chatClienteController = require("../controllers/chatClienteController")
+const clienteController = require("../controllers/clienteController")
+const clientes_enderecoController = require("../controllers/clientes_EnderecoController")
 
 let router = express.Router();
 
 // rotas contratante
-router.get("/area-contratante/meus-dados/:id", authCliente, meusDadosClienteController.viewEditorForm);
+router.get("/area-contratante/meus-dados/:id", authCliente, clienteController.viewEditorForm);
 router.put("/area-contratante/meus-dados/:id", authCliente, meusDadosClienteController.update);
+
+router.get("/area-contratante/meus-dados/:id/endereco", authCliente, clientes_enderecoController.index);
+router.post("/area-contratante/meus-dados/:id/endereco", authCliente, clientes_enderecoController.store);
+
 
     // ...5620/usuario/area-contratante/meus-dados
 
@@ -40,7 +46,7 @@ router.get("/area-contratante/historico-bru", authCliente, (req, res) => {
 
 router.get("/area-contratante/chat", authCliente, chatClienteController, (req, res) => {
     res.render("areaContratante", {view: "chatCliente", loggado: req.session.cliente});
-    // ...5620/usuario/area-contratante/chat
+  //   ...5620/usuario/area-contratante/chat
 }) 
 
 
