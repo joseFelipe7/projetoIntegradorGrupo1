@@ -109,6 +109,7 @@ module.exports = {
 
             umCliente.senha = bcrypt.hashSync(novaSenha, 10);
             //salva o novo valor na coluna...
+            //.save() --> para alterações de campos na tabela
             await umCliente.save();
 
             //marca o token como usado (true)...
