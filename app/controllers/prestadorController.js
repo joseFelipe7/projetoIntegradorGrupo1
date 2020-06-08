@@ -4,6 +4,7 @@ const { Prestador } = require('../models')
 
 
 const prestadorController = {
+    index: (req, res) => {},
 
     create:(req, res) => {
             res.render("cadastroPrestador");
@@ -16,6 +17,7 @@ const prestadorController = {
             prestadorCpf,
             prestadorNascimento
         } = req.body
+        
         console.log(bcrypt.hashSync(prestadorSenha,10))
             Prestador.create({
                 nome:prestadorNome,

@@ -1,6 +1,4 @@
-const Sequelize = require('sequelize')
-const config = require('../../config/database')
-const {Clientes_endereco, Cliente} = require('../models')
+const { Cliente, Clientes_endereco, Contatos } = require('../models')
 const ClienteController = { 
 
     /*index: async (req, res) => {
@@ -9,13 +7,30 @@ const ClienteController = {
            
 
         },*/
-        viewEditorForm: async (req,res) => {
+        index: async (req,res) => {
             const {id} = req.params
     
-            const cliente = await Cliente.findByPk(id);
+            //const cliente = await Cliente.findByPk(id);
+
+            const cliente = await Cliente.findOne({
+                where:{
+                    id
+                },
+                include:{
+                    model:Clientes_endereco,
+                    as: 'clientes_enderecos',
+                    required:true
+                },
+                include:{
+                    model:Contatos,
+                    as: 'contatos',
+                    required:true
+                }
+            })
+
             return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, cliente})
-        },
-        show: async (req, res) => {
+        },/*
+        index: async (req, res) => {
             const {id} = req.params;
             const cliente = await Cliente.findOne({
                 where:{
@@ -23,13 +38,47 @@ const ClienteController = {
                 },
                 include:{
                     model:Clientes_endereco,
-                    as: 'cliente_endereco',
+                    as: 'clientes_enderecos',
+                    required:true
+                },
+                include:{
+                    model:Contatos,
+                    as: 'contatos',
                     required:true
                 }
             })
-            return res.send("clientes", {cliente})
+                
+            return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, cliente})
+            
+        },*/
+        updade: async (req, res) => {
+            
+            const {
+                contratanteNome,
+                contratanteNascimento,
+                contratanteCpf
+            } = req.params;
+
+       
+
+            const cliente = await Cliente.update({
+                nome: contratanteNome,
+                email: contratanteEmail,
+                data_nascimento: contratanteNascimento,
+                status_:'A',
+                cpf: contratanteCpf,
+                data_cadastro:Date.now()
+            },
+            {
+                where: {
+                    id
+                }
+            })
+           
+            
+            return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, cliente})
+
         }
-        //chamou show products em categoria
     }
 
 
