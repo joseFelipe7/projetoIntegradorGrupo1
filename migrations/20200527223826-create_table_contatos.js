@@ -27,7 +27,7 @@ module.exports = {
         type: Sequelize.STRING(190),
         allowNull: true
       },
-      fk_clientes: { 
+      fk_cliente: { 
         type: Sequelize.INTEGER, 
         allowNull: false,
         references:{

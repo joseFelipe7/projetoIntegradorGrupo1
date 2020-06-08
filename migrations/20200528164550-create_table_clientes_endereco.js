@@ -39,7 +39,7 @@ module.exports = {
         tipo_endereco:{
           type:Sequelize.CHAR(1)
         },
-        fk_clientes: { 
+        fk_cliente: { 
           type: Sequelize.INTEGER, 
           allowNull: false,
           references:{
