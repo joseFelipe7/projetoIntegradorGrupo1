@@ -1,4 +1,3 @@
-/*
 const { Op } = require('sequelize');
 const { check, validationResult, body} = require('express-validator');
 
@@ -12,22 +11,33 @@ module.exports = {
         //clientes_id == cliente
 
         let prestadores = await Chat.findAll({
+            //traz os dados do cliente com mesmo id do cliente loggado
             where: {
-                cliente:{ 
+                clientes_id:{ 
                     [Op.eq]: loggado.id,
                 }
-            }
+            },
+            //inclui os dados que estão na tabela Clientes e Prestadores
+            include: [ 
+                {
+                    model: Cliente,
+                    as: 'cliente'
+                },
+                {
+                    model: Prestador,
+                    as: 'prestador'
+                },
+            ]
         })
-        console.log(prestadores.dataValues)
-        
-        produtos.forEach(item => {
+
+        prestadores.forEach(item => {
             console.log(item.dataValues)
             //dataValues contém as colunas da tabela selecionada
-            console.log(item.nome)
-            //também é possivel acessar os atributos separados
+
+            console.log(item.cliente.nome)
+            console.log(item.prestador.nome)
         });
 
-        res.render("chatCliente");
+        res.render("areaContratante", {view: "chatCliente", loggado: req.session.cliente});
     }
 }
-*/

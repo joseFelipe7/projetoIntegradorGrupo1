@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
     //Chat possuiMuitas mensagens
     Chat.associate = (listaModels)=>{
         Chat.hasMany(listaModels.Mensagem,{
-            forenKey:'id_chats',
+            foreignKey:'id_chats',
             //fk da tabela em que está sendo o relacionamento, o id dessa tabela na outra (fk_chats)
             //procura a fk dentro da model que tenho relação, no caso: na Mensagem
             as:'mensagens',
@@ -39,7 +39,7 @@ module.exports = (sequelize, DataTypes) => {
         //defindo a relaçao com fk do prestador na tabela chat
         //Chat pertenceAum prestador
         Chat.belongsTo(listaModels.Prestador,{
-            forenKey:'prestadores_id',
+            foreignKey:'prestadores_id',
             //nome da fk dentro da tabela que carrega a relação: Chat
             as:'prestador',
             //alias, apelido para a fk da relaçao
@@ -48,7 +48,7 @@ module.exports = (sequelize, DataTypes) => {
         //defindo a relaçao com fk do cliente na tabela chat
         //Chat pertenceAum cliente
         Chat.belongsTo(listaModels.Cliente,{
-            forenKey:'clientes_id',
+            foreignKey:'clientes_id',
             //nome da fk dentro da tabela que carrega a relação: Chat
             as:'cliente',
             //alias, apelido para a fk da relaçao
