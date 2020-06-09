@@ -39,11 +39,55 @@
           <a href="#"><img src="/img/login-linkedin.png"></a>
           <a href="#"><img src="/img/login-facebook.png"></a>
         </div>
-        <a id="esqueceu-prestador" href="#">Esqueceu a senha?</a>
+        <a id="esqueceu-prestador" href="#" data-toggle="modal" data-target="#esqueciMinhaSenha">Esqueceu a senha?</a>
       </div>
 
     </div>
   </main>
+
+
+  <div class="modal fade" id="esqueciMinhaSenha" tabindex="-1" role="dialog" aria-labelledby="esqueciMinhaSenha" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-azul text-white">
+          <h5 class="modal-title" id="exampleModalLongTitle">Recuperação de senha</h5>
+          <button type="button" class="close fecharModal" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body bg-roxoClaro">
+          <!-- ................................. -->
+          <form action="/usuario/area-contratante/meus-dados?_method=PUT" method="POST"> 
+            
+          
+            <!-- input linha 2 -->
+            <div class="form-row">
+              <!-- input data nascimento -->
+              <div class="form-group col">
+                <label for="nascimento">Informe o seu email para recuperarmos sua senha</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text etiquetaCampo">Email</span>
+                  </div>
+                  <input type="email" name="email" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email">
+                </div>
+              </div>
+            </div>
+            <!-- botao editar ABRE O MODAL-->
+            <!-- Button trigger modal -->
+            <div class="d-flex justify-content-end">
+              <button type="submit" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosPessoaisContratante">Confirma</button>
+            </div>
+          </form>
+          <!-- ................................. -->
+        </div>
+        <div class="modal-footer bg-azul">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 
   <%- include('include/footer') %>
   <%- include('include/script') %>
