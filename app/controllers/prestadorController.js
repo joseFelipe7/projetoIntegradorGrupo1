@@ -4,7 +4,10 @@ const { Prestador } = require('../models')
 
 
 const prestadorController = {
-    index: (req, res) => {},
+    index: async (req, res) => {
+        const prestador = await Prestador.findAll()
+        return res.send('prestador', {prestador})
+    },
 
     create:(req, res) => {
             res.render("cadastroPrestador");

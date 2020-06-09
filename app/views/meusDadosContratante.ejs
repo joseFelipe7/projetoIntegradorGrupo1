@@ -1,4 +1,4 @@
-<% if (typeof cliente != "undefined") { %>    <!-- sanfona -------------------------------------------------------->
+<% if (typeof clientes != "undefined") { %>    <!-- sanfona -------------------------------------------------------->
   <div id="accordion">
     <!-- card sanfona 1 ------------------------------------------------->
     <div class="card">
@@ -16,7 +16,8 @@
       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
         <div class="card-body">
           <!-- formulario dados pessoais -->
-          <form action="/usuario/area-contratante/meus-dados/<%=cliente.id%>" method="GET"> 
+          <% clientes.forEach(cliente => { %>
+          <form action="/usuario/area-contratante/meus-dados/<%=data.id%>" method="GET"> 
             <!-- linha foto -->
             <div class="form-row">
               <!-- input data nascimento -->
@@ -73,6 +74,7 @@
               <button type="button" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosPessoaisContratante">Editar</button>
             </div>
           </form>
+        <% }) %> 
         </div>
       </div>
     </div>
@@ -90,6 +92,8 @@
       </div>
       <div class="modal-body bg-roxoClaro">
         <!-- ................................. -->
+        <% clientes.forEach(cliente => { %>
+
         <form action="/usuario/area-contratante/meus-dados/<%=cliente.id%>?_method=PUT" method="POST"> 
           <!-- linha foto -->
           <div class="form-row">
@@ -153,6 +157,7 @@
             <button type="submit" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosPessoaisContratante">SALVAR</button>
           </div>
         </form>
+      <% }) %> 
         <!-- ................................. -->
       </div>
       <div class="modal-footer bg-azul">
@@ -718,7 +723,8 @@
       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
         <div class="card-body">
           <!-- formulario dados pessoais -->
-          <form action="/usuario/area-contratante/meus-dados/<%=cliente.id%>" method="GET"> 
+          
+          <form action="/usuario/area-contratante/meus-dados/<%=data.cliente%>" method="GET"> 
             <!-- linha foto -->
             <div class="form-row">
               <!-- input data nascimento -->
@@ -739,7 +745,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">Nome</span>
                   </div>
-                  <input type="text" name="contratanteNome" class="form-control campoMeusDadosStyle campoDadoReadonly" id="nome" value="<%= cliente.nome %>" readonly>
+                  <input type="text" name="contratanteNome" class="form-control campoMeusDadosStyle campoDadoReadonly" id="nome" value="<%= clientes.nome %>" readonly>
                 </div>
               </div>
 
@@ -750,7 +756,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">CPF</span>
                   </div>
-                  <input type="number" name="contratanteCpf" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cpf" value="<%= cliente.cpf %>" readonly maxlength="11" pattern="[0-9]+$">
+                  <input type="number" name="contratanteCpf" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cpf" value="<%= data.cliente.cpf %>" readonly maxlength="11" pattern="[0-9]+$">
                 </div>
               </div>
             </div>
@@ -764,7 +770,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">Data Nascimento</span>
                   </div>
-                  <input type="date" name="contratanteNascimento" class="form-control campoMeusDadosStyle campoDadoReadonly" id="nascimento" value="<%= cliente.data_nascimento %>" readonly>
+                  <input type="date" name="contratanteNascimento" class="form-control campoMeusDadosStyle campoDadoReadonly" id="nascimento" value="<%= data.cliente.data_nascimento %>" readonly>
                 </div>
               </div>
             </div>
@@ -775,6 +781,7 @@
               <button type="button" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosPessoaisContratante">Editar</button>
             </div>
           </form>
+        
         </div>
       </div>
     </div>
@@ -792,7 +799,7 @@
       </div>
       <div class="modal-body bg-roxoClaro">
         <!-- ................................. -->
-        <form action="/usuario/area-contratante/meus-dados/<%=cliente.id%>?_method=PUT" method="POST"> 
+        <form action="/usuario/area-contratante/meus-dados/<%=data.cliente.id%>?_method=PUT" method="POST"> 
           <!-- linha foto -->
           <div class="form-row">
             <!-- input foto escolhida -->
@@ -822,7 +829,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">Nome</span>
                 </div>
-                <input type="text" name="contratanteNome" class="form-control campoMeusDadosStyle campoDadoReadonly" id="nome" value="<%= cliente.nome %>">
+                <input type="text" name="contratanteNome" class="form-control campoMeusDadosStyle campoDadoReadonly" id="nome" value="<%= data.cliente.nome %>">
               </div>
             </div>
             <!-- input cpf -->
@@ -832,7 +839,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">CPF</span>
                 </div>
-                <input type="number" name="contratanteCpf" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cpf" value="<%= cliente.cpf %>" maxlength="11" pattern="[0-9]+$">
+                <input type="number" name="contratanteCpf" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cpf" value="<%= data.cliente.cpf %>" maxlength="11" pattern="[0-9]+$">
               </div>
             </div>
           </div>
@@ -845,7 +852,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">Data Nascimento</span>
                 </div>
-                <input type="date" name="contratanteNascimento" class="form-control campoMeusDadosStyle campoDadoReadonly" id="nascimento" value="<%= cliente.data_nascimento %>">
+                <input type="date" name="contratanteNascimento" class="form-control campoMeusDadosStyle campoDadoReadonly" id="nascimento" value="<%= data.cliente.data_nascimento %>">
               </div>
             </div>
           </div>
@@ -981,7 +988,7 @@
           
 
 
-          <form action="/usuario/area-contratante/meus-dados/<%=cliente.id%>/endereco" method="POST"> 
+          <form action="/usuario/area-contratante/meus-dados/<%=data.cliente.id%>/endereco" method="POST"> 
 
             <!-- input linha 1 -->
             <div class="form-row">
@@ -1190,7 +1197,7 @@
           
           
 
-          <form action="/usuario/area-contratante/meus-dados/<%=cliente.id%>/contato" method="POST"> 
+          <form action="/usuario/area-contratante/meus-dados/<%=data.cliente%>/contato" method="POST"> 
 
             <!-- input linha 1 -->
               <div class="form-row">

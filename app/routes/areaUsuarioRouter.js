@@ -49,7 +49,7 @@ router.get("/area-contratante/historico-bru", authCliente, (req, res) => {
 })
 
 
-router.get("/area-contratante/chat", authCliente, chatClienteController.index) 
+//router.get("/area-contratante/chat", authCliente, chatClienteController.index) 
     // ...5620/usuario/area-contratante/chat 
 
 

@@ -1,10 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
     const Prestador = sequelize.define("Prestador", {
-        id:{
-            primaryKey:true,
-            autoIncrement:true,
-            type:DataTypes.INTEGER 
-          },
+      
         nome:{
             type:DataTypes.STRING(190),
             allowNull:false
@@ -28,6 +24,17 @@ module.exports = (sequelize, DataTypes) => {
         timestamps:false,
         tableName: 'prestador'
     });
+    Prestador.associate = (listaModels) => {
+      Prestador.hasMany(listaModels.Prestador_endereco, {
+        foreignKey: 'fk_prestador',
+        as: 'enderecos'
+      }),
+      Prestador.hasMany(listaModels.Contatos_prestador, {
+        foreignKey: 'fk_prestador',
+        as: 'contatos'
+      })
+
+    }
    
    
     

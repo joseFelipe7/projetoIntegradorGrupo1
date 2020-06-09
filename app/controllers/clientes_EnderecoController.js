@@ -7,14 +7,14 @@ const Clientes_EnderecoController = {
         const {fk_cliente } = req.params;
         const cliente = await Cliente.findByPk(fk_cliente, {
             include: {
-                model: Cliente,
+                model: Clientes_endereco,
                 as: 'clientes_enderecos',
                 required:true
             }
         })
         
 
-        
+        console.log(cliente)
 
       /* const clientes_enderecos = await Clientes_endereco.findAll({
             include: {
@@ -24,7 +24,7 @@ const Clientes_EnderecoController = {
             }
         });
             */
-        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, cliente})
+        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{cliente}})
     },
     store: async (req, res) => {
         const {fk_cliente} = req.params;
@@ -53,7 +53,7 @@ const Clientes_EnderecoController = {
 
         })
 
-        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, clientes_endereco})
+        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{clientes_endereco}})
         
     },
     updade: async (req, res) => {
@@ -86,7 +86,7 @@ const Clientes_EnderecoController = {
                 id
             }
         })
-        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, cliente_endereco})
+        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{cliente_endereco}})
 
     }
 

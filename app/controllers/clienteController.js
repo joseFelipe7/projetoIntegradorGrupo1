@@ -27,8 +27,9 @@ const ClienteController = {
                     required:true
                 }
             })
-
-            return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, cliente})
+            console.log(cliente)
+            
+            return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{cliente}})
         },/*
         index: async (req, res) => {
             const {id} = req.params;
@@ -76,7 +77,7 @@ const ClienteController = {
             })
            
             
-            return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, cliente})
+            return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{cliente}})
 
         }
     }

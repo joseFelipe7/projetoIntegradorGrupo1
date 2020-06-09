@@ -12,6 +12,7 @@ const ContatosController = {
                 required: true
             }
         })
+        console.log(cliente)
 
         /*const contatos = await Contatos.findAll({
             include: {
@@ -21,7 +22,7 @@ const ContatosController = {
             }
         });*/
             
-        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, cliente})
+        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{cliente}})
     },
     store: async (req, res) => {
         const {fk_cliente} = req.params;
@@ -48,7 +49,7 @@ const ContatosController = {
        
         })
 
-        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, contatos})
+        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{contatos}})
         
     },
     updade: async (req, res) => {
@@ -80,7 +81,7 @@ const ContatosController = {
                 id
             }
         })
-        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, contato})
+        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{contato}})
 
     }
 

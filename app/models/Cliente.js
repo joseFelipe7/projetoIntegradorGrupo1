@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
     });
 
     Cliente.associate = (listaModels) => {
-      Cliente.hasMany(listaModels.Clientes_Endereco, {
+      Cliente.hasMany(listaModels.Clientes_endereco, {
         foreignKey: 'fk_cliente',
         as: 'clientes_enderecos'
       }),
