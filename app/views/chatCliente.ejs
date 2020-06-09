@@ -1,33 +1,34 @@
 <main class="container-fluid w-100 h-100 d-flex justify-content-center align-items-center">
    
     <div class="container-chat">
-        <% for(let i=0; i < 10; i++){ %>
+        <% data.previewMgs.forEach( msg => { %>
             <div class="container-menssage">
                 <div class="avatar-chat p-1">
                     <img src="/img/mario-perfil.png" class="img-fluid rounded-circle" alt="">
                 </div>
                 <div class="chat-content-main">
                     <h4 class="title">
-                        Mario Luigi Mamamia
+                        <%- msg.nomePrestador %>
                     </h4>
                     <div class="menssage">
-                        Podemos conversa mais sobre aquele problema com canos e tartarugas?
+                        <%- msg.ultimaMsg %>
                     </div>
                     <div class="status">
-                        <div class="d-flex aling-items-center"><div class="color-notification"></div><span> Online</span></div>
+                        <div class="d-flex aling-items-center"><div class="color-notification"></div><span><%- msg.statusPrestador %></span></div>
                         <div class="last-menssage">
-                            08/08/2020
+                            <%= data.moment(msg.dataMsg).calendar() %>  
+                            
                         </div>
                     </div>
                 </div>
                 <div class="notify-new-menssage">
                     <div class="news">
-                        2 <img src="/img/notificacao-icon.png" alt="icone de novas mensagens">
+                        <%- msg.notificacoes %> <img src="/img/notificacao-icon.png" alt="icone de novas mensagens">
                     </div>
                     
                 </div>
             </div>
-        <% } %> 
+        <% }) %>
     </div>
 </main>
 

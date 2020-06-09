@@ -2,7 +2,7 @@ const bcrypt = require('bcrypt');
 const { Op } = require('sequelize');
 const { check, validationResult, body} = require('express-validator');
 
-const { Prestador, TokenCliente } = require('../models/index');
+const { Prestador, TokenPrestador } = require('../models/index');
 const emailConfig = require("../../config/email");
 
 module.exports = {
@@ -31,13 +31,13 @@ module.exports = {
                 prestador_id: prestador.id,
             })
 
-            //se encontrou o email do cliente, envia...
+            //se encontrou o email do prestador, envia...
             let envioEmail = {
                 from:'toolshallservicos@gmail.com',
                 to: email, //email do prestador
                 subject: 'Alteração de Senha',
                 text:'ola',
-                html:`<h1>Olá ${prestador.nome} <a href="http://localhost:5620/login/contratante/redefinir-senha/${token}">clique aqui</a> para redefinir senha:</h1>`
+                html:`<h1>Olá ${prestador.nome} <a href="http://localhost:5620/login/prestador/redefinir-senha/${token}">clique aqui</a> para redefinir senha:</h1>`
             }
             //recebe as informações do email que vai ser enviado e o segundo um callback
             emailConfig.sendMail(envioEmail, (error) => {
@@ -49,17 +49,17 @@ module.exports = {
                 }
             })
 
-        } else { //cliente não encontrado
-            console.log("não tem cliente");
+        } else { //prestador não encontrado
+            console.log("prestador não encontrado");
         } 
         
         //envia para a view uma msg de envio de email(mesmo que não haja email a mensagem é a mesma)
-        res.render('loginContratante', { mensagemEmail: `E-mail enviado para: ${ email }` })
+        res.render('loginPrestador', { mensagemEmail: `E-mail enviado para: ${ email }` })
     },
     redefinirSenha: async (req, res) => {
         let token = req.params.token;
 
-        let tokenCliente = await TokenCliente.findOne({
+        let tokenPrestador = await TokenPrestador.findOne({
             where: {
                 hash:{ 
                     [Op.eq]: token,
@@ -69,13 +69,12 @@ module.exports = {
                 }
             }
         })
-        // console.log(tokenCliente.dataValues)
 
         //se tenho um token não usado...
-        if (tokenCliente) {
-            res.render("redefinirSenhaCliente.ejs", { token: tokenCliente.hash });
+        if (tokenPrestador) {
+            res.render("redefinirSenhaPrestador.ejs", { token: tokenPrestador.hash });
         } else {
-            res.render("redefinirSenhaCliente.ejs", { mensagemToken: `Link já utilizado/inexistente!` });
+            res.render("redefinirSenhaPrestador.ejs", { mensagemToken: `Link já utilizado/inexistente!` });
         }
     },
     salvarNovaSenha: async (req, res) => {
@@ -83,7 +82,7 @@ module.exports = {
         let { token, novaSenha } = req.body;
 
         //verifica o token no banco..
-        let tokenCliente = await TokenCliente.findOne({
+        let tokenPrestador = await TokenPrestador.findOne({
             where: {
                 hash:{ 
                     [Op.eq]: token,
@@ -91,30 +90,26 @@ module.exports = {
                 usado:{
                     [Op.eq]: false,
                 }
+            },
+            include:{
+                model:Prestador,
+                as:'prestador'
             }
         })
 
-        if (tokenCliente) {
-            //pega o cliente pelo id do clientes_id do token...
-            let umCliente = await Cliente.findOne({
+        if (tokenPrestador) {
+            //altero a senha do prestador
+            await Prestador.update({ senha: bcrypt.hashSync(novaSenha, 10)}, {
                 where: {
-                    id:{ 
-                        [Op.eq]: tokenCliente.clientes_id,
-                    }
+                  id: tokenPrestador.prestador.id
                 }
-            })
-
-            umCliente.senha = bcrypt.hashSync(novaSenha, 10);
-            //salva o novo valor na coluna...
-            //.save() --> para alterações de campos na tabela
-            await umCliente.save();
-
+              });
             //marca o token como usado (true)...
-            tokenCliente.usado = true;
+            tokenPrestador.usado = true;
             //salva o novo valor na tabela token...
-            await tokenCliente.save();
+            await tokenPrestador.save();
 
-            res.render("redefinirSenhaCliente.ejs", { mensagemSenhaSalva: `Nova senha salva com sucesso!` });
+            res.render("redefinirSenhaPrestador.ejs", { mensagemSenhaSalva: `Nova senha salva com sucesso!` });
         }
     }
 }
