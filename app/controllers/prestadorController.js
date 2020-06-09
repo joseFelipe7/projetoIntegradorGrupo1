@@ -4,6 +4,7 @@ const { Prestador } = require('../models')
 
 
 const prestadorController = {
+    index: (req, res) => {},
 
     create:(req, res) => {
             res.render("cadastroPrestador");
@@ -16,6 +17,7 @@ const prestadorController = {
             prestadorCpf,
             prestadorNascimento
         } = req.body
+        
         console.log(bcrypt.hashSync(prestadorSenha,10))
             Prestador.create({
                 nome:prestadorNome,
@@ -27,14 +29,8 @@ const prestadorController = {
                 data_cadastro:Date.now()
             })
         res.redirect('/login/Prestador/#login-prestador')
-    },
-    editorForm: async (req, res) => {
-        const {id} = req.params
-
-        const prestador = await Prestador.findByPk(id)
-        return res.render("areaPrestador", {view: "meusDados-prestador", loggado: req.session.prestador, prestador});
-         
     }
+  
 
     
 }

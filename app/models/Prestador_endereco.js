@@ -1,3 +1,5 @@
+//Prestador_endereco pertence a um prestador
+
 module.exports = (sequelize, DataTypes) => {
     const Prestador_endereco = sequelize.define("Prestador_endereco", {
 id:{
@@ -30,16 +32,12 @@ id:{
   },
   tipo_endereco:{
     type:DataTypes.CHAR(1)
-  },
-  fk_prestador:{
-    type: DataTypes.INTEGER
-}
+  }
 
 }, {
 timestamps:false,
 tableName: 'prestador_endereco'
 });
-
 
 
 return Prestador_endereco;

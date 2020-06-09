@@ -1,10 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
     const Cliente = sequelize.define("Cliente", {
-        id:{
-            primaryKey:true,
-            autoIncrement:true,
-            type:DataTypes.INTEGER 
-          },
+       
         nome:{
             type:DataTypes.STRING(190),
             allowNull:false
@@ -34,17 +30,16 @@ module.exports = (sequelize, DataTypes) => {
         tableName: 'clientes'
     });
 
-    Cliente.associiate = (listaDeModelos ) => {
-      Cliente.hasMany(listaDeModelos.Contatos, {
-        foreignKey: 'fk_contatos',
+    Cliente.associate = (listaModels) => {
+      Cliente.hasMany(listaModels.Clientes_Endereco, {
+        foreignKey: 'fk_cliente',
+        as: 'clientes_enderecos'
+      }),
+      Cliente.hasMany(listaModels.Contatos, {
+        foreignKey: 'fk_cliente',
         as: 'contatos'
       })
-    },
-    Cliente.associiate = (listaDeModelos ) => {
-      Cliente.hasMany(listaDeModelos.Clientes_endereco, {
-        foreignKey: 'fk_clientes_endereco',
-        as: 'clientes_endereco'
-      })
     }
+    
     return Cliente;
 };

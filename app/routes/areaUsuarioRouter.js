@@ -1,14 +1,27 @@
 const express = require("express");
 const authCliente = require('../middlewares/authCliente')
 const authPrestador = require('../middlewares/authPrestador')
-const registroClienteController = require("../controllers/registroClienteController")
-const prestadorController = require("../controllers/prestadorController")
+const clienteController = require("../controllers/clienteController")
+const clientes_enderecoController = require("../controllers/clientes_EnderecoController")
+const contatosController = require("../controllers/contatosController")
+const prestadorController = require('../controllers/prestadorController')
 
 let router = express.Router();
 
 // rotas contratante
-router.get("/area-contratante/meus-dados/:id", authCliente, registroClienteController.viewEditorForm);
-router.put("/area-contratante/meus-dados/:id", authCliente, registroClienteController.update);
+router.get("/area-contratante/meus-dados/:id", authCliente, clienteController.index);
+//router.put("/area-contratante/meus-dados/:id", authCliente, clienteController.update);
+
+router.get("/area-contratante/meus-dados/:fk_cliente/endereco", authCliente, clientes_enderecoController.index);
+router.post("/area-contratante/meus-dados/:fk_cliente/endereco", authCliente, clientes_enderecoController.store);
+//router.put("/area-contratante/meus-dados/:fk_cliente/endereco", authCliente, clientes_enderecoController.update);
+
+
+router.get("/area-contratante/meus-dados/:fk_cliente/contato", authCliente, contatosController.index);
+router.post("/area-contratante/meus-dados/:fk_cliente/contato", authCliente, contatosController.store);
+//router.put("/area-contratante/meus-dados/:fk_cliente/contatos", authCliente, contatosController.update);
+
+
     // ...5620/usuario/area-contratante/meus-dados
 
 
@@ -36,10 +49,8 @@ router.get("/area-contratante/historico-bru", authCliente, (req, res) => {
 })
 
 
-router.get("/area-contratante/chat", authCliente, (req, res) => {
-    res.render("areaContratante", {view: "chat", loggado: req.session.cliente});
-    // ...5620/usuario/area-contratante/chat
-})
+router.get("/area-contratante/chat", authCliente, chatClienteController.index) 
+    // ...5620/usuario/area-contratante/chat 
 
 
 router.get("/area-contratante/favoritos", authCliente, (req, res) => {
@@ -68,7 +79,7 @@ router.get("/area-prestador/pedidos", authPrestador,(req, res) => {
     res.render("areaPrestador", {view: "pedidosAreaPrestador", loggado: req.session.prestador});
 })
 
-router.get("/area-prestador/meusDados/:id", authPrestador, prestadorController.editorForm);
+router.get("/area-prestador/meusDados/:id", authPrestador, prestadorController.index);
 
 router.get("/area-prestador/requisicoes", authPrestador,(req, res) => {
     res.render("areaPrestador", {view: "requisicoes-prestador", loggado: req.session.prestador});

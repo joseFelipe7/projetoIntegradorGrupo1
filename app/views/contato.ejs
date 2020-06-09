@@ -1,130 +1,246 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <%- include('include/head', {title:'Contato'}) %>
-    <body class="corpoContato">
-        <%- include('include/header')%>
-        <%- include('include/menuNav') %>
-        
-        <!-- sessão contato com o sistema -->
-        <main class="container mx-auto my-5">
-            <div class="row d-flex justify-content-center">
-                <!-- card sanfona 3 ------------------------------------------------->
-                <div class="card formContatoSistema col-11 col-sm-11 col-md-7 col-lg-6 col-xl-5 p-0 m-0">
-                    <!-- topo 3 sanfona -->
-                    <div class="card-header sanfonaTopoMeusDados" id="headingThree">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link tituloSanfonaTopoMeusDados" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+<%- include('include/head', {title:'Contato'}) %>
+
+<body class="corpoContato">
+    <%- include('include/header')%>
+    <%- include('include/menuNav') %>
+
+    <!-- sessão contato com o sistema -->
+    <main class="container mx-auto my-5">
+        <div class="row d-flex justify-content-center">
+            <% if (typeof msgEnviado != 'undefined') { %>
+                <div class="row alert alert-success msgErroLogin">
+                    <img src="/img/alert.svg" alt="ok">
+                    <%= msgEnviado  %>
+                </div>
+            <% } %>
+            <!-- card sanfona 3 ------------------------------------------------->
+            <div class="card formContatoSistema col-11 col-sm-11 col-md-7 col-lg-6 col-xl-5 p-0 m-0">
+                <!-- topo 3 sanfona -->
+                <div class="card-header sanfonaTopoMeusDados" id="headingThree">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link tituloSanfonaTopoMeusDados" data-toggle="collapse"
+                            data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
                             <img src="/img/contato.png" alt="Meus dados" title="Meus dados">
                             Fale conosco!
-                            </button>
-                        </h5>
-                    </div>
-                    <div class="card-body">
-                        <!-- formulario contato -->
-                        <form>
-                            <!-- input linha -->
-                            <div class="form-row">
-                                <!-- input Assunto -->
-                                <div class="form-group col">
+                        </button>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <!-- formulario contato -->
+                    <form action="/home/contato" method="POST">
+                        <!-- input linha -->
+                        <div class="form-row">
+                            <!-- input Assunto -->
+                            <div class="form-group col">
                                 <label for="assunto">Assunto</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                    <span class="input-group-text etiquetaCampo">Assunto</span>
+                                        <span class="input-group-text etiquetaCampo">Assunto</span>
                                     </div>
-                                    <input type="text" class="form-control campoMeusDadosStyle campoDadoReadonly" id="assunto" placeholder="Do que se trata?">
-                                </div>
+                                    <input type="text" class="form-control campoMeusDadosStyle campoDadoReadonly"
+                                        id="assunto" name="assunto" placeholder="Do que se trata?">
+                                    <% if(typeof(errors) != "undefined"){ %>
+                                        <!-- ou seja, se houver erro... -->
+                                        <% errors.forEach( error => { %>
+                                            <% if(error.param == "assunto"){ %>
+                                                <div class="row ml-0 mb-0 alert alert-warning msgErroLogin">
+                                                    <img src="/img/alert.svg" alt="erro">
+                                                    <% console.log(errors) %>
+                                                    <!-- posso utilizar o array errors para informar a mensagem de erro, atravéz da prop msg... -->
+                                                    <ul>
+                                                        <li> <%- error.msg %> </li>
+                                                    </ul>
+                                                </div>
+                                            <% } %>
+                                        <% }) %>
+                                    <% } %>
                                 </div>
                             </div>
+                        </div>
 
-                            <!-- input linha -->
-                            <div class="form-row">
-                                <!-- input Nome -->
-                                <div class="form-group col">
+                        <!-- input linha -->
+                        <div class="form-row">
+                            <!-- input Nome -->
+                            <div class="form-group col">
                                 <label for="nomeContato">Nome</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                    <span class="input-group-text etiquetaCampo">Nome</span>
+                                        <span class="input-group-text etiquetaCampo">Nome</span>
                                     </div>
-                                    <input type="text" class="form-control campoMeusDadosStyle campoDadoReadonly" id="nomeContato" placeholder="Digite seu nome">
-                                </div>
+                                    <input type="text" class="form-control campoMeusDadosStyle campoDadoReadonly"
+                                        id="nomeContato" name="nome" placeholder="Digite seu nome">
+
+                                    <% if(typeof(errors) != "undefined"){ %>
+                                        <!-- ou seja, se houver erro... -->
+                                        <% errors.forEach( error => { %>
+                                            <% if(error.param == "nome"){ %>
+                                                <div class="row ml-0 mb-0 alert alert-warning msgErroLogin">
+                                                    <img src="/img/alert.svg" alt="erro">
+                                                    <% console.log(errors) %>
+                                                    <!-- posso utilizar o array errors para informar a mensagem de erro, atravéz da prop msg... -->
+                                                    <ul>
+                                                        <li> <%- error.msg %> </li>
+                                                    </ul>
+                                                </div>
+                                            <% } %>
+                                        <% }) %>
+                                    <% } %>
                                 </div>
                             </div>
-                
-                            <!-- input linha 3 -->
-                            <div class="form-row">
-                                <!-- input email -->
-                                <div class="form-group col">
-                                    <label for="emailContato">E-mail</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
+                        </div>
+
+                        <!-- input linha 3 -->
+                        <div class="form-row">
+                            <!-- input email -->
+                            <div class="form-group col">
+                                <label for="emailContato">E-mail</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
                                         <span class="input-group-text etiquetaCampo">@</span>
-                                        </div>
-                                        <input type="email" class="form-control campoMeusDadosStyle campoDadoReadonly" id="emailContato" placeholder="seuemail@mail.com.br">
                                     </div>
+                                    <input type="email" class="form-control campoMeusDadosStyle campoDadoReadonly"
+                                        id="emailContato" name="email" placeholder="seuemail@mail.com.br">
+
+                                    <% if(typeof(errors) != "undefined"){ %>
+                                    <!-- ou seja, se houver erro... -->
+                                        <% errors.forEach( error => { %>
+                                            <% if(error.param == "email"){ %>
+                                                <div class="row ml-0 mb-0 alert alert-warning msgErroLogin">
+                                                    <img src="/img/alert.svg" alt="erro">
+                                                    <% console.log(errors) %>
+                                                    <!-- posso utilizar o array errors para informar a mensagem de erro, atravéz da prop msg... -->
+                                                    <ul>
+                                                        <li> <%- error.msg %> </li>
+                                                    </ul>
+                                                </div>
+                                            <% } %>
+                                        <% }) %>
+                                    <% } %>
                                 </div>
                             </div>
-                            <!-- input linha -->
-                            <div class="form-row">
-                                <!-- input cel1 -->
-                                <div class="form-group col-md-6">
-                                    <label for="celContato">Celular</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
+                        </div>
+                        <!-- input linha -->
+                        <div class="form-row">
+                            <!-- input cel1 -->
+                            <div class="form-group col-md-6">
+                                <label for="celContato">Celular</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
                                         <span class="input-group-text etiquetaCampo">Celular</span>
-                                        </div>
-                                        <input type="tel" class="form-control campoMeusDadosStyle campoDadoReadonly" id="celContato" placeholder="XX XXXXX-XXXX" maxlength="11">
                                     </div>
+                                    <input type="tel" class="form-control campoMeusDadosStyle campoDadoReadonly"
+                                        id="celContato" name="celular" placeholder="XX XXXXX-XXXX" maxlength="11">
+
+                                    <% if(typeof(errors) != "undefined"){ %>
+                                        <!-- ou seja, se houver erro... -->
+                                        <% errors.forEach( error => { %>
+                                            <% if(error.param == "celular"){ %>
+                                                <div class="row ml-0 mb-0 alert alert-warning msgErroLogin">
+                                                    <img src="/img/alert.svg" alt="erro">
+                                                    <% console.log(errors) %>
+                                                    <!-- posso utilizar o array errors para informar a mensagem de erro, atravéz da prop msg... -->
+                                                    <ul>
+                                                        <li> <%- error.msg %> </li>
+                                                    </ul>
+                                                </div>
+                                            <% } %>
+                                        <% }) %>
+                                    <% } %>
                                 </div>
-                
-                                <!-- input TEL -->
-                                <div class="form-group col-md-6">
-                                    <label for="telContato">Telefone</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
+                            </div>
+
+                            <!-- input TEL -->
+                            <div class="form-group col-md-6">
+                                <label for="telContato">Telefone</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
                                         <span class="input-group-text etiquetaCampo">Telefone</span>
-                                        </div>
-                                        <input type="tel" class="form-control campoMeusDadosStyle campoDadoReadonly" id="telContato" placeholder="XX XXXX-XXXX" maxlength="11">
                                     </div>
+                                    <input type="tel" class="form-control campoMeusDadosStyle campoDadoReadonly"
+                                        id="telContato" name="telefone" placeholder="XX XXXX-XXXX" maxlength="10">
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="form-group">
-                                <label for="mensagemContato">Mensagem</label>
-                                <textarea class="form-control campoMeusDadosStyle campoDadoReadonly" id="mensagemContato" rows="4" placeholder="Digite uma breve mensagem. Caso necessário te retornamos!"></textarea>
+                        <div class="form-group">
+                            <label for="mensagemContato">Mensagem</label>
+                            <textarea class="form-control campoMeusDadosStyle campoDadoReadonly" id="mensagemContato"
+                                name="mensagem" rows="4"
+                                placeholder="Digite uma breve mensagem. Caso necessário te retornamos!"></textarea>
+
+                            <% if(typeof(errors) != "undefined"){ %>
+                                <!-- ou seja, se houver erro... -->
+                                <% errors.forEach( error => { %>
+                                    <% if(error.param == "mensagem"){ %>
+                                        <div class="row ml-0 mb-0 alert alert-warning msgErroLogin">
+                                            <img src="/img/alert.svg" alt="erro">
+                                            <% console.log(errors) %>
+                                            <!-- posso utilizar o array errors para informar a mensagem de erro, atravéz da prop msg... -->
+                                            <ul>
+                                                <li> <%- error.msg %> </li>
+                                            </ul>
+                                        </div>
+                                    <% } %>
+                                <% }) %>
+                            <% } %>
+                        </div>
+
+                        <label for="mensagemContato text-white">Na plataforma, você se encaixa em...</label>
+                        <div class="form-group text-white">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="tipo_remetente" id="visitante"
+                                    value="V">
+                                <label class="form-check-label" for="visitante">
+                                    Visitante
+                                </label>
                             </div>
 
-                            <label for="mensagemContato text-white">Na plataforma, você se encaixa em...</label>
-                            <div class="form-group text-white">
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="gridRadios" id="visitante" value="option1">
-                                    <label class="form-check-label" for="visitante">
-                                        Visitante
-                                    </label>
-                                </div>
-
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="gridRadios" id="prestador" value="option2">
-                                    <label class="form-check-label" for="prestador">
-                                        Prestador
-                                    </label>
-                                </div>
-
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="gridRadios" id="contratante" value="option3">
-                                    <label class="form-check-label" for="contratante">
-                                        Contratante
-                                    </label>
-                                </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="tipo_remetente" id="prestador"
+                                    value="P">
+                                <label class="form-check-label" for="prestador">
+                                    Prestador
+                                </label>
                             </div>
-            
-                            <div class="d-flex justify-content-end"><button type="button" class="btn botaoMeusDados">ENVIAR</button></div>
-                        </form>
-                    </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="tipo_remetente" id="contratante"
+                                    value="C">
+                                <label class="form-check-label" for="contratante">
+                                    Contratante
+                                </label>
+                            </div>
+
+                            <% if(typeof(errors) != "undefined"){ %>
+                                <!-- ou seja, se houver erro... -->
+                                <% errors.forEach( error => { %>
+                                    <% if(error.param == "tipo_remetente"){ %>
+                                        <div class="row ml-0 mb-0 alert alert-warning msgErroLogin">
+                                            <img src="/img/alert.svg" alt="erro">
+                                            <% console.log(errors) %>
+                                            <!-- posso utilizar o array errors para informar a mensagem de erro, atravéz da prop msg... -->
+                                            <ul>
+                                                <li> <%- error.msg %> </li>
+                                            </ul>
+                                        </div>
+                                    <% } %>
+                                <% }) %>
+                            <% } %>
+                        </div>
+
+                        <div class="d-flex justify-content-end">
+                            <button type="submit" class="btn botaoMeusDados">ENVIAR</button>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </main>
-        
-        <%- include('include/footer') %>
-        <%- include('include/script') %>
-    </body>
+        </div>
+    </main>
+
+    <%- include('include/footer') %>
+    <%- include('include/script') %>
+</body>
+
 </html>

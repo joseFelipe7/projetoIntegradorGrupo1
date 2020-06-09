@@ -9,7 +9,7 @@ module.exports = {
       },
       celular_principal: { 
         type: Sequelize.STRING(11),
-        allowNull: false
+        allowNull: true
       },
       celular_secundario: { 
         type: Sequelize.STRING(11),
@@ -21,20 +21,23 @@ module.exports = {
       },
       email_principal: { 
         type: Sequelize.STRING(190),
-        allowNull: false
+        allowNull: true
       },
       email_secundario: { 
         type: Sequelize.STRING(190),
         allowNull: true
       },
-      fk_clientes: { 
+      fk_cliente: { 
         type: Sequelize.INTEGER, 
+        allowNull: false,
         references:{
           model:{
             tableName: 'clientes'
           },
           key:'id'
-        }
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       }
     });
   },

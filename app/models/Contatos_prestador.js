@@ -1,3 +1,5 @@
+//Contatos_prestador pertence a um prestador
+
 module.exports = (sequelize, DataTypes) => {
     const Contatos_prestador = sequelize.define("Contatos_prestador", {
         id:{
@@ -28,9 +30,6 @@ module.exports = (sequelize, DataTypes) => {
         email_secundario: { 
             type: DataTypes.STRING(190),
             allowNull: true
-        },
-        fk_prestador:{
-            type: DataTypes.INTEGER
         }
         
     }, {
@@ -39,6 +38,7 @@ module.exports = (sequelize, DataTypes) => {
     });
 
   
+ 
  
     return Contatos_prestador;
 };

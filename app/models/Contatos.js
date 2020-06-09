@@ -1,14 +1,10 @@
+
 module.exports = (sequelize, DataTypes) => {
     const Contatos = sequelize.define("Contatos", {
-        id:{
-            primaryKey:true,
-            autoIncrement:true,
-            type:DataTypes.INTEGER 
-        },       
+             
         celular_principal:{
            type:DataTypes.STRING(11),
-           allowNull:false
-        },
+           allowNull:true        },
         celular_secundario:{
             type: DataTypes.STRING(11),
             allowNull: true
@@ -19,22 +15,25 @@ module.exports = (sequelize, DataTypes) => {
         },
         email_principal: { 
             type: DataTypes.STRING(190),
-            allowNull: false
-        },
+            allowNull:true        },
         email_secundario: { 
             type: DataTypes.STRING(190),
             allowNull: true
         },
-        fk_clientes:{
+        fk_cliente:{
             type: DataTypes.INTEGER
         }
-        
     }, {
         timestamps:false,
         tableName: 'contatos'
     });
 
-  
+    Contatos.associate = (listaModels) => {
+        Contatos.belongsTo(listaModels.Cliente, {
+          foreignKey: 'fk_cliente',
+          as: 'cliente'
+        })
+      }
  
     return Contatos;
 };

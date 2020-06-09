@@ -19,7 +19,7 @@ app.use(express.urlencoded({
 
 app.use(express.json());
 app.use(session({
-    secret: "toolsHall",
+    secret: "ToolsHall1",
     sesave: true,
     saveUninitialized: true
 }));

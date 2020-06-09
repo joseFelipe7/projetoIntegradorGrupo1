@@ -1,48 +1,52 @@
+//cliente_endereco pertence a um cliente
+
 module.exports = (sequelize, DataTypes) => {
     const Clientes_endereco = sequelize.define("Clientes_endereco", {
-id:{
-    primaryKey:true,
-    autoIncrement:true,
-    type:DataTypes.INTEGER 
-  },
+
   logradouro:{
    type:DataTypes.STRING(190),
-   allowNull:false
+   allowNull:true
   },
   uf:{
     type:DataTypes.CHAR(2),
-    allowNull:false
+    allowNull:true
   },
   cidade:{
     type:DataTypes.STRING(90),
-    allowNull:false
+    allowNull:true
   },
   bairro:{
     type:DataTypes.STRING(90)
   },
   cep:{
     type:DataTypes.INTEGER,
-    allowNull:false
+    allowNull:true
   },
   numero:{
     type:DataTypes.INTEGER,
-    allowNull:false
+    allowNull:true
   },
   complemento:{
     type:DataTypes.STRING(90)
   },
   tipo_endereco:{
     type:DataTypes.CHAR(1)
-  },
-  fk_clientes:{
+  }, 
+  fk_cliente: {
     type: DataTypes.INTEGER
-}
+  }
 
 }, {
-timestamps:false,
+  timestamps:false,
 tableName: 'clientes_endereco'
 });
 
+Clientes_endereco.associate = (listaModels) => {
+  Clientes_endereco.belongsTo(listaModels.Cliente, {
+    foreignKey: 'fk_cliente',
+    as: 'cliente'
+  })
+}
 
 
 return Clientes_endereco;

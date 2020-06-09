@@ -26,7 +26,7 @@ module.exports = {
           type:Sequelize.STRING(11),
           allowNull:false,
           unique:true
-        } ,
+        },
         avatar:Sequelize.STRING(190),
         extensao_avatar:Sequelize.CHAR(5),
         data_cadastro:Sequelize.DATE

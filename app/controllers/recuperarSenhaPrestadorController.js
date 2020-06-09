@@ -2,15 +2,14 @@ const bcrypt = require('bcrypt');
 const { Op } = require('sequelize');
 const { check, validationResult, body} = require('express-validator');
 
-const { Cliente, TokenCliente } = require('../models/index');
+const { Prestador, TokenCliente } = require('../models/index');
 const emailConfig = require("../../config/email");
 
 module.exports = {
     enviarEmail: async (req, res) => {
         let { email } = req.body;
-        console.log(email)
-
-        let umCliente = await Cliente.findOne({
+        
+        let prestador = await Prestador.findOne({
             where: {
                 email:{ 
                     [Op.eq]: email,
@@ -18,45 +17,43 @@ module.exports = {
             }
         })
 
-        if(umCliente){ //existe cliente
-            console.log(umCliente.dataValues);
-
+        if(prestador){ //verifico se foi encontrado prestador
+          
             //gera token...
             let token = bcrypt.hashSync((Date.now().toString()), 10);
             //retira os '/' do hash gerado...
             token = token.replace(/\//g, "-");
 
-            //insere os dados na tabela token_cliente...
-            TokenCliente.create({
+            //insere os dados na tabela token_prestador...
+            TokenPrestador.create({
                 hash: token,
                 usado: false,
-                clientes_id: umCliente.id,
+                prestador_id: prestador.id,
             })
 
             //se encontrou o email do cliente, envia...
             let envioEmail = {
                 from:'toolshallservicos@gmail.com',
-                to: email, //email do cliente
+                to: email, //email do prestador
                 subject: 'Alteração de Senha',
                 text:'ola',
-                html:`<a href="http://localhost:5620/login/contratante/redefinir-senha/${token}"><h1>clique aqui para redefinir senha:</h1></a>`
+                html:`<h1>Olá ${prestador.nome} <a href="http://localhost:5620/login/contratante/redefinir-senha/${token}">clique aqui</a> para redefinir senha:</h1>`
             }
             //recebe as informações do email que vai ser enviado e o segundo um callback
             emailConfig.sendMail(envioEmail, (error) => {
                 if(error){
-                    console.log("Deu ruim!")
+                    console.log("email não enviado!")
                     console.log(error)
                 }else{
-                    console.log("Deu bom! E-mail enviado")
+                    console.log("E-mail enviado com sucesso")
                 }
             })
 
-        } else { //nao existe cliente
-            // res.render('loginContratante', { msg:"E-mail errado" });
+        } else { //cliente não encontrado
             console.log("não tem cliente");
         } 
         
-        //envia para a view uma msg de envio de email
+        //envia para a view uma msg de envio de email(mesmo que não haja email a mensagem é a mesma)
         res.render('loginContratante', { mensagemEmail: `E-mail enviado para: ${ email }` })
     },
     redefinirSenha: async (req, res) => {
