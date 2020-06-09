@@ -10,7 +10,7 @@ module.exports = {
 
         //clientes_id == cliente
 
-        let prestadores = await Chat.findAll({
+        let infoMsg = await Chat.findAll({
             //traz os dados do cliente com mesmo id do cliente loggado
             where: {
                 clientes_id:{ 
@@ -27,17 +27,36 @@ module.exports = {
                     model: Prestador,
                     as: 'prestador'
                 },
+                {
+                    model: Mensagem,
+                    as: 'mensagens'
+                },
             ]
         })
 
-        prestadores.forEach(item => {
+        let previewMgs = []
+
+        infoMsg.forEach(item => {
+            previewMgs.push({
+                nomePrestador : item.prestador.nome,
+                avatarPrestador: item.prestador.avatar,
+                statusPrestador : "online",
+                ultimaMsg : item.mensagens.mensagem,
+                dataMsg : item.mensagens.datamensagem,
+                notificacoes:1
+            });
+        });
+
+        /* teste
+        infoMsg.forEach(item => {
             console.log(item.dataValues)
             //dataValues contém as colunas da tabela selecionada
 
             console.log(item.cliente.nome)
             console.log(item.prestador.nome)
         });
+        */
 
-        res.render("areaContratante", {view: "chatCliente", loggado: req.session.cliente});
+        res.render("areaContratante", {view: "chatCliente", loggado: req.session.cliente, previewMgs});
     }
 }
