@@ -6,7 +6,7 @@ const clientes_enderecoController = require("../controllers/clientes_EnderecoCon
 const contatosController = require("../controllers/contatosController")
 const prestadorController = require('../controllers/prestadorController')
 const chatClienteController = require('../controllers/chatClienteController')
-
+const chatPrestadorController = require("../controllers/chatPrestadorController")
 
 let router = express.Router();
 
@@ -86,7 +86,7 @@ router.get("/area-prestador/meusDados/:id", authPrestador, prestadorController.i
 router.get("/area-prestador/requisicoes", authPrestador,(req, res) => {
     res.render("areaPrestador", {view: "requisicoes-prestador", loggado: req.session.prestador});
 })
-
+router.get("/area-prestador/chat", authPrestador, chatPrestadorController.index) 
 
 
 module.exports = router;
