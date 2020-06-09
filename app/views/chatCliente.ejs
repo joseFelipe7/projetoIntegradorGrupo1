@@ -1,7 +1,7 @@
 <main class="container-fluid w-100 h-100 d-flex justify-content-center align-items-center">
    
     <div class="container-chat">
-        <% previewMgs.forEach( msg => {
+        <% data.previewMgs.forEach( msg => { %>
             <div class="container-menssage">
                 <div class="avatar-chat p-1">
                     <img src="/img/mario-perfil.png" class="img-fluid rounded-circle" alt="">
@@ -16,7 +16,8 @@
                     <div class="status">
                         <div class="d-flex aling-items-center"><div class="color-notification"></div><span><%- msg.statusPrestador %></span></div>
                         <div class="last-menssage">
-                            <%- msg.dataMsg %>
+                            <%= data.moment(msg.dataMsg).calendar() %>  
+                            
                         </div>
                     </div>
                 </div>

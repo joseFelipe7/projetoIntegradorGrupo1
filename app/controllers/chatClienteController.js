@@ -1,5 +1,7 @@
 const { Op } = require('sequelize');
 const { check, validationResult, body} = require('express-validator');
+const moment = require("moment");
+moment.locale("pt-BR");        
 
 const { Chat, Mensagem, Prestador, Cliente } = require('../models/index');
 
@@ -17,7 +19,7 @@ module.exports = {
                     [Op.eq]: loggado.id,
                 }
             },
-            //inclui os dados que estão na tabela Clientes e Prestadores
+            //inclui os dados que estão na tabela Clientes e Prestadores e mensagem
             include: [ 
                 {
                     model: Cliente,
@@ -29,10 +31,17 @@ module.exports = {
                 },
                 {
                     model: Mensagem,
-                    as: 'mensagens'
+                    as: 'mensagens',
+
+                    //ordena pela ordem do campo, de forma decrescente
+                    order: [["datamensagem","DESC"]],
+                    //limita a apenas um resultado...
+                    limit: 1
                 },
             ]
         })
+
+        //console.log(infoMsg)
 
         let previewMgs = []
 
@@ -41,8 +50,9 @@ module.exports = {
                 nomePrestador : item.prestador.nome,
                 avatarPrestador: item.prestador.avatar,
                 statusPrestador : "online",
-                ultimaMsg : item.mensagens.mensagem,
-                dataMsg : item.mensagens.datamensagem,
+                //msg da posição 0 do array com as msg em ordem crescente...
+                ultimaMsg : item.mensagens[0].mensagem,
+                dataMsg : item.mensagens[0].datamensagem,
                 notificacoes:1
             });
         });
@@ -57,6 +67,6 @@ module.exports = {
         });
         */
 
-        res.render("areaContratante", {view: "chatCliente", loggado: req.session.cliente, previewMgs});
+        res.render("areaContratante", {view: "chatCliente", loggado: req.session.cliente, data:{previewMgs, moment}});
     }
 }
