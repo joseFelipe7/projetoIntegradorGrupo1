@@ -7,6 +7,7 @@ const contatosController = require("../controllers/contatosController")
 const prestadorController = require('../controllers/prestadorController')
 const chatClienteController = require('../controllers/chatClienteController')
 
+
 let router = express.Router();
 
 // rotas contratante
