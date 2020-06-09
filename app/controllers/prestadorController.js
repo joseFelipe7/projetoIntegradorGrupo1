@@ -15,24 +15,23 @@ const prestadorController = {
             prestadorNome,
             prestadorSenha, 
             prestadorCpf,
-            prestadorNascimento
+            // prestadorNascimento
         } = req.body
+
+        let cpfSemMascaraP = prestadorCpf.replace(/[^0-9]+/g,'');
         
         console.log(bcrypt.hashSync(prestadorSenha,10))
             Prestador.create({
                 nome:prestadorNome,
                 email:prestadorEmail,
                 senha:bcrypt.hashSync(prestadorSenha,10),
-                cpf:prestadorCpf,
+                cpf: cpfSemMascaraP,
                 status_:'A',
-                data_nascimento:prestadorNascimento,
+                // data_nascimento:prestadorNascimento,
                 data_cadastro:Date.now()
             })
         res.redirect('/login/Prestador/#login-prestador')
-    }
-  
-
-    
+    }   
 }
 module.exports = prestadorController;
 

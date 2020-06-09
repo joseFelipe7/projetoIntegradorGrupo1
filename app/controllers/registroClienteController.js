@@ -12,12 +12,15 @@ module.exports = {
             contratanteCpf,
             contratanteNascimento
         } = req.body
+
+        let cpfSemMascaraC = contratanteCpf.replace(/[^0-9]+/g,'');
+
         console.log(bcrypt.hashSync(contratanteSenha,10))
             Cliente.create({
                 nome:contratanteNome,
                 email:contratanteEmail,
                 senha:bcrypt.hashSync(contratanteSenha,10),
-                cpf:contratanteCpf,
+                cpf: cpfSemMascaraC,
                 status_:'A',
                 data_nascimento:contratanteNascimento,
                 data_cadastro:Date.now()
