@@ -9,15 +9,21 @@
   <main class="cadastro-contratante col-12 m-0 p-0">
     <div class="content-ls">
 
-      <div class="form-cadastroContratante">
+      <div class="form-cadastroContratante" id="containerContratante">
         <h3 class="contratante-titulo">CADASTRE-SE:</h3>
 
-        <form method="POST" class="d-flex flex-column justify-content-center">
-          
+        <form action="/cadastro/contratante" class="d-flex flex-column justify-content-center" id="formularioContratante" method="POST">
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="contratante-inputNome">Nome</label>
+              <input type="text" name="contratanteNome" class="form-control" id="contratante-inputNome">
+            </div>
+          </div>
+
           <div class="form-row">
             <div class="form-group col-md-12">
               <label for="contratante-inputEmail">Email</label>
-              <input type="email" name="contratanteEmail" class="form-control" id="contratante-inputEmail">
+              <input type="text" name="contratanteEmail" class="form-control" id="contratante-inputEmail">
             </div>
           </div>
 
@@ -30,26 +36,26 @@
 
           <div class="form-row">
             <div class="form-group col-md-12">
-              <label for="repetirSenha">Repetir senha</label>
-              <input type="password" name="repetirSenha" class="form-control" id="repetir-inputSenha">
+              <label for="contratante-inputRepetirSenha">Repetir senha</label>
+              <input type="password" name="contratanteRepetirSenha" class="form-control" id="contratante-inputRepetirSenha">
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-12">
-              <label for="contratante-inputNome">Nome</label>
-              <input type="text" name="contratanteNome" class="form-control" id="contratante-inputNome">
+              <label for="contratante-inputCpf">CPF</label>
+              <input type="text" name="contratanteCpf" class="form-control" id="contratante-inputCpf">
             </div>
           </div>
 
-          <div class="form-row">
-            <div class="form-group col-md-12">
-              <label for="prestador-inputCpf">CPF</label>
-              <input type="number" name="contratanteCpf" class="form-control" id="prestador-inputCpf">
-            </div>
+          <div class="alert alert-danger alert-dismissible fade show" id="alert-cadC" role="alert" hidden>
+            <ul></ul>
+            <button type="button" class="close" id="close-listC" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
 
-          <button type="submit" class="align-self-center">Cadastrar</button>
+          <button type="submit" class="align-self-center" id="buttonContratante">Cadastrar</button>
 
         </form>
 

@@ -9,47 +9,55 @@
   <main class="cadastro-prestador col-12 m-0 p-0">
     <div class="content-ls">
 
-      <div class="form-cadastroPrestador">
+      <div class="form-cadastroPrestador" id="containerPrestador">
         <h3 class="prestador-titulo">CADASTRE-SE:</h3>
 
-        <form action="/cadastro/prestador" class="d-flex flex-column justify-content-center" method="POST">
+        <form action="/cadastro/prestador" class="d-flex flex-column justify-content-center" id="formularioPrestador" method="POST">
 
           <div class="form-row">
             <div class="form-group col-md-12">
-              <label for="prestador-inputNome1">Nome</label>
-              <input type="text" name="prestadorNome" class="form-control" id="prestador-inputNome1">
+              <label for="prestador-inputNome">Nome</label>
+              <input type="text" name="prestadorNome" class="form-control" id="prestador-inputNome">
+            </div>
+          </div>
+          
+
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="prestador-inputEmail">Email</label>
+              <input type="text" name="prestadorEmail" class="form-control" id="prestador-inputEmail">
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-12">
-              <label for="prestador-inputEmail1">Email</label>
-              <input type="email" name="prestadorEmail" class="form-control" id="prestador-inputEmail1">
+              <label for="prestador-inputSenha">Senha</label>
+              <input type="password" name="prestadorSenha" class="form-control" id="prestador-inputSenha">
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-12">
-              <label for="prestador-inputSenha1">Senha</label>
-              <input type="password" name="prestadorSenha" class="form-control" id="prestador-inputSenha1">
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group col-md-12">
-              <label for="repetirSenha">Repetir senha</label>
-              <input type="password" name="repetirSenha" class="form-control" id="repetir-inputSenha1">
+              <label for="prestador-inputRepetirSenha">Repetir senha</label>
+              <input type="password" name="repetirSenha" class="form-control" id="prestador-inputRepetirSenha">
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-12">
               <label for="prestador-inputCpf">CPF</label>
-              <input type="number" name="prestadorCpf" class="form-control" id="prestador-inputCpf">
+              <input type="text" name="prestadorCpf" class="form-control" id="prestador-inputCpf">
             </div>
           </div>
 
-          <button type="submit" class="align-self-center">Cadastrar</button>
+          <div class="alert alert-danger alert-dismissible fade show" id="alert-cadP" role="alert" hidden>
+            <ul></ul>
+            <button type="button" class="close" id="close-listP" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <button type="submit" class="align-self-center" id="buttonPrestador">Cadastrar</button>
 
         </form>
 
