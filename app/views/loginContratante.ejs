@@ -70,11 +70,7 @@
             <input id="checkbox-lembreContratante" type="checkbox" name="selecione" value="Lembre">
             Lembre de mim
           </label>
-
-          
-
           <button class="entrar-contratante" type="submit">ENTRE</button>
-
         </form>
 
         <p>Faça login com:</p>
@@ -86,36 +82,49 @@
 
         <!-- link trigger modal -->
         <a id="esqueceu-contratante" href="#" data-toggle="modal" data-target="#exampleModal">Esqueceu a senha?</a>
-
+ 
         <!-- modal esqueceu a senha -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Esqueci a senha</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <div class="modal-header bg-azul text-white">
+                <h5 class="modal-title tituloSanfonaTopoMeusDados" id="exampleModalLabel">ESQUECEU SUA SENHA?</h5>
+                <button type="button" class="close fecharModal" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body">
+              <div class="modal-body bg-roxoClaro">
 
                 <% if(typeof mensagemEmail != 'undefined'){ %>
-                  <div class="row alert alert-success msgErroLogin">
+                  <div class="row ml-0 alert alert-success msgErroLogin">
                     <img src="/img/alert.svg" alt="ok">
                     <%= mensagemEmail  %> 
                   </div>
                 <% } %>
 
                 <form action="/login/contratante/recuperar-senha" method="POST">
-                  <label for="email"></label>
-                  <input id="email" type="email" name="email">
-
-                  <button type="submit">ENVIAR</button>
+                  <div class="row w-100 d-flex justify-content-center align-items-center">
+                    <div class="col-5 d-flex justify-content-center align-items-center">
+                      <img src="/img/recuperar.png" alt="recuperar senha" height="200px">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <!-- input data nascimento -->
+                    <div class="form-group col">
+                      <label for="email" class="text-center">Informe o email associado a usa conta que enviaremos um link para recuperar o seu acesso!</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text etiquetaCampo">Email</span>
+                        </div>
+                        <input type="email" name="email" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email">
+                      </div>
+                    </div>
+                  </div>
+                  <button type="submit" class="w-100 btn botaoMeusDados">ENVIAR</button>
                 </form>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+              <div class="modal-footer bg-azul">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
               </div>
             </div>
           </div>
