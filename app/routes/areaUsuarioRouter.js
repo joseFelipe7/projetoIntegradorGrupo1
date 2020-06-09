@@ -1,20 +1,25 @@
 const express = require("express");
 const authCliente = require('../middlewares/authCliente')
 const authPrestador = require('../middlewares/authPrestador')
-const meusDadosClienteController = require('../controllers/meus-dados-ClienteController') 
-const meusDadosPrestadorController = require('../controllers/meus-dados-PrestadorController')
-const chatClienteController = require("../controllers/chatClienteController")
 const clienteController = require("../controllers/clienteController")
 const clientes_enderecoController = require("../controllers/clientes_EnderecoController")
+const contatosController = require("../controllers/contatosController")
+const prestadorController = require('../controllers/prestadorController')
 
 let router = express.Router();
 
 // rotas contratante
-router.get("/area-contratante/meus-dados/:id", authCliente, clienteController.viewEditorForm);
-router.put("/area-contratante/meus-dados/:id", authCliente, meusDadosClienteController.update);
+router.get("/area-contratante/meus-dados/:id", authCliente, clienteController.index);
+//router.put("/area-contratante/meus-dados/:id", authCliente, clienteController.update);
 
-router.get("/area-contratante/meus-dados/:id/endereco", authCliente, clientes_enderecoController.index);
-router.post("/area-contratante/meus-dados/:id/endereco", authCliente, clientes_enderecoController.store);
+router.get("/area-contratante/meus-dados/:fk_cliente/endereco", authCliente, clientes_enderecoController.index);
+router.post("/area-contratante/meus-dados/:fk_cliente/endereco", authCliente, clientes_enderecoController.store);
+//router.put("/area-contratante/meus-dados/:fk_cliente/endereco", authCliente, clientes_enderecoController.update);
+
+
+router.get("/area-contratante/meus-dados/:fk_cliente/contato", authCliente, contatosController.index);
+router.post("/area-contratante/meus-dados/:fk_cliente/contato", authCliente, contatosController.store);
+//router.put("/area-contratante/meus-dados/:fk_cliente/contatos", authCliente, contatosController.update);
 
 
     // ...5620/usuario/area-contratante/meus-dados
@@ -74,7 +79,7 @@ router.get("/area-prestador/pedidos", authPrestador,(req, res) => {
     res.render("areaPrestador", {view: "pedidosAreaPrestador", loggado: req.session.prestador});
 })
 
-router.get("/area-prestador/meusDados/:id", authPrestador, meusDadosPrestadorController.editorForm);
+router.get("/area-prestador/meusDados/:id", authPrestador, prestadorController.index);
 
 router.get("/area-prestador/requisicoes", authPrestador,(req, res) => {
     res.render("areaPrestador", {view: "requisicoes-prestador", loggado: req.session.prestador});
