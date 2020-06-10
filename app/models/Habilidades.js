@@ -16,13 +16,22 @@ id:{
   descricao:{
     type:DataTypes.STRING(290),
     allowNull:false
+  },
+  fk_prestador: {
+    type: DataTypes.INTEGER,
+    allowNull: false
   }
 }, {
 timestamps:false,
 tableName: 'habilidades'
 });
 
-
+Habilidades.associate = (listaModels) => {
+  Habilidades.belongsTo(listaModels.Prestador, {
+    foreignKey: 'fk_prestador',
+    as: 'prestador'
+  })
+}
 
 return Habilidades;
 };

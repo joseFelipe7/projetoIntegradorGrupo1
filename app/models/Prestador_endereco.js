@@ -32,6 +32,10 @@ id:{
   },
   tipo_endereco:{
     type:DataTypes.CHAR(1)
+  },
+  fk_prestador: {
+    type: DataTypes.INTEGER,
+    allowNull: false
   }
 
 }, {
@@ -39,6 +43,12 @@ timestamps:false,
 tableName: 'prestador_endereco'
 });
 
+Prestador_endereco.associate = (listaModels) => {
+  Prestador_endereco.belongsTo(listaModels.Prestador, {
+    foreignKey: 'fk_prestador',
+    as: 'prestador'
+  })
+}
 
 return Prestador_endereco;
 };

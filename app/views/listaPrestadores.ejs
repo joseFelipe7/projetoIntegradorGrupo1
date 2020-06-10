@@ -30,31 +30,12 @@
           <div class="row d-flex flex-column p-2 filtro-parte2">
             <h5 class="subtitulo-filtroPrestadores">Região</h5>
             <ul>
-              <li><input type="checkbox"><label for="">São Paulo (200)</label></li>
-              <li><input type="checkbox"><label for="">Rio de Janeiro (200)</label></li>
-              <li><input type="checkbox"><label for="">Minas Gerais (200)</label></li>
-              <li><input type="checkbox"><label for="">Mato Grosso (200)</label></li>
-              <li><input type="checkbox"><label for="">Rio Grande do Sul (200)</label></li>
-              <li><input type="checkbox"><label for="">Santa Catarina (200)</label></li>
-              <li><input type="checkbox"><label for="">Ceará (200)</label></li>
-              <li><input type="checkbox"><label for="">Bahia (200)</label></li>
+              <li><input type="checkbox" value="norte"><label for="">Norte</label></li>
+              <li><input type="checkbox" value="nordeste"><label for="">Nordeste</label></li>
+              <li><input type="checkbox" value="centroOeste"><label for="">Centro-Oeste</label></li>
+              <li><input type="checkbox" value="sudeste"><label for="">Sudeste</label></li>
+              <li><input type="checkbox" value="sul"><label for="">Sul</label></li>
             </ul>
-
-            <button class="botao-vejaMais">veja +</button>
-          </div>
-          <hr class="linha-separar">
-
-          <div class="row d-flex flex-column p-2 filtro-parte3">
-            <h5 class="subtitulo-filtroPrestadores">Área de Atuação</h5>
-            <ul>
-              <li><input type="checkbox"><label for="">Diarista</label></li>
-              <li><input type="checkbox"><label for="">Pedreiro</label></li>
-              <li><input type="checkbox"><label for="">Encanador</label></li>
-              <li><input type="checkbox"><label for="">Professor</label></li>
-              <li><input type="checkbox"><label for="">Técnico em Celular</label></li>
-            </ul>
-
-            <button class="botao-vejaMais">veja +</button>
           </div>
           <hr class="linha-separar">
 
@@ -62,23 +43,23 @@
             <h5 class="subtitulo-filtroPrestadores">Avaliação</h5>
             <ul>
               <li>
-                <input type="checkbox">
+                <input type="checkbox" value="5">
                 <label for="">&#11088;&#11088;&#11088;&#11088;&#11088;</label>
               </li>
               <li>
-                <input type="checkbox">
+                <input type="checkbox" value="4">
                 <label for="">&#11088;&#11088;&#11088;&#11088;</label>
               </li>
               <li>
-                <input type="checkbox">
+                <input type="checkbox" value="3">
                 <label for="">&#11088;&#11088;&#11088;</label>
               </li>
               <li>
-                <input type="checkbox">
+                <input type="checkbox" value="2">
                 <label for="">&#11088;&#11088;</label>
               </li>
               <li>
-                <input type="checkbox">
+                <input type="checkbox" value="1">
                 <label for="">&#11088;</label>
               </li>
             </ul>
@@ -108,7 +89,7 @@
           <hr class="linha-separar">
 
           <div class="row d-flex justify-content-around m-0 p-0">
-            <% for(let i = 0; i <= 11; i++) { %>
+            <% prestadores.forEach(prestador => { %>
             <div class="card card-listaPrestadores col-sm-12 col-md-6 col-lg-4 my-3 p-0">
               <div class="card-parteSuperior">
                 <img class="boneco-prestador" src="/img/boneco-prestador.png">
@@ -116,26 +97,19 @@
               </div>
               <div class="card-body card-parteInferior p-0 m-0">
                 <p class="nota-cardPrestador">NOTA</p>
-                <p class="nome-cardPrestador">NOME</p>
-                <p class="sobre-cardPrestador">Sobre/Serviços</p>
+                <p class="nome-cardPrestador"> <%= prestador.nome %> </p>
+                <p class="sobre-cardPrestador"> <%= prestador.Habilidades[0].titulo %> </p>
               </div>
             </div>
-            <% } %>
+            <% }) %>
 
           </div>
 
           <div class="row row-paginacaoPrestadores">
             <ul class="pagination justify-content-center">
-              <li class="page-item">
-                <a class="page-link" href="#">Primeira</a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">4</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#">Última</a>
-              </li>
+              <% for (let numeroPage = 1; numeroPage <= totalPages; numeroPage++) { %>
+                <li class="page-item"><a class="page-link" href="?page= <%= numeroPage %>"> <%= numeroPage %> </a></li>
+              <% } %>
             </ul>
           </div>
 
