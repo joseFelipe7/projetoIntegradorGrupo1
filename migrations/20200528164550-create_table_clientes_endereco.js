@@ -31,7 +31,8 @@ module.exports = {
         },
         numero:{
           type:Sequelize.INTEGER,
-          allowNull:true        },
+          allowNull:true       
+        },
         complemento:{
           type:Sequelize.STRING(90)
         },

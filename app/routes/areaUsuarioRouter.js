@@ -14,13 +14,13 @@ let router = express.Router();
 router.get("/area-contratante/meus-dados/:id", authCliente, clienteController.index);
 //router.put("/area-contratante/meus-dados/:id", authCliente, clienteController.update);
 
-router.get("/area-contratante/meus-dados/:fk_cliente/endereco", authCliente, clientes_enderecoController.index);
-router.post("/area-contratante/meus-dados/:fk_cliente/endereco", authCliente, clientes_enderecoController.store);
+router.get("/area-contratante/meus-dados/endereco/:id", authCliente, clientes_enderecoController.index);
+router.post("/area-contratante/meus-dados/endereco/:id", authCliente, clientes_enderecoController.store);
 //router.put("/area-contratante/meus-dados/:fk_cliente/endereco", authCliente, clientes_enderecoController.update);
 
 
-router.get("/area-contratante/meus-dados/:fk_cliente/contato", authCliente, contatosController.index);
-router.post("/area-contratante/meus-dados/:fk_cliente/contato", authCliente, contatosController.store);
+router.get("/area-contratante/meus-dados/contato/:id", authCliente, contatosController.index);
+router.post("/area-contratante/meus-dados/contato/:id", authCliente, contatosController.store);
 //router.put("/area-contratante/meus-dados/:fk_cliente/contatos", authCliente, contatosController.update);
 
 

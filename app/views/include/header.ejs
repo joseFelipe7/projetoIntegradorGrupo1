@@ -6,7 +6,7 @@
   <div class="btns d-flex">
     <% if (typeof loggado != "undefined") { %>
       <% if (loggado) { %>
-        <a href="/login/#login-selecione" class="btn btn-login-custom-bofl">
+        <a href="/usuario/area-contratante/meus-dados/<%= loggado.id  %> " class="btn btn-login-custom-bofl">
           <svg class="icon-bofl bi bi-people-circle" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor"
             xmlns="http://www.w3.org/2000/svg">
             <path

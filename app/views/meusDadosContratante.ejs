@@ -1,4 +1,4 @@
-<% if (typeof clientes != "undefined") { %>    <!-- sanfona -------------------------------------------------------->
+    <!-- sanfona -------------------------------------------------------->
   <div id="accordion">
     <!-- card sanfona 1 ------------------------------------------------->
     <div class="card">
@@ -16,65 +16,71 @@
       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
         <div class="card-body">
           <!-- formulario dados pessoais -->
-          <% clientes.forEach(cliente => { %>
-          <form action="/usuario/area-contratante/meus-dados/<%=data.id%>" method="GET"> 
-            <!-- linha foto -->
-            <div class="form-row">
-              <!-- input data nascimento -->
-              <div class="form-group col">
-                <label for="nascimento">Perfil</label>
-                <div class="input-group">
-                  <img src="/img/user.png" alt="Meu Perfil" title="Meu Perfil" class="img-thumbnail perfilMeusDados">
-                </div>
-              </div>
-            </div>
-
-          <!-- input linha 1 -->
-            <div class="form-row">
-              <!-- input nome -->
-              <div class="form-group col-md-6">
-                <label for="nome">Nome</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text etiquetaCampo">Nome</span>
+          
+            <form action="/usuario/area-contratante/meus-dados/<%=data.cliente.id%>" method="GET"> 
+              <!-- linha foto -->
+              <div class="form-row">
+                <!-- input data nascimento -->
+                <div class="form-group col">
+                  <label for="nascimento">Perfil</label>
+                  <div class="input-group">
+                    <img src="/img/user.png" alt="Meu Perfil" title="Meu Perfil" class="img-thumbnail perfilMeusDados">
                   </div>
-                  <input type="text" name="contratanteNome" class="form-control campoMeusDadosStyle campoDadoReadonly" id="nome" value="<%= cliente.nome %>" readonly>
                 </div>
               </div>
-
-              <!-- input cpf -->
-              <div class="form-group col-md-6">
-                <label for="cpf">CPF</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text etiquetaCampo">CPF</span>
+  
+            <!-- input linha 1 -->
+              <div class="form-row">
+                <!-- input nome -->
+                <div class="form-group col-md-6">
+                  <label for="nome">Nome</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text etiquetaCampo">Nome</span>
+                    </div>
+                    <input type="text" name="contratanteNome" class="form-control campoMeusDadosStyle campoDadoReadonly" id="nome" value="<%= data.cliente.nome %>" readonly>
                   </div>
-                  <input type="number" name="contratanteCpf" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cpf" value="<%= cliente.cpf %>" readonly maxlength="11" pattern="[0-9]+$">
                 </div>
-              </div>
-            </div>
-
-            <!-- input linha 2 -->
-            <div class="form-row">
-              <!-- input data nascimento -->
-              <div class="form-group col">
-                <label for="nascimento">Data Nascimento</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text etiquetaCampo">Data Nascimento</span>
+  
+                <!-- input cpf -->
+                <div class="form-group col-md-6">
+                  <label for="cpf">CPF</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text etiquetaCampo">CPF</span>
+                    </div>
+                    <input type="number" name="contratanteCpf" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cpf" value="<%= data.cliente.cpf %>" readonly maxlength="11" pattern="[0-9]+$">
                   </div>
-                  <input type="date" name="contratanteNascimento" class="form-control campoMeusDadosStyle campoDadoReadonly" id="nascimento" value="<%= cliente.data_nascimento %>" readonly>
                 </div>
               </div>
-            </div>
-
-            <!-- botao editar ABRE O MODAL-->
-            <!-- Button trigger modal -->
-            <div class="d-flex justify-content-end">
-              <button type="button" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosPessoaisContratante">Editar</button>
-            </div>
-          </form>
-        <% }) %> 
+  
+              <!-- input linha 2 -->
+              <div class="form-row">
+                <!-- input data nascimento -->
+                <div class="form-group col">
+                  <label for="nascimento">Data Nascimento</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text etiquetaCampo">Data Nascimento</span>
+                    </div>
+                    <input type="date" name="contratanteNascimento" class="form-control campoMeusDadosStyle campoDadoReadonly" id="nascimento" value="<%= data.cliente.data_nascimento %>" readonly>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- botao editar ABRE O MODAL-->
+              <!-- Button trigger modal -->
+              <div class="d-flex justify-content-end">
+                <button type="button" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosPessoaisContratante">Editar</button>
+              </div>
+            </form>
+         
+            
+         
+          
+          
+         
+       
         </div>
       </div>
     </div>
@@ -92,9 +98,9 @@
       </div>
       <div class="modal-body bg-roxoClaro">
         <!-- ................................. -->
-        <% clientes.forEach(cliente => { %>
+       
 
-        <form action="/usuario/area-contratante/meus-dados/<%=cliente.id%>?_method=PUT" method="POST"> 
+        <form action="/usuario/area-contratante/meus-dados/<%=data.cliente.id%>?_method=PUT" method="POST"> 
           <!-- linha foto -->
           <div class="form-row">
             <!-- input foto escolhida -->
@@ -124,7 +130,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">Nome</span>
                 </div>
-                <input type="text" name="contratanteNome" class="form-control campoMeusDadosStyle campoDadoReadonly" id="nome" value="<%= cliente.nome %>">
+                <input type="text" name="contratanteNome" class="form-control campoMeusDadosStyle campoDadoReadonly" id="nome" value="<%= data.cliente.nome %>">
               </div>
             </div>
             <!-- input cpf -->
@@ -134,7 +140,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">CPF</span>
                 </div>
-                <input type="number" name="contratanteCpf" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cpf" value="<%= cliente.cpf %>" maxlength="11" pattern="[0-9]+$">
+                <input type="number" name="contratanteCpf" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cpf" value="<%= data.cliente.cpf %>" maxlength="11" pattern="[0-9]+$">
               </div>
             </div>
           </div>
@@ -147,7 +153,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">Data Nascimento</span>
                 </div>
-                <input type="date" name="contratanteNascimento" class="form-control campoMeusDadosStyle campoDadoReadonly" id="nascimento" value="<%= cliente.data_nascimento %>">
+                <input type="date" name="contratanteNascimento" class="form-control campoMeusDadosStyle campoDadoReadonly" id="nascimento" value="<%= data.cliente.data_nascimento %>">
               </div>
             </div>
           </div>
@@ -157,7 +163,7 @@
             <button type="submit" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosPessoaisContratante">SALVAR</button>
           </div>
         </form>
-      <% }) %> 
+      
         <!-- ................................. -->
       </div>
       <div class="modal-footer bg-azul">
@@ -167,6 +173,7 @@
   </div>
 </div>
 <!-- fim Modal ------------------------------------------------->
+<% if(data.cliente.clientes_enderecos != ""){ %> 
         <!-- card sanfona 2 ------------------------------------------------->
         <div class="card">
           <!-- topo 2 sanfona -->
@@ -183,9 +190,9 @@
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
             <div class="card-body">
               <!-- formulario endereço -->
-         <% clientes.clientes_enderecos.forEach(cliente_endereco => { %>
+         <% data.cliente.clientes_enderecos.forEach(cliente_endereco => { %>
 
-              <form action="/usuario/area-contratante/meus-dados/<%=cliente_endereco.id%>/enderecos" method="GET">
+              <form action="/usuario/area-contratante/meus-dados/enderecos/<%=cliente_endereco.id%>" method="GET">
                 <!-- input linha 1 -->
                 <div class="form-row">
                   <!-- input data cep -->
@@ -276,15 +283,15 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header bg-azul text-white">
-            <h5 class="modal-title" id="exampleModalLongTitle">Inclua seu endereço <%= cliente.nome %> </h5>
+            <h5 class="modal-title" id="exampleModalLongTitle">Inclua seu endereço </h5>
             <button type="button" class="close fecharModal" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body bg-roxoClaro">
             <!-- formulario editar endereço -->
-            <% clientes.clientes_enderecos.forEach(cliente_endereco => { %>
-              <form action="/usuario/area-contratante/meus-dados/<%=cliente_endereco.id%>/endereco?_method=PUT" method="POST"> 
+            <% data.cliente.clientes_enderecos.forEach(cliente_endereco => { %>
+              <form action="/usuario/area-contratante/meus-dados/endereco/<%=cliente_endereco.id%>?_method=PUT" method="POST"> 
              
               <!-- input linha 1 -->
               <div class="form-row">
@@ -384,493 +391,8 @@
       </div>
     </div>
     <!-- fim Modal ------------------------------------------------->
-
-        <!-- card sanfona 3 ------------------------------------------------->
-        <div class="card">
-          <!-- topo 3 sanfona -->
-          <div class="card-header sanfonaTopoMeusDados" id="headingThree">
-            <h5 class="mb-0">
-              
-              <button class="btn btn-link tituloSanfonaTopoMeusDados" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                <img src="/img/contato.png" alt="Meus dados" title="Meus dados">
-                Contato
-              </button>
-            </h5>
-          </div>
-
-          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-            <div class="card-body">
-
-              <!-- formulario contato -->
-              <% clientes.contatos.forEach(contato => { %>
-                
-              <form action="/usuario/area-contratante/meus-dados/<%=contato.id%>/contatos" method="GET"> 
-                <!-- input linha 1 -->
-                <div class="form-row">
-                  <!-- input cel1 -->
-                  <div class="form-group col-md-6">
-                    <label for="cel1">Celular 1</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text etiquetaCampo">Celular 1</span>
-                      </div>
-                      <input type="tel" name="contratanteCelular1" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel1" value="<%= contato.celular_principal %>" readonly maxlength="11" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
-                    </div>
-                  </div>
-
-                  <!-- input cel2 -->
-                  <div class="form-group col-md-6">
-                    <label for="cel2">Celular 2</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text etiquetaCampo">Celular 2</span>
-                      </div>
-                      <input type="tel" name="contratanteCelular2" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel2" value="<%= contato.celular_secundario %>" readonly maxlength="11" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
-                    </div>
-                  </div>
-                </div>
-
-                <!-- input linha 2 -->
-                <div class="form-row">
-                  <!-- input telefone -->
-                  <div class="form-group col">
-                    <label for="tel">Telefone</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text etiquetaCampo">Telefone</span>
-                      </div>
-                      <input type="tel" name="contratanteTelefone" class="form-control campoMeusDadosStyle campoDadoReadonly" id="tel" value="<%= contato.telefone_residencial %>" readonly maxlength="10" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
-                    </div>
-                  </div>
-                </div>
-
-                <!-- input linha 3 -->
-                <div class="form-row">
-                  <!-- input email -->
-                  <div class="form-group col">
-                    <label for="email">E-mail principal</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text etiquetaCampo">@</span>
-                      </div>
-                      <input type="email" name="contratanteEmail" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" value="<%= contato.email_principal %>"readonly>
-                    </div>
-                  </div>
-                </div>
-                <!-- input linha 3 -->
-                <div class="form-row">
-                  <!-- input email -->
-                  <div class="form-group col">
-                    <label for="email">E-mail secundário</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text etiquetaCampo">@</span>
-                      </div>
-                      <input type="email" name="contratanteEmail2" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" value="<%= contato.email_secundario %>" readonly>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- botao editar ABRE O MODAL-->
-                <!-- Button trigger modal -->
-                <div class="d-flex justify-content-end"><button type="button" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosContatoContratante">Editar</button></div>
-              </form>
-           <% }) %>
-            </div>
-          </div>
-        </div>
-    <!-- Modal ------------------------------------------------->
-    <!-- Modal -->
-    <div class="modal fade" id="editarDadosContatoContratante" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header bg-azul text-white">
-            <h5 class="modal-title" id="exampleModalLongTitle">Editar contato</h5>
-            <button type="button" class="close fecharModal" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body bg-roxoClaro">
-            
-            <!-- formulario contato -->
-            <% clientes.contatos.forEach(contato => { %>
-
-              <form action="/usuario/area-contratante/meus-dados/<%=contato.id%>/contatos?_method=PUT" method="POST"> 
-                <!-- input linha 1 -->
-                  <div class="form-row">
-                    <!-- input cel1 -->
-                    <div class="form-group col-md-6">
-                      <label for="cel1">Celular 1</label>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text etiquetaCampo">Celular 1</span>
-                        </div>
-                        <input type="tel" name="contratanteCelular1" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel1" placeholder="Digite seu celular - apenas números" maxlength="11" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$" value="<%= contato.celular_principal %>">
-                      </div>
-                    </div>
-  
-                    <!-- input cel2 -->
-                    <div class="form-group col-md-6">
-                      <label for="cel2">Celular 2</label>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text etiquetaCampo">Celular 2</span>
-                        </div>
-                        <input type="tel" name="contratanteCelular2" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel2" placeholder="Digite seu celular - apenas números" maxlength="11" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$" value="<%= contato.celular_secundario %>">
-                      </div>
-                    </div>
-                  </div>
-  
-                  <!-- input linha 2 -->
-                  <div class="form-row">
-                    <!-- input telefone -->
-                    <div class="form-group col">
-                      <label for="tel">Telefone</label>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text etiquetaCampo">Telefone</span>
-                        </div>
-                        <input type="tel" name="contratanteTelefone" class="form-control campoMeusDadosStyle campoDadoReadonly" id="tel" placeholder="Digite seu telefone - apenas números" maxlength="10" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$" value="<%= contato.telefone_residencial %>">
-                      </div>
-                    </div>
-                  </div>
-  
-                  <!-- input linha 3 -->
-                  <div class="form-row">
-                    <!-- input email -->
-                    <div class="form-group col">
-                      <label for="email">E-mail principal</label>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text etiquetaCampo">@</span>
-                        </div>
-                        <input type="email" name="contratanteEmail" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" value="<%= contato.email_principal %>">
-                      </div>
-                    </div>
-                  </div>
-                  <!-- input linha 3 -->
-                  <div class="form-row">
-                    <!-- input email -->
-                    <div class="form-group col">
-                      <label for="email">E-mail secundário</label>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text etiquetaCampo">@</span>
-                        </div>
-                        <input type="email" name="contratanteEmail2" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" placeholder="Digite seu e-mail" value="<%= contato.email_secundario %>">
-                      </div>
-                    </div>
-                  </div>
-  
-                  <!-- botao editar ABRE O MODAL-->
-                  <!-- Button trigger modal -->
-                  <div class="d-flex justify-content-end"><button type="submit" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosContatoContratante">SALVAR</button></div>
-                </form>
-            <% }) %> 
-            
-
-          </div>
-          <div class="modal-footer bg-azul">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- fim Modal ------------------------------------------------->
-
-        <!-- card sanfona 4 ------------------------------------------------->
-        <div class="card">
-          <!-- topo 4 sanfona -->
-          <div class="card-header sanfonaTopoMeusDados" id="headingFour">
-            <h5 class="mb-0">
-              
-              <button class="btn btn-link tituloSanfonaTopoMeusDados" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                <img src="/img/conta.png" alt="Meus dados" title="Meus dados">
-                Conta
-              </button>
-            </h5>
-          </div>
-      
-          <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-            <div class="card-body">
-              
-              <!-- formulario conta -->
-              <form action="/usuario/area-contratante/meus-dados/<%=cliente.id%>" method="GET"> 
-                <!-- input linha 1 -->
-                  <div class="form-row">
-                    <!-- input senha -->
-                    <div class="form-group col">
-                      <label for="senha">Senha Atual</label>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text etiquetaCampo">Senha</span>
-                        </div>
-                        <input type="password" name="contratanteSenha" class="form-control campoMeusDadosStyle campoDadoReadonly" id="senha" value="000000" readonly minlength="8">
-                      </div>
-                    </div>
-                  </div>
-      
-                  <!-- input linha 2 -->
-                  <div class="form-row">
-                    <!-- input email -->
-                    <div class="form-group col">
-                      <label for="email">E-mail de cadastro</label>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text etiquetaCampo">@</span>
-                        </div>
-                        <input type="email" name="contratanteEmail" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" value="<%= cliente.email %>" readonly>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- botao editar ABRE O MODAL-->
-                <!-- Button trigger modal -->
-                <div class="d-flex justify-content-end"><button type="button" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosContaContratante">Editar</button></div>
-                </form>
-            </div>
-            <div class="container-fluid bg-azul rodapeMeusDadosSanfona"></div>
-          </div>
-        </div>
-      </div>
-    <!-- Modal ------------------------------------------------->
-    <!-- Modal -->
-    <div class="modal fade" id="editarDadosContaContratante" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header bg-azul text-white">
-            <h5 class="modal-title" id="exampleModalLongTitle">Editar dados da conta</h5>
-            <button type="button" class="close fecharModal" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body bg-roxoClaro">
-            
-            <!-- formulario conta -->
-            <form action="/usuario/area-contratante/meus-dados/<%=cliente.id%>?_method=PUT" method="POST"> 
-              <!-- input linha 1 -->
-              <div class="form-row">
-                <!-- input senha -->
-                <div class="form-group col">
-                  <label for="senha">Senha Atual</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text etiquetaCampo">Senha</span>
-                    </div>
-                    <input type="password" name="contratanteSenha" class="form-control campoMeusDadosStyle campoDadoReadonly" id="senha" placeholder="Digite sua senha atual" minlength="8">
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-row">
-                <!-- input senha -->
-                <div class="form-group col">
-                  <label for="senha">Nova senha</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text etiquetaCampo">Senha</span>
-                    </div>
-                    <input type="password" name="contratanteNovaSenha" class="form-control campoMeusDadosStyle campoDadoReadonly" id="senha" placeholder="Digite sua nova senha" minlength="8">
-                  </div>
-                </div>
-              </div>
-
-              <!-- input linha 2 -->
-              <div class="form-row">
-                <!-- input email -->
-                <div class="form-group col">
-                  <label for="email">E-mail de cadastro</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text etiquetaCampo">@</span>
-                    </div>
-                    <input type="email" name="contratanteEmail" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" value="<%= cliente.email %>">
-                  </div>
-                </div>
-              </div>
-
-              <!-- botao editar ABRE O MODAL-->
-            <!-- Button trigger modal -->
-            <div class="d-flex justify-content-end">
-              <button type="submit" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosContaContratante">SALVAR</button></div>
-            </form>
-
-          </div>
-          <div class="modal-footer bg-azul">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- fim Modal ------------------------------------------------->
-        <!-- sanfona -------------------------------------------------------->
-  <% } else { %>
-        <!-- sanfona -------------------------------------------------------->
-  <div id="accordion">
-    <!-- card sanfona 1 ------------------------------------------------->
-    <div class="card">
-      <!-- topo 1 sanfona -->
-      <div class="card-header sanfonaTopoMeusDados" id="headingOne">
-        <h5 class="mb-0">
-          
-          <button class="btn btn-link tituloSanfonaTopoMeusDados" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            <img src="/img/dados.png" alt="Meus dados" title="Meus dados">
-            Pessoais
-          </button>
-        </h5>
-      </div>
-  
-      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-        <div class="card-body">
-          <!-- formulario dados pessoais -->
-          
-          <form action="/usuario/area-contratante/meus-dados/<%=data.cliente%>" method="GET"> 
-            <!-- linha foto -->
-            <div class="form-row">
-              <!-- input data nascimento -->
-              <div class="form-group col">
-                <label for="nascimento">Perfil</label>
-                <div class="input-group">
-                  <img src="/img/user.png" alt="Meu Perfil" title="Meu Perfil" class="img-thumbnail perfilMeusDados">
-                </div>
-              </div>
-            </div>
-
-          <!-- input linha 1 -->
-            <div class="form-row">
-              <!-- input nome -->
-              <div class="form-group col-md-6">
-                <label for="nome">Nome</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text etiquetaCampo">Nome</span>
-                  </div>
-                  <input type="text" name="contratanteNome" class="form-control campoMeusDadosStyle campoDadoReadonly" id="nome" value="<%= clientes.nome %>" readonly>
-                </div>
-              </div>
-
-              <!-- input cpf -->
-              <div class="form-group col-md-6">
-                <label for="cpf">CPF</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text etiquetaCampo">CPF</span>
-                  </div>
-                  <input type="number" name="contratanteCpf" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cpf" value="<%= data.cliente.cpf %>" readonly maxlength="11" pattern="[0-9]+$">
-                </div>
-              </div>
-            </div>
-
-            <!-- input linha 2 -->
-            <div class="form-row">
-              <!-- input data nascimento -->
-              <div class="form-group col">
-                <label for="nascimento">Data Nascimento</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text etiquetaCampo">Data Nascimento</span>
-                  </div>
-                  <input type="date" name="contratanteNascimento" class="form-control campoMeusDadosStyle campoDadoReadonly" id="nascimento" value="<%= data.cliente.data_nascimento %>" readonly>
-                </div>
-              </div>
-            </div>
-
-            <!-- botao editar ABRE O MODAL-->
-            <!-- Button trigger modal -->
-            <div class="d-flex justify-content-end">
-              <button type="button" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosPessoaisContratante">Editar</button>
-            </div>
-          </form>
-        
-        </div>
-      </div>
-    </div>
-<!-- Modal ------------------------------------------------->
-
-<!-- Modal -->
-<div class="modal fade" id="editarDadosPessoaisContratante" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header bg-azul text-white">
-        <h5 class="modal-title" id="exampleModalLongTitle">Editar dados pessoais</h5>
-        <button type="button" class="close fecharModal" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body bg-roxoClaro">
-        <!-- ................................. -->
-        <form action="/usuario/area-contratante/meus-dados/<%=data.cliente.id%>?_method=PUT" method="POST"> 
-          <!-- linha foto -->
-          <div class="form-row">
-            <!-- input foto escolhida -->
-            <div class="form-group col-3">
-              <label for="nascimento">Perfil</label>
-              <div class="input-group">
-                <img src="/img/envio.png" alt="Meu Perfil" title="Meu Perfil" class="img-thumbnail perfilMeusDados"> 
-              </div>
-            </div>
-            <!-- input escolher perfil -->
-            <div class="form-group col-9">
-              <label for="nascimento">Envie sua foto</label>
-              <div class="input-group d-flex justify-content-center">
-                  <div class="custom-file align-self-center">
-                    <input type="file" class="custom-file-input" id="customFileLang">
-                    <label class="custom-file-label" for="customFileLang">Escolha um arquivo</label>
-                  </div>
-              </div>
-            </div>
-          </div>
-        <!-- input linha 1 -->
-          <div class="form-row">
-            <!-- input nome -->
-            <div class="form-group col-md-6">
-              <label for="nome">Nome</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text etiquetaCampo">Nome</span>
-                </div>
-                <input type="text" name="contratanteNome" class="form-control campoMeusDadosStyle campoDadoReadonly" id="nome" value="<%= data.cliente.nome %>">
-              </div>
-            </div>
-            <!-- input cpf -->
-            <div class="form-group col-md-6">
-              <label for="cpf">CPF</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text etiquetaCampo">CPF</span>
-                </div>
-                <input type="number" name="contratanteCpf" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cpf" value="<%= data.cliente.cpf %>" maxlength="11" pattern="[0-9]+$">
-              </div>
-            </div>
-          </div>
-          <!-- input linha 2 -->
-          <div class="form-row">
-            <!-- input data nascimento -->
-            <div class="form-group col">
-              <label for="nascimento">Data Nascimento</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text etiquetaCampo">Data Nascimento</span>
-                </div>
-                <input type="date" name="contratanteNascimento" class="form-control campoMeusDadosStyle campoDadoReadonly" id="nascimento" value="<%= data.cliente.data_nascimento %>">
-              </div>
-            </div>
-          </div>
-          <!-- botao editar ABRE O MODAL-->
-          <!-- Button trigger modal -->
-          <div class="d-flex justify-content-end">
-            <button type="submit" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosPessoaisContratante">SALVAR</button>
-          </div>
-        </form>
-        <!-- ................................. -->
-      </div>
-      <div class="modal-footer bg-azul">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- fim Modal ------------------------------------------------->
+<% } else { %>
+     
       <!-- card sanfona 2 ------------------------------------------------->
       <div class="card">
         <!-- topo 2 sanfona -->
@@ -984,11 +506,11 @@
         </div>
         <div class="modal-body bg-roxoClaro">
           <!-- formulario editar endereço -->
-
+         
           
 
 
-          <form action="/usuario/area-contratante/meus-dados/<%=data.cliente.id%>/endereco" method="POST"> 
+          <form action="/usuario/area-contratante/meus-dados/endereco/<%=data.cliente.id%>" method="POST"> 
 
             <!-- input linha 1 -->
             <div class="form-row">
@@ -1076,8 +598,11 @@
 
             <!-- botao editar ABRE O MODAL-->
             <!-- Button trigger modal -->
-            <div class="d-flex justify-content-end"><button type="submit" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosEnderecoContratante">SALVAR</button></div>
+            <div class="d-flex justify-content-end">
+              <button type="submit" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosEnderecoContratante">SALVAR</button>
+            </div>
           </form>
+  
          
 
         </div>
@@ -1087,323 +612,526 @@
       </div>
     </div>
   </div>
+<% } %> 
   <!-- fim Modal ------------------------------------------------->
-
-      <!-- card sanfona 3 ------------------------------------------------->
-      <div class="card">
-        <!-- topo 3 sanfona -->
-        <div class="card-header sanfonaTopoMeusDados" id="headingThree">
-          <h5 class="mb-0">
-            
-            <button class="btn btn-link tituloSanfonaTopoMeusDados" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-              <img src="/img/contato.png" alt="Meus dados" title="Meus dados">
-              Contato
-            </button>
-          </h5>
-        </div>
-
-        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-          <div class="card-body">
-
-            <!-- formulario contato -->
-            <form> 
-              <!-- input linha 1 -->
-              <div class="form-row">
-                <!-- input cel1 -->
-                <div class="form-group col-md-6">
-                  <label for="cel1">Celular 1</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text etiquetaCampo">Celular 1</span>
-                    </div>
-                    <input type="tel" name="contratanteCelular1" class="form-control campoMeusDadosStyle campoDadoReadonly" placeholder="Complete seu cadastro" id="cel1" readonly maxlength="11" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
-                  </div>
-                </div>
-
-                <!-- input cel2 -->
-                <div class="form-group col-md-6">
-                  <label for="cel2">Celular 2</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text etiquetaCampo">Celular 2</span>
-                    </div>
-                    <input type="tel" name="contratanteCelular2" class="form-control campoMeusDadosStyle campoDadoReadonly" placeholder="Complete seu cadastro" id="cel2" readonly maxlength="11" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
-                  </div>
-                </div>
-              </div>
-
-              <!-- input linha 2 -->
-              <div class="form-row">
-                <!-- input telefone -->
-                <div class="form-group col">
-                  <label for="tel">Telefone</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text etiquetaCampo">Telefone</span>
-                    </div>
-                    <input type="tel" name="contratanteTelefone" class="form-control campoMeusDadosStyle campoDadoReadonly" id="tel"  readonly maxlength="10" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
-                  </div>
-                </div>
-              </div>
-
-              <!-- input linha 3 -->
-              <div class="form-row">
-                <!-- input email -->
-                <div class="form-group col">
-                  <label for="email">E-mail principal</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text etiquetaCampo">@</span>
-                    </div>
-                    <input type="email" name="contratanteEmail" class="form-control campoMeusDadosStyle campoDadoReadonly" placeholder="Complete seu cadastro" id="email" readonly>
-                  </div>
-                </div>
-              </div>
-              <!-- input linha 3 -->
-              <div class="form-row">
-                <!-- input email -->
-                <div class="form-group col">
-                  <label for="email">E-mail secundário</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text etiquetaCampo">@</span>
-                    </div>
-                    <input type="email" name="contratanteEmail2" class="form-control campoMeusDadosStyle campoDadoReadonly" placeholder="Complete seu cadastro" id="email"  readonly>
-                  </div>
-                </div>
-              </div>
-
-              <!-- botao editar ABRE O MODAL-->
-              <!-- Button trigger modal -->
-              <div class="d-flex justify-content-end"><button type="button" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosContatoContratante">Editar</button></div>
-            </form>
+<% if(data.cliente.contatos != ""){ %> 
+        <!-- card sanfona 3 ------------------------------------------------->
+        <div class="card">
+          <!-- topo 3 sanfona -->
+          <div class="card-header sanfonaTopoMeusDados" id="headingThree">
+            <h5 class="mb-0">
+              
+              <button class="btn btn-link tituloSanfonaTopoMeusDados" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                <img src="/img/contato.png" alt="Meus dados" title="Meus dados">
+                Contato 
+              </button>
+            </h5>
           </div>
-        </div>
-      </div>
-  <!-- Modal ------------------------------------------------->
-  <!-- Modal -->
-  <div class="modal fade" id="editarDadosContatoContratante" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header bg-azul text-white">
-          <h5 class="modal-title" id="exampleModalLongTitle">Editar contato</h5>
-          <button type="button" class="close fecharModal" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body bg-roxoClaro">
-          
-          <!-- formulario contato -->
-          
-          
 
-          <form action="/usuario/area-contratante/meus-dados/<%=data.cliente%>/contato" method="POST"> 
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
 
-            <!-- input linha 1 -->
-              <div class="form-row">
-                <!-- input cel1 -->
-                <div class="form-group col-md-6">
-                  <label for="cel1">Celular 1</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text etiquetaCampo">Celular 1</span>
-                    </div>
-                    <input type="tel" name="contratanteCelular1" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel1" placeholder="Digite seu celular - apenas números" maxlength="11" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$" >
-                  </div>
-                </div>
-
-                <!-- input cel2 -->
-                <div class="form-group col-md-6">
-                  <label for="cel2">Celular 2</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text etiquetaCampo">Celular 2</span>
-                    </div>
-                    <input type="tel" name="contratanteCelular2" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel2" placeholder="Digite seu celular - apenas números" maxlength="11" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$" >
-                  </div>
-                </div>
-              </div>
-
-              <!-- input linha 2 -->
-              <div class="form-row">
-                <!-- input telefone -->
-                <div class="form-group col">
-                  <label for="tel">Telefone</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text etiquetaCampo">Telefone</span>
-                    </div>
-                    <input type="tel" name="contratanteTelefone" class="form-control campoMeusDadosStyle campoDadoReadonly" id="tel" placeholder="Digite seu telefone - apenas números" maxlength="10" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$" >
-                  </div>
-                </div>
-              </div>
-
-              <!-- input linha 3 -->
-              <div class="form-row">
-                <!-- input email -->
-                <div class="form-group col">
-                  <label for="email">E-mail principal</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text etiquetaCampo">@</span>
-                    </div>
-                    <input type="email" name="contratanteEmail" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" >
-                  </div>
-                </div>
-              </div>
-              <!-- input linha 3 -->
-              <div class="form-row">
-                <!-- input email -->
-                <div class="form-group col">
-                  <label for="email">E-mail secundário</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text etiquetaCampo">@</span>
-                    </div>
-                    <input type="email" name="contratanteEmail2" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" placeholder="Digite seu e-mail" >
-                  </div>
-                </div>
-              </div>
-
-              <!-- botao editar ABRE O MODAL-->
-              <!-- Button trigger modal -->
-              <div class="d-flex justify-content-end"><button type="submit" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosContatoContratante">SALVAR</button></div>
-            </form>
-          
-
-        </div>
-        <div class="modal-footer bg-azul">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- fim Modal ------------------------------------------------->
-
-      <!-- card sanfona 4 ------------------------------------------------->
-      <div class="card">
-        <!-- topo 4 sanfona -->
-        <div class="card-header sanfonaTopoMeusDados" id="headingFour">
-          <h5 class="mb-0">
-            
-            <button class="btn btn-link tituloSanfonaTopoMeusDados" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-              <img src="/img/conta.png" alt="Meus dados" title="Meus dados">
-              Conta
-            </button>
-          </h5>
-        </div>
-    
-        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-          <div class="card-body">
-            
-            <!-- formulario conta -->
-            <form>
-              <!-- input linha 1 -->
+              <!-- formulario contato -->
+              <% data.cliente.contatos.forEach(contato => { %>
+                
+              <form action="/usuario/area-contratante/meus-dados/contatos/<%=contato.id%>" method="GET"> 
+                <!-- input linha 1 -->
                 <div class="form-row">
-                  <!-- input senha -->
-                  <div class="form-group col">
-                    <label for="senha">Senha Atual</label>
+                  <!-- input cel1 -->
+                  <div class="form-group col-md-6">
+                    <label for="cel1">Celular 1</label>
                     <div class="input-group">
                       <div class="input-group-prepend">
-                        <span class="input-group-text etiquetaCampo">Senha</span>
+                        <span class="input-group-text etiquetaCampo">Celular 1</span>
                       </div>
-                      <input type="password" name="contratanteSenha" class="form-control campoMeusDadosStyle campoDadoReadonly" id="senha" value="000000" readonly minlength="8">
+                      <input type="tel" name="contratanteCelular1" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel1" value="<%= contato.celular_principal %>" readonly maxlength="11" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
+                    </div>
+                  </div>
+
+                  <!-- input cel2 -->
+                  <div class="form-group col-md-6">
+                    <label for="cel2">Celular 2</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text etiquetaCampo">Celular 2</span>
+                      </div>
+                      <input type="tel" name="contratanteCelular2" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel2" value="<%= contato.celular_secundario %>" readonly maxlength="11" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
                     </div>
                   </div>
                 </div>
-    
+
                 <!-- input linha 2 -->
+                <div class="form-row">
+                  <!-- input telefone -->
+                  <div class="form-group col">
+                    <label for="tel">Telefone</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text etiquetaCampo">Telefone</span>
+                      </div>
+                      <input type="tel" name="contratanteTelefone" class="form-control campoMeusDadosStyle campoDadoReadonly" id="tel" value="<%= contato.telefone_residencial %>" readonly maxlength="10" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- input linha 3 -->
                 <div class="form-row">
                   <!-- input email -->
                   <div class="form-group col">
-                    <label for="email">E-mail de cadastro</label>
+                    <label for="email">E-mail principal</label>
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <span class="input-group-text etiquetaCampo">@</span>
                       </div>
-                      <input type="email" name="contratanteEmail" class="form-control campoMeusDadosStyle campoDadoReadonly" placeholder="Complete seu cadastro" id="email"  readonly>
+                      <input type="email" name="contratanteEmail" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" value="<%= contato.email_principal %>"readonly>
+                    </div>
+                  </div>
+                </div>
+                <!-- input linha 3 -->
+                <div class="form-row">
+                  <!-- input email -->
+                  <div class="form-group col">
+                    <label for="email">E-mail secundário</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text etiquetaCampo">@</span>
+                      </div>
+                      <input type="email" name="contratanteEmail2" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" value="<%= contato.email_secundario %>" readonly>
                     </div>
                   </div>
                 </div>
 
                 <!-- botao editar ABRE O MODAL-->
-              <!-- Button trigger modal -->
-              <div class="d-flex justify-content-end"><button type="button" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosContaContratante">Editar</button></div>
+                <!-- Button trigger modal -->
+                <div class="d-flex justify-content-end"><button type="button" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosContatoContratante">Editar</button></div>
               </form>
+           <% }) %>
+            </div>
           </div>
-          <div class="container-fluid bg-azul rodapeMeusDadosSanfona"></div>
+        </div>
+    <!-- Modal ------------------------------------------------->
+    <!-- Modal -->
+    <div class="modal fade" id="editarDadosContatoContratante" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-azul text-white">
+            <h5 class="modal-title" id="exampleModalLongTitle">Editar contato</h5>
+            <button type="button" class="close fecharModal" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body bg-roxoClaro">
+            
+            <!-- formulario contato -->
+            <% data.cliente.contatos.forEach(contato => { %>
+
+              <form action="/usuario/area-contratante/meus-dados/contatos/<% data.cliente.id %> ?_method=PUT" method="POST"> 
+                <!-- input linha 1 -->
+                  <div class="form-row">
+                    <!-- input cel1 -->
+                    <div class="form-group col-md-6">
+                      <label for="cel1">Celular 1</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text etiquetaCampo">Celular 1</span>
+                        </div>
+                        <input type="tel" name="contratanteCelular1" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel1" placeholder="Digite seu celular - apenas números" maxlength="11" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$" value="<%= contato.celular_principal %>">
+                      </div>
+                    </div>
+  
+                    <!-- input cel2 -->
+                    <div class="form-group col-md-6">
+                      <label for="cel2">Celular 2</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text etiquetaCampo">Celular 2</span>
+                        </div>
+                        <input type="tel" name="contratanteCelular2" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel2" placeholder="Digite seu celular - apenas números" maxlength="11" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$" value="<%= contato.celular_secundario %>">
+                      </div>
+                    </div>
+                  </div>
+  
+                  <!-- input linha 2 -->
+                  <div class="form-row">
+                    <!-- input telefone -->
+                    <div class="form-group col">
+                      <label for="tel">Telefone</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text etiquetaCampo">Telefone</span>
+                        </div>
+                        <input type="tel" name="contratanteTelefone" class="form-control campoMeusDadosStyle campoDadoReadonly" id="tel" placeholder="Digite seu telefone - apenas números" maxlength="10" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$" value="<%= contato.telefone_residencial %>">
+                      </div>
+                    </div>
+                  </div>
+  
+                  <!-- input linha 3 -->
+                  <div class="form-row">
+                    <!-- input email -->
+                    <div class="form-group col">
+                      <label for="email">E-mail principal</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text etiquetaCampo">@</span>
+                        </div>
+                        <input type="email" name="contratanteEmail" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" value="<%= contato.email_principal %>">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- input linha 3 -->
+                  <div class="form-row">
+                    <!-- input email -->
+                    <div class="form-group col">
+                      <label for="email">E-mail secundário</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text etiquetaCampo">@</span>
+                        </div>
+                        <input type="email" name="contratanteEmail2" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" placeholder="Digite seu e-mail" value="<%= contato.email_secundario %>">
+                      </div>
+                    </div>
+                  </div>
+  
+                  <!-- botao editar ABRE O MODAL-->
+                  <!-- Button trigger modal -->
+                  <div class="d-flex justify-content-end"><button type="submit" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosContatoContratante">SALVAR</button></div>
+                </form>
+            <% }) %> 
+            
+
+          </div>
+          <div class="modal-footer bg-azul">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
         </div>
       </div>
     </div>
-  <!-- Modal ------------------------------------------------->
-  <!-- Modal -->
-  <div class="modal fade" id="editarDadosContaContratante" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header bg-azul text-white">
-          <h5 class="modal-title" id="exampleModalLongTitle">Editar dados da conta</h5>
-          <button type="button" class="close fecharModal" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+    <!-- fim Modal ------------------------------------------------->
+<% } else { %> 
+      <!-- card sanfona 3 ------------------------------------------------->
+      <div class="card">
+          <!-- topo 3 sanfona -->
+          <div class="card-header sanfonaTopoMeusDados" id="headingThree">
+            <h5 class="mb-0">
+              
+              <button class="btn btn-link tituloSanfonaTopoMeusDados" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                <img src="/img/contato.png" alt="Meus dados" title="Meus dados">
+                Contato 
+              </button>
+            </h5>
+          </div>
+  
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+  
+              <!-- formulario contato -->
+              <form> 
+                <!-- input linha 1 -->
+                <div class="form-row">
+                  <!-- input cel1 -->
+                  <div class="form-group col-md-6">
+                    <label for="cel1">Celular 1</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text etiquetaCampo">Celular 1</span>
+                      </div>
+                      <input type="tel" name="contratanteCelular1" class="form-control campoMeusDadosStyle campoDadoReadonly" placeholder="Complete seu cadastro" id="cel1" readonly maxlength="11" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
+                    </div>
+                  </div>
+  
+                  <!-- input cel2 -->
+                  <div class="form-group col-md-6">
+                    <label for="cel2">Celular 2</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text etiquetaCampo">Celular 2</span>
+                      </div>
+                      <input type="tel" name="contratanteCelular2" class="form-control campoMeusDadosStyle campoDadoReadonly" placeholder="Complete seu cadastro" id="cel2" readonly maxlength="11" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
+                    </div>
+                  </div>
+                </div>
+  
+                <!-- input linha 2 -->
+                <div class="form-row">
+                  <!-- input telefone -->
+                  <div class="form-group col">
+                    <label for="tel">Telefone</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text etiquetaCampo">Telefone</span>
+                      </div>
+                      <input type="tel" name="contratanteTelefone" class="form-control campoMeusDadosStyle campoDadoReadonly" id="tel"  readonly maxlength="10" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
+                    </div>
+                  </div>
+                </div>
+  
+                <!-- input linha 3 -->
+                <div class="form-row">
+                  <!-- input email -->
+                  <div class="form-group col">
+                    <label for="email">E-mail principal</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text etiquetaCampo">@</span>
+                      </div>
+                      <input type="email" name="contratanteEmail" class="form-control campoMeusDadosStyle campoDadoReadonly" placeholder="Complete seu cadastro" id="email" readonly>
+                    </div>
+                  </div>
+                </div>
+                <!-- input linha 3 -->
+                <div class="form-row">
+                  <!-- input email -->
+                  <div class="form-group col">
+                    <label for="email">E-mail secundário</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text etiquetaCampo">@</span>
+                      </div>
+                      <input type="email" name="contratanteEmail2" class="form-control campoMeusDadosStyle campoDadoReadonly" placeholder="Complete seu cadastro" id="email"  readonly>
+                    </div>
+                  </div>
+                </div>
+  
+                <!-- botao editar ABRE O MODAL-->
+                <!-- Button trigger modal -->
+                <div class="d-flex justify-content-end"><button type="button" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosContatoContratante">Editar</button></div>
+              </form>
+            </div>
+          </div>
         </div>
-        <div class="modal-body bg-roxoClaro">
-          
-          <!-- formulario conta -->
-          <form >
-            <!-- input linha 1 -->
-            <div class="form-row">
-              <!-- input senha -->
-              <div class="form-group col">
-                <label for="senha">Senha Atual</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text etiquetaCampo">Senha</span>
+    <!-- Modal ------------------------------------------------->
+    <!-- Modal -->
+    <div class="modal fade" id="editarDadosContatoContratante" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-azul text-white">
+            <h5 class="modal-title" id="exampleModalLongTitle">Editar contato</h5>
+            <button type="button" class="close fecharModal" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body bg-roxoClaro">
+            
+            <!-- formulario contato -->
+            
+            
+            
+            <form action="/usuario/area-contratante/meus-dados/contato/<%=data.cliente.id%>" method="POST"> 
+  
+              <!-- input linha 1 -->
+                <div class="form-row">
+                  <!-- input cel1 -->
+                  <div class="form-group col-md-6">
+                    <label for="cel1">Celular 1</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text etiquetaCampo">Celular 1</span>
+                      </div>
+                      <input type="tel" name="contratanteCelular1" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel1" placeholder="Digite seu celular - apenas números" maxlength="11" >
+                    </div>
                   </div>
-                  <input type="password" name="contratanteSenha" class="form-control campoMeusDadosStyle campoDadoReadonly" id="senha" placeholder="Digite sua senha atual" minlength="8">
-                </div>
-              </div>
-            </div>
-
-            <div class="form-row">
-              <!-- input senha -->
-              <div class="form-group col">
-                <label for="senha">Nova senha</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text etiquetaCampo">Senha</span>
+  
+                  <!-- input cel2 -->
+                  <div class="form-group col-md-6">
+                    <label for="cel2">Celular 2</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text etiquetaCampo">Celular 2</span>
+                      </div>
+                      <input type="tel" name="contratanteCelular2" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel2" placeholder="Digite seu celular - apenas números" maxlength="11" >
+                    </div>
                   </div>
-                  <input type="password" name="contratanteNovaSenha" class="form-control campoMeusDadosStyle campoDadoReadonly" id="senha" placeholder="Digite sua nova senha" minlength="8">
                 </div>
-              </div>
-            </div>
-
-            <!-- input linha 2 -->
-            <div class="form-row">
-              <!-- input email -->
-              <div class="form-group col">
-                <label for="email">E-mail de cadastro</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text etiquetaCampo">@</span>
+  
+                <!-- input linha 2 -->
+                <div class="form-row">
+                  <!-- input telefone -->
+                  <div class="form-group col">
+                    <label for="tel">Telefone</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text etiquetaCampo">Telefone</span>
+                      </div>
+                      <input type="tel" name="contratanteTelefone" class="form-control campoMeusDadosStyle campoDadoReadonly" id="tel" placeholder="Digite seu telefone - apenas números" maxlength="10"  >
+                    </div>
                   </div>
-                  <input type="email" name="contratanteEmail" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" >
                 </div>
-              </div>
-            </div>
-
-            <!-- botao editar ABRE O MODAL-->
-          <!-- Button trigger modal -->
-          <div class="d-flex justify-content-end">
-            <button type="submit" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosContaContratante">SALVAR</button></div>
+  
+                <!-- input linha 3 -->
+                <div class="form-row">
+                  <!-- input email -->
+                  <div class="form-group col">
+                    <label for="email">E-mail principal</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text etiquetaCampo">@</span>
+                      </div>
+                      <input type="email" name="contratanteEmail1" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" >
+                    </div>
+                  </div>
+                </div>
+                <!-- input linha 3 -->
+                <div class="form-row">
+                  <!-- input email -->
+                  <div class="form-group col">
+                    <label for="email">E-mail secundário</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text etiquetaCampo">@</span>
+                      </div>
+                      <input type="email" name="contratanteEmail2" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" placeholder="Digite seu e-mail" >
+                    </div>
+                  </div>
+                </div>
+  
+                <!-- botao editar ABRE O MODAL-->
+                <!-- Button trigger modal -->
+                <div class="d-flex justify-content-end">
+                  <button type="submit" class="btn botaoMeusDados" >SALVAR</button>
+                </div>
           </form>
-
-        </div>
-        <div class="modal-footer bg-azul">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            
+  
+          </div>
+          <div class="modal-footer bg-azul">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- fim Modal ------------------------------------------------->
-      <!-- sanfona -------------------------------------------------------->
-<% } %>
+    <!-- fim Modal ------------------------------------------------->
+
+  <% } %> 
+
+
+        <!-- card sanfona 4 ------------------------------------------------->
+        <div class="card">
+          <!-- topo 4 sanfona -->
+          <div class="card-header sanfonaTopoMeusDados" id="headingFour">
+            <h5 class="mb-0">
+              
+              <button class="btn btn-link tituloSanfonaTopoMeusDados" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                <img src="/img/conta.png" alt="Meus dados" title="Meus dados">
+                Conta
+              </button>
+            </h5>
+          </div>
+      
+          <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+            <div class="card-body">
+              
+              <!-- formulario conta -->
+              <form action="/usuario/area-contratante/meus-dados/<%=data.cliente.id%>" method="GET"> 
+                <!-- input linha 1 -->
+                  <div class="form-row">
+                    <!-- input senha -->
+                    <div class="form-group col">
+                      <label for="senha">Senha Atual</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text etiquetaCampo">Senha</span>
+                        </div>
+                        <input type="password" name="contratanteSenha" class="form-control campoMeusDadosStyle campoDadoReadonly" id="senha" value="000000" readonly minlength="8">
+                      </div>
+                    </div>
+                  </div>
+      
+                  <!-- input linha 2 -->
+                  <div class="form-row">
+                    <!-- input email -->
+                    <div class="form-group col">
+                      <label for="email">E-mail de cadastro</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text etiquetaCampo">@</span>
+                        </div>
+                        <input type="email" name="contratanteEmail" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" value="<%= data.cliente.email %>" readonly>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- botao editar ABRE O MODAL-->
+                <!-- Button trigger modal -->
+                <div class="d-flex justify-content-end"><button type="button" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosContaContratante">Editar</button></div>
+                </form>
+            </div>
+            <div class="container-fluid bg-azul rodapeMeusDadosSanfona"></div>
+          </div>
+        </div>
+      </div>
+    <!-- Modal ------------------------------------------------->
+    <!-- Modal -->
+    <div class="modal fade" id="editarDadosContaContratante" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-azul text-white">
+            <h5 class="modal-title" id="exampleModalLongTitle">Editar dados da conta</h5>
+            <button type="button" class="close fecharModal" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body bg-roxoClaro">
+            
+            <!-- formulario conta -->
+            <form action="/usuario/area-contratante/meus-dados/<%=data.cliente.id%>?_method=PUT" method="POST"> 
+              <!-- input linha 1 -->
+              <div class="form-row">
+                <!-- input senha -->
+                <div class="form-group col">
+                  <label for="senha">Senha Atual</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text etiquetaCampo">Senha</span>
+                    </div>
+                    <input type="password" name="contratanteSenha" class="form-control campoMeusDadosStyle campoDadoReadonly" id="senha" placeholder="Digite sua senha atual" minlength="8">
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <!-- input senha -->
+                <div class="form-group col">
+                  <label for="senha">Nova senha</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text etiquetaCampo">Senha</span>
+                    </div>
+                    <input type="password" name="contratanteNovaSenha" class="form-control campoMeusDadosStyle campoDadoReadonly" id="senha" placeholder="Digite sua nova senha" minlength="8">
+                  </div>
+                </div>
+              </div>
+
+              <!-- input linha 2 -->
+              <div class="form-row">
+                <!-- input email -->
+                <div class="form-group col">
+                  <label for="email">E-mail de cadastro</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text etiquetaCampo">@</span>
+                    </div>
+                    <input type="email" name="contratanteEmail" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" value="<%= data.cliente.email %>">
+                  </div>
+                </div>
+              </div>
+
+              <!-- botao editar ABRE O MODAL-->
+            <!-- Button trigger modal -->
+            <div class="d-flex justify-content-end">
+              <button type="submit" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosContaContratante">SALVAR</button></div>
+            </form>
+
+          </div>
+          <div class="modal-footer bg-azul">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- fim Modal ------------------------------------------------->
+        <!-- sanfona -------------------------------------------------------->
+ 
+
+    
+
+     
