@@ -19,9 +19,7 @@ app.use(express.urlencoded({
 
 app.use(express.json());
 app.use(session({
-    secret: "ToolsHall1",
-    sesave: true,
-    saveUninitialized: true
+    secret: "ToolsHall1"
 }));
 
 //área usuario contratante e prestador

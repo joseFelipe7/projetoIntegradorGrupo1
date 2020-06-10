@@ -1,10 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
     const Prestador = sequelize.define("Prestador", {
-        id:{
-            primaryKey:true,
-            autoIncrement:true,
-            type:DataTypes.INTEGER 
-          },
+      
         nome:{
             type:DataTypes.STRING(190),
             allowNull:false

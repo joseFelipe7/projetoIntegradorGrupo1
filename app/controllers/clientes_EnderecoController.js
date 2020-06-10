@@ -1,33 +1,28 @@
-const Sequelize = require('sequelize')
-const config = require('../../config/database')
-const {Clientes_endereco, Cliente} = require('../models')
+
+const {Clientes_endereco, Cliente, Contatos} = require('../models')
 const Clientes_EnderecoController = { 
 
     index: async (req, res) => {
-        const {fk_cliente } = req.params;
+       const {fk_cliente } = req.params;
+
         const cliente = await Cliente.findByPk(fk_cliente, {
-            include: {
-                model: Cliente,
-                as: 'clientes_enderecos',
-                required:true
-            }
+            include:[
+                {
+                    model: Clientes_endereco,
+                    as: 'clientes_enderecos',
+                    
+                },
+                {
+                    model: Contatos,
+                    as: 'contatos',
+                   
+                }
+            ] 
         })
-        
-
-        
-
-      /* const clientes_enderecos = await Clientes_endereco.findAll({
-            include: {
-                model: Cliente,
-                as: 'cliente',
-                required:true
-            }
-        });
-            */
-        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, cliente})
+        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{cliente}})
     },
     store: async (req, res) => {
-        const {fk_cliente} = req.params;
+        const {id} = req.params
         const {
             contratanteCep,
             contratanteRua,
@@ -37,11 +32,10 @@ const Clientes_EnderecoController = {
             contratanteUf
         } = req.body;
 
-        const cliente = await Cliente.findByPk(fk_cliente);
-        if (!cliente){
-            return res.send("cliente nao existe")
+        const cliente = await Cliente.findByPk(id) 
+        if(!cliente){
+            return res.send("cliente n encontrado")
         }
-        
         const clientes_endereco = await Clientes_endereco.create({
             logradouro:contratanteRua,
             uf:contratanteUf,
@@ -49,11 +43,13 @@ const Clientes_EnderecoController = {
             cep:contratanteCep,
             numero:contratanteN,
             complemento:contratanteComplemento,
-            fk_cliente:fk_cliente
+            fk_cliente:id
+           
 
         })
-
-        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, clientes_endereco})
+        console.log(clientes_endereco)
+        
+        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{clientes_endereco}})
         
     },
     updade: async (req, res) => {
@@ -86,7 +82,7 @@ const Clientes_EnderecoController = {
                 id
             }
         })
-        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, cliente_endereco})
+        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{cliente_endereco}})
 
     }
 

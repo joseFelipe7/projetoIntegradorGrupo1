@@ -1,57 +1,26 @@
 const { Cliente, Clientes_endereco, Contatos } = require('../models')
 const ClienteController = { 
 
-    /*index: async (req, res) => {
-        const cliente = await Clientes_endereco.findAll()
-        return res.send("clientes", {cliente})
-           
-
-        },*/
         index: async (req,res) => {
             const {id} = req.params
+            console.log(id)
     
-            //const cliente = await Cliente.findByPk(id);
-
-            const cliente = await Cliente.findOne({
-                where:{
-                    id
-                },
-                include:{
+            const cliente = await Cliente.findByPk(id, {
+                include:[ 
+                {
                     model:Clientes_endereco,
-                    as: 'clientes_enderecos',
-                    required:true
+                    as: 'clientes_enderecos'
                 },
-                include:{
+                {
                     model:Contatos,
-                    as: 'contatos',
-                    required:true
+                    as: 'contatos'
                 }
-            })
-
-            return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, cliente})
-        },/*
-        index: async (req, res) => {
-            const {id} = req.params;
-            const cliente = await Cliente.findOne({
-                where:{
-                    id
-                },
-                include:{
-                    model:Clientes_endereco,
-                    as: 'clientes_enderecos',
-                    required:true
-                },
-                include:{
-                    model:Contatos,
-                    as: 'contatos',
-                    required:true
-                }
-            })
-                
-            return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, cliente})
-            
-        },*/
-        updade: async (req, res) => {
+                ]})
+            console.log(cliente)
+           return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{cliente}})
+        },
+        
+        updade: (req, res) => {
             
             const {
                 contratanteNome,
@@ -61,7 +30,7 @@ const ClienteController = {
 
        
 
-            const cliente = await Cliente.update({
+            const cliente = Cliente.update({
                 nome: contratanteNome,
                 email: contratanteEmail,
                 data_nascimento: contratanteNascimento,
@@ -72,11 +41,21 @@ const ClienteController = {
             {
                 where: {
                     id
+                },
+                include:{
+                    model:Clientes_endereco,
+                    as: 'clientes_enderecos',
+                    required:true
+                },
+                include:{
+                    model:Contatos,
+                    as: 'contatos',
+                    required:true
                 }
             })
-           
+           console.log(cliente)
             
-            return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, cliente})
+            //return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{cliente}})
 
         }
     }
