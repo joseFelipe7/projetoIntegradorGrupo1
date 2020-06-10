@@ -1,4 +1,4 @@
-const { Prestador, Prestador_endereco, Habilidades } = require('../models');
+const { Prestador, Prestador_endereco, Habilidades, Avaliacoes } = require('../models');
 
 const listarPrestadoresController = {
     index: async (req, res) => {
@@ -11,6 +11,9 @@ const listarPrestadoresController = {
             offset: (page - 1) * 12,
             include: [{
                 model: Habilidades,
+                required: true
+            }, {
+                model: Avaliacoes,
                 required: true
             }]
         });
