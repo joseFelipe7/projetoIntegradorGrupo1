@@ -24,20 +24,16 @@ module.exports = (sequelize, DataTypes) => {
         timestamps:false,
         tableName: 'prestador'
     });
+
     Prestador.associate = (listaModels) => {
       Prestador.hasMany(listaModels.Prestador_endereco, {
         foreignKey: 'fk_prestador',
-        as: 'enderecos'
+        as: 'prestadores_enderecos'
       }),
-      Prestador.hasMany(listaModels.Contatos_prestador, {
+      Prestador.hasMany(listaModels.Habilidades, {
         foreignKey: 'fk_prestador',
-        as: 'contatos'
       })
-
     }
    
-   
-    
-    
     return Prestador;
 };

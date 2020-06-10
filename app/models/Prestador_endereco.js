@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
   },
   fk_prestador: {
     type: DataTypes.INTEGER,
-    allowNull:false
+    allowNull: false
   }
 
 }, {
@@ -40,10 +40,11 @@ tableName: 'prestador_endereco'
 });
 
 Prestador_endereco.associate = (listaModels) => {
-  Prestador_endereco.belongsTo(listaModels.Prestador_endereco, {
-      foreignKey: 'fk_prestador',
-      as:'prestador'
+  Prestador_endereco.belongsTo(listaModels.Prestador, {
+    foreignKey: 'fk_prestador',
+    as: 'prestador'
   })
 }
+
 return Prestador_endereco;
 };
