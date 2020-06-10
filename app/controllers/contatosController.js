@@ -1,54 +1,57 @@
-const {Contatos, Cliente} = require('../models')
+const {Clientes_endereco, Cliente, Contatos} = require('../models')
 
 const ContatosController = { 
 
 
     index: async (req, res) => {
-        const {fk_cliente} = req.params;
-        const cliente = await Cliente.findByPk(fk_cliente, {
-            include: {
-                model: Cliente,
-                as: 'contatos',
-                required: true
-            }
+        const {fk_cliente } = req.params;
+         const cliente = await Cliente.findByPk(fk_cliente, {
+            include:[
+                {
+                    model: Clientes_endereco,
+                    as: 'clientes_enderecos',
+                    
+                },
+                {
+                    model: Contatos,
+                    as: 'contatos',
+                   
+                }
+            ] 
         })
-
-        /*const contatos = await Contatos.findAll({
-            include: {
-                model: Cliente,
-                as: 'cliente',
-                required: true
-            }
-        });*/
-            
-        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, cliente})
+        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{cliente}})
     },
+    
     store: async (req, res) => {
-        const {fk_cliente} = req.params;
+        const {id} = req.params
+       
         const {
             contratanteCelular1,
             contratanteCelular2,
             contratanteTelefone,
-            contratanteEmail,
+            contratanteEmail1,
             contratanteEmail2 
            
         } = req.body;
 
-        const cliente = await Cliente.findByPk(fk_cliente);
+        const cliente = await Cliente.findByPk(id) 
         if(!cliente){
-            return res.send("erro")
+            return res.send("cliente n encontrado")
         }
+
         const contatos = await Contatos.create({
             celular_principal:contratanteCelular1,
             celular_secundario:contratanteCelular2,
             telefone_residencial:contratanteTelefone,
-            email_principal:contratanteEmail,
+            email_principal:contratanteEmail1,
             email_secundario:contratanteEmail2,
-            fk_cliente:fk_cliente
+            fk_cliente:id
+            
        
         })
-
-        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, contatos})
+       console.log(contatos)
+        
+        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{contatos}})
         
     },
     updade: async (req, res) => {
@@ -80,7 +83,7 @@ const ContatosController = {
                 id
             }
         })
-        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, contato})
+        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{contato}})
 
     }
 

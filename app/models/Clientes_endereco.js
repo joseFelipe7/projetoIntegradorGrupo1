@@ -38,7 +38,7 @@ module.exports = (sequelize, DataTypes) => {
 
 }, {
   timestamps:false,
-tableName: 'clientes_endereco'
+  tableName: 'clientes_endereco'
 });
 
 Clientes_endereco.associate = (listaModels) => {

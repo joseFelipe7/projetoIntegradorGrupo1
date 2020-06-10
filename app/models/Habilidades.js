@@ -1,10 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
     const Habilidades = sequelize.define("Habilidades", {
-id:{
-    primaryKey:true,
-    autoIncrement:true,
-    type:DataTypes.INTEGER 
-  },
+
   titulo:{
    type:DataTypes.STRING(190),
    allowNull:false

@@ -2,11 +2,7 @@
 
 module.exports = (sequelize, DataTypes) => {
     const Prestador_endereco = sequelize.define("Prestador_endereco", {
-id:{
-    primaryKey:true,
-    autoIncrement:true,
-    type:DataTypes.INTEGER 
-  },
+
   logradouro:{
    type:DataTypes.STRING(190),
    allowNull:false

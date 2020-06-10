@@ -4,7 +4,8 @@ module.exports = (sequelize, DataTypes) => {
              
         celular_principal:{
            type:DataTypes.STRING(11),
-           allowNull:true        },
+           allowNull:true        
+        },
         celular_secundario:{
             type: DataTypes.STRING(11),
             allowNull: true
@@ -15,7 +16,8 @@ module.exports = (sequelize, DataTypes) => {
         },
         email_principal: { 
             type: DataTypes.STRING(190),
-            allowNull:true        },
+            allowNull:true       
+        },
         email_secundario: { 
             type: DataTypes.STRING(190),
             allowNull: true
@@ -23,6 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         fk_cliente:{
             type: DataTypes.INTEGER
         }
+        
     }, {
         timestamps:false,
         tableName: 'contatos'

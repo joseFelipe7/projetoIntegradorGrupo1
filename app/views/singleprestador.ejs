@@ -18,7 +18,7 @@
                                     <p><strong>Agenda</strong>: Combinar</p>
                                     <img src="/img/formpayment.png"  class="img-fluid" alt="">
                                     <img src="/img/formpayment2.png" class="img-fluid" alt="">
-                                    <button class="" data-toggle="modal" data-target="#modal-preorcamento">Solicitar Orçamento</button>
+                                    <button class="" data-toggle="modal" id="modalPedido" data-target="#modal-preorcamento">Solicitar Orçamento</button>
                                 </div>
                           </div>
                     </div>
@@ -37,8 +37,8 @@
                             
                                 <div class="about-prestador">
                                     <h5>Sobre</h5>
-                                    <p style="min-height:250px;"> 
-        O tradicional personagem Mario foi concebido em 1980, quando depois do fracasso da Nintendo em tentar idealizar um jogo baseado no desenho Popeye, o japonês Shigeru Miyamoto foi solicitado para projetar um novo game baseado em suas próprias ideias. <strong>Veja +</strong>
+                                    <p style="min-height:250px;">  
+                                        O tradicional personagem Mario foi concebido em 1980, quando depois do fracasso da Nintendo em tentar idealizar um jogo baseado no desenho Popeye, o japonês Shigeru Miyamoto foi solicitado para projetar um novo game baseado em suas próprias ideias. <strong>Veja +</strong>
                                     </p>
                                 </div>
                             </div>
@@ -49,7 +49,8 @@
                                     <p><strong>Agenda</strong>: Combinar</p>
                                     <img src="/img/formpayment.png" alt="">
                                     <img src="/img/formpayment2.png" alt="">
-                                    <button class="" data-toggle="modal" data-target="#modal-preorcamento">Solicitar Orçamento</button>
+                                    <button class="" data-toggle="modal"
+                                    " data-target="#modal-preorcamento">Solicitar Orçamento</button>
                                 </div>
                             
                             <!-- <div class="col-12 col-md-6" style="position: absolute; top: 8px; right: 5px;" > -->
@@ -151,27 +152,56 @@
                 </div>
             </section>
         </main>
-  
-  
-  <!-- Modal -->
-  <div class="modal fade bd-example-modal-lg"  id="modal-preorcamento" tabindex="-1" role="dialog" aria-labelledby="modal-preorcamento" aria-hidden="true">
+
+
+<% if ((typeof msgEnviado != 'undefined') || (typeof errors != 'undefined')) { %>
+    <script>
+        window.addEventListener('load', () => {
+        const btnModal = document.querySelector("#modalPedido");
+        btnModal.click();
+        })
+    </script>
+<% } %>
+
+<!-- Modal -->
+<div class="modal fade bd-example-modal-lg"  id="modal-preorcamento" tabindex="-1" role="dialog" aria-labelledby="modal-preorcamento" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content modal-pre-ocarmento" >
+    <div class="modal-content modal-pre-ocarmento" >
         <div class="modal-header" style="border: none;">
-          <!--<h5 class="modal-title" id="exampleModalLabel"></h5>-->
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <!--<h5 class="modal-title" id="exampleModalLabel"></h5>-->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
-          </button>
+        </button>
         </div>
         <div class="modal-body">
-          <div class="container">
-              <div class="row">
-                  <div class="col-0 col-md-6 figure-preorcamento">
-                      <h1 class="titulo-preorcamento">Precisando de Encanador?</h1>
-                      <small>Negocie apenas com os melhores.</small>
-                      <img class="img-fluid" src="/img/figure-orcamento.png" alt="">
-                  </div>
-                  <div class="col-12 col-lg-6">
+        <div class="container">
+            <div class="row">
+                <div class="col-0 col-md-6  figure-preorcamento">
+
+                    <% if (typeof errors != 'undefined') { %>
+                        <% errors.forEach( error => { %>
+                            <div class="row alert alert-warning msgErroLogin">
+                                <img src="/img/alert.svg" alt="erro">
+                                <!-- posso utilizar o array errors para informar a mensagem de erro, atravéz da prop msg... -->
+                                <ul>
+                                    <li> <%- error.msg %> </li>
+                                </ul>
+                            </div>
+                        <% }) %>
+                    <% } else if (typeof msgEnviado != 'undefined') { %>
+                        <!-- se enviado com sucesso... -->
+                        <div class="row alert alert-success msgErroLogin">
+                            <img src="/img/alert.svg" alt="ok">
+                            <%= msgEnviado  %>
+                        </div>
+                    <% } %>
+
+
+                    <h1 class="titulo-preorcamento">Precisando de Encanador?</h1>
+                    <small>Negocie apenas com os melhores.</small>
+                    <img class="img-fluid" src="/img/figure-orcamento.png" alt="">
+                </div>
+                <div class="col-12 col-lg-6">
                         <div class="card p-0 m-0" style="border: none;">
                             <div class="card-header card-hd-orcamento m-0">
                                 Descreva Seu Pedido
@@ -179,36 +209,34 @@
                             <div class="card-body">
                                 <form action="/prestador/single" method="POST">
                                     <div class="form-group">
-                                      <label>Serviço</label>
-                                      <input type="text" name="servico" class="form-control input-form-preocarmento" placeholder="Titulo do pedido">
+                                    <label>Serviço</label>
+                                    <input type="text" name="servico" class="form-control input-form-preocarmento" placeholder="Titulo do pedido">
                                     </div>
                                     <div class="form-group">
                                         <label>Para quando você precisa desse serviço?</label>
                                         <input type="date" name="dataServico" class="form-control input-form-preocarmento">
                                     </div>
                                     <div class="form-group">
-                                      <label>Detalhes do Serviço</label>
+                                    <label>Detalhes do Serviço</label>
                                         <textarea class="form-control input-form-preocarmento" name="detalhes" id="detalhes" cols="30" rows="6"></textarea>
                                     </div> 
-                                    <button type="submit" class="btn-form-preorcamento">Solicitar Orçamento</button>
+                                    <button type="submit" id="modalPedido" class="btn-form-preorcamento">Solicitar Orçamento</button>
 
                                     <input type="text" name="idPrestador" value="<%= idPrestador %>" hidden>
-                                  </form>
-                          </div>
-                  </div>
-              </div>
-          </div>
+                                </form>
+                        </div>
+                </div>
+            </div>
+        </div>
         </div>
         <!--<div class="modal-footer" style="border: none;">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
         </div>-->
-      </div>
     </div>
-  </div>
+    </div>
+</div>
 
-
-        
         <%- include('include/footer') %>
         <%- include('include/script') %>
     </body>
