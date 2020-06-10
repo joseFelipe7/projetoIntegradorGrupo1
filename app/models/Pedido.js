@@ -8,6 +8,9 @@ module.exports = (sequelize, DataTypes) => {
         status_andamento: {
             type: DataTypes.STRING(5)
         },
+        data_servico: {
+            type: DataTypes.DATE
+        },
         data_solicitacao: {
             type: DataTypes.DATE
         },
