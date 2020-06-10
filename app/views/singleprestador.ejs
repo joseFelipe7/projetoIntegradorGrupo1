@@ -172,29 +172,29 @@
                       <img class="img-fluid" src="/img/figure-orcamento.png" alt="">
                   </div>
                   <div class="col-12 col-lg-6">
-                      <form action="" method="post">
                         <div class="card p-0 m-0" style="border: none;">
                             <div class="card-header card-hd-orcamento m-0">
                                 Descreva Seu Pedido
                             </div>
                             <div class="card-body">
-                                <form>
+                                <form action="/prestador/single" method="POST">
                                     <div class="form-group">
                                       <label>Serviço</label>
-                                      <input type="text" class="form-control input-form-preocarmento" placeholder="Titulo do pedido">
+                                      <input type="text" name="servico" class="form-control input-form-preocarmento" placeholder="Titulo do pedido">
                                     </div>
                                     <div class="form-group">
                                         <label>Para quando você precisa desse serviço?</label>
-                                        <input type="date" class="form-control input-form-preocarmento">
+                                        <input type="date" name="dataServico" class="form-control input-form-preocarmento">
                                     </div>
                                     <div class="form-group">
                                       <label>Detalhes do Serviço</label>
-                                        <textarea class="form-control input-form-preocarmento" name="" id="" cols="30" rows="6"></textarea>
+                                        <textarea class="form-control input-form-preocarmento" name="detalhes" id="detalhes" cols="30" rows="6"></textarea>
                                     </div>
                                     <button type="submit" class="btn-form-preorcamento">Solicitar Orçamento</button>
+
+                                    <input type="text" name="idPrestador" value="<%= idPrestador %>" hidden>
                                   </form>
                           </div>
-                      </form>
                   </div>
               </div>
           </div>
