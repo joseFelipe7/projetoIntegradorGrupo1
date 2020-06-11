@@ -14,6 +14,7 @@ const cadastroServicosController = require("../controllers/cadastroServicosContr
 const cuponsController = require('../controllers/cuponsController')
 const historicoController = require('../controllers/historicoController')
 const orcamentosController = require('../controllers/orcamentosController')
+const pedidosClienteController = require("../controllers/pedidosCliente")
 
 let router = express.Router();
 
@@ -34,10 +35,7 @@ router.post("/area-contratante/meus-dados/contato/:id", authCliente, contatosCon
     // ...5620/usuario/area-contratante/meus-dados
 
 
-router.get("/area-contratante/pedidos", authCliente, (req, res) => {
-    res.render("areaContratante", {view: "pedidosAreaContratante", loggado: req.session.cliente});
-    // ...5620/usuario/area-contratante/pedidos
-})
+router.get("/area-contratante/pedidos", authCliente, pedidosClienteController.index)
 
 
 router.get("/area-contratante/acompanhe", authCliente, (req, res) => {

@@ -44,5 +44,17 @@ module.exports = (sequelize, DataTypes) => {
         tableName: 'pedidos'
     });
 
+    //defindo a relaçao com a tabela mensagem, 1:n
+    //Pedido possuiMuitos HISTÓRICOS
+    Pedido.associate = (listaModels)=>{
+        Pedido.hasMany(listaModels.HistoricoPedidos,{
+            foreignKey:'pedidos_id',
+            //fk da tabela em que está sendo o relacionamento, o id dessa tabela na outra (fk_chats)
+            //procura a fk dentro da model que tenho relação, no caso: na Mensagem
+            as:'historicos',
+            //alias, apelido para a fk da relaçao
+        });
+    }
+
     return Pedido;
 };

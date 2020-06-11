@@ -1395,15 +1395,11 @@ a + img {
 }
 
 .linha-pesqPrestadores {
-  margin-right: 0.5rem;
+  margin-right: 0;
 }
 
 #pesquisa-listaPrestadores {
   background-color: #ffffff;
-  background-image: url("/img/luparoxa.png");
-  background-repeat: no-repeat;
-  background-position: left;
-  background-position-x: 0.3rem;
   border: 0.2rem solid #a094f2;
   border-radius: 0.6rem;
   color: #203573;
@@ -1411,6 +1407,18 @@ a + img {
   font-weight: 500;
   height: 2.6rem;
   padding-left: 2.5rem;
+  position: relative;
+}
+
+.linha-pesqPrestadores label {
+  position: absolute;
+  z-index: 5;
+  top: 6px;
+  left: 12px;
+}
+
+.linha-pesqPrestadores label img {
+  max-width: 28px;
 }
 
 #pesquisa-listaPrestadores::placeholder {
@@ -1658,10 +1666,6 @@ a + img {
     width: 100%;
   }
 
-  .linha-pesqPrestadores {
-    margin-right: 0.8rem;
-  }
-
   .linha-separar {
     margin: 0.5rem 0.5rem;
   }
@@ -1768,6 +1772,10 @@ a + img {
     margin-bottom: 0.5rem;
   }
 
+  .linha-pesqPrestadores label {
+    left: 175px;
+  }
+
   #pesquisa-listaPrestadores {
     width: 15rem;
   }
@@ -1783,6 +1791,9 @@ a + img {
 }
 
 @media (max-width: 360px) {
+  .linha-pesqPrestadores label {
+    left: 125px;
+  }
   .card-listaPrestadores {
     width: 13rem;
   }
