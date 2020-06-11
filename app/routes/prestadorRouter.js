@@ -12,6 +12,7 @@ router.get("/single/:id_prestador", singlePrestadorController.index);
 router.post("/single", validacoesPedido, singlePrestadorController.store);
 
 router.get("/lista", listarPrestadoresController.index);
+router.get("/lista/:pesquisa", listarPrestadoresController.show);
 
 
 module.exports = router;

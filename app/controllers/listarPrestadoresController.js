@@ -1,4 +1,4 @@
-const { Prestador, Prestador_endereco, Habilidades } = require('../models');
+const { Prestador, Prestador_endereco, Habilidades, Avaliacoes } = require('../models');
 
 const listarPrestadoresController = {
     index: async (req, res) => {
@@ -12,12 +12,37 @@ const listarPrestadoresController = {
             include: [{
                 model: Habilidades,
                 required: true
+            }, {
+                model: Avaliacoes,
+                required: true
             }]
         });
         // ele divide totalPage por 12 itens cada page e arredonda para não trazer número quebrado.
         let totalPages = Math.round(totalPage/12);
         res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages});
-    }
+    },
+
+    show: async (req, res) => {
+        let { pesquisa } = req.params;
+        let { page = 1 } = req.query;
+        let { count: totalPage, rows: prestadores } = await Prestador.findAndCountAll({
+            limit: 12,
+            offset: (page - 1) * 12,
+            include: [{
+                model: Habilidades,
+                required: true,
+                where: {
+                    titulo: pesquisa
+                }
+            }, {
+                model: Avaliacoes,
+                required: true
+            }]
+        });
+        let totalPages = Math.round(totalPage/12);
+        res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages});
+    },
+
 };
 
 module.exports = listarPrestadoresController;
