@@ -92,8 +92,24 @@
             <% prestadores.forEach(prestador => { %>
             <div class="card card-listaPrestadores col-sm-12 col-md-6 col-lg-4 my-3 p-0">
               <div class="card-parteSuperior">
-                <img class="boneco-prestador" src="/img/boneco-prestador.png">
-                <img class="img-notaPrestador" src="/img/estrela5.png">
+                <img class="boneco-prestador" src="<%= prestador.avatar %>">
+                <% prestador.Avaliacoes.forEach(avaliacao => { %>
+                  <% if (avaliacao.nota === 1) { %>
+                    <img class="img-notaPrestador" src="/img/estrela1.png">
+                  <% } %>
+                  <% if (avaliacao.nota === 2) { %>
+                    <img class="img-notaPrestador" src="/img/estrela2.png">
+                  <% } %>
+                  <% if (avaliacao.nota === 3) { %>
+                    <img class="img-notaPrestador" src="/img/estrela3.png">
+                  <% } %>
+                  <% if (avaliacao.nota === 4) { %>
+                    <img class="img-notaPrestador" src="/img/estrela4.png">
+                  <% } %>
+                  <% if (avaliacao.nota === 5) { %>
+                    <img class="img-notaPrestador" src="/img/estrela5.png">
+                  <% } %>
+                <% }) %>
               </div>
               <div class="card-body card-parteInferior p-0 m-0">
                 <p class="nota-cardPrestador">NOTA</p>

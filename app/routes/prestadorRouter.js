@@ -11,7 +11,7 @@ const validacoesPedido = require("../middlewares/validacoesPedido")
 router.get("/single/:id_prestador", singlePrestadorController.index);
 router.post("/single", validacoesPedido, singlePrestadorController.store);
 
-router.get("/lista", authCliente, listarPrestadoresController.index);
+router.get("/lista", listarPrestadoresController.index);
 
 
 module.exports = router;
