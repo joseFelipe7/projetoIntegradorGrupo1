@@ -18,7 +18,8 @@ const pedidosClienteController = require("../controllers/pedidosCliente")
 
 let router = express.Router();
 
-// rotas contratante
+// rotas contratante // ...5620/usuario/area-contratante/meus-dados
+
 router.get("/area-contratante/meus-dados/:id", authCliente, clienteController.index);
 //router.put("/area-contratante/meus-dados/:id", authCliente, clienteController.update);
 
@@ -32,9 +33,6 @@ router.post("/area-contratante/meus-dados/contato/:id", authCliente, contatosCon
 //router.put("/area-contratante/meus-dados/:fk_cliente/contatos", authCliente, contatosController.update);
 
 
-    // ...5620/usuario/area-contratante/meus-dados
-
-
 router.get("/area-contratante/pedidos", authCliente, pedidosClienteController.index)
 
 
@@ -44,10 +42,10 @@ router.get("/area-contratante/acompanhe", authCliente, (req, res) => {
 })
 
 
-router.get("/area-contratante/orcamentos-bru/:id", authCliente, orcamentosController.index)
+router.get("/area-contratante/orcamentos-bru", authCliente, orcamentosController.index)
 
 
-router.get("/area-contratante/historico-bru/:id", authCliente, historicoController.index)
+router.get("/area-contratante/historico-bru", authCliente, historicoController.index)
 
 
 router.get("/area-contratante/chat", authCliente, chatClienteController.index) 
@@ -60,7 +58,7 @@ router.get("/area-contratante/favoritos", authCliente, (req, res) => {
 })
 
 
-router.get("/area-contratante/cupons/:id", authCliente, cuponsController.index)
+router.get("/area-contratante/cupons", authCliente, cuponsController.index)
     // ...5620/usuario/area-contratante/cupons
 
 
@@ -71,16 +69,16 @@ router.get("/area-contratante/pagamentos-bru", authCliente, (req, res) => {
 
 
 // rotas prestador
-router.get("/area-prestador/cadastro-servicos/:id", authPrestador, cadastroServicosController.index)
+router.get("/area-prestador/cadastro-servicos", authPrestador, cadastroServicosController.index)
 
 router.get("/area-prestador/pedidos", authPrestador,(req, res) => {
     res.render("areaPrestador", {view: "pedidosAreaPrestador", loggado: req.session.prestador});
 })
 
 router.get("/area-prestador/meusDados/:id", authPrestador, prestadorController.index);
-router.post("/area-prestador/meusDados/endereco/:id", authPrestador, prestadorController.store);
+router.post("/area-prestador/meusDados/:id", authPrestador, prestadorController.store);
 
-router.get("/area-prestador/meusDados/:id", authPrestador, prestadorController.index);
+
 router.post("/area-prestador/meusDados/endereco/:id", authPrestador, prestador_enderecoController.store);
 router.post("/area-prestador/meusDados/contatos/:id", authPrestador, prestador_contatosController.store);
 router.post("/area-prestador/meusDados/profissao/:id", authPrestador, habilidadesController.store);
