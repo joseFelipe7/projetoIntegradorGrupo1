@@ -3,19 +3,19 @@ module.exports = (sequelize, DataTypes) => {
 
   titulo:{
    type:DataTypes.STRING(190),
-   allowNull:false
+   allowNull:true
   },
   inicio_profissao:{
     type:DataTypes.DATE,
-    allowNull:false
+    allowNull:true
   },
   descricao:{
     type:DataTypes.STRING(290),
-    allowNull:false
+    allowNull:true
   },
   fk_prestador: {
     type: DataTypes.INTEGER,
-    allowNull: false
+    
   }
 }, {
 timestamps:false,

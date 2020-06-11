@@ -8,6 +8,7 @@ const { Pedido, HistoricoPedidos, Prestador } = require('../models/index');
 module.exports = {
     //exibe pedidos
     index: async (req, res) => {
+        
         let loggado = req.session.cliente;
 
         let pedidos = await Pedido.findAll({
