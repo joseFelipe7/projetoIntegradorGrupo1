@@ -28,7 +28,8 @@ module.exports = {
 
     req.session.prestador = prestador.dataValues;
     
-    return res.redirect('/usuario/area-prestador/meusDados/');
+    //return res.redirect('/usuario/area-prestador/meusDados/');
+    return res.render("areaPrestador", {view: "meusDados-prestador", loggado: req.session.prestador, data:{prestador}})
     
   }
 

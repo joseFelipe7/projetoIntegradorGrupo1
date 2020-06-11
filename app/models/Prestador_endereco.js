@@ -5,23 +5,23 @@ module.exports = (sequelize, DataTypes) => {
 
   logradouro:{
    type:DataTypes.STRING(190),
-   allowNull:false
+   allowNull:true
   },
   uf:{
     type:DataTypes.CHAR(2),
-    allowNull:false
+    allowNull:true
   },
   cidade:{
     type:DataTypes.STRING(90),
-    allowNull:false
+    allowNull:true
   },
   cep:{
     type:DataTypes.INTEGER,
-    allowNull:false
+    allowNull:true
   },
   numero:{
     type:DataTypes.INTEGER,
-    allowNull:false
+    allowNull:true
   },
   complemento:{
     type:DataTypes.STRING(90)
@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
   },
   fk_prestador: {
     type: DataTypes.INTEGER,
-    allowNull: false
+    
   }
 
 }, {

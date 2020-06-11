@@ -34,7 +34,7 @@ const Clientes_EnderecoController = {
 
         const cliente = await Cliente.findByPk(id) 
         if(!cliente){
-            return res.send("cliente n encontrado")
+            return res.send("Cliente n encontrado")
         }
         const clientes_endereco = await Clientes_endereco.create({
             logradouro:contratanteRua,

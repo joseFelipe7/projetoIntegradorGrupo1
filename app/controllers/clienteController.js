@@ -1,11 +1,15 @@
 const { Cliente, Clientes_endereco, Contatos } = require('../models')
+
 const ClienteController = { 
 
         index: async (req,res) => {
             const {id} = req.params
             console.log(id)
-    
+            
+            //busca usuario logado e direciona seus dados
             const cliente = await Cliente.findByPk(id, {
+
+                //inclui associações do usuario
                 include:[ 
                 {
                     model:Clientes_endereco,
@@ -20,7 +24,7 @@ const ClienteController = {
            return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{cliente}})
         },
         
-        updade: (req, res) => {
+       updade: (req, res) => {
             
             const {
                 contratanteNome,
@@ -45,17 +49,17 @@ const ClienteController = {
                 include:{
                     model:Clientes_endereco,
                     as: 'clientes_enderecos',
-                    required:true
+                    
                 },
                 include:{
                     model:Contatos,
                     as: 'contatos',
-                    required:true
+                    
                 }
             })
            console.log(cliente)
             
-            //return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{cliente}})
+            return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{cliente}})
 
         }
     }

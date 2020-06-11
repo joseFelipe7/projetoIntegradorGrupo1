@@ -7,6 +7,10 @@ const contatosController = require("../controllers/contatosController")
 const prestadorController = require('../controllers/prestadorController')
 const chatClienteController = require('../controllers/chatClienteController')
 const chatPrestadorController = require("../controllers/chatPrestadorController")
+const prestador_enderecoController = require("../controllers/prestador_enderecoController")
+const prestador_contatosController = require("../controllers/prestador_contatosController")
+const habilidadesController = require("../controllers/habilidadesController")
+const cadastroServicosController = require("../controllers/cadastroServicosController")
 
 let router = express.Router();
 
@@ -73,15 +77,20 @@ router.get("/area-contratante/pagamentos-bru", authCliente, (req, res) => {
 
 
 // rotas prestador
-router.get("/area-prestador/cadastro-servicos", authPrestador,(req, res) => {
-    res.render("areaPrestador", {view: "cadastroServiçosPrestador", loggado: req.session.prestador});
-})
+router.get("/area-prestador/cadastro-servicos/:id", authPrestador, cadastroServicosController.index)
 
 router.get("/area-prestador/pedidos", authPrestador,(req, res) => {
     res.render("areaPrestador", {view: "pedidosAreaPrestador", loggado: req.session.prestador});
 })
 
 router.get("/area-prestador/meusDados/:id", authPrestador, prestadorController.index);
+router.post("/area-prestador/meusDados/endereco/:id", authPrestador, prestadorController.store);
+
+router.get("/area-prestador/meusDados/:id", authPrestador, prestadorController.index);
+router.post("/area-prestador/meusDados/endereco/:id", authPrestador, prestador_enderecoController.store);
+router.post("/area-prestador/meusDados/contatos/:id", authPrestador, prestador_contatosController.store);
+router.post("/area-prestador/meusDados/profissao/:id", authPrestador, habilidadesController.store);
+
 
 router.get("/area-prestador/requisicoes", authPrestador,(req, res) => {
     res.render("areaPrestador", {view: "requisicoes-prestador", loggado: req.session.prestador});

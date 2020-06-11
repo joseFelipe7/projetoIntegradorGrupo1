@@ -1,12 +1,31 @@
 const path = require('path');
 const bcrypt = require('bcrypt');
-const { Prestador } = require('../models')
+const { Prestador, Contatos_prestador, Prestador_endereco, Habilidades } = require('../models')
 
 
 const prestadorController = {
     index: async (req, res) => {
-        const prestador = await Prestador.findAll()
-        return res.send('prestador', {prestador})
+        const {id} = req.params
+
+        //busca usuario logado e direciona seus dados
+        const prestador = await Prestador.findByPk(id)
+
+            //inclui associações do usuario
+           /* include: [
+                {
+                    model:Contatos_prestador,
+                    
+                },
+                {
+                    model:Habilidades,
+                    
+                },
+                {
+                    model:Prestador_endereco,
+                    as: prestadores_enderecos
+                }
+            ]})*/
+        return res.render("areaPrestador", {view: "meusDados-prestador", loggado: req.session.prestador, data:{prestador}})
     },
 
     create:(req, res) => {

@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
             
         celular_principal:{
            type:DataTypes.STRING(11),
-           allowNull:false
+           allowNull:true
         },
         celular_secundario:{
             type: DataTypes.STRING(11),
@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
           },
         email_principal: { 
             type: DataTypes.STRING(190),
-            allowNull: false
+            allowNull: true
         },
         email_secundario: { 
             type: DataTypes.STRING(190),
@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         fk_prestador: {
           type: DataTypes.INTEGER,
-          allowNull:false
+          
         }
         
     }, {
@@ -38,7 +38,7 @@ module.exports = (sequelize, DataTypes) => {
     });
 
     Contatos_prestador.associate = (listaModels) => {
-        Contatos_prestador.belongsTo(listaModels.Contatos_prestador, {
+        Contatos_prestador.belongsTo(listaModels.Prestador, {
             foreignKey: 'fk_prestador',
             as:'prestador'
         })
