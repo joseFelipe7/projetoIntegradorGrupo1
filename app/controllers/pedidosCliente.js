@@ -8,6 +8,7 @@ const { Pedido, HistoricoPedidos } = require('../models/index');
 module.exports = {
     //exibe pedidos
     index: async (req, res) => {
+        
         let loggado = req.session.cliente;
 
         let pedidos = await Pedido.findAll({
@@ -57,7 +58,7 @@ module.exports = {
             });
         });
         */
-
+    
 
         res.render("areaContratante", {view: "pedidosAreaContratante", loggado: req.session.cliente, data:{pedidos, moment}});
     }
