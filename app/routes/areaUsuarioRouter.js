@@ -11,6 +11,9 @@ const prestador_enderecoController = require("../controllers/prestador_enderecoC
 const prestador_contatosController = require("../controllers/prestador_contatosController")
 const habilidadesController = require("../controllers/habilidadesController")
 const cadastroServicosController = require("../controllers/cadastroServicosController")
+const cuponsController = require('../controllers/cuponsController')
+const historicoController = require('../controllers/historicoController')
+const orcamentosController = require('../controllers/orcamentosController')
 
 let router = express.Router();
 
@@ -43,16 +46,10 @@ router.get("/area-contratante/acompanhe", authCliente, (req, res) => {
 })
 
 
-router.get("/area-contratante/orcamentos-bru", authCliente, (req, res) => {
-    res.render("areaContratante", {view: "orcamentoUsuario", loggado: req.session.cliente});
-    // ...5620/usuario/area-contratante/orcamento-bru
-})
+router.get("/area-contratante/orcamentos-bru/:id", authCliente, orcamentosController.index)
 
 
-router.get("/area-contratante/historico-bru", authCliente, (req, res) => {
-    res.render("areaContratante", {view: "historicoAreaContratante", loggado: req.session.cliente});
-    // ...5620/usuario/area-contratante-bru/historico
-})
+router.get("/area-contratante/historico-bru/:id", authCliente, historicoController.index)
 
 
 router.get("/area-contratante/chat", authCliente, chatClienteController.index) 
@@ -65,10 +62,9 @@ router.get("/area-contratante/favoritos", authCliente, (req, res) => {
 })
 
 
-router.get("/area-contratante/cupons", authCliente, (req, res) => {
-    res.render("areaContratante", {view: "cuponsAreaContratante", loggado: req.session.cliente});
+router.get("/area-contratante/cupons/:id", authCliente, cuponsController.index)
     // ...5620/usuario/area-contratante/cupons
-})
+
 
 router.get("/area-contratante/pagamentos-bru", authCliente, (req, res) => {
     res.render("areaContratante", {view: "pagamentos", loggado: req.session.cliente});
