@@ -3,7 +3,7 @@ const { check, validationResult, body} = require('express-validator');
 const moment = require("moment");
 moment.locale("pt-BR");        
 
-const { Pedido, HistoricoPedidos } = require('../models/index');
+const { Pedido, HistoricoPedidos, Prestador } = require('../models/index');
 
 module.exports = {
     //exibe pedidos
@@ -21,13 +21,15 @@ module.exports = {
                 {
                     model: HistoricoPedidos,
                     as: 'historicos',
+                },
+                {
+                    model: Prestador,
+                    as: 'prestador',
                 }
             ],
             //ordena pela ordem do campo, de forma decrescente
             order: [["data_solicitacao","DESC"]],
         })
-
-        console.log(pedidos)
 
         pedidos.forEach(pedido => {
             //array com os dados de PEDIDOS
@@ -41,24 +43,68 @@ module.exports = {
             })
         });
 
-        /*
+        let infoPedido = []
 
-        let previewMgs = []
+        pedidos.forEach(pedido => {
+            infoPedido.push(
+                {
+                    nomeServico : pedido.titulo,
+                    status : pedido.status_andamento,
+                    idServico : pedido.id,
+                    nomePrestador : pedido.prestador.nome,
+                    formaPag : pedido.forma_pagamento,
 
-        infoMsg.forEach(item => {
-            previewMgs.push({
-                nomePrestador : item.prestador.nome,
-                avatarPrestador: item.prestador.avatar,
-                statusPrestador : "online",
-                //msg da posição 0 do array com as msg em ordem crescente...
-                ultimaMsg : item.mensagens[0].mensagem,
-                dataMsg : item.mensagens[0].datamensagem,
-                notificacoes:1
-            });
+                    historico : pedido.historicos.map(historico => {
+                        return {
+                            statusHistorico : historico.status_,
+                            modificacao : historico.data_modificacao,
+                        }
+                    })
+                    /*
+                    historico: [{statusHistorico, modificacao},{statusHistorico, modificacao}]
+                    */
+                }
+            );
         });
+
+        console.log(infoPedido)
+        /*
+        [
+        {
+            nomeServico: 'Pedicure',
+            status: 'CANC',
+            idServico: 4,
+            nomePrestador: 'Luh',
+            formaPag: 'dinheiro',
+            historico: [ [Object] ]
+        },
+        {
+            nomeServico: 'AGUA',
+            status: 'ENV',
+            idServico: 3,
+            nomePrestador: 'Luh',
+            formaPag: 'dinheiro',
+            historico: [ [Object] ]
+        },
+        {
+            nomeServico: 'Front',
+            status: 'CANC',
+            idServico: 2,
+            nomePrestador: 'Luh',
+            formaPag: 'dinheiro',
+            historico: [ [Object] ]
+        },
+        {
+            nomeServico: 'Back',
+            status: 'ENV',
+            idServico: 1,
+            nomePrestador: 'Luh',
+            formaPag: 'dinheiro',
+            historico: [ [Object], [Object], [Object] ]
+        }
+        ]
         */
 
-
-        res.render("areaContratante", {view: "pedidosAreaContratante", loggado: req.session.cliente, data:{pedidos, moment}});
+        res.render("areaContratante", {view: "pedidosAreaContratante", loggado: req.session.cliente, data:{infoPedido, moment}});
     }
 }

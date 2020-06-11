@@ -54,6 +54,10 @@ module.exports = (sequelize, DataTypes) => {
             as:'historicos',
             //alias, apelido para a fk da relaçao
         });
+        Pedido.belongsTo(listaModels.Prestador,{
+            foreignKey:'idprestadores',
+            as:'prestador',
+        });
     }
 
     return Pedido;
