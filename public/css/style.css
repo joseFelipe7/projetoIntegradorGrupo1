@@ -372,12 +372,11 @@ a.btnContatoMN {
   display: flex;
   align-items: center;
   color: #212529;
-  ;
   font-size: 1em;
   font-weight: 500;
   text-decoration: none;
   margin: 0.1rem 0;
-  width: 4rem;
+  width: 100%;
 }
 
 .linksFooter ul li a:hover {
