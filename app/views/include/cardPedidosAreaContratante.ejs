@@ -3,12 +3,12 @@
     <div class="row no-gutters">
         <!-- coluna status -->
         <div class="col-md-3 bg-roxoRS statusCardPedido">
-            <h5 class="card-header">NOME SERVIÇO</h5>
+            <h5 class="card-header"><%= pedido.nomeServico %></h5>
             <div class="card-body">
                 <h5 class="card-title">ATIVO</h5>
-                <p class="card-text">SERVIÇO: #20200808</p>
-                <p class="card-text">PRESTADOR: MARIO L.</p>
-                <p class="card-text">ENCANADOR</p>
+                <p class="card-text">SERVIÇO: #<%= pedido.idServico %></p>
+                <p class="card-text">PRESTADOR: <%= pedido.nomePrestador %></p>
+                <p class="card-text"><%= pedido.nomeServico %></p>
             </div>
         </div>
         <!-- coluna dados -->
@@ -21,7 +21,7 @@
                     <div class="col-md-8">
                         <ul class="list-group list-group-flush dadosListaPedido">
                             <li class="list-group-item list-group-item-action p-0 rounded">
-                                <a href="#" class="text-roxoRS text-decoration-none font-weight-bold">Mario Luigi Souza</a>
+                                <a href="#" class="text-roxoRS text-decoration-none font-weight-bold"><%= pedido.nomePrestador %></a>
                             </li>
     
                             <li class="list-group-item list-group-item-action p-0 rounded">
@@ -31,7 +31,7 @@
                             </li>
     
                             <li class="list-group-item list-group-item-action p-0 rounded">
-                                <span class="text-muted">ENCANAMENTO</span>
+                                <span class="text-muted"><%= pedido.idServico %></span>
                             </li>
     
                             <li class="list-group-item list-group-item-action p-0 rounded">
@@ -48,27 +48,14 @@
                     
                         <ul class="list-group list-group-flush datasListaPedido">
                             <li class="list-group-item list-group-item-action p-0 bg-roxoRS">
-                                <span class="text-white">TITULO_DO_PEDIDO</span>
-                            </li>
-                            <li class="list-group-item list-group-item-action p-0">
-                                Solicitação: 02/02/2020
-                            </li>
-    
-                            <li class="list-group-item list-group-item-action p-0">
-                                Aceito em: 04/02/2020
-                            </li>
-    
-                            <li class="list-group-item list-group-item-action p-0">
-                                Negociação: 05/02/2020
-                            </li>
-    
-                            <li class="list-group-item list-group-item-action p-0">
-                                Orçamento: 05/02/2020
+                                <span class="text-white"><%= pedido.nomeServico %></span>
                             </li>
 
-                            <li class="list-group-item list-group-item-action p-0">
-                                Serviço iniciado: 07/02/2020
-                            </li>
+                            <% pedido.historico.forEach(item => { %>
+                                <li class="list-group-item list-group-item-action p-0">
+                                    <%= item.statusHistorico %>: <%= moment(item.modificacao).format('L'); %>
+                                </li>
+                            <% }) %>
                         </ul>
                     </div>
                 </div>
@@ -90,7 +77,7 @@
                                 </li>
         
                                 <li class="list-group-item list-group-item-action rounded p-0 text-azul">
-                                    CRÉDITO PARCELADO
+                                    <%= pedido.formaPag %>
                                 </li>
 
                                 <button class="btn btn-outline-success m-1">4x de 250,00</button>
@@ -120,9 +107,9 @@ EM DIA
 </div>
 </div>
 </div>
-<!-- -------------parte parcelas tablet--------------------------------------->
+<!-- -------------parte parcelastablet-------------------------------->
 
-<!-- ------------------------------------------------------------------------->
+<!-------------------------------------------------------------------->
                 <div class="col orcamentoCardPedido">
 
                     <table class="table table-sm tabelaParcelas">

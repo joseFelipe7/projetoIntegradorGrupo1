@@ -36,6 +36,10 @@ module.exports = (sequelize, DataTypes) => {
       Prestador.hasMany(listaModels.Avaliacoes, {
         foreignKey: 'prestadores_idprestadores'
       })
+      /*Prestador.hasMany(listaModels).Contatos_prestador, {
+        foreignKey: 'fk_prestador',
+       
+      }*/
     }
    
     return Prestador;

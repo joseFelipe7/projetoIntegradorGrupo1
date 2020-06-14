@@ -1,60 +1,69 @@
 <h3>Pedidos Área contratante</h3>
 
-<!-- divisao: ativos --------------------------------------------------------->
+<!-- divisao: ativos ---------------------------------->
 <div class="p-3 mb-0 bg-success text-white">PEDIDOS/SERVIÇOS SEM IMPEDIMENTOS</div>
 
-<!-- pedido 1 ---------------------------------------------------------------->
-<div class="container-fluid p-0">
-    <div class="row p-1 no-gutters text-center">
-        <!-- card 1 -->
-        <div class="col-sm-12">
-            <div class="pos-f-t">
-                <!-- visivel apenas ao expandir -->
-                <div class="collapse" id="navbarToggleExternalContent-1">
-                    <div class="bg-light p-0">
+<% data.infoPedido.forEach(pedido => { %>
+    <% if (pedido.status != "CANC") { %>
+        <!-- pedido 1 -------------------------------------->
+        <div class="container-fluid p-0">
+            <div class="row p-1 no-gutters text-center">
+                <!-- card 1 -->
+                <div class="col-sm-12">
+                    <div class="pos-f-t">
+                        <!-- visivel apenas ao expandir -->
+                        <div class="collapse" id="target<%= pedido.idServico %>">
+                            <div class="bg-light p-0">
 
-                        <div class="row no-gutters bg-roxoClaro topoCardPedido"
-                        data-toggle="collapse" data-target="#navbarToggleExternalContent-1" aria-controls="navbarToggleExternalContent-1" aria-expanded="false" aria-label="Toggle navigation">
-                            <div class="col-md-12"></div>
+                                <div class="row no-gutters bg-roxoClaro topoCardPedido"
+                                data-toggle="collapse" data-target="#target<%= pedido.idServico %>" aria-controls="target<%= pedido.idServico %>" aria-expanded="false" aria-label="Toggle navigation">
+                                    <div class="col-md-12"></div>
+                                </div>
+                                <%- include('include/cardPedidosAreaContratante', {pedido, moment:data.moment}) %>
+                            </div>
                         </div>
-                        <%- include('include/cardPedidosAreaContratante') %>
+                        <!-- fita sempre visivel -->
+                        <nav class="navbar navExpandir bg-roxoClaro">
+                            <img class="iconPedidos" type="button" data-toggle="collapse" data-target="#target<%= pedido.idServico %>" aria-controls="target<%= pedido.idServico %>" aria-expanded="false" aria-label="Toggle navigation" src="/img/pedidosCard.png" alt="">
+
+                            <a href="/usuario/area-contratante/orcamentos"><img src="/img/setaDetalhes.png" class="setaDetalhes" alt="mais detalhes"></a>
+                        </nav>
                     </div>
+
                 </div>
-                <!-- fita sempre visivel -->
-                <nav class="navbar navExpandir bg-roxoClaro">
-                    <img class="iconPedidos" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent-1" aria-controls="navbarToggleExternalContent-1" aria-expanded="false" aria-label="Toggle navigation" src="/img/pedidosCard.png" alt="">
-
-                    <a href="/usuario/area-contratante/orcamentos"><img src="/img/setaDetalhes.png" class="setaDetalhes" alt="mais detalhes"></a>
-                </nav>
             </div>
-
         </div>
-    </div>
-</div>
+    <% } %>
+<% }) %>
 
-<!-- divisao: nao ativos ------------------------------------------------------>
+<!-- divisao: nao ativos ----------------------------------->
 <div class="p-3 mb-0 bg-danger text-white">PEDIDOS/SERVIÇOS INTERROMPIDOS</div>
 
-<!-- pedido 2 ---------------------------------------------------------------->
-<div class="container-fluid p-0">
-    <div class="row p-1 no-gutters text-center">
-        <!-- card 1 -->
-        <div class="col-sm-12">
-            <div class="pos-f-t">
-                <!-- visivel apenas ao expandir -->
-                <div class="collapse" id="navbarToggleExternalContent-2">
-                    <div class="bg-light p-0">
-                        <%- include('include/cardPedidosAreaContratante') %>
+<% data.infoPedido.forEach(pedido => { %>
+    <% if (pedido.status == "CANC") { %>
+        <!-- pedido 2 ---------------------------------------->
+        <div class="container-fluid p-0">
+            <div class="row p-1 no-gutters text-center">
+                <!-- card 1 -->
+                <div class="col-sm-12">
+                    <div class="pos-f-t">
+                        <!-- visivel apenas ao expandir -->
+                        <div class="collapse" id="target<%= pedido.idServico %>">
+                            <div class="bg-light p-0">
+                                <%- include('include/cardPedidosAreaContratante', {pedido, moment:data.moment}) %>
+                            </div>
+                        </div>
+
+                        <!-- fita sempre visivel -->
+                        <nav class="navbar navExpandir bg-roxoClaro">
+                            <img class="iconPedidos" type="button" data-toggle="collapse" data-target="#target<%= pedido.idServico %>" aria-controls="target<%= pedido.idServico %>" aria-expanded="false" aria-label="Toggle navigation" src="/img/pedidosCard.png" alt="">
+
+                            <a href="/usuario/area-contratante/orcamentos"><img src="/img/setaDetalhes.png" class="setaDetalhes" alt="mais detalhes"></a>
+                        </nav>
                     </div>
                 </div>
-
-                <!-- fita sempre visivel -->
-                <nav class="navbar navExpandir bg-roxoClaro">
-                    <img class="iconPedidos" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent-2" aria-controls="navbarToggleExternalContent-2" aria-expanded="false" aria-label="Toggle navigation" src="/img/pedidosCard.png" alt="">
-
-                    <a href="/usuario/area-contratante/orcamentos"><img src="/img/setaDetalhes.png" class="setaDetalhes" alt="mais detalhes"></a>
-                </nav>
             </div>
         </div>
-    </div>
-</div>
+
+    <% } %>
+<% }) %>
