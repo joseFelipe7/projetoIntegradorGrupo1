@@ -1697,7 +1697,10 @@ a + img {
   }
 }
 
-@media (max-width: 850px) {
+@media (max-width: 1018px) {
+  .filtro-prestadores {
+    display: none;
+  } 
   
 }
 
@@ -1711,16 +1714,13 @@ a + img {
     margin-bottom: 0.5rem;
   }
 
-  .filtro-prestadores {
-    display: none;
-  }
-
   .fp-mobile {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     height: 3.2rem;
     width: 100%;
+    margin-top: 0.6rem;
   }
 
   .fp-mobile p {
@@ -1780,14 +1780,6 @@ a + img {
     margin-bottom: 0.5rem;
   }
 
-  .linha-pesqPrestadores label {
-    left: 175px;
-  }
-
-  #pesquisa-listaPrestadores {
-    width: 15rem;
-  }
-
   .lista-cardsPrestadores {
     height: 255rem;
     width: 100%;
@@ -1799,9 +1791,6 @@ a + img {
 }
 
 @media (max-width: 360px) {
-  .linha-pesqPrestadores label {
-    left: 125px;
-  }
   .card-listaPrestadores {
     width: 13rem;
   }
