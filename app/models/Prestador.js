@@ -43,8 +43,13 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'fk_prestador',
         as:'contatos_prestadores'
        
+<<<<<<< HEAD
       })
     }
+=======
+      }*/
+    };
+>>>>>>> e230d011e578b6617f904ecc86f864245781a0d6
    
     return Prestador;
 };

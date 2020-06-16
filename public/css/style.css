@@ -188,7 +188,7 @@ a.icon-bofl {
 .sub-menu-principal-enable {
   position: relative;
   display: flex;
-  z-index: 5;
+  z-index: 10;
 }
 
 .sub-menu-itens-principal {

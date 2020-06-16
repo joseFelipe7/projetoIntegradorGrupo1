@@ -8,6 +8,7 @@ O sistema busca facilitar a comunicação entre prestadores de serviços e contr
  ### Aviso
  - Lembre de usar o comando `npm init` para iniciar o projeto
  - Lembre de usar o comando `npm install` para instalar as dependências do projeto
+ - Lembre de usar o comando `npm start` para rodar o projeto
 ### informações adicionais
 
    - [Densenvolvido na Digital House](https://www.digitalhouse.com/br/)
