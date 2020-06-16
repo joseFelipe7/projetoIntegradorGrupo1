@@ -30,17 +30,26 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'fk_prestador',
         as: 'prestadores_enderecos'
       }),
-      Prestador.hasMany(listaModels.Habilidades, {
+      Prestador.belongsToMany(listaModels.Habilidades, {
         foreignKey: 'fk_prestador',
+        through: 'prestador_habilidades',
+        as: 'habilidades'
       }),
       Prestador.hasMany(listaModels.Avaliacoes, {
-        foreignKey: 'prestadores_idprestadores'
-      })
-      /*Prestador.hasMany(listaModels).Contatos_prestador, {
+        foreignKey: 'prestadores_idprestadores',
+        as:'avaliacoes'
+      }),
+      Prestador.hasMany(listaModels.Contatos_prestador, {
         foreignKey: 'fk_prestador',
+        as:'contatos_prestadores'
        
-      }*/
+<<<<<<< HEAD
+      })
     }
+=======
+      }*/
+    };
+>>>>>>> e230d011e578b6617f904ecc86f864245781a0d6
    
     return Prestador;
 };

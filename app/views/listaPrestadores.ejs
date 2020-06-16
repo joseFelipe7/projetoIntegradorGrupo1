@@ -13,7 +13,7 @@
       <div class="form-row row-lp d-flex justify-content-end m-0 p-0">
         <div class="form-group linha-pesqPrestadores col-md-3">
           <label id="lupa-pesquisa" for="pesquisa-listaPrestadores"><img src="/img/luparoxa.png" alt=""></label>
-          <input type="text" name="pesquisa-listaPrestadores" class="form-control" id="pesquisa-listaPrestadores"
+          <input type="text" name="pesquisalistaPrestadores" class="form-control" id="pesquisa-listaPrestadores"
             placeholder="Procurar...">
         </div>
       </div>
@@ -40,7 +40,7 @@
           </div>
           <hr class="linha-separar">
 
-          <div class="row d-flex flex-column p-2 filtro-parte4">
+          <div id="filtroAvaliacao" class="row d-flex flex-column p-2 filtro-parte4">
             <h5 class="subtitulo-filtroPrestadores">Avaliação</h5>
             <ul>
               <li>
@@ -77,24 +77,26 @@
               <img src="/img/filter-mobile.png">
               <p>Filtrar</p>
             </a>
-            <a href="#" class="fp-filterOrder">
-              <img src="/img/order-mobile.png">
-              <p>Ordenar</p>
-            </a>
           </div>
 
-          <div class="row d-flex flex-column m-0 p-0">
-            <h4 class="titulo-listaPrestadores">Resultado para a pesquisa: <span id="resultadoPesquisa"></span> </h4>
+          <div class="row d-flex m-0 p-0">
+            <h4 class="titulo-listaPrestadores">Resultado pesquisa:</h4>
+            <div class="resultadoPesquisa alert alert-success alert-dismissible fade show" role="alert" hidden >
+              <strong id="resultadoPesquisa"></strong>
+              <button type="button" id="limpa-pesquisa" class="close close-pesquisa" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
           </div>
 
           <hr class="linha-separar">
 
           <div class="row d-flex justify-content-around m-0 p-0">
             <% prestadores.forEach(prestador => { %>
-            <div class="card card-listaPrestadores col-sm-12 col-md-6 col-lg-4 my-3 p-0">
+            <div class="card card-listaPrestadores col-12 col-sm-12 col-md-6 col-lg-4 my-3 p-0">
               <div class="card-parteSuperior">
                 <img class="boneco-prestador" src="<%= prestador.avatar %>">
-                <% prestador.Avaliacoes.forEach(avaliacao => { %>
+                <% prestador.avaliacoes.forEach(avaliacao => { %>
                   <% if (avaliacao.nota === 1) { %>
                     <img class="img-notaPrestador" src="/img/estrela1.png">
                   <% } %>
@@ -115,7 +117,7 @@
               <div class="card-body card-parteInferior p-0 m-0">
                 <p class="nota-cardPrestador">NOTA</p>
                 <p class="nome-cardPrestador"> <%= prestador.nome %> </p>
-                <p class="sobre-cardPrestador"> <%= prestador.Habilidades[0].titulo %> </p>
+                <p class="sobre-cardPrestador"> <%= //prestador.habilidades[0].titulo %> </p>
               </div>
             </div>
             <% }) %>

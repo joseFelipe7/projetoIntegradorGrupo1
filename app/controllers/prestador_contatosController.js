@@ -12,10 +12,11 @@ const prestador_contatosController = {
                 },
                 {
                     model:Prestador_endereco,
-                    as:'contatos_prestadores'
+                    as:'prestadores_enderecos'
                 },
                 {
                     model:Habilidades,
+                    as:'habilidades'
                    
                 }
             ]
