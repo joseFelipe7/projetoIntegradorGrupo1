@@ -40,7 +40,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'fk_prestador',
        
       }*/
-    }
+    };
    
     return Prestador;
 };

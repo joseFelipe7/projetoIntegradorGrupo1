@@ -24,6 +24,7 @@ const listarPrestadoresController = {
 
     show: async (req, res) => {
         let { pesquisa } = req.params;
+        let { nota } = req.query;
         let { page = 1 } = req.query;
         let { count: totalPage, rows: prestadores } = await Prestador.findAndCountAll({
             limit: 12,
@@ -36,7 +37,10 @@ const listarPrestadoresController = {
                 }
             }, {
                 model: Avaliacoes,
-                required: true
+                required: true,
+                where: {
+                    nota
+                }
             }]
         });
         let totalPages = Math.round(totalPage/12);
