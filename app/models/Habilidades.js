@@ -12,10 +12,6 @@ module.exports = (sequelize, DataTypes) => {
   descricao:{
     type:DataTypes.STRING(290),
     allowNull:true
-  },
-  fk_prestador: {
-    type: DataTypes.INTEGER,
-    
   }
 }, {
 timestamps:false,
@@ -23,8 +19,9 @@ tableName: 'habilidades'
 });
 
 Habilidades.associate = (listaModels) => {
-  Habilidades.belongsTo(listaModels.Prestador, {
-    foreignKey: 'fk_prestador',
+  Habilidades.belongsToMany(listaModels.Prestador, {
+    foreignKey: 'fk_habilidades',
+    through: 'prestador_habilidades',
     as: 'prestador'
   })
 }

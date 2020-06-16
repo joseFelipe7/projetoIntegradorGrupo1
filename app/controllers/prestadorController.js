@@ -53,6 +53,9 @@ const prestadorController = {
                 data_cadastro:Date.now()
             })
         res.redirect('/login/Prestador/#login-prestador')
+    },
+    update: async (req, res) => {
+        
     }   
 }
 module.exports = prestadorController;

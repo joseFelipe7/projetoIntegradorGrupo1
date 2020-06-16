@@ -12,10 +12,11 @@ const habilidadesController = {
                 },
                 {
                     model:Prestador_endereco,
-                    as:'contatos_prestadores'
+                    as:'prestadores_enderecos'
                 },
                 {
                     model:Habilidades,
+                    as:'habilidades'
                    
                 }
             ]
@@ -27,9 +28,9 @@ const habilidadesController = {
     store: async (req, res) => {
         const {id} = req.params
         const {
-           titulo, 
-           dataInicio,
-           adicionais
+           tituloProfissao, 
+           dtProfissao,
+           descricaoPrestador
             
         } = req.body;
 
@@ -38,13 +39,32 @@ const habilidadesController = {
             return res.send("Prestador não encontrado")
         }
         const habilidades = await Habilidades.create({
-            titulo, 
-            inicio_profissao:dataInicio,
-            descricao:adicionais,
-            fk_prestador:id
+            titulo:tituloProfissao, 
+            inicio_profissao:dtProfissao,
+            descricao:descricaoPrestador,
+            
 
         })
         console.log(habilidades)
+        return res.render("areaPrestador", {view: "meusDados-prestador", loggado: req.session.prestador, data:{habilidades}})
+
+    },
+    updade: async (req, res) => {
+        const {
+            tituloProfissao,
+            dtProfissao,
+            descricaoPrestador
+            
+        } = req.body;
+
+        const habilidades = await Habilidades.update({
+            titulo: tituloProfissao,
+            inicio_profissao: dtProfissao,
+            descricao: descricaoPrestador
+           
+        })
+      
+        
         return res.render("areaPrestador", {view: "meusDados-prestador", loggado: req.session.prestador, data:{habilidades}})
 
     }

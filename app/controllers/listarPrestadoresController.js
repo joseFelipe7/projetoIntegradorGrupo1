@@ -11,10 +11,10 @@ const listarPrestadoresController = {
             offset: (page - 1) * 12,
             include: [{
                 model: Habilidades,
-                required: true
+                as:'habilidades'
             }, {
                 model: Avaliacoes,
-                required: true
+                as:'avaliacoes'
             }]
         });
         // ele divide totalPage por 12 itens cada page e arredonda para não trazer número quebrado.
@@ -30,13 +30,15 @@ const listarPrestadoresController = {
             offset: (page - 1) * 12,
             include: [{
                 model: Habilidades,
-                required: true,
+                as:'habilidades',
+               
                 where: {
                     titulo: pesquisa
                 }
             }, {
                 model: Avaliacoes,
-                required: true
+                as:'avaliacoes',
+                
             }]
         });
         let totalPages = Math.round(totalPage/12);

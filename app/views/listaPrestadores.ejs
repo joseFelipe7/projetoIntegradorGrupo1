@@ -94,7 +94,7 @@
             <div class="card card-listaPrestadores col-sm-12 col-md-6 col-lg-4 my-3 p-0">
               <div class="card-parteSuperior">
                 <img class="boneco-prestador" src="<%= prestador.avatar %>">
-                <% prestador.Avaliacoes.forEach(avaliacao => { %>
+                <% prestador.avaliacoes.forEach(avaliacao => { %>
                   <% if (avaliacao.nota === 1) { %>
                     <img class="img-notaPrestador" src="/img/estrela1.png">
                   <% } %>
@@ -115,7 +115,7 @@
               <div class="card-body card-parteInferior p-0 m-0">
                 <p class="nota-cardPrestador">NOTA</p>
                 <p class="nome-cardPrestador"> <%= prestador.nome %> </p>
-                <p class="sobre-cardPrestador"> <%= prestador.Habilidades[0].titulo %> </p>
+                <p class="sobre-cardPrestador"> <%= //prestador.habilidades[0].titulo %> </p>
               </div>
             </div>
             <% }) %>
