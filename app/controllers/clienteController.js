@@ -20,11 +20,12 @@ const ClienteController = {
                     as: 'contatos'
                 }
                 ]})
-            console.log(cliente)
+            
            return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{cliente}})
         },
         
        updade: (req, res) => {
+           const {id} = req.params
             
             const {
                 contratanteNome,
@@ -45,19 +46,9 @@ const ClienteController = {
             {
                 where: {
                     id
-                },
-                include:{
-                    model:Clientes_endereco,
-                    as: 'clientes_enderecos',
-                    
-                },
-                include:{
-                    model:Contatos,
-                    as: 'contatos',
-                    
                 }
             })
-           console.log(cliente)
+          
             
             return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{cliente}})
 

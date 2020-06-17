@@ -1,6 +1,10 @@
 module.exports = (sequelize, DataTypes) => {
-    const Habilidades = sequelize.define("Habilidades", {
-
+  const Habilidades = sequelize.define("Habilidades", {
+  id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
+  },
   titulo:{
    type:DataTypes.STRING(190),
    allowNull:true
@@ -13,10 +17,7 @@ module.exports = (sequelize, DataTypes) => {
     type:DataTypes.STRING(290),
     allowNull:true
   },
-  fk_prestador: {
-    type: DataTypes.INTEGER,
-    
-  }
+  fk_prestador: DataTypes.INTEGER
 }, {
 timestamps:false,
 tableName: 'habilidades'
@@ -24,8 +25,7 @@ tableName: 'habilidades'
 
 Habilidades.associate = (listaModels) => {
   Habilidades.belongsTo(listaModels.Prestador, {
-    foreignKey: 'fk_prestador',
-    as: 'prestador'
+    foreignKey: 'fk_prestador'
   })
 }
 

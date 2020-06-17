@@ -14,7 +14,7 @@ const listarPrestadoresController = {
                 required: true
             }, {
                 model: Avaliacoes,
-                required: true
+                required:true
             }]
         });
         // ele divide totalPage por 12 itens cada page e arredonda para não trazer número quebrado.

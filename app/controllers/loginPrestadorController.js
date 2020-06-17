@@ -1,7 +1,7 @@
 const { Op } = require('sequelize');
 const bcrypt = require('bcrypt');
 
-const { Prestador } = require('../models');
+const { Prestador, Contatos_prestador, Habilidades, Prestador_endereco } = require('../models');
 
 module.exports = {
   create: (_req, res) => {
