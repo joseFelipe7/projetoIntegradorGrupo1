@@ -17,6 +17,7 @@
         <div class="card-body">
           <!-- formulario dados pessoais -->
           
+         
             <form action="/usuario/area-contratante/meus-dados/<%=data.cliente.id%>" method="GET"> 
               <!-- linha foto -->
               <div class="form-row">
@@ -507,16 +508,15 @@
         <div class="modal-body bg-roxoClaro">
           <!-- formulario editar endereço -->
          
-          
+         
 
-
-          <form action="/usuario/area-contratante/meus-dados/endereco/<%=data.cliente.id%>" method="POST"> 
+          <form action="/usuario/area-contratante/meus-dados/<%=data.cliente.id%>/endereco" method="POST"> 
 
             <!-- input linha 1 -->
             <div class="form-row">
               <!-- input data cep -->
               <div class="form-group col-6">
-                <label for="cep">CEP</label>
+                <label for="cep">CEP 1</label>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">CEP</span>
@@ -599,7 +599,7 @@
             <!-- botao editar ABRE O MODAL-->
             <!-- Button trigger modal -->
             <div class="d-flex justify-content-end">
-              <button type="submit" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosEnderecoContratante">SALVAR</button>
+              <button type="submit" class="btn botaoMeusDados" >SALVAR</button>
             </div>
           </form>
   
@@ -916,7 +916,7 @@
             
             
             
-            <form action="/usuario/area-contratante/meus-dados/contato/<%=data.cliente.id%>" method="POST"> 
+            <form action="/usuario/area-contratante/meus-dados/<%=data.cliente.id%>/contato" method="POST"> 
   
               <!-- input linha 1 -->
                 <div class="form-row">

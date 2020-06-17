@@ -38,15 +38,8 @@ const listarPrestadoresController = {
                 }
             }, {
                 model: Avaliacoes,
-<<<<<<< HEAD
                 as:'avaliacoes',
                 
-=======
-                required: true,
-                where: {
-                    nota
-                }
->>>>>>> e230d011e578b6617f904ecc86f864245781a0d6
             }]
         });
         let totalPages = Math.round(totalPage/12);

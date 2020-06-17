@@ -23,7 +23,7 @@ const ContatosController = {
     },
     
     store: async (req, res) => {
-        const {id} = req.params
+        const {fk_cliente} = req.params
        
         const {
             contratanteCelular1,
@@ -34,7 +34,7 @@ const ContatosController = {
            
         } = req.body;
 
-        const cliente = await Cliente.findByPk(id) 
+        const cliente = await Cliente.findByPk(fk_cliente) 
         if(!cliente){
             return res.send("cliente n encontrado")
         }
@@ -45,7 +45,7 @@ const ContatosController = {
             telefone_residencial:contratanteTelefone,
             email_principal:contratanteEmail1,
             email_secundario:contratanteEmail2,
-            fk_cliente:id
+            fk_cliente
             
        
         })

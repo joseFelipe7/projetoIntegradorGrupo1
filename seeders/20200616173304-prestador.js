@@ -3,56 +3,55 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
    
-      return queryInterface.bulkInsert('clientes', 
+      
+      return queryInterface.bulkInsert('prestador', 
       [{
-        nome: 'Joana Maria',
-        email: 'joana@email.com',
+        nome: 'Luan Julio',
+        email: 'luan@email.com',
         senha:'$2b$10$MWEv6WPeSOfC51lvJZrYpuDQGJ3fHRGP8vszBSwMO.ZZrFLrdlmze',
+        cpf:'02222211144',
         data_nascimento: null,
-        status_:'A',
-        cpf:'02222211133',
+        status_:'A',        
         avatar:false,
         extensao_avatar:false
       },
       {
-        nome: 'João Mario',
+        nome: 'Lais Maria',
+        email: 'lais@email.com',
+        senha:'$2b$10$MWEv6WPeSOfC51lvJZrYpuDQGJ3fHRGP8vszBSwMO.ZZrFLrdlmze',
+        cpf:'02222211154',
+        data_nascimento: null,
+        status_:'A',        
+        avatar:false,
+        extensao_avatar:false
+      },
+      {
+        nome: 'Julio João',
         email: 'joao@email.com',
         senha:'$2b$10$MWEv6WPeSOfC51lvJZrYpuDQGJ3fHRGP8vszBSwMO.ZZrFLrdlmze',
+        cpf:'02222211147',
         data_nascimento: null,
-        status_:'A',
-        cpf:'02222211122',
-        avatar:false,
-        extensao_avatar:false
-       
-      },
-      {
-        nome: 'Maria Joana',
-        email: 'maria@email.com',
-        senha:'$2b$10$MWEv6WPeSOfC51lvJZrYpuDQGJ3fHRGP8vszBSwMO.ZZrFLrdlmze',
-        data_nascimento: null,
-        status_:'A',
-        cpf:'02222211174',
+        status_:'A',        
         avatar:false,
         extensao_avatar:false
       },
       {
-        nome: 'Marcos Melo',
-        email: 'marcos@email.com',
+        nome: 'Ana Maria',
+        email: 'ana@email.com',
         senha:'$2b$10$MWEv6WPeSOfC51lvJZrYpuDQGJ3fHRGP8vszBSwMO.ZZrFLrdlmze',
+        cpf:'02222211132',
         data_nascimento: null,
-        status_:'A',
-        cpf:'02222211154',
+        status_:'A',        
         avatar:false,
         extensao_avatar:false
-       
       }
     ], {});
-    
+
   },
 
   down: (queryInterface, Sequelize) => {
-   
-      return queryInterface.bulkDelete('clientes', null, {});
+    
+      return queryInterface.bulkDelete('prestador', null, {});
     
   }
 };
