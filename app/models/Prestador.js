@@ -25,6 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         tableName: 'prestador'
     });
 
+    /*
     Prestador.associate = (listaModels) => {
       Prestador.hasMany(listaModels.Prestador_endereco, {
         foreignKey: 'fk_prestador',
@@ -43,13 +44,9 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'fk_prestador',
         as:'contatos_prestadores'
        
-<<<<<<< HEAD
       })
     }
-=======
-      }*/
-    };
->>>>>>> e230d011e578b6617f904ecc86f864245781a0d6
+    */
    
     return Prestador;
 };

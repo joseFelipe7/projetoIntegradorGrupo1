@@ -29,7 +29,7 @@ const listarPrestadoresController = {
         let { count: totalPage, rows: prestadores } = await Prestador.findAndCountAll({
             limit: 12,
             offset: (page - 1) * 12,
-            include: [{
+            /*include: [{
                 model: Habilidades,
                 as:'habilidades',
                
@@ -37,17 +37,12 @@ const listarPrestadoresController = {
                     titulo: pesquisa
                 }
             }, {
+                
                 model: Avaliacoes,
-<<<<<<< HEAD
                 as:'avaliacoes',
                 
-=======
-                required: true,
-                where: {
-                    nota
-                }
->>>>>>> e230d011e578b6617f904ecc86f864245781a0d6
             }]
+            */
         });
         let totalPages = Math.round(totalPage/12);
         res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages});
