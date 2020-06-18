@@ -101,7 +101,7 @@
         <!-- ................................. -->
        
 
-        <form action="/usuario/area-contratante/meus-dados/<%=data.cliente.id%>?_method=PUT" method="POST"> 
+        <form action="/usuario/area-contratante/meus-dados/<%=data.cliente.id%>?_method=PUT"  id="formdp1" method="POST"> 
           <!-- linha foto -->
           <div class="form-row">
             <!-- input foto escolhida -->
@@ -158,17 +158,27 @@
               </div>
             </div>
           </div>
-          <!-- botao editar ABRE O MODAL-->
-          <!-- Button trigger modal -->
-          <div class="d-flex justify-content-end">
-            <button type="submit" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosPessoaisContratante">SALVAR</button>
+          <!--div validação-->
+          <div id="error-list" class="alert alert-danger alert-dismissible fade show" role="alert" hidden>
+            <ul>
+            </ul>
+            <button type="button" class="close" id="close-listP" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+       
           </div>
+               <!-- botao editar ABRE O MODAL-->
+            <!-- Button trigger modal -->
+            <div class="d-flex justify-content-end">
+                <button type="submit" class="btn botaoMeusDados" id="botaodp">SALVAR</button>
+              </div>
+            <%- include('include/script') %>
         </form>
       
         <!-- ................................. -->
       </div>
       <div class="modal-footer bg-azul">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        
       </div>
     </div>
   </div>
@@ -380,7 +390,9 @@
 
               <!-- botao editar ABRE O MODAL-->
               <!-- Button trigger modal -->
-              <div class="d-flex justify-content-end"><button type="submit" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosEnderecoContratante">SALVAR</button></div>
+              <div class="d-flex justify-content-end">
+                <button type="submit" class="btn botaoMeusDados">SALVAR</button>
+              </div>
             </form>
           <% }) %> 
 
@@ -774,7 +786,7 @@
                         <div class="input-group-prepend">
                           <span class="input-group-text etiquetaCampo">@</span>
                         </div>
-                        <input type="email" name="contratanteEmail" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" value="<%= contato.email_principal %>">
+                        <input type="email" name="contratanteEmail" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email1" value="<%= contato.email_principal %>">
                       </div>
                     </div>
                   </div>
@@ -787,14 +799,16 @@
                         <div class="input-group-prepend">
                           <span class="input-group-text etiquetaCampo">@</span>
                         </div>
-                        <input type="email" name="contratanteEmail2" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" placeholder="Digite seu e-mail" value="<%= contato.email_secundario %>">
+                        <input type="email" name="contratanteEmail2" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email2" placeholder="Digite seu e-mail" value="<%= contato.email_secundario %>">
                       </div>
                     </div>
                   </div>
   
                   <!-- botao editar ABRE O MODAL-->
                   <!-- Button trigger modal -->
-                  <div class="d-flex justify-content-end"><button type="submit" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosContatoContratante">SALVAR</button></div>
+                  <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn botaoMeusDados" >SALVAR</button>
+                  </div>
                 </form>
             <% }) %> 
             
@@ -1031,7 +1045,7 @@
                         <div class="input-group-prepend">
                           <span class="input-group-text etiquetaCampo">Senha</span>
                         </div>
-                        <input type="password" name="contratanteSenha" class="form-control campoMeusDadosStyle campoDadoReadonly" id="senha" value="000000" readonly minlength="8">
+                        <input type="password" name="contratanteSenha" class="form-control campoMeusDadosStyle campoDadoReadonly" id="senha1" value="000000" readonly minlength="8">
                       </div>
                     </div>
                   </div>
@@ -1083,7 +1097,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text etiquetaCampo">Senha</span>
                     </div>
-                    <input type="password" name="contratanteSenha" class="form-control campoMeusDadosStyle campoDadoReadonly" id="senha" placeholder="Digite sua senha atual" minlength="8">
+                    <input type="password" name="contratanteSenha" class="form-control campoMeusDadosStyle campoDadoReadonly" id="senha1" placeholder="Digite sua senha atual" minlength="8">
                   </div>
                 </div>
               </div>
@@ -1096,7 +1110,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text etiquetaCampo">Senha</span>
                     </div>
-                    <input type="password" name="contratanteNovaSenha" class="form-control campoMeusDadosStyle campoDadoReadonly" id="senha" placeholder="Digite sua nova senha" minlength="8">
+                    <input type="password" name="contratanteNovaSenha" class="form-control campoMeusDadosStyle campoDadoReadonly" id="senha2" placeholder="Digite sua nova senha" minlength="8">
                   </div>
                 </div>
               </div>
@@ -1130,7 +1144,7 @@
     </div>
     <!-- fim Modal ------------------------------------------------->
         <!-- sanfona -------------------------------------------------------->
- 
+   
 
     
 
