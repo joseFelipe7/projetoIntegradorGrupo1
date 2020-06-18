@@ -1,6 +1,10 @@
 module.exports = (sequelize, DataTypes) => {
     const Prestador = sequelize.define("Prestador", {
-      
+        id: {
+          type: DataTypes.INTEGER,
+          primaryKey: true,
+          autoIncrement: true
+        },
         nome:{
             type:DataTypes.STRING(190),
             allowNull:false
@@ -30,19 +34,15 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'fk_prestador',
         as: 'prestadores_enderecos'
       }),
-      Prestador.belongsToMany(listaModels.Habilidades, {
-        foreignKey: 'fk_prestador',
-        through: 'prestador_habilidades',
-        as: 'habilidades'
+      Prestador.hasMany(listaModels.Habilidades, {
+        foreignKey: 'fk_prestador'
       }),
       Prestador.hasMany(listaModels.Avaliacoes, {
-        foreignKey: 'prestadores_idprestadores',
-        as:'avaliacoes'
+        foreignKey: 'prestadores_idprestadores'
       }),
       Prestador.hasMany(listaModels.Contatos_prestador, {
         foreignKey: 'fk_prestador',
         as:'contatos_prestadores'
-       
       })
     }
    

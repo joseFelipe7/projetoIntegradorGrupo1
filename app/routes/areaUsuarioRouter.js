@@ -38,7 +38,7 @@ router.get("/area-contratante/pedidos", authCliente, pedidosClienteController.in
 
 
 router.get("/area-contratante/acompanhe", authCliente, (req, res) => {
-    res.render("areaContratante", {view: "acompanheAreaContratante", loggado: req.session.cliente});
+    res.render("areaContratante", {view: "acompanheAreaContratante", loggado: req.session.cliente, data:{}});
     // ...5620/usuario/area-contratante/acompanhe
 })
 

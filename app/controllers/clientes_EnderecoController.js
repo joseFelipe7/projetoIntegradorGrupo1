@@ -46,6 +46,14 @@ const Clientes_EnderecoController = {
             fk_cliente
            
 
+        },{
+            include:[
+                {
+                    model: Cliente,
+                    as: 'cliente',
+                    
+                }
+            ] 
         })
         console.log(clientes_endereco)
         

@@ -29,13 +29,16 @@
           <hr class="linha-separar">
 
           <div class="row d-flex flex-column p-2 filtro-parte2">
-            <h5 class="subtitulo-filtroPrestadores">Região</h5>
+            <h5 class="subtitulo-filtroPrestadores">Serviços</h5>
             <ul>
-              <li><input type="checkbox" value="norte"><label for="">Norte</label></li>
-              <li><input type="checkbox" value="nordeste"><label for="">Nordeste</label></li>
-              <li><input type="checkbox" value="centroOeste"><label for="">Centro-Oeste</label></li>
-              <li><input type="checkbox" value="sudeste"><label for="">Sudeste</label></li>
-              <li><input type="checkbox" value="sul"><label for="">Sul</label></li>
+              <li><input type="checkbox" value="medicina"><label for="">Medicina</label></li>
+              <li><input type="checkbox" value="seguranca"><label for="">Segurança</label></li>
+              <li><input type="checkbox" value="manutencao"><label for="">Manutenção</label></li>
+              <li><input type="checkbox" value="estetica"><label for="">Estética</label></li>
+              <li><input type="checkbox" value="jardinagem"><label for="">Jardinagem</label></li>
+              <li><input type="checkbox" value="educacao"><label for="">Educação</label></li>
+              <li><input type="checkbox" value="culinaria"><label for="">Culinária</label></li>
+              <li><input type="checkbox" value="escritorio"><label for="">Escritório</label></li>
             </ul>
           </div>
           <hr class="linha-separar">
@@ -81,7 +84,7 @@
 
           <div class="row d-flex m-0 p-0">
             <h4 class="titulo-listaPrestadores">Resultado pesquisa:</h4>
-            <div class="resultadoPesquisa alert alert-success alert-dismissible fade show" role="alert" hidden >
+            <div class="resultadoPesquisa alert alert-success alert-dismissible fade show" role="alert">
               <strong id="resultadoPesquisa"></strong>
               <button type="button" id="limpa-pesquisa" class="close close-pesquisa" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -96,7 +99,7 @@
             <div class="card card-listaPrestadores col-12 col-sm-12 col-md-6 col-lg-4 my-3 p-0">
               <div class="card-parteSuperior">
                 <img class="boneco-prestador" src="<%= prestador.avatar %>">
-                <% prestador.avaliacoes.forEach(avaliacao => { %>
+                <% prestador.Avaliacoes.forEach(avaliacao => { %>
                   <% if (avaliacao.nota === 1) { %>
                     <img class="img-notaPrestador" src="/img/estrela1.png">
                   <% } %>
@@ -117,7 +120,7 @@
               <div class="card-body card-parteInferior p-0 m-0">
                 <p class="nota-cardPrestador">NOTA</p>
                 <p class="nome-cardPrestador"> <%= prestador.nome %> </p>
-                <p class="sobre-cardPrestador"> <%= //prestador.habilidades[0].titulo %> </p>
+                <p class="sobre-cardPrestador"> <%= prestador.Habilidades[0].titulo %> </p>
               </div>
             </div>
             <% }) %>

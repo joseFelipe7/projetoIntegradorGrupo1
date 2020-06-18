@@ -11,10 +11,10 @@ const listarPrestadoresController = {
             offset: (page - 1) * 12,
             include: [{
                 model: Habilidades,
-                as:'habilidades'
+                required: true
             }, {
                 model: Avaliacoes,
-                as:'avaliacoes'
+                required:true
             }]
         });
         // ele divide totalPage por 12 itens cada page e arredonda para não trazer número quebrado.
@@ -24,22 +24,19 @@ const listarPrestadoresController = {
 
     show: async (req, res) => {
         let { pesquisa } = req.params;
-        let { nota } = req.query;
         let { page = 1 } = req.query;
         let { count: totalPage, rows: prestadores } = await Prestador.findAndCountAll({
             limit: 12,
             offset: (page - 1) * 12,
             include: [{
                 model: Habilidades,
-                as:'habilidades',
-               
+                required: true,
                 where: {
                     titulo: pesquisa
                 }
             }, {
                 model: Avaliacoes,
-                as:'avaliacoes',
-                
+                required: true
             }]
         });
         let totalPages = Math.round(totalPage/12);
