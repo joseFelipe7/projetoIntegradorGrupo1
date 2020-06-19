@@ -3,9 +3,7 @@ const buttonPesquisa = document.getElementById('lupa-pesquisa');
 const buttonLimpaPesquisa = document.getElementById('limpa-pesquisa');
 const divResultadoPesquisa = document.querySelector('.lista-cardsPrestadores .row .resultadoPesquisa');
 const resultadoPesquisa = document.getElementById('resultadoPesquisa'); 
-const pesquisaAvaliacao = document.querySelectorAll('#filtroAvaliacao ul li input');
 const pathPadrao = "/prestador/lista"
-
 
 // evento para pesquisa pelo input de pesquisa
 buttonPesquisa.addEventListener('click', function () {
@@ -36,8 +34,4 @@ buttonLimpaPesquisa.addEventListener('click', function () {
   } 
 })
 
-pesquisaAvaliacao.forEach(click => {
-  click.addEventListener('click', function () {
-    
-  })
-})
+

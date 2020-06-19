@@ -22,8 +22,29 @@ const listarPrestadoresController = {
         res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages});
     },
 
-    show: async (req, res) => {
+    showPesquisa: async (req, res) => {
         let { pesquisa } = req.params;
+        let { page = 1 } = req.query;
+        let { count: totalPage, rows: prestadores } = await Prestador.findAndCountAll({
+            limit: 12,
+            offset: (page - 1) * 12,
+            include: [{
+                model: Habilidades,
+                required: true,
+                where: {
+                    titulo: pesquisa
+                }
+            }, {
+                model: Avaliacoes,
+                required: true
+            }]
+        });
+        let totalPages = Math.round(totalPage/12);
+        res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages});
+    },
+
+    showCategoria: async (req, res) => {
+        let { categoria } = req.params;
         let { page = 1 } = req.query;
         let { count: totalPage, rows: prestadores } = await Prestador.findAndCountAll({
             limit: 12,

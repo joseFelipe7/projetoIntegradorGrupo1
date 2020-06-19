@@ -7,8 +7,8 @@ module.exports = {
         primaryKey: true,
         autoIncrement: true,
       },
-      codigo: { 
-        type: Sequelize.INTEGER,
+      categoria: { 
+        type: Sequelize.STRING(45), 
         allowNull: false, //pode ser nulo? não
         unique: true,
       },
