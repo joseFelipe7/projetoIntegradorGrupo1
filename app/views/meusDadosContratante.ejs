@@ -171,7 +171,7 @@
             <!-- Button trigger modal -->
             <div class="d-flex justify-content-end">
                 <button type="submit" class="btn botaoMeusDados" id="botaodp">SALVAR</button>
-              </div>
+            </div>
             <%- include('include/script') %>
         </form>
       
@@ -302,7 +302,7 @@
           <div class="modal-body bg-roxoClaro">
             <!-- formulario editar endereço -->
             <% data.cliente.clientes_enderecos.forEach(cliente_endereco => { %>
-              <form action="/usuario/area-contratante/meus-dados/endereco/<%=cliente_endereco.id%>?_method=PUT" method="POST"> 
+              <form action="/usuario/area-contratante/meus-dados/endereco/<%=cliente_endereco.id%>?_method=PUT" id="forme" method="POST"> 
              
               <!-- input linha 1 -->
               <div class="form-row">
@@ -387,12 +387,22 @@
                   </div>
                 </div>
               </div>
+              <!--div validação-->
+          <div id="error-list" class="alert alert-danger alert-dismissible fade show" role="alert" hidden>
+            <ul>
+            </ul>
+            <button type="button" class="close" id="close-listP" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+       
+          </div>
 
               <!-- botao editar ABRE O MODAL-->
               <!-- Button trigger modal -->
               <div class="d-flex justify-content-end">
                 <button type="submit" class="btn botaoMeusDados">SALVAR</button>
               </div>
+              <%- include('include/script') %>
             </form>
           <% }) %> 
 
