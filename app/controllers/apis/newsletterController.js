@@ -35,12 +35,14 @@ module.exports = {
     
             } else { //já existe email
                 // mensagem
-                console.log("já existe");
+                return res.status(400).json({
+                    error: true,
+                    msg:"Usuario já existente"
+                  })
             } 
         } catch (e) { //se der erro
             //validacao generica
-            console.log(e);
-      
+           
             return res.status(400).json({
               error: true,
               msg:"Erro na requisição, tente novamente"
