@@ -347,6 +347,8 @@ a.btnContatoMN {
 }
 
 .linksFooter {
+  display: flex;
+  justify-content: space-between;
   height: 12rem;
 }
 
@@ -380,7 +382,7 @@ a.btnContatoMN {
 }
 
 .linksFooter ul li a:hover {
-  color: #88BF36;
+  color: #203573;
 }
 
 .subtituloImg {
@@ -388,12 +390,25 @@ a.btnContatoMN {
   flex-direction: column;
   justify-content: center;
   height: 8rem;
-  max-height: 8rem;
+  /* max-height: 8rem; */
+}
+
+.subtituloImg p.textoSocial{
+  letter-spacing: 0.10em;
+  text-align: center;
+}
+.subtituloImg p.newsletter{
+  letter-spacing: 0.29em;
+  text-align: center;
+}
+.newsletterCampos{
+  display: flex;
+  flex-direction: column;
 }
 
 .subtituloImg .footer-icons a {
-  height: 60px;
-  width: 60px;
+  /* height: 60px;
+  width: 60px; */
   margin: 0 0.5rem;
 }
 
@@ -427,13 +442,13 @@ a.btnContatoMN {
 
 @media(max-width: 1024px) {
   .linksFooter ul {
-    padding: 1rem 0 0 3rem;
+    /* padding: 1rem 0 0 3rem; */
     margin: 0;
   }
 
   .subtituloImg p,
   .subtituloImg .footer-icons {
-    padding-left: 3rem;
+    /* padding-left: 3rem; */
   }
 }
 
@@ -452,7 +467,7 @@ a.btnContatoMN {
   }
 
   .linksFooter ul {
-    padding-left: 4rem;
+    /* padding-left: 4rem; */
   }
 
   .linksFooter ul p {
@@ -475,8 +490,8 @@ a.btnContatoMN {
   }
 
   .subtituloImg .footer-icons a {
-    height: 40px;
-    width: 40px;
+    /* height: 40px;
+    width: 40px; */
     margin: 0 0.2rem;
   }
 
