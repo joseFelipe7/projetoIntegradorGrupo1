@@ -543,7 +543,12 @@ a.btnContatoMN {
 
   /*max-height: 23.75rem;*/
 }
-
+.alert-newsletter{
+  position: fixed;
+  top:15px;
+  width: 100%;
+  text-align: center;
+}
 /* -------- Fim footer ---------- */
 
 /*acompanhe usuario*/
