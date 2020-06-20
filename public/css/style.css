@@ -342,7 +342,7 @@ a.btnContatoMN {
   align-items: center;
   background-color: #A094F2;
   height: 23.75rem;
-  max-height: 23.75rem;
+  max-height: 30rem;
   width: 100%;
 }
 
@@ -462,8 +462,8 @@ a.btnContatoMN {
   #linksFooter {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
   }
 
   .linksFooter ul {
@@ -494,16 +494,12 @@ a.btnContatoMN {
     width: 40px; */
     margin: 0 0.2rem;
   }
-
-  .subtituloImg {
-    height: 6rem;
-  }
 }
 
 @media(max-width: 575px) {
   .linksFooter {
     justify-content: space-around;
-    width: 100vw;
+    width: 100%;
   }
 
   .linksFooter ul {
@@ -522,7 +518,7 @@ a.btnContatoMN {
   }
 }
 
-@media(max-width: 360px) {
+@media(max-width: 390px) {
   .linksFooter ul {
     width: 90px;
     padding: 0.8rem 0 0 0.2rem;
@@ -532,6 +528,20 @@ a.btnContatoMN {
   .linksFooter ul p {
     font-size: 0.7em;
   }
+}
+
+@media (max-width: 575px) {
+  .subtituloImg {
+    flex-wrap: nowrap;
+    justify-content: end;
+    align-items: center;
+  }
+
+  .footerAltura{
+    height: 410px;
+  }
+
+  /*max-height: 23.75rem;*/
 }
 
 /* -------- Fim footer ---------- */
