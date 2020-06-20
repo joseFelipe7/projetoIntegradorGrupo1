@@ -5,12 +5,12 @@ module.exports = {
    
       return queryInterface.bulkInsert('clientes_endereco', 
       [{
-        logradouro: 'rua das flores',
+        logradouro: 'Rua dos Bobos',
         uf: 'SP',
         cidade:'São Paulo',
-        bairro: 'norte',
+        bairro: 'leste',
         cep:'62555444',
-        numero:'22',
+        numero:'0',
         complemento:null,
         fk_cliente:1
       },

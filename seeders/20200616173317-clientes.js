@@ -6,8 +6,8 @@ module.exports = {
    
       return queryInterface.bulkInsert('clientes', 
       [{
-        nome: 'Joana Maria',
-        email: 'joana@email.com',
+        nome: 'Luana',
+        email: 'analulencina@gmail.com',
         senha:'$2b$10$MWEv6WPeSOfC51lvJZrYpuDQGJ3fHRGP8vszBSwMO.ZZrFLrdlmze',
         data_nascimento: null,
         status_:'A',
