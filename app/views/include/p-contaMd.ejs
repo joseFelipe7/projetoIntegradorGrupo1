@@ -1,0 +1,133 @@
+<!-- card sanfona 4 ------------------------------------------------->
+<div class="card">
+    <!-- topo 4 sanfona -->
+    <div class="card-header sanfonaTopoMeusDados" id="headingFour">
+      <h5 class="mb-0">
+
+        <button class="btn btn-link tituloSanfonaTopoMeusDados" data-toggle="collapse" data-target="#collapseFour"
+          aria-expanded="true" aria-controls="collapseFour">
+          <img src="/img/conta.png" alt="Meus dados" title="Meus dados">
+          Conta
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+      <div class="card-body">
+
+        <!-- formulario conta -->
+        <form action="/usuario/area-prestador/meusDados/<%=data.prestador.id%>" method="GET">
+          <!-- input linha 1 -->
+          <div class="form-row">
+            <!-- input senha -->
+            <div class="form-group col">
+              <label for="senha">Senha Atual</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text etiquetaCampo">Senha</span>
+                </div>
+                <input type="password" class="form-control campoMeusDadosStyle campoDadoReadonly" id="senha"
+                  value="<%= data.prestador.senha %>" readonly minlength="8">
+              </div>
+            </div>
+          </div>
+
+          <!-- input linha 2 -->
+          <div class="form-row">
+            <!-- input email -->
+            <div class="form-group col">
+              <label for="email">E-mail de cadastro</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text etiquetaCampo">@</span>
+                </div>
+                <input type="email" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email"
+                  value="<%= data.prestador.email_principal %>" readonly>
+              </div>
+            </div>
+          </div>
+
+          <!-- botao editar ABRE O MODAL-->
+          <!-- Button trigger modal -->
+          <div class="d-flex justify-content-end"><button type="button" class="btn botaoMeusDados" data-toggle="modal"
+              data-target="#editarDadosContaContratante">Editar</button></div>
+        </form>
+      </div>
+      <div class="container-fluid bg-azul rodapeMeusDadosSanfona"></div>
+    </div>
+  </div>
+</div>
+<!-- Modal ------------------------------------------------->
+<!-- Modal -->
+<div class="modal fade" id="editarDadosContaContratante" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-azul text-white">
+        <h5 class="modal-title" id="exampleModalLongTitle">Editar dados da conta</h5>
+        <button type="button" class="close fecharModal" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body bg-roxoClaro">
+
+        <!-- formulario conta -->
+        <form action="/usuario/area-prestador/meusDados/<%=data.prestador.id%>" method="GET">
+          <!-- input linha 1 -->
+          <div class="form-row">
+            <!-- input senha -->
+            <div class="form-group col">
+              <label for="senha">Senha Atual</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text etiquetaCampo">Senha</span>
+                </div>
+                <input type="password" class="form-control campoMeusDadosStyle campoDadoReadonly"
+                  value="<%= data.prestador.senha %>" id="senha1p" placeholder="Digite sua senha atual" minlength="8">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <!-- input senha -->
+            <div class="form-group col">
+              <label for="senha">Nova senha</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text etiquetaCampo">Senha</span>
+                </div>
+                <input type="password" class="form-control campoMeusDadosStyle campoDadoReadonly" id="senha2p"
+                  placeholder="Digite sua nova senha" minlength="8">
+              </div>
+            </div>
+          </div>
+
+          <!-- input linha 2 -->
+          <div class="form-row">
+            <!-- input email -->
+            <div class="form-group col">
+              <label for="email">E-mail de cadastro</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text etiquetaCampo">@</span>
+                </div>
+                <input type="email" class="form-control campoMeusDadosStyle campoDadoReadonly" id="emailp"
+                  value="<%= data.prestador.email_principal %>" placeholder="Digite seu e-mail">
+              </div>
+            </div>
+          </div>
+
+          <!-- botao editar ABRE O MODAL-->
+          <!-- Button trigger modal -->
+          <div class="d-flex justify-content-end"><button type="button" class="btn botaoMeusDados" data-toggle="modal"
+              data-target="#editarDadosContaContratante">SALVAR</button></div>
+        </form>
+
+      </div>
+      <div class="modal-footer bg-azul">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- fim Modal ------------------------------------------------->
