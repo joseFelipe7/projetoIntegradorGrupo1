@@ -12,5 +12,6 @@ module.exports = (sequelize, DataTypes) =>{
         timestamps: false,
         tableName:'newsletter'
     })
+
+    return Newsletter;
 }
-return Newletter
