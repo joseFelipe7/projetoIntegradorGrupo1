@@ -8,23 +8,25 @@ const prestadorController = {
         const {id} = req.params
 
         //busca usuario logado e direciona seus dados
-        const prestador = await Prestador.findByPk(id)
+        const prestador = await Prestador.findByPk(id, {
 
             //inclui associações do usuario
-           /* include: [
+            include: [
                 {
                     model:Contatos_prestador,
+                    as: 'contatos_prestadores'
                     
                 },
                 {
                     model:Habilidades,
+                    as: 'habilidades'
                     
                 },
                 {
                     model:Prestador_endereco,
-                    as: prestadores_enderecos
+                    as: 'prestadores_enderecos'
                 }
-            ]})*/
+            ]})
         return res.render("areaPrestador", {view: "meusDados-prestador", loggado: req.session.prestador, data:{prestador}})
     },
 
@@ -53,6 +55,9 @@ const prestadorController = {
                 data_cadastro:Date.now()
             })
         res.redirect('/login/Prestador/#login-prestador')
+    },
+    update: async (req, res) => {
+        
     }   
 }
 module.exports = prestadorController;

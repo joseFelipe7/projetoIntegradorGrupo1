@@ -573,6 +573,7 @@ button.botaoMeusDados:hover {
     margin-bottom: 1px;
 }
 
+
 .sessaoHomeBuscar {
     height: 80vh;
     background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 0.01%, #FFFFFF 58.33%, #A094F2 100%);
@@ -1029,6 +1030,7 @@ button.botaoBuscar:hover {
 /* -------fim home LU------------------------------------------------ */
 /* -------inicio contato LU------------------------------------------------ */
 .corpoContato {
+    background-color: #AEB2F2;
     background-image: url(/img/ondaHomeTopo.svg);
     background-repeat: no-repeat;
     background-position: 100% 69%;

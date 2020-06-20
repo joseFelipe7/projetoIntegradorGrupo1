@@ -5,48 +5,48 @@
   </div>
   <div class="btns d-flex">
     <% if (typeof loggado != "undefined") { %>
-      <% if (loggado) { %>
-        <a href="/usuario/area-contratante/meus-dados/<%= loggado.id  %> " class="btn btn-login-custom-bofl">
-          <svg class="icon-bofl bi bi-people-circle" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 008 15a6.987 6.987 0 005.468-2.63z" />
-            <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
-            <path fill-rule="evenodd" d="M8 1a7 7 0 100 14A7 7 0 008 1zM0 8a8 8 0 1116 0A8 8 0 010 8z"
-              clip-rule="evenodd" />
-          </svg>
-          <%= loggado.nome %>
-        </a>
-      <% } else { %>
-        <a href="/cadastro/#cadastro-selecione" class="btn btn-outline my-2 my-sm-0 btn-cadastro-custom-bofl"
-          type="submit">CADASTRE-SE</a>
-        <a href="/login/#login-selecione" class="btn btn-login-custom-bofl">
-          <svg class="icon-bofl bi bi-people-circle" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 008 15a6.987 6.987 0 005.468-2.63z" />
-            <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
-            <path fill-rule="evenodd" d="M8 1a7 7 0 100 14A7 7 0 008 1zM0 8a8 8 0 1116 0A8 8 0 010 8z"
-              clip-rule="evenodd" />
-          </svg>
-          LOGIN
-        </a>
-      <% } %>
+    <% if (loggado) { %>
+    <a href="/usuario/area-contratante/meus-dados/<%= loggado.id  %> " class="btn btn-login-custom-bofl">
+      <svg class="icon-bofl bi bi-people-circle" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 008 15a6.987 6.987 0 005.468-2.63z" />
+        <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+        <path fill-rule="evenodd" d="M8 1a7 7 0 100 14A7 7 0 008 1zM0 8a8 8 0 1116 0A8 8 0 010 8z"
+          clip-rule="evenodd" />
+      </svg>
+      <%= loggado.nome %>
+    </a>
     <% } else { %>
-        <a href="/cadastro/#cadastro-selecione" class="btn btn-outline my-2 my-sm-0 btn-cadastro-custom-bofl"
-          type="submit">CADASTRE-SE</a>
-        <a href="/login/#login-selecione" class="btn btn-login-custom-bofl">
-          <svg class="icon-bofl bi bi-people-circle" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 008 15a6.987 6.987 0 005.468-2.63z" />
-            <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
-            <path fill-rule="evenodd" d="M8 1a7 7 0 100 14A7 7 0 008 1zM0 8a8 8 0 1116 0A8 8 0 010 8z"
-              clip-rule="evenodd" />
-          </svg>
-          LOGIN
-        </a>
-    <% } %> 
+    <a href="/cadastro/#cadastro-selecione" class="btn btn-outline my-2 my-sm-0 btn-cadastro-custom-bofl"
+      type="submit">CADASTRE-SE</a>
+    <a href="/login/#login-selecione" class="btn btn-login-custom-bofl">
+      <svg class="icon-bofl bi bi-people-circle" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 008 15a6.987 6.987 0 005.468-2.63z" />
+        <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+        <path fill-rule="evenodd" d="M8 1a7 7 0 100 14A7 7 0 008 1zM0 8a8 8 0 1116 0A8 8 0 010 8z"
+          clip-rule="evenodd" />
+      </svg>
+      LOGIN
+    </a>
+    <% } %>
+    <% } else { %>
+    <a href="/cadastro/#cadastro-selecione" class="btn btn-outline my-2 my-sm-0 btn-cadastro-custom-bofl"
+      type="submit">CADASTRE-SE</a>
+    <a href="/login/#login-selecione" class="btn btn-login-custom-bofl">
+      <svg class="icon-bofl bi bi-people-circle" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 008 15a6.987 6.987 0 005.468-2.63z" />
+        <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+        <path fill-rule="evenodd" d="M8 1a7 7 0 100 14A7 7 0 008 1zM0 8a8 8 0 1116 0A8 8 0 010 8z"
+          clip-rule="evenodd" />
+      </svg>
+      LOGIN
+    </a>
+    <% } %>
 
     <button class="btn-menu-hamburguer" onclick="abrirMenu()">
       <div></div>
@@ -54,37 +54,37 @@
       <div></div>
     </button>
 
-    </div>
-  </nav>
-
-    
-  
-<!--mobile-->
-<nav class="navbar nav-custom-bofl nav-mob-bofl">
-    <div class="logo">
-      <!--colocar o logo tag a esquerda-->
-        <a href="/home" class="navbar-brand logo-custom" > 
-         
-            <img src="/img/logo2.png">
-        </a>
-    </div>
-    <div class="btns d-flex">
-        <a href="/login/#login-selecione" class="icon-bofl">
-          <svg class="bi bi-people-circle" style="fill:#88BF36;" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 008 15a6.987 6.987 0 005.468-2.63z"/>
-            <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
-            <path fill-rule="evenodd" d="M8 1a7 7 0 100 14A7 7 0 008 1zM0 8a8 8 0 1116 0A8 8 0 010 8z" clip-rule="evenodd"/>
-          </svg>
-      </a>     
-        <button class="btn-menu-hamburguer" onclick="abrirMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-          </button>
-
-    </div>
-    
+  </div>
 </nav>
 
 
-   
+
+<!--mobile-->
+<nav class="navbar nav-custom-bofl nav-mob-bofl">
+  <div class="logo">
+    <!--colocar o logo tag a esquerda-->
+    <a href="/home" class="navbar-brand logo-custom">
+
+      <img src="/img/logo2.png">
+    </a>
+  </div>
+  <div class="btns d-flex">
+    <a href="/login/#login-selecione" class="icon-bofl">
+      <svg class="bi bi-people-circle" style="fill:#88BF36;" width="2em" height="2em" viewBox="0 0 16 16"
+        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 008 15a6.987 6.987 0 005.468-2.63z" />
+        <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+        <path fill-rule="evenodd" d="M8 1a7 7 0 100 14A7 7 0 008 1zM0 8a8 8 0 1116 0A8 8 0 010 8z"
+          clip-rule="evenodd" />
+      </svg>
+    </a>
+    <button class="btn-menu-hamburguer" onclick="abrirMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </button>
+
+  </div>
+
+</nav>

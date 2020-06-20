@@ -18,7 +18,7 @@ module.exports = {
         type:Sequelize.STRING(45)
         },
        descricao:{
-       type:Sequelize.STRING(45)
+       type:Sequelize.STRING(345)
       },
        idprestadores:{
          type:Sequelize.INTEGER

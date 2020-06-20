@@ -16,7 +16,6 @@ module.exports = {
       descricao:{
        type:Sequelize.STRING(290)
       },
-      
       fk_prestador: { 
         type: Sequelize.INTEGER, 
         allowNull: false,
