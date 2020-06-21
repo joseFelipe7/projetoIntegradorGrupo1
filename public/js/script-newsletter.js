@@ -52,10 +52,10 @@ function exibirAlerta(erro, mensagem){
     cotainerAlertas.appendChild(divAlerta)
     setTimeout(()=>{
         divAlerta.classList.remove('show')
-    },2000)
+    },5000)
     setTimeout(()=>{
         divAlerta.remove()
-    },2300)
+    },5300)
 
 }
 btnAssinarNewsletter.addEventListener('click', storeNewsletter)
