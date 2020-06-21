@@ -98,10 +98,10 @@
         </button>
       </div>
       <div class="modal-body bg-roxoClaro">
-        <!-- ................................. -->
+
        
 
-        <form action="/usuario/area-contratante/meus-dados/<%=data.cliente.id%>?_method=PUT"  id="formdp1" method="POST"> 
+        <form action="/usuario/area-contratante/meus-dados/<%=data.cliente.id%>?_method=PUT"  id="formdp1" method="POST" enctype="multipart/form-data"> 
           <!-- linha foto -->
           <div class="form-row">
             <!-- input foto escolhida -->
@@ -111,13 +111,13 @@
                 <img src="/img/envio.png" alt="Meu Perfil" title="Meu Perfil" class="img-thumbnail perfilMeusDados"> 
               </div>
             </div>
-            <!-- input escolher perfil -->
+        
             <div class="form-group col-9">
-              <label for="nascimento">Envie sua foto</label>
+              <label for="photo">Envie sua foto</label>
               <div class="input-group d-flex justify-content-center">
                   <div class="custom-file align-self-center">
-                    <input type="file" class="custom-file-input" id="customFileLang">
-                    <label class="custom-file-label" for="customFileLang">Escolha um arquivo</label>
+                    <input type="file" name="photo" id="photo" class="custom-file-input">
+                    <label class="custom-file-label" for="photo">Escolha um arquivo</label>
                   </div>
               </div>
             </div>

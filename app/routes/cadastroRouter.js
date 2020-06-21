@@ -1,5 +1,4 @@
 const express = require("express");
-const upload = require("../../config/upload")
 const prestadorController = require("../controllers/prestadorController");
 const registroClienteController = require("../controllers/registroClienteController")
 let router = express.Router();
