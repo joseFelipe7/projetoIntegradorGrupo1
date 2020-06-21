@@ -35,6 +35,8 @@ const rotaLogin = require("./app/routes/loginRouter");
 
 //single e lista do prestador
 const rotaPrestador = require("./app/routes/prestadorRouter");
+
+const rotaApi = require("./app/routes/apis");
  
 app.use("/home", rotaHome);
 //...5620/home
@@ -57,6 +59,8 @@ app.use("/login", rotaLogin);
 app.use("/prestador", rotaPrestador);
 //...5620/prestador/lista
 //...5620/prestador/single
+
+app.use("/api", rotaApi);
 
 app.listen(5620, () => {
     console.log("servidor rodando na porta 5620")

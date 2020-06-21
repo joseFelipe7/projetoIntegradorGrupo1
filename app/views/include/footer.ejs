@@ -1,52 +1,116 @@
 <footer class="container-footer col-12 h-100 m-0 p-0">
 
-    <div class="row content-includes">
+    <div class="row footerAltura content-includes d-flex justify-content-center">
 
-        <div class="container col-sm-12 col-md-12 col-lg-8 m-0 p-0" id="linksFooter">
+        <div class="container col-sm-11 col-md-10 col-lg-8 m-0 p-0" id="linksFooter">
             <div class="row linksFooter m-0 p-0">
                 <ul class="col-sm-4">
                     <p>MAPA DO SITE</p>
                     <li class="d-flex flex-column">
-                        <a href="/home"><img src="/img/icone-testeFooter.svg">Home</a>
-                        <a href="/prestador/lista"><img src="/img/icone-testeFooter.svg">Profissionais</a>
-                        <a href="/home/como-funciona"><img src="/img/icone-testeFooter.svg">Como Funciona</a>
-                        <a href="/home/sobre"><img src="/img/icone-testeFooter.svg">Sobre Nós</a>
+                        <a href="/home">
+                            <img src="/img/icone-testeFooter.svg">
+                            Home
+                        </a>
+
+                        <a href="/prestador/lista">
+                            <img src="/img/icone-testeFooter.svg">
+                            Profissionais
+                        </a>
+
+                        <a href="/home/como-funciona">
+                            <img src="/img/icone-testeFooter.svg">
+                            Como Funciona
+                        </a>
+
+                        <a href="/home/contato">
+                            <img src="/img/icone-testeFooter.svg">
+                            Contato
+                        </a>
+
+                        <a href="/home/sobre">
+                            <img src="/img/icone-testeFooter.svg">
+                            Sobre Nós
+                        </a>
                     </li>
                 </ul>
 
                 <ul class="col-sm-4">
-                    <p>LINKS ÚTEIS</p>
+                    <p class="d-flex justify-content-center">LINKS ÚTEIS</p>
                     <li class="d-flex flex-column">
-                        <a href="#"><img src="/img/icone-testeFooter.svg">Ajuda</a>
+                        <a href="#" class="d-flex justify-content-center">
+                            <img src="/img/icone-testeFooter.svg">
+                            Ajuda
+                        </a>
                     </li>
                 </ul>
 
                 <ul class="col-sm-4">
-                    <p>ENCONTRE NOS</p>
+                    <p class="d-flex justify-content-end">ENCONTRE NOS</p>
                     <li class="d-flex flex-column">
-                        <a href="/home/contato"><img src="/img/icone-testeFooter.svg">Fale Conosco</a>
+                        <a href="/home/contato" class="d-flex justify-content-end">
+                            <img src="/img/icone-testeFooter.svg">
+                            Fale Conosco
+                        </a>
                     </li>
                 </ul>
 
             </div>
 
             <div class="row subtituloImg m-0 p-0">
-                <p>Siga-nos! Fique Ligado nas novidades.</p>
-                <div class="footer-icons d-flex">
-                    <a href="https://www.youtube.com" target="blank"><img src="/img/youtube.png" alt="..."></a>
-                    <a href="https://www.facebook.com" target="blank"><img src="/img/facebook.png" alt="..."></a>
-                    <a href="https://twitter.com" target="blank"><img src="/img/twitter.png" alt="..."></a>
-                    <a href="https://www.linkedin.com" target="blank"><img src="/img/linkedin.png" alt="..."></a>
-                    <a href="https://web.whatsapp.com" target="blank"><img src="/img/whatsapp.png" alt="..."></a>
+                <div class="col-9 col-sm-6">
+                    <p class="textoSocial">Siga-nos! Fique ligado nas novidades</p>
+                    <div class="footer-icons d-flex">
+                        <a href="https://www.youtube.com" target="blank"><img src="/img/youtube.png" alt="..."></a>
+                        <a href="https://www.facebook.com" target="blank"><img src="/img/facebook.png" alt="..."></a>
+                        <a href="https://twitter.com" target="blank"><img src="/img/twitter.png" alt="..."></a>
+                        <a href="https://www.linkedin.com" target="blank"><img src="/img/linkedin.png" alt="..."></a>
+                        <a href="https://web.whatsapp.com" target="blank"><img src="/img/whatsapp.png" alt="..."></a>
+                    </div>
+                </div>
+
+                <div class="col-11 col-sm-6">
+                    <p class="newsletter mt-3 mb-1">Assine nossa Newsletter!</p>
+                    <form class="footer-icons newsletterCampos d-flex">
+                        <!-- nome -->
+                        <div class="form-row w-100">
+                            <div class="form-group col mb-1">
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text etiquetaCampo">Nome</span>
+                                </div>
+                                <input type="text" name="nomeNewsletter" class="form-control campoMeusDadosStyle campoDadoReadonly" id="nomeNewsletter">
+                              </div>
+                            </div>
+                        </div>
+
+                        <!-- email -->
+                        <div class="form-row w-100">
+                            <div class="form-group col-8 mb-1">
+                                <div class="form-group col p-0 m-0">
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text etiquetaCampo">E-mail</span>
+                                      </div>
+                                      <input type="email" name="emailNewsletter" class="form-control campoMeusDadosStyle campoDadoReadonly" id="emailNewsletter">
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="form-group col-4 w-100">
+                                <button type="button" id="btnNewsletter" class="btn botaoMeusDados w-100 text-center d-flex justify-content-center" data-toggle="modal" data-target="#editarDadosContatoContratante">
+                                    ASSINAR
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </div>
-
-        <div class="container d-flex justify-content-center align-items-center col-lg-4 h-100 m-0 p-0">
-            <img src="/img/footer.png" alt="footer" class="img-footer">
         </div>
 
     </div>
 
     <div class="imagem-rodape"><img src="/img/rodape.png" alt="footer">TOOLS © 2020</div>
 </footer>
+
+<div class="alert-newsletter" id="container-alertas">
+    
+</div>
