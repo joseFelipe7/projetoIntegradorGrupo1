@@ -1,4 +1,4 @@
-const { Prestador, Prestador_endereco, Habilidades, Avaliacoes } = require('../models');
+const { Prestador, Prestador_endereco, Habilidades, Avaliacoes, Categorias } = require('../models');
 
 const listarPrestadoresController = {
     index: async (req, res) => {
@@ -44,17 +44,17 @@ const listarPrestadoresController = {
     },
 
     showCategoria: async (req, res) => {
-        let { categoria } = req.params;
+        let { categoria_id } = req.params;
         let { page = 1 } = req.query;
         let { count: totalPage, rows: prestadores } = await Prestador.findAndCountAll({
             limit: 12,
             offset: (page - 1) * 12,
+            where: {
+                categoria_id
+            },
             include: [{
                 model: Habilidades,
-                required: true,
-                where: {
-                    titulo: pesquisa
-                }
+                required: true
             }, {
                 model: Avaliacoes,
                 required: true

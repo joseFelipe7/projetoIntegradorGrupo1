@@ -1,8 +1,10 @@
-const inputPesquisa = document.getElementById('pesquisa-listaPrestadores');
 const buttonPesquisa = document.getElementById('lupa-pesquisa');
 const buttonLimpaPesquisa = document.getElementById('limpa-pesquisa');
-const divResultadoPesquisa = document.querySelector('.lista-cardsPrestadores .row .resultadoPesquisa');
-const resultadoPesquisa = document.getElementById('resultadoPesquisa'); 
+
+const inputPesquisa = document.getElementById('pesquisa-listaPrestadores');
+const inputServicos = document.querySelectorAll('#selecionar-servicos li input');
+const inputEstados = document.querySelectorAll('#selecionar-estados li input');
+
 const pathPadrao = "/prestador/lista"
 
 // evento para pesquisa pelo input de pesquisa
@@ -33,5 +35,19 @@ buttonLimpaPesquisa.addEventListener('click', function () {
     document.location.pathname = pathPadrao;
   } 
 })
+
+// evento para pesquisa pelo inputs de serviços
+inputServicos.forEach(servico => {
+
+  servico.addEventListener('click', function () {
+    if (document.location.pathname !== pathPadrao) {
+      document.location.pathname = pathPadrao + "/categoria/" + servico.value;
+    } else {
+      document.location.pathname += "/categoria/" + servico.value;
+    }
+  });
+
+})
+
 
 

@@ -9,6 +9,10 @@ module.exports = {
         descricao: 'Profissional que atua na área de segurança'
       },
       {
+        categoria: 'Manutenção',
+        descricao: 'Profissional que atua na área de manutenção em geral'
+      },
+      {
         categoria: 'Estética',
         descricao: 'Profissional que atua na área de cuidados com o corpo'
       },

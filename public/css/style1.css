@@ -1524,6 +1524,7 @@ a + img {
   border-radius: 0.5rem;
   height: 90rem;
   width: 50rem;
+  position: relative;
 }
 
 .lista-cardsPrestadores .titulo-listaPrestadores {
@@ -1638,6 +1639,8 @@ a + img {
   max-width: 20rem;
   margin: 1rem 0;
   padding: 0;
+  position: absolute;
+  bottom: 0;
 }
 
 .row-paginacaoPrestadores .page-link {
@@ -1749,7 +1752,7 @@ a + img {
     border-left: 0;
     border-right: 0;
     border-radius: 0;
-    height: 92rem;
+    height: 96rem;
     width: 100%;
   }
 
