@@ -31,80 +31,46 @@
           <div class="row d-flex flex-column p-2 filtro-parte2">
             <h5 class="subtitulo-filtroPrestadores">Serviços</h5>
             <ul id="selecionar-servicos">
-              <li><input type="checkbox" value="1"><label for="">Medicina</label></li>
-              <li><input type="checkbox" value="2"><label for="">Segurança</label></li>
-              <li><input type="checkbox" value="3"><label for="">Manutenção</label></li>
-              <li><input type="checkbox" value="4"><label for="">Estética</label></li>
-              <li><input type="checkbox" value="5"><label for="">Jardinagem</label></li>
-              <li><input type="checkbox" value="6"><label for="">Educação</label></li>
-              <li><input type="checkbox" value="7"><label for="">Culinária</label></li>
-              <li><input type="checkbox" value="8"><label for="">Escritório</label></li>
+              <li><input id="med" type="checkbox" value="1"><label for="med">Medicina</label></li>
+              <li><input id="seg" type="checkbox" value="2"><label for="seg">Segurança</label></li>
+              <li><input id="man" type="checkbox" value="3"><label for="man">Manutenção</label></li>
+              <li><input id="est" type="checkbox" value="4"><label for="est">Estética</label></li>
+              <li><input id="jar" type="checkbox" value="5"><label for="jar">Jardinagem</label></li>
+              <li><input id="edu" type="checkbox" value="6"><label for="edu">Educação</label></li>
+              <li><input id="cul" type="checkbox" value="7"><label for="cul">Culinária</label></li>
+              <li><input id="esc" type="checkbox" value="8"><label for="esc">Escritório</label></li>
             </ul>
           </div>
 
           <hr class="linha-separar">
 
-          <div class="row d-flex flex-column p-2 filtro-parte3">
-            <h5 class="subtitulo-filtroPrestadores">Estados</h5>
-            <ul id="selecionar-estados">
-              <li><input type="checkbox" value="AC"><label for="">Acre</label></li>
-              <li><input type="checkbox" value="AL"><label for="">Alagoas</label></li>
-              <li><input type="checkbox" value="AP"><label for="">Amapá</label></li>
-              <li><input type="checkbox" value="AM"><label for="">Amazonas</label></li>
-              <li><input type="checkbox" value="BA"><label for="">Bahia</label></li>
-              <li><input type="checkbox" value="CE"><label for="">Ceará</label></li>
-              <li><input type="checkbox" value="DF"><label for="">Distrito Federal</label></li>
-              <li><input type="checkbox" value="ES"><label for="">Espírito Santo</label></li>
-              <li><input type="checkbox" value="GO"><label for="">Goiás</label></li>
-              <li><input type="checkbox" value="MA"><label for="">Maranhão</label></li>
-              <li><input type="checkbox" value="MT"><label for="">Mato Grosso</label></li>
-              <li><input type="checkbox" value="MS"><label for="">Mato Grosso do Sul</label></li>
-              <li><input type="checkbox" value="MG"><label for="">Minas Gerais</label></li>
-              <li><input type="checkbox" value="PA"><label for="">Pará</label></li>
-              <li><input type="checkbox" value="PB"><label for="">Paraíba</label></li>
-              <li><input type="checkbox" value="PR"><label for="">Paraná</label></li>
-              <li><input type="checkbox" value="PE"><label for="">Pernambuco</label></li>
-              <li><input type="checkbox" value="PI"><label for="">Piauí</label></li>
-              <li><input type="checkbox" value="RJ"><label for="">Rio de Janeiro</label></li>
-              <li><input type="checkbox" value="RN"><label for="">Rio Grande do Norte</label></li>
-              <li><input type="checkbox" value="RS"><label for="">Rio Grande do Sul</label></li>
-              <li><input type="checkbox" value="RO"><label for="">Rondônia</label></li>
-              <li><input type="checkbox" value="RR"><label for="">Roraima</label></li>
-              <li><input type="checkbox" value="SC"><label for="">Santa Catarina</label></li>
-              <li><input type="checkbox" value="SP"><label for="">São Paulo</label></li>
-              <li><input type="checkbox" value="SE"><label for="">Sergipe</label></li>
-              <li><input type="checkbox" value="TO"><label for="">Tocantins</label></li>
-            </ul>
-          </div>
-          
-          <hr class="linha-separar">
-
-          <div id="filtroAvaliacao" class="row d-flex flex-column p-2 filtro-parte4">
+          <!-- <div id="filtroAvaliacao" class="row d-flex flex-column p-2 filtro-parte4">
             <h5 class="subtitulo-filtroPrestadores">Avaliação</h5>
-            <ul>
+            <ul id="selecionar-avaliacao">
               <li>
-                <input type="checkbox" value="5">
-                <label for="">&#11088;&#11088;&#11088;&#11088;&#11088;</label>
+                <input id="5" type="checkbox" value="5">
+                <label for="5">&#11088;&#11088;&#11088;&#11088;&#11088;</label>
               </li>
               <li>
-                <input type="checkbox" value="4">
-                <label for="">&#11088;&#11088;&#11088;&#11088;</label>
+                <input id="4" type="checkbox" value="4">
+                <label for="4">&#11088;&#11088;&#11088;&#11088;</label>
               </li>
               <li>
-                <input type="checkbox" value="3">
-                <label for="">&#11088;&#11088;&#11088;</label>
+                <input id="3" type="checkbox" value="3">
+                <label for="3">&#11088;&#11088;&#11088;</label>
               </li>
               <li>
-                <input type="checkbox" value="2">
-                <label for="">&#11088;&#11088;</label>
+                <input id="2" type="checkbox" value="2">
+                <label for="2">&#11088;&#11088;</label>
               </li>
               <li>
-                <input type="checkbox" value="1">
-                <label for="">&#11088;</label>
+                <input id="1" type="checkbox" value="1">
+                <label for="1">&#11088;</label>
               </li>
             </ul>
           </div>
-          <hr class="linha-separar">
+
+          <hr class="linha-separar"> -->
 
         </div>
 
@@ -120,12 +86,16 @@
 
           <div class="row d-flex m-0 p-0">
             <h4 class="titulo-listaPrestadores">Resultado pesquisa:</h4>
-            <div class="resultadoPesquisa alert alert-success alert-dismissible fade show" role="alert">
-              <strong id="resultadoPesquisa"></strong>
-              <button type="button" id="limpa-pesquisa" class="close close-pesquisa" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
+            <% textoPesquisa.forEach(texto => { %>
+              <% if (texto.length > 0 || texto !== "undefined") { %> 
+                <div class="resultadoPesquisa alert alert-success alert-dismissible fade show" role="alert">
+                  <strong id="resultadoPesquisa"> <%= texto %> </strong>
+                  <button type="button" id="limpa-pesquisa" class="close close-pesquisa" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+              <% } %> 
+            <% }) %>
           </div>
 
           <hr class="linha-separar">
@@ -134,7 +104,7 @@
             <% prestadores.forEach(prestador => { %>
             <div class="card card-listaPrestadores col-12 col-sm-12 col-md-6 col-lg-4 my-3 p-0">
               <div class="card-parteSuperior">
-                <img class="boneco-prestador" src="<%= prestador.avatar %>">
+                <span class="boneco-prestador"><img src=<%= prestador.avatar %>></span>
                 <% prestador.Avaliacoes.forEach(avaliacao => { %>
                   <% if (avaliacao.nota === 1) { %>
                     <img class="img-notaPrestador" src="/img/estrela1.png">

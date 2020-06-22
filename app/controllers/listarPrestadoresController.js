@@ -19,7 +19,7 @@ const listarPrestadoresController = {
         });
         // ele divide totalPage por 12 itens cada page e arredonda para não trazer número quebrado.
         let totalPages = Math.round(totalPage/12);
-        res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages});
+        res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages, textoPesquisa: []});
     },
 
     showPesquisa: async (req, res) => {
@@ -40,7 +40,7 @@ const listarPrestadoresController = {
             }]
         });
         let totalPages = Math.round(totalPage/12);
-        res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages});
+        res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages, textoPesquisa: [ pesquisa ]});
     },
 
     showCategoria: async (req, res) => {
@@ -62,7 +62,7 @@ const listarPrestadoresController = {
         });
         let totalPages = Math.round(totalPage/12);
         res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages});
-    },
+    }
 
 };
 

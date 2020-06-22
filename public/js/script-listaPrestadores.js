@@ -1,11 +1,9 @@
+const pathPadrao = "/prestador/lista"
 const buttonPesquisa = document.getElementById('lupa-pesquisa');
 const buttonLimpaPesquisa = document.getElementById('limpa-pesquisa');
-
 const inputPesquisa = document.getElementById('pesquisa-listaPrestadores');
 const inputServicos = document.querySelectorAll('#selecionar-servicos li input');
-const inputEstados = document.querySelectorAll('#selecionar-estados li input');
 
-const pathPadrao = "/prestador/lista"
 
 // evento para pesquisa pelo input de pesquisa
 buttonPesquisa.addEventListener('click', function () {
@@ -38,7 +36,6 @@ buttonLimpaPesquisa.addEventListener('click', function () {
 
 // evento para pesquisa pelo inputs de serviços
 inputServicos.forEach(servico => {
-
   servico.addEventListener('click', function () {
     if (document.location.pathname !== pathPadrao) {
       document.location.pathname = pathPadrao + "/categoria/" + servico.value;
@@ -46,8 +43,9 @@ inputServicos.forEach(servico => {
       document.location.pathname += "/categoria/" + servico.value;
     }
   });
+});
 
-})
+
 
 
 
