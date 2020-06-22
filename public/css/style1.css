@@ -1590,6 +1590,9 @@ a + img {
   height: 120px;
   max-width: 120px;
   max-height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-parteSuperior .boneco-prestador > img {
@@ -1644,6 +1647,79 @@ a + img {
   width: 12rem;
   max-width: 12rem;
   padding: 0.3rem;
+}
+
+.modal-content {
+  border: solid 2px #7156c1;
+}
+
+.modal-header {
+  display: flex;
+  background-color: #7156c1;
+  height: 120px;
+  max-height: 120px;
+  position: relative;
+}
+
+.modal-header .boneco-prestador {
+  background: rgb(32,53,115);
+  background: linear-gradient(0deg, rgba(32,53,115,1) 30%, rgb(113, 86, 193, 1) 90%);
+  border: solid 2px #fff;
+  border-radius: 100%;
+  position: absolute;
+  top: 2rem;
+  left: 0.5rem;
+  z-index: 2;
+  width: 120px;
+  height: 120px;
+  max-width: 120px;
+  max-height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-header .boneco-prestador > img {
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-title {
+  position: absolute;
+  top: 5.5rem;
+  left: 8.5rem;
+}
+
+.modal-body {
+  background-color: #a094f2;
+  border-top: solid 2px #ffffff;
+  border-bottom: none;
+}
+
+.modal-footer {
+  background-color: #a094f2;
+  border-top: none;
+}
+
+.modal-footer .btnClose {
+  background-color: #aeb2f2;
+  font-weight: 500;
+}
+
+.modal-footer .btnClose:hover {
+  background-color: #7156c1;
+  transition: 0.2s;
+}
+
+.modal-footer .btnPagina {
+  background-color: #88bf36;
+  font-weight: 500;
+}
+
+.modal-footer .btnPagina:hover {
+  background-color: #a4dd4e;
+  transition: 0.2s;
 }
 
 .lista-cardsPrestadores .row-paginacaoPrestadores {

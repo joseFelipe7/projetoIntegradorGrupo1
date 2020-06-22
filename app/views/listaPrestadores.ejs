@@ -102,7 +102,7 @@
 
           <div class="row d-flex justify-content-around m-0 p-0">
             <% prestadores.forEach(prestador => { %>
-            <div class="card card-listaPrestadores col-12 col-sm-12 col-md-6 col-lg-4 my-3 p-0">
+            <div type="button" class="card card-listaPrestadores col-12 col-sm-12 col-md-6 col-lg-4 my-3 p-0" data-toggle="modal" data-target="#exampleModal<%= prestador.id %>">
               <div class="card-parteSuperior">
                 <span class="boneco-prestador"><img src=<%= prestador.avatar %>></span>
                 <% prestador.Avaliacoes.forEach(avaliacao => { %>
@@ -129,6 +129,40 @@
                 <p class="sobre-cardPrestador"> <%= prestador.Habilidades[0].titulo %> </p>
               </div>
             </div>
+
+            <!-- Modal de cada card -->
+            <div class="modal fade modalCardsPrestador" id="exampleModal<%= prestador.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="boneco-prestador"><img src=<%= prestador.avatar %>></div>
+                    <h5 class="modal-title" id="exampleModalLabel"> <%= prestador.nome %>  </h5>
+                  </div>
+                  <div class="modal-body">
+                    <div class="row mt-4 ml-1">
+                      <p><strong>Profissão: </strong> <%= prestador.Habilidades[0].titulo %> </p>
+                    </div>
+                    <div class="row ml-1">
+                      <p><strong>Descrição: </strong> <%= prestador.Habilidades[0].descricao %> </p>
+                    </div>
+                    <div class="row ml-1">
+                      <p><strong>Nota: </strong> <%= prestador.Avaliacoes[0].nota %></p>
+                    </div>
+                    <div class="row ml-1">
+                      <p><strong>Cidade: </strong> <%= prestador.prestadores_enderecos[0].cidade %> - <%= prestador.prestadores_enderecos[0].uf %></p>
+                    </div>
+                  </div>
+                  <div class="modal-footer pt-0">
+                    <button type="button" class="btn btnClose" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btnPagina">Ir à página</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <% }) %>
 
           </div>

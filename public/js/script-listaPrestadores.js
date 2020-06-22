@@ -1,4 +1,4 @@
-const pathPadrao = "/prestador/lista"
+const pathPadrao = "/prestador/lista";
 const buttonPesquisa = document.getElementById('lupa-pesquisa');
 const buttonLimpaPesquisa = document.getElementById('limpa-pesquisa');
 const inputPesquisa = document.getElementById('pesquisa-listaPrestadores');
@@ -28,13 +28,13 @@ inputPesquisa.addEventListener('keyup', function (event) {
 });
 
 // evento para limpar pesquisa e voltar a página inicial
-buttonLimpaPesquisa.addEventListener('click', function () {
-  if (document.location.pathname !== pathPadrao) {
+if (document.location.pathname !== pathPadrao) {
+  buttonLimpaPesquisa.addEventListener('click', function () {
     document.location.pathname = pathPadrao;
-  } 
-})
+  });
+};
 
-// evento para pesquisa pelo inputs de serviços
+// evento para filtro pelo inputs de serviços
 inputServicos.forEach(servico => {
   servico.addEventListener('click', function () {
     if (document.location.pathname !== pathPadrao) {
