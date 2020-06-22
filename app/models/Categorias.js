@@ -19,5 +19,11 @@ module.exports = (sequelize, DataTypes) => {
       timestamps: false
   });
 
+  Categorias.associate = (listaModels) => {
+    Categorias.hasOne(listaModels.Prestador, {
+      foreignKey: 'categoria_id'
+    })
+  };
+
   return Categorias;
 };
