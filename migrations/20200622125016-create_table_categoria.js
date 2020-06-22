@@ -1,7 +1,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
 
-    return queryInterface.createTable("cbo", {
+    return queryInterface.createTable("categorias", {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -16,15 +16,11 @@ module.exports = {
         type: Sequelize.STRING(45), 
         allowNull: false, //pode ser nulo? não
         unique: true,
-      },
-      prestadores_id: { 
-        type: Sequelize.INTEGER, 
-        allowNull: false 
-      },
+      }
     });
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('cbo');
+    return queryInterface.dropTable('categorias');
   }
 };
