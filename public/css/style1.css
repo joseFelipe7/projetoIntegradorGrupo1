@@ -1582,6 +1582,7 @@ a + img {
 .card-parteSuperior .boneco-prestador {
   background: rgb(32,53,115);
   background: linear-gradient(0deg, rgba(32,53,115,1) 30%, rgb(113, 86, 193, 1) 90%);
+  border: solid 3px #ffffff;
   border-radius: 100%;
   position: absolute;
   top: 1.5rem;
@@ -1655,7 +1656,7 @@ a + img {
 
 .modal-header {
   display: flex;
-  background-color: #7156c1;
+  background-color: #203573;
   height: 120px;
   max-height: 120px;
   position: relative;
@@ -1664,7 +1665,7 @@ a + img {
 .modal-header .boneco-prestador {
   background: rgb(32,53,115);
   background: linear-gradient(0deg, rgba(32,53,115,1) 30%, rgb(113, 86, 193, 1) 90%);
-  border: solid 2px #fff;
+  border: solid 3px #fff;
   border-radius: 100%;
   position: absolute;
   top: 2rem;
@@ -1686,39 +1687,52 @@ a + img {
 }
 
 .modal-title {
+  color: #ffffff;
   position: absolute;
   top: 5.5rem;
   left: 8.5rem;
 }
 
 .modal-body {
-  background-color: #a094f2;
+  background-color: #aeb2f2;
   border-top: solid 2px #ffffff;
   border-bottom: none;
 }
 
+.modal-body p {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.modal-body p strong {
+  color: #7156c1;
+}
+
 .modal-footer {
-  background-color: #a094f2;
+  background-color: #aeb2f2;
   border-top: none;
 }
 
 .modal-footer .btnClose {
-  background-color: #aeb2f2;
+  background-color: #a094f2;
+  color: #ffffff;
   font-weight: 500;
 }
 
 .modal-footer .btnClose:hover {
-  background-color: #7156c1;
+  background-color: #7156c1;;
   transition: 0.2s;
 }
 
 .modal-footer .btnPagina {
-  background-color: #88bf36;
+  background-color: #7156c1;
+  color: #ffffff;
   font-weight: 500;
 }
 
 .modal-footer .btnPagina:hover {
-  background-color: #a4dd4e;
+  background-color: #88bf36;
+  color: #203573;
   transition: 0.2s;
 }
 
@@ -1801,8 +1815,8 @@ a + img {
     justify-content: flex-end;
     align-items: center;
     height: 3.2rem;
-    width: 100%;
-    margin-top: 0.6rem;
+    width: 100vw;
+    margin-top: 0.2rem;
   }
 
   .fp-mobile p {
@@ -1841,7 +1855,7 @@ a + img {
     border-right: 0;
     border-radius: 0;
     height: 96rem;
-    width: 100%;
+    width: 100vw;
   }
 
   .lista-cardsPrestadores .row-paginacaoPrestadores {
@@ -1864,7 +1878,7 @@ a + img {
 
   .lista-cardsPrestadores {
     height: 255rem;
-    width: 100%;
+    width: 100vw;
   }
 
   .card-listaPrestadores {
