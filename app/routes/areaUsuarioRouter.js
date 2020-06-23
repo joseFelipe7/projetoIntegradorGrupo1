@@ -1,3 +1,6 @@
+
+const multer = require('multer')
+const upload = require('../../config/upload')
 const express = require("express");
 const authCliente = require('../middlewares/authCliente')
 const authPrestador = require('../middlewares/authPrestador')
@@ -21,7 +24,7 @@ let router = express.Router();
 
 //rotas contratante - meus-dados
 router.get("/area-contratante/meus-dados/:id", authCliente, clienteController.index);
-//router.put("/area-contratante/meus-dados/:id", authCliente, clienteController.update);
+//router.put("/area-contratante/meus-dados/:id", upload.any(), clienteController.update);
 
 //rotas contratante - meus-dados-endereços
 router.get("/area-contratante/meus-dados/:fk_cliente/endereco", authCliente, clientes_enderecoController.index);

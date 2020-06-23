@@ -342,11 +342,13 @@ a.btnContatoMN {
   align-items: center;
   background-color: #A094F2;
   height: 23.75rem;
-  max-height: 23.75rem;
+  max-height: 30rem;
   width: 100%;
 }
 
 .linksFooter {
+  display: flex;
+  justify-content: space-between;
   height: 12rem;
 }
 
@@ -380,7 +382,7 @@ a.btnContatoMN {
 }
 
 .linksFooter ul li a:hover {
-  color: #88BF36;
+  color: #203573;
 }
 
 .subtituloImg {
@@ -388,12 +390,25 @@ a.btnContatoMN {
   flex-direction: column;
   justify-content: center;
   height: 8rem;
-  max-height: 8rem;
+  /* max-height: 8rem; */
+}
+
+.subtituloImg p.textoSocial{
+  letter-spacing: 0.10em;
+  text-align: center;
+}
+.subtituloImg p.newsletter{
+  letter-spacing: 0.29em;
+  text-align: center;
+}
+.newsletterCampos{
+  display: flex;
+  flex-direction: column;
 }
 
 .subtituloImg .footer-icons a {
-  height: 60px;
-  width: 60px;
+  /* height: 60px;
+  width: 60px; */
   margin: 0 0.5rem;
 }
 
@@ -427,13 +442,13 @@ a.btnContatoMN {
 
 @media(max-width: 1024px) {
   .linksFooter ul {
-    padding: 1rem 0 0 3rem;
+    /* padding: 1rem 0 0 3rem; */
     margin: 0;
   }
 
   .subtituloImg p,
   .subtituloImg .footer-icons {
-    padding-left: 3rem;
+    /* padding-left: 3rem; */
   }
 }
 
@@ -447,12 +462,12 @@ a.btnContatoMN {
   #linksFooter {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
   }
 
   .linksFooter ul {
-    padding-left: 4rem;
+    /* padding-left: 4rem; */
   }
 
   .linksFooter ul p {
@@ -475,20 +490,16 @@ a.btnContatoMN {
   }
 
   .subtituloImg .footer-icons a {
-    height: 40px;
-    width: 40px;
+    /* height: 40px;
+    width: 40px; */
     margin: 0 0.2rem;
-  }
-
-  .subtituloImg {
-    height: 6rem;
   }
 }
 
 @media(max-width: 575px) {
   .linksFooter {
     justify-content: space-around;
-    width: 100vw;
+    width: 100%;
   }
 
   .linksFooter ul {
@@ -507,7 +518,7 @@ a.btnContatoMN {
   }
 }
 
-@media(max-width: 360px) {
+@media(max-width: 390px) {
   .linksFooter ul {
     width: 90px;
     padding: 0.8rem 0 0 0.2rem;
@@ -519,6 +530,25 @@ a.btnContatoMN {
   }
 }
 
+@media (max-width: 575px) {
+  .subtituloImg {
+    flex-wrap: nowrap;
+    justify-content: end;
+    align-items: center;
+  }
+
+  .footerAltura{
+    height: 410px;
+  }
+
+  /*max-height: 23.75rem;*/
+}
+.alert-newsletter{
+  position: fixed;
+  top:15px;
+  width: 100%;
+  text-align: center;
+}
 /* -------- Fim footer ---------- */
 
 /*acompanhe usuario*/

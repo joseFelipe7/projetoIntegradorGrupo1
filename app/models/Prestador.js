@@ -41,7 +41,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'categoria_id'
       }),
       Prestador.hasMany(listaModels.Avaliacoes, {
-        foreignKey: 'prestadores_idprestadores',
+        foreignKey: 'prestadores_idprestadores'
       }),
       Prestador.hasMany(listaModels.Contatos_prestador, {
         foreignKey: 'fk_prestador',

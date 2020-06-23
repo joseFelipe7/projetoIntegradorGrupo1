@@ -17,7 +17,8 @@ module.exports = (sequelize, DataTypes) => {
     type:DataTypes.STRING(290),
     allowNull:true
   },
-  fk_prestador: DataTypes.INTEGER
+  fk_prestador: DataTypes.INTEGER,
+  
 }, {
 timestamps:false,
 tableName: 'habilidades'

@@ -1,0 +1,49 @@
+
+        <!-- card sanfona 4 ------------------------------------------------->
+
+              <div class="card-body">
+                
+                <!-- formulario conta -->
+                <form action="/usuario/area-contratante/meus-dados/<%=data.cliente.id%>" method="GET"> 
+                  <!-- input linha 1 -->
+                    <div class="form-row">
+                      <!-- input senha -->
+                      <div class="form-group col">
+                        <label for="senha">Senha Atual</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text etiquetaCampo">Senha</span>
+                          </div>
+                          <input type="password" name="contratanteSenha" class="form-control campoMeusDadosStyle campoDadoReadonly" id="senha1" value="000000" readonly minlength="8">
+                        </div>
+                      </div>
+                    </div>
+        
+                    <!-- input linha 2 -->
+                    <div class="form-row">
+                      <!-- input email -->
+                      <div class="form-group col">
+                        <label for="email">E-mail de cadastro</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text etiquetaCampo">@</span>
+                          </div>
+                          <input type="email" name="contratanteEmail" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" value="<%= data.cliente.email %>" readonly>
+                        </div>
+                      </div>
+                    </div>
+  
+                    <!-- botao editar ABRE O MODAL-->
+                  <!-- Button trigger modal -->
+                  <div class="d-flex justify-content-end"><button type="button" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosContaContratante">Editar</button></div>
+                  </form>
+              </div>
+             
+      <!-- Modal ------------------------------------------------->
+      <!-- Modal -->
+
+    
+            
+      <!-- fim Modal ------------------------------------------------->
+          <!-- sanfona -------------------------------------------------------->
+     

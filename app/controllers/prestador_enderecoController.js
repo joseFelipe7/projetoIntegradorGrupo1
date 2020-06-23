@@ -15,7 +15,8 @@ const prestador_enderecoController = {
                     as:'prestadores_enderecos'
                 },
                 {
-                    model:Habilidades
+                    model:Habilidades,
+                    as: 'habilidades'
                    
                 }
             ]
@@ -46,7 +47,7 @@ const prestador_enderecoController = {
             cep:prestadorCep,
             numero:prestadorN,
             complemento:prestadorComplemento,
-            fk_prestador:id
+            fk_prestador
 
         })
         console.log(prestadores_enderecos)

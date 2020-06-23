@@ -59,13 +59,13 @@
                                 <h5 class="card-title ">
                                     Procure por um serviço, escolha um prossional qualificado e contrate com segurança!
                                 </h5>
-                                <form>
+                                <form action="/prestador/lista/search" method="GET">
                                     <!-- input linha 1 -->
                                     <div class="form-row m-auto p-2">
                                     <!-- input buscar -->
                                         <div class="form-group col-9 m-0">
                                             <div class="input-group">
-                                                <input type="text" class="form-control campoBuscarStyle campoDadoReadonly" id="buscar" placeholder="PROCURE POR PROFISSIONAIS, CATEGORIAS...">
+                                                <input type="text" class="form-control campoBuscarStyle campoDadoReadonly" name="key" placeholder="PROCURE POR PROFISSIONAIS, CATEGORIAS...">
                                             </div>
                                         </div>
                             
@@ -74,7 +74,7 @@
                                             <div class="input-group">
                                                 <!-- Button -->
                                                 <div class="d-flex justify-content-end">
-                                                    <button type="button" class="btn botaoBuscar">Buscar</button>
+                                                    <button type="submit" class="btn botaoBuscar">Buscar</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -96,11 +96,15 @@
             </section>
 
             <!-- scroll de cards -->
+           
             <section class="container-fluid sessaoHomePrestadores">
+                  
                 <div class="scroolCardsPrestadorHome py-2">
-                    <% for(let i=0; i < 10; i++) { %> 
+                        <% prestador.forEach(prest => { %>
                         <div class="cardPrestador h-100 mx-3 py-3 px-1">
                             <!-- card unico -->
+                            
+                            
                             <div class="container-fluid m-100 h-100 m-0 p-0 pt-2">
                                 <!-- foto prestador... -->
                                 <div class="row h-35 w-100 p-0 m-0">
@@ -112,7 +116,7 @@
                                 <div class="row h-13 w-75 mt-1 p-0 mx-auto">
                                     <div class="col w-100">
                                         <div class="card border-0 h-100 w-100 rounded d-flex flex-row justify-content-center align-items-center bg-roxo">
-                                            <h5 class="card-title border-0 m-0 text-center">Ótimo</h5>
+                                            <h5 class="card-title border-0 m-0 text-center"><%= prest.Habilidades.titulo  %> </h5>
                                             <img src="/img/estrela5.png" alt="" class="m-0 notaCardPrestador">
                                         </div>
                                     </div>
@@ -121,7 +125,7 @@
                                 <div class="row h-13 w-100 mt-1 p-0 m-0">
                                     <div class="col w-100">
                                         <div class="card border-0 h-100 w-100 rounded d-flex justify-content-center bg-roxo">
-                                            <h5 class="card-title border-0 m-0 text-center">Mario Luigi</h5>
+                                            <h5 class="card-title border-0 m-0 text-center"><%= prest.nome  %> </h5>
                                         </div>
                                     </div>
                                 </div>
@@ -129,17 +133,19 @@
                                 <div class="row h-30 w-100 mt-1 p-0 m-0">
                                     <div class="col w-100">
                                         <div class="card border-0 h-100 w-100 rounded bg-roxo d-flex justify-content-center align-items-center">
-                                            <p class="card-text border-0 text-center p-1">Sobre o serviço Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                            <p class="card-text border-0 text-center p-1"><%= prest.Habilidades.descricao  %> </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                           
                             <!-- fim card unico -->
                         </div>
-                    <% } %> 
+                        <% }) %> 
                 </div>
+               
             </section>
-
+            
             <!-- seção contratante -->
             <section class="container-fluid sessaoGradienteRB m-0 p-0">
                 <div class="sessaoComoFuncionaContratante py-2 d-flex justify-content-center align-items-center">

@@ -3,12 +3,11 @@ const { check, validationResult, body} = require('express-validator');
 
 const chamadosController = require("../controllers/chamadosController");
 const validacoesChamado = require('../middlewares/validacoesChamado');
+const homeController = require("../controllers/homeController")
 
 let router = express.Router();
+router.get("/", homeController.cards)
 
-router.get("/", (req, res) => {
-    res.render("home");
-})
 
 router.get("/sobre", (req, res) => {
     res.send("sobre");
@@ -27,5 +26,7 @@ router.post("/contato", validacoesChamado, chamadosController.store);
 router.get("/como-funciona", (req, res) => {
     res.render("comoFunciona");
 })
+
+router.get("/", homeController.cards)
 
 module.exports = router;

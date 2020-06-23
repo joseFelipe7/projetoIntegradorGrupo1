@@ -15,7 +15,8 @@ const prestador_contatosController = {
                     as:'prestadores_enderecos'
                 },
                 {
-                    model:Habilidades
+                    model:Habilidades,
+                    as:'habilidades'
                    
                 }
             ]
