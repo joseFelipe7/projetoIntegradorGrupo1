@@ -22,7 +22,7 @@
 
         <div class="filtro-prestadores">
 
-          <div class="row p-2 filtro-parte1">
+          <div id="filtroMobile" class="row p-2 filtro-parte1">
             <h4 class="titulo-filtroPrestadores">Filtros</h4>
             <img src="/img/filtro.png" alt="filtro">
           </div>
@@ -157,7 +157,7 @@
                   </div>
                   <div class="modal-footer pt-0">
                     <button type="button" class="btn btnClose" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btnPagina">Ir à página</button>
+                    <button type="button" class="btn btnPagina" onclick="window.location.href=`/prestador/single/<%= prestador.id %>` ">Ir à página</button>
                   </div>
                 </div>
               </div>
