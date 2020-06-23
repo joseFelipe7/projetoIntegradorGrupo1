@@ -22,10 +22,11 @@
 
         <div class="filtro-prestadores">
 
-          <div id="filtroMobile" class="row p-2 filtro-parte1">
-            <h4 class="titulo-filtroPrestadores">Filtros</h4>
+          <div class="row p-2 filtro-parte1">
+            <h4 class="titulo-filtroPrestadores">Filtro</h4>
             <img src="/img/filtro.png" alt="filtro">
           </div>
+
           <hr class="linha-separar">
 
           <div class="row d-flex flex-column p-2 filtro-parte2">
@@ -42,46 +43,29 @@
             </ul>
           </div>
 
-          <hr class="linha-separar">
-
-          <!-- <div id="filtroAvaliacao" class="row d-flex flex-column p-2 filtro-parte4">
-            <h5 class="subtitulo-filtroPrestadores">Avaliação</h5>
-            <ul id="selecionar-avaliacao">
-              <li>
-                <input id="5" type="checkbox" value="5">
-                <label for="5">&#11088;&#11088;&#11088;&#11088;&#11088;</label>
-              </li>
-              <li>
-                <input id="4" type="checkbox" value="4">
-                <label for="4">&#11088;&#11088;&#11088;&#11088;</label>
-              </li>
-              <li>
-                <input id="3" type="checkbox" value="3">
-                <label for="3">&#11088;&#11088;&#11088;</label>
-              </li>
-              <li>
-                <input id="2" type="checkbox" value="2">
-                <label for="2">&#11088;&#11088;</label>
-              </li>
-              <li>
-                <input id="1" type="checkbox" value="1">
-                <label for="1">&#11088;</label>
-              </li>
-            </ul>
-          </div>
-
-          <hr class="linha-separar"> -->
-
         </div>
 
 
         <div class="lista-cardsPrestadores">
 
+          <!-- Filtro para mobile -->
           <div class="fp-mobile">
-            <a href="#" class="fp-filterOrder">
+            <a href="#" class="fp-filterOrder dropdown-toggle ml-0 mr-3" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <img src="/img/filter-mobile.png">
-              <p>Filtrar</p>
+              <p class="pr-0">Filtrar</p>
             </a>
+            <div class="dropdown-menu mr-2" aria-labelledby="dropdownMenuLink">
+              <ul id="selecionar-servicos">
+                <li><input id="med" class="ml-2 mr-1" type="checkbox" value="1"><label for="med">Medicina</label></li>
+                <li><input id="seg" class="ml-2 mr-1" type="checkbox" value="2"><label for="seg">Segurança</label></li>
+                <li><input id="man" class="ml-2 mr-1" type="checkbox" value="3"><label for="man">Manutenção</label></li>
+                <li><input id="est" class="ml-2 mr-1" type="checkbox" value="4"><label for="est">Estética</label></li>
+                <li><input id="jar" class="ml-2 mr-1" type="checkbox" value="5"><label for="jar">Jardinagem</label></li>
+                <li><input id="edu" class="ml-2 mr-1" type="checkbox" value="6"><label for="edu">Educação</label></li>
+                <li><input id="cul" class="ml-2 mr-1" type="checkbox" value="7"><label for="cul">Culinária</label></li>
+                <li><input id="esc" class="ml-2 mr-1" type="checkbox" value="8"><label for="esc">Escritório</label></li>
+              </ul>
+            </div>
           </div>
 
           <div class="row d-flex m-0 p-0">

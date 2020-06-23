@@ -1838,6 +1838,13 @@ a + img {
     margin-right: 0.1rem;
   }
 
+  .fp-mobile .dropdown-menu {
+    background-color: #a094f2;
+    border: solid 2px #7156c1;
+    color: #203573;
+    font-weight: 500;
+  }
+
   .filtro-prestadores * {
     display: none;
   }

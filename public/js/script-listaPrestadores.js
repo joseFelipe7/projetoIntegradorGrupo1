@@ -3,9 +3,6 @@ const buttonPesquisa = document.getElementById('lupa-pesquisa');
 const buttonLimpaPesquisa = document.getElementById('limpa-pesquisa');
 const inputPesquisa = document.getElementById('pesquisa-listaPrestadores');
 const inputServicos = document.querySelectorAll('#selecionar-servicos li input');
-const buttonSiglePrestador = document.getElementById('btn-pgSinglePrestador');
-const filtroMobile = document.getElementById('filtroMobile');
-
 
 // evento para pesquisa pelo input de pesquisa
 buttonPesquisa.addEventListener('click', function () {
@@ -47,9 +44,6 @@ inputServicos.forEach(servico => {
   });
 });
 
-buttonSiglePrestador.addEventListener('click', function () {
-  window.location.href = "/prestador/single";
-})
 
 
 
