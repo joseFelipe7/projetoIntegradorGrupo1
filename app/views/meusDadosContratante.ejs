@@ -76,12 +76,6 @@
               </div>
             </form>
          
-            
-         
-          
-          
-         
-       
         </div>
       </div>
     </div>
@@ -106,7 +100,7 @@
           <div class="form-row">
             <!-- input foto escolhida -->
             <div class="form-group col-3">
-              <label for="nascimento">Perfil</label>
+              <label for="photo">Perfil</label>
               <div class="input-group">
                 <img src="/img/envio.png" alt="Meu Perfil" title="Meu Perfil" class="img-thumbnail perfilMeusDados"> 
               </div>
@@ -185,10 +179,118 @@
   
 </div>
 <!-- ENDEREÇO - fim Modal ------------------------------------------------->
+    <!-- card sanfona 2 ------------------------------------------------->
+    <div class="card">
+        <!-- topo 2 sanfona -->
+        <div class="card-header sanfonaTopoMeusDados" id="headingTwo">
+          <h5 class="mb-0">
+            
+            <button class="btn btn-link tituloSanfonaTopoMeusDados" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+              <img src="/img/endereco.png" alt="Meus dados" title="Meus dados">
+              Endereço
+            </button>
+          </h5>
+        </div>
+  
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+         
 <%- include('include/c-enderecoMd') %>
+</div>
+</div>
+<!--MODAL-->
+<div class="modal fade" id="editarDadosEnderecoContratante" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-azul text-white">
+          <h5 class="modal-title" id="exampleModalLongTitle">Inclua seu endereço </h5>
+          <button type="button" class="close fecharModal" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <%- include('include/c-post-endereco') %>
+        <div class="modal-footer bg-azul">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
 
 <!-- CONTATOS -  fim Modal ------------------------------------------------->
+
+<!-- card sanfona 3 -------------------------------------------------------->
+    <div class="card">
+      <div class="card-header sanfonaTopoMeusDados" id="headingThree">
+        <h5 class="mb-0">
+          
+          <button class="btn btn-link tituloSanfonaTopoMeusDados" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+            <img src="/img/contato.png" alt="Meus dados" title="Meus dados">
+            Contato 
+          </button>
+        </h5>
+      </div>
+
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+        
 <%- include('include/c-contatosMd') %>
+  </div>
+</div>
+<!-- MODAL -->
+<div class="modal fade" id="editarDadosContatoContratante" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-azul text-white">
+          <h5 class="modal-title" id="exampleModalLongTitle">Editar contato</h5>
+          <button type="button" class="close fecharModal" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <%- include('include/c-post-contatos') %>
+        <div class="modal-footer bg-azul">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+     
+    </div>
 
 <!-- CONTA - card sanfona 4 ------------------------------------------------->
-<%- include('include/c-contaMd') %>
+
+<div class="card">
+<!-- topo 4 sanfona -->
+    <div class="card-header sanfonaTopoMeusDados" id="headingFour">
+      <h5 class="mb-0">
+        
+        <button class="btn btn-link tituloSanfonaTopoMeusDados" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+          <img src="/img/conta.png" alt="Meus dados" title="Meus dados">
+          Conta
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+    <%- include('include/c-contaMd') %>
+    <div class="container-fluid bg-azul rodapeMeusDadosSanfona">
+
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="editarDadosContaContratante" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-azul text-white">
+          <h5 class="modal-title" id="exampleModalLongTitle">Editar dados da conta</h5>
+          <button type="button" class="close fecharModal" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <!-- FORM MODAL -->
+        <%- include('include/c-post-conta') %>
+        <div class="modal-footer bg-azul">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+     
+    </div>

@@ -1,0 +1,224 @@
+<!-- Modal -->
+
+<div class="modal-body bg-roxoClaro">
+        <!-- formulario editar endereço -->
+        <% data.cliente.clientes_enderecos.forEach(cliente_endereco => { %>
+          <form action="/usuario/area-contratante/meus-dados/endereco/<%=cliente_endereco.id%>?_method=PUT" id="forme" method="POST"> 
+         
+          <!-- input linha 1 -->
+          <div class="form-row">
+            <!-- input data cep -->
+            <div class="form-group col-6">
+              <label for="cep">CEP</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text etiquetaCampo">CEP</span>
+                </div>
+                <input type="number" name="contratanteCep" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cep" placeholder="CEP - apenas números" maxlength="8" pattern="[0-9]+$" value="<%= cliente_endereco.cep %>"> 
+              </div>
+            </div>
+
+            <!-- buttom pesquisar cep -->
+            <div class="form-group col-6">
+              <label>Buscar cep</label>
+              
+              <div class="input-group">
+                <button type="button" class="btn botaoMeusDados"><img src="/img/endereco.png" alt="Meus dados" title="Meus dados">Pesquisar</button>
+              </div>
+            </div>
+          </div>
+        <!-- input linha 2 -->
+          <div class="form-row">
+            <!-- input UF -->
+            <div class="form-group col-md-6">
+              <label for="UF">UF</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text etiquetaCampo">UF</span>
+                </div>
+                <input type="text" name="contratanteUf" class="form-control campoMeusDadosStyle campoDadoReadonly" id="UF" placeholder="Estado - UF" maxlength="2" value="<%= cliente_endereco.uf %>">
+              </div>
+            </div>
+            <!-- input cidade -->
+            <div class="form-group col-md-6">
+              <label for="cidade">Cidade</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text etiquetaCampo">Cidade</span>
+                </div>
+                <input type="text" name="contratanteCidade" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cidade" placeholder="Digite sua cidade" value="<%= cliente_endereco.cidade %>">
+              </div>
+            </div>
+          </div>
+
+          <!-- input linha 3 -->
+          <div class="form-row">
+            <!-- input rua -->
+            <div class="form-group col">
+              <label for="rua">Rua</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text etiquetaCampo">Rua</span>
+                </div>
+                <input type="text" name="contratanteRua" class="form-control campoMeusDadosStyle campoDadoReadonly" id="rua" placeholder="Digite sua rua" value="<%= cliente_endereco.logradouro %>">
+              </div>
+            </div>
+          </div>
+
+          <!-- input linha 3 -->
+          <div class="form-row">
+            <!-- input numero -->
+            <div class="form-group col-md-6">
+              <label for="numero">Nº</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text etiquetaCampo">Nº</span>
+                </div>
+                <input type="number" name="contratanteN" class="form-control campoMeusDadosStyle campoDadoReadonly" id="numero" placeholder="Número" pattern="[0-9]+$" value="<%= cliente_endereco.numero %>">
+              </div>
+            </div>
+            <!-- input complemento -->
+            <div class="form-group col-md-6">
+              <label for="complemento">Complemento</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text etiquetaCampo">Complemento</span>
+                </div>
+                <input type="text" name="contratanteComplemento" class="form-control campoMeusDadosStyle campoDadoReadonly" id="complemento" placeholder="Complemento" value="<%= cliente_endereco.complemento %>">
+              </div>
+            </div>
+          </div>
+          <!--div validação-->
+      <div id="error-list" class="alert alert-danger alert-dismissible fade show" role="alert" hidden>
+        <ul>
+        </ul>
+        <button type="button" class="close" id="close-listP" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+   
+      </div>
+
+          <!-- botao editar ABRE O MODAL-->
+          <!-- Button trigger modal -->
+          <div class="d-flex justify-content-end">
+            <button type="submit" class="btn botaoMeusDados">SALVAR</button>
+          </div>
+        
+        </form>
+
+      <% }) %> 
+     
+
+      </div>
+      <!----------------->
+
+      <div class="modal-body bg-roxoClaro">
+            <!-- formulario editar endereço -->
+           
+           
+      
+            <form action="/usuario/area-contratante/meus-dados/<%=data.cliente.id%>/endereco" id="forme" method="POST"> 
+      
+              <!-- input linha 1 -->
+              <div class="form-row">
+                <!-- input data cep -->
+                <div class="form-group col-6">
+                  <label for="cep">CEP 1</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text etiquetaCampo">CEP</span>
+                    </div>
+                    <input type="number" name="contratanteCep" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cep" placeholder="CEP - apenas números" maxlength="8" pattern="[0-9]+$" > 
+                  </div>
+                </div>
+      
+                <!-- buttom pesquisar cep -->
+                <div class="form-group col-6">
+                  <label>Buscar cep</label>
+                  
+                  <div class="input-group">
+                    <button type="button" class="btn botaoMeusDados"><img src="/img/endereco.png" alt="Meus dados" title="Meus dados">Pesquisar</button>
+                  </div>
+                </div>
+              </div>
+            <!-- input linha 2 -->
+              <div class="form-row">
+                <!-- input UF -->
+                <div class="form-group col-md-6">
+                  <label for="UF">UF</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text etiquetaCampo">UF</span>
+                    </div>
+                    <input type="text" name="contratanteUf" class="form-control campoMeusDadosStyle campoDadoReadonly" id="UF" placeholder="Estado - UF" maxlength="2" >
+                  </div>
+                </div>
+                <!-- input cidade -->
+                <div class="form-group col-md-6">
+                  <label for="cidade">Cidade</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text etiquetaCampo">Cidade</span>
+                    </div>
+                    <input type="text" name="contratanteCidade" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cidade" placeholder="Digite sua cidade" >
+                  </div>
+                </div>
+              </div>
+      
+              <!-- input linha 3 -->
+              <div class="form-row">
+                <!-- input rua -->
+                <div class="form-group col">
+                  <label for="rua">Rua</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text etiquetaCampo">Rua</span>
+                    </div>
+                    <input type="text" name="contratanteRua" class="form-control campoMeusDadosStyle campoDadoReadonly" id="rua" placeholder="Digite sua rua" >
+                  </div>
+                </div>
+              </div>
+      
+              <!-- input linha 3 -->
+              <div class="form-row">
+                <!-- input numero -->
+                <div class="form-group col-md-6">
+                  <label for="numero">Nº</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text etiquetaCampo">Nº</span>
+                    </div>
+                    <input type="number" name="contratanteN" class="form-control campoMeusDadosStyle campoDadoReadonly" id="numero" placeholder="Número" pattern="[0-9]+$" >
+                  </div>
+                </div>
+                <!-- input complemento -->
+                <div class="form-group col-md-6">
+                  <label for="complemento">Complemento</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text etiquetaCampo">Complemento</span>
+                    </div>
+                    <input type="text" name="contratanteComplemento" class="form-control campoMeusDadosStyle campoDadoReadonly" id="complemento" placeholder="Complemento" >
+                  </div>
+                </div>
+              </div>
+              <div id="error-list" class="alert alert-danger alert-dismissible fade show" role="alert" hidden>
+                <ul>
+                </ul>
+                <button type="button" class="close" id="close-listP" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+           
+              </div>
+      
+              <!-- botao editar ABRE O MODAL-->
+              <!-- Button trigger modal -->
+              <div class="d-flex justify-content-end">
+                <button type="submit" class="btn botaoMeusDados" >SALVAR</button>
+              </div>
+              
+            </form>
+      
+            
+      
+          </div>

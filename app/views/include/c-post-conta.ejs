@@ -1,0 +1,61 @@
+<div class="modal-body bg-roxoClaro">
+              
+        <!-- formulario conta -->
+        <form action="/usuario/area-contratante/meus-dados/<%=data.cliente.id%>?_method=PUT" id="formcon" method="POST"> 
+          <!-- input linha 1 -->
+          <div class="form-row">
+            <!-- input senha -->
+            <div class="form-group col">
+              <label for="senha">Senha Atual</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text etiquetaCampo">Senha</span>
+                </div>
+                <input type="password" name="contratanteSenha" class="form-control campoMeusDadosStyle campoDadoReadonly" id="senha1" placeholder="Digite sua senha atual" minlength="8">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <!-- input senha -->
+            <div class="form-group col">
+              <label for="senha">Nova senha</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text etiquetaCampo">Senha</span>
+                </div>
+                <input type="password" name="contratanteNovaSenha" class="form-control campoMeusDadosStyle campoDadoReadonly" id="senha2" placeholder="Digite sua nova senha" minlength="8">
+              </div>
+            </div>
+          </div>
+
+          <!-- input linha 2 -->
+          <div class="form-row">
+            <!-- input email -->
+            <div class="form-group col">
+              <label for="email">E-mail de cadastro</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text etiquetaCampo">@</span>
+                </div>
+                <input type="email" name="contratanteEmail" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email" value="<%= data.cliente.email %>">
+              </div>
+            </div>
+          </div>
+          <div id="error-list" class="alert alert-danger alert-dismissible fade show" role="alert" hidden>
+            <ul>
+            </ul>
+            <button type="button" class="close" id="close-listP" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+       
+          </div>
+
+          <!-- botao editar ABRE O MODAL-->
+        <!-- Button trigger modal -->
+        <div class="d-flex justify-content-end">
+          <button type="submit" class="btn botaoMeusDados" data-toggle="modal" data-target="#editarDadosContaContratante">SALVAR</button></div>
+         
+        </form>
+       
+      </div>

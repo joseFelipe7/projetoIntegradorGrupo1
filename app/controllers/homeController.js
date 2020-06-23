@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize')
 const Op = Sequelize.Op
-const {Habilidades} = require('../models')
+const {Habilidades, Prestador} = require('../models')
 
 const PesquisaPrestadorHomeController = {
     search: async (req, res) => {
@@ -13,6 +13,9 @@ const PesquisaPrestadorHomeController = {
             }
         })
         return res.render('/prestador/lista', {pesquisa})
+    },
+    cards: async (req, res) => {
+
     }
 }
 
