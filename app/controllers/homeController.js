@@ -15,6 +15,13 @@ const PesquisaPrestadorHomeController = {
         return res.render('/prestador/lista', {pesquisa})
     },
     cards: async (req, res) => {
+        const prestador = await Prestador.findAll({
+            include:{
+                model: Habilidades
+            }
+        })
+        console.log(prestador)
+        return  res.render("home",{prestador});
 
     }
 }

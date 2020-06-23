@@ -6,10 +6,8 @@ const validacoesChamado = require('../middlewares/validacoesChamado');
 const homeController = require("../controllers/homeController")
 
 let router = express.Router();
+router.get("/", homeController.cards)
 
-router.get("/", (req, res) => {
-    res.render("home");
-})
 
 router.get("/sobre", (req, res) => {
     res.send("sobre");
@@ -29,6 +27,6 @@ router.get("/como-funciona", (req, res) => {
     res.render("comoFunciona");
 })
 
-router.get("/Card-prestador-home", homeController.cards)
+router.get("/", homeController.cards)
 
 module.exports = router;

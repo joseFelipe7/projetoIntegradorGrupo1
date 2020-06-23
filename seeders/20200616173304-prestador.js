@@ -13,7 +13,8 @@ module.exports = {
         data_nascimento: null,
         status_:'A',        
         avatar:false,
-        extensao_avatar:false
+        extensao_avatar:false,
+        nota: '4.8'
       },
       {
         nome: 'Lais Maria',
@@ -23,7 +24,8 @@ module.exports = {
         data_nascimento: null,
         status_:'A',        
         avatar:false,
-        extensao_avatar:false
+        extensao_avatar:false,
+        nota: '4.2'
       },
       {
         nome: 'Julio João',
@@ -33,7 +35,8 @@ module.exports = {
         data_nascimento: null,
         status_:'A',        
         avatar:false,
-        extensao_avatar:false
+        extensao_avatar:false,
+        nota: '4.5'
       },
       {
         nome: 'Ana Maria',
@@ -43,7 +46,8 @@ module.exports = {
         data_nascimento: null,
         status_:'A',        
         avatar:false,
-        extensao_avatar:false
+        extensao_avatar:false,
+        nota: '3.8'
       }
     ], {});
 
