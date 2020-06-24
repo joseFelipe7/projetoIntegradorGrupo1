@@ -1,3 +1,4 @@
+<% if(data.cliente.contatos != ""){ %> 
 <div class="modal-body bg-roxoClaro">
         
         <!-- formulario contato -->
@@ -89,6 +90,9 @@
         
        
       </div>
+<% } else { %>
+
+   
 
 
 <!------------------->
@@ -98,8 +102,9 @@
         
         
         
-        <form action="/usuario/area-contratante/meus-dados/<%=data.cliente.id%>/contato" id="formc" method="POST"> 
-
+        <form action="/usuario/area-contratante/meus-dados/<%=data.cliente.id%>/contatos" id="formc" method="POST"> 
+<!--router.post("/area-contratante/meus-dados/:fk_cliente/contatos", authCliente, contatosController.store);
+-->
           <!-- input linha 1 -->
             <div class="form-row">
               <!-- input cel1 -->
@@ -184,3 +189,4 @@
         
       
       </div>
+    <% } %> 

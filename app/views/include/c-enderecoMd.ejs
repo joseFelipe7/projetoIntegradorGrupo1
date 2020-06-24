@@ -3,7 +3,7 @@
           <!-- formulario endereço -->
      <% data.cliente.clientes_enderecos.forEach(cliente_endereco => { %>
 
-          <form action="/usuario/area-contratante/meus-dados/enderecos/<%=cliente_endereco.id%>" method="GET">
+          <form action="/usuario/area-contratante/meus-dados/<%=cliente_endereco.id%>/endereco" method="GET">
             <!-- input linha 1 -->
             <div class="form-row">
               <!-- input data cep -->

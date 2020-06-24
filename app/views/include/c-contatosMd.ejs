@@ -4,7 +4,7 @@
           <!-- formulario contato -->
           <% data.cliente.contatos.forEach(contato => { %>
             
-          <form action="/usuario/area-contratante/meus-dados/contatos/<%=contato.id%>" method="GET"> 
+          <form action="/usuario/area-contratante/meus-dados/<%=contato.id%>/contatos" method="GET"> 
             <!-- input linha 1 -->
             <div class="form-row">
               <!-- input cel1 -->
