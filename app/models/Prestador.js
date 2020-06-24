@@ -22,8 +22,8 @@ module.exports = (sequelize, DataTypes) => {
         cpf:DataTypes.INTEGER,
         avatar:DataTypes.STRING(190),
         extensao_avatar:DataTypes.CHAR(5),
-        data_cadastro:DataTypes.DATE
-         
+        data_cadastro:DataTypes.DATE,
+        categoria_id: DataTypes.INTEGER
     }, {
         timestamps:false,
         tableName: 'prestador'
@@ -36,6 +36,9 @@ module.exports = (sequelize, DataTypes) => {
       }),
       Prestador.hasMany(listaModels.Habilidades, {
         foreignKey: 'fk_prestador'
+      }),
+      Prestador.belongsTo(listaModels.Categorias, {
+        foreignKey: 'categoria_id'
       }),
       Prestador.hasMany(listaModels.Avaliacoes, {
         foreignKey: 'prestadores_idprestadores'

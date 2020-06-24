@@ -1,11 +1,8 @@
-const inputPesquisa = document.getElementById('pesquisa-listaPrestadores');
+const pathPadrao = "/prestador/lista";
 const buttonPesquisa = document.getElementById('lupa-pesquisa');
 const buttonLimpaPesquisa = document.getElementById('limpa-pesquisa');
-const divResultadoPesquisa = document.querySelector('.lista-cardsPrestadores .row .resultadoPesquisa');
-const resultadoPesquisa = document.getElementById('resultadoPesquisa'); 
-const pesquisaAvaliacao = document.querySelectorAll('#filtroAvaliacao ul li input');
-const pathPadrao = "/prestador/lista"
-
+const inputPesquisa = document.getElementById('pesquisa-listaPrestadores');
+const inputServicos = document.querySelectorAll('#selecionar-servicos li input');
 
 // evento para pesquisa pelo input de pesquisa
 buttonPesquisa.addEventListener('click', function () {
@@ -30,14 +27,25 @@ inputPesquisa.addEventListener('keyup', function (event) {
 });
 
 // evento para limpar pesquisa e voltar a página inicial
-buttonLimpaPesquisa.addEventListener('click', function () {
-  if (document.location.pathname !== pathPadrao) {
+if (document.location.pathname !== pathPadrao) {
+  buttonLimpaPesquisa.addEventListener('click', function () {
     document.location.pathname = pathPadrao;
-  } 
-})
+  });
+};
 
-pesquisaAvaliacao.forEach(click => {
-  click.addEventListener('click', function () {
-    
-  })
-})
+// evento para filtro pelo inputs de serviços
+inputServicos.forEach(servico => {
+  servico.addEventListener('click', function () {
+    if (document.location.pathname !== pathPadrao) {
+      document.location.pathname = pathPadrao + "/categoria/" + servico.value;
+    } else {
+      document.location.pathname += "/categoria/" + servico.value;
+    }
+  });
+});
+
+
+
+
+
+
