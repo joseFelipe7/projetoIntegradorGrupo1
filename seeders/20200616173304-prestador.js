@@ -14,6 +14,7 @@ module.exports = {
         status_:'A',        
         avatar:false,
         extensao_avatar:false,
+        categoria_id:'9',
         nota: '4.8'
       },
       {
@@ -25,6 +26,7 @@ module.exports = {
         status_:'A',        
         avatar:false,
         extensao_avatar:false,
+        categoria_id:'2',
         nota: '4.2'
       },
       {
@@ -36,6 +38,7 @@ module.exports = {
         status_:'A',        
         avatar:false,
         extensao_avatar:false,
+        categoria_id:'3',
         nota: '4.5'
       },
       {
@@ -47,6 +50,7 @@ module.exports = {
         status_:'A',        
         avatar:false,
         extensao_avatar:false,
+        categoria_id:'7',
         nota: '3.8'
       }
     ], {});

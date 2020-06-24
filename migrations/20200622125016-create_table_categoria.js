@@ -13,7 +13,7 @@ module.exports = {
         unique: true,
       },
       descricao: { 
-        type: Sequelize.STRING(45), 
+        type: Sequelize.STRING(345), 
         allowNull: false, //pode ser nulo? não
         unique: true,
       }

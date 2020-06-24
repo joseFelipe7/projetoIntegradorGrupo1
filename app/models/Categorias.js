@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       unique: true,
     },
     descricao: { 
-      type: DataTypes.STRING(45), 
+      type: DataTypes.STRING(345), 
       allowNull: false, //pode ser nulo? não
       unique: true,
     } 
