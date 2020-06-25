@@ -94,7 +94,7 @@ router.post("/area-prestador/meusDados/:fk_cliente/profissao", authPrestador, ha
 
 
 router.get("/area-prestador/requisicoes", authPrestador,(req, res) => {
-    res.render("areaPrestador", {view: "requisicoes-prestador", loggado: req.session.prestador});
+    res.render("areaPrestador", {view: "requisicoes-prestador", loggado: req.session.prestador,data:{}});
 })
 router.get("/area-prestador/chat", authPrestador, chatPrestadorController.index) 
 
