@@ -142,9 +142,9 @@
 
           <hr class="linha-separar">
 
-          <div class="row d-flex justify-content-around m-0 p-0">
+          <div class="row d-flex justify-content-center m-0">
             <% prestadores.forEach(prestador => { %>
-            <div type="button" class="card card-listaPrestadores col-12 col-sm-12 col-md-6 col-lg-4 my-3 p-0" data-toggle="modal" data-target="#exampleModal<%= prestador.id %>">
+            <div type="button" class="card card-listaPrestadores col-12 col-sm-12 col-md-6 col-lg-4 my-3 ml-2 mr-2 p-0" data-toggle="modal" data-target="#exampleModal<%= prestador.id %>">
               <div class="card-parteSuperior">
                 <span class="boneco-prestador"><img src=<%= prestador.avatar %>></span>
                 <% prestador.Avaliacoes.forEach(avaliacao => { %>

@@ -8,9 +8,9 @@ const inputServicos = document.querySelectorAll('#selecionar-servicos li input')
 buttonPesquisa.addEventListener('click', function () {
   let textoPesquisa = inputPesquisa.value
   if (document.location.pathname !== pathPadrao) {
-    document.location.pathname = pathPadrao + "/" + textoPesquisa;
+    document.location.pathname = pathPadrao + "/" + textoPesquisa + "/";
   } else {
-    document.location.pathname += "/" + textoPesquisa;
+    document.location.pathname += "/" + textoPesquisa + "/";
   }
 });
 
@@ -19,9 +19,9 @@ inputPesquisa.addEventListener('keyup', function (event) {
   let textoPesquisa = inputPesquisa.value
   if (this.value.length > 0 && event.key == 'Enter') {
     if (document.location.pathname !== pathPadrao) {
-      document.location.pathname = pathPadrao + "/" + textoPesquisa;
+      document.location.pathname = pathPadrao + "/" + textoPesquisa + "/";
     } else {
-      document.location.pathname += "/" + textoPesquisa;
+      document.location.pathname += "/" + textoPesquisa + "/";
     }
   }
 });
@@ -37,9 +37,9 @@ if (document.location.pathname !== pathPadrao) {
 inputServicos.forEach(servico => {
   servico.addEventListener('click', function () {
     if (document.location.pathname !== pathPadrao) {
-      document.location.pathname = pathPadrao + "/categoria/" + servico.value;
+      document.location.pathname = pathPadrao + "/categoria/" + servico.value + "/";
     } else {
-      document.location.pathname += "/categoria/" + servico.value;
+      document.location.pathname += "/categoria/" + servico.value + "/";
     }
   });
 });

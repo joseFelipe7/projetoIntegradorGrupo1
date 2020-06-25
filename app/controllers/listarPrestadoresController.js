@@ -23,9 +23,6 @@ const listarPrestadoresController = {
         });
         // ele divide totalPage por 12 itens cada page e arredonda para não trazer número quebrado.
         let totalPages = Math.round(totalPage/12);
-        prestadores.forEach(prestador => {
-            console.log(prestador.Avaliacoes);
-        })
         res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages, textoPesquisa: []});
     },
 
@@ -65,10 +62,71 @@ const listarPrestadoresController = {
             },
             include: [{
                 model: Habilidades,
-                required: true
+                required: true,
             }, {
                 model: Avaliacoes,
                 required: true
+            }, {
+                model: Prestador_endereco,
+                required: true,
+                as: 'prestadores_enderecos'
+            }]
+        });
+        let categorias = await Categorias.findAll({
+            where:{
+                id: categoria_id
+            }
+        })
+        let totalPages = Math.round(totalPage/12);
+        res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages, textoPesquisa: [ categorias[0].categoria ]});
+    },
+
+    showPesquisaAvaliacao: async (req, res) => {
+        let { pesquisa, avaliacao } = req.params;
+        let { page = 1 } = req.query;
+        let { count: totalPage, rows: prestadores } = await Prestador.findAndCountAll({
+            limit: 12,
+            offset: (page - 1) * 12,
+            include: [{
+                model: Habilidades,
+                required: true,
+                where: {
+                    titulo: pesquisa
+                }
+            }, {
+                model: Avaliacoes,
+                required: true,
+                where: {
+                    nota: avaliacao
+                }
+            }, {
+                model: Prestador_endereco,
+                required: true,
+                as: 'prestadores_enderecos'
+            }]
+        });
+        let totalPages = Math.round(totalPage/12);
+        res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages, textoPesquisa: [ pesquisa ]});
+    },
+
+    showCategoriaAvaliacao: async (req, res) => {
+        let { categoria_id, avaliacao } = req.params;
+        let { page = 1 } = req.query;
+        let { count: totalPage, rows: prestadores } = await Prestador.findAndCountAll({
+            limit: 12,
+            offset: (page - 1) * 12,
+            where: {
+                categoria_id
+            },
+            include: [{
+                model: Habilidades,
+                required: true,
+            }, {
+                model: Avaliacoes,
+                required: true,
+                where: {
+                    nota: avaliacao
+                }
             }, {
                 model: Prestador_endereco,
                 required: true,
