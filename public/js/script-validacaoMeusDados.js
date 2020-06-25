@@ -77,8 +77,6 @@ const errorListUl = document.querySelector('#error-list ul');
 const errorList = selectId('#error-list');
 
 
-
-
 //validação para campos vazios - area contratante
 
 //validação para campos vazios - dados pessoais
@@ -100,6 +98,7 @@ formdp1.addEventListener("submit", function(e){
     }
 
 })
+
 
 //validação para campos vazios - endereço
 forme.addEventListener("submit", function(e){
