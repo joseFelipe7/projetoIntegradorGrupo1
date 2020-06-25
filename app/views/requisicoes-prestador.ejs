@@ -32,7 +32,42 @@
                                         aria-label="Toggle navigation">
                                         <div class="col-md-12"></div>
                                     </div>
-                                    <%- include('include/cardPedidosRequisicoes') %>
+                                     <!-- coluna dados -->
+                        <div class="dadosServico row no-gutters bg-roxoClaro rounded">
+                            <div class="col-md-12 rounded">
+                                <ul class="list-group list-group-flush historicoListaPedido rounded">
+                                    <li class="list-group-item list-group-item-action p-2 bg-roxoRS rounded">
+                                        <span class="text-white">HISTÓRICO DE SERVIÇOS</span>
+                                    </li>
+
+                                    <li class="row no-gutters list-group-item list-group-item-action p-2 historico">
+                                        <div class="col-11 col-sm-10 col-md-9 m-0 px-0">
+                                            <span class="bg-roxoFundo text-azul rounded px-1 py-2">Serviço Nº: #20200808</span>
+                                            <span class="d-xs-none mx-1 bg-roxoFundo text-azul rounded px-1 py-2">Aberto em: 02/02/2020</span>
+                                            <span class="bg-roxoFundo text-azul rounded px-4 py-2">Cliente <a href="/usuario/area-prestador/pedidos" class="text-azul font-weight-bold">Kim Possible</a></span>
+                                        </div>
+                                        <div class="col-11 col-sm-2 col-md-3 m-0 px-1">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <button class="btn btn-success">Aceitar</button>
+                                                    <button class="btn btn-danger">Recusar</button>
+                                                </div>
+                                                <div class="col-12">
+                                                    <a class="text-center" data-toggle="collapse" href="#descricaoPedido" role="button" aria-expanded="false" aria-controls="descricaoPedido">Descrição</a>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="collapse" id="descricaoPedido">
+                                            <div class="card card-body">
+                                              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                            </div>
+                                          </div>
+                                    </li>
+            
+                                </ul>
+                            </div>
+                        </div>
                                 </div>
                             </div>
                             <!-- fita sempre visivel -->
