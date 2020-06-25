@@ -7,7 +7,7 @@
   <%- include('./include/menuNav') %>
 
   <main class="fundo-listaPrestadores col-12 m-0 p-0">
-   
+
     <div class="content-ls">
 
       <div class="form-row row-lp d-flex justify-content-end m-0 p-0">
@@ -43,6 +43,36 @@
             </ul>
           </div>
 
+          <hr class="linha-separar">
+
+          <div id="filtroAvaliacao" class="row d-flex flex-column p-2 filtro-parte4">
+            <h5 class="subtitulo-filtroPrestadores">Avaliação</h5>
+            <ul id="selecionar-avaliacao">
+              <li>
+                <input id="5" type="checkbox" value="5">
+                <label for="5">&#11088;&#11088;&#11088;&#11088;&#11088;</label>
+              </li>
+              <li>
+                <input id="4" type="checkbox" value="4">
+                <label for="4">&#11088;&#11088;&#11088;&#11088;</label>
+              </li>
+              <li>
+                <input id="3" type="checkbox" value="3">
+                <label for="3">&#11088;&#11088;&#11088;</label>
+              </li>
+              <li>
+                <input id="2" type="checkbox" value="2">
+                <label for="2">&#11088;&#11088;</label>
+              </li>
+              <li>
+                <input id="1" type="checkbox" value="1">
+                <label for="1">&#11088;</label>
+              </li>
+            </ul>
+          </div>
+
+          <hr class="linha-separar">
+
         </div>
 
 
@@ -50,20 +80,57 @@
 
           <!-- Filtro para mobile -->
           <div class="fp-mobile">
-            <a href="#" class="fp-filterOrder dropdown-toggle ml-0 mr-3" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a href="#" class="fp-filterOrder dropdown-toggle ml-0 mr-3" href="#" role="button" id="dropdownMenuLink"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <img src="/img/filter-mobile.png">
               <p class="pr-0">Filtrar</p>
             </a>
-            <div class="dropdown-menu mr-2" aria-labelledby="dropdownMenuLink">
+            <div class="dropdown-menu d-flex mr-2" aria-labelledby="dropdownMenuLink">
               <ul id="selecionar-servicos">
-                <li><input id="med" class="ml-2 mr-1" type="checkbox" value="1"><label for="med">Medicina</label></li>
-                <li><input id="seg" class="ml-2 mr-1" type="checkbox" value="2"><label for="seg">Segurança</label></li>
-                <li><input id="man" class="ml-2 mr-1" type="checkbox" value="3"><label for="man">Manutenção</label></li>
-                <li><input id="est" class="ml-2 mr-1" type="checkbox" value="4"><label for="est">Estética</label></li>
-                <li><input id="jar" class="ml-2 mr-1" type="checkbox" value="5"><label for="jar">Jardinagem</label></li>
-                <li><input id="edu" class="ml-2 mr-1" type="checkbox" value="6"><label for="edu">Educação</label></li>
-                <li><input id="cul" class="ml-2 mr-1" type="checkbox" value="7"><label for="cul">Culinária</label></li>
-                <li><input id="esc" class="ml-2 mr-1" type="checkbox" value="8"><label for="esc">Escritório</label></li>
+                <h6 class="subtitulo-filtroPrestadores ml-2">Serviços</h6>
+                <li class="d-flex justify-content-start align-items-center mb-1"><input id="med" class="ml-2 mr-1"
+                    type="checkbox" value="1"><label class="m-0" for="med">Medicina</label></li>
+                <li class="d-flex justify-content-start align-items-center mb-1"><input id="seg" class="ml-2 mr-1"
+                    type="checkbox" value="2"><label class="m-0" for="seg">Segurança</label></li>
+                <li class="d-flex justify-content-start align-items-center mb-1"><input id="man" class="ml-2 mr-1"
+                    type="checkbox" value="3"><label class="m-0" for="man">Manutenção</label></li>
+                <li class="d-flex justify-content-start align-items-center mb-1"><input id="est" class="ml-2 mr-1"
+                    type="checkbox" value="4"><label class="m-0" for="est">Estética</label></li>
+                <li class="d-flex justify-content-start align-items-center mb-1"><input id="jar" class="ml-2 mr-1"
+                    type="checkbox" value="5"><label class="m-0" for="jar">Jardinagem</label></li>
+                <li class="d-flex justify-content-start align-items-center mb-1"><input id="edu" class="ml-2 mr-1"
+                    type="checkbox" value="6"><label class="m-0" for="edu">Educação</label></li>
+                <li class="d-flex justify-content-start align-items-center mb-1"><input id="cul" class="ml-2 mr-1"
+                    type="checkbox" value="7"><label class="m-0" for="cul">Culinária</label></li>
+                <li class="d-flex justify-content-start align-items-center mb-1"><input id="esc" class="ml-2 mr-1"
+                    type="checkbox" value="8"><label class="m-0" for="esc">Escritório</label></li>
+              </ul>
+
+              <hr class="linha-separar">
+
+
+              <ul id="selecionar-avaliacao" class="mr-1">
+                <h6 class="subtitulo-filtroPrestadores">Avaliação</h6>
+                <li class="d-flex justify-content-start align-items-center mb-1">
+                  <input id="5" type="checkbox" value="5">
+                  <label class="m-0 ml-1" for="5">&#11088;&#11088;&#11088;&#11088;&#11088;</label>
+                </li>
+                <li class="d-flex justify-content-start align-items-center mb-1">
+                  <input id="4" type="checkbox" value="4">
+                  <label class="m-0 ml-1" for="4">&#11088;&#11088;&#11088;&#11088;</label>
+                </li>
+                <li class="d-flex justify-content-start align-items-center mb-1">
+                  <input id="3" type="checkbox" value="3">
+                  <label class="m-0 ml-1" for="3">&#11088;&#11088;&#11088;</label>
+                </li>
+                <li class="d-flex justify-content-start align-items-center mb-1">
+                  <input id="2" type="checkbox" value="2">
+                  <label class="m-0 ml-1" for="2">&#11088;&#11088;</label>
+                </li>
+                <li class="d-flex justify-content-start align-items-center mb-1">
+                  <input id="1" type="checkbox" value="1">
+                  <label class="m-0 ml-1" for="1">&#11088;</label>
+                </li>
               </ul>
             </div>
           </div>
@@ -71,40 +138,62 @@
           <div class="row d-flex m-0 p-0">
             <h4 class="titulo-listaPrestadores">Resultado pesquisa:</h4>
             <% textoPesquisa.forEach(texto => { %>
-              <% if (texto.length > 0 || texto !== "undefined") { %> 
-                <div class="resultadoPesquisa alert alert-success alert-dismissible fade show" role="alert">
-                  <strong id="resultadoPesquisa"> <%= texto %> </strong>
-                  <button type="button" id="limpa-pesquisa" class="close close-pesquisa" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-              <% } %> 
+            <% if (texto.length > 0 || texto !== "undefined") { %>
+            <div class="resultadoPesquisa alert alert-success alert-dismissible fade show" role="alert">
+              <strong> <%= texto %> </strong>
+              <input id="resultadoPesquisaTexto" type="text" value="<%= texto %>" hidden>
+              <input id="resultadoPesquisaCategoria" type="text" value="<%= idCategoria[0] %>" hidden>
+              <button type="button" id="limpa-pesquisaTexto" class="close close-pesquisa" data-dismiss="alert"
+                aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <% } %>
+            <% }) %>
+            <% avaliacaoPesquisa.forEach(avaliacao=> { %>
+            <% if (avaliacao.length > 0 || avaliacao !== null) { %>
+            <div class="resultadoPesquisa alert alert-success alert-dismissible fade show" role="alert">
+              <strong> <%= avaliacao %> </strong>
+              <input id="resultadoPesquisaAvaliacao" type="text" value="<%= avaliacao %>" hidden>
+              <button type="button" id="limpa-pesquisaAvaliacao" class="close close-pesquisa" data-dismiss="alert"
+                aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <% } %>
             <% }) %>
           </div>
 
           <hr class="linha-separar">
 
-          <div class="row d-flex justify-content-around m-0 p-0">
+          <div class="row d-flex justify-content-center m-0">
+            <% if (prestadores.length === 0 || prestadores === null) { %> 
+              <div class="mt-5 resultadoDePesquisa">
+                <img src="/img/nenhum-resultado.png" alt="">
+                <p>Resultado de pesquisa não encontrado!</p>
+              </div>
+            <% } %> 
             <% prestadores.forEach(prestador => { %>
-            <div type="button" class="card card-listaPrestadores col-12 col-sm-12 col-md-6 col-lg-4 my-3 p-0" data-toggle="modal" data-target="#exampleModal<%= prestador.id %>">
+            <div type="button" class="card card-listaPrestadores col-12 col-sm-12 col-md-6 col-lg-4 my-3 ml-2 mr-2 p-0"
+              data-toggle="modal" data-target="#exampleModal<%= prestador.id %>">
               <div class="card-parteSuperior">
                 <span class="boneco-prestador"><img src=<%= prestador.avatar %>></span>
                 <% prestador.Avaliacoes.forEach(avaliacao => { %>
-                  <% if (avaliacao.nota === 1) { %>
-                    <img class="img-notaPrestador" src="/img/estrela1.png">
-                  <% } %>
-                  <% if (avaliacao.nota === 2) { %>
-                    <img class="img-notaPrestador" src="/img/estrela2.png">
-                  <% } %>
-                  <% if (avaliacao.nota === 3) { %>
-                    <img class="img-notaPrestador" src="/img/estrela3.png">
-                  <% } %>
-                  <% if (avaliacao.nota === 4) { %>
-                    <img class="img-notaPrestador" src="/img/estrela4.png">
-                  <% } %>
-                  <% if (avaliacao.nota === 5) { %>
-                    <img class="img-notaPrestador" src="/img/estrela5.png">
-                  <% } %>
+                <% if (avaliacao.nota === 1) { %>
+                <img class="img-notaPrestador" src="/img/estrela1.png">
+                <% } %>
+                <% if (avaliacao.nota === 2) { %>
+                <img class="img-notaPrestador" src="/img/estrela2.png">
+                <% } %>
+                <% if (avaliacao.nota === 3) { %>
+                <img class="img-notaPrestador" src="/img/estrela3.png">
+                <% } %>
+                <% if (avaliacao.nota === 4) { %>
+                <img class="img-notaPrestador" src="/img/estrela4.png">
+                <% } %>
+                <% if (avaliacao.nota === 5) { %>
+                <img class="img-notaPrestador" src="/img/estrela5.png">
+                <% } %>
                 <% }) %>
               </div>
               <div class="card-body card-parteInferior p-0 m-0">
@@ -115,7 +204,8 @@
             </div>
 
             <!-- Modal de cada card -->
-            <div class="modal fade modalCardsPrestador" id="exampleModal<%= prestador.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade modalCardsPrestador" id="exampleModal<%= prestador.id %>" tabindex="-1" role="dialog"
+              aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -123,7 +213,7 @@
                       <span aria-hidden="true">&times;</span>
                     </button>
                     <div class="boneco-prestador"><img src=<%= prestador.avatar %>></div>
-                    <h5 class="modal-title" id="exampleModalLabel"> <%= prestador.nome %>  </h5>
+                    <h5 class="modal-title" id="exampleModalLabel"> <%= prestador.nome %> </h5>
                   </div>
                   <div class="modal-body">
                     <div class="row mt-4 ml-1">
@@ -136,17 +226,18 @@
                       <p><strong>Nota: </strong> <%= prestador.Avaliacoes[0].nota %></p>
                     </div>
                     <div class="row ml-1">
-                      <p><strong>Cidade: </strong> <%= prestador.prestadores_enderecos[0].cidade %> - <%= prestador.prestadores_enderecos[0].uf %></p>
+                      <p><strong>Cidade: </strong> <%= prestador.prestadores_enderecos[0].cidade %> -
+                        <%= prestador.prestadores_enderecos[0].uf %></p>
                     </div>
                   </div>
                   <div class="modal-footer pt-0">
                     <button type="button" class="btn btnClose" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btnPagina" onclick="window.location.href=`/prestador/single/<%= prestador.id %>` ">Ir à página</button>
+                    <button type="button" class="btn btnPagina"
+                      onclick="window.location.href=`/prestador/single/<%= prestador.id %>` ">Ir à página</button>
                   </div>
                 </div>
               </div>
             </div>
-
             <% }) %>
 
           </div>
@@ -154,7 +245,7 @@
           <div class="row row-paginacaoPrestadores">
             <ul class="pagination justify-content-center">
               <% for (let numeroPage = 1; numeroPage <= totalPages; numeroPage++) { %>
-                <li class="page-item"><a class="page-link" href="?page= <%= numeroPage %>"> <%= numeroPage %> </a></li>
+              <li class="page-item"><a class="page-link" href="?page= <%= numeroPage %>"> <%= numeroPage %> </a></li>
               <% } %>
             </ul>
           </div>
