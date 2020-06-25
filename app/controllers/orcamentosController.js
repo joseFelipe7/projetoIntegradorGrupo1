@@ -6,8 +6,16 @@ const OrcamentosController = {
 
         const cliente = await Cliente.findByPk(id)
 
-        res.render("areaContratante", {view: "orcamentoUsuario", loggado: req.session.cliente, data:{cliente}});
+        res.render("areaContratante", {view: "orcamentoCliente", loggado: req.session.cliente, data:{cliente}});
     
-    }
+    },
+    store: async (req, res) => {
+        const {id} = req.params
+
+        const cliente = await Cliente.findByPk(id)
+
+        res.redirect("areaContratante", {view: "orcamentoCliente", loggado: req.session.cliente, data:{cliente}});
+    
+    },
 }
 module.exports = OrcamentosController
