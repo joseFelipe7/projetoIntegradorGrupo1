@@ -23,7 +23,7 @@ const ContatosController = {
     },
     
     store: async (req, res) => {
-        const {fk_cliente} = req.params
+        const {id} = req.params
        
         const {
             contratanteCelular1,
@@ -34,10 +34,12 @@ const ContatosController = {
            
         } = req.body;
 
-        const cliente = await Cliente.findByPk(fk_cliente) 
+        const cliente = await Cliente.findByPk(id) 
         if(!cliente){
             return res.send("cliente n encontrado")
         }
+
+      
 
         const contatos = await Contatos.create({
             celular_principal:contratanteCelular1,
@@ -45,13 +47,14 @@ const ContatosController = {
             telefone_residencial:contratanteTelefone,
             email_principal:contratanteEmail1,
             email_secundario:contratanteEmail2,
-            fk_cliente
+            fk_cliente:id
             
        
-        })
+        }
+        )
        console.log(contatos)
         
-        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{contatos}})
+        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{cliente, contatos}})
         
     },
     updade: async (req, res) => {

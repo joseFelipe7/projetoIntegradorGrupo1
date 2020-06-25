@@ -22,7 +22,7 @@ const Clientes_EnderecoController = {
         return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{cliente}})
     },
     store: async (req, res) => {
-        const {fk_cliente} = req.params
+        const {id} = req.params
         const {
             contratanteCep,
             contratanteRua,
@@ -32,7 +32,7 @@ const Clientes_EnderecoController = {
             contratanteUf
         } = req.body;
 
-        const cliente = await Cliente.findByPk(fk_cliente) 
+        const cliente = await Cliente.findByPk(id) 
         if(!cliente){
             return res.send("Cliente n encontrado")
         }
@@ -43,21 +43,14 @@ const Clientes_EnderecoController = {
             cep:contratanteCep,
             numero:contratanteN,
             complemento:contratanteComplemento,
-            fk_cliente
+            fk_cliente:id
            
 
-        },{
-            include:[
-                {
-                    model: Cliente,
-                    as: 'cliente',
-                    
-                }
-            ] 
-        })
+        }
+        )
         console.log(clientes_endereco)
         
-        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{clientes_endereco}})
+        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{cliente, clientes_endereco}})
         
     },
     updade: async (req, res) => {

@@ -1,20 +1,7 @@
-<% if(data.prestador.habilidades != ""){ %>
+<% if(data.prestador.Habilidades != ""){ %>
   
 
-    <!-- sanfona -------------------------------------------------------->
-    <div id="accordion">
-      <div class="card">
-        <div class="card-header sanfonaTopoMeusDados" id="headingOne">
-          <h5 class="mb-0">
-            <button class="btn btn-link tituloSanfonaTopoMeusDados" data-toggle="collapse" data-target="#collapseProfissao"
-              aria-expanded="true" aria-controls="collapseOne">
-              <img src="/img/dados.png" alt="Meus dados" title="Meus dados">
-              Profissionais 1
-            </button>
-          </h5>
-        </div>
-    
-        <div id="collapseProfissao" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+
           <div class="card-body">
     
     <!-- GET-SHOW  formulario dados pessoais -->
@@ -24,7 +11,7 @@
               <div class="form-row">
                 <!-- input nome -->
                 <div class="form-group col-md-6">
-                  <label for="profissao">Profissão 1</label>
+                  <label for="profissao">Profissão 12</label>
                   <div class="input-group">
                     <div class="input-group-prepend">
                       <span class="input-group-text etiquetaCampo">Profissão</span>
@@ -75,98 +62,12 @@
               </div>
             </form>
           </div>
-        </div>
-      </div>
-    </div>
-    <!-- Modal -->
-    <div class="modal fade" id="editarProfissoesPrestador" tabindex="-1" role="dialog"
-      aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header bg-azul text-white">
-            <h5 class="modal-title" id="exampleModalLongTitle">Editar dados pessoais</h5>
-            <button type="button" class="close fecharModal" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body bg-roxoClaro">
-    
-            
-    <!-- POST-UPDATE  formulario dados pessoais -->
-            <form action="/usuario/area-prestador/meusDados/<%=data.prestador.id%>/profissao?_method=PUT" method="POST">
-              <!-- linha foto -->
-    
-              <!-- input linha 1 -->
-              <div class="form-row">
-                <!-- input nome -->
-                <div class="form-group col-md-6">
-                  <label for="profissao">Profissão 2</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text etiquetaCampo">Profissão</span>
-                    </div>
-                    <input type="text" name="tituloProfissao" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                      id="profissao" value="<%= data.prestador.titulo %>" placeholder="Digite sua profissão">
-                  </div>
-                </div>
-                <!-- input cpf -->
-                <div class="form-group col-md-6">
-                  <label for="data">Na profissão desde</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text etiquetaCampo">Data</span>
-                    </div>
-                    <input type="date" name="dtProfissao" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                      id="data" value="<%= data.prestador.inicio_profissao %>">
-                  </div>
-                </div>
-                <div class="form-row">
-                  <!-- input data nascimento -->
-                  <div class="form-group col">
-                    <label for="habilidades">Descrição</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text etiquetaCampo">Descrição</span>
-                      </div>
-                      <textarea class="form-control" value="Descreva suas habilidades..." name="descricaoPrestador" rows="5" id="habilidades"></textarea>
-                    </div>
-                  </div>
-                </div>
-    
-              </div>
-    
-    
-              <!-- botao editar ABRE O MODAL-->
-              <!-- Button trigger modal -->
-              <div class="d-flex justify-content-end"><button type="submit" class="btn botaoMeusDados">SALVAR</button></div>
-            </form>
-            <!-- ................................. -->
-          </div>
-          <div class="modal-footer bg-azul">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--fim modal profissoes---------------------->
+   
+  
     <% } else { %>
     
     <!-- sanfona -------------------------------------------------------->
-    <div id="accordion">
-      <div class="card">
-        <!-- topo 1 sanfona -->
-        <div class="card-header sanfonaTopoMeusDados" id="headingOne">
-          <h5 class="mb-0">
-    
-            <button class="btn btn-link tituloSanfonaTopoMeusDados" data-toggle="collapse" data-target="#collapseProfissao"
-              aria-expanded="true" aria-controls="collapseOne">
-              <img src="/img/dados.png" alt="Meus dados" title="Meus dados">
-              Profissionais 2
-            </button>
-          </h5>
-        </div>
-    
-        <div id="collapseProfissao" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+
           <div class="card-body">
             <!-- formulario dados pessoais -->
     
@@ -228,78 +129,6 @@
               </div>
             </form>
           </div>
-        </div>
-      </div>
-      <!-- Modal -->
-      <div class="modal fade" id="editarProfissoesPrestador" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header bg-azul text-white">
-              <h5 class="modal-title" id="exampleModalLongTitle">Editar dados pessoais</h5>
-              <button type="button" class="close fecharModal" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body bg-roxoClaro">
-              
-    <!-- POST - CADASTRAR DADOS -->          
-              <form action="/usuario/area-prestador/meusDados/<%=data.prestador.id%>/profissao" method="POST">
-                <!-- linha foto -->
       
-                <!-- input linha 1 -->
-                <div class="form-row">
-                  <!-- input nome -->
-                  <div class="form-group col-md-6">
-                    <label for="profissao">Profissão 4</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text etiquetaCampo">Profissão</span>
-                      </div>
-                      <input type="text" name="tituloProfissao" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                        id="profissao"  placeholder="Digite sua profissão">
-                    </div>
-                  </div>
-                  <!-- input cpf -->
-                  <div class="form-group col-md-6">
-                    <label for="data">Na profissão desde</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text etiquetaCampo">Data</span>
-                      </div>
-                      <input type="date" name="dtProfissao" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                        id="data">
-                    </div>
-                  </div>
-                  <div class="form-row">
-                    <!-- input data nascimento -->
-                    <div class="form-group col">
-                      <label for="habilidades">Descrição</label>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text etiquetaCampo">Descrição</span>
-                        </div>
-                        <textarea class="form-control" placeholder="complete seu cadastro" name="descricaoPrestador" rows="5" id="habilidades"></textarea>
-                      </div>
-                    </div>
-                  </div>
-      
-                </div>
-      
-      
-                <!-- botao editar ABRE O MODAL-->
-                <!-- Button trigger modal -->
-                <div class="d-flex justify-content-end">
-                  <button type="submit" class="btn botaoMeusDados">SALVAR</button>
-                </div>
-              </form>
-              <!-- ................................. -->
-            </div>
-            <div class="modal-footer bg-azul">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--fim modal profissoes---------------------->
+     
       <% } %>

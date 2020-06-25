@@ -1,0 +1,116 @@
+
+       <% if(data.prestador.Habilidades != ""){ %>
+      <div class="modal-body bg-roxoClaro">
+
+        
+<!-- POST-UPDATE  formulario dados pessoais -->
+        <form action="/usuario/area-prestador/meusDados/<%=data.prestador.id%>/profissao?_method=PUT" method="POST">
+          <!-- linha foto -->
+
+          <!-- input linha 1 -->
+          <div class="form-row">
+            <!-- input nome -->
+            <div class="form-group col-md-6">
+              <label for="profissao">Profissão 2</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text etiquetaCampo">Profissão</span>
+                </div>
+                <input type="text" name="tituloProfissao" class="form-control campoMeusDadosStyle campoDadoReadonly"
+                  id="profissao" value="<%= data.prestador.titulo %>" placeholder="Digite sua profissão">
+              </div>
+            </div>
+            <!-- input cpf -->
+            <div class="form-group col-md-6">
+              <label for="data">Na profissão desde</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text etiquetaCampo">Data</span>
+                </div>
+                <input type="date" name="dtProfissao" class="form-control campoMeusDadosStyle campoDadoReadonly"
+                  id="data" value="<%= data.prestador.inicio_profissao %>">
+              </div>
+            </div>
+            <div class="form-row">
+              <!-- input data nascimento -->
+              <div class="form-group col">
+                <label for="habilidades">Descrição</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text etiquetaCampo">Descrição</span>
+                  </div>
+                  <textarea class="form-control" value="Descreva suas habilidades..." name="descricaoPrestador" rows="5" id="habilidades"></textarea>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+          <!-- botao editar ABRE O MODAL-->
+          <!-- Button trigger modal -->
+          <div class="d-flex justify-content-end"><button type="submit" class="btn botaoMeusDados">SALVAR</button></div>
+        </form>
+        <!-- ................................. -->
+      </div>
+  
+<!--fim modal profissoes---------------------->
+
+<% } else { %>
+     <div class="modal-body bg-roxoClaro">
+       
+<!-- POST - CADASTRAR DADOS -->          
+       <form action="/usuario/area-prestador/meusDados/<%=data.prestador.id%>/profissao" method="POST">
+         <!-- linha foto -->
+
+         <!-- input linha 1 -->
+         <div class="form-row">
+           <!-- input nome -->
+           <div class="form-group col-md-6">
+             <label for="profissao">Profissão 4</label>
+             <div class="input-group">
+               <div class="input-group-prepend">
+                 <span class="input-group-text etiquetaCampo">Profissão</span>
+               </div>
+               <input type="text" name="tituloProfissao" class="form-control campoMeusDadosStyle campoDadoReadonly"
+                 id="profissao"  placeholder="Digite sua profissão">
+             </div>
+           </div>
+           <!-- input cpf -->
+           <div class="form-group col-md-6">
+             <label for="data">Na profissão desde</label>
+             <div class="input-group">
+               <div class="input-group-prepend">
+                 <span class="input-group-text etiquetaCampo">Data</span>
+               </div>
+               <input type="date" name="dtProfissao" class="form-control campoMeusDadosStyle campoDadoReadonly"
+                 id="data">
+             </div>
+           </div>
+           <div class="form-row">
+             <!-- input data nascimento -->
+             <div class="form-group col">
+               <label for="habilidades">Descrição</label>
+               <div class="input-group">
+                 <div class="input-group-prepend">
+                   <span class="input-group-text etiquetaCampo">Descrição</span>
+                 </div>
+                 <textarea class="form-control" placeholder="complete seu cadastro" name="descricaoPrestador" rows="5" id="habilidades"></textarea>
+               </div>
+             </div>
+           </div>
+
+         </div>
+
+
+         <!-- botao editar ABRE O MODAL-->
+         <!-- Button trigger modal -->
+         <div class="d-flex justify-content-end">
+           <button type="submit" class="btn botaoMeusDados">SALVAR</button>
+         </div>
+       </form>
+       <!-- ................................. -->
+     </div>
+  
+<!--fim modal profissoes---------------------->
+<% } %>

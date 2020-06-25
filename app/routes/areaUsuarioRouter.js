@@ -27,13 +27,13 @@ router.get("/area-contratante/meus-dados/:id", authCliente, clienteController.in
 //router.put("/area-contratante/meus-dados/:id", upload.any(), clienteController.update);
 
 //rotas contratante - meus-dados-endereços
-router.get("/area-contratante/meus-dados/:fk_cliente/endereco", authCliente, clientes_enderecoController.index);
-router.post("/area-contratante/meus-dados/:fk_cliente/endereco", authCliente, clientes_enderecoController.store);
+router.get("/area-contratante/meus-dados/:id/endereco", authCliente, clientes_enderecoController.index);
+router.post("/area-contratante/meus-dados/:id/endereco", authCliente, clientes_enderecoController.store);
 //router.put("/area-contratante/meus-dados/:fk_cliente/endereco", authCliente, clientes_enderecoController.update);
 
 //rotas contratante - meus-dados-contatos
-router.get("/area-contratante/meus-dados/:fk_cliente/contatos", authCliente, contatosController.index);
-router.post("/area-contratante/meus-dados/:fk_cliente/contatos", authCliente, contatosController.store);
+router.get("/area-contratante/meus-dados/:id/contatos", authCliente, contatosController.index);
+router.post("/area-contratante/meus-dados/:id/contatos", authCliente, contatosController.store);
 //router.put("/area-contratante/meus-dados/:fk_cliente/contatos", authCliente, contatosController.update);
 
 

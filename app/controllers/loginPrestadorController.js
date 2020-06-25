@@ -16,7 +16,23 @@ module.exports = {
         email: {
           [Op.eq]: email 
         }
-      }
+      },
+      include: [
+        {
+            model:Contatos_prestador,
+            as: 'contatos_prestadores'
+            
+        },
+        {
+            model:Habilidades,
+            
+            
+        },
+        {
+            model:Prestador_endereco,
+            as: 'prestadores_enderecos'
+        }
+    ]
     });
  
     // Se não exister email ou password return mensagem de erro!!!
@@ -29,6 +45,7 @@ module.exports = {
     req.session.prestador = prestador.dataValues;
     
     //return res.redirect('/usuario/area-prestador/meusDados/');
+    console.log(prestador)
     return res.render("areaPrestador", {view: "meusDados-prestador", loggado: req.session.prestador, data:{prestador}})
     
   }

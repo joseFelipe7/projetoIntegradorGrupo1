@@ -1,9 +1,10 @@
 <!-- Modal -->
+<% if(data.cliente.clientes_enderecos != ""){ %> 
 
 <div class="modal-body bg-roxoClaro">
         <!-- formulario editar endereço -->
         <% data.cliente.clientes_enderecos.forEach(cliente_endereco => { %>
-          <form action="/usuario/area-contratante/meus-dados/endereco/<%=cliente_endereco.id%>?_method=PUT" id="forme" method="POST"> 
+          <form action="/usuario/area-contratante/meus-dados/<%=data.cliente.id%>/endereco?_method=PUT" id="forme" method="POST"> 
          
           <!-- input linha 1 -->
           <div class="form-row">
@@ -111,6 +112,7 @@
 
       </div>
       <!----------------->
+ <% } else { %> 
 
       <div class="modal-body bg-roxoClaro">
             <!-- formulario editar endereço -->
@@ -222,3 +224,4 @@
             
       
           </div>
+        <%  } %> 

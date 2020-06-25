@@ -1,0 +1,186 @@
+  <!-- Modal -->
+  <% if(data.prestador.contatos_prestadores != ""){ %>
+ 
+      <div class="modal-body bg-roxoClaro">
+
+        <!-- formulario contato -->
+        <form action="/usuario/area-prestador/meusDados/<%=data.prestador.id%>/contatos?_method=PUT" method="POST">
+          <!-- input linha 1 -->
+          <div class="form-row">
+            <!-- input cel1 -->
+            <div class="form-group col-md-6">
+              <label for="cel1">Celular 1</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text etiquetaCampo">Celular 1</span>
+                </div>
+                <input type="tel" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel1p"
+                  value="<%= data.prestador.celular_principal %>" 
+                  maxlength="11" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
+              </div>
+            </div>
+
+            <!-- input cel2 -->
+            <div class="form-group col-md-6">
+              <label for="cel2">Celular 2</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text etiquetaCampo">Celular 2</span>
+                </div>
+                <input type="tel" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel2p"
+                  value="<%= data.prestador.celular_secundario %>" 
+                  maxlength="11" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
+              </div>
+            </div>
+          </div>
+
+          <!-- input linha 2 -->
+          <div class="form-row">
+            <!-- input telefone -->
+            <div class="form-group col">
+              <label for="tel">Telefone</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text etiquetaCampo">Telefone</span>
+                </div>
+                <input type="tel" class="form-control campoMeusDadosStyle campoDadoReadonly" id="telp"
+                  value="<%= data.prestador.telefone_residencial %>"
+                   maxlength="10"
+                  pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
+              </div>
+            </div>
+          </div>
+
+          <!-- input linha 3 -->
+          <div class="form-row">
+            <!-- input email -->
+            <div class="form-group col">
+              <label for="email">E-mail principal</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text etiquetaCampo">@</span>
+                </div>
+                <input type="email" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email1p"
+                  value="<%= data.prestador.email_principal %>" >
+              </div>
+            </div>
+          </div>
+          <!-- input linha 3 -->
+          <div class="form-row">
+            <!-- input email -->
+            <div class="form-group col">
+              <label for="email">E-mail secundário</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text etiquetaCampo">@</span>
+                </div>
+                <input type="email" class="form-control campoMeusDadosStyle campoDadoReadonly"
+                  value="<%= data.prestador.email_secundario %>" id="email2p">
+              </div>
+            </div>
+          </div>
+
+          <!-- botao editar ABRE O MODAL-->
+          <!-- Button trigger modal -->
+          <div class="d-flex justify-content-end">
+            <button type="submit" class="btn botaoMeusDados">SALVAR</button>
+          </div>
+        </form>
+
+      </div>
+      <% } else { %>
+  
+<!-- fim Modal ------------------------------------------------->
+
+ <!-- Modal -->
+
+     <div class="modal-body bg-roxoClaro">
+
+       <!-- formulario contato -->
+<!--FORM POST - CADASTRAR -->
+       <form action="/usuario/area-prestador/meusDados/<%=data.prestador.id%>/contatos" method="POST">
+         <!-- input linha 1 -->
+         <div class="form-row">
+           <!-- input cel1 -->
+           <div class="form-group col-md-6">
+             <label for="cel1">Celular 1</label>
+             <div class="input-group">
+               <div class="input-group-prepend">
+                 <span class="input-group-text etiquetaCampo">Celular 1</span>
+               </div>
+               <input type="tel" name="prestadorCel1" class="form-control campoMeusDadosStyle campoDadoReadonly"
+                 id="cel1" placeholder="Digite seu celular - apenas números" maxlength="11"
+                 pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
+             </div>
+           </div>
+
+           <!-- input cel2 -->
+           <div class="form-group col-md-6">
+             <label for="cel2">Celular 2</label>
+             <div class="input-group">
+               <div class="input-group-prepend">
+                 <span class="input-group-text etiquetaCampo">Celular 2</span>
+               </div>
+               <input type="tel" name="prestadorCel2" class="form-control campoMeusDadosStyle campoDadoReadonly"
+                 id="cel2" placeholder="Digite seu celular - apenas números" maxlength="11"
+                 pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
+             </div>
+           </div>
+         </div>
+
+         <!-- input linha 2 -->
+         <div class="form-row">
+           <!-- input telefone -->
+           <div class="form-group col">
+             <label for="tel">Telefone</label>
+             <div class="input-group">
+               <div class="input-group-prepend">
+                 <span class="input-group-text etiquetaCampo">Telefone</span>
+               </div>
+               <input type="tel" name="prestadorTelefone" class="form-control campoMeusDadosStyle campoDadoReadonly"
+                 id="tel" placeholder="Digite seu telefone - apenas números" maxlength="10"
+                 pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
+             </div>
+           </div>
+         </div>
+
+         <!-- input linha 3 -->
+         <div class="form-row">
+           <!-- input email -->
+           <div class="form-group col">
+             <label for="email">E-mail principal</label>
+             <div class="input-group">
+               <div class="input-group-prepend">
+                 <span class="input-group-text etiquetaCampo">@</span>
+               </div>
+               <input type="email" name="prestadorEmail1" class="form-control campoMeusDadosStyle campoDadoReadonly"
+                 id="email" placeholder="Digite seu e-mail">
+             </div>
+           </div>
+         </div>
+         <!-- input linha 3 -->
+         <div class="form-row">
+           <!-- input email -->
+           <div class="form-group col">
+             <label for="email">E-mail secundário</label>
+             <div class="input-group">
+               <div class="input-group-prepend">
+                 <span class="input-group-text etiquetaCampo">@</span>
+               </div>
+               <input type="email" name="prestadorEmail2" class="form-control campoMeusDadosStyle campoDadoReadonly"
+                 id="email" placeholder="Digite seu e-mail">
+             </div>
+           </div>
+         </div>
+
+         <!-- botao editar ABRE O MODAL-->
+         <!-- Button trigger modal -->
+         <div class="d-flex justify-content-end">
+           <button type="submit" class="btn botaoMeusDados">SALVAR</button>
+         </div>
+       </form>
+
+     </div>
+
+<!-- fim Modal ------------------------------------------------->
+<% } %>

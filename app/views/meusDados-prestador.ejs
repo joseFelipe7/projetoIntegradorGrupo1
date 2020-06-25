@@ -1,6 +1,42 @@
 
 <!-- PROFISSÕES - fim Modal ------------------------------------------------->
+    <!-- sanfona -------------------------------------------------------->
+    <div id="accordion">
+        <div class="card">
+          <div class="card-header sanfonaTopoMeusDados" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link tituloSanfonaTopoMeusDados" data-toggle="collapse" data-target="#collapseProfissao"
+                aria-expanded="true" aria-controls="collapseOne">
+                <img src="/img/dados.png" alt="Meus dados" title="Meus dados">
+                Profissionais 1
+              </button>
+            </h5>
+          </div>
+      
+          <div id="collapseProfissao" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
 <%- include('include/p-profissaoMd') %>
+</div>
+</div>
+</div>
+<!--modall-->
+  <!-- Modal -->
+  <div class="modal fade" id="editarProfissoesPrestador" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-azul text-white">
+        <h5 class="modal-title" id="exampleModalLongTitle">Editar dados pessoais</h5>
+        <button type="button" class="close fecharModal" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <%- include('include/p-post-profissao') %>
+      <div class="modal-footer bg-azul">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <!-- card sanfona 1 ---------------------------------------------------------->
   <div class="card">
@@ -174,13 +210,120 @@
 
 
 <!-- ENDEREÇOS - fim Modal ------------------------------------------------>
+    <!-- card sanfona 2 ------------------------------------------------->
+    <div class="card">
+        <!-- topo 2 sanfona -->
+        <div class="card-header sanfonaTopoMeusDados" id="headingTwo">
+          <h5 class="mb-0">
+    
+            <button class="btn btn-link tituloSanfonaTopoMeusDados" data-toggle="collapse" data-target="#collapseTwo"
+              aria-expanded="true" aria-controls="collapseTwo">
+              <img src="/img/endereco.png" alt="Meus dados" title="Meus dados">
+              Endereço
+            </button>
+          </h5>
+        </div>
+    
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
 <%- include('include/p-enderecoMd') %>
-
+</div>
+</div>
+<!--MODALLLL-->
+<div class="modal fade" id="editarDadosEnderecoContratante" tabindex="-1" role="dialog"
+aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header bg-azul text-white">
+      <h5 class="modal-title" id="exampleModalLongTitle">Editar endereço</h5>
+      <button type="button" class="close fecharModal" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <%- include('include/p-post-endereco') %>
+    <div class="modal-footer bg-azul">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+ </div>
 <!-- CONTATOS - fim Modal ------------------------------------------------->
+    <!-- card sanfona 3 ------------------------------------------------->
+    <div class="card">
+        <!-- topo 3 sanfona -->
+        <div class="card-header sanfonaTopoMeusDados" id="headingThree">
+          <h5 class="mb-0">
+    
+            <button class="btn btn-link tituloSanfonaTopoMeusDados" data-toggle="collapse" data-target="#collapseThree"
+              aria-expanded="true" aria-controls="collapseThree">
+              <img src="/img/contato.png" alt="Meus dados" title="Meus dados">
+              Contato
+            </button>
+          </h5>
+        </div>
+    
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
 <%- include('include/p-contatosMd') %>
+</div>
+</div>
+<!--MODALLLL-->
+<div class="modal fade" id="editarDadosContatoContratante" tabindex="-1" role="dialog"
+aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header bg-azul text-white">
+      <h5 class="modal-title" id="exampleModalLongTitle">Editar contato</h5>
+      <button type="button" class="close fecharModal" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <%- include('include/p-post-contatos') %>
+    <div class="modal-footer bg-azul">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- CONTA - fim Modal ----------------------------------------------------->
+<!-- card sanfona 4 ------------------------------------------------->
+<div class="card">
+    <!-- topo 4 sanfona -->
+    <div class="card-header sanfonaTopoMeusDados" id="headingFour">
+      <h5 class="mb-0">
+
+        <button class="btn btn-link tituloSanfonaTopoMeusDados" data-toggle="collapse" data-target="#collapseFour"
+          aria-expanded="true" aria-controls="collapseFour">
+          <img src="/img/conta.png" alt="Meus dados" title="Meus dados">
+          Conta
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
 <%- include('include/p-contaMd') %>
+<div class="container-fluid bg-azul rodapeMeusDadosSanfona"></div>
+    </div>
+  </div>
+</div>
+<!--MODALLLL-->
+<div class="modal fade" id="editarDadosContaContratante" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-azul text-white">
+        <h5 class="modal-title" id="exampleModalLongTitle">Editar dados da conta</h5>
+        <button type="button" class="close fecharModal" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <%- include('include/p-post-conta') %>
+      <div class="modal-footer bg-azul">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 
 <!-- sanfona --------------------------------------------------------------->
