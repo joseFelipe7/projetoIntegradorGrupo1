@@ -23,7 +23,7 @@ const listarPrestadoresController = {
         });
         // ele divide totalPage por 12 itens cada page e arredonda para não trazer número quebrado.
         let totalPages = Math.round(totalPage/12);
-        res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages, textoPesquisa: []});
+        res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages, textoPesquisa: [], idCategoria: [], avaliacaoPesquisa: []});
     },
 
     showPesquisa: async (req, res) => {
@@ -48,7 +48,7 @@ const listarPrestadoresController = {
             }]
         });
         let totalPages = Math.round(totalPage/12);
-        res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages, textoPesquisa: [ pesquisa ]});
+        res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages, textoPesquisa: [ pesquisa ], idCategoria: [], avaliacaoPesquisa: []});
     },
 
     showCategoria: async (req, res) => {
@@ -78,7 +78,7 @@ const listarPrestadoresController = {
             }
         })
         let totalPages = Math.round(totalPage/12);
-        res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages, textoPesquisa: [ categorias[0].categoria ]});
+        res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages, textoPesquisa: [ categorias[0].categoria ], idCategoria: [ categoria_id ], avaliacaoPesquisa: []});
     },
 
     showPesquisaAvaliacao: async (req, res) => {
@@ -106,7 +106,7 @@ const listarPrestadoresController = {
             }]
         });
         let totalPages = Math.round(totalPage/12);
-        res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages, textoPesquisa: [ pesquisa ]});
+        res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages, textoPesquisa: [ pesquisa ], idCategoria: [], avaliacaoPesquisa: [ avaliacao ]});
     },
 
     showCategoriaAvaliacao: async (req, res) => {
@@ -139,7 +139,7 @@ const listarPrestadoresController = {
             }
         })
         let totalPages = Math.round(totalPage/12);
-        res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages, textoPesquisa: [ categorias[0].categoria ]});
+        res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages, textoPesquisa: [ categorias[0].categoria ], idCategoria: [ categoria_id ], avaliacaoPesquisa: [ avaliacao ]});
     }
 
 };
