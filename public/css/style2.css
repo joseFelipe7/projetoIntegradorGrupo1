@@ -728,7 +728,7 @@ button.botaoBuscar:hover {
     }
 
     .colunaBuscarImg img {
-        width: 280px;
+        width: 250px;
     }
 
     .sessaoHomePrestadores {
@@ -852,7 +852,16 @@ button.botaoBuscar:hover {
 }
 
 .imgEtapaContratante img {
-    height: 280px;
+    height: 240px;
+}
+
+
+#etapaImg {
+    position: relative;
+    margin-top: 40px;
+}
+#etapaImgBottom {
+    height: 490px;
 }
 
 @media(max-width:415px) {
@@ -863,6 +872,10 @@ button.botaoBuscar:hover {
 
 /* sessao numero de prestadores */
 .sessaoGradienteRT {
+    height: 100vh;
+    background-color: #ffffff;
+}
+#sessaoHomeHM {
     height: 100vh;
     background-color: #ffffff;
 }
@@ -951,6 +964,95 @@ button.botaoBuscar:hover {
     color: #203573;
     box-shadow: 0 0 0 0.2rem rgba(136, 191, 54, .25);
 }
+
+/*** final da home ****/
+/*esquerda*/
+.faixaFrasePrestadores {
+    position: absolute;
+
+    width: 80%;
+    height: 60px;
+
+    color: #ffffff;
+
+    font-weight: bold;
+    text-align: right;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 3rem;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+}
+
+.faixaFrasePrestadores:hover {
+    border-color: #7159C1;
+    background-color: #88BF36;
+    border-color: rgb(136, 191, 54);
+    box-shadow: 0 0 0 0.2rem rgba(136, 191, 54, .25);
+}
+#faixaFrase2{
+    top: 300px;
+    left: 165px;
+    background-color: #203573;
+}
+#faixaFrase4{
+    top: 455px;
+    left: 150px;
+    background-color: #7159C1;
+}
+
+/*direita*/
+.faixaFraseAtras {
+    position: absolute;
+
+    width: 80%;
+    height: 60px;
+
+    color: #ffffff;
+
+    font-weight: bold;
+    text-align: left;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 3.6rem;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+}
+
+.faixaFraseAtras:hover {
+    border-color: #7159C1;
+    background-color: #7159C1;
+    border-color: rgb(136, 191, 54);
+    box-shadow: 0 0 0 0.2rem rgba(136, 191, 54, .25);
+}
+#faixaFraseAtras1{
+    top: 220px;
+    left: -100px;
+    background-color: #AEB2F2;
+}
+#faixaFraseAtras3{
+    top: 378px;
+    left: -55px;
+    background-color: #88BF36;
+}
+
+@media (max-width: 765px){
+    #sessaoHomeHM{
+        display: none;
+    }
+}
+
+/*** final da home ****/
 
 /* sessao prestador */
 .sessaoGradienteRBprestador {
