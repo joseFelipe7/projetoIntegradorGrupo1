@@ -19,6 +19,7 @@ const ContatosController = {
                 }
             ] 
         })
+        
         return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{cliente}})
     },
     
@@ -52,12 +53,11 @@ const ContatosController = {
        
         }
         )
-       console.log(contatos)
         
-        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{cliente, contatos}})
-        
+        req.session.cliente = cliente.dataValues;
+       res.redirect('/usuario/area-contratante/meus-dados/:id', id)    
     },
-    updade: async (req, res) => {
+    update: async (req, res) => {
         const {fk_cliente} = req.params;
 
         const {

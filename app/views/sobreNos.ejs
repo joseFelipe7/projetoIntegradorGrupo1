@@ -8,16 +8,15 @@
 
     <!-- sessão contato com o sistema -->
     <main class="container mx-auto my-5">
-        <div class="row d-flex justify-content-center">
-            <% if (typeof msgEnviado != 'undefined') { %>
-                <div class="row alert alert-success msgErroLogin">
-                    <img src="/img/alert.svg" alt="ok">
-                    <%= msgEnviado  %>
-                </div>
-            <% } %>
-            <!-- card sanfona 3 ------------------------------------------------->
-     
-        </div>
+       <section>
+           <div class="sobreNos">
+                HollsHall é um sistema de busca de profissionais e marcação de serviços. <br> Desenvolvido por um grupo de estudantes do Santander Coders by Digital House. <br>
+           O sistema consta com uma plataforma para clientes em busca de bons profissionais <br> assim, também, como uma para que os melhores profissionais possam criar, desenvolver <br> e divulgar o seu perfil online. 
+           Pensado para dinamizar a busca por profissionais qualificados e respectivamente <br> agendar e pagar serviços de uma forma mais simples e segura. O ToolsHall conta com <br>
+           a possibilidade de avaliação dos profissionais de acordo com o serviço prestado, <br> sistema de chat e suporte para qualquer eventualidade.
+           </div>
+           
+       </section>
     </main>
 
     <%- include('include/footer') %>

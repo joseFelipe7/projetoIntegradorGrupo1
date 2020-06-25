@@ -24,7 +24,7 @@ let router = express.Router();
 
 //rotas contratante - meus-dados
 router.get("/area-contratante/meus-dados/:id", authCliente, clienteController.index);
-//router.put("/area-contratante/meus-dados/:id", upload.any(), clienteController.update);
+router.put("/area-contratante/meus-dados/:id", clienteController.update);
 
 //rotas contratante - meus-dados-endereços
 router.get("/area-contratante/meus-dados/:id/endereco", authCliente, clientes_enderecoController.index);
@@ -37,7 +37,7 @@ router.post("/area-contratante/meus-dados/:id/contatos", authCliente, contatosCo
 //router.put("/area-contratante/meus-dados/:fk_cliente/contatos", authCliente, contatosController.update);
 
 
-router.get("/area-contratante/pedidos", authCliente, pedidosClienteController.index)
+router.get("/area-contratante/pedidos/:id", authCliente, pedidosClienteController.index)
 
 
 router.get("/area-contratante/acompanhe", authCliente, (req, res) => {
@@ -46,10 +46,10 @@ router.get("/area-contratante/acompanhe", authCliente, (req, res) => {
 })
 
 
-router.get("/area-contratante/orcamentos-bru", authCliente, orcamentosController.index)
+router.get("/area-contratante/orcamentos-bru/:id", authCliente, orcamentosController.index)
 
 
-router.get("/area-contratante/historico-bru", authCliente, historicoController.index)
+router.get("/area-contratante/historico-bru/:id", authCliente, historicoController.index)
 
 
 router.get("/area-contratante/chat", authCliente, chatClienteController.index) 

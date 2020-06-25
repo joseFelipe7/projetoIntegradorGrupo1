@@ -1,4 +1,4 @@
-const {Cliente} = require("../models")
+const {Cliente, Pedidos} = require("../models")
 
 const HistoricoController = {
     index: async (req, res) => {
