@@ -14,7 +14,7 @@ const listarPrestadoresController = {
                 required: true
             }, {
                 model: Avaliacoes,
-                required:true
+                required:true,
             }, {
                 model: Prestador_endereco,
                 required: true,
@@ -23,6 +23,9 @@ const listarPrestadoresController = {
         });
         // ele divide totalPage por 12 itens cada page e arredonda para não trazer número quebrado.
         let totalPages = Math.round(totalPage/12);
+        prestadores.forEach(prestador => {
+            console.log(prestador.Avaliacoes);
+        })
         res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages, textoPesquisa: []});
     },
 
