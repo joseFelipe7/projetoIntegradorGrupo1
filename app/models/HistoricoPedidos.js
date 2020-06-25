@@ -21,6 +21,13 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false, //terá create_at e update_at criada automaticamente? Não
         tableName: 'historico_pedidos'
     });
+    /**
+    ENV    : Enviado    (cliente enviou o pedido)
+    ANALI  : Analise    (Prestador aceitou e esta analisando a proposta)
+    CANC   : Cancelado  (Tanto Cliente Quanto prestador podem ter cancelado)
+    AGUAR  : Aguardando (Prestador Aguardando o cliente aceitar o orçamento proposto)
+    CONC   : Concluido  (Serviço foi concluido)
+     */
 
     /*
     hasOne	  //tem um
