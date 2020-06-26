@@ -7,7 +7,7 @@ const { Cliente, Pedido, Prestador } = require('../models/index');
 
 const orcamentosPrestadorController = {
     index: async (req, res) => {
-        let idPedido = 5;
+        let idPedido = req.query.pedido;
         let loggado = req.session.prestador;
 
         let pedido = await Pedido.findOne({
@@ -43,14 +43,14 @@ const orcamentosPrestadorController = {
 
         console.log(dados)
 
-        res.render("areaPrestador", {view: "cadastroOrcamento", loggado: req.session.prestador,data:{dados, moment}});
+        res.render("areaPrestador", {view: "cadastroOrcamento", loggado: req.session.prestador,data:{dados, moment, prestador:loggado}});
     },
     store: async (req, res) => {
         let loggado = req.session.prestador;
 
-        let idPedido = 5;
-        let resumo = "resumo do prestador";
-        let valor = 500.00;
+        let idPedido = req.body.numServico;
+        let resumo = req.body.resumo;
+        let valor = req.body.valor;
 
         let updatePedido = await Pedido.update({ valor:valor, resumo:resumo }, {
             where: {
@@ -109,7 +109,7 @@ const orcamentosPrestadorController = {
             }
         }
 
-        res.render("areaPrestador", {view: "cadastroOrcamento", loggado: req.session.prestador,data:{dados, moment, msg}});
+        res.render("areaPrestador", {view: "cadastroOrcamento", loggado: req.session.prestador,data:{dados, moment, msg, prestador:loggado}});
     },
 }
 module.exports = orcamentosPrestadorController;
