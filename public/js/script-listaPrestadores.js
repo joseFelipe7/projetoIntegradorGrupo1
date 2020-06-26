@@ -10,30 +10,32 @@ const buttonPesquisa = document.getElementById('lupa-pesquisa');
 const buttonLimpaPesquisaTexto = document.getElementById('limpa-pesquisaTexto');
 const buttonLimpaPesquisaAvaliacao = document.getElementById('limpa-pesquisaAvaliacao');
 
-// evento para pesquisa pelo input de pesquisa
-buttonPesquisa.addEventListener('click', function () {
-  let textoPesquisa = inputPesquisa.value
-  if (document.location.pathname !== pathPadrao) {
-    document.location.pathname = pathPadrao + "/" + textoPesquisa;
-  } else {
-    document.location.pathname += "/" + textoPesquisa;
-  }
-});
-
-// evento para pesquisa pelo input de pesquisa + action do button enter
-inputPesquisa.addEventListener('keyup', function (event) {
-  let textoPesquisa = inputPesquisa.value
-  if (this.value.length > 0 && event.key == 'Enter') {
+if (inputPesquisa) {
+  // evento para pesquisa pelo input de pesquisa
+  buttonPesquisa.addEventListener('click', function () {
+    let textoPesquisa = inputPesquisa.value
     if (document.location.pathname !== pathPadrao) {
       document.location.pathname = pathPadrao + "/" + textoPesquisa;
     } else {
       document.location.pathname += "/" + textoPesquisa;
-    }
   }
 });
 
+// evento para pesquisa pelo input de pesquisa + action do button enter
+  inputPesquisa.addEventListener('keyup', function (event) {
+    let textoPesquisa = inputPesquisa.value
+    if (this.value.length > 0 && event.key == 'Enter') {
+      if (document.location.pathname !== pathPadrao) {
+        document.location.pathname = pathPadrao + "/" + textoPesquisa;
+      } else {
+        document.location.pathname += "/" + textoPesquisa;
+    }
+  }
+});
+}
+
 // evento para limpar pesquisa e voltar a página inicial
-if (document.location.pathname !== pathPadrao) {
+if (buttonLimpaPesquisaTexto != null) {
   buttonLimpaPesquisaTexto.addEventListener('click', function () {
     document.location.pathname = pathPadrao;
   });
