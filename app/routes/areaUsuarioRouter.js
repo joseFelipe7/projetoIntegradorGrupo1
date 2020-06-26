@@ -97,6 +97,7 @@ router.post("/area-prestador/meusDados/:fk_cliente/profissao", authPrestador, ha
 
 
 router.get("/area-prestador/requisicoes", authPrestador, requisicoesPrestadorController.index)
+router.post("/area-prestador/requisicoes", authPrestador, requisicoesPrestadorController.store)
 
 //rota exibe form de orçamento
 router.get("/area-prestador/envia-orcamento", authPrestador, orcamentosPrestadorController.index)

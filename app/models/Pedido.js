@@ -58,6 +58,10 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey:'idprestadores',
             as:'prestador',
         });
+        Pedido.belongsTo(listaModels.Cliente,{
+            foreignKey:'clientes_id',
+            as:'cliente',
+        });
     }
 
     return Pedido;
