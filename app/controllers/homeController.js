@@ -20,7 +20,6 @@ const PesquisaPrestadorHomeController = {
                 model: Habilidades
             }
         })
-        console.log(prestador)
         return  res.render("home",{prestador});
 
     }

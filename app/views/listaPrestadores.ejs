@@ -85,7 +85,7 @@
               <img src="/img/filter-mobile.png">
               <p class="pr-0">Filtrar</p>
             </a>
-            <div class="dropdown-menu d-flex mr-2" aria-labelledby="dropdownMenuLink">
+            <div class="dropdown-menu mr-2" aria-labelledby="dropdownMenuLink">
               <ul id="selecionar-servicos">
                 <h6 class="subtitulo-filtroPrestadores ml-2">Serviços</h6>
                 <li class="d-flex justify-content-start align-items-center mb-1"><input id="med" class="ml-2 mr-1"
@@ -109,9 +109,9 @@
               <hr class="linha-separar">
 
 
-              <ul id="selecionar-avaliacao" class="mr-1">
+              <ul id="selecionar-avaliacao" class="ml-2">
                 <h6 class="subtitulo-filtroPrestadores">Avaliação</h6>
-                <li class="d-flex justify-content-start align-items-center mb-1">
+                <li class="mb-1">
                   <input id="5" type="checkbox" value="5">
                   <label class="m-0 ml-1" for="5">&#11088;&#11088;&#11088;&#11088;&#11088;</label>
                 </li>
@@ -167,12 +167,12 @@
           <hr class="linha-separar">
 
           <div class="row d-flex justify-content-center m-0">
-            <% if (prestadores.length === 0 || prestadores === null) { %> 
-              <div class="mt-5 resultadoDePesquisa">
-                <img src="/img/nenhum-resultado.png" alt="">
-                <p>Resultado de pesquisa não encontrado!</p>
-              </div>
-            <% } %> 
+            <% if (prestadores.length === 0 || prestadores === null) { %>
+            <div class="mt-5 resultadoDePesquisa">
+              <img src="/img/nenhum-resultado.png" alt="">
+              <p>Resultado de pesquisa não encontrado!</p>
+            </div>
+            <% } %>
             <% prestadores.forEach(prestador => { %>
             <div type="button" class="card card-listaPrestadores col-12 col-sm-12 col-md-6 col-lg-4 my-3 ml-2 mr-2 p-0"
               data-toggle="modal" data-target="#exampleModal<%= prestador.id %>">

@@ -60,7 +60,16 @@ const senha1p = selectId('senha1p');
 const senha2p = selectId('senha2p');
 const emailp = selectId('emailp');
 
+const buttonCepUp = selectId('buscarCepUp');
+const buttonCepp = selectId('buscarCepp');
 
+buttonCepUp.addEventListener('click', function () {
+    console.log("teste");
+})
+
+buttonCepp.addEventListener('click', function () {
+    console.log("teste");
+})
 
 //verifica se o campo está vazio
 function empty(input){
