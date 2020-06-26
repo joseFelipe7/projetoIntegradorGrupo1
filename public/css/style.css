@@ -84,6 +84,12 @@ a.icon-bofl {
   text-align: center;
   margin-right: 8px;
 }
+.sobreNos{
+  width: 100%;
+  display: flex;
+  text-align: center;
+  align-self: center;
+}
 
 
 @media (min-width:768px) {

@@ -5,7 +5,7 @@ const { Prestador, Contatos_prestador, Prestador_endereco, Habilidades } = requi
 
 const prestadorController = {
     index: async (req, res) => {
-        const {id} = req.params
+        const {id} = req.session.prestador
 
         //busca usuario logado e direciona seus dados
         const prestador = await Prestador.findByPk(id, {
@@ -19,14 +19,13 @@ const prestadorController = {
                 },
                 {
                     model:Habilidades,
-                    as: 'habilidades'
-                    
                 },
                 {
                     model:Prestador_endereco,
                     as: 'prestadores_enderecos'
                 }
             ]})
+            console.log(prestador)
         return res.render("areaPrestador", {view: "meusDados-prestador", loggado: req.session.prestador, data:{prestador}})
     },
 

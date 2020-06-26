@@ -3,11 +3,11 @@
     <div class="row no-gutters">
         <!-- coluna status -->
         <div class="col-md-2 bg-roxoRS statusCardPedido">
-            <h5 class="card-header">NOME SERVIÇO</h5>
+            <h5 class="card-header"><%=item.titulo%></h5>
             <div class="card-body">
                 <h5 class="card-title">ATIVO</h5>
-                <p class="card-text">Nº: #20200808</p>
-                <p class="card-text">CLIENTE: JANE DOE</p>
+                <p class="card-text">Nº: #<%=item.numero%></p>
+                <p class="card-text">CLIENTE: <%=item.nomeCliente%></p>
             </div>
         </div>
         <!-- coluna dados -->
@@ -20,7 +20,7 @@
                     <div class="col-md-8">
                         <ul class="list-group list-group-flush dadosListaPedido">
                             <li class="list-group-item list-group-item-action p-0 rounded">
-                                <a href="#" class="text-roxoRS text-decoration-none font-weight-bold">Jane Doe Santos</a>
+                                <a href="#" class="text-roxoRS text-decoration-none font-weight-bold"><%=item.nomeCliente%></a>
                             </li>
     
                             <li class="list-group-item list-group-item-action p-0 rounded">
@@ -47,27 +47,17 @@
                     
                         <ul class="list-group list-group-flush datasListaPedido">
                             <li class="list-group-item list-group-item-action p-0 bg-roxoRS">
-                                <span class="text-white">TITULO_DO_PEDIDO</span>
+                                <span class="text-white"><%=item.titulo%></span>
+                                
                             </li>
+                            <% item.historico.forEach(itemHistorico => { %>
+                                
                             <li class="list-group-item list-group-item-action p-0">
-                                Solicitação: 02/02/2020
-                            </li>
+                                <%=itemHistorico.status%>: <%= data.moment(itemHistorico.data).format('DD/MM/YYYY') %>
+                            </li>                     
     
-                            <li class="list-group-item list-group-item-action p-0">
-                                Aceito em: 04/02/2020
-                            </li>
-    
-                            <li class="list-group-item list-group-item-action p-0">
-                                Negociação: 05/02/2020
-                            </li>
-    
-                            <li class="list-group-item list-group-item-action p-0">
-                                Orçamento: 05/02/2020
-                            </li>
+                            <% }); %>
 
-                            <li class="list-group-item list-group-item-action p-0">
-                                Serviço iniciado: 07/02/2020
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -89,7 +79,7 @@
                                 </li>
         
                                 <li class="list-group-item list-group-item-action rounded p-0 text-azul">
-                                    CRÉDITO PARCELADO
+                                    <%= item.formaPagamento %>
                                 </li>
 
                                 <button class="btn btn-outline-success m-1">4x de 250,00</button>

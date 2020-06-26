@@ -1,13 +1,17 @@
 const { Op } = require('sequelize');
 const { check, validationResult, body} = require('express-validator');
 const moment = require("moment");
+const {Cliente} = require('../models')
 moment.locale("pt-BR");        
+
 
 const { Pedido, HistoricoPedidos, Prestador } = require('../models/index');
 
 module.exports = {
     //exibe pedidos
     index: async (req, res) => {
+        const {id} = req.params
+        const cliente = await Cliente.findByPk(id)
         
         let loggado = req.session.cliente;
 
@@ -106,6 +110,6 @@ module.exports = {
         ]
         */
 
-        res.render("areaContratante", {view: "pedidosAreaContratante", loggado: req.session.cliente, data:{infoPedido, moment}});
+        res.render("areaContratante", {view: "pedidosAreaContratante", loggado: req.session.cliente, data:{cliente, infoPedido, moment}});
     }
 }

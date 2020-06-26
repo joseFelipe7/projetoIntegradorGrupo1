@@ -38,6 +38,10 @@ module.exports = (sequelize, DataTypes) => {
       Cliente.hasMany(listaModels.Contatos, {
         foreignKey: 'fk_cliente',
         as: 'contatos'
+      }),
+      Cliente.hasMany(listaModels.Avaliacoes, {
+        foreignKey: 'fk_cliente',
+        as: 'cliente'
       })
     }
     
