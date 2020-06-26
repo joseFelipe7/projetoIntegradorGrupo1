@@ -25,8 +25,6 @@ module.exports = {
         },
         {
             model:Habilidades,
-            
-            
         },
         {
             model:Prestador_endereco,
@@ -44,10 +42,16 @@ module.exports = {
 
     req.session.prestador = prestador.dataValues;
     
+<<<<<<< HEAD
     return res.redirect('/usuario/area-prestador/meusDados/');
     //console.log(prestador)
    // return res.render("areaPrestador", {view: "meusDados-prestador", loggado: req.session.prestador, data:{prestador}})
+=======
+    return res.redirect('/usuario/area-prestador/meusDados/'+prestador.id);
+    // console.log(prestador)
+    // return res.render("areaPrestador", {view: "meusDados-prestador", loggado: req.session.prestador, data:{prestador}})
+>>>>>>> f34c131beae1378865116f45f898148226c6eb28
     
-  }
+  } 
 
 }

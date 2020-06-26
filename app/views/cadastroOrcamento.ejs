@@ -4,36 +4,49 @@
             Orçamento
         </div>
 
+        <% if (typeof data.msg != "undefined") { %>
+            <% if(data.msg.status){ %>
+                <div class="row alert alert-success msgErroLogin m-0">
+                    <img src="/img/alert.svg" alt="ok">
+                    <%= data.msg.resposta  %> 
+                </div>
+            <% }else{ %>
+                <div class="row alert alert-danger msgErroLogin m-0">
+                    <img src="/img/alert.svg" alt="erro">
+                    <%= data.msg.resposta  %> 
+                </div>
+            <% } %>
+        <% } %>
+
         <div class="card-body">
-            <form action="/area-prestador/envia-orcamento" method="POST">
+            <form action="/usuario/area-prestador/envia-orcamento" method="POST">
                 <div class="form-group">
                     <label>Nº DO SERVIÇO</label>
-                    <input type="text" name="numServico" class="form-control input-form-preocarmento"
-                        placeholder="numero do serviço">
+                    <input type="text" name="numServico" class="form-control input-form-preocarmento" readonly
+                        placeholder="numero do serviço" value="<%= data.dados.numServico %>">
                 </div>
                 <div class="form-group">
                     <label>Prestador</label>
-                    <input type="text" name="prestador" class="form-control input-form-preocarmento"
-                        placeholder="Nome do prestador">
+                    <input type="text" name="prestador" class="form-control input-form-preocarmento" readonly placeholder="Nome do prestador" value="<%= data.dados.nomePrestador %>">
                 </div>
                 <div class="form-group">
                     <label>Cliente</label>
-                    <input type="text" name="cliente" class="form-control input-form-preocarmento"
-                        placeholder="Nome do cliente">
+                    <input type="text" name="cliente" class="form-control input-form-preocarmento" readonly placeholder="Nome do cliente" value="<%= data.dados.nomeCliente %>">
                 </div>
                 <div class="form-group">
                     <label>Serviço</label>
-                    <input type="text" name="servico" class="form-control input-form-preocarmento"
+                    <input type="text" name="servico" class="form-control input-form-preocarmento" readonly value="<%= data.dados.servico %>"
                         placeholder="Titulo do pedido">
                 </div>
                 <div class="form-group">
                     <label>Para quando você precisa desse serviço?</label>
-                    <input type="date" name="dataServico" class="form-control input-form-preocarmento">
+                    <input type="date" name="dataServico" class="form-control input-form-preocarmento" readonly value="<%= data.moment(data.dados.data).format('YYYY-MM-DD')
+                    %>">
                 </div>
                 <div class="form-group">
                     <label>Detalhes do Serviço</label>
                     <textarea class="form-control input-form-preocarmento" name="detalhes" id="detalhes" cols="30"
-                        rows="6"></textarea>
+                        rows="6" readonly><%= data.dados.detalhes %></textarea>
                 </div>
 
                 <div class="form-group">

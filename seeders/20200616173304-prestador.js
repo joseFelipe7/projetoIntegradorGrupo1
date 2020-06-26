@@ -12,7 +12,7 @@ module.exports = {
         cpf:'02222211144',
         data_nascimento: null,
         status_:'A',        
-        avatar:false,
+        avatar:"/uploads/avatar_arquiteta.png",
         extensao_avatar:false,
         categoria_id:'9',
         nota: '4.8'
@@ -24,7 +24,7 @@ module.exports = {
         cpf:'02222211154',
         data_nascimento: null,
         status_:'A',        
-        avatar:false,
+        avatar:"/uploads/avatar_medica.png",
         extensao_avatar:false,
         categoria_id:'2',
         nota: '4.2'
@@ -36,7 +36,7 @@ module.exports = {
         cpf:'02222211147',
         data_nascimento: null,
         status_:'A',        
-        avatar:false,
+        avatar:"/uploads/avatar_pintor.png",
         extensao_avatar:false,
         categoria_id:'3',
         nota: '4.5'
@@ -48,7 +48,7 @@ module.exports = {
         cpf:'02222211132',
         data_nascimento: null,
         status_:'A',        
-        avatar:false,
+        avatar:"/uploads/avatar_cozinheira.png",
         extensao_avatar:false,
         categoria_id:'7',
         nota: '3.8'
