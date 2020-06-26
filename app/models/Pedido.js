@@ -38,7 +38,19 @@ module.exports = (sequelize, DataTypes) => {
         },
         chats_prestadores_idprestadores: {
             type: DataTypes.INTEGER
-        }
+        },
+        valor: {
+            type: DataTypes.DECIMAL(10,2),
+            allowNull: true,
+        },
+        resumo: {
+          type: DataTypes.STRING(900),
+          allowNull: true,
+        },
+        aprovacao_cliente_orcamento: {
+          type: DataTypes.BOOLEAN,
+          allowNull: true,
+        },
     }, {
         timestamps: false,
         tableName: 'pedidos'
@@ -58,6 +70,7 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey:'idprestadores',
             as:'prestador',
         });
+
         Pedido.belongsTo(listaModels.Cliente,{
             foreignKey:'clientes_id',
             as:'cliente',

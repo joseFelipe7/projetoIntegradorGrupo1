@@ -24,7 +24,7 @@ const ClienteController = {
            return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{cliente}})
         },
         
-       updade: (req, res) => {
+       update: (req, res) => {
            const {id} = req.params
             
             const {

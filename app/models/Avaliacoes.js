@@ -17,8 +17,8 @@ module.exports = (sequelize, DataTypes) => {
           type:DataTypes.STRING,
           allowNull:false
         },
-      prestadores_idprestadores: DataTypes.INTEGER,
-      clientes_id: DataTypes.INTEGER,
+      fk_prestador: DataTypes.INTEGER,
+      fk_cliente: DataTypes.INTEGER,
       data_cadastro:DataTypes.DATE
        
   }, {
@@ -28,8 +28,12 @@ module.exports = (sequelize, DataTypes) => {
 
   Avaliacoes.associate = (listaModels) => {
     Avaliacoes.belongsTo(listaModels.Prestador, {
-      foreignKey: 'prestadores_idprestadores',
-      as: 'prestadores'
+      foreignKey: 'fk_prestador',
+      as: 'prestador'
+    }),
+    Avaliacoes.belongsTo(listaModels.Cliente, {
+      foreignKey: 'fk_cliente',
+      as: 'cliente'
     })
   };
  

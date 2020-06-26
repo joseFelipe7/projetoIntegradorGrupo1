@@ -49,11 +49,11 @@ const Clientes_EnderecoController = {
         }
         )
         console.log(clientes_endereco)
+        req.session.cliente = cliente.dataValues;
         
-        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{cliente, clientes_endereco}})
-        
+        res.redirect('/usuario/area-contratante/meus-dados/:id', id)          
     },
-    updade: async (req, res) => {
+    update: async (req, res) => {
         const {fk_cliente } = req.params;
         const {
             contratanteCep,
@@ -83,8 +83,7 @@ const Clientes_EnderecoController = {
                 id
             }
         })
-        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{cliente_endereco}})
-
+        return res.redirect('/usuario/area-contratante/meus-dados')
     }
 
 }
