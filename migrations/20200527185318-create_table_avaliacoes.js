@@ -17,10 +17,10 @@ module.exports = {
       status_avaliacao:{
         type:Sequelize.CHAR(2)
         },  
-      prestadores_idprestadores:{
+      fk_prestador:{
         type:Sequelize.INTEGER
       },
-      clientes_id:{
+      fk_cliente:{
         type:Sequelize.INTEGER
       },
       data_cadastro:{

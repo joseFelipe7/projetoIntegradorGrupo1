@@ -6,104 +6,62 @@
   <%- include('include/header')%>
   <%- include('include/menuNav') %>
 
-  <main class="cadastro-contratante">
-   
-           <div class="card formContatoSistema col-11 col-sm-11 col-md-7 col-lg-6 col-xl-5 p-0 m-0">
-            <!-- topo 3 sanfona -->
-            <div class="card-header sanfonaTopoMeusDados" id="headingThree">
-                <h5 class="mb-0">
-                    <button class="btn btn-link tituloSanfonaTopoMeusDados" data-toggle="collapse"
-                        data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                       
-                        Cadastre-se!
-                    </button>
-                </h5>
+  <main class="cadastro-contratante col-12 m-0 p-0">
+    <div class="content-ls">
+
+      <div class="form-cadastroContratante" id="containerContratante">
+        <h3 class="contratante-titulo">CADASTRE-SE:</h3>
+
+        <form action="/cadastro/contratante" class="d-flex flex-column justify-content-center" id="formularioContratante" method="POST">
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="contratante-inputNome">Nome</label>
+              <input type="text" name="contratanteNome" class="form-control" id="contratante-inputNome">
             </div>
-            <div class="card-body">
-                <!-- formulario contato -->
-                <form action="/cadastro/contratante" class="d-flex flex-column justify-content-center" id="formularioContratante" method="POST">
-                    <!-- input linha -->
-                    <div class="form-row">
-                        <!-- input Assunto -->
-                        <div class="form-group col">
-                            <label for="contratante-inputNome">Nome</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text etiquetaCampo">Nome</span>
-                                </div>
-                                <input type="text" name="contratanteNome" id="contratante-inputNome" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                                     placeholder="Digite seu nome">   
-                              
-                                </div>
-                        </div>
-                    </div>
+          </div>
 
-                    <!-- input linha -->
-                    <div class="form-row">
-                        <!-- input Nome -->
-                        <div class="form-group col">
-                            <label for="contratante-inputEmail">E-mail</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text etiquetaCampo">E-mail</span>
-                                </div>
-                                <input type="text" name="contratanteEmail" id="contratante-inputEmail" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                                    placeholder="Digite seu e-mail">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                      <!-- input email -->
-                      <div class="form-group col">
-                          <label for="contratante-inputCpf">CPF</label>
-                          <div class="input-group">
-                              <div class="input-group-prepend">
-                                  <span class="input-group-text etiquetaCampo">CPF</span>
-                              </div>
-                              <input type="text" name="contratanteCpf" class="form-control" id="contratante-inputCpf" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                                  placeholder="Digite seu CPF">
-  
-                          </div>
-                      </div>
-                    </div>
-
-                    <!-- input linha 3 -->
-                    <div class="form-row">
-                        <!-- input email -->
-                        <div class="form-group col">
-                            <label for="contratante-inputSenha">Senha</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text etiquetaCampo">Senha</span>
-                                </div>
-                                <input type="password" name="contratanteSenha" id="contratante-inputSenha" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                                     placeholder="Insira sua senha">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                      <!-- input email -->
-                      <div class="form-group col">
-                          <label for="contratante-inputRepetirSenha">Repetir senha</label>
-                          <div class="input-group">
-                              <div class="input-group-prepend">
-                                  <span class="input-group-text etiquetaCampo">Repetir senha</span>
-                              </div>
-                              <input type="password" name="contratanteRepetirSenha" id="contratante-inputRepetirSenha" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                                  placeholder="Repetir senha">
-
-                          </div>
-                      </div>
-                  </div>
-           
-
-                    <div class="d-flex justify-content-end">
-                        <button type="submit" class="btn botaoMeusDados">CADASTRAR</button>
-                    </div>
-                </form>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="contratante-inputEmail">Email</label>
+              <input type="text" name="contratanteEmail" class="form-control" id="contratante-inputEmail">
             </div>
-        </div>
-   
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="contratante-inputSenha">Senha</label>
+              <input type="password" name="contratanteSenha" class="form-control" id="contratante-inputSenha">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="contratante-inputRepetirSenha">Repetir senha</label>
+              <input type="password" name="contratanteRepetirSenha" class="form-control" id="contratante-inputRepetirSenha">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="contratante-inputCpf">CPF</label>
+              <input type="text" name="contratanteCpf" class="form-control" id="contratante-inputCpf">
+            </div>
+          </div>
+
+          <div class="alert alert-danger alert-dismissible fade show" id="alert-cadC" role="alert" hidden>
+            <ul></ul>
+            <button type="button" class="close" id="close-listC" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <button type="submit" class="align-self-center" id="buttonContratante">Cadastrar</button>
+
+        </form>
+
+      </div>
+
+    </div>
   </main>
 
   <%- include('include/footer') %>
