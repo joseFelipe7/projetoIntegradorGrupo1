@@ -14,8 +14,8 @@ module.exports = {
       },
       {
         nota:'4',
-        comentario: '',
-        status_avaliacao: 'Adorei o atendimento',
+        comentario: 'Adorei o atendimento',
+        status_avaliacao: '',
         prestadores_idprestadores: '2',
         clientes_id: '',
         data_cadastro: ''
