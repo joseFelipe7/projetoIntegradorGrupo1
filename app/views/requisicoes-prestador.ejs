@@ -113,8 +113,12 @@
                                     data-target="#navbarToggleExternalContent-2"
                                     aria-controls="navbarToggleExternalContent-2" aria-expanded="false"
                                     aria-label="Toggle navigation" src="/img/pedidosCard.png" alt="">
-                                <a href="/usuario/area-contratante/orcamentos"><img src="/img/setaDetalhes.png"
-                                        class="setaDetalhes" alt="mais detalhes"></a>
+                                    <form action="/usuario/area-contratante/orcamentos" method="get" >
+                                        <input type="text" name="pedido" value="<%=item.numero%>" hidden>
+                                        <button class="btn btn-success" type="submit">
+                                            Enviar Orçamento
+                                        </button>
+                                    </form>
                             </nav>
                         </div>
                     </div>
