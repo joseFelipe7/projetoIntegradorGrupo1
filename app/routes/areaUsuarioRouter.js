@@ -18,6 +18,7 @@ const cuponsController = require('../controllers/cuponsController')
 const historicoController = require('../controllers/historicoController')
 const orcamentosController = require('../controllers/orcamentosController')
 const pedidosClienteController = require("../controllers/pedidosCliente")
+const requisicoesPrestadorController = require("../controllers/requisicoesPrestadorController")
 const orcamentosPrestadorController = require("../controllers/orcamentosPrestadorController")
 
 let router = express.Router();
@@ -95,9 +96,7 @@ router.post("/area-prestador/meusDados/:fk_cliente/profissao", authPrestador, ha
 //router.put("/area-prestador/meusDados/:fk_cliente/profissao", authPrestador, habilidadesController.update);
 
 
-router.get("/area-prestador/requisicoes", authPrestador,(req, res) => {
-    res.render("areaPrestador", {view: "requisicoes-prestador", loggado: req.session.prestador,data:{}});
-})
+router.get("/area-prestador/requisicoes", authPrestador, requisicoesPrestadorController.index)
 
 //rota exibe form de orçamento
 router.get("/area-prestador/envia-orcamento", authPrestador, orcamentosPrestadorController.index)
