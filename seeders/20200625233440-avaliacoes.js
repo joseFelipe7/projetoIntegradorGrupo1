@@ -7,33 +7,33 @@ module.exports = {
       [{
         nota:'5',
         comentario: '',
-        status_avaliacoes: '',
+        status_avaliacao: '',
         prestadores_idprestadores: '1',
-        cliente_id: '',
+        clientes_id: '',
         data_cadastro: ''
       },
       {
         nota:'4',
         comentario: '',
-        status_avaliacoes: '',
+        status_avaliacao: '',
         prestadores_idprestadores: '2',
-        cliente_id: '',
+        clientes_id: '',
         data_cadastro: ''
       },
       {
         nota:'1',
         comentario: '',
-        status_avaliacoes: '',
+        status_avaliacao: '',
         prestadores_idprestadores: '3',
-        cliente_id: '',
+        clientes_id: '',
         data_cadastro: ''
       },
       {
         nota:'2',
         comentario: '',
-        status_avaliacoes: '',
+        status_avaliacao: '',
         prestadores_idprestadores: '4',
-        cliente_id: '',
+        clientes_id: '',
         data_cadastro: ''
       }
     ], {});

@@ -17,7 +17,6 @@ router.get("/contato", chamadosController.create);
 //envia informaçõesdo chamado
 router.post("/contato", validacoesChamado, chamadosController.store);
 
-
 router.get("/como-funciona", (req, res) => {
     res.render("comoFunciona");
 })
