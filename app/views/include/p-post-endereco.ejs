@@ -4,7 +4,7 @@
        <!-- formulario editar endereço -->
 
 <!--FORM POST-UPDATE-->
-       <form action="/usuario/area-prestador/meusDados/<%=data.prestador.id%>/endereco?_method=PUT"  method="POST">
+       <form id="formeUp" action="/usuario/area-prestador/meusDados/<%=data.prestador.id%>/endereco?_method=PUT"  method="POST">
          <!-- input linha 1 -->
          <div class="form-row">
            <!-- input data cep -->
@@ -18,6 +18,7 @@
                  value="<%= data.prestador.cep %>" id="cepUp" placeholder="CEP - apenas números" maxlength="8"
                  pattern="[0-9]+$">
              </div>
+             <span id="errorCEPUp"></span>
            </div>
 
            <!-- buttom pesquisar cep -->
@@ -34,13 +35,13 @@
          <div class="form-row">
            <!-- input UF -->
            <div class="form-group col-md-6">
-             <label for="UFUp">UF</label>
+             <label for="ufUp">UF</label>
              <div class="input-group">
                <div class="input-group-prepend">
                  <span class="input-group-text etiquetaCampo">UF</span>
                </div>
                <input type="text" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                 value="<%= data.prestador.uf %>" id="UFUp" placeholder="Estado - UF" maxlength="2">
+                 value="<%= data.prestador.uf %>" id="ufUp" placeholder="Estado - UF" maxlength="2">
              </div>
            </div>
            <!-- input cidade -->
@@ -114,7 +115,7 @@
       <!-- formulario editar endereço -->
 
 <!--FORM POST - CADASTRO-->
-      <form action="/usuario/area-prestador/meusDados/<%=data.prestador.id%>/endereco" method="POST">
+      <form id="formep" action="/usuario/area-prestador/meusDados/<%=data.prestador.id%>/endereco" method="POST">
         <!-- input linha 1 -->
         <div class="form-row">
           <!-- input data cep -->
@@ -127,6 +128,7 @@
               <input type="number" name="prestadorCep" class="form-control campoMeusDadosStyle campoDadoReadonly"
                 id="cepp" placeholder="CEP - apenas números" maxlength="8" pattern="[0-9]+$">
             </div>
+            <span id="errorCEPp"></span>
           </div>
 
           <!-- buttom pesquisar cep -->

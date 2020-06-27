@@ -25,7 +25,6 @@ const prestadorController = {
                     as: 'prestadores_enderecos'
                 }
             ]})
-            console.log(prestador)
         return res.render("areaPrestador", {view: "meusDados-prestador", loggado: req.session.prestador, data:{prestador}})
     },
 
