@@ -1824,10 +1824,11 @@ a + img {
   }
 }
 
-@media (max-width: 1018px) {
+@media (max-width: 1020px) {
   .filtro-prestadores {
     display: none;
   } 
+  
   
 }
 
@@ -1845,9 +1846,9 @@ a + img {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    height: 3.2rem;
+    height: 2rem;
     width: 100vw;
-    margin-top: 0.2rem;
+    margin-top: 0.5rem;
   }
 
   .fp-mobile p {

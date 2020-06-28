@@ -4,20 +4,21 @@
        <!-- formulario editar endereço -->
 
 <!--FORM POST-UPDATE-->
-       <form action="/usuario/area-prestador/meusDados/<%=data.prestador.id%>/endereco?_method=PUT"  method="POST">
+       <form id="formeUp" action="/usuario/area-prestador/meusDados/<%=data.prestador.id%>/endereco?_method=PUT"  method="POST">
          <!-- input linha 1 -->
          <div class="form-row">
            <!-- input data cep -->
            <div class="form-group col-6">
-             <label for="cep">CEP</label>
+             <label for="cepUp">CEP</label>
              <div class="input-group">
                <div class="input-group-prepend">
                  <span class="input-group-text etiquetaCampo">CEP</span>
                </div>
                <input type="number" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                 value="<%= data.prestador.cep %>" id="cepp" placeholder="CEP - apenas números" maxlength="8"
+                 value="<%= data.prestador.cep %>" id="cepUp" placeholder="CEP - apenas números" maxlength="8"
                  pattern="[0-9]+$">
              </div>
+             <span id="errorCEPUp"></span>
            </div>
 
            <!-- buttom pesquisar cep -->
@@ -25,7 +26,7 @@
              <label>Buscar cep</label>
 
              <div class="input-group">
-               <button type="button" class="btn botaoMeusDados"><img src="/img/endereco.png" alt="Meus dados"
+               <button id="buscarCepUp" type="button" class="btn botaoMeusDados"><img src="/img/endereco.png" alt="Meus dados"
                    title="Meus dados">Pesquisar</button>
              </div>
            </div>
@@ -34,24 +35,24 @@
          <div class="form-row">
            <!-- input UF -->
            <div class="form-group col-md-6">
-             <label for="UF">UF</label>
+             <label for="ufUp">UF</label>
              <div class="input-group">
                <div class="input-group-prepend">
                  <span class="input-group-text etiquetaCampo">UF</span>
                </div>
                <input type="text" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                 value="<%= data.prestador.uf %>" id="UFp" placeholder="Estado - UF" maxlength="2">
+                 value="<%= data.prestador.uf %>" id="ufUp" placeholder="Estado - UF" maxlength="2">
              </div>
            </div>
            <!-- input cidade -->
            <div class="form-group col-md-6">
-             <label for="cidade">Cidade</label>
+             <label for="cidadeUp">Cidade</label>
              <div class="input-group">
                <div class="input-group-prepend">
                  <span class="input-group-text etiquetaCampo">Cidade</span>
                </div>
                <input type="text" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                 value="<%= data.prestador.cidade %>" id="cidadep" placeholder="Digite sua cidade">
+                 value="<%= data.prestador.cidade %>" id="cidadeUp" placeholder="Digite sua cidade">
              </div>
            </div>
          </div>
@@ -60,13 +61,13 @@
          <div class="form-row">
            <!-- input rua -->
            <div class="form-group col">
-             <label for="rua">Rua</label>
+             <label for="ruaUp">Rua</label>
              <div class="input-group">
                <div class="input-group-prepend">
                  <span class="input-group-text etiquetaCampo">Rua</span>
                </div>
                <input type="text" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                 value="<%= data.prestador.logradouro %>" id="ruap" placeholder="Digite sua rua">
+                 value="<%= data.prestador.logradouro %>" id="ruaUp" placeholder="Digite sua rua">
              </div>
            </div>
          </div>
@@ -75,24 +76,24 @@
          <div class="form-row">
            <!-- input numero -->
            <div class="form-group col-md-6">
-             <label for="numero">Nº</label>
+             <label for="numeroUp">Nº</label>
              <div class="input-group">
                <div class="input-group-prepend">
                  <span class="input-group-text etiquetaCampo">Nº</span>
                </div>
                <input type="number" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                 value="<%= data.prestador.numero %>" id="numerop" placeholder="Número" pattern="[0-9]+$">
+                 value="<%= data.prestador.numero %>" id="numeroUp" placeholder="Número" pattern="[0-9]+$">
              </div>
            </div>
            <!-- input complemento -->
            <div class="form-group col-md-6">
-             <label for="complemento">Complemento</label>
+             <label for="complementoUp">Complemento</label>
              <div class="input-group">
                <div class="input-group-prepend">
                  <span class="input-group-text etiquetaCampo">Complemento</span>
                </div>
                <input type="text" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                 value="<%= data.prestador.complemento %>" id="complementop" placeholder="Complemento">
+                 value="<%= data.prestador.complemento %>" id="complementoUp" placeholder="Complemento">
              </div>
            </div>
          </div>
@@ -114,19 +115,20 @@
       <!-- formulario editar endereço -->
 
 <!--FORM POST - CADASTRO-->
-      <form action="/usuario/area-prestador/meusDados/<%=data.prestador.id%>/endereco" method="POST">
+      <form id="formep" action="/usuario/area-prestador/meusDados/<%=data.prestador.id%>/endereco" method="POST">
         <!-- input linha 1 -->
         <div class="form-row">
           <!-- input data cep -->
           <div class="form-group col-6">
-            <label for="cep">CEP</label>
+            <label for="cepp">CEP</label>
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text etiquetaCampo">CEP</span>
               </div>
               <input type="number" name="prestadorCep" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                id="cep" placeholder="CEP - apenas números" maxlength="8" pattern="[0-9]+$">
+                id="cepp" placeholder="CEP - apenas números" maxlength="8" pattern="[0-9]+$">
             </div>
+            <span id="errorCEPp"></span>
           </div>
 
           <!-- buttom pesquisar cep -->
@@ -134,7 +136,7 @@
             <label>Buscar cep</label>
 
             <div class="input-group">
-              <button type="button" class="btn botaoMeusDados"><img src="/img/endereco.png" alt="Meus dados"
+              <button id="buscarCepp" type="button" class="btn botaoMeusDados"><img src="/img/endereco.png" alt="Meus dados"
                   title="Meus dados">Pesquisar</button>
             </div>
           </div>
@@ -143,24 +145,24 @@
         <div class="form-row">
           <!-- input UF -->
           <div class="form-group col-md-6">
-            <label for="UF">UF</label>
+            <label for="UFp">UF</label>
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text etiquetaCampo">UF</span>
               </div>
               <input type="text" name="prestadorUf" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                id="UF" placeholder="Estado - UF" maxlength="2">
+                id="UFp" placeholder="Estado - UF" maxlength="2">
             </div>
           </div>
           <!-- input cidade -->
           <div class="form-group col-md-6">
-            <label for="cidade">Cidade</label>
+            <label for="cidadep">Cidade</label>
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text etiquetaCampo">Cidade</span>
               </div>
               <input type="text" name="prestadorCidade" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                id="cidade" placeholder="Digite sua cidade">
+                id="cidadep" placeholder="Digite sua cidade">
             </div>
           </div>
         </div>
@@ -169,13 +171,13 @@
         <div class="form-row">
           <!-- input rua -->
           <div class="form-group col">
-            <label for="rua">Rua</label>
+            <label for="ruap">Rua</label>
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text etiquetaCampo">Rua</span>
               </div>
               <input type="text" name="prestadorRua" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                id="rua" placeholder="Digite sua rua">
+                id="ruap" placeholder="Digite sua rua">
             </div>
           </div>
         </div>
@@ -184,24 +186,24 @@
         <div class="form-row">
           <!-- input numero -->
           <div class="form-group col-md-6">
-            <label for="numero">Nº</label>
+            <label for="numerop">Nº</label>
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text etiquetaCampo">Nº</span>
               </div>
               <input type="number" name="prestadorN" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                id="numero" placeholder="Número" pattern="[0-9]+$">
+                id="numerop" placeholder="Número" pattern="[0-9]+$">
             </div>
           </div>
           <!-- input complemento -->
           <div class="form-group col-md-6">
-            <label for="complemento">Complemento</label>
+            <label for="complementop">Complemento</label>
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text etiquetaCampo">Complemento</span>
               </div>
               <input type="text" name="prestadorComplemento"
-                class="form-control campoMeusDadosStyle campoDadoReadonly" id="complemento"
+                class="form-control campoMeusDadosStyle campoDadoReadonly" id="complementop"
                 placeholder="Complemento">
             </div>
           </div>
