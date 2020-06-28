@@ -24,7 +24,7 @@ module.exports = {
          type:Sequelize.DATE
        },
       
-      prestadores_idprestadores:{
+      fk_prestador:{
         type:Sequelize.INTEGER
       }
     });
