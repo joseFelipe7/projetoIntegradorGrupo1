@@ -85,10 +85,27 @@ a.icon-bofl {
   margin-right: 8px;
 }
 .sobreNos{
+  padding: 60px;
   width: 100%;
   display: flex;
   text-align: center;
   align-self: center;
+}
+.sobreNos p{
+  width: 100%;
+}
+@media (max-width:768px) {
+  .sobreNos{
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    align-self: center;
+  }
+  .sobreNos p{
+    width: 100%;
+  }
 }
 
 
@@ -129,12 +146,14 @@ a.icon-bofl {
 /*Menu Navegação*/
 .container-menu-principal {
   position: relative;
+  
 }
 
 .nav-menu-principal {
   height: 10vh;
   width: 100%;
   background-color: #A094F2;
+  
 
 }
 
@@ -351,6 +370,11 @@ a.btnContatoMN {
   max-height: 30rem;
   width: 100%;
 }
+li#footerCenter{
+  display: flex;
+  align-items: center;
+
+}
 
 .linksFooter {
   display: flex;
@@ -452,10 +476,7 @@ a.btnContatoMN {
     margin: 0;
   }
 
-  .subtituloImg p,
-  .subtituloImg .footer-icons {
-    /* padding-left: 3rem; */
-  }
+
 }
 
 @media(max-width: 995px) {
@@ -472,9 +493,7 @@ a.btnContatoMN {
     align-items: center; */
   }
 
-  .linksFooter ul {
-    /* padding-left: 4rem; */
-  }
+  
 
   .linksFooter ul p {
     font-size: 1em;

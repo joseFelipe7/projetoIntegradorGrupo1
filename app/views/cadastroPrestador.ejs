@@ -10,43 +10,45 @@
     <div class="content-ls">
 
       <div class="form-cadastroPrestador" id="containerPrestador">
+        <h2>Deseja criar um perfil profissional?</h2>
         <h3 class="prestador-titulo">CADASTRE-SE:</h3>
 
         <form action="/cadastro/prestador" class="d-flex flex-column justify-content-center" id="formularioPrestador" method="POST">
 
           <div class="form-row">
             <div class="form-group col-md-12">
-              <label for="prestador-inputNome">Nome</label>
-              <input type="text" name="prestadorNome" class="form-control" id="prestador-inputNome">
+              <input class="form-control" type="text" name="prestadorNome" id="prestador-inputNome" placeholder="Nome">
+
+             
             </div>
           </div>
           
 
           <div class="form-row">
             <div class="form-group col-md-12">
-              <label for="prestador-inputEmail">Email</label>
-              <input type="text" name="prestadorEmail" class="form-control" id="prestador-inputEmail">
+             <input class="form-control" type="text" name="prestadorEmail" id="prestador-inputEmail" placeholder="Email">
+
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-12">
-              <label for="prestador-inputSenha">Senha</label>
-              <input type="password" name="prestadorSenha" class="form-control" id="prestador-inputSenha">
+                <input class="form-control" type="password" name="prestadorSenha" id="prestador-inputSenha" placeholder="Senha">
+
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-12">
-              <label for="prestador-inputRepetirSenha">Repetir senha</label>
-              <input type="password" name="repetirSenha" class="form-control" id="prestador-inputRepetirSenha">
+                <input class="form-control" type="password" name="repetirSenha" id="prestador-inputRepetirSenha" placeholder="Repetir senha">
+          
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-12">
-              <label for="prestador-inputCpf">CPF</label>
-              <input type="text" name="prestadorCpf" class="form-control" id="prestador-inputCpf">
+                <input class="form-control" type="text" name="prestadorCpf" id="prestador-inputCpf" placeholder="CPF">
+
             </div>
           </div>
 
@@ -58,7 +60,12 @@
           </div>
 
           <button type="submit" class="align-self-center" id="buttonPrestador">Cadastrar</button>
-
+          <p class="align-self-center">Faça o cadastro com:</p>
+          <div class="faca-loginCadP align-self-center">
+            <a href="#"><img src="/img/login-google.png"></a>
+            <a href="#"><img src="/img/login-linkedin.png"></a>
+            <a href="#"><img src="/img/login-facebook.png"></a>
+          </div>
         </form>
 
       </div>

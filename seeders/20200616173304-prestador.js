@@ -48,7 +48,7 @@ module.exports = {
         categoria_id:'7'
       },
       {
-        nome: 'Luana',
+        nome: 'Joana',
         email: 'analulencina2@gmail.com',
         senha:'$2b$10$MWEv6WPeSOfC51lvJZrYpuDQGJ3fHRGP8vszBSwMO.ZZrFLrdlmze',
         cpf:'02222211141',
@@ -59,7 +59,7 @@ module.exports = {
         categoria_id:'8'
       },
       {
-        nome: 'Lais Maria',
+        nome: 'Maria',
         email: 'lais2@email.com',
         senha:'$2b$10$MWEv6WPeSOfC51lvJZrYpuDQGJ3fHRGP8vszBSwMO.ZZrFLrdlmze',
         cpf:'02222211151',
@@ -70,7 +70,7 @@ module.exports = {
         categoria_id:'4'
       },
       {
-        nome: 'Julio João',
+        nome: 'João',
         email: 'joao2@email.com',
         senha:'$2b$10$MWEv6WPeSOfC51lvJZrYpuDQGJ3fHRGP8vszBSwMO.ZZrFLrdlmze',
         cpf:'02222211141',
@@ -81,8 +81,8 @@ module.exports = {
         categoria_id:'4'
       },
       {
-        nome: 'Ana Maria',
-        email: 'ana2@email.com',
+        nome: 'Marcos',
+        email: 'marcos@email.com',
         senha:'$2b$10$MWEv6WPeSOfC51lvJZrYpuDQGJ3fHRGP8vszBSwMO.ZZrFLrdlmze',
         cpf:'02222211131',
         data_nascimento: null,

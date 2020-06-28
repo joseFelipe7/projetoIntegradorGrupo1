@@ -25,7 +25,7 @@
                 <div class="form-group col">
                   <label for="nascimento">Perfil</label>
                   <div class="input-group">
-                    <img src="/img/user.png" alt="Meu Perfil" title="Meu Perfil" class="img-thumbnail perfilMeusDados">
+                    <img src=<%= data.cliente.avatar %> width="120px" height="120px" alt="Meu Perfil" title="Meu Perfil" class="img-thumbnail perfilMeusDados">
                   </div>
                 </div>
               </div>
@@ -95,14 +95,14 @@
 
        
 
-        <form action="/usuario/area-contratante/meus-dados/<%=data.cliente.id%>?_method=PUT"  id="formdp1" method="POST" enctype="multipart/form-data"> 
+        <form action="/usuario/area-contratante/meus-dados/<%=data.cliente.id%>?_method=PUT"  id="formdp1" enctype="multipart/form-data" method="POST"> 
           <!-- linha foto -->
           <div class="form-row">
             <!-- input foto escolhida -->
             <div class="form-group col-3">
               <label for="photo">Perfil</label>
               <div class="input-group">
-                <img src="/img/envio.png" alt="Meu Perfil" title="Meu Perfil" class="img-thumbnail perfilMeusDados"> 
+                <img src=<%= data.cliente.avatar %> width="120px" height="120px" alt="Meu Perfil" title="Meu Perfil" class="img-thumbnail perfilMeusDados"> 
               </div>
             </div>
         
@@ -115,6 +115,8 @@
                   </div>
               </div>
             </div>
+            
+            
           </div>
         <!-- input linha 1 -->
           <div class="form-row">
