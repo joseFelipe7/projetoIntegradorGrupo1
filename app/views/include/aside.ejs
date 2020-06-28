@@ -4,24 +4,27 @@
       <section class="barra-lateralCont">
         <div class="foto-perfilCont">
           <div class="iconesCont">
-            <a href="#" class="botao-comunicacaoCont"><img src="/img/phone.png" alt="Telefone"></a>
-            <a href="#" class="usuarioCont"><img src="/img/user.png" alt="Usuário"></a>
-            <a href="#" class="botao-comunicacaoCont"><img src="/img/mail.png" alt="Email"></a>
+            <div class="input-group">
+              <a href="#" class="botao-comunicacaoCont"><img src="/img/phone.png" alt="Telefone"></a>
+              <a href="#" class="usuarioCont"><img src=<%= data.cliente.avatar %> alt="Usuário"></a>
+              <a href="#" class="botao-comunicacaoCont"><img src="/img/mail.png" alt="Email"></a>
+            
+            </div>
           </div>
           <div class="dadosCont">
             <a href="#">
-              <h6><%=//data.cliente.nome%></h6>
+              <h6><%=data.cliente.nome%></h6>
             </a>
             <a href="#">Alguma Informação</a>
           </div>
         </div>
 
         <div class="opcoesCont">
-          <a href="/usuario/area-contratante/meus-dados/<%= //data.cliente.id %>"><img src="/img/meus-dados.png" alt="Meus Dados">
+          <a href="/usuario/area-contratante/meus-dados/<%= data.cliente.id %>"><img src="/img/meus-dados.png" alt="Meus Dados">
             <p>Meus Dados</p>
           </a>
           <hr>
-          <a href="/usuario/area-contratante/pedidos/<%=//data.cliente.id %>"><img src="/img/pedidos.png" alt="Pedidos">
+          <a href="/usuario/area-contratante/pedidos/<%= data.cliente.id %>"><img src="/img/pedidos.png" alt="Pedidos">
             <p>Pedidos</p>
           </a>
           <hr>
@@ -29,11 +32,11 @@
             <p>Acompanhe</p>
           </a>
           <hr>
-          <a href="/usuario/area-contratante/orcamentos-bru/<%=//data.cliente.id %>"><img src="/img/orcamento.png" alt="Orçamentos">
+          <a href="/usuario/area-contratante/orcamentos-bru/<%=data.cliente.id %>"><img src="/img/orcamento.png" alt="Orçamentos">
             <p>Orçamentos</p>
           </a>
           <hr>
-          <a href="/usuario/area-contratante/historico-bru/<%=//data.cliente.id %>"><img src="/img/historico.png" alt="Históricos">
+          <a href="/usuario/area-contratante/historico-bru/<%=data.cliente.id %>"><img src="/img/historico.png" alt="Históricos">
             <p>Histórico</p>
           </a>
           <hr>
@@ -41,7 +44,7 @@
             <p>Favoritos</p>
           </a>
           <hr>
-          <a href="/usuario/area-contratante/cupons/<%=//data.cliente.id %>"><img src="/img/cupons.png" alt="Cupons">
+          <a href="/usuario/area-contratante/cupons/<%=data.cliente.id %>"><img src="/img/cupons.png" alt="Cupons">
             <p>Cupons</p>
           </a>
           <hr>

@@ -49,8 +49,8 @@ const prestador_contatosController = {
             fk_prestador:id
 
         })
-        console.log(prestadores_enderecos)
-        return res.render("areaPrestador", {view: "meusDados-prestador", loggado: req.session.prestador, data:{prestadores_contatos}})
+        req.session.prestador = prestador.dataValues;
+        res.redirect('/usuario/area-prestador/meus-dados/'+id)          
 
     }
 }

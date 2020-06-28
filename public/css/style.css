@@ -129,12 +129,14 @@ a.icon-bofl {
 /*Menu Navegação*/
 .container-menu-principal {
   position: relative;
+  
 }
 
 .nav-menu-principal {
   height: 10vh;
   width: 100%;
   background-color: #A094F2;
+  
 
 }
 
@@ -452,10 +454,7 @@ a.btnContatoMN {
     margin: 0;
   }
 
-  .subtituloImg p,
-  .subtituloImg .footer-icons {
-    /* padding-left: 3rem; */
-  }
+
 }
 
 @media(max-width: 995px) {
@@ -472,9 +471,7 @@ a.btnContatoMN {
     align-items: center; */
   }
 
-  .linksFooter ul {
-    /* padding-left: 4rem; */
-  }
+  
 
   .linksFooter ul p {
     font-size: 1em;

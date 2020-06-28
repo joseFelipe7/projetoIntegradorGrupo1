@@ -7,8 +7,8 @@ const homeController = require("../controllers/homeController")
 const sobreNosController = require("../controllers/sobreNosController")
 
 let router = express.Router();
-router.get("/", homeController.cards)
-
+router.get("/", homeController.index)
+router.get("/", homeController.search)
 
 router.get("/sobre", sobreNosController.show)
 
@@ -21,6 +21,6 @@ router.get("/como-funciona", (req, res) => {
     res.render("comoFunciona");
 })
 
-router.get("/", homeController.cards)
+
 
 module.exports = router;

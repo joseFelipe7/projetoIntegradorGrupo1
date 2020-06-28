@@ -98,51 +98,84 @@
             <!-- scroll de cards -->
            
             <section class="container-fluid sessaoHomePrestadores">
-                  
-                <div class="scroolCardsPrestadorHome py-2">
-                        <% prestador.forEach(prest => { %>
-                        <div class="cardPrestador h-100 mx-3 py-3 px-1">
-                            <!-- card unico -->
-                            
-                            
-                            <div class="container-fluid m-100 h-100 m-0 p-0 pt-2">
-                                <!-- foto prestador... -->
-                                <div class="row h-35 w-100 p-0 m-0">
-                                    <div class="col w-100 d-flex justify-content-center">
-                                        <img src="/img/mario-perfil.png" alt="Foto prestador" class="avatarCardPrestador rounded-circle">
+               
+                <div class="carousel slide scroolCardsPrestadorHome py-2" data-ride="carousel">
+                        
+                     
+                                <% prestadores.forEach(prestador => { %>
+                                    
+                                    <div type="button" class="card card-listaPrestadores col-12 col-sm-12 col-md-6 col-lg-4 my-3 ml-2 mr-2 p-0"
+                                      data-toggle="modal" data-target="#exampleModal<%= prestador.id %>">
+                                      <div class="card-parteSuperior">
+                                        <span class="boneco-prestador"><img src=<%= prestador.avatar %>></span>
+                                        <% prestador.Avaliacoes.forEach(avaliacao => { %>
+                                        <% if (avaliacao.nota === 1) { %>
+                                        <img class="img-notaPrestador" src="/img/estrela1.png">
+                                        <% } %>
+                                        <% if (avaliacao.nota === 2) { %>
+                                        <img class="img-notaPrestador" src="/img/estrela2.png">
+                                        <% } %>
+                                        <% if (avaliacao.nota === 3) { %>
+                                        <img class="img-notaPrestador" src="/img/estrela3.png">
+                                        <% } %>
+                                        <% if (avaliacao.nota === 4) { %>
+                                        <img class="img-notaPrestador" src="/img/estrela4.png">
+                                        <% } %>
+                                        <% if (avaliacao.nota === 5) { %>
+                                        <img class="img-notaPrestador" src="/img/estrela5.png">
+                                        <% } %>
+                                        <% }) %>
+                                      </div>
+                                      <div class="card-body card-parteInferior p-0 m-0">
+                                        <p class="nota-cardPrestador">NOTA</p>
+                                        <p class="nome-cardPrestador"> <%= prestador.nome %> </p>
+                                        <p class="sobre-cardPrestador"> <%= prestador.Habilidades[0].titulo %> </p>
+                                      </div>
                                     </div>
-                                </div>
-                                <!-- nota prestador... -->
-                                <div class="row h-13 w-75 mt-1 p-0 mx-auto">
-                                    <div class="col w-100">
-                                        <div class="card border-0 h-100 w-100 rounded d-flex flex-row justify-content-center align-items-center bg-roxo">
-                                            <h5 class="card-title border-0 m-0 text-center"><%= prest.Habilidades.titulo  %> </h5>
-                                            <img src="/img/estrela5.png" alt="" class="m-0 notaCardPrestador">
+                        
+                                    <!-- Modal de cada card -->
+                                    <div class="modal fade modalCardsPrestador" id="exampleModal<%= prestador.id %>" tabindex="-1" role="dialog"
+                                      aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                      <div class="modal-dialog">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                              <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            <div class="boneco-prestador"><img src=<%= prestador.avatar %>></div>
+                                            <h5 class="modal-title" id="exampleModalLabel"> <%= prestador.nome %> </h5>
+                                          </div>
+                                          <div class="modal-body">
+                                            <div class="row mt-4 ml-1">
+                                              <p><strong>Profissão: </strong> <%= prestador.Habilidades[0].titulo %> </p>
+                                            </div>
+                                            <div class="row ml-1">
+                                              <p><strong>Descrição: </strong> <%= prestador.Habilidades[0].descricao %> </p>
+                                            </div>
+                                            <div class="row ml-1">
+                                              <p><strong>Nota: </strong> <%= prestador.Avaliacoes[0].nota %></p>
+                                            </div>
+                                            <div class="row ml-1">
+                                              <p><strong>Cidade: </strong> <%= prestador.prestadores_enderecos[0].cidade %> -
+                                                <%= prestador.prestadores_enderecos[0].uf %></p>
+                                            </div>
+                                          </div>
+                                          <div class="modal-footer pt-0">
+                                            <button type="button" class="btn btnClose" data-dismiss="modal">Fechar</button>
+                                            <button type="button" class="btn btnPagina"
+                                              onclick="window.location.href=`/prestador/single/<%= prestador.id %>` ">Ir à página</button>
+                                          </div>
                                         </div>
+                                      </div>
                                     </div>
-                                </div>
-                                <!-- nome prestador... -->
-                                <div class="row h-13 w-100 mt-1 p-0 m-0">
-                                    <div class="col w-100">
-                                        <div class="card border-0 h-100 w-100 rounded d-flex justify-content-center bg-roxo">
-                                            <h5 class="card-title border-0 m-0 text-center"><%= prest.nome  %> </h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- descrição serviço... -->
-                                <div class="row h-30 w-100 mt-1 p-0 m-0">
-                                    <div class="col w-100">
-                                        <div class="card border-0 h-100 w-100 rounded bg-roxo d-flex justify-content-center align-items-center">
-                                            <p class="card-text border-0 text-center p-1"><%= prest.Habilidades.descricao  %> </p>
-                                        </div>
-                                    </div>
-                                </div>
+                               
+                            <% }) %>
+                          
+                          
                             </div>
-                           
-                            <!-- fim card unico -->
-                        </div>
-                        <% }) %> 
-                </div>
+                        
+                     
+               
                
             </section>
             
