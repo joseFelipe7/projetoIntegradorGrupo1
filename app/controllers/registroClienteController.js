@@ -23,6 +23,7 @@ module.exports = {
                 senha:bcrypt.hashSync(contratanteSenha,10),
                 cpf: cpfSemMascaraC,
                 status_:'A',
+                avatar:false,
                 data_nascimento:contratanteNascimento,
                 data_cadastro:Date.now()
             })
