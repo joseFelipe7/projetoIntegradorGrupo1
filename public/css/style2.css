@@ -1133,9 +1133,6 @@ button.botaoBuscar:hover {
 /* -------inicio contato LU------------------------------------------------ */
 .corpoContato {
     background-color: #AEB2F2;
-    background-image: url(/img/ondaHomeTopo.svg);
-    background-repeat: no-repeat;
-    background-position: 100% 69%;
 }
 
 .formContatoSistema {

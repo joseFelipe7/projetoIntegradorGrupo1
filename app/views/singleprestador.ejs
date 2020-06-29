@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <%- include('include/head', {title:'Home'}) %>
+    <%- include('include/head', {title:'ToolsHall - Single Prestador'}) %>
 
     <body>
         <%- include('include/header')%>
         <%- include('include/menuNav') %>
-        <main class="container">
-            <section class="row container-main-single">
+        <main class="container container-master-single mt-5 mb-5">
+            <section class="row row-lp container-main-single">
                 <div class="col-lg-3">
                         <div class="card cards-single card-payment mb-3">
                             <div class="card-header">
@@ -50,7 +50,7 @@
                                     <img src="/img/formpayment.png" alt="">
                                     <img src="/img/formpayment2.png" alt="">
                                     <button class="" data-toggle="modal"
-                                    " data-target="#modal-preorcamento">Solicitar Orçamento</button>
+                                     data-target="#modal-preorcamento">Solicitar Orçamento</button>
                                 </div>
                             
                             <!-- <div class="col-12 col-md-6" style="position: absolute; top: 8px; right: 5px;" > -->
@@ -78,7 +78,7 @@
                       </div>
                 </div>
             </section>
-            <section class="row">
+            <section class="row row-lp">
                 <div class="col-12">
                     <div class="card cards-single mb-3">
                         <div class="card-header">
@@ -105,7 +105,7 @@
                       </div>
                 </div>
             </section>
-            <section class="row">
+            <section class="row row-lp">
                 <div class="col-12">
                     <div class="card cards-single mb-3">
                         <div class="card-header">
@@ -152,7 +152,6 @@
                 </div>
             </section>
         </main>
-
 
 <% if ((typeof msgEnviado != 'undefined') || (typeof errors != 'undefined')) { %>
     <script>
@@ -240,5 +239,4 @@
         <%- include('include/footer') %>
         <%- include('include/script') %>
     </body>
-    <style>.img-footer{ display: none;}</style>
 </html>
