@@ -1414,23 +1414,9 @@ a + img {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("../img/fundo-listaPrestadores.png"), #aeb2f2;
-  background-repeat: no-repeat;
-  background-position: center;
+  background: #aeb2f2;
   height: 100rem;
   width: 100%;
-}
-
-@media (max-width: 3500px) {
-  .fundo-listaPrestadores {
-    background-size: contain;
-  }
-}
-
-@media (max-width: 1600px) {
-  .fundo-listaPrestadores {
-    background-size: cover;
-  }
 }
 
 .row-lp {
