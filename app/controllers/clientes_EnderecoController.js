@@ -3,9 +3,9 @@ const {Clientes_endereco, Cliente, Contatos} = require('../models')
 const Clientes_EnderecoController = { 
 
     index: async (req, res) => {
-       const {fk_cliente } = req.params;
+       const {id } = req.params;
 
-        const cliente = await Cliente.findByPk(fk_cliente, {
+        const cliente = await Cliente.findByPk(id, {
             include:[
                 {
                     model: Clientes_endereco,
@@ -54,7 +54,7 @@ const Clientes_EnderecoController = {
         res.redirect('/usuario/area-contratante/meus-dados/'+id)          
     },
     update: async (req, res) => {
-        const {fk_cliente } = req.params;
+        const {id } = req.params;
         const {
             contratanteCep,
             contratanteRua,
@@ -62,9 +62,9 @@ const Clientes_EnderecoController = {
             contratanteCidade,
             contratanteComplemento,
             contratanteUf
-        } = req.params;
+        } = req.body;
 
-        const cliente = await Cliente.findByPk(fk_cliente);
+        const cliente = await Cliente.findByPk(id);
         if (!cliente){
             return res.send("cliente nao existe")
         }
@@ -83,7 +83,7 @@ const Clientes_EnderecoController = {
                 id
             }
         })
-        return res.redirect('/usuario/area-contratante/meus-dados')
+        return res.redirect('/usuario/area-contratante/meus-dados'+id)
     }
 
 }
