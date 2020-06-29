@@ -414,7 +414,7 @@ li#footerCenter{
 }
 
 .linksFooter ul li a:hover {
-  color: #203573;
+  color: #ffffff;
 }
 
 .subtituloImg {
@@ -1801,7 +1801,7 @@ table#tableButton-ou-bofl td.selecionado {
 div#historico-header-andamento-bofl {
   padding: 5px 10px;
   text-align: right;
-  background-color: #FFC327;
+  background-color: #203573;
 
   color: #ffffff;
   -webkit-box-shadow: 0px 5px 5px rgba(50, 50, 50, 0.77);

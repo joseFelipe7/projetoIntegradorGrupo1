@@ -26,20 +26,25 @@ const ClienteController = {
         
        update: (req, res) => {
            const {id} = req.params
-            
+            const {files} = req
             const {
                 contratanteNome,
                 contratanteNascimento,
-                contratanteCpf
-            } = req.params;
+                contratanteCpf,
+                contratanteEmail,
+
+            } = req.body;
 
        
 
             const cliente = Cliente.update({
+                avatar:`/uploads/${files[0].originalname}`,
+                extensao_avatar:false,
                 nome: contratanteNome,
                 email: contratanteEmail,
-                data_nascimento: contratanteNascimento,
+                data_nascimento:contratanteNascimento,
                 status_:'A',
+            
                 cpf: contratanteCpf,
                 data_cadastro:Date.now()
             },
@@ -50,8 +55,10 @@ const ClienteController = {
             })
           
             
-            return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{cliente}})
 
+        
+        res.redirect('/usuario/area-contratante/meus-dados/'+id)          
+   
         }
     }
 

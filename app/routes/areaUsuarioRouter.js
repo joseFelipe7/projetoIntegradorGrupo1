@@ -26,7 +26,7 @@ let router = express.Router();
 
 //rotas contratante - meus-dados
 router.get("/area-contratante/meus-dados/:id", authCliente, clienteController.index);
-router.put("/area-contratante/meus-dados/:id", clienteController.update);
+router.put("/area-contratante/meus-dados/:id", authCliente, upload.any(), clienteController.update);
 
 //rotas contratante - meus-dados-endereços
 router.get("/area-contratante/meus-dados/:id/endereco", authCliente, clientes_enderecoController.index);
