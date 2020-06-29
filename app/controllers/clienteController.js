@@ -42,7 +42,7 @@ const ClienteController = {
                 extensao_avatar:false,
                 nome: contratanteNome,
                 email: contratanteEmail,
-                data_nascimento:`${Date.contratanteNascimento}`,
+                data_nascimento:contratanteNascimento,
                 status_:'A',
             
                 cpf: contratanteCpf,

@@ -49,6 +49,8 @@ const prestadorController = {
                 senha:bcrypt.hashSync(prestadorSenha,10),
                 cpf: cpfSemMascaraP,
                 status_:'A',
+                avatar:false,
+                categoria_id:false,
                 // data_nascimento:prestadorNascimento,
                 data_cadastro:Date.now()
             })
