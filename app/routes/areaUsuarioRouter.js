@@ -39,7 +39,7 @@ router.post("/area-contratante/meus-dados/:id/contatos", authCliente, contatosCo
 router.put("/area-contratante/meus-dados/:id/contatos", authCliente, contatosController.update);
 
 
-router.get("/area-contratante/pedidos/:id", authCliente, pedidosClienteController.index)
+router.get("/area-contratante/pedidos", authCliente, pedidosClienteController.index)
 
 
 router.get("/area-contratante/acompanhe", authCliente, (req, res) => {

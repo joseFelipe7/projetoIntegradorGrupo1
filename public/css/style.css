@@ -2,6 +2,7 @@
 
 html,
 body {
+  background-color: #AEB2F2;
   font-family: 'Ubuntu', sans-serif;
   margin: 0;
   padding: 0;
@@ -88,6 +89,7 @@ a.icon-bofl {
   padding: 60px;
   width: 100%;
   display: flex;
+  font-weight: 500;
   text-align: center;
   align-self: center;
 }
@@ -385,7 +387,7 @@ li#footerCenter{
 .linksFooter ul {
   width: 200px;
   padding: 1rem 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
 .linksFooter ul p {
@@ -1882,6 +1884,13 @@ div#historico-header-cancelado-bofl {
 }
 
 /*-----------single prestador*/
+.container-master-single {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .cards-single div.card-header {
   background-color: #203573;
   color: #A094F2;
