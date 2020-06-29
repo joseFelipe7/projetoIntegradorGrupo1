@@ -21,6 +21,7 @@ const listarPrestadoresController = {
                 as: 'prestadores_enderecos'
             }]
         });
+    
         // ele divide totalPage por 12 itens cada page e arredonda para não trazer número quebrado.
         let totalPages = Math.round(totalPage/12);
         res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages, textoPesquisa: [], idCategoria: [], avaliacaoPesquisa: []});

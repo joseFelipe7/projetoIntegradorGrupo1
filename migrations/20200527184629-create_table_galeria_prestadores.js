@@ -18,13 +18,13 @@ module.exports = {
         type:Sequelize.STRING(45)
         },
        descricao:{
-       type:Sequelize.STRING(45)
+       type:Sequelize.STRING(345)
       },
        data_cadastro:{
          type:Sequelize.DATE
        },
       
-      prestadores_idprestadores:{
+      fk_prestador:{
         type:Sequelize.INTEGER
       }
     });

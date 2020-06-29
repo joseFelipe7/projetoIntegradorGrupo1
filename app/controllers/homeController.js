@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize')
 const Op = Sequelize.Op
-const {Habilidades, Prestador} = require('../models')
+const {Habilidades, Prestador, Avaliacoes, Prestador_endereco} = require('../models')
 
 const PesquisaPrestadorHomeController = {
     search: async (req, res) => {
@@ -14,15 +14,21 @@ const PesquisaPrestadorHomeController = {
         })
         return res.render('/prestador/lista', {pesquisa})
     },
-    cards: async (req, res) => {
-        const prestador = await Prestador.findAll({
-            include:{
-                model: Habilidades
-            }
+    index: async (req, res) => {
+        const prestadores = await Prestador.findAll({
+            include: [{
+                model: Habilidades,
+                required: true
+            }, {
+                model: Avaliacoes,
+                required:true,
+            }, {
+                model: Prestador_endereco,
+                required: true,
+                as: 'prestadores_enderecos'
+            }]
         })
-        console.log(prestador)
-        return  res.render("home",{prestador});
-
+        return  res.render("home",{prestadores, idCategoria: [], avaliacaoPesquisa: []});
     }
 }
 

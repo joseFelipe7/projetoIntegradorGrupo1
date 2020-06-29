@@ -25,7 +25,6 @@ const prestadorController = {
                     as: 'prestadores_enderecos'
                 }
             ]})
-            console.log(prestador)
         return res.render("areaPrestador", {view: "meusDados-prestador", loggado: req.session.prestador, data:{prestador}})
     },
 
@@ -50,6 +49,8 @@ const prestadorController = {
                 senha:bcrypt.hashSync(prestadorSenha,10),
                 cpf: cpfSemMascaraP,
                 status_:'A',
+                avatar:false,
+                categoria_id:false,
                 // data_nascimento:prestadorNascimento,
                 data_cadastro:Date.now()
             })

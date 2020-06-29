@@ -25,7 +25,12 @@
                 <div class="form-group col">
                   <label for="nascimento">Perfil</label>
                   <div class="input-group">
-                    <img src="/img/user.png" alt="Meu Perfil" title="Meu Perfil" class="img-thumbnail perfilMeusDados">
+                    <% if(data.cliente.avatar == 0){ %>
+                      <img src="/img/userEmpty.jpeg" width="120px" height="120px" alt="Meu Perfil" title="Meu Perfil" class="img-thumbnail perfilMeusDados">
+                    <% } else {%>
+                      <img src=<%= data.cliente.avatar %> width="120px" height="120px" alt="Meu Perfil" title="Meu Perfil" class="img-thumbnail perfilMeusDados">
+
+                    <% } %> 
                   </div>
                 </div>
               </div>
@@ -95,15 +100,18 @@
 
        
 
-        <form action="/usuario/area-contratante/meus-dados/<%=data.cliente.id%>?_method=PUT"  id="formdp1" method="POST" enctype="multipart/form-data"> 
+        <form action="/usuario/area-contratante/meus-dados/<%=data.cliente.id%>?_method=PUT"  id="formdp1" enctype="multipart/form-data" method="POST"> 
           <!-- linha foto -->
           <div class="form-row">
             <!-- input foto escolhida -->
             <div class="form-group col-3">
               <label for="photo">Perfil</label>
-              <div class="input-group">
-                <img src="/img/envio.png" alt="Meu Perfil" title="Meu Perfil" class="img-thumbnail perfilMeusDados"> 
-              </div>
+              <% if(data.cliente.avatar == 0){ %>
+                <img src="/img/userEmpty.jpeg" width="120px" height="120px" alt="Meu Perfil" title="Meu Perfil" class="img-thumbnail perfilMeusDados">
+              <% } else {%>
+                <img src=<%= data.cliente.avatar %> width="120px" height="120px" alt="Meu Perfil" title="Meu Perfil" class="img-thumbnail perfilMeusDados">
+
+              <% } %> 
             </div>
         
             <div class="form-group col-9">
@@ -111,10 +119,12 @@
               <div class="input-group d-flex justify-content-center">
                   <div class="custom-file align-self-center">
                     <input type="file" name="photo" id="photo" class="custom-file-input">
-                    <label class="custom-file-label" for="photo">Escolha um arquivo</label>
+                    <label class="custom-file-label" name="photo" for="photo">Escolha um arquivo</label>
                   </div>
               </div>
             </div>
+            
+            
           </div>
         <!-- input linha 1 -->
           <div class="form-row">

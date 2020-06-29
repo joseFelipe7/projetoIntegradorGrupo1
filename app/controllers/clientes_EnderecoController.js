@@ -51,7 +51,7 @@ const Clientes_EnderecoController = {
         console.log(clientes_endereco)
         req.session.cliente = cliente.dataValues;
         
-        res.redirect('/usuario/area-contratante/meus-dados/:id', id)          
+        res.redirect('/usuario/area-contratante/meus-dados/'+id)          
     },
     update: async (req, res) => {
         const {fk_cliente } = req.params;

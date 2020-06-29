@@ -3,23 +3,33 @@
     <aside class="conatiner d-flex" >
       <section class="barra-lateralPrest">
         <div class="foto-perfilPrest">
-          <div class="iconesPrest">
-            <a href="#" class="botao-comunicacaoPrest"><img src="/img/phone.png" alt="Telefone"></a>
-            <a href="#" class="usuarioPrest"><img src="/img/user.png" alt="Usuário"></a>
-            <a href="#" class="botao-comunicacaoPrest"><img src="/img/mail.png" alt="Email"></a>
+            <div class="iconesPrest">
+              <div class="input-group">
+                <a href="#" class="botao-comunicacaoPrest"><img src="/img/phone.png" alt="Telefone"></a>
+                <a href="#" class="usuarioPrest">
+                    <% if(data.prestador.avatar == 0){ %>
+                      <img src="/img/userEmpty.jpeg" width="120px" height="120px" alt="Meu Perfil" title="Meu Perfil" class="img-thumbnail perfilMeusDados">
+                    <% } else {%>
+                      <img src=<%= data.prestador.avatar %> width="120px" height="120px" alt="Meu Perfil" title="Meu Perfil" class="img-thumbnail perfilMeusDados">
+      
+                    <% } %> 
+                </a>
+                <a href="#" class="botao-comunicacaoPrest"><img src="/img/mail.png" alt="Email"></a>
+              </div>
           </div>
+       
           <div class="dadosPrest">
             <a href="#">
-              <h6><%=//data.prestador.nome  %> <h6>
+              <h6><%=data.prestador.nome  %> </h6>
             </a>
-            <a href="#">Alguma Informação</a>
+            
           </div>
         </div>
 
         <div class="opcoesPrest">
             <a href="/usuario/area-prestador/meusDados/<%=data.prestador.id%>"><img src="/img/meus-dados.png" alt="Meus Dados"><p>Meus Dados</p></a>
             <hr>
-            <a href="/usuario/area-prestador/cadastro-servicos/<%=//data.prestador.id%>"><img src="/img/pedidos.png"><p>Serviços</p></a>
+            <a href="/usuario/area-prestador/cadastro-servicos/<%=data.prestador.id%>"><img src="/img/pedidos.png"><p>Serviços</p></a>
             <hr>
             <a href="/usuario/area-prestador/requisicoes"><img src="/img/acompanhe.png"><p>Requisições</p></a>
             <hr>
