@@ -28,10 +28,7 @@ const PesquisaPrestadorHomeController = {
                 as: 'prestadores_enderecos'
             }]
         })
-        console.log(prestadores)
         return  res.render("home",{prestadores, idCategoria: [], avaliacaoPesquisa: []});
-    
-
     }
 }
 
