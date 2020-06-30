@@ -3,7 +3,7 @@
         <div class="card-body">
   
           <!-- formulario contato -->
-          <% data.cliente.contatos_prestadores.forEach(contato => { %>
+          <% data.prestador.contatos_prestadores.forEach(contato => { %>
 
           <form action="/usuario/area-prestador/meusDados/<%=contato.id%>/contatos" method="GET">
             <!-- input linha 1 -->
