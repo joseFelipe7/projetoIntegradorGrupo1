@@ -1,5 +1,6 @@
 const path = require('path');
 const bcrypt = require('bcrypt');
+const { Op } = require('sequelize');
 const { Prestador, Contatos_prestador, Prestador_endereco, Habilidades } = require('../models')
 
 
@@ -31,7 +32,7 @@ const prestadorController = {
     create:(req, res) => {
             res.render("cadastroPrestador");
     },
-    store:async (req,res)=>{
+    store: async (req,res)=>{
         let {   
             prestadorEmail, 
             prestadorNome,
@@ -39,9 +40,19 @@ const prestadorController = {
             prestadorCpf,
             // prestadorNascimento
         } = req.body
-
         let cpfSemMascaraP = prestadorCpf.replace(/[^0-9]+/g,'');
-        
+        let conferirEmailP = await Prestador.findOne({
+            where: {
+                email: { [Op.eq]: prestadorEmail }
+            }
+        });
+
+        if (conferirEmailP) {
+            return res.render('cadastroPrestador', {
+                msgEmailP: "Email já cadastrado!"
+            });
+        }
+
         console.log(bcrypt.hashSync(prestadorSenha,10))
             await Prestador.create({
                 nome:prestadorNome,
@@ -54,13 +65,13 @@ const prestadorController = {
                 // data_nascimento:prestadorNascimento,
                 data_cadastro:Date.now()
             })
+
             const {id} = req.params;
             const prestador = await Prestador.findByPk(id, {
                 include: [
                     {
                         model:Contatos_prestador,
                         as: 'contatos_prestadores'
-                        
                     },
                     {
                         model:Habilidades,

@@ -28,7 +28,6 @@ module.exports = {
                 required: true
             },]
         });
-        console.log(prestador);
         res.render("singleprestador", { idPrestador, prestador });
     },
 
@@ -43,6 +42,27 @@ module.exports = {
         let clienteLoggado = req.session.cliente;
         let idPrestador = req.body.idPrestador;
 
+        let prestador = await Prestador.findByPk(idPrestador, {
+            include: [{
+                model: Prestador_endereco,
+                required: true,
+                as: 'prestadores_enderecos'
+            }, {
+                model: Habilidades,
+                required: true
+            }, {
+                model: Avaliacoes,
+                required: true,
+                include: [{
+                    model: Cliente,
+                    required: true,
+                    as: 'cliente'
+                }]
+            }, {
+                model: Galeria_prestadores,
+                required: true
+            },]
+        });
         if (clienteLoggado) {
             //acessa
             if(erros.isEmpty()) {//se está vazio, ou seja, senão tem erros
@@ -68,11 +88,11 @@ module.exports = {
                 console.log(dataServico)
 
                 //renderiza alerta de sucesso
-                res.render("singleprestador", { msgEnviado: `Pedido enviado ao prestador!`, idPrestador });
+                res.render("singleprestador", { msgEnviado: `Pedido enviado ao prestador!`, idPrestador, prestador });
     
             } else {
                 //renderizo para o usuario a view de contato de novo e envio para a view a lista de erros via objeto
-                return res.render("singleprestador", {errors:erros.errors, idPrestador})
+                return res.render("singleprestador", {errors:erros.errors, idPrestador, prestador})
             }
             
         } else {

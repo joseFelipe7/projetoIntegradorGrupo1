@@ -54,6 +54,15 @@
             </button>
           </div>
 
+          <% if (typeof msgEmailC !== "undefined") { %>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <%= msgEmailC %>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          <% } %>
+
           <button type="submit" class="align-self-center" id="buttonContratante">Cadastrar</button>
           <p class="align-self-center">Faça o cadastro com:</p>
           <div class="faca-loginCadP align-self-center">
