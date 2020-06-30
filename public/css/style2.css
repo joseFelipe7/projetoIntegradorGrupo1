@@ -307,6 +307,12 @@
     height: 90% !important;
 }
 
+/*utilitie default*/
+.desabilitado {
+    cursor: default;
+    text-decoration: none;
+    pointer-events: none !important;
+}
 
 /* Configuração mobile */
 @media (max-width: 872px) {

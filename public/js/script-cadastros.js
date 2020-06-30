@@ -193,7 +193,6 @@ if (document.location.pathname === "/cadastro/contratante") {
                     inputCpfC, errorListC, errorListUlC) ;
   });
 
-  
   closeListErrorC.onclick = function () {
     errorListUlC.innerHTML = "";
   };

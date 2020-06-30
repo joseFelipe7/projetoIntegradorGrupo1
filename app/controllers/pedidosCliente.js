@@ -107,7 +107,7 @@ module.exports = {
             formaPag: 'dinheiro',
             historico: [ [Object], [Object], [Object] ]
         }
-        ]
+        ] 
         */
 
         res.render("areaContratante", {view: "pedidosAreaContratante", loggado: req.session.cliente, data:{cliente, infoPedido, moment}});
