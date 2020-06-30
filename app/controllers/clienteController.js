@@ -33,11 +33,7 @@ const ClienteController = {
                 contratanteCpf,
                 contratanteEmail,
                 photo
-                
-
             } = req.body;
-
-       
 
             const cliente = Cliente.update({
                 avatar:`/uploads/${files[0].originalname}`,
@@ -55,9 +51,6 @@ const ClienteController = {
                     id
                 }
             })
-          
-            
-
         
         res.redirect('/usuario/area-contratante/meus-dados/'+id)          
    

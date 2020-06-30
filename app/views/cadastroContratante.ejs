@@ -10,53 +10,66 @@
     <div class="content-ls">
 
       <div class="form-cadastroContratante" id="containerContratante">
+        <h2>Procurando por um profissional?</h2>
+
         <h3 class="contratante-titulo">CADASTRE-SE:</h3>
 
         <form action="/cadastro/contratante" class="d-flex flex-column justify-content-center" id="formularioContratante" method="POST">
           <div class="form-row">
             <div class="form-group col-md-12">
-              <label for="contratante-inputNome">Nome</label>
-              <input type="text" name="contratanteNome" class="form-control" id="contratante-inputNome">
+              <input class="form-control" type="text" name="contratanteNome" id="contratante-inputNome" placeholder="Nome">     
+
+  
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-12">
-              <label for="contratante-inputEmail">Email</label>
-              <input type="text" name="contratanteEmail" class="form-control" id="contratante-inputEmail">
+                <input class="form-control" type="text" name="contratanteEmail" id="contratante-inputEmail" placeholder="Email">
+              </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-12">
+                <input class="form-control" type="password" name="contratanteSenha" id="contratante-inputSenha" placeholder="Senha">
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-12">
-              <label for="contratante-inputSenha">Senha</label>
-              <input type="password" name="contratanteSenha" class="form-control" id="contratante-inputSenha">
+                <input class="form-control" type="password" name="ContratanteRepetirSenha" id="contratante-inputRepetirSenha" placeholder="Repetir senha">
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-12">
-              <label for="contratante-inputRepetirSenha">Repetir senha</label>
-              <input type="password" name="contratanteRepetirSenha" class="form-control" id="contratante-inputRepetirSenha">
+                <input class="form-control" type="text" name="contratanteCpf" id="contratante-inputCpf" placeholder="CPF">
             </div>
           </div>
 
-          <div class="form-row">
-            <div class="form-group col-md-12">
-              <label for="contratante-inputCpf">CPF</label>
-              <input type="text" name="contratanteCpf" class="form-control" id="contratante-inputCpf">
-            </div>
-          </div>
-
-          <div class="alert alert-danger alert-dismissible fade show" id="alert-cadC" role="alert" hidden>
+          <div class="alert alert-warning alert-dismissible fade show" id="alert-cadC" role="alert" hidden>
             <ul></ul>
             <button type="button" class="close" id="close-listC" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
 
-          <button type="submit" class="align-self-center" id="buttonContratante">Cadastrar</button>
+          <% if (typeof msgEmailC !== "undefined") { %>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <%= msgEmailC %>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          <% } %>
 
+          <button type="submit" class="align-self-center" id="buttonContratante">Cadastrar</button>
+          <p class="align-self-center">Faça o cadastro com:</p>
+          <div class="faca-loginCadP align-self-center">
+            <a href="#"><img src="/img/login-google.png"></a>
+            <a href="#"><img src="/img/login-linkedin.png"></a>
+            <a href="#"><img src="/img/login-facebook.png"></a>
+          </div>
         </form>
 
       </div>
@@ -65,6 +78,7 @@
   </main>
 
   <%- include('include/footer') %>
+  <%- include('include/script') %>
   
 </body>
 
