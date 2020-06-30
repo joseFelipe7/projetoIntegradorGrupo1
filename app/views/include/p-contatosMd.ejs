@@ -8,6 +8,7 @@
           <form action="/usuario/area-prestador/meusDados/<%=contato.id%>/contatos" method="GET">
             <!-- input linha 1 -->
             <div class="form-row">
+             
               <!-- input cel1 -->
               <div class="form-group col-md-6">
                 <label for="cel1">Celular 1</label>
@@ -15,7 +16,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">Celular 1</span>
                   </div>
-                  <input type="tel" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel1"
+                  <input type="tel" name="prestadorCel1" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel1p"
                     value="<%= contato.celular_principal %>" readonly maxlength="11"
                     pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
                 </div>
@@ -28,7 +29,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">Celular 2</span>
                   </div>
-                  <input type="tel" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel2"
+                  <input type="tel" name="prestadorCel2" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel2p"
                     value="<%= contato.celular_secundario %>" readonly maxlength="11"
                     pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
                 </div>
@@ -44,7 +45,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">Telefone</span>
                   </div>
-                  <input type="tel" class="form-control campoMeusDadosStyle campoDadoReadonly" id="tel"
+                  <input type="tel" name="prestadorTelefone" class="form-control campoMeusDadosStyle campoDadoReadonly" id="telp"
                     value="<%= contato.telefone_residencial %>" readonly maxlength="10"
                     pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
                 </div>
@@ -60,7 +61,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">@</span>
                   </div>
-                  <input type="email" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email"
+                  <input type="email" name="prestadorEmail1" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email1p"
                     value="<%= contato.email_principal %>" readonly>
                 </div>
               </div>
@@ -74,7 +75,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">@</span>
                   </div>
-                  <input type="email" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email"
+                  <input type="email" name="prestadorEmail2" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email2p"
                     value="<%= contato.email_secundario %>" readonly>
                 </div>
               </div>
@@ -100,16 +101,19 @@
           <!-- formulario contato -->
   <!--FORM VAZIO-->
           <form>
+
+              <p class="finalizarCad">Finalize seu cadastro</p>
             <!-- input linha 1 -->
             <div class="form-row">
               <!-- input cel1 -->
+
               <div class="form-group col-md-6">
                 <label for="cel1">Celular 1</label>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">Celular 1</span>
                   </div>
-                  <input type="tel" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel1"
+                  <input type="tel" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel1pf"
                   placeholder="complete seu cadastro" readonly maxlength="11"
                     pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
                 </div>
@@ -122,7 +126,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">Celular 2</span>
                   </div>
-                  <input type="tel" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel2"
+                  <input type="tel" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel2pf"
                   placeholder="complete seu cadastro" readonly maxlength="11"
                     pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
                 </div>
@@ -138,7 +142,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">Telefone</span>
                   </div>
-                  <input type="tel" class="form-control campoMeusDadosStyle campoDadoReadonly" id="tel"
+                  <input type="tel" class="form-control campoMeusDadosStyle campoDadoReadonly" id="tel2pf"
                   placeholder="complete seu cadastro" readonly maxlength="10"
                     pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
                 </div>
@@ -154,7 +158,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">@</span>
                   </div>
-                  <input type="email" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email"
+                  <input type="email" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email1pf"
                   placeholder="complete seu cadastro" readonly>
                 </div>
               </div>
@@ -168,7 +172,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">@</span>
                   </div>
-                  <input type="email" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email"
+                  <input type="email" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email2pf"
                   placeholder="complete seu cadastro" readonly>
                 </div>
               </div>

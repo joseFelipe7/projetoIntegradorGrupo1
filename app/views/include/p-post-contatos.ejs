@@ -14,7 +14,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">Celular 1</span>
                 </div>
-                <input type="tel" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel1p"
+                <input type="tel" name="prestadorCel1" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel1pUp"
                   value="<%= data.prestador.celular_principal %>" 
                   maxlength="11" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
               </div>
@@ -27,7 +27,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">Celular 2</span>
                 </div>
-                <input type="tel" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel2p"
+                <input type="tel" name="prestadorCel2" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel2pUp"
                   value="<%= data.prestador.celular_secundario %>" 
                   maxlength="11" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
               </div>
@@ -43,7 +43,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">Telefone</span>
                 </div>
-                <input type="tel" class="form-control campoMeusDadosStyle campoDadoReadonly" id="telp"
+                <input type="tel" name="prestadorTelefone" class="form-control campoMeusDadosStyle campoDadoReadonly" id="telpUp"
                   value="<%= data.prestador.telefone_residencial %>"
                    maxlength="10"
                   pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
@@ -60,7 +60,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">@</span>
                 </div>
-                <input type="email" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email1p"
+                <input type="email" name="prestadorEmail1" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email1pUp"
                   value="<%= data.prestador.email_principal %>" >
               </div>
             </div>
@@ -74,8 +74,8 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">@</span>
                 </div>
-                <input type="email" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                  value="<%= data.prestador.email_secundario %>" id="email2p">
+                <input type="email" name="prestadorEmail2" class="form-control campoMeusDadosStyle campoDadoReadonly"
+                  value="<%= data.prestador.email_secundario %>" id="email2pUp">
               </div>
             </div>
           </div>
@@ -99,6 +99,7 @@
        <!-- formulario contato -->
 <!--FORM POST - CADASTRAR -->
        <form action="/usuario/area-prestador/meusDados/<%=data.prestador.id%>/contatos" method="POST">
+        <p class="finalizarCad">Finalize seu cadastro</p>
          <!-- input linha 1 -->
          <div class="form-row">
            <!-- input cel1 -->
@@ -109,7 +110,7 @@
                  <span class="input-group-text etiquetaCampo">Celular 1</span>
                </div>
                <input type="tel" name="prestadorCel1" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                 id="cel1" placeholder="Digite seu celular - apenas números" maxlength="11"
+                 id="celpp1" placeholder="Digite seu celular - apenas números" maxlength="11"
                  pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
              </div>
            </div>
@@ -122,7 +123,7 @@
                  <span class="input-group-text etiquetaCampo">Celular 2</span>
                </div>
                <input type="tel" name="prestadorCel2" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                 id="cel2" placeholder="Digite seu celular - apenas números" maxlength="11"
+                 id="celpp2" placeholder="Digite seu celular - apenas números" maxlength="11"
                  pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
              </div>
            </div>
@@ -138,7 +139,7 @@
                  <span class="input-group-text etiquetaCampo">Telefone</span>
                </div>
                <input type="tel" name="prestadorTelefone" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                 id="tel" placeholder="Digite seu telefone - apenas números" maxlength="10"
+                 id="telpp" placeholder="Digite seu telefone - apenas números" maxlength="10"
                  pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
              </div>
            </div>
@@ -154,7 +155,7 @@
                  <span class="input-group-text etiquetaCampo">@</span>
                </div>
                <input type="email" name="prestadorEmail1" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                 id="emailp1" placeholder="Digite seu e-mail">
+                 id="emailpp1" placeholder="Digite seu e-mail">
              </div>
            </div>
          </div>
@@ -168,7 +169,7 @@
                  <span class="input-group-text etiquetaCampo">@</span>
                </div>
                <input type="email" name="prestadorEmail2" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                 id="emailp2" placeholder="Digite seu e-mail">
+                 id="emailpp2" placeholder="Digite seu e-mail">
              </div>
            </div>
          </div>
