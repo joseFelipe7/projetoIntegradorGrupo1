@@ -31,7 +31,7 @@ const prestadorController = {
     create:(req, res) => {
             res.render("cadastroPrestador");
     },
-    store:(req,res)=>{
+    store:async (req,res)=>{
         let {   
             prestadorEmail, 
             prestadorNome,
@@ -43,7 +43,7 @@ const prestadorController = {
         let cpfSemMascaraP = prestadorCpf.replace(/[^0-9]+/g,'');
         
         console.log(bcrypt.hashSync(prestadorSenha,10))
-            Prestador.create({
+            await Prestador.create({
                 nome:prestadorNome,
                 email:prestadorEmail,
                 senha:bcrypt.hashSync(prestadorSenha,10),
@@ -54,9 +54,53 @@ const prestadorController = {
                 // data_nascimento:prestadorNascimento,
                 data_cadastro:Date.now()
             })
+            const {id} = req.params;
+            const prestador = await Prestador.findByPk(id, {
+                include: [
+                    {
+                        model:Contatos_prestador,
+                        as: 'contatos_prestadores'
+                        
+                    },
+                    {
+                        model:Habilidades,
+                    },
+                    {
+                        model:Prestador_endereco,
+                        as: 'prestadores_enderecos'
+                    }
+                ]
+            })
         res.redirect('/login/Prestador/#login-prestador')
     },
     update: async (req, res) => {
+        const {id} = req.params
+        const {files} = req
+        const {
+            prestadorEmail, 
+            prestadorNome,
+            prestadorSenha, 
+            prestadorCpf
+
+        } = req.body;
+
+        const prestador = Prestador.update({
+            avatar:`/uploads/${files[0].originalname}`,
+            nome:prestadorNome,
+            email:prestadorEmail,
+            senha:bcrypt.hashSync(prestadorSenha,10),
+            cpf: prestadorCpf,
+            status_:'A',
+           
+            categoria_id:false,
+            // data_nascimento:prestadorNascimento,
+            data_cadastro:Date.now()
+        },{
+            where: {
+                id 
+            }
+        })
+        res.redirect('/usuario/area-prestador/meusDados/'+id)
         
     }   
 }

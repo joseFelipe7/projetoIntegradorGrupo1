@@ -52,7 +52,7 @@ const orcamentosPrestadorController = {
         let resumo = req.body.resumo;
         let valor = req.body.valor;
 
-        let updatePedido = await Pedido.update({ valor:valor, resumo:resumo }, {
+        let updatePedido = await Pedido.update({ valor:valor, resumo:resumo, status_andamento:"AGUAR" }, {
             where: {
                 idprestadores:{ 
                     [Op.eq]: loggado.id,

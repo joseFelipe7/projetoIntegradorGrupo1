@@ -4,8 +4,8 @@ const ContatosController = {
 
 
     index: async (req, res) => {
-        const {fk_cliente } = req.params;
-         const cliente = await Cliente.findByPk(fk_cliente, {
+        const {id } = req.params;
+         const cliente = await Cliente.findByPk(id, {
             include:[
                 {
                     model: Clientes_endereco,
@@ -41,7 +41,6 @@ const ContatosController = {
         }
 
       
-
         const contatos = await Contatos.create({
             celular_principal:contratanteCelular1,
             celular_secundario:contratanteCelular2,
@@ -58,7 +57,7 @@ const ContatosController = {
         res.redirect('/usuario/area-contratante/meus-dados/'+id)    
     },
     update: async (req, res) => {
-        const {fk_cliente} = req.params;
+        const {id} = req.params;
 
         const {
             contratanteCelular1,
@@ -66,27 +65,29 @@ const ContatosController = {
             contratanteTelefone,
             contratanteEmail,
             contratanteEmail2 
-        } = req.params;
+        } = req.body;
 
-        const cliente = await Cliente.findByPk(fk_cliente);
+        const cliente = await Cliente.findByPk(id);
         if (!cliente){
             return res.send("cliente nao existe")
         }
 
-        const contato = await Cliente.update({
+        const contato = await Contatos.update({
             celular_principal:contratanteCelular1,
             celular_secundario:contratanteCelular2,
             telefone_residencial:contratanteTelefone,
             email_principal:contratanteEmail,
             email_secundario:contratanteEmail2,
+            fk_cliente:id
             
         },
         {
-            where: {
-                id
-            }
+           
+            where:{
+                fk_cliente:id
+            } 
         })
-        return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{contato}})
+        res.redirect('/usuario/area-contratante/meus-dados/'+id)    
 
     }
 

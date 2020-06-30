@@ -3,19 +3,20 @@
         <div class="card-body">
   
           <!-- formulario contato -->
-  <!--FORM GET-SHOW -->
-          <form action="/usuario/area-prestador/meusDados/<%=data.prestador.id%>/contatos" method="GET">
+          <% data.cliente.contatos_prestadores.forEach(contato => { %>
+
+          <form action="/usuario/area-prestador/meusDados/<%=contato.id%>/contatos" method="GET">
             <!-- input linha 1 -->
             <div class="form-row">
               <!-- input cel1 -->
               <div class="form-group col-md-6">
-                <label for="cel1">Celular 12</label>
+                <label for="cel1">Celular 1</label>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">Celular 1</span>
                   </div>
                   <input type="tel" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel1"
-                    value="<%= data.prestador.celular_principal %>" readonly maxlength="11"
+                    value="<%= contato.celular_principal %>" readonly maxlength="11"
                     pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
                 </div>
               </div>
@@ -28,7 +29,7 @@
                     <span class="input-group-text etiquetaCampo">Celular 2</span>
                   </div>
                   <input type="tel" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cel2"
-                    value="<%= data.prestador.celular_secundario %>" readonly maxlength="11"
+                    value="<%= contato.celular_secundario %>" readonly maxlength="11"
                     pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
                 </div>
               </div>
@@ -44,7 +45,7 @@
                     <span class="input-group-text etiquetaCampo">Telefone</span>
                   </div>
                   <input type="tel" class="form-control campoMeusDadosStyle campoDadoReadonly" id="tel"
-                    value="<%= data.prestador.telefone_residencial %>" readonly maxlength="10"
+                    value="<%= contato.telefone_residencial %>" readonly maxlength="10"
                     pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
                 </div>
               </div>
@@ -60,7 +61,7 @@
                     <span class="input-group-text etiquetaCampo">@</span>
                   </div>
                   <input type="email" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email"
-                    value="<%= data.prestador.email_principal %>" readonly>
+                    value="<%= contato.email_principal %>" readonly>
                 </div>
               </div>
             </div>
@@ -74,7 +75,7 @@
                     <span class="input-group-text etiquetaCampo">@</span>
                   </div>
                   <input type="email" class="form-control campoMeusDadosStyle campoDadoReadonly" id="email"
-                    value="<%= data.prestador.email_secundario %>" readonly>
+                    value="<%= contato.email_secundario %>" readonly>
                 </div>
               </div>
             </div>
@@ -84,6 +85,7 @@
             <div class="d-flex justify-content-end"><button type="button" class="btn botaoMeusDados" data-toggle="modal"
                 data-target="#editarDadosContatoContratante">Editar</button></div>
           </form>
+        <% }) %> 
         </div>
     
     <!-- Modal ------------------------------------------------->
