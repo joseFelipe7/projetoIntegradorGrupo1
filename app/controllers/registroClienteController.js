@@ -1,5 +1,7 @@
 const { Cliente, Contatos, Clientes_endereco } =  require('../models');
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt');
+const { Op } = require('sequelize');
+
 module.exports = {
     create:(req, res) => {
             res.render("cadastroContratante");
@@ -13,8 +15,18 @@ module.exports = {
             contratanteCpf,
             contratanteNascimento
         } = req.body
-
         let cpfSemMascaraC = contratanteCpf.replace(/[^0-9]+/g,'');
+        let conferirEmailC = await Cliente.findOne({
+            where: {
+                email: { [Op.eq]: contratanteEmail }
+            }
+        });
+
+        if (conferirEmailC) {
+            return res.render('cadastroContratante', {
+                msgEmailC: "Email já cadastrado!"
+            });
+        }
 
         console.log(bcrypt.hashSync(contratanteSenha,10))
             await Cliente.create({
