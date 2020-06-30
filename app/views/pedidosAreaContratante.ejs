@@ -26,7 +26,13 @@
                         <nav class="navbar navExpandir bg-roxoClaro">
                             <img class="iconPedidos" type="button" data-toggle="collapse" data-target="#target<%= pedido.idServico %>" aria-controls="target<%= pedido.idServico %>" aria-expanded="false" aria-label="Toggle navigation" src="/img/pedidosCard.png" alt="">
 
-                            <a href="/usuario/area-contratante/orcamentos"><img src="/img/setaDetalhes.png" class="setaDetalhes" alt="mais detalhes"></a>
+                            <a href="/usuario/area-contratante/orcamentos/<% pedido.idServico %>">
+                                <!-- botao ver orçamento -->
+                                <button class="btn btn-success">
+                                    VER ORÇAMENTO
+                                </button>
+
+                            </a>
                         </nav>
                     </div>
 
@@ -58,7 +64,12 @@
                         <nav class="navbar navExpandir bg-roxoClaro">
                             <img class="iconPedidos" type="button" data-toggle="collapse" data-target="#target<%= pedido.idServico %>" aria-controls="target<%= pedido.idServico %>" aria-expanded="false" aria-label="Toggle navigation" src="/img/pedidosCard.png" alt="">
 
-                            <a href="/usuario/area-contratante/orcamentos"><img src="/img/setaDetalhes.png" class="setaDetalhes" alt="mais detalhes"></a>
+                            <a href="/usuario/area-contratante/orcamentos">
+                                <!-- botao ver orçamento -->
+                                <button class="btn btn-success">
+                                    VER ORÇAMENTO
+                                </button>
+                            </a>
                         </nav>
                     </div>
                 </div>
