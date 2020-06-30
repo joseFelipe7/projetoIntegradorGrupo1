@@ -10,7 +10,7 @@ const { Pedido, HistoricoPedidos, Prestador } = require('../models/index');
 module.exports = {
     //exibe pedidos
     index: async (req, res) => {
-        const {id} = req.params
+        const {id} = req.session.cliente
         const cliente = await Cliente.findByPk(id)
         
         let loggado = req.session.cliente;
