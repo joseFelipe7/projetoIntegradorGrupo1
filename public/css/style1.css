@@ -1148,7 +1148,7 @@ a + img {
   margin-bottom: 30px;
 }
 .cadastro-prestador h2{
-  margin-top: 50px;
+  margin-top: 20px;
   text-align: center;
   color:#ffffff;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
@@ -1292,7 +1292,7 @@ a + img {
   justify-content: center;
   align-items: center;
   background-color: #7156c1;
-  height: 60rem;
+  height: 64rem;
 }
 
 .form-cadastroContratante {
@@ -1317,7 +1317,7 @@ a + img {
 
 }
 .cadastro-contratante h2{
-  margin-top: 50px;
+  margin-top: 20px;
   text-align: center;
   color:#ffffff;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
