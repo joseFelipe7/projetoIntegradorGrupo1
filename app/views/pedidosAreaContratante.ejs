@@ -26,12 +26,13 @@
                         <nav class="navbar navExpandir bg-roxoClaro">
                             <img class="iconPedidos" type="button" data-toggle="collapse" data-target="#target<%= pedido.idServico %>" aria-controls="target<%= pedido.idServico %>" aria-expanded="false" aria-label="Toggle navigation" src="/img/pedidosCard.png" alt="">
 
-                            <a href="/usuario/area-contratante/orcamentos/<% pedido.idServico %>">
+                            <% pedido.status != 'AGUAR' ? classe = 'disabled' : classe = 'btn-success' %>
+
+                            <a href="/usuario/area-contratante/orcamentos/<%= pedido.idServico %>">
                                 <!-- botao ver orçamento -->
-                                <button class="btn btn-success">
+                                <button class="btn <%= classe %> ">
                                     VER ORÇAMENTO
                                 </button>
-
                             </a>
                         </nav>
                     </div>
