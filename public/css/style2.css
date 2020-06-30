@@ -897,7 +897,7 @@ button.botaoBuscar:hover {
 
     background-image: url(/img/ondaHomeInverso.svg);
     background-repeat: no-repeat;
-    background-position: 0 0;
+    background-position: 100% 0;
     background-size: contain;
 }
 
@@ -1046,7 +1046,7 @@ button.botaoBuscar:hover {
     background-color: #88BF36;
 }
 
-@media (max-width: 765px){
+@media (max-width: 770px){
     #sessaoHomeHM{
         display: none;
     }

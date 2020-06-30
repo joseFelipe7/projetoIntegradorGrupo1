@@ -58,7 +58,7 @@ router.post("/area-prestador/meusDados/:id/profissao", authPrestador, habilidade
 router.put("/area-prestador/meusDados/:id/profissao", authPrestador, habilidadesController.update);
 
 
-router.get("/area-contratante/pedidos/:id", authCliente, pedidosClienteController.index)
+router.get("/area-contratante/pedidos", authCliente, pedidosClienteController.index)
 
 
 router.get("/area-contratante/acompanhe", authCliente, (req, res) => {
@@ -67,9 +67,9 @@ router.get("/area-contratante/acompanhe", authCliente, (req, res) => {
 })
 
 
-router.get("/area-contratante/orcamentos-bru/:id", authCliente, orcamentosController.index)
+router.get("/area-contratante/orcamentos/:id", authCliente, orcamentosController.index)
 
-router.post("/area-contratante/orcamentos-bru", authCliente, orcamentosController.store)
+router.post("/area-contratante/orcamentos", authCliente, orcamentosController.store)
 
 
 router.get("/area-contratante/historico-bru/:id", authCliente, historicoController.index)
