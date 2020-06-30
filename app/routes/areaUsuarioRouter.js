@@ -24,7 +24,8 @@ const orcamentosPrestadorController = require("../controllers/orcamentosPrestado
 let router = express.Router();
 
 
-//rotas contratante - meus-dados
+//rotas contratante - meus-dados ----------
+
 router.get("/area-contratante/meus-dados/:id", authCliente, clienteController.index);
 router.put("/area-contratante/meus-dados/:id", authCliente, upload.any(), clienteController.update);
 
@@ -38,8 +39,26 @@ router.get("/area-contratante/meus-dados/:id/contatos", authCliente, contatosCon
 router.post("/area-contratante/meus-dados/:id/contatos", authCliente, contatosController.store);
 router.put("/area-contratante/meus-dados/:id/contatos", authCliente, contatosController.update);
 
+//rotas prestador - meus-dados -----------
 
-router.get("/area-contratante/pedidos/:id", authCliente, pedidosClienteController.index)
+router.get("/area-prestador/meusDados/:id", authPrestador, prestadorController.index);
+router.post("/area-prestador/meusDados/:id", authPrestador, prestadorController.store);
+router.put("/area-prestador/meusDados/:id", authPrestador, prestadorController.update);
+
+//rotas prestador - meus-dados-endereço
+router.post("/area-prestador/meusDados/:id/endereco", authPrestador, prestador_enderecoController.store);
+router.put("/area-prestador/meusDados/:id/endereco", authPrestador, habilidadesController.update);
+
+//rotas prestador - meus-dados-contatos
+router.post("/area-prestador/meusDados/:id/contatos", authPrestador, prestador_contatosController.store);
+router.put("/area-prestador/meusDados/:id/contatos", authPrestador, habilidadesController.update);
+
+//rotas prestador - cadastro profissão
+router.post("/area-prestador/meusDados/:id/profissao", authPrestador, habilidadesController.store);
+router.put("/area-prestador/meusDados/:id/profissao", authPrestador, habilidadesController.update);
+
+
+router.get("/area-contratante/pedidos", authCliente, pedidosClienteController.index)
 
 
 router.get("/area-contratante/acompanhe", authCliente, (req, res) => {
@@ -48,9 +67,9 @@ router.get("/area-contratante/acompanhe", authCliente, (req, res) => {
 })
 
 
-router.get("/area-contratante/orcamentos-bru/:id", authCliente, orcamentosController.index)
+router.get("/area-contratante/orcamentos/:id", authCliente, orcamentosController.index)
 
-router.post("/area-contratante/orcamentos-bru", authCliente, orcamentosController.store)
+router.post("/area-contratante/orcamentos", authCliente, orcamentosController.store)
 
 
 router.get("/area-contratante/historico-bru/:id", authCliente, historicoController.index)
@@ -76,26 +95,12 @@ router.get("/area-contratante/pagamentos-bru", authCliente, (req, res) => {
 })
 
 
-// rotas prestador
+// rotas prestador -----
 router.get("/area-prestador/cadastro-servicos", authPrestador, cadastroServicosController.index)
 
 router.get("/area-prestador/pedidos", authPrestador,(req, res) => {
     res.render("areaPrestador", {view: "pedidosAreaPrestador", loggado: req.session.prestador});
 })
-//rotas meus-dados
-router.get("/area-prestador/meusDados/:id", authPrestador, prestadorController.index);
-router.post("/area-prestador/meusDados/:id", authPrestador, prestadorController.store);
-
-//rotas meus-dados-endereço
-router.post("/area-prestador/meusDados/:fk_cliente/endereco", authPrestador, prestador_enderecoController.store);
-
-//rotas meus-dados-contatos
-router.post("/area-prestador/meusDados/:fk_cliente/contatos", authPrestador, prestador_contatosController.store);
-
-//rotas cadastro profissão
-router.post("/area-prestador/meusDados/:fk_cliente/profissao", authPrestador, habilidadesController.store);
-//router.put("/area-prestador/meusDados/:fk_cliente/profissao", authPrestador, habilidadesController.update);
-
 
 router.get("/area-prestador/requisicoes", authPrestador, requisicoesPrestadorController.index)
 router.post("/area-prestador/requisicoes", authPrestador, requisicoesPrestadorController.store)

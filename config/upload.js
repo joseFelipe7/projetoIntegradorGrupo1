@@ -10,6 +10,7 @@ const storage = multer.diskStorage({
   },
   // definindo que nome terá o arquivo
   filename: function (req, file, cb) {
+    console.log(file)
     cb(null, `${Date.now()}-${file.originalname}`);
   },
 });

@@ -32,6 +32,8 @@ const ClienteController = {
                 contratanteNascimento,
                 contratanteCpf,
                 contratanteEmail,
+                photo
+                
 
             } = req.body;
 

@@ -49,7 +49,7 @@ const habilidadesController = {
         return res.render("areaPrestador", {view: "meusDados-prestador", loggado: req.session.prestador, data:{habilidades}})
 
     },
-    updade: async (req, res) => {
+    update: async (req, res) => {
         const {
             tituloProfissao,
             dtProfissao,

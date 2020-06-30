@@ -2,9 +2,10 @@
 
         <div class="card-body">
           <!-- formulario endereço -->
-  
+          <% data.prestador.prestadores_enderecos.forEach(prestador => { %>
+
   <!--FORM GET - SHOW-->
-          <form action="/usuario/area-prestador/meusDados/<%=data.prestador.id%>/endereco" method="GET">
+          <form action="/usuario/area-prestador/meusDados/<%=prestador.id%>/endereco" method="GET">
             <!-- input linha 1 -->
             <div class="form-row">
               <!-- input data cep -->
@@ -15,7 +16,7 @@
                     <span class="input-group-text etiquetaCampo">CEP</span>
                   </div>
                   <input type="number" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cep"
-                    value="<%= data.prestador.cep %>" readonly maxlength="8" pattern="[0-9]+$">
+                    value="<%= prestador.cep %>" readonly maxlength="8" pattern="[0-9]+$">
                 </div>
               </div>
             </div>
@@ -29,7 +30,7 @@
                     <span class="input-group-text etiquetaCampo">UF</span>
                   </div>
                   <input type="text" class="form-control campoMeusDadosStyle campoDadoReadonly" id="UF"
-                    value="<%= data.prestador.uf %>" readonly>
+                    value="<%= prestador.uf %>" readonly>
                 </div>
               </div>
   
@@ -41,7 +42,7 @@
                     <span class="input-group-text etiquetaCampo">Cidade</span>
                   </div>
                   <input type="text" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cidade"
-                    value="<%= data.prestador.cidade %>" readonly>
+                    value="<%= prestador.cidade %>" readonly>
                 </div>
               </div>
             </div>
@@ -56,7 +57,7 @@
                     <span class="input-group-text etiquetaCampo">Rua</span>
                   </div>
                   <input type="text" class="form-control campoMeusDadosStyle campoDadoReadonly" id="rua"
-                    value="<%= data.prestador.logradouro %>" readonly>
+                    value="<%= prestador.logradouro %>" readonly>
                 </div>
               </div>
   
@@ -68,7 +69,7 @@
                     <span class="input-group-text etiquetaCampo">Nº</span>
                   </div>
                   <input type="number" class="form-control campoMeusDadosStyle campoDadoReadonly" id="numero"
-                    value="<%= data.prestador.numero %>" readonly pattern="[0-9]+$">
+                    value="<%= prestador.numero %>" readonly pattern="[0-9]+$">
                 </div>
               </div>
   
@@ -80,7 +81,7 @@
                     <span class="input-group-text etiquetaCampo">Complemento</span>
                   </div>
                   <input type="text" class="form-control campoMeusDadosStyle campoDadoReadonly" id="complemento"
-                    value="<%= data.prestador.complemento %>" readonly>
+                    value="<%= prestador.complemento %>" readonly>
                 </div>
               </div>
             </div>
@@ -91,7 +92,7 @@
               <button type="button" class="btn botaoMeusDados">Editar</button>
             </div>
           </form>
-  
+          <% }) %> 
         </div>
   
     <!-- Modal ------------------------------------------------->

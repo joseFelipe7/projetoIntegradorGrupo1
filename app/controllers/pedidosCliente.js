@@ -10,7 +10,7 @@ const { Pedido, HistoricoPedidos, Prestador } = require('../models/index');
 module.exports = {
     //exibe pedidos
     index: async (req, res) => {
-        const {id} = req.params
+        const {id} = req.session.cliente
         const cliente = await Cliente.findByPk(id)
         
         let loggado = req.session.cliente;
@@ -107,7 +107,7 @@ module.exports = {
             formaPag: 'dinheiro',
             historico: [ [Object], [Object], [Object] ]
         }
-        ]
+        ] 
         */
 
         res.render("areaContratante", {view: "pedidosAreaContratante", loggado: req.session.cliente, data:{cliente, infoPedido, moment}});

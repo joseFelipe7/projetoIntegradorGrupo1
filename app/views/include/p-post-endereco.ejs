@@ -2,6 +2,7 @@
  <% if(data.prestador.prestadores_enderecos != ""){ %>
      <div class="modal-body bg-roxoClaro">
        <!-- formulario editar endereço -->
+       <% data.prestador.prestadores_enderecos.forEach(prestador => { %>
 
 <!--FORM POST-UPDATE-->
        <form id="formeUp" action="/usuario/area-prestador/meusDados/<%=data.prestador.id%>/endereco?_method=PUT"  method="POST">
@@ -15,7 +16,7 @@
                  <span class="input-group-text etiquetaCampo">CEP</span>
                </div>
                <input type="number" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                 value="<%= data.prestador.cep %>" id="cepUp" placeholder="CEP - apenas números" maxlength="8"
+                 value="<%= prestador.cep %>" id="cepUp" placeholder="CEP - apenas números" maxlength="8"
                  pattern="[0-9]+$">
              </div>
              <span id="errorCEPUp"></span>
@@ -41,7 +42,7 @@
                  <span class="input-group-text etiquetaCampo">UF</span>
                </div>
                <input type="text" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                 value="<%= data.prestador.uf %>" id="ufUp" placeholder="Estado - UF" maxlength="2">
+                 value="<%= prestador.uf %>" id="ufUp" placeholder="Estado - UF" maxlength="2">
              </div>
            </div>
            <!-- input cidade -->
@@ -52,7 +53,7 @@
                  <span class="input-group-text etiquetaCampo">Cidade</span>
                </div>
                <input type="text" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                 value="<%= data.prestador.cidade %>" id="cidadeUp" placeholder="Digite sua cidade">
+                 value="<%= prestador.cidade %>" id="cidadeUp" placeholder="Digite sua cidade">
              </div>
            </div>
          </div>
@@ -67,7 +68,7 @@
                  <span class="input-group-text etiquetaCampo">Rua</span>
                </div>
                <input type="text" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                 value="<%= data.prestador.logradouro %>" id="ruaUp" placeholder="Digite sua rua">
+                 value="<%= prestador.logradouro %>" id="ruaUp" placeholder="Digite sua rua">
              </div>
            </div>
          </div>
@@ -82,7 +83,7 @@
                  <span class="input-group-text etiquetaCampo">Nº</span>
                </div>
                <input type="number" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                 value="<%= data.prestador.numero %>" id="numeroUp" placeholder="Número" pattern="[0-9]+$">
+                 value="<%= prestador.numero %>" id="numeroUp" placeholder="Número" pattern="[0-9]+$">
              </div>
            </div>
            <!-- input complemento -->
@@ -93,7 +94,7 @@
                  <span class="input-group-text etiquetaCampo">Complemento</span>
                </div>
                <input type="text" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                 value="<%= data.prestador.complemento %>" id="complementoUp" placeholder="Complemento">
+                 value="<%= prestador.complemento %>" id="complementoUp" placeholder="Complemento">
              </div>
            </div>
          </div>
@@ -104,7 +105,7 @@
            <button type="submit" class="btn botaoMeusDados">SALVAR</button>
          </div>
        </form>
-
+      <% }) %> 
      </div>
     
 <!-- fim Modal ------------------------------------------------->
