@@ -3,7 +3,8 @@
 
 
           <div class="card-body">
-    
+            <% data.prestador.Habilidades.forEach(prestador => { %>
+
     <!-- GET-SHOW  formulario dados pessoais -->
          <form action="/usuario/area-prestador/meusDados/<%=data.prestador.id%>/profissao" method="GET">
     
@@ -17,7 +18,7 @@
                       <span class="input-group-text etiquetaCampo">Profissão</span>
                     </div>
                     <input type="text" name="tituloProfissao" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                      id="profissao" value="<%= data.prestador.titulo %>" readonly>
+                      id="profissao" value="<%= prestador.titulo %>" readonly>
                   </div>
                 </div>
     
@@ -29,7 +30,7 @@
                       <span class="input-group-text etiquetaCampo">Data</span>
                     </div>
                     <input type="date" name="dtProfissao" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                      id="date" value="<%= data.prestador.inicio_profissao %>" readonly>
+                      id="date" value="<%= prestador.inicio_profissao %>" readonly>
                   </div>
                 </div>
               </div>
@@ -49,7 +50,7 @@
                       <span class="input-group-text etiquetaCampo">Descrição</span>
                     </div>
                     <textarea class="form-control" name="descricaoPrestador" rows="5"
-                      value="<%= data.prestador.descricao %>" id="comment"></textarea>
+                      value="<%= prestador.descricao %>" id="comment"></textarea>
                   </div>
                 </div>
               </div>
@@ -61,6 +62,7 @@
                   data-target="#editarProfissoesPrestador">Editar</button>
               </div>
             </form>
+          <% }) %> 
           </div>
    
   
@@ -70,10 +72,9 @@
 
           <div class="card-body">
             <!-- formulario dados pessoais -->
-    
+
     <!-- FORM VAZIO - POST -->
-             <form>
-    
+        <form>    
               <!-- input linha 1 -->
               <div class="form-row">
                 <!-- input nome -->

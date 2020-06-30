@@ -2,7 +2,8 @@
        <% if(data.prestador.Habilidades != ""){ %>
       <div class="modal-body bg-roxoClaro">
 
-        
+        <% data.prestador.Habilidades.forEach(prestador => { %>
+
 <!-- POST-UPDATE  formulario dados pessoais -->
         <form action="/usuario/area-prestador/meusDados/<%=data.prestador.id%>/profissao?_method=PUT" method="POST">
           <!-- linha foto -->
@@ -17,7 +18,7 @@
                   <span class="input-group-text etiquetaCampo">Profissão</span>
                 </div>
                 <input type="text" name="tituloProfissao" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                  id="profissao" value="<%= data.prestador.titulo %>" placeholder="Digite sua profissão">
+                  id="profissao" value="<%= prestador.titulo %>" placeholder="Digite sua profissão">
               </div>
             </div>
             <!-- input cpf -->
@@ -28,7 +29,7 @@
                   <span class="input-group-text etiquetaCampo">Data</span>
                 </div>
                 <input type="date" name="dtProfissao" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                  id="data" value="<%= data.prestador.inicio_profissao %>">
+                  id="data" value="<%= prestador.inicio_profissao %>">
               </div>
             </div>
             <div class="form-row">
@@ -39,7 +40,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">Descrição</span>
                   </div>
-                  <textarea class="form-control" value="Descreva suas habilidades..." name="descricaoPrestador" rows="5" id="habilidades"></textarea>
+                  <textarea class="form-control" placeholder="Faça sua descrição profissional..." value="<%= prestador.descricao %>" name="descricaoPrestador" rows="5" id="habilidades"></textarea>
                 </div>
               </div>
             </div>
@@ -53,6 +54,7 @@
           <!-- Button trigger modal -->
           <div class="d-flex justify-content-end"><button type="submit" class="btn botaoMeusDados">SALVAR</button></div>
         </form>
+      <% }) %> 
         <!-- ................................. -->
       </div>
   

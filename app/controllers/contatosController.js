@@ -41,7 +41,6 @@ const ContatosController = {
         }
 
       
-
         const contatos = await Contatos.create({
             celular_principal:contratanteCelular1,
             celular_secundario:contratanteCelular2,

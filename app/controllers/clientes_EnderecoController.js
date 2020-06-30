@@ -54,7 +54,7 @@ const Clientes_EnderecoController = {
         res.redirect('/usuario/area-contratante/meus-dados/'+id)          
     },
     update: async (req, res) => {
-        const {id } = req.params;
+        const {id} = req.params;
         const {
             contratanteCep,
             contratanteRua,
@@ -69,21 +69,22 @@ const Clientes_EnderecoController = {
             return res.send("cliente nao existe")
         }
 
-        const cliente_endereco = await Cliente.update({
+        const cliente_endereco = await Clientes_endereco.update({
             logradouro:contratanteRua,
             uf:contratanteUf,
             cidade:contratanteCidade,
             cep:contratanteCep,
             numero:contratanteN,
             complemento:contratanteComplemento,
+            fk_cliente:id
             
         },
         {
             where: {
-                id
+                fk_cliente:id
             }
         })
-        return res.redirect('/usuario/area-contratante/meus-dados'+id)
+        return res.redirect('/usuario/area-contratante/meus-dados/'+id)
     }
 
 }

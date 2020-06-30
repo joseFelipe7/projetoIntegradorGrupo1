@@ -47,11 +47,11 @@ router.put("/area-prestador/meusDados/:id", authPrestador, prestadorController.u
 
 //rotas prestador - meus-dados-endereço
 router.post("/area-prestador/meusDados/:id/endereco", authPrestador, prestador_enderecoController.store);
-router.put("/area-prestador/meusDados/:id/profissao", authPrestador, habilidadesController.update);
+router.put("/area-prestador/meusDados/:id/endereco", authPrestador, habilidadesController.update);
 
 //rotas prestador - meus-dados-contatos
 router.post("/area-prestador/meusDados/:id/contatos", authPrestador, prestador_contatosController.store);
-router.put("/area-prestador/meusDados/:id/profissao", authPrestador, habilidadesController.update);
+router.put("/area-prestador/meusDados/:id/contatos", authPrestador, habilidadesController.update);
 
 //rotas prestador - cadastro profissão
 router.post("/area-prestador/meusDados/:id/profissao", authPrestador, habilidadesController.store);
