@@ -46,6 +46,9 @@ module.exports = (sequelize, DataTypes) => {
       Prestador.hasMany(listaModels.Contatos_prestador, {
         foreignKey: 'fk_prestador',
         as:'contatos_prestadores'
+      }),
+      Prestador.hasMany(listaModels.Galeria_prestadores, {
+        foreignKey: 'fk_prestador'
       })
     }
    

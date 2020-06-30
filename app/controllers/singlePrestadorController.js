@@ -1,13 +1,35 @@
 const { Op } = require('sequelize');
 const { check, validationResult, body} = require('express-validator');
 
+const { Prestador, Prestador_endereco, Habilidades, Avaliacoes, Galeria_prestadores, Cliente } = require('../models');
 const { Pedido } = require('../models/index');
 
 module.exports = {
-    index: (req, res) => {
+    index: async (req, res) => {
         let idPrestador = req.params.id_prestador;
-
-        res.render("singleprestador", { idPrestador });
+        let prestador = await Prestador.findByPk(idPrestador, {
+            include: [{
+                model: Prestador_endereco,
+                required: true,
+                as: 'prestadores_enderecos'
+            }, {
+                model: Habilidades,
+                required: true
+            }, {
+                model: Avaliacoes,
+                required: true,
+                include: [{
+                    model: Cliente,
+                    required: true,
+                    as: 'cliente'
+                }]
+            }, {
+                model: Galeria_prestadores,
+                required: true
+            },]
+        });
+        console.log(prestador);
+        res.render("singleprestador", { idPrestador, prestador });
     },
 
     //exibe formulario

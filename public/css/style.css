@@ -177,6 +177,7 @@ a.icon-bofl {
 .menu-principal-itens-sub {
   background-color: #AEB2F2;
   border-radius: 10px;
+  cursor: pointer;
   padding: 5px;
   text-align: center;
   font-weight: bold;
@@ -227,13 +228,16 @@ a.icon-bofl {
   margin: 5px;
   color: #203573;
   font-weight: bold;
-
 }
 
 .sub-menu-itens-principal:hover {
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   background-color: #A094F2;
+}
+
+.sub-menu-principal li {
+  cursor: pointer;
 }
 
 .icon-categoria-menu img {
@@ -1897,7 +1901,8 @@ div#historico-header-cancelado-bofl {
 }
 
 .avatar-about-single {
-  max-width: 80px;
+  border: solid 2px #ffffff;
+  max-width: 90px;
 }
 
 .about-prestador h5 {
@@ -1905,7 +1910,7 @@ div#historico-header-cancelado-bofl {
 }
 
 .about-prestador p {
-  background-color: #A094F2;
+  background-color: #AEB2F2;
   padding: 5px;
   border-radius: 5px;
 }
@@ -1949,12 +1954,12 @@ div#historico-header-cancelado-bofl {
 }
 
 .img-galeria {
-  border: 1px solid #A094F2;
+  border: 2px solid #A094F2;
   border-radius: 5px;
 }
 
 .img-galeria img {
-  height: 150px;
+  max-height: 150px;
 }
 
 .container-avatar-single-desk {
@@ -1975,13 +1980,43 @@ div#historico-header-cancelado-bofl {
 }
 
 .rating-single {
+  display: flex;
+  flex-direction: column;
   background-color: #F8F8F8;
+  border-radius: 0.2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+  max-height: 10rem;
+  padding: 1rem;
 }
 
-.avatar-rating div.col-9 {
+.avatar-rating {
   display: flex;
-  justify-content: center;
-  align-items: center;
+}
+
+.ava-foto {
+  border: solid 4px #7159C1;
+  max-width: 64px;
+  max-height: 64px;
+}
+
+.ava-nome {
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-left: 0.5rem;
+  padding: 1rem 0 0 0;
+  position: relative;
+}
+
+.estrela-nota {
+  position: absolute;
+  top: 2.5rem;
+  left: 0;
+}
+
+.ava-comentario {
+  font-size: 0.8em;
+  font-style: italic;
+  padding: 0.2rem 0 0 4.5rem;
 }
 
 @media (min-width:768px) {
