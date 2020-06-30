@@ -85,17 +85,81 @@ a.icon-bofl {
   text-align: center;
   margin-right: 8px;
 }
+
 .sobreNos{
   padding: 60px;
   width: 100%;
   display: flex;
-  font-weight: 500;
+  flex-direction: column;
   text-align: center;
   align-self: center;
 }
+
+.sobreNos h3{
+  color: #203573;
+}
+
 .sobreNos p{
   width: 100%;
 }
+
+.sobreNos .github {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-left: 0.5rem;
+}
+
+.sobreNos .github h4 {
+  color: #203573;
+}
+
+.sobreNos .github .perfil {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 160px;
+}
+
+.perfil .pf-foto {
+  border: solid 4px #7159C1;
+  border-radius: 100%;
+  width: 90px;
+  height: 90px;
+}
+
+.pf-foto img {
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.perfil .pf-cont p {
+  color: #7159C1;
+ }
+
+.perfil .pf-cont a {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ color: #203573;
+ text-decoration: none;
+}
+
+.perfil .pf-cont a:hover {
+  color: #ffffff;
+  text-decoration: none;
+ }
+
+.pf-cont a img {
+  max-width: 18px;
+  margin-right: 0.2rem;
+}
+
 @media (max-width:768px) {
   .sobreNos{
     padding-left: 0px;
@@ -140,6 +204,31 @@ a.icon-bofl {
     overflow: hidden;
     position: relative;
 
+  }
+}
+
+@media (max-width:575px) {
+  .sobreNos {
+    padding: 0;
+  }
+
+  .sobreNos .github .perfil {
+    margin: 0.2rem;
+    width: 140px;
+  }
+}
+
+@media (max-width:360px) {
+  .sobreNos .github .perfil {
+    width: 110px;
+  }
+
+  .perfil .pf-cont p {
+    font-size: 0.8em;
+   }
+  
+  .perfil .pf-cont a {
+    font-size: 0.8em;
   }
 }
 
