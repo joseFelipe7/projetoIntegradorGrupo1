@@ -1124,7 +1124,7 @@ a + img {
   justify-content: center;
   align-items: center;
   background-color: #aeb2f2;
-  height: 46rem;
+  height: 60rem;
 }
 
 .form-cadastroPrestador {
@@ -1135,8 +1135,8 @@ a + img {
   background-color: #7159c1;
   border-radius: 0.5rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  height: 40rem;
-  width: 25rem;
+  height: 50rem;
+  width: 28rem;
   padding: 0;
 }
 
@@ -1145,20 +1145,23 @@ a + img {
   color: #ffffff;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
   margin-top: 1rem;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 .cadastro-prestador h2{
+  margin-top: 50px;
   text-align: center;
   color:#ffffff;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
   font-size: 1.4em;
-  margin-bottom: 0%;
+  margin-bottom: 30px;
 }
 .cadastro-prestador p {
   color: #ffffff;
   font-weight: 500;
   margin-top: 20px;
   margin-bottom: 2px;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+
 }
 .cadastro-prestador .faca-loginCadP {
   display: flex;
@@ -1169,6 +1172,8 @@ a + img {
   border-radius: 5px;
   height: 3rem;
   width: 10rem;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+
 }
 .cadastro-prestador .faca-loginCadP img,
 a + img {
@@ -1193,6 +1198,9 @@ a + img {
   width: 20rem;
   max-width: 20rem;
   padding:0, 20px, 0, 20px;
+  height: 3.2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
  
 }
 
@@ -1208,7 +1216,7 @@ a + img {
   border-radius: 5px;
   color: #7156c1;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 11pt;
   font-weight: 500;
 }
 
@@ -1228,6 +1236,8 @@ a + img {
   height: 2.5rem;
   width: 8rem;
   margin: 0.8rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 .form-cadastroPrestador > form > button:hover {
@@ -1282,7 +1292,7 @@ a + img {
   justify-content: center;
   align-items: center;
   background-color: #7156c1;
-  height: 46rem;
+  height: 60rem;
 }
 
 .form-cadastroContratante {
@@ -1292,18 +1302,51 @@ a + img {
   align-items: center;
   background-color: #aeb2f2;
   border-radius: 0.5rem;
-  box-shadow: -10px 12px 10px 5px #000000a1;
-  height: 40rem;
-  width: 25rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  height: 50rem;
+  width: 28rem;
   padding: 0;
 }
 
 .form-cadastroContratante > .contratante-titulo,
 .contratante-subTitulo {
-  color: #89b645;
+  color: #ffffff;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
-  margin-top: 1.5rem;
-  margin-bottom: 0;
+  margin-top: 1rem;
+  margin-bottom: 30px;
+
+}
+.cadastro-contratante h2{
+  margin-top: 50px;
+  text-align: center;
+  color:#ffffff;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+  font-size: 1.4em;
+  margin-bottom: 30px;
+}
+.cadastro-contratante p {
+  color: #ffffff;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 2px;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+
+}
+.cadastro-contratante .faca-loginCadP {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #ffffff;
+  border: 5px solid #7156c1;
+  border-radius: 5px;
+  height: 3rem;
+  width: 10rem;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+
+}
+.cadastro-contratante .faca-loginCadP img,
+a + img {
+  width: 28px;
 }
 
 .form-cadastroContratante > form > .form-row > .form-group > label {
@@ -1315,13 +1358,19 @@ a + img {
 
 .form-cadastroContratante > form > .form-row > .form-group > input {
   border: 3px solid #7156c1;
+  background-color: #7156c1;
   border-radius: 5px;
-  color: #a094f2;
+  color: #aeb2f2;
   cursor: pointer;
   font-size: 1em;
+  
   font-weight: 500;
   width: 20rem;
   max-width: 20rem;
+  padding:0, 20px, 0, 20px;
+  height: 3.2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 .form-cadastroContratante
@@ -1330,7 +1379,8 @@ a + img {
   > .form-group
   > input::placeholder {
   color: #a094f2;
-  font-size: 1em;
+  padding-left: 2px;
+
   font-weight: 500;
 }
 
@@ -1350,8 +1400,8 @@ a + img {
 }
 
 .form-cadastroContratante > form > button {
-  background-color: #89b645;
-  border: 1px solid #89b645;
+  background-color: #aeb2f2;
+  border: 3px solid #7156c1;
   border-radius: 5px;
   color: #ffffff;
   font-size: 1.2em;
@@ -1359,11 +1409,12 @@ a + img {
   height: 2.5rem;
   width: 8rem;
   margin: 0.8rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 .form-cadastroContratante > form > button:hover {
-  background-color: #93c549;
-  border: 1px solid #93c549;
+  background-color: #7156c1;
   transition: 0.2s;
 }
 
