@@ -13,9 +13,16 @@
             </h5>
         </div>
 
-        <div id="collapseFive" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+        <div id="collapseFive" class="collapse show" aria-labelledby="headingFour" data-parent="#accordion">
             <div class="card-body">
                 <!-- orcamento -->
+                <%if(typeof data.msg != "undefined"){ %>
+                <div class="col-12">
+                    <div class="alert alert-warning" role="alert">
+                        <%=data.msg%>
+                      </div>
+                </div>
+                <% } %>
                 <div class="col-12">
                     <div class="card p-0 m-0" style="border: none;">
                         <div class="card-header card-hd-orcamento m-0">
@@ -23,53 +30,64 @@
                         </div>
 
                         <div class="card-body">
-                            <form action="/area-prestador/envia-orcamento" method="POST">
+                            
                                 <div class="form-group">
                                     <label>Nº DO SERVIÇO</label>
                                     <input type="text" name="numServico" class="form-control input-form-preocarmento"
-                                        placeholder="numero do serviço" value="teste" readonly>
+                                        placeholder="numero do serviço" value="<%=data.pedido.numeroPedido%>" readonly>
                                 </div>
                                 <div class="form-group">
                                     <label>Prestador</label>
                                     <input type="text" name="prestador" class="form-control input-form-preocarmento"
-                                        placeholder="Nome do prestador" value="Prestador" readonly>
+                                        placeholder="Nome do prestador" value="<%=data.pedido.nomePrestador%>" readonly>
                                 </div>
                                 <div class="form-group">
                                     <label>Cliente</label>
                                     <input type="text" name="cliente" class="form-control input-form-preocarmento"
-                                        placeholder="Nome do cliente" value="Meu nome" readonly>
+                                        placeholder="Nome do cliente" value="<%=data.pedido.nomeCliente%>" readonly>
                                 </div>
                                 <div class="form-group">
                                     <label>Serviço</label>
                                     <input type="text" name="servico" class="form-control input-form-preocarmento"
-                                        placeholder="Titulo do pedido" value="Serviço teste" readonly>
+                                        placeholder="Titulo do pedido" value="<%=data.pedido.titulo%>" readonly>
                                 </div>
                                 <div class="form-group">
                                     <label>Para quando você precisa desse serviço?</label>
-                                    <input type="date" name="dataServico" class="form-control input-form-preocarmento" readonly>
+                                    <input type="date" name="dataServico" value="<%=data.moment(data.pedido.dataServico).format('YYYY-MM-DD')%>" class="form-control input-form-preocarmento" readonly>
                                 </div>
                                 <div class="form-group">
                                     <label>Detalhes do Serviço</label>
                                     <textarea class="form-control input-form-preocarmento" name="detalhes" id="detalhes"
-                                        cols="30" rows="6" value="teste de detalhes" readonly></textarea>
+                                        cols="30" rows="6" value="teste de detalhes" readonly><%=data.pedido.descricao%></textarea>
                                 </div>
 
                                 <div class="form-group">
                                     <label>Resumo do Serviço</label>
                                     <textarea class="form-control input-form-preocarmento" name="resumo" id="detalhes"
-                                        cols="30" rows="6" readonly></textarea>
+                                        cols="30" rows="6" readonly><%=data.pedido.resumo%></textarea>
                                 </div>
 
                                 <div class="form-group">
                                     <label>Valor</label>
                                     <input type="number" name="valor" class="form-control input-form-preocarmento"
-                                        placeholder="Valor do orçamento" value="100.00" readonly>
+                                        placeholder="Valor do orçamento" value="<%=data.pedido.valor%>" readonly>
                                 </div>
-
-                                <button type="submit" id="modalPedido" class="btn btn-success">Aceitar</button>
-
-                                <button type="submit" id="modalPedido" class="btn btn-danger">Rejeitar</button>
-                            </form>
+                                <div class="row">
+                                    <div class="col-2">
+                                        <form action="/usuario/area-contratante/orcamentos" method="POST">
+                                            <input type="text" name="idPedido" value="<%=data.pedido.numeroPedido%>" readonly hidden>
+                                            <input type="number" name="resposta" value="1" hidden>
+                                            <button type="submit" id="modalPedido" class="btn btn-success">Aceitar</button>
+                                        </form>
+                                    </div>
+                                    <div class="col-2">
+                                        <form action="/usuario/area-contratante/orcamentos" method="POST">
+                                            <input type="text" name="idPedido" value="<%=data.pedido.numeroPedido%>" readonly hidden>
+                                            <input type="number" name="resposta" value="0" hidden>
+                                            <button type="submit" id="modalPedido" class="btn btn-danger">Rejeitar</button>
+                                        </form>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>
