@@ -35,9 +35,9 @@ module.exports = {
       auto_return : "all",
       external_reference : id,
       back_urls : {
-        success : getFullUrl(req) + "/area-contratante/checkout/csucesso",
-        pending : getFullUrl(req) + "/area-contratante/checkout/pendente",
-        failure : getFullUrl(req) + "/area-contratante/checkout/falhou"
+        success : getFullUrl(req) + "/usuario/area-contratante/checkout/sucesso",
+        pending : getFullUrl(req) + "/usuario/area-contratante/checkout/pendente",
+        failure : getFullUrl(req) + "/usuario/area-contratante/checkout/falhou"
       }
     };
 
@@ -48,5 +48,17 @@ module.exports = {
     }catch(err){
       return res.send(err.message);
     }
-  }
+  },
+
+  pagSucesso(_req, res) {
+    res.render('pagamentoSucesso');
+  },
+
+  pagPendente(_req, res) {
+    res.render('pagamentoPendente');
+  },
+
+  pagFalhou(_req, res) {
+    res.render('pagamentoFalhou');
+  },
 }

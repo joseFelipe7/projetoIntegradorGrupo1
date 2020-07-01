@@ -107,5 +107,8 @@ router.get("/area-prestador/chat", authPrestador, chatPrestadorController.index)
 
 // pagamento do serviço
 router.get('/area-contratante/checkout/:id/:email/:description/:amount', pagamentoController.checkout);
+router.get('/area-contratante/checkout/sucesso', pagamentoController.pagSucesso);
+router.get('/area-contratante/checkout/pendente', pagamentoController.pagPendente);
+router.get('/area-contratante/checkout/falhou', pagamentoController.pagFalhou);
 
 module.exports = router;
