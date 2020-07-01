@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <%- include('include/head', {title:'ToolsHall - Single Prestador'}) %>
+<%- include('include/head', {title:'ToolsHall - Single Prestador'}) %>
 
-    <body>
-        <%- include('include/header')%>
-        <%- include('include/menuNav') %>
-        <main class="container container-master-single mt-5 mb-5">
+<body>
+    <%- include('include/header')%>
+    <%- include('include/menuNav') %>
+    <main class="container-master-single col-12 ">
+        <div class="content-ls d-flex flex-column justify-content-center align-items-center mt-5 mb-5">
             <section class="row row-lp container-main-single">
                 <div class="col-lg-3">
-                        <div class="card cards-single card-payment mb-3">
-                            <div class="card-header">
-                                Contrate
+                    <div class="card cards-single card-payment mb-3">
+                        <div class="card-header">
+                            Contrate
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="method-payment container-payment container-payment-desk">
+                                <p><strong>Valor</strong>: Combinar</p>
+                                <p><strong>Agenda</strong>: Combinar</p>
+                                <img src="/img/formpayment.png" class="img-fluid" alt="">
+                                <img src="/img/formpayment2.png" class="img-fluid" alt="">
+                                <button class="" data-toggle="modal" id="modalPedido"
+                                    data-target="#modal-preorcamento">Solicitar Orçamento</button>
                             </div>
-                            <div class="card-body text-center">
-                                <div class="method-payment container-payment container-payment-desk">
-                                    <p><strong>Valor</strong>: Combinar</p>
-                                    <p><strong>Agenda</strong>: Combinar</p>
-                                    <img src="/img/formpayment.png"  class="img-fluid" alt="">
-                                    <img src="/img/formpayment2.png" class="img-fluid" alt="">
-                                    <button class="" data-toggle="modal" id="modalPedido" data-target="#modal-preorcamento">Solicitar Orçamento</button>
-                                </div>
-                          </div>
+                        </div>
                     </div>
-                </div>    
+                </div>
                 <div class="col-12 col-lg-9 card-single">
                     <div class="card cards-single mb-3">
                         <div class="card-header">
@@ -31,14 +33,15 @@
                         </div>
                         <div class="row p-2">
                             <div class="col-12 col-md-6">
-                                <div class="card-body text-center container-avatar-single">
-                                    <img class="img-fluid rounded-circle avatar-about-single m-auto" src="/img/mario-perfil.png" alt=""> 
+                                <div class="card-body text-center container-avatar-single pt-3 pb-0">
+                                    <img class="img-fluid rounded-circle avatar-about-single m-auto"
+                                        src="<%= prestador.avatar %>" alt="">
                                 </div>
-                            
+
                                 <div class="about-prestador">
                                     <h5>Sobre</h5>
-                                    <p style="min-height:250px;">  
-                                        <%= prestador.Habilidades[0].descricao %> <strong>Veja +</strong>
+                                    <p style="min-height:250px;">
+                                        <%= prestador.Habilidades[0].descricao %>.
                                     </p>
                                 </div>
                             </div>
@@ -49,34 +52,36 @@
                                     <p><strong>Agenda</strong>: Combinar</p>
                                     <img src="/img/formpayment.png" alt="">
                                     <img src="/img/formpayment2.png" alt="">
-                                    <button class="" data-toggle="modal"
-                                     data-target="#modal-preorcamento">Solicitar Orçamento</button>
+                                    <button class="" data-toggle="modal" data-target="#modal-preorcamento">Solicitar
+                                        Orçamento</button>
                                 </div>
-                            
-                            <!-- <div class="col-12 col-md-6" style="position: absolute; top: 8px; right: 5px;" > -->
+
+                                <!-- <div class="col-12 col-md-6" style="position: absolute; top: 8px; right: 5px;" > -->
                                 <div class="location">
                                     <div class="card-body text-center container-avatar-single-desk">
-                                        <img class="img-fluid rounded-circle avatar-about-single m-auto" src="<%= prestador.avatar %>" alt="">
+                                        <img class="img-fluid rounded-circle avatar-about-single m-auto"
+                                            src="<%= prestador.avatar %>" alt="">
                                     </div>`
-                                    
+
                                     <div class="container-social">
                                         <div class="social">
-                                            <img class="img-fluid" src="/img/face-icon.png" alt=""> 
-                                            <img class="img-fluid" src="/img/instagram-icon.png" alt=""> 
+                                            <img class="img-fluid" src="/img/face-icon.png" alt="">
+                                            <img class="img-fluid" src="/img/instagram-icon.png" alt="">
                                         </div>
                                         <div>
                                             <h5>Localização</h5>
-                                            <iframe src=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d467692.0487699437!2d-46.87549078813279!3d-23.68153147674652!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce448183a461d1%3A0x9ba94b08ff335bae!2zU8OjbyBQYXVsbywgU1A!5e0!3m2!1spt-BR!2sbr!4v1593465976008!5m2!1spt-BR!2sbr" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                                            
+                                            <iframe
+                                                src=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d467692.0487699437!2d-46.87549078813279!3d-23.68153147674652!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce448183a461d1%3A0x9ba94b08ff335bae!2zU8OjbyBQYXVsbywgU1A!5e0!3m2!1spt-BR!2sbr!4v1593465976008!5m2!1spt-BR!2sbr"
+                                                width="400" height="300" frameborder="0" style="border:0;"
+                                                allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                             </div>
-                            </div>
                         </div>
-                        </div>
-                      </div>
+                    </div>
                 </div>
             </section>
             <section class="row row-lp">
@@ -85,7 +90,7 @@
                         <div class="card-header">
                             Galeria
                         </div>
-                        <div class="card-body text-center"> 
+                        <div class="card-body text-center">
                             <div class="row">
                                 <% prestador.Galeria_prestadores.forEach(galeria => { %>
                                 <div class="col-12 col-md-4 ">
@@ -95,8 +100,8 @@
                                 </div>
                                 <% }) %>
                             </div>
-                      </div>
-                </div>
+                        </div>
+                    </div>
             </section>
             <section class="row row-lp">
                 <div class="col-12">
@@ -111,23 +116,24 @@
                                 <div class="col-12 col-md-6 mb-1">
                                     <div class="rating-single">
                                         <div class="row avatar-rating w-100 m-0 p-0">
-                                            <img src="<%= avaliacao.cliente.avatar %>" class="rounded-circle ava-foto" alt="">
+                                            <img src="<%= avaliacao.cliente.avatar %>" class="rounded-circle ava-foto"
+                                                alt="">
                                             <div class="ava-nome">
                                                 <p class="m-0 p-0"> <%= avaliacao.cliente.nome %> </p>
                                                 <% if (avaliacao.nota === 1) { %>
-                                                    <img class="estrela-nota" src="/img/star11.png">
+                                                <img class="estrela-nota" src="/img/star11.png">
                                                 <% } %>
                                                 <% if (avaliacao.nota === 2) { %>
-                                                    <img class="estrela-nota" src="/img/star12.png">
+                                                <img class="estrela-nota" src="/img/star12.png">
                                                 <% } %>
                                                 <% if (avaliacao.nota === 3) { %>
-                                                    <img class="estrela-nota" src="/img/star13.png">
+                                                <img class="estrela-nota" src="/img/star13.png">
                                                 <% } %>
                                                 <% if (avaliacao.nota === 4) { %>
-                                                    <img class="estrela-nota" src="/img/star14.png">
+                                                <img class="estrela-nota" src="/img/star14.png">
                                                 <% } %>
                                                 <% if (avaliacao.nota === 5) { %>
-                                                    <img class="estrela-nota" src="/img/star15.png">
+                                                <img class="estrela-nota" src="/img/star15.png">
                                                 <% } %>
                                             </div>
                                         </div>
@@ -135,7 +141,7 @@
                                             <div class="col-12 text-justify ava-comentario">
                                                 "<%= avaliacao.comentario %>"
                                             </div>
-                                        </div>  
+                                        </div>
                                     </div>
                                 </div>
                                 <% }) %>
@@ -145,92 +151,100 @@
                     </div>
                 </div>
             </section>
-        </main>
-        <%- include('include/footer') %>
+        </div>
+    </main>
+    <%- include('include/footer') %>
 
-<% if ((typeof msgEnviado != 'undefined') || (typeof errors != 'undefined')) { %>
+    <% if ((typeof msgEnviado != 'undefined') || (typeof errors != 'undefined')) { %>
     <script>
         window.addEventListener('load', () => {
-        const btnModal = document.querySelector("#modalPedido");
-        btnModal.click();
+            const btnModal = document.querySelector("#modalPedido");
+            btnModal.click();
         })
     </script>
-<% } %>
+    <% } %>
 
-<!-- Modal -->
-<div class="modal fade bd-example-modal-lg"  id="modal-preorcamento" tabindex="-1" role="dialog" aria-labelledby="modal-preorcamento" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content modal-pre-ocarmento" >
-        <div class="modal-header" style="border: none;">
-        <!--<h5 class="modal-title" id="exampleModalLabel"></h5>-->
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-        </div>
-        <div class="modal-body">
-        <div class="container">
-            <div class="row">
-                <div class="col-0 col-md-6  figure-preorcamento">
-
-                    <% if (typeof errors != 'undefined') { %>
-                        <% errors.forEach( error => { %>
-                            <div class="row alert alert-warning msgErroLogin">
-                                <img src="/img/alert.svg" alt="erro">
-                                <!-- posso utilizar o array errors para informar a mensagem de erro, atravéz da prop msg... -->
-                                <ul>
-                                    <li> <%- error.msg %> </li>
-                                </ul>
-                            </div>
-                        <% }) %>
-                    <% } else if (typeof msgEnviado != 'undefined') { %>
-                        <!-- se enviado com sucesso... -->
-                        <div class="row alert alert-success msgErroLogin">
-                            <img src="/img/alert.svg" alt="ok">
-                            <%= msgEnviado  %>
-                        </div>
-                    <% } %>
-
-
-                    <h1 class="titulo-preorcamento">Precisando de Encanador?</h1>
-                    <small>Negocie apenas com os melhores.</small>
-                    <img class="img-fluid" src="/img/figure-orcamento.png" alt="">
+    <!-- Modal -->
+    <div class="modal fade bd-example-modal-lg" id="modal-preorcamento" tabindex="-1" role="dialog"
+        aria-labelledby="modal-preorcamento" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content modal-pre-ocarmento">
+                <div class="modal-header" style="border: none;">
+                    <!--<h5 class="modal-title" id="exampleModalLabel"></h5>-->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                <div class="col-12 col-lg-6">
-                        <div class="card p-0 m-0" style="border: none;">
-                            <div class="card-header card-hd-orcamento m-0">
-                                Descreva Seu Pedido
-                            </div>
-                            <div class="card-body">
-                                <form action="/prestador/single" method="POST">
-                                    <div class="form-group">
-                                    <label>Serviço</label>
-                                    <input type="text" name="servico" class="form-control input-form-preocarmento" placeholder="Titulo do pedido">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Para quando você precisa desse serviço?</label>
-                                        <input type="date" name="dataServico" class="form-control input-form-preocarmento">
-                                    </div>
-                                    <div class="form-group">
-                                    <label>Detalhes do Serviço</label>
-                                        <textarea class="form-control input-form-preocarmento" name="detalhes" id="detalhes" cols="30" rows="6"></textarea>
-                                    </div> 
-                                    <button type="submit" id="modalPedido" class="btn-form-preorcamento">Solicitar Orçamento</button>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-0 col-md-6  figure-preorcamento">
 
-                                    <input type="text" name="idPrestador" value="<%= idPrestador %>" hidden>
-                                </form>
+                                <% if (typeof errors != 'undefined') { %>
+                                <% errors.forEach( error => { %>
+                                <div class="row alert alert-warning msgErroLogin">
+                                    <img src="/img/alert.svg" alt="erro">
+                                    <!-- posso utilizar o array errors para informar a mensagem de erro, atravéz da prop msg... -->
+                                    <ul>
+                                        <li> <%- error.msg %> </li>
+                                    </ul>
+                                </div>
+                                <% }) %>
+                                <% } else if (typeof msgEnviado != 'undefined') { %>
+                                <!-- se enviado com sucesso... -->
+                                <div class="row alert alert-success msgErroLogin">
+                                    <img src="/img/alert.svg" alt="ok">
+                                    <%= msgEnviado  %>
+                                </div>
+                                <% } %>
+
+
+                                <h1 class="titulo-preorcamento">Precisando de Encanador?</h1>
+                                <small>Negocie apenas com os melhores.</small>
+                                <img class="img-fluid" src="/img/figure-orcamento.png" alt="">
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="card p-0 m-0" style="border: none;">
+                                    <div class="card-header card-hd-orcamento m-0">
+                                        Descreva Seu Pedido
+                                    </div>
+                                    <div class="card-body">
+                                        <form action="/prestador/single" method="POST">
+                                            <div class="form-group">
+                                                <label>Serviço</label>
+                                                <input type="text" name="servico"
+                                                    class="form-control input-form-preocarmento"
+                                                    placeholder="Titulo do pedido">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Para quando você precisa desse serviço?</label>
+                                                <input type="date" name="dataServico"
+                                                    class="form-control input-form-preocarmento">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Detalhes do Serviço</label>
+                                                <textarea class="form-control input-form-preocarmento" name="detalhes"
+                                                    id="detalhes" cols="30" rows="6"></textarea>
+                                            </div>
+                                            <button type="submit" id="modalPedido"
+                                                class="btn-form-preorcamento">Solicitar Orçamento</button>
+
+                                            <input type="text" name="idPrestador" value="<%= idPrestador %>" hidden>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                </div>
-            </div>
-        </div>
-        </div>
-        <!--<div class="modal-footer" style="border: none;">
+                    </div>
+                    <!--<div class="modal-footer" style="border: none;">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
         </div>-->
-    </div>
-    </div>
-</div>
+                </div>
+            </div>
+        </div>
 
         <%- include('include/script') %>
-    </body>
+</body>
+
 </html>
