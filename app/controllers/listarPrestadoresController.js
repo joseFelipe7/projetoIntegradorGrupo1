@@ -1,4 +1,5 @@
 const { Prestador, Prestador_endereco, Habilidades, Avaliacoes, Categorias } = require('../models');
+const { Op } = require('sequelize');
 
 const listarPrestadoresController = {
     index: async (req, res) => {
@@ -21,7 +22,7 @@ const listarPrestadoresController = {
                 as: 'prestadores_enderecos'
             }]
         });
-    
+        console.log(prestadores);
         // ele divide totalPage por 12 itens cada page e arredonda para não trazer número quebrado.
         let totalPages = Math.round(totalPage/12);
         res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages, textoPesquisa: [], idCategoria: [], avaliacaoPesquisa: []});
@@ -37,7 +38,9 @@ const listarPrestadoresController = {
                 model: Habilidades,
                 required: true,
                 where: {
-                    titulo: pesquisa
+                    titulo: {
+                        [Op.like]: `%${pesquisa}%`
+                    }
                 }
             }, {
                 model: Avaliacoes,
@@ -92,7 +95,9 @@ const listarPrestadoresController = {
                 model: Habilidades,
                 required: true,
                 where: {
-                    titulo: pesquisa
+                    titulo: {
+                        [Op.like]: `%${pesquisa}%`
+                    }
                 }
             }, {
                 model: Avaliacoes,
