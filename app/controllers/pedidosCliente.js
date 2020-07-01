@@ -58,7 +58,8 @@ module.exports = {
                     idServico : pedido.id,
                     nomePrestador : pedido.prestador.nome,
                     formaPag : pedido.forma_pagamento,
-
+                    aprovacaoCliente: pedido.aprovacao_cliente_orcamento,
+                    valor:pedido.valor,
                     historico : pedido.historicos.map(historico => {
                         return {
                             statusHistorico : historico.status_,

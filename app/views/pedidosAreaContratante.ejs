@@ -36,9 +36,16 @@
 
                             <!-- botao ver orçamento -->
                             <button class="btn <%= classeBtn %> ">
+                                <% if(desabilitado == '' && pedido.aprovacaoCliente == 1){ %>
+                                <a class="text-decoration-none text-white" href="/usuario/area-contratante/checkout/<%= pedido.idServico %>/<%= data.cliente.email %>/<%= pedido.nomeServico %>/<%= pedido.valor %>">
+                                    Pagar
+                                </a>
+                                <% }else{ %>
                                 <a class="text-decoration-none text-white <%= desabilitado %>" href="/usuario/area-contratante/orcamentos/<%= pedido.idServico %>">
                                     VER ORÇAMENTO
                                 </a>
+                                <% } %>
+                               
                             </button>
                         </nav>
                     </div>

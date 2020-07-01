@@ -13,7 +13,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">CEP</span>
                   </div>
-                  <input type="number" name="contratanteCep" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cep" value="<%= cliente_endereco.cep %>" readonly maxlength="8" pattern="[0-9]+$">
+                  <input type="number" name="contratanteCep" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cepc" value="<%= cliente_endereco.cep %>" readonly maxlength="8" pattern="[0-9]+$">
                 </div>
               </div>
             </div>
@@ -26,7 +26,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">UF</span>
                   </div>
-                  <input type="text" name="contratanteUf" class="form-control campoMeusDadosStyle campoDadoReadonly" id="UF" value="<%= cliente_endereco.uf %>" readonly>
+                  <input type="text" name="contratanteUf" class="form-control campoMeusDadosStyle campoDadoReadonly" id="UFc" value="<%= cliente_endereco.uf %>" readonly>
                 </div>
               </div>
 
@@ -37,7 +37,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">Cidade</span>
                   </div>
-                  <input type="text" name="contratanteCidade" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cidade" value="<%= cliente_endereco.cidade %>" readonly>
+                  <input type="text" name="contratanteCidade" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cidadec" value="<%= cliente_endereco.cidade %>" readonly>
                 </div>
               </div>
             </div>
@@ -51,7 +51,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">Rua</span>
                   </div>
-                  <input type="text" name="contratanteRua" class="form-control campoMeusDadosStyle campoDadoReadonly" id="rua" value="<%= cliente_endereco.logradouro %>" readonly>
+                  <input type="text" name="contratanteRua" class="form-control campoMeusDadosStyle campoDadoReadonly" id="ruac" value="<%= cliente_endereco.logradouro %>" readonly>
                 </div>
               </div>
 
@@ -62,7 +62,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">Nº</span>
                   </div>
-                  <input type="number" name="contratanteN" class="form-control campoMeusDadosStyle campoDadoReadonly" id="numero" value="<%= cliente_endereco.numero %>" readonly pattern="[0-9]+$">
+                  <input type="number" name="contratanteN" class="form-control campoMeusDadosStyle campoDadoReadonly" id="numeroc" value="<%= cliente_endereco.numero %>" readonly pattern="[0-9]+$">
                 </div>
               </div>
 
@@ -73,7 +73,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">Complemento</span>
                   </div>
-                  <input type="text" name="contratanteComplemento" class="form-control campoMeusDadosStyle campoDadoReadonly" id="complemento" value="<%= cliente_endereco.complemento %>" readonly>
+                  <input type="text" name="contratanteComplemento" class="form-control campoMeusDadosStyle campoDadoReadonly" id="complementoc" value="<%= cliente_endereco.complemento %>" readonly>
                 </div>
               </div>
             </div>
@@ -95,6 +95,7 @@
   <div class="card-body">
         <!-- formulario endereço -->
         <form> 
+          <p class="finalizarCad">Finalize seu cadastro</p>
           <!-- input linha 1 -->
           <div class="form-row">
             <!-- input data cep -->
@@ -104,7 +105,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">CEP</span>
                 </div>
-                <input type="number" name="contratanteCep" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cep" placeholder="00000-000" readonly maxlength="8" pattern="[0-9]+$">
+                <input type="number" name="contratanteCep" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cepcp" placeholder="00000-000" readonly maxlength="8" pattern="[0-9]+$">
               </div>
             </div>
           </div>
@@ -117,7 +118,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">UF</span>
                 </div>
-                <input type="text" name="contratanteUf" class="form-control campoMeusDadosStyle campoDadoReadonly" id="UF" placeholder="Complete seu cadastro" readonly>
+                <input type="text" name="contratanteUf" class="form-control campoMeusDadosStyle campoDadoReadonly" id="UFcf" placeholder="Complete seu cadastro" readonly>
               </div>
             </div>
 
@@ -128,7 +129,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">Cidade</span>
                 </div>
-                <input type="text" name="contratanteCidade" class="form-control campoMeusDadosStyle campoDadoReadonly" placeholder="Complete seu cadastro" id="cidade" readonly>
+                <input type="text" name="contratanteCidade" class="form-control campoMeusDadosStyle campoDadoReadonly" placeholder="Complete seu cadastro" id="cidadecf" readonly>
               </div>
             </div>
           </div>
@@ -142,7 +143,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">Rua</span>
                 </div>
-                <input type="text" name="contratanteRua" class="form-control campoMeusDadosStyle campoDadoReadonly" placeholder="Complete seu cadastro" id="rua"  readonly>
+                <input type="text" name="contratanteRua" class="form-control campoMeusDadosStyle campoDadoReadonly" placeholder="Complete seu cadastro" id="ruacf"  readonly>
               </div>
             </div>
 
@@ -153,7 +154,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">Nº</span>
                 </div>
-                <input type="number" name="contratanteN" class="form-control campoMeusDadosStyle campoDadoReadonly" id="numero" placeholder="Complete seu cadastro" readonly pattern="[0-9]+$">
+                <input type="number" name="contratanteN" class="form-control campoMeusDadosStyle campoDadoReadonly" id="numerocf" placeholder="Complete seu cadastro" readonly pattern="[0-9]+$">
               </div>
             </div>
 
@@ -164,7 +165,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">Complemento</span>
                 </div>
-                <input type="text" name="contratanteComplemento" class="form-control campoMeusDadosStyle campoDadoReadonly" id="complemento" placeholder="Complete seu cadastro" readonly>
+                <input type="text" name="contratanteComplemento" class="form-control campoMeusDadosStyle campoDadoReadonly" id="complementocf" placeholder="Complete seu cadastro" readonly>
               </div>
             </div>
           </div>

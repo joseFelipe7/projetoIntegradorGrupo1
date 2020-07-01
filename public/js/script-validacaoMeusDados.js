@@ -51,14 +51,14 @@ const numeroUp = selectId('numeroUp');
 const complementoUp = selectId('complementoUp');
 
 const formep = selectId('formep');//endereco post
-const cepp = selectId('cepp');
+const cepp = selectId('ceppp');
 const errorCepp = selectId('errorCEPp');
 const buttonCepp = selectId('buscarCepp');
-const ufp = selectId('UFp');
-const cidadep = selectId('cidadep');
-const ruap = selectId('ruap');
-const numerop = selectId('numerop');
-const complementop = selectId('complementop');
+const ufp = selectId('UFpp');
+const cidadep = selectId('cidadepp');
+const ruap = selectId('ruapp');
+const numerop = selectId('numeropp');
+const complementop = selectId('complementopp');
 
 const formcp = selectId('formdp');//contatos
 const cel1p = selectId('cel1p');

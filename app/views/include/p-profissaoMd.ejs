@@ -18,7 +18,7 @@
                       <span class="input-group-text etiquetaCampo">Profissão</span>
                     </div>
                     <input type="text" name="tituloProfissao" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                      id="profissao" value="<%= prestador.titulo %>" readonly>
+                      id="profissaop" value="<%= prestador.titulo %>" readonly>
                   </div>
                 </div>
     
@@ -30,7 +30,7 @@
                       <span class="input-group-text etiquetaCampo">Data</span>
                     </div>
                     <input type="date" name="dtProfissao" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                      id="date" value="<%= prestador.inicio_profissao %>" readonly>
+                      id="datep" value="<%= prestador.inicio_profissao %>" readonly>
                   </div>
                 </div>
               </div>
@@ -50,7 +50,7 @@
                       <span class="input-group-text etiquetaCampo">Descrição</span>
                     </div>
                     <textarea class="form-control" name="descricaoPrestador" rows="5"
-                      value="<%= prestador.descricao %>" id="comment"></textarea>
+                      value="<%= prestador.descricao %>" id="descricaop"></textarea>
                   </div>
                 </div>
               </div>
@@ -75,6 +75,7 @@
 
     <!-- FORM VAZIO - POST -->
         <form>    
+          <p class="finalizarCad">Finalize seu cadastro</p>
               <!-- input linha 1 -->
               <div class="form-row">
                 <!-- input nome -->
@@ -85,7 +86,7 @@
                       <span class="input-group-text etiquetaCampo">Profissão</span>
                     </div>
                     <input type="text" name="tituloProfissao" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                      id="profissao" placeholder="complete seu cadastro" readonly>
+                      id="profissaopf" placeholder="complete seu cadastro" readonly>
                   </div>
                 </div>
     
@@ -97,7 +98,7 @@
                       <span class="input-group-text etiquetaCampo">Data</span>
                     </div>
                     <input type="date" name="dtProfissao" class="form-control campoMeusDadosStyle campoDadoReadonly"
-                      id="date"  readonly>
+                      id="datepf"  readonly>
                   </div>
                 </div>
               </div>
@@ -117,7 +118,7 @@
                       <span class="input-group-text etiquetaCampo">Descrição</span>
                     </div>
                     <textarea class="form-control" name="descricaoPrestador" rows="5"
-                    placeholder="complete seu cadastro" id="comment"></textarea>
+                    placeholder="complete seu cadastro" id="descricaopf"></textarea>
                   </div>
                 </div>
               </div>
