@@ -106,6 +106,6 @@ router.post("/area-prestador/envia-orcamento", authPrestador, orcamentosPrestado
 router.get("/area-prestador/chat", authPrestador, chatPrestadorController.index) 
 
 // pagamento do serviço
-router.get('/area-contratante/checkout/:id/:email/:description/:amount', pagamentoController.checkout)
+router.get('/area-contratante/checkout/:id/:email/:description/:amount', pagamentoController.checkout);
 
 module.exports = router;

@@ -12,8 +12,7 @@ module.exports = {
     console.log(process.env)
     MercadoPago.configure({
       sandbox: process.env.SANDBOX === 'true' ? true : false,
-      access_token: process.env.MP_ACCESS_TOKEN,
-      port: process.env.API_PORT
+      access_token: process.env.MP_ACCESS_TOKEN
     });
 
     const { id, email, description, amount } = req.params;
@@ -36,9 +35,9 @@ module.exports = {
       auto_return : "all",
       external_reference : id,
       back_urls : {
-        success : getFullUrl(req) + "/chekcout/sucesso",
-        pending : getFullUrl(req) + "/chekcout/pendente",
-        failure : getFullUrl(req) + "/chekcout/falhou"
+        success : getFullUrl(req) + "/area-contratante/checkout/csucesso",
+        pending : getFullUrl(req) + "/area-contratante/checkout/pendente",
+        failure : getFullUrl(req) + "/area-contratante/checkout/falhou"
       }
     };
 
