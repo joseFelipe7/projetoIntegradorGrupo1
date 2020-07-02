@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<%- include('include/head', {title:'Pagamento'}) %>
+
+<body class="d-flex justify-content-center align-items-center w-100 h-100">
+
+  <div class="alert alert-warning alert-dismissible fade show m-5" role="alert">
+    Pagamento finalizado com <strong>SUCESSO!!!</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"
+      onclick="location.pathname = '/usuario/area-contratante/pedidos'">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <%- include('include/script') %>
+</body>
+
+</html>

@@ -178,23 +178,23 @@
               data-toggle="modal" data-target="#exampleModal<%= prestador.id %>">
               <div class="card-parteSuperior">
                 <span class="boneco-prestador"><img src=<%= prestador.avatar %>></span>
-                <% prestador.Avaliacoes.forEach(avaliacao => { %>
-                <% if (avaliacao.nota === 1) { %>
+               
+                <% if (Math.round(prestador.nota) === 1) { %>
                 <img class="img-notaPrestador" src="/img/estrela1.png">
                 <% } %>
-                <% if (avaliacao.nota === 2) { %>
+                <% if (Math.round(prestador.nota)  === 2) { %>
                 <img class="img-notaPrestador" src="/img/estrela2.png">
                 <% } %>
-                <% if (avaliacao.nota === 3) { %>
+                <% if (Math.round(prestador.nota)  === 3) { %>
                 <img class="img-notaPrestador" src="/img/estrela3.png">
                 <% } %>
-                <% if (avaliacao.nota === 4) { %>
+                <% if (Math.round(prestador.nota) === 4) { %>
                 <img class="img-notaPrestador" src="/img/estrela4.png">
                 <% } %>
-                <% if (avaliacao.nota === 5) { %>
+                <% if (Math.round(prestador.nota) === 5) { %>
                 <img class="img-notaPrestador" src="/img/estrela5.png">
                 <% } %>
-                <% }) %>
+               
               </div>
               <div class="card-body card-parteInferior p-0 m-0">
                 <p class="nota-cardPrestador">NOTA</p>
