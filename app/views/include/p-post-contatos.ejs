@@ -4,12 +4,13 @@
       <div class="modal-body bg-roxoClaro">
 
         <!-- formulario contato -->
-        <form action="/usuario/area-prestador/meusDados/<%=data.prestador.id%>/contatos?_method=PUT" method="POST">
+        <form action="/usuario/area-prestador/meusDados/<%=data.prestador.id%>/contatos?_method=PUT" id="formpup" method="POST">
           <!-- input linha 1 -->
           <div class="form-row">
             <!-- input cel1 -->
-            <div class="form-group col-md-6">
-              <label for="cel1">Celular 1</label>
+            <div cl
+            ass="form-group col-md-6">
+              <label for="cel1">Celular 1 <span class="campoObrigatorio">*</span></label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">Celular 1</span>
@@ -55,7 +56,7 @@
           <div class="form-row">
             <!-- input email -->
             <div class="form-group col">
-              <label for="email">E-mail principal</label>
+              <label for="email">E-mail principal <span class="campoObrigatorio">*</span></label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">@</span>
@@ -78,6 +79,15 @@
                   value="<%= data.prestador.email_secundario %>" id="email2pUp">
               </div>
             </div>
+          </div>
+          <label for="">(<span class="campoObrigatorio">*</span>) Campos obrigatórios</label>
+          <!--Validação-->
+          <div id="error-list" class="alert alert-dismissible fade show" role="alert" hidden >
+            <ul>
+            </ul>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true" >&times;</span>
+            </button>
           </div>
 
           <!-- botao editar ABRE O MODAL-->
@@ -104,7 +114,7 @@
          <div class="form-row">
            <!-- input cel1 -->
            <div class="form-group col-md-6">
-             <label for="cel1">Celular 1</label>
+             <label for="cel1">Celular 1 <span class="campoObrigatorio">*</span></label>
              <div class="input-group">
                <div class="input-group-prepend">
                  <span class="input-group-text etiquetaCampo">Celular 1</span>
@@ -149,7 +159,7 @@
          <div class="form-row">
            <!-- input email -->
            <div class="form-group col">
-             <label for="email">E-mail principal</label>
+             <label for="email">E-mail principal <span class="campoObrigatorio">*</span></label>
              <div class="input-group">
                <div class="input-group-prepend">
                  <span class="input-group-text etiquetaCampo">@</span>
@@ -173,6 +183,8 @@
              </div>
            </div>
          </div>
+         <label for="">(<span class="campoObrigatorio">*</span>) Campos obrigatórios</label>
+
 
          <!-- botao editar ABRE O MODAL-->
          <!-- Button trigger modal -->

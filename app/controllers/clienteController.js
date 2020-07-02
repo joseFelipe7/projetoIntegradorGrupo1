@@ -32,11 +32,11 @@ const ClienteController = {
                 contratanteNascimento,
                 contratanteCpf,
                 contratanteEmail,
-                photo
+               
             } = req.body;
 
             const cliente = Cliente.update({
-                avatar:`/uploads/${files[0].originalname}`,
+                avatar:`/uploads/${files[0].filename}`,
                 extensao_avatar:false,
                 nome: contratanteNome,
                 email: contratanteEmail,

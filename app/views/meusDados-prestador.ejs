@@ -2,13 +2,16 @@
 <!-- PROFISSÕES - fim Modal ------------------------------------------------->
     <!-- sanfona -------------------------------------------------------->
     <div id="accordion">
+        <% if(!data.prestador.prestadores_enderecos || !data.prestador.contatos_prestadores) { %>
+          <p class="finalizarCad"><img src="/img/alert.svg" alt="">Finalize seu cadastro</p>
+        <% } %> 
         <div class="card">
           <div class="card-header sanfonaTopoMeusDados" id="headingOne">
             <h5 class="mb-0">
               <button class="btn btn-link tituloSanfonaTopoMeusDados" data-toggle="collapse" data-target="#collapseProfissao"
                 aria-expanded="true" aria-controls="collapseOne">
                 <img src="/img/dados.png" alt="Meus dados" title="Meus dados">
-                Profissionais 1
+                Profissionais 
               </button>
             </h5>
           </div>
@@ -68,7 +71,8 @@
                   <% } else {%>
                     <img src=<%= data.prestador.avatar %> width="120px" height="120px" alt="Meu Perfil" title="Meu Perfil" class="img-thumbnail perfilMeusDados">
     
-                  <% } %>               </div>
+                  <% } %>   
+                </div>
             </div>
           </div>
 
@@ -113,6 +117,7 @@
               </div>
             </div>
           </div>
+
           <!-- Button trigger modal -->
           <div class="d-flex justify-content-end"><button type="button" class="btn botaoMeusDados" data-toggle="modal"
               data-target="#editarDadosPessoaisContratante">Editar</button></div>
@@ -142,7 +147,7 @@
             <div class="form-row">
               <!-- input foto escolhida -->
               <div class="form-group col-3">
-                <label for="nascimento">Perfil</label>
+                <label for="nascimento">Perfil <span class="campoObrigatorio">*</span></label>
                 <div class="input-group">
                     <% if(data.prestador.avatar == 0){ %>
                       <img src="/img/userEmpty.jpeg" width="120px" height="120px" alt="Meu Perfil" title="Meu Perfil" class="img-thumbnail perfilMeusDados">
@@ -154,11 +159,11 @@
               </div>
               <!-- input escolher perfil -->
               <div class="form-group col-9">
-                <label for="nascimento">Envie sua foto</label>
+                <label for="photo">Envie sua foto</label>
                 <div class="input-group d-flex justify-content-center">
                   <div class="custom-file align-self-center">
-                    <input type="file" class="custom-file-input" id="customFileLang">
-                    <label class="custom-file-label" for="customFileLang">Escolha um arquivo</label>
+                    <input type="file" name="photo" id="photop" class="custom-file-input" >
+                    <label class="custom-file-label" name="photo" for="photo">Escolha um arquivo</label>
                   </div>
                 </div>
               </div>
@@ -167,7 +172,7 @@
             <div class="form-row">
               <!-- input nome -->
               <div class="form-group col-md-6">
-                <label for="nome">Nome</label>
+                <label for="nome">Nome <span class="campoObrigatorio">*</span></label>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">Nome</span>
@@ -185,7 +190,7 @@
                   </div>
                   <input type="number" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cpfpUp"
                     value="<%= data.prestador.cpf %>" placeholder="Digite seu cpf - apenas números" maxlength="11"
-                    pattern="[0-9]+$">
+                    pattern="[0-9]+$" disabled >
                 </div>
               </div>
             </div>
@@ -193,7 +198,7 @@
             <div class="form-row">
               <!-- input data nascimento -->
               <div class="form-group col">
-                <label for="nascimento">Data Nascimento</label>
+                <label for="nascimento">Data Nascimento <span class="campoObrigatorio">*</span></label>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text etiquetaCampo">Data Nascimento</span>
@@ -203,7 +208,8 @@
                 </div>
               </div>
             </div>
-          
+            <label for="">(<span class="campoObrigatorio">*</span>) Campos obrigatórios</label>
+
             <!-- Button trigger modal -->
             <div class="d-flex justify-content-end">
               <button type="submit" class="btn botaoMeusDados">SALVAR</button></div>
