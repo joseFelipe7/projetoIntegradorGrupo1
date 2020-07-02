@@ -7,5 +7,11 @@ if (formBuscaHome) {
     document.location.pathname = `/prestador/lista/${inputBuscaHome.value}`;
     console.log('teste')
   });
+
+  inputBuscaHome.addEventListener('keyup', function (event) {
+    if (event.key == 'Enter') {
+      document.location.pathname = `/prestador/lista/${inputBuscaHome.value}`;
+    }
+  })
 }
 
