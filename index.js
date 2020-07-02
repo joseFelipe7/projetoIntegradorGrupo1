@@ -1,41 +1,37 @@
 const express = require("express");
 const methodOverride = require("method-override");
 const session = require('express-session');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const path = require('path');
+
+require('./config/getEnv')();
+
 const app = express();
 
+app.use(cors());
+app.use(bodyParser.urlencoded({extended : false}));
+app.use(bodyParser.json());
 
 //ejs
 app.set("view engine", "ejs");
-
 app.use(methodOverride("_method"))
-
 app.set("views", "./app/views");
 app.use(express.static("public"));
-
-app.use(express.urlencoded({
-    extended:true
-}));
-
+app.use(express.urlencoded({ extended:true }));
 app.use(express.json());
-app.use(session({
-    secret: "ToolsHall1"
-}));
+app.use(session({ secret: "ToolsHall1"}));
 
 //área usuario contratante e prestador
 const rotaAreaUsuario = require("./app/routes/areaUsuarioRouter");
-
 //cadastro (prestador e contratante)
 const rotaCadastro = require("./app/routes/cadastroRouter");
-
 //pagina inicial
 const rotaHome = require("./app/routes/homeRouter");
-
 //login (prestador e constratante e selecione)
 const rotaLogin = require("./app/routes/loginRouter");
-
 //single e lista do prestador
 const rotaPrestador = require("./app/routes/prestadorRouter");
-
 const rotaApi = require("./app/routes/apis");
  
 app.use("/home", rotaHome);
@@ -64,4 +60,9 @@ app.use("/api", rotaApi);
 
 app.listen(5620, () => {
     console.log("servidor rodando na porta 5620")
-})
+});
+
+app.listen(process.env.API_PORT, function(err){
+    if(err) console.error(err);
+    console.log(`API INICIADA NA PORTA ${process.env.API_PORT}`) 
+});

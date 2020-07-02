@@ -6,11 +6,11 @@
   background-color: #aeb2f2;
   display: flex;
   flex-direction: column;
-  height: 45rem;
+  
   width: 12rem;
   margin-top: 30px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
- 
+  border-radius: 15px;
 }
 
 .barra-lateralCont .foto-perfilCont {
@@ -21,11 +21,14 @@
   align-items: center;
   height: 9rem;
   width: 100%;
-  margin: 30px;
+  margin: 0px;
   margin-top:0px ;
   margin-left: 0;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
  
+  border-radius: 15px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 .barra-lateralPrest .foto-perfilPrest {
@@ -35,7 +38,11 @@
   justify-content: center;
   align-items: center;
   height: 9rem;
-  
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 15px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 .barra-lateralAdmin .foto-perfilAdmin {
@@ -141,11 +148,12 @@
 .barra-superiorAdmin {
   display: flex;
   flex-direction: column;
-  margin: 30px;
+  margin:30px;
+  margin-left: 8px;
   margin-right: 0px;
   width: 100%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
- 
+  border-radius: 15px;
 }
 
 .barra-superiorCont .sessaoCont {
@@ -156,6 +164,9 @@
     rgba(28, 75, 133, 1) 86%,
     rgba(136, 191, 54, 1) 100%
   );
+  border-radius: 15px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
   height: 3.5rem;
 }
 
@@ -167,6 +178,9 @@
     rgba(160, 148, 242, 1) 86%,
     rgba(28, 75, 133, 1) 100%
   );
+  border-radius: 15px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
   height: 3.5rem;
 }
 
@@ -1124,7 +1138,7 @@ a + img {
   justify-content: center;
   align-items: center;
   background-color: #aeb2f2;
-  height: 60rem;
+  height: 57rem;
 }
 
 .form-cadastroPrestador {
@@ -1135,7 +1149,7 @@ a + img {
   background-color: #7159c1;
   border-radius: 0.5rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  height: 50rem;
+  height: 45rem;
   width: 28rem;
   padding: 0;
 }
@@ -1147,18 +1161,10 @@ a + img {
   margin-top: 1rem;
   margin-bottom: 30px;
 }
-.cadastro-prestador h2{
-  margin-top: 20px;
-  text-align: center;
-  color:#ffffff;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
-  font-size: 1.4em;
-  margin-bottom: 30px;
-}
+
 .cadastro-prestador p {
   color: #ffffff;
   font-weight: 500;
-  margin-top: 20px;
   margin-bottom: 2px;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
 
@@ -1199,7 +1205,6 @@ a + img {
   max-width: 20rem;
   padding:0, 20px, 0, 20px;
   height: 3.2rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
  
 }
@@ -1236,7 +1241,6 @@ a + img {
   height: 3.2rem;
   width: 8rem;
   margin: 0.8rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
 
@@ -1292,7 +1296,7 @@ a + img {
   justify-content: center;
   align-items: center;
   background-color: #7156c1;
-  height: 64rem;
+  height: 57rem;
 }
 
 .form-cadastroContratante {
@@ -1303,7 +1307,7 @@ a + img {
   background-color: #aeb2f2;
   border-radius: 0.5rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  height: 50rem;
+  height: 45rem;
   width: 28rem;
   padding: 0;
 }
@@ -1316,18 +1320,11 @@ a + img {
   margin-bottom: 30px;
 
 }
-.cadastro-contratante h2{
-  margin-top: 20px;
-  text-align: center;
-  color:#ffffff;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
-  font-size: 1.4em;
-  margin-bottom: 30px;
-}
+
 .cadastro-contratante p {
   color: #ffffff;
   font-weight: 500;
-  margin-top: 20px;
+  margin-top: 0px;
   margin-bottom: 2px;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
 
@@ -1369,7 +1366,6 @@ a + img {
   max-width: 20rem;
   padding:0, 20px, 0, 20px;
   height: 3.2rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
 
@@ -1409,7 +1405,7 @@ a + img {
   height: 3.2rem;
   width: 8rem;
   margin: 0.8rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ 
 
 }
 
@@ -1493,6 +1489,7 @@ a + img {
   padding-left: 2.5rem;
   position: relative;
 
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .linha-pesqPrestadores label {
@@ -1513,12 +1510,13 @@ a + img {
 
 .filtro-prestadores {
   background-color: #ffffff;
-  border: 0.2rem solid #a094f2;
   border-radius: 0.5rem;
   height: 90rem;
   width: 14rem;
   max-width: 14rem;
   margin-right: 0.5rem;
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .filtro-prestadores .titulo-filtroPrestadores {
@@ -1605,11 +1603,13 @@ a + img {
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
-  border: 0.2rem solid #a094f2;
   border-radius: 0.5rem;
   height: 90rem;
   width: 50rem;
   position: relative;
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 .lista-cardsPrestadores .titulo-listaPrestadores {
@@ -1636,7 +1636,7 @@ a + img {
   align-items: center;
   border: none;
   border-radius: 0.5rem;
-  box-shadow: 0 6px 8px 2px #000000;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   height: 18rem;
   width: 13.2rem;
   max-width: 14rem;
@@ -1736,7 +1736,8 @@ a + img {
 }
 
 .modal-content {
-  border: solid 2px #7156c1;
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .modal-header {

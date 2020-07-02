@@ -5,7 +5,7 @@ const listarPrestadoresController = {
     index: async (req, res) => {
         let { page = 1 } = req.query;
         // findAndCountAll faz a busca e traz a contagem de todos itens no BD.
-        let { count: totalPage, rows: prestadores } = await Prestador.findAndCountAll({
+        let { rows: prestadores } = await Prestador.findAndCountAll({
             // limita a 12 resultados na busca ao BD.
             limit: 12,
             // ao trocar pagina ele sempre pula os 12 anteriores.
@@ -15,16 +15,27 @@ const listarPrestadoresController = {
                 required: true
             }, {
                 model: Avaliacoes,
-                required:true,
+                required: true,
             }, {
                 model: Prestador_endereco,
                 required: true,
                 as: 'prestadores_enderecos'
             }]
         });
-        console.log(prestadores);
+
+        let { count: totalPage } = await Prestador.findAndCountAll();
+        prestadores.forEach((prestador, index) => {
+            let soma = 0;
+            let qtdNotas = 0;
+            prestador.Avaliacoes.forEach(avaliacao => {
+                soma += avaliacao.nota;
+                qtdNotas++;
+            });
+            prestadores[index].nota = soma/qtdNotas;
+        });
+
         // ele divide totalPage por 12 itens cada page e arredonda para não trazer número quebrado.
-        let totalPages = Math.round(totalPage/12);
+        let totalPages = Math.floor(totalPage/12);
         res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages, textoPesquisa: [], idCategoria: [], avaliacaoPesquisa: []});
     },
 
@@ -51,7 +62,18 @@ const listarPrestadoresController = {
                 as: 'prestadores_enderecos'
             }]
         });
-        let totalPages = Math.round(totalPage/12);
+
+        prestadores.forEach((prestador, index) => {
+            let soma = 0;
+            let qtdNotas = 0;
+            prestador.Avaliacoes.forEach(avaliacao => {
+                soma += avaliacao.nota;
+                qtdNotas++;
+            });
+            prestadores[index].nota = soma/qtdNotas;
+        });
+
+        let totalPages = Math.floor(totalPage/12);
         res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages, textoPesquisa: [ pesquisa ], idCategoria: [], avaliacaoPesquisa: []});
     },
 
@@ -76,12 +98,23 @@ const listarPrestadoresController = {
                 as: 'prestadores_enderecos'
             }]
         });
+
+        prestadores.forEach((prestador, index) => {
+            let soma = 0;
+            let qtdNotas = 0;
+            prestador.Avaliacoes.forEach(avaliacao => {
+                soma += avaliacao.nota;
+                qtdNotas++;
+            });
+            prestadores[index].nota = soma/qtdNotas;
+        });
+
         let categorias = await Categorias.findAll({
             where:{
                 id: categoria_id
             }
-        })
-        let totalPages = Math.round(totalPage/12);
+        });
+        let totalPages = Math.floor(totalPage/12);
         res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages, textoPesquisa: [ categorias[0].categoria ], idCategoria: [ categoria_id ], avaliacaoPesquisa: []});
     },
 
@@ -111,7 +144,18 @@ const listarPrestadoresController = {
                 as: 'prestadores_enderecos'
             }]
         });
-        let totalPages = Math.round(totalPage/12);
+
+        prestadores.forEach((prestador, index) => {
+            let soma = 0;
+            let qtdNotas = 0;
+            prestador.Avaliacoes.forEach(avaliacao => {
+                soma += avaliacao.nota;
+                qtdNotas++;
+            })
+            prestadores[index].nota = soma/qtdNotas;
+        });
+
+        let totalPages = Math.floor(totalPage/12);
         res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages, textoPesquisa: [ pesquisa ], idCategoria: [], avaliacaoPesquisa: [ avaliacao ]});
     },
 
@@ -139,12 +183,23 @@ const listarPrestadoresController = {
                 as: 'prestadores_enderecos'
             }]
         });
+
+        prestadores.forEach((prestador, index) => {
+            let soma = 0;
+            let qtdNotas = 0;
+            prestador.Avaliacoes.forEach(avaliacao => {
+                soma += avaliacao.nota;
+                qtdNotas++;
+            })
+            prestadores[index].nota = soma/qtdNotas;
+        });
+
         let categorias = await Categorias.findAll({
             where:{
                 id: categoria_id
             }
-        })
-        let totalPages = Math.round(totalPage/12);
+        });
+        let totalPages = Math.floor(totalPage/12);
         res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages, textoPesquisa: [ categorias[0].categoria ], idCategoria: [ categoria_id ], avaliacaoPesquisa: [ avaliacao ]});
     }
 

@@ -8,7 +8,6 @@ const sobreNosController = require("../controllers/sobreNosController")
 
 let router = express.Router();
 router.get("/", homeController.index)
-router.get("/", homeController.search)
 
 router.get("/sobre", sobreNosController.show)
 

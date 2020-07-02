@@ -96,7 +96,7 @@ const prestadorController = {
         } = req.body;
 
         const prestador = Prestador.update({
-            avatar:`/uploads/${files[0].originalname}`,
+            avatar:`/uploads/${files[0].filename}`,
             nome:prestadorNome,
             email:prestadorEmail,
             senha:bcrypt.hashSync(prestadorSenha,10),

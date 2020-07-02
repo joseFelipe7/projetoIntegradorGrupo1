@@ -249,6 +249,9 @@
 .bg-azul {
     background-color: #203573 !important;
 }
+.bg-verde {
+    background-color: #88BF36 !important;
+}
 
 .text-azul {
     color: #203573 !important;
@@ -581,7 +584,7 @@ button.botaoMeusDados:hover {
 
 
 .sessaoHomeBuscar {
-    height: 60vh;
+    height: 28.4375rem;
     background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 0.01%, #FFFFFF 58.33%, #A094F2 100%);
 }
 
@@ -714,7 +717,7 @@ button.botaoBuscar:hover {
 
 
 .sessaoHomePrestadores {
-    height: 65vh;
+    height: 25rem;
     background-color: #A094F2;
 }
 
@@ -795,7 +798,7 @@ button.botaoBuscar:hover {
 }
 
 .sessaoGradienteRB {
-    height: 80vh;
+    height: 35.5rem;
     background: linear-gradient(360deg, #FFFFFF 17.71%, rgba(255, 255, 255, 0.39) 66.15%, rgba(160, 148, 242, 0.49) 82.29%, #A094F2 100%);
 }
 
@@ -864,7 +867,7 @@ button.botaoBuscar:hover {
 
 #etapaImg {
     position: relative;
-    margin-top: 120px;
+    margin-top: 60px;
 }
 #etapaImgBottom {
     height: 490px;
@@ -878,11 +881,11 @@ button.botaoBuscar:hover {
 
 /* sessao numero de prestadores */
 .sessaoGradienteRT {
-    height: 80vh;
+    height: 35.5rem;
     background-color: #ffffff;
 }
 #sessaoHomeHM {
-    height: 80vh;
+    height: 35.5rem;
     background-color: #ffffff;
 }
 
@@ -1062,7 +1065,7 @@ button.botaoBuscar:hover {
 
 /* sessao prestador */
 .sessaoGradienteRBprestador {
-    height: 80vh;
+    height: 35.5rem;
     background-color: #ffffff;
 }
 
