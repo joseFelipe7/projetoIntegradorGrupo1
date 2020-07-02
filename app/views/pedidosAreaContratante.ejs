@@ -25,7 +25,7 @@
                         <!-- fita sempre visivel -->
                         <nav class="navbar navExpandir bg-roxoClaro">
                             <img class="iconPedidos" type="button" data-toggle="collapse" data-target="#target<%= pedido.idServico %>" aria-controls="target<%= pedido.idServico %>" aria-expanded="false" aria-label="Toggle navigation" src="/img/pedidosCard.png" alt="">
-
+                            <span class="titulo-card-pedido"><%=pedido.nomeServico%></span>
                             <% if (pedido.status != 'AGUAR') {
                                 var classeBtn = 'disabled btn-success';
                                 var desabilitado = 'desabilitado';
@@ -77,7 +77,7 @@
                         <!-- fita sempre visivel -->
                         <nav class="navbar navExpandir bg-roxoClaro">
                             <img class="iconPedidos" type="button" data-toggle="collapse" data-target="#target<%= pedido.idServico %>" aria-controls="target<%= pedido.idServico %>" aria-expanded="false" aria-label="Toggle navigation" src="/img/pedidosCard.png" alt="">
-
+                            <span class="titulo-card-pedido"><%=pedido.nomeServico%></span>
                             <% if (pedido.status != 'AGUAR') {
                                 var classeBtn = 'disabled btn-success';
                                 var desabilitado = 'desabilitado';
