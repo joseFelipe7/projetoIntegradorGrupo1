@@ -1978,6 +1978,10 @@ div#historico-header-cancelado-bofl {
   background-color: #AEB2F2;
 }
 
+.cards-single {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 .cards-single div.card-header {
   background-color: #203573;
   color: #A094F2;
