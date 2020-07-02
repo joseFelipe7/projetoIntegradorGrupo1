@@ -3,7 +3,7 @@ moment.locale("pt-BR");
 
 const { Op } = require('sequelize');       
 
-const { Cliente, Pedido, Prestador } = require('../models/index');
+const { Cliente, Pedido, Prestador, HistoricoPedidos } = require('../models/index');
 
 const orcamentosPrestadorController = {
     index: async (req, res) => {
@@ -64,7 +64,14 @@ const orcamentosPrestadorController = {
                 }
             });
 
-            console.log(updatePedido)
+            let historico = await HistoricoPedidos.create({
+                //itens para inserir
+                //nomeCampo:valorInserido
+                pedidos_id: idPedido,
+                status_: "AGUAR",
+                descricao: detalhes,
+                data_modificacao: Date.now(),
+            });
 
             let pedido = await Pedido.findOne({
                 //traz os pedido...

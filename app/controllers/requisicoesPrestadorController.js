@@ -74,12 +74,28 @@ const requisicoesController = {
                 idprestadores:id
                 }
             });
+            let historico = await HistoricoPedidos.create({
+                //itens para inserir
+                //nomeCampo:valorInserido
+                pedidos_id: pedido,
+                status_: "ANALI",
+                descricao: detalhes,
+                data_modificacao: Date.now(),
+            });
         }else if(respota == 'R'){
             await Pedido.update({ status_andamento:'CANC'}, {
                 where: {
                 id: pedido,
                 idprestadores:id
                 }
+            });
+            let historico = await HistoricoPedidos.create({
+                //itens para inserir
+                //nomeCampo:valorInserido
+                pedidos_id: pedido,
+                status_: "CANC",
+                descricao: detalhes,
+                data_modificacao: Date.now(),
             });
         }
         res.redirect('/usuario/area-prestador/requisicoes')

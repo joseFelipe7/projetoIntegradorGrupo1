@@ -1,7 +1,7 @@
 const { Op } = require('sequelize');
 const { check, validationResult, body} = require('express-validator');
 
-const { Prestador, Prestador_endereco, Habilidades, Avaliacoes, Galeria_prestadores, Cliente } = require('../models');
+const { Prestador, Prestador_endereco, Habilidades, Avaliacoes, Galeria_prestadores, Cliente, HistoricoPedidos } = require('../models');
 const { Pedido } = require('../models/index');
 
 module.exports = {
@@ -85,7 +85,14 @@ module.exports = {
                     forma_pagamento: "dinheiro"
                 });
 
-                console.log(dataServico)
+                let historico = await HistoricoPedidos.create({
+                    //itens para inserir
+                    //nomeCampo:valorInserido
+                    pedidos_id: pedido.id,
+                    status_: "ENV",
+                    descricao: detalhes,
+                    data_modificacao: Date.now(),
+                });
 
                 //renderiza alerta de sucesso
                 res.render("singleprestador", { msgEnviado: `Pedido enviado ao prestador!`, idPrestador, prestador });

@@ -53,7 +53,17 @@
 
                             <% pedido.historico.forEach(item => { %>
                                 <li class="list-group-item list-group-item-action p-0">
-                                    <%= item.statusHistorico %>: <%= moment(item.modificacao).format('L'); %>
+                                    <% if (item.statusHistorico == "ENV") { %>
+                                        Enviado: <%= moment(item.modificacao).format('L'); %>
+                                    <% } else if(item.statusHistorico == "ANALI") { %>
+                                        Análise: <%= moment(item.modificacao).format('L'); %>
+                                    <% } else if(item.statusHistorico == "CANC") { %>
+                                        Cancelado: <%= moment(item.modificacao).format('L'); %>
+                                    <% } else if(item.statusHistorico == "AGUAR") { %>
+                                        Aguardo: <%= moment(item.modificacao).format('L'); %>
+                                    <% } else if(item.statusHistorico == "CONC") { %>
+                                        Concluído: <%= moment(item.modificacao).format('L'); %>
+                                    <% } %>
                                 </li>
                             <% }) %>
                         </ul>
