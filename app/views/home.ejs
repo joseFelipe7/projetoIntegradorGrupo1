@@ -59,13 +59,13 @@
                                 <h5 class="card-title ">
                                     Procure por um serviço, escolha um prossional qualificado e contrate com segurança!
                                 </h5>
-                                <form action="/prestador/lista/search" method="GET">
+                                <form id="formBuscaHome" action="">
                                     <!-- input linha 1 -->
                                     <div class="form-row m-auto p-2">
                                     <!-- input buscar -->
                                         <div class="form-group col-9 m-0">
                                             <div class="input-group">
-                                                <input type="text" class="form-control campoBuscarStyle campoDadoReadonly" name="key" placeholder="PROCURE POR PROFISSIONAIS, CATEGORIAS...">
+                                                <input id="pesquisaHome" type="text" class="form-control campoBuscarStyle campoDadoReadonly"  placeholder="PROCURE POR PROFISSIONAIS, CATEGORIAS...">
                                             </div>
                                         </div>
                             
@@ -74,7 +74,7 @@
                                             <div class="input-group">
                                                 <!-- Button -->
                                                 <div class="d-flex justify-content-end">
-                                                    <button type="submit" class="btn botaoBuscar">Buscar</button>
+                                                    <button id="botaoBuscarHome" class="btn botaoBuscar" type="button">Buscar</button>
                                                 </div>
                                             </div>
                                         </div>
