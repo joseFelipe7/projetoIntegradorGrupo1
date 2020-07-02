@@ -249,6 +249,9 @@
 .bg-azul {
     background-color: #203573 !important;
 }
+.bg-verde {
+    background-color: #88BF36 !important;
+}
 
 .text-azul {
     color: #203573 !important;
@@ -581,7 +584,7 @@ button.botaoMeusDados:hover {
 
 
 .sessaoHomeBuscar {
-    height: 80vh;
+    height: 60vh;
     background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 0.01%, #FFFFFF 58.33%, #A094F2 100%);
 }
 
@@ -714,7 +717,7 @@ button.botaoBuscar:hover {
 
 
 .sessaoHomePrestadores {
-    height: 90vh;
+    height: 65vh;
     background-color: #A094F2;
 }
 
@@ -795,7 +798,7 @@ button.botaoBuscar:hover {
 }
 
 .sessaoGradienteRB {
-    height: 100vh;
+    height: 80vh;
     background: linear-gradient(360deg, #FFFFFF 17.71%, rgba(255, 255, 255, 0.39) 66.15%, rgba(160, 148, 242, 0.49) 82.29%, #A094F2 100%);
 }
 
@@ -864,7 +867,7 @@ button.botaoBuscar:hover {
 
 #etapaImg {
     position: relative;
-    margin-top: 40px;
+    margin-top: 10px;
 }
 #etapaImgBottom {
     height: 490px;
@@ -878,11 +881,11 @@ button.botaoBuscar:hover {
 
 /* sessao numero de prestadores */
 .sessaoGradienteRT {
-    height: 100vh;
+    height: 80vh;
     background-color: #ffffff;
 }
 #sessaoHomeHM {
-    height: 100vh;
+    height: 80vh;
     background-color: #ffffff;
 }
 
@@ -1002,12 +1005,12 @@ button.botaoBuscar:hover {
     box-shadow: 0 0 0 0.2rem rgba(136, 191, 54, .25);
 }
 #faixaFrase2{
-    top: 300px;
+    top: 270px;
     left: 165px;
     background-color: #203573;
 }
 #faixaFrase4{
-    top: 455px;
+    top: 425px;
     left: 150px;
     background-color: #7159C1;
 }
@@ -1042,12 +1045,12 @@ button.botaoBuscar:hover {
     box-shadow: 0 0 0 0.2rem rgba(136, 191, 54, .25);
 }
 #faixaFraseAtras1{
-    top: 220px;
+    top: 190px;
     left: -100px;
     background-color: #AEB2F2;
 }
 #faixaFraseAtras3{
-    top: 378px;
+    top: 348px;
     left: -55px;
     background-color: #88BF36;
 }
@@ -1062,7 +1065,7 @@ button.botaoBuscar:hover {
 
 /* sessao prestador */
 .sessaoGradienteRBprestador {
-    height: 90vh;
+    height: 80vh;
     background-color: #ffffff;
 }
 
@@ -1083,7 +1086,7 @@ button.botaoBuscar:hover {
 
     background-image: url(/img/ondaHomeTopoVerde.svg);
     background-repeat: no-repeat;
-    background-position: 0% 100%;
+    background-position: 0 100%;
     background-size: contain;
 }
 
@@ -1153,7 +1156,7 @@ button.botaoBuscar:hover {
 
     background-image: url(/img/ondaHomeInverso.svg);
     background-repeat: no-repeat;
-    background-position: 0 0;
+    background-position: 100% 0;
     background-size: contain;
 }
 

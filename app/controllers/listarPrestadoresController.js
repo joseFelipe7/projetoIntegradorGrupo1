@@ -1,10 +1,11 @@
 const { Prestador, Prestador_endereco, Habilidades, Avaliacoes, Categorias } = require('../models');
+const { Op } = require('sequelize');
 
 const listarPrestadoresController = {
     index: async (req, res) => {
         let { page = 1 } = req.query;
         // findAndCountAll faz a busca e traz a contagem de todos itens no BD.
-        let { count: totalPage, rows: prestadores } = await Prestador.findAndCountAll({
+        let { rows: prestadores } = await Prestador.findAndCountAll({
             // limita a 12 resultados na busca ao BD.
             limit: 12,
             // ao trocar pagina ele sempre pula os 12 anteriores.
@@ -14,14 +15,26 @@ const listarPrestadoresController = {
                 required: true
             }, {
                 model: Avaliacoes,
-                required:true,
+                required: true,
             }, {
                 model: Prestador_endereco,
                 required: true,
                 as: 'prestadores_enderecos'
             }]
         });
-    
+
+        let { count: totalPage } = await Prestador.findAndCountAll()
+
+        prestadores.forEach((prestador, index) => {
+            let soma = 0;
+            let qtdNotas = 0;
+            prestador.Avaliacoes.forEach(avaliacao => {
+                soma += avaliacao.nota
+                qtdNotas++
+            })
+            prestadores[index].nota = soma/qtdNotas;
+        })
+
         // ele divide totalPage por 12 itens cada page e arredonda para não trazer número quebrado.
         let totalPages = Math.round(totalPage/12);
         res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages, textoPesquisa: [], idCategoria: [], avaliacaoPesquisa: []});
@@ -37,7 +50,9 @@ const listarPrestadoresController = {
                 model: Habilidades,
                 required: true,
                 where: {
-                    titulo: pesquisa
+                    titulo: {
+                        [Op.like]: `%${pesquisa}%`
+                    }
                 }
             }, {
                 model: Avaliacoes,
@@ -92,7 +107,9 @@ const listarPrestadoresController = {
                 model: Habilidades,
                 required: true,
                 where: {
-                    titulo: pesquisa
+                    titulo: {
+                        [Op.like]: `%${pesquisa}%`
+                    }
                 }
             }, {
                 model: Avaliacoes,

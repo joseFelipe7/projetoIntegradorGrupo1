@@ -2,7 +2,6 @@
 
 html,
 body {
-  background-color: #AEB2F2;
   font-family: 'Ubuntu', sans-serif;
   margin: 0;
   padding: 0;
@@ -1948,6 +1947,7 @@ div#historico-header-cancelado-bofl {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #AEB2F2;
 }
 
 .cards-single div.card-header {
@@ -2111,7 +2111,7 @@ div#historico-header-cancelado-bofl {
   .container-avatar-single {
     display: none;
   }
-
+  
   .container-avatar-single-desk {
     display: block;
     position: absolute;
