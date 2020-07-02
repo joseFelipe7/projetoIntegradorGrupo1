@@ -75,11 +75,11 @@ const OrcamentosController = {
         });
         let msg = ''
         if(atualizado[0] == 0){
-            msg = "está respota ja foi cadastrada" 
+            msg = "Esta resposta ja foi cadastrada!" 
         }else if(resposta == 0){
-            msg = "Sua Resposta foi recebida" 
+            msg = "Sua resposta foi recebida!" 
         }else if(resposta == 1){
-            msg = "Sua Resposta foi recebida" 
+            msg = "Sua resposta foi recebida!" 
         }
 
         if(pedido){

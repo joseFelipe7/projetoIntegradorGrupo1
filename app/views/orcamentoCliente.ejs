@@ -90,14 +90,14 @@
                                                 <form action="/usuario/area-contratante/orcamentos" method="POST">
                                                     <input type="text" name="idPedido" value="<%=data.pedido.numeroPedido%>" readonly hidden>
                                                     <input type="number" name="resposta" value="1" hidden>
-                                                    <button type="submit" id="modalPedido" class="w-100 btn btn-success">Aceitar</button>
+                                                    <button type="submit" id="modalPedido" class="w-100 btn btn-success bg-verde">Aceitar</button>
                                                 </form>
                                             </div>
                                             <div class="col-6">
                                                 <form action="/usuario/area-contratante/orcamentos" method="POST">
                                                     <input type="text" name="idPedido" value="<%=data.pedido.numeroPedido%>" readonly hidden>
                                                     <input type="number" name="resposta" value="0" hidden>
-                                                    <button type="submit" id="modalPedido" class="w-100 btn btn-danger">Rejeitar</button>
+                                                    <button type="submit" id="modalPedido" class="w-100 btn bg-roxo">Rejeitar</button>
                                                 </form>
                                             </div>
                                         </div>
