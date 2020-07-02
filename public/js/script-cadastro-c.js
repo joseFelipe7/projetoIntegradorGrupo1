@@ -1,4 +1,5 @@
 // função para simplificar a seleção
+
 function selectId(input) {
     return document.getElementById(input);
   }

@@ -23,20 +23,19 @@ const listarPrestadoresController = {
             }]
         });
 
-        let { count: totalPage } = await Prestador.findAndCountAll()
-
+        let { count: totalPage } = await Prestador.findAndCountAll();
         prestadores.forEach((prestador, index) => {
             let soma = 0;
             let qtdNotas = 0;
             prestador.Avaliacoes.forEach(avaliacao => {
-                soma += avaliacao.nota
-                qtdNotas++
-            })
+                soma += avaliacao.nota;
+                qtdNotas++;
+            });
             prestadores[index].nota = soma/qtdNotas;
-        })
+        });
 
         // ele divide totalPage por 12 itens cada page e arredonda para não trazer número quebrado.
-        let totalPages = Math.round(totalPage/12);
+        let totalPages = Math.floor(totalPage/12);
         res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages, textoPesquisa: [], idCategoria: [], avaliacaoPesquisa: []});
     },
 
@@ -63,7 +62,18 @@ const listarPrestadoresController = {
                 as: 'prestadores_enderecos'
             }]
         });
-        let totalPages = Math.round(totalPage/12);
+
+        prestadores.forEach((prestador, index) => {
+            let soma = 0;
+            let qtdNotas = 0;
+            prestador.Avaliacoes.forEach(avaliacao => {
+                soma += avaliacao.nota;
+                qtdNotas++;
+            });
+            prestadores[index].nota = soma/qtdNotas;
+        });
+
+        let totalPages = Math.floor(totalPage/12);
         res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages, textoPesquisa: [ pesquisa ], idCategoria: [], avaliacaoPesquisa: []});
     },
 
@@ -88,12 +98,23 @@ const listarPrestadoresController = {
                 as: 'prestadores_enderecos'
             }]
         });
+
+        prestadores.forEach((prestador, index) => {
+            let soma = 0;
+            let qtdNotas = 0;
+            prestador.Avaliacoes.forEach(avaliacao => {
+                soma += avaliacao.nota;
+                qtdNotas++;
+            });
+            prestadores[index].nota = soma/qtdNotas;
+        });
+
         let categorias = await Categorias.findAll({
             where:{
                 id: categoria_id
             }
-        })
-        let totalPages = Math.round(totalPage/12);
+        });
+        let totalPages = Math.floor(totalPage/12);
         res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages, textoPesquisa: [ categorias[0].categoria ], idCategoria: [ categoria_id ], avaliacaoPesquisa: []});
     },
 
@@ -123,7 +144,18 @@ const listarPrestadoresController = {
                 as: 'prestadores_enderecos'
             }]
         });
-        let totalPages = Math.round(totalPage/12);
+
+        prestadores.forEach((prestador, index) => {
+            let soma = 0;
+            let qtdNotas = 0;
+            prestador.Avaliacoes.forEach(avaliacao => {
+                soma += avaliacao.nota;
+                qtdNotas++;
+            })
+            prestadores[index].nota = soma/qtdNotas;
+        });
+
+        let totalPages = Math.floor(totalPage/12);
         res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages, textoPesquisa: [ pesquisa ], idCategoria: [], avaliacaoPesquisa: [ avaliacao ]});
     },
 
@@ -151,12 +183,23 @@ const listarPrestadoresController = {
                 as: 'prestadores_enderecos'
             }]
         });
+
+        prestadores.forEach((prestador, index) => {
+            let soma = 0;
+            let qtdNotas = 0;
+            prestador.Avaliacoes.forEach(avaliacao => {
+                soma += avaliacao.nota;
+                qtdNotas++;
+            })
+            prestadores[index].nota = soma/qtdNotas;
+        });
+
         let categorias = await Categorias.findAll({
             where:{
                 id: categoria_id
             }
-        })
-        let totalPages = Math.round(totalPage/12);
+        });
+        let totalPages = Math.floor(totalPage/12);
         res.render("listaPrestadores", {loggado: req.session.cliente, prestadores, totalPages, textoPesquisa: [ categorias[0].categoria ], idCategoria: [ categoria_id ], avaliacaoPesquisa: [ avaliacao ]});
     }
 

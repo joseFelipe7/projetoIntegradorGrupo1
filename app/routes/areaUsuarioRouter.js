@@ -44,7 +44,7 @@ router.put("/area-contratante/meus-dados/:id/contatos", authCliente, contatosCon
 
 router.get("/area-prestador/meusDados/:id", authPrestador, prestadorController.index);
 router.post("/area-prestador/meusDados/:id", authPrestador, prestadorController.store);
-router.put("/area-prestador/meusDados/:id", authPrestador, prestadorController.update);
+router.put("/area-prestador/meusDados/:id", authPrestador, upload.any(), prestadorController.update);
 
 //rotas prestador - meus-dados-endereço
 router.post("/area-prestador/meusDados/:id/endereco", authPrestador, prestador_enderecoController.store);
