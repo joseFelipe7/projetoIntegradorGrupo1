@@ -10,7 +10,7 @@
   width: 12rem;
   margin-top: 30px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
- 
+  border-radius: 15px;
 }
 
 .barra-lateralCont .foto-perfilCont {
@@ -26,6 +26,9 @@
   margin-left: 0;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
  
+  border-radius: 15px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 .barra-lateralPrest .foto-perfilPrest {
@@ -35,7 +38,11 @@
   justify-content: center;
   align-items: center;
   height: 9rem;
-  
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 15px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 .barra-lateralAdmin .foto-perfilAdmin {
@@ -145,7 +152,7 @@
   margin-right: 0px;
   width: 100%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
- 
+  border-radius: 15px;
 }
 
 .barra-superiorCont .sessaoCont {
@@ -156,6 +163,9 @@
     rgba(28, 75, 133, 1) 86%,
     rgba(136, 191, 54, 1) 100%
   );
+  border-radius: 15px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
   height: 3.5rem;
 }
 
@@ -167,6 +177,9 @@
     rgba(160, 148, 242, 1) 86%,
     rgba(28, 75, 133, 1) 100%
   );
+  border-radius: 15px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
   height: 3.5rem;
 }
 
@@ -1493,6 +1506,9 @@ a + img {
   padding-left: 2.5rem;
   position: relative;
 
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+
 }
 
 .linha-pesqPrestadores label {
@@ -1513,12 +1529,13 @@ a + img {
 
 .filtro-prestadores {
   background-color: #ffffff;
-  border: 0.2rem solid #a094f2;
   border-radius: 0.5rem;
   height: 90rem;
   width: 14rem;
   max-width: 14rem;
   margin-right: 0.5rem;
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .filtro-prestadores .titulo-filtroPrestadores {
@@ -1605,11 +1622,13 @@ a + img {
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
-  border: 0.2rem solid #a094f2;
   border-radius: 0.5rem;
   height: 90rem;
   width: 50rem;
   position: relative;
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 .lista-cardsPrestadores .titulo-listaPrestadores {
@@ -1636,7 +1655,7 @@ a + img {
   align-items: center;
   border: none;
   border-radius: 0.5rem;
-  box-shadow: 0 6px 8px 2px #000000;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   height: 18rem;
   width: 13.2rem;
   max-width: 14rem;
