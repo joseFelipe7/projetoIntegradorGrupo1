@@ -249,6 +249,9 @@
 .bg-azul {
     background-color: #203573 !important;
 }
+.bg-verde {
+    background-color: #88BF36 !important;
+}
 
 .text-azul {
     color: #203573 !important;
@@ -864,7 +867,7 @@ button.botaoBuscar:hover {
 
 #etapaImg {
     position: relative;
-    margin-top: 120px;
+    margin-top: 10px;
 }
 #etapaImgBottom {
     height: 490px;
