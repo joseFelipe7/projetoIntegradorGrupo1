@@ -50,13 +50,21 @@
                                 <span class="text-white"><%=item.titulo%></span>
                                 
                             </li>
-                            <% item.historico.forEach(itemHistorico => { %>
-                                
-                            <li class="list-group-item list-group-item-action p-0">
-                                <%=itemHistorico.status%>: <%= data.moment(itemHistorico.data).format('DD/MM/YYYY') %>
-                            </li>                     
-    
-                            <% }); %>
+                            <% item.historico.forEach(item => { %>
+                                <li class="list-group-item list-group-item-action p-0">
+                                    <% if (item.status == "ENV") { %>
+                                        Enviado: <%= moment(item.data).format('L'); %>
+                                    <% } else if(item.status == "ANALI") { %>
+                                        Análise: <%= moment(item.data).format('L'); %>
+                                    <% } else if(item.status == "CANC") { %>
+                                        Cancelado: <%= moment(item.data).format('L'); %>
+                                    <% } else if(item.status == "AGUAR") { %>
+                                        Aguardo: <%= moment(item.data).format('L'); %>
+                                    <% } else if(item.status == "CONC") { %>
+                                        Concluído: <%= moment(item.data).format('L'); %>
+                                    <% } %>
+                                </li>
+                            <% }) %>
 
                         </ul>
                     </div>

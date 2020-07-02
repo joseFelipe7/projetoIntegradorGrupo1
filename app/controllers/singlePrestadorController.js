@@ -90,7 +90,6 @@ module.exports = {
                     //nomeCampo:valorInserido
                     pedidos_id: pedido.id,
                     status_: "ENV",
-                    descricao: detalhes,
                     data_modificacao: Date.now(),
                 });
 

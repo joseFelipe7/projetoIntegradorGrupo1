@@ -4,7 +4,6 @@ const ClienteController = {
 
         index: async (req,res) => {
             const {id} = req.params
-            console.log(id)
             
             //busca usuario logado e direciona seus dados
             const cliente = await Cliente.findByPk(id, {

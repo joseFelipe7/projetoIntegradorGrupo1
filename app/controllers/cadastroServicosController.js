@@ -5,7 +5,6 @@ const CadastroServicosController = {
         const {id} = req.session.prestador
 
         const prestador = await Prestador.findByPk(id)
-        console.log(prestador)
 
         res.render("areaPrestador", {view: "cadastroServiçosPrestador", loggado: req.session.prestador, data:{prestador}});
     

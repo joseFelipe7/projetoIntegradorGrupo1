@@ -8,7 +8,6 @@ const emailConfig = require("../../config/email");
 module.exports = {
     enviarEmail: async (req, res) => {
         let { email } = req.body;
-        console.log(email)
 
         let umCliente = await Cliente.findOne({
             where: {
@@ -19,7 +18,6 @@ module.exports = {
         })
 
         if(umCliente){ //existe cliente
-            console.log(umCliente.dataValues);
 
             //gera token...
             let token = bcrypt.hashSync((Date.now().toString()), 10);

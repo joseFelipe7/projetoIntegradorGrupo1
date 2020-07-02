@@ -69,7 +69,6 @@ const orcamentosPrestadorController = {
                 //nomeCampo:valorInserido
                 pedidos_id: idPedido,
                 status_: "AGUAR",
-                descricao: detalhes,
                 data_modificacao: Date.now(),
             });
 

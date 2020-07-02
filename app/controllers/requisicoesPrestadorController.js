@@ -79,7 +79,6 @@ const requisicoesController = {
                 //nomeCampo:valorInserido
                 pedidos_id: pedido,
                 status_: "ANALI",
-                descricao: detalhes,
                 data_modificacao: Date.now(),
             });
         }else if(respota == 'R'){
@@ -94,7 +93,6 @@ const requisicoesController = {
                 //nomeCampo:valorInserido
                 pedidos_id: pedido,
                 status_: "CANC",
-                descricao: detalhes,
                 data_modificacao: Date.now(),
             });
         }

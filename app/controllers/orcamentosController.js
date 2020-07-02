@@ -22,7 +22,7 @@ const OrcamentosController = {
             }]
     
         })
-        console.log(pedido)
+        
         if(pedido){
             const dadoPedido = {
                 numeroPedido:pedido.id,

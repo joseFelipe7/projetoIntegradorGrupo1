@@ -28,7 +28,6 @@ module.exports = {
             });
         }
 
-        console.log(bcrypt.hashSync(contratanteSenha,10))
             await Cliente.create({
                 nome:contratanteNome,
                 email:contratanteEmail,
@@ -53,7 +52,6 @@ module.exports = {
                     
                 }
                 ]})
-                console.log(cliente)
                 
             
         res.redirect('/login/contratante/#login-contratante')

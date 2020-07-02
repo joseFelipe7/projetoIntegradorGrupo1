@@ -66,50 +66,9 @@ module.exports = {
                             modificacao : historico.data_modificacao,
                         }
                     })
-                    /*
-                    historico: [{statusHistorico, modificacao},{statusHistorico, modificacao}]
-                    */
                 }
             );
         });
-
-        console.log(infoPedido)
-        /*
-        [
-        {
-            nomeServico: 'Pedicure',
-            status: 'CANC',
-            idServico: 4,
-            nomePrestador: 'Luh',
-            formaPag: 'dinheiro',
-            historico: [ [Object] ]
-        },
-        {
-            nomeServico: 'AGUA',
-            status: 'ENV',
-            idServico: 3,
-            nomePrestador: 'Luh',
-            formaPag: 'dinheiro',
-            historico: [ [Object] ]
-        },
-        {
-            nomeServico: 'Front',
-            status: 'CANC',
-            idServico: 2,
-            nomePrestador: 'Luh',
-            formaPag: 'dinheiro',
-            historico: [ [Object] ]
-        },
-        {
-            nomeServico: 'Back',
-            status: 'ENV',
-            idServico: 1,
-            nomePrestador: 'Luh',
-            formaPag: 'dinheiro',
-            historico: [ [Object], [Object], [Object] ]
-        }
-        ] 
-        */
 
         res.render("areaContratante", {view: "pedidosAreaContratante", loggado: req.session.cliente, data:{cliente, infoPedido, moment}});
     }

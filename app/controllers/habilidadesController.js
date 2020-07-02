@@ -45,7 +45,7 @@ const habilidadesController = {
             
 
         })
-        console.log(habilidades)
+        
         return res.render("areaPrestador", {view: "meusDados-prestador", loggado: req.session.prestador, data:{habilidades}})
 
     },

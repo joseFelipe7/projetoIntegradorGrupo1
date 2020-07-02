@@ -48,7 +48,6 @@ const Clientes_EnderecoController = {
 
         }
         )
-        console.log(clientes_endereco)
         req.session.cliente = cliente.dataValues;
         
         res.redirect('/usuario/area-contratante/meus-dados/'+id)          
