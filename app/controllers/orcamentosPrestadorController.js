@@ -46,70 +46,75 @@ const orcamentosPrestadorController = {
         res.render("areaPrestador", {view: "cadastroOrcamento", loggado: req.session.prestador,data:{dados, moment, prestador:loggado}});
     },
     store: async (req, res) => {
-        let loggado = req.session.prestador;
+        try {
+            let loggado = req.session.prestador;
 
-        let idPedido = req.body.numServico;
-        let resumo = req.body.resumo;
-        let valor = req.body.valor;
+            let idPedido = req.body.numServico;
+            let resumo = req.body.resumo;
+            let valor = req.body.valor;
 
-        let updatePedido = await Pedido.update({ valor:valor, resumo:resumo, status_andamento:"AGUAR" }, {
-            where: {
-                idprestadores:{ 
-                    [Op.eq]: loggado.id,
+            let updatePedido = await Pedido.update({ valor:valor, resumo:resumo, status_andamento:"AGUAR" }, {
+                where: {
+                    idprestadores:{ 
+                        [Op.eq]: loggado.id,
+                    },
+                    id:{ 
+                        [Op.eq]: idPedido,
+                    }
+                }
+            });
+
+            console.log(updatePedido)
+
+            let pedido = await Pedido.findOne({
+                //traz os pedido...
+                where: {
+                    idprestadores:{ 
+                        [Op.eq]: loggado.id,
+                    },
+                    id:{ 
+                        [Op.eq]: idPedido,
+                    } 
                 },
-                id:{ 
-                    [Op.eq]: idPedido,
+                include: [
+                    {
+                        model: Prestador,
+                        as: 'prestador',
+                    },
+                    {
+                        model: Cliente,
+                        as: 'cliente',
+                    }
+                ]
+            })
+
+            dados = {
+                numServico: pedido.id,
+                nomePrestador: pedido.prestador.nome,
+                nomeCliente: pedido.cliente.nome,
+                servico: pedido.titulo,
+                data: pedido.data_servico,
+                detalhes: pedido.descricao,
+            }
+
+            if(updatePedido[0] >= 1){
+                msg = {
+                    status:true,
+                    resposta:'Orçamento enviado!'
+                }
+            
+            }else{
+                msg = {
+                    status:false,
+                    resposta:'Falha ao enviar orçamento!'
                 }
             }
-        });
 
-        console.log(updatePedido)
-
-        let pedido = await Pedido.findOne({
-            //traz os pedido...
-            where: {
-                idprestadores:{ 
-                    [Op.eq]: loggado.id,
-                },
-                id:{ 
-                    [Op.eq]: idPedido,
-                } 
-            },
-            include: [
-                {
-                    model: Prestador,
-                    as: 'prestador',
-                },
-                {
-                    model: Cliente,
-                    as: 'cliente',
-                }
-            ]
-        })
-
-        dados = {
-            numServico: pedido.id,
-            nomePrestador: pedido.prestador.nome,
-            nomeCliente: pedido.cliente.nome,
-            servico: pedido.titulo,
-            data: pedido.data_servico,
-            detalhes: pedido.descricao,
+            res.render("areaPrestador", {view: "cadastroOrcamento", loggado: req.session.prestador,data:{dados, moment, msg, prestador:loggado}});
+        } catch (error) {
+            console.log(error)
         }
-
-        if(updatePedido[0] >= 1){
-            msg = {
-                status:true,
-                resposta:'Orçamento enviado!'
-            }
-          
-        }else{
-            msg = {
-                status:false,
-                resposta:'Falha ao enviar orçamento!'
-            }
-        }
-
-        res.render("areaPrestador", {view: "cadastroOrcamento", loggado: req.session.prestador,data:{dados, moment, msg, prestador:loggado}});
+        
     },
 }
 module.exports = orcamentosPrestadorController;
