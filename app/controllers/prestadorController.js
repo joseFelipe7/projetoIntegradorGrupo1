@@ -1,5 +1,8 @@
 const path = require('path');
 const bcrypt = require('bcrypt');
+const moment = require("moment");
+moment.locale("pt-BR"); 
+
 const { Op } = require('sequelize');
 const { Prestador, Contatos_prestador, Prestador_endereco, Habilidades } = require('../models')
 
@@ -26,7 +29,7 @@ const prestadorController = {
                     as: 'prestadores_enderecos'
                 }
             ]})
-        return res.render("areaPrestador", {view: "meusDados-prestador", loggado: req.session.prestador, data:{prestador}})
+        return res.render("areaPrestador", {view: "meusDados-prestador", loggado: req.session.prestador, data:{prestador, moment}})
     },
 
     create:(req, res) => {
@@ -91,21 +94,20 @@ const prestadorController = {
             prestadorEmail, 
             prestadorNome,
             prestadorSenha, 
-            prestadorCpf
+            prestadorCpf,
+            prestadorNascimento
 
         } = req.body;
 
         const prestador = Prestador.update({
             avatar:`/uploads/${files[0].filename}`,
             nome:prestadorNome,
-            email:prestadorEmail,
-            senha:bcrypt.hashSync(prestadorSenha,10),
+            // senha:bcrypt.hashSync(prestadorSenha,10),
             cpf: prestadorCpf,
             status_:'A',
            
             categoria_id:false,
-            // data_nascimento:prestadorNascimento,
-            data_cadastro:Date.now()
+            data_nascimento:prestadorNascimento
         },{
             where: {
                 id 
