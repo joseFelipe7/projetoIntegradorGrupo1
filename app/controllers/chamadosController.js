@@ -6,7 +6,7 @@ const { Chamados } = require('../models/index');
 module.exports = {
     //exibe formulario
     create: (req, res) => {
-        res.render("contato");
+        res.render("contato", {loggado: req.session.cliente});
     },
 
     //envia as informações
@@ -33,11 +33,11 @@ module.exports = {
             });
 
             //renderiza alerta de sucesso
-            res.render("contato.ejs", { msgEnviado: `Chamado enviado! Aguarde retorno pelo contato informado.` });
+            res.render("contato.ejs", { msgEnviado: `Chamado enviado! Aguarde retorno pelo contato informado.` , loggado: req.session.cliente});
 
         } else {
             //renderizo para o usuario a view de contato de novo e envio para a view a lista de erros via objeto
-            return res.render("contato", {errors:erros.errors})
+            return res.render("contato", {errors:erros.errors, loggado: req.session.cliente})
         } 
     }
 }

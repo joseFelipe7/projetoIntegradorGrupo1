@@ -17,7 +17,7 @@ const homeController = {
                 as: 'prestadores_enderecos'
             }]
         })
-        return  res.render("home",{prestadores, idCategoria: [], avaliacaoPesquisa: []});
+        return  res.render("home",{loggado: req.session.cliente,prestadores, idCategoria: [], avaliacaoPesquisa: []});
     }
 }
 

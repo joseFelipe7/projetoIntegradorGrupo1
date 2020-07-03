@@ -55,7 +55,7 @@ module.exports = {
         } 
         
         //envia para a view uma msg de envio de email
-        res.render('loginContratante', { mensagemEmail: `E-mail enviado para: ${ email }` })
+        res.render('loginContratante', { mensagemEmail: `E-mail enviado para: ${ email }`, loggado: req.session.cliente })
     },
     redefinirSenha: async (req, res) => {
         let token = req.params.token;
@@ -74,9 +74,9 @@ module.exports = {
 
         //se tenho um token não usado...
         if (tokenCliente) {
-            res.render("redefinirSenhaCliente.ejs", { token: tokenCliente.hash });
+            res.render("redefinirSenhaCliente.ejs", { token: tokenCliente.hash, loggado: req.session.cliente });
         } else {
-            res.render("redefinirSenhaCliente.ejs", { mensagemToken: `Link já utilizado/inexistente!` });
+            res.render("redefinirSenhaCliente.ejs", { mensagemToken: `Link já utilizado/inexistente!`, loggado: req.session.cliente });
         }
     },
     salvarNovaSenha: async (req, res) => {
@@ -115,7 +115,7 @@ module.exports = {
             //salva o novo valor na tabela token...
             await tokenCliente.save();
 
-            res.render("redefinirSenhaCliente.ejs", { mensagemSenhaSalva: `Nova senha salva com sucesso!` });
+            res.render("redefinirSenhaCliente.ejs", { mensagemSenhaSalva: `Nova senha salva com sucesso!`, loggado: req.session.cliente });
         }
     }
 }

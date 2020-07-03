@@ -1,5 +1,5 @@
 <!-- rota: http://localhost:5620/usuario/area-prestador/requisicoes -->
-<div class="p-1">
+<div class="p-2">
 <h3>Requisições - Área Prestador</h3>
 
 <!-- sanfona -------------------------------------------------------->
@@ -29,37 +29,39 @@
                         <% if(data.listEnv.length != 0 ){ %>
                         <% data.listEnv.forEach( item =>{ %>
                         <li class="row no-gutters list-group-item list-group-item-action p-2 historico">
-                            <div class="col-11 col-sm-10 col-md-9 m-0 px-0">
-                                <span class="bg-roxoFundo text-azul rounded px-1 py-2">Serviço Nº: <%= item.numero %> - <%= item.titulo%></span>
-                                <span class="d-xs-none mx-1 bg-roxoFundo text-azul rounded px-1 py-2">Aberto em: <%= data.moment(item.dataSolicitacao).format('DD/MM/YYYY') %></span>
-                                <span class="bg-roxoFundo text-azul rounded px-4 py-2">Cliente <a href="/usuario/area-prestador/pedidos" class="text-azul font-weight-bold"><%= item.nomeCliente%></a></span>
+                            <div class="row">
+                                <div class="col-12 m-0 px-0">
+                                    <span class="bg-roxoFundo text-azul rounded px-1 py-2">Serviço Nº: <%= item.numero %> - <%= item.titulo%></span>
+                                    <span class="d-xs-none mx-1 bg-roxoFundo text-azul rounded px-1 py-2">Aberto em: <%= data.moment(item.dataSolicitacao).format('DD/MM/YYYY') %></span>
+                                    <span class="bg-roxoFundo text-azul rounded px-4 py-2">Cliente <a href="/usuario/area-prestador/pedidos" class="text-azul font-weight-bold"><%= item.nomeCliente%></a></span>
+                                </div>
                             </div>
-                            <div class="col-11 col-sm-2 col-md-3 m-0 px-1">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <form action="/usuario/area-prestador/requisicoes" method="post">
-                                            <input type="text" value="A" name="respota" hidden>
-                                            <input type="text" value="<%= item.numero %>"  name="pedido" hidden>
-                                            <button class="btn btn-success">Aceitar</button>
-                                        </form>
-                                        <form action="/usuario/area-prestador/requisicoes" method="post">
-                                            <input type="text" value="R" name="respota" hidden>
-                                            <input type="text" value="<%= item.numero %>"  name="pedido" hidden>
-                                            <button class="btn btn-danger">Recusar</button>
-                                        </form>
-                                    
-                                    </div>
-                                    <div class="col-12">
-                                        <a class="text-center" data-toggle="collapse" href="#descricaoPedido<%= item.numero %>" role="button" aria-expanded="false" aria-controls="descricaoPedido">Descrição</a>
+
+                            <div class="row w-100 mt-1">
+                                    <form class="col-4 p-1" action="/usuario/area-prestador/requisicoes" method="post">
+                                        <input type="text" value="A" name="respota" hidden>
+                                        <input type="text" value="<%= item.numero %>"  name="pedido" hidden>
+                                        <button class="btn btn-success w-100 p-1 mr-2 btn-requisicoes-resposta">Aceitar</button>
+                                    </form>
+                                    <form class="col-4 p-1 " action="/usuario/area-prestador/requisicoes" method="post">
+                                        <input type="text" value="R" name="respota" hidden>
+                                        <input type="text" value="<%= item.numero %>"  name="pedido" hidden>
+                                        <button class="btn btn-danger w-100 btn-requisicoes-resposta" >Recusar</button>
+                                    </form>
+                                    <div class="col-4 p-1 ">
+                                        <a class="btn btn-warning w-100 p-1 btn-requisicoes-resposta"  data-toggle="collapse" href="#descricaoPedido<%= item.numero %>" role="button" aria-expanded="false" aria-controls="descricaoPedido">Descrição</a>
                                     </div>
                                 </div>
-                                
                             </div>
-                            <div class="collapse" id="descricaoPedido<%= item.numero %>">
-                                <div class="card card-body">
-                                    <%= item.descricao %>
+                            <div class="row w-100 mx-auto mb-2">
+                                <div class="col-12">
+                                    <div class="collapse  w-100" id="descricaoPedido<%= item.numero %>">
+                                        <div class="card card-body w-100">
+                                            <%= item.descricao %>
+                                        </div>
+                                    </div>
                                 </div>
-                              </div>
+                            </div>
                         </li>
                         <% }) %>
                         <% } %>

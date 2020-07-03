@@ -2207,4 +2207,13 @@ div#historico-header-cancelado-bofl {
   }
 }
 
-.titulo-card-pedido{position: absolute; left: 90px; text-transform: uppercase; font-weight: 500; color: #203573;}
+.btn-requisicoes-resposta{
+  max-height: 34px;
+}
+.titulo-card-pedido{
+  position: absolute;
+  left: 90px;
+  text-transform: uppercase;
+  font-weight: 500; 
+  color: #203573;
+}

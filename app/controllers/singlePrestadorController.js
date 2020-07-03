@@ -28,12 +28,12 @@ module.exports = {
                 required: true
             },]
         });
-        res.render("singleprestador", { idPrestador, prestador });
+        res.render("singleprestador", { idPrestador, prestador, loggado: req.session.cliente });
     },
 
     //exibe formulario
     create: (req, res) => {
-        res.render("contato");
+        res.render("contato", {loggado: req.session.cliente});
     },
 
     //envia as informações
@@ -94,11 +94,11 @@ module.exports = {
                 });
 
                 //renderiza alerta de sucesso
-                res.render("singleprestador", { msgEnviado: `Pedido enviado ao prestador!`, idPrestador, prestador });
+                res.render("singleprestador", { msgEnviado: `Pedido enviado ao prestador!`, idPrestador, prestador, loggado: req.session.cliente });
     
             } else {
                 //renderizo para o usuario a view de contato de novo e envio para a view a lista de erros via objeto
-                return res.render("singleprestador", {errors:erros.errors, idPrestador, prestador})
+                return res.render("singleprestador", {errors:erros.errors, idPrestador, prestador, loggado: req.session.cliente})
             }
             
         } else {
