@@ -1,3 +1,6 @@
+const moment = require("moment");
+moment.locale("pt-BR"); 
+
 const { Cliente, Clientes_endereco, Contatos } = require('../models')
 
 const ClienteController = { 
@@ -20,7 +23,7 @@ const ClienteController = {
                 }
                 ]})
             
-           return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{cliente}})
+           return res.render("areaContratante", {view: "meusDadosContratante", loggado: req.session.cliente, data:{cliente, moment}})
         },
         
        update: (req, res) => {
@@ -34,8 +37,8 @@ const ClienteController = {
                
             } = req.body;
 
-            const cliente = Cliente.update({
-                avatar:`/uploads/${files[0].filename}`,
+            var dadosCliente = {
+                
                 extensao_avatar:false,
                 nome: contratanteNome,
                 email: contratanteEmail,
@@ -44,12 +47,21 @@ const ClienteController = {
             
                 cpf: contratanteCpf,
                 data_cadastro:Date.now()
-            },
-            {
-                where: {
-                    id
-                }
-            })
+            }
+
+            if (typeof files[0].filename != "undefined") {
+                dadosCliente["avatar"] = `/uploads/${files[0].filename}`
+            }
+
+            console.log(files)
+
+            const cliente = Cliente.update(
+                dadosCliente,
+                {
+                    where: {
+                        id
+                    }
+                })
         
         res.redirect('/usuario/area-contratante/meus-dados/'+id)          
    
