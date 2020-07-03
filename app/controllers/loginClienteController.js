@@ -7,7 +7,7 @@ const { Cliente } = require('../models/index');
 module.exports = {
     //exibe pagina de login
     create: (req, res) => {
-        res.render("loginContratante");
+        res.render("loginContratante", {loggado: req.session.cliente});
     },
 
     //logga
@@ -42,15 +42,15 @@ module.exports = {
                     res.redirect('/prestador/lista');
                 } else {
                     // console.log("nao loggou!");
-                    res.render('loginContratante', { msg:"E-mail ou senha errados" });
+                    res.render('loginContratante', { msg:"E-mail ou senha errados", loggado: req.session.cliente });
                 }
             } else { //nao existe cliente
                 // console.log('nao tem cliente')
-                res.render('loginContratante', { msg:"E-mail ou senha errados"  });
+                res.render('loginContratante', { msg:"E-mail ou senha errados" , loggado: req.session.cliente });
             } 
         } else {
             //renderizo para o usuario a view de cadastro de novo e envio para a view a lista de erros via objeto
-            return res.render("loginContratante", {errors:erros.errors})
+            return res.render("loginContratante", {errors:erros.errors, loggado: req.session.cliente})
         } 
     }
 }

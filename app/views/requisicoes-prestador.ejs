@@ -1,305 +1,353 @@
 <!-- rota: http://localhost:5620/usuario/area-prestador/requisicoes -->
-<div class="p-1">
-<h3>Requisições - Área Prestador</h3>
+<div class="p-2">
+    <h3>Requisições - Área Prestador</h3>
 
-<!-- sanfona -------------------------------------------------------->
-<div id="accordion">
-    <!-- card sanfona 1 ------------------------------------------------->
-    <div class="card">
-        <!-- topo 1 sanfona -->
-        <div class="card-header badge-info sanfonaTopoRequisicoes" id="headingOne">
-            <h5 class="mb-0">
-                <button class="btn btn-link tituloSanfonaTopoRequisicoes" data-toggle="collapse"
-                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    <img src="/img/icon-pendente.svg" alt="Meus dados" title="Meus dados">
-                    Pendentes
-                </button>
-            </h5>
-        </div>
+    <!-- sanfona -------------------------------------------------------->
+    <div id="accordion">
+        <!-- card sanfona 1 ------------------------------------------------->
+        <div class="card">
+            <!-- topo 1 sanfona -->
+            <div class="card-header badge-info sanfonaTopoRequisicoes" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link tituloSanfonaTopoRequisicoes" data-toggle="collapse"
+                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <img src="/img/icon-pendente.svg" alt="Meus dados" title="Meus dados">
+                        Pendentes
+                    </button>
+                </h5>
+            </div>
 
-        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-            <div class="card-body">
-            <!-- pedido 1 ------------------------------------------------>
-            <div class="dadosServico row no-gutters bg-roxoClaro rounded">
-                <div class="col-md-12 rounded">
-                    <ul class="list-group list-group-flush historicoListaPedido rounded">
-                        <li class="list-group-item list-group-item-action p-2 bg-roxoRS rounded">
-                            <span class="text-white">HISTÓRICO DE SERVIÇOS AGUARDANDO RESPOSTA</span>
-                        </li>
-                        <% if(data.listEnv.length != 0 ){ %>
-                        <% data.listEnv.forEach( item =>{ %>
-                        <li class="row no-gutters list-group-item list-group-item-action p-2 historico">
-                            <div class="col-11 col-sm-10 col-md-9 m-0 px-0">
-                                <span class="bg-roxoFundo text-azul rounded px-1 py-2">Serviço Nº: <%= item.numero %> - <%= item.titulo%></span>
-                                <span class="d-xs-none mx-1 bg-roxoFundo text-azul rounded px-1 py-2">Aberto em: <%= data.moment(item.dataSolicitacao).format('DD/MM/YYYY') %></span>
-                                <span class="bg-roxoFundo text-azul rounded px-4 py-2">Cliente <a href="/usuario/area-prestador/pedidos" class="text-azul font-weight-bold"><%= item.nomeCliente%></a></span>
-                            </div>
-                            <div class="col-11 col-sm-2 col-md-3 m-0 px-1">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <form action="/usuario/area-prestador/requisicoes" method="post">
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    <!-- pedido 1 ------------------------------------------------>
+                    <div class="dadosServico row no-gutters bg-roxoClaro rounded" style="max-width: 580px; margin: auto;">
+                        <div class="col-md-12 rounded" >
+                            <ul class="list-group list-group-flush historicoListaPedido rounded">
+                                <li class="list-group-item list-group-item-action p-2 bg-roxoRS rounded">
+                                    <span class="text-white">HISTÓRICO DE SERVIÇOS AGUARDANDO RESPOSTA</span>
+                                </li>
+                                <% if(data.listEnv.length != 0 ){ %>
+                                <% data.listEnv.forEach( item =>{ %>
+                                <li class="row no-gutters list-group-item list-group-item-action p-2 historico">
+                                    <div class="row">
+                                        <div class="col-12 m-0 px-0">
+                                            <span class="bg-roxoFundo text-azul rounded px-1 py-2">Serviço Nº:
+                                                <%= item.numero %> - <%= item.titulo%></span>
+                                            <span class="d-xs-none mx-1 bg-roxoFundo text-azul rounded px-1 py-2">Aberto
+                                                em: <%= data.moment(item.dataSolicitacao).format('DD/MM/YYYY') %></span>
+                                            <span class="bg-roxoFundo text-azul rounded px-4 py-2">Cliente <a
+                                                    href="/usuario/area-prestador/pedidos"
+                                                    class="text-azul font-weight-bold"><%= item.nomeCliente%></a></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row w-100 mt-1">
+                                        <form class="col-4 p-1" action="/usuario/area-prestador/requisicoes"
+                                            method="post">
                                             <input type="text" value="A" name="respota" hidden>
-                                            <input type="text" value="<%= item.numero %>"  name="pedido" hidden>
-                                            <button class="btn btn-success">Aceitar</button>
+                                            <input type="text" value="<%= item.numero %>" name="pedido" hidden>
+                                            <button
+                                                class="btn btn-success w-100 p-1 mr-2 btn-requisicoes-resposta">Aceitar</button>
                                         </form>
-                                        <form action="/usuario/area-prestador/requisicoes" method="post">
+                                        <form class="col-4 p-1 " action="/usuario/area-prestador/requisicoes"
+                                            method="post">
                                             <input type="text" value="R" name="respota" hidden>
-                                            <input type="text" value="<%= item.numero %>"  name="pedido" hidden>
-                                            <button class="btn btn-danger">Recusar</button>
+                                            <input type="text" value="<%= item.numero %>" name="pedido" hidden>
+                                            <button
+                                                class="btn btn-danger w-100 btn-requisicoes-resposta">Recusar</button>
                                         </form>
-                                    
+                                        <div class="col-4 p-1 ">
+                                            <a class="btn btn-warning w-100 p-1 btn-requisicoes-resposta"
+                                                data-toggle="collapse" href="#descricaoPedido<%= item.numero %>"
+                                                role="button" aria-expanded="false"
+                                                aria-controls="descricaoPedido">Descrição</a>
+                                        </div>
+
                                     </div>
-                                    <div class="col-12">
-                                        <a class="text-center" data-toggle="collapse" href="#descricaoPedido<%= item.numero %>" role="button" aria-expanded="false" aria-controls="descricaoPedido">Descrição</a>
+                                    <div class="row w-100 mx-auto mb-2">
+                                        <div class="col-12">
+                                            <div class="collapse  w-100" id="descricaoPedido<%= item.numero %>">
+                                                <div class="card card-body w-100">
+                                                    <%= item.descricao %>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                
-                            </div>
-                            <div class="collapse" id="descricaoPedido<%= item.numero %>">
-                                <div class="card card-body">
-                                    <%= item.descricao %>
-                                </div>
-                              </div>
-                        </li>
-                        <% }) %>
-                        <% } %>
-                    </ul>
+                                </li>
+                                <% }) %>
+                                <% } %>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
+                <!-- fim pedido 1 -------------------------------------------->
             </div>
         </div>
-            <!-- fim pedido 1 -------------------------------------------->
-        </div>
-    </div>
 
-    <!-- card sanfona 2 ------------------------------------------------->
-    <div class="card">
-        <!-- topo 2 sanfona -->
-        <div class="card-header badge-success sanfonaTopoRequisicoes" id="headingTwo">
-            <h5 class="mb-0">
 
-                <button class="btn btn-link tituloSanfonaTopoRequisicoes" data-toggle="collapse"
-                    data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <img src="/img/icon-aceito.svg" alt="Meus dados" title="Meus dados">
-                    Aceitas
-                </button>
-            </h5>
-        </div>
-        <% if(data.listAceitas.length != 0 ){ %>
+        <!-- card sanfona 2 ------------------------------------------------->
+        <div class="card">
+            <!-- topo 2 sanfona -->
+            <div class="card-header badge-success sanfonaTopoRequisicoes" id="headingTwo">
+                <h5 class="mb-0">
+
+                    <button class="btn btn-link tituloSanfonaTopoRequisicoes" data-toggle="collapse"
+                        data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                        <img src="/img/icon-aceito.svg" alt="Meus dados" title="Meus dados">
+                        Aceitas
+                    </button>
+                </h5>
+            </div>
+            <% if(data.listAceitas.length != 0 ){ %>
             <% data.listAceitas.forEach(item => { %>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-            <!-- pedido 2 ------------------------------------------------>
-            <div class="container-fluid p-0">
-                <div class="row p-1 no-gutters text-center">
-                    <!-- card 2 -->
-                    <div class="col-sm-12">
-                        <div class="pos-f-t">
-                            <!-- visivel apenas ao expandir -->
-                            
-                            <div class="collapse" id="navbarToggleExternalContent-<%=item.numero%>">
-                                <div class="bg-light p-0">
-                                    <div class="row no-gutters bg-roxoClaro topoCardPedido" data-toggle="collapse"
-                                        data-target="#navbarToggleExternalContent-<%=item.numero%>"
-                                        aria-controls="navbarToggleExternalContent-<%=item.numero%>" aria-expanded="false"
-                                        aria-label="Toggle navigation">
-                                        <div class="col-md-12"></div>
-                                    </div>
-                                        <%- include('include/cardPedidosRequisicoes', {item , moment:data.moment }) %>
-                                    
-                                </div>
-                            </div>
-                           
-                            <!-- fita sempre visivel -->
-                            <nav class="navbar navExpandir bg-roxoClaro">
-                                <img class="iconPedidos" type="button" data-toggle="collapse"
-                                    data-target="#navbarToggleExternalContent-<%=item.numero%>"
-                                    aria-controls="navbarToggleExternalContent-<%=item.numero%>" aria-expanded="false"
-                                    aria-label="Toggle navigation" src="/img/pedidosCard.png" alt=""><span class="titulo-card-pedido"><%=item.titulo%></span>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <!-- pedido 2 ------------------------------------------------>
+                <div class="container-fluid p-0">
+                    <div class="row p-1 no-gutters text-center">
+                        <!-- card 2 -->
+                        <div class="col-sm-12">
+                            <div class="pos-f-t">
+                                <!-- visivel apenas ao expandir -->
 
-                                    <form action="/usuario/area-prestador/envia-orcamento" method="get" >
+                                <div class="collapse" id="navbarToggleExternalContent-4<%=item.numero%>">
+                                    <div class="bg-light p-0">
+                                        <div class="row no-gutters bg-roxoClaro topoCardPedido" data-toggle="collapse"
+                                            data-target="#navbarToggleExternalContent-4<%=item.numero%>"
+                                            aria-controls="navbarToggleExternalContent-4<%=item.numero%>"
+                                            aria-expanded="false" aria-label="Toggle navigation">
+                                            <div class="col-md-12"></div>
+                                        </div>
+                                        <%- include('include/cardPedidosRequisicoes', {item , moment:data.moment }) %>
+
+                                    </div>
+                                </div>
+
+                                <!-- fita sempre visivel -->
+                                <nav class="navbar navExpandir bg-roxoClaro">
+                                    <img class="iconPedidos" type="button" data-toggle="collapse"
+                                        data-target="#navbarToggleExternalContent-4<%=item.numero%>"
+                                        aria-controls="navbarToggleExternalContent-4<%=item.numero%>"
+                                        aria-expanded="false" aria-label="Toggle navigation" src="/img/pedidosCard.png"
+                                        alt=""><span class="titulo-card-pedido"><%=item.titulo%></span>
+
+                                    <form action="/usuario/area-prestador/envia-orcamento" method="get">
                                         <input type="text" name="pedido" value="<%=item.numero%>" hidden>
                                         <button class="btn btn-success" type="submit">
                                             Enviar Orçamento
                                         </button>
                                     </form>
-                            </nav>
+                                </nav>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
             <% }); %>
             <% }; %>
             <!-- fim pedido 2 -------------------------------------------->
-        
-    </div>
-</div>
 
-    <!-- card sanfona 3 ------------------------------------------------->
-    <div class="card">
-        <!-- topo 3 sanfona -->
-        <div class="card-header badge-danger sanfonaTopoRequisicoes" id="headingFour">
-            <h5 class="mb-0">
-                <button class="btn btn-link tituloSanfonaTopoRequisicoes" data-toggle="collapse"
-                    data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                    <img src="/img/icon-negado.svg" alt="Meus dados" title="Meus dados">
-                    Negadas
-                </button>
-            </h5>
         </div>
-        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-            <!-- pedido 3 ------------------------------------------------>
-            <!-- fim pedido 3 -------------------------------------------->
-                        
-            <div class="container-fluid p-0">
-                <% if(data.listCanc.length != 0 ){ %>
+
+        <!-- card sanfona 3 ------------------------------------------------->
+        <div class="card">
+            <!-- topo 3 sanfona -->
+            <div class="card-header badge-danger sanfonaTopoRequisicoes" id="headingFour">
+                <h5 class="mb-0">
+                    <button class="btn btn-link tituloSanfonaTopoRequisicoes" data-toggle="collapse"
+                        data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                        <img src="/img/icon-negado.svg" alt="Meus dados" title="Meus dados">
+                        Negadas
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                <!-- pedido 3 ------------------------------------------------>
+                <!-- fim pedido 3 -------------------------------------------->
+
+                <div class="container-fluid p-0">
+                    <% if(data.listCanc.length != 0 ){ %>
                     <% data.listCanc.forEach(item => { %>
-                <div class="row p-1 no-gutters text-center">
-                    <!-- card 3 -->
-                    <div class="col-sm-12">
-                        <div class="pos-f-t">
-                            <!-- visivel apenas ao expandir -->
-                            <div class="collapse" id="navbarToggleExternalContent-1<%=item.numero%>">
-                                <div class="bg-light p-0">
-                                    <div class="row no-gutters bg-roxoClaro topoCardPedido" data-toggle="collapse"
-                                        data-target="#navbarToggleExternalContent-1<%=item.numero%>"
-                                        aria-controls="navbarToggleExternalContent-1<%=item.numero%>" aria-expanded="false"
-                                        aria-label="Toggle navigation">
-                                        <div class="col-md-12"></div>
-                                    </div>
-                                    
+                    <div class="row p-1 no-gutters text-center">
+                        <!-- card 3 -->
+                        <div class="col-sm-12">
+                            <div class="pos-f-t">
+                                <!-- visivel apenas ao expandir -->
+                                <div class="collapse" id="navbarToggleExternalContent-1<%=item.numero%>">
+                                    <div class="bg-light p-0">
+                                        <div class="row no-gutters bg-roxoClaro topoCardPedido" data-toggle="collapse"
+                                            data-target="#navbarToggleExternalContent-1<%=item.numero%>"
+                                            aria-controls="navbarToggleExternalContent-1<%=item.numero%>"
+                                            aria-expanded="false" aria-label="Toggle navigation">
+                                            <div class="col-md-12"></div>
+                                        </div>
+
                                         <%- include('include/cardPedidosRequisicoes', {item , moment:data.moment }) %>
-                                    
+
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- fita sempre visivel -->
-                            <nav class="navbar navExpandir bg-roxoClaro">
-                                <img class="iconPedidos" type="button" data-toggle="collapse"
-                                    data-target="#navbarToggleExternalContent-1<%=item.numero%>"
-                                    aria-controls="navbarToggleExternalContent-1<%=item.numero%>" aria-expanded="false"
-                                    aria-label="Toggle navigation" src="/img/pedidosCard.png" alt="">
+                                <!-- fita sempre visivel -->
+                                <nav class="navbar navExpandir bg-roxoClaro">
+                                    <img class="iconPedidos" type="button" data-toggle="collapse"
+                                        data-target="#navbarToggleExternalContent-1<%=item.numero%>"
+                                        aria-controls="navbarToggleExternalContent-1<%=item.numero%>"
+                                        aria-expanded="false" aria-label="Toggle navigation" src="/img/pedidosCard.png"
+                                        alt="">
                                     <span class="titulo-card-pedido"><%=item.titulo%></span>
-                                <a href="/usuario/area-contratante/orcamentos"><img src="/img/setaDetalhes.png"
-                                        class="setaDetalhes" alt="mais detalhes"></a>
-                            </nav>
+                                    <a href="/usuario/area-contratante/orcamentos"><img src="/img/setaDetalhes.png"
+                                            class="setaDetalhes" alt="mais detalhes"></a>
+                                </nav>
+                            </div>
                         </div>
+
                     </div>
-                   
+                    <% }); %>
+                    <% } %>
                 </div>
-                <% }); %>
-            <% } %>
+            </div>
+        </div>
+        <!-- card sanfona 4 ------------------------------------------------->
+        <div class="card">
+            <!-- topo 4 sanfona -->
+            <div class="card-header sanfonaTopoMeusDados" id="headingFour">
+                <h5 class="mb-0">
+                    <button class="btn btn-link tituloSanfonaTopoMeusDados" data-toggle="collapse"
+                        data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                        <img src="/img/icon-historico.svg" alt="Meus dados" title="Meus dados">
+                        Histórico
+                    </button>
+                </h5>
             </div>
 
-        </div>
-        <div id="accordion">
-            <!-- card sanfona 4 ------------------------------------------------->
-            <div class="card">
-                <!-- topo 4 sanfona -->
-                <div class="card-header sanfonaTopoMeusDados" id="headingFour">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link tituloSanfonaTopoMeusDados" data-toggle="collapse"
-                            data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
-                            <img src="/img/icon-historico.svg" alt="Meus dados" title="Meus dados">
-                            Histórico
-                        </button>
-                    </h5>
-                </div>
-        
-                <div id="collapseFive" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-                    <div class="card-body">
-        
-        
-        
-                        <!-- coluna dados -->
-                                <div class="dadosServico row no-gutters bg-roxoClaro rounded">
-                                    <div class="col-md-12 rounded">
-                                        <ul class="list-group list-group-flush historicoListaPedido rounded">
-                                            <li class="list-group-item list-group-item-action p-2 bg-roxoRS rounded">
-                                                <span class="text-white">HISTÓRICO DE SERVIÇOS</span>
-                                            </li>
-        
-                                            <li class="row no-gutters list-group-item list-group-item-action p-2 historico">
-                                                <div class="col-11 col-sm-10 col-md-9 m-0 px-0">
-                                                    <span class="bg-roxoFundo text-azul rounded px-1 py-2">Serviço Nº: #20200808</span>
-                                                    <span class="d-xs-none mx-1 bg-roxoFundo text-azul rounded px-1 py-2">Aberto em: 02/02/2020</span>
-                                                    <span class="bg-roxoFundo text-azul rounded px-4 py-2">Cliente <a href="/usuario/area-prestador/pedidos" class="text-azul font-weight-bold">Kim Possible</a></span>
-                                                </div>
-                                                <div class="col-11 col-sm-2 col-md-3 m-0 px-1">
-                                                    <span class="badge-success px-1 py-2 text-white rounded status font-weight-bold">ACEITO</span>
-                                                </div>
-                                            </li>
-                    
-                                            <li class="row no-gutters list-group-item list-group-item-action p-2 historico">
-                                                <div class="col-11 col-sm-10 col-md-9 m-0 px-0">
-                                                    <span class="bg-roxoFundo text-azul rounded px-1 py-2">Serviço Nº: #20200808</span>
-                                                    <span class="d-xs-none mx-1 bg-roxoFundo text-azul rounded px-1 py-2">Aberto em: 02/02/2020</span>
-                                                    <span class="bg-roxoFundo text-azul rounded px-4 py-2">Cliente <a href="/usuario/area-prestador/pedidos" class="text-azul font-weight-bold">Danny Phantom</a></span>
-                                                </div>
-                                                <div class="col-11 col-sm-2 col-md-3 m-0 px-1">
-                                                    <span class="badge-warning px-1 py-2 text-white rounded status font-weight-bold">CANCELADO</span>
-                                                </div>
-                                            </li>
-        
-                                            <li class="row no-gutters list-group-item list-group-item-action p-2 historico">
-                                                <div class="col-11 col-sm-10 col-md-9 m-0 px-0">
-                                                    <span class="bg-roxoFundo text-azul rounded px-1 py-2">Serviço Nº: #20200808</span>
-                                                    <span class="d-xs-none mx-1 bg-roxoFundo text-azul rounded px-1 py-2">Aberto em: 02/02/2020</span>
-                                                    <span class="bg-roxoFundo text-azul rounded px-4 py-2">Cliente <a href="/usuario/area-prestador/pedidos" class="text-azul font-weight-bold">Jane Doe</a></span>
-                                                </div>
-                                                <div class="col-11 col-sm-2 col-md-3 m-0 px-1">
-                                                    <span class="badge-danger px-1 py-2 text-white rounded status font-weight-bold">CANCELADO</span>
-                                                </div>
-                                            </li>
-        
-                                            <li class="row no-gutters list-group-item list-group-item-action p-2 historico">
-                                                <div class="col-11 col-sm-10 col-md-9 m-0 px-0">
-                                                    <span class="bg-roxoFundo text-azul rounded px-1 py-2">Serviço Nº: #20200808</span>
-                                                    <span class="d-xs-none mx-1 bg-roxoFundo text-azul rounded px-1 py-2">Aberto em: 02/02/2020</span>
-                                                    <span class="bg-roxoFundo text-azul rounded px-4 py-2">Cliente <a href="/usuario/area-prestador/pedidos" class="text-azul font-weight-bold">John Doe</a></span>
-                                                </div>
-                                                <div class="col-11 col-sm-2 col-md-3 m-0 px-1">
-                                                    <span class="badge-success px-1 py-2 text-white rounded status font-weight-bold">ACEITO</span>
-                                                </div>
-                                            </li>
-        
-                                            <li class="row no-gutters list-group-item list-group-item-action p-2 historico">
-                                                <div class="col-11 col-sm-10 col-md-9 m-0 px-0">
-                                                    <span class="bg-roxoFundo text-azul rounded px-1 py-2">Serviço Nº: #20200808</span>
-                                                    <span class="d-xs-none mx-1 bg-roxoFundo text-azul rounded px-1 py-2">Aberto em: 02/02/2020</span>
-                                                    <span class="bg-roxoFundo text-azul rounded px-4 py-2">Cliente <a href="/usuario/area-prestador/pedidos" class="text-azul font-weight-bold">Toad Ruggi</a></span>
-                                                </div>
-                                                <div class="col-11 col-sm-2 col-md-3 m-0 px-1">
-                                                    <span class="badge-warning px-1 py-2 text-white rounded status font-weight-bold">CANCELADO</span>
-                                                </div>
-                                            </li>
-        
-                                            <li class="row no-gutters list-group-item list-group-item-action p-2 historico">
-                                                <div class="col-11 col-sm-10 col-md-9 m-0 px-0">
-                                                    <span class="bg-roxoFundo text-azul rounded px-1 py-2">Serviço Nº: #20200808</span>
-                                                    <span class="d-xs-none mx-1 bg-roxoFundo text-azul rounded px-1 py-2">Aberto em: 02/02/2020</span>
-                                                    <span class="bg-roxoFundo text-azul rounded px-4 py-2">Cliente <a href="/usuario/area-prestador/pedidos" class="text-azul font-weight-bold">Yoshi</a></span>
-                                                </div>
-                                                <div class="col-11 col-sm-2 col-md-3 m-0 px-1">
-                                                    <span class="badge-danger px-1 py-2 text-white rounded status font-weight-bold">CANCELADO</span>
-                                                </div>
-                                            </li>
-        
-                                            <li class="row no-gutters list-group-item list-group-item-action p-2 historico">
-                                                <div class="col-11 col-sm-10 col-md-9 m-0 px-0">
-                                                    <span class="bg-roxoFundo text-azul rounded px-1 py-2">Serviço Nº: #20200808</span>
-                                                    <span class="d-xs-none mx-1 bg-roxoFundo text-azul rounded px-1 py-2">Aberto em: 02/02/2020</span>
-                                                    <span class="bg-roxoFundo text-azul rounded px-4 py-2">Cliente <a href="/usuario/area-prestador/pedidos" class="text-azul font-weight-bold">Bowser Koopa</a></span>
-                                                </div>
-                                                <div class="col-11 col-sm-2 col-md-3 m-0 px-1">
-                                                    <span class="badge-success px-1 py-2 text-white rounded status font-weight-bold">ACEITO</span>
-                                                </div>
-                                            </li>
-                                        </ul>
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                <div class="card-body">
+
+
+
+                    <!-- coluna dados -->
+                    <div class="dadosServico row no-gutters bg-roxoClaro rounded" style="max-width: 580px; margin: auto;">
+                        <div class="col-md-12 rounded">
+                            <ul class="list-group list-group-flush historicoListaPedido rounded">
+                                <li class="list-group-item list-group-item-action p-2 bg-roxoRS rounded">
+                                    <span class="text-white">HISTÓRICO DE SERVIÇOS</span>
+                                </li>
+
+                                <li class="row no-gutters list-group-item list-group-item-action p-2 historico">
+                                    <div class="col-11 col-sm-10 col-md-9 m-0 px-0">
+                                        <span class="bg-roxoFundo text-azul rounded px-1 py-2">Serviço Nº:
+                                            #20200808</span>
+                                        <span class="d-xs-none mx-1 bg-roxoFundo text-azul rounded px-1 py-2">Aberto
+                                            em: 02/02/2020</span>
+                                        <span class="bg-roxoFundo text-azul rounded px-4 py-2">Cliente <a
+                                                href="/usuario/area-prestador/pedidos"
+                                                class="text-azul font-weight-bold">Kim Possible</a></span>
                                     </div>
-                                </div>
-        
+                                    <div class="col-11 col-sm-2 col-md-3 m-0 px-1">
+                                        <span
+                                            class="badge-success px-1 py-2 text-white rounded status font-weight-bold">ACEITO</span>
+                                    </div>
+                                </li>
+
+                                <li class="row no-gutters list-group-item list-group-item-action p-2 historico">
+                                    <div class="col-11 col-sm-10 col-md-9 m-0 px-0">
+                                        <span class="bg-roxoFundo text-azul rounded px-1 py-2">Serviço Nº:
+                                            #20200808</span>
+                                        <span class="d-xs-none mx-1 bg-roxoFundo text-azul rounded px-1 py-2">Aberto
+                                            em: 02/02/2020</span>
+                                        <span class="bg-roxoFundo text-azul rounded px-4 py-2">Cliente <a
+                                                href="/usuario/area-prestador/pedidos"
+                                                class="text-azul font-weight-bold">Danny Phantom</a></span>
+                                    </div>
+                                    <div class="col-11 col-sm-2 col-md-3 m-0 px-1">
+                                        <span
+                                            class="badge-warning px-1 py-2 text-white rounded status font-weight-bold">CANCELADO</span>
+                                    </div>
+                                </li>
+
+                                <li class="row no-gutters list-group-item list-group-item-action p-2 historico">
+                                    <div class="col-11 col-sm-10 col-md-9 m-0 px-0">
+                                        <span class="bg-roxoFundo text-azul rounded px-1 py-2">Serviço Nº:
+                                            #20200808</span>
+                                        <span class="d-xs-none mx-1 bg-roxoFundo text-azul rounded px-1 py-2">Aberto
+                                            em: 02/02/2020</span>
+                                        <span class="bg-roxoFundo text-azul rounded px-4 py-2">Cliente <a
+                                                href="/usuario/area-prestador/pedidos"
+                                                class="text-azul font-weight-bold">Jane Doe</a></span>
+                                    </div>
+                                    <div class="col-11 col-sm-2 col-md-3 m-0 px-1">
+                                        <span
+                                            class="badge-danger px-1 py-2 text-white rounded status font-weight-bold">CANCELADO</span>
+                                    </div>
+                                </li>
+
+                                <li class="row no-gutters list-group-item list-group-item-action p-2 historico">
+                                    <div class="col-11 col-sm-10 col-md-9 m-0 px-0">
+                                        <span class="bg-roxoFundo text-azul rounded px-1 py-2">Serviço Nº:
+                                            #20200808</span>
+                                        <span class="d-xs-none mx-1 bg-roxoFundo text-azul rounded px-1 py-2">Aberto
+                                            em: 02/02/2020</span>
+                                        <span class="bg-roxoFundo text-azul rounded px-4 py-2">Cliente <a
+                                                href="/usuario/area-prestador/pedidos"
+                                                class="text-azul font-weight-bold">John Doe</a></span>
+                                    </div>
+                                    <div class="col-11 col-sm-2 col-md-3 m-0 px-1">
+                                        <span
+                                            class="badge-success px-1 py-2 text-white rounded status font-weight-bold">ACEITO</span>
+                                    </div>
+                                </li>
+
+                                <li class="row no-gutters list-group-item list-group-item-action p-2 historico">
+                                    <div class="col-11 col-sm-10 col-md-9 m-0 px-0">
+                                        <span class="bg-roxoFundo text-azul rounded px-1 py-2">Serviço Nº:
+                                            #20200808</span>
+                                        <span class="d-xs-none mx-1 bg-roxoFundo text-azul rounded px-1 py-2">Aberto
+                                            em: 02/02/2020</span>
+                                        <span class="bg-roxoFundo text-azul rounded px-4 py-2">Cliente <a
+                                                href="/usuario/area-prestador/pedidos"
+                                                class="text-azul font-weight-bold">Toad Ruggi</a></span>
+                                    </div>
+                                    <div class="col-11 col-sm-2 col-md-3 m-0 px-1">
+                                        <span
+                                            class="badge-warning px-1 py-2 text-white rounded status font-weight-bold">CANCELADO</span>
+                                    </div>
+                                </li>
+
+                                <li class="row no-gutters list-group-item list-group-item-action p-2 historico">
+                                    <div class="col-11 col-sm-10 col-md-9 m-0 px-0">
+                                        <span class="bg-roxoFundo text-azul rounded px-1 py-2">Serviço Nº:
+                                            #20200808</span>
+                                        <span class="d-xs-none mx-1 bg-roxoFundo text-azul rounded px-1 py-2">Aberto
+                                            em: 02/02/2020</span>
+                                        <span class="bg-roxoFundo text-azul rounded px-4 py-2">Cliente <a
+                                                href="/usuario/area-prestador/pedidos"
+                                                class="text-azul font-weight-bold">Yoshi</a></span>
+                                    </div>
+                                    <div class="col-11 col-sm-2 col-md-3 m-0 px-1">
+                                        <span
+                                            class="badge-danger px-1 py-2 text-white rounded status font-weight-bold">CANCELADO</span>
+                                    </div>
+                                </li>
+
+                                <li class="row no-gutters list-group-item list-group-item-action p-2 historico">
+                                    <div class="col-11 col-sm-10 col-md-9 m-0 px-0">
+                                        <span class="bg-roxoFundo text-azul rounded px-1 py-2">Serviço Nº:
+                                            #20200808</span>
+                                        <span class="d-xs-none mx-1 bg-roxoFundo text-azul rounded px-1 py-2">Aberto
+                                            em: 02/02/2020</span>
+                                        <span class="bg-roxoFundo text-azul rounded px-4 py-2">Cliente <a
+                                                href="/usuario/area-prestador/pedidos"
+                                                class="text-azul font-weight-bold">Bowser Koopa</a></span>
+                                    </div>
+                                    <div class="col-11 col-sm-2 col-md-3 m-0 px-1">
+                                        <span
+                                            class="badge-success px-1 py-2 text-white rounded status font-weight-bold">ACEITO</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="container-fluid bg-azul rodapeMeusDadosSanfona"></div>
+
                 </div>
+                <div class="container-fluid bg-azul rodapeMeusDadosSanfona"></div>
             </div>
         </div>
     </div>

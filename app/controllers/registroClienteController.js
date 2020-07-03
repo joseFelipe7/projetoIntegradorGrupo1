@@ -4,7 +4,7 @@ const { Op } = require('sequelize');
 
 module.exports = {
     create:(req, res) => {
-            res.render("cadastroContratante");
+            res.render("cadastroContratante", {loggado: req.session.cliente});
     },
     store: async (req,res)=>{
         
