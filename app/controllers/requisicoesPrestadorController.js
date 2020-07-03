@@ -38,6 +38,7 @@ const requisicoesController = {
                 dataSolicitacao:element.data_solicitacao,
                 nomePrestador:element.prestador.nome,
                 nomeCliente:element.cliente.nome,
+                valor:element.valor,
                 historico:element.historicos.map( historico => { return {
                     data:historico.data_modificacao,
                     status: historico.status_ 
