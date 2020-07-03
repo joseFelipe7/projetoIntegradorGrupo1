@@ -9,13 +9,20 @@ const nome = selectId('nome');
 const cpf = selectId('cpf');
 const nascimento = selectId('nascimento');
 
-const forme = selectId('formdp');//endereco
-const cep = selectId('cep');
-const uf = selectId('UF');
-const cidade = selectId('cidade');
-const rua = selectId('rua');
-const numero = selectId('numero');
-const complemento = selectId('complemento');
+const forme = selectId('forme');//endereco post
+const cep = selectId('cepcp');
+const uf = selectId('UFc');
+const cidade = selectId('cidadecp');
+const rua = selectId('ruacp');
+const numero = selectId('numerocp');
+
+const forme = selectId('formecup');//endereco up
+const cep = selectId('cepcup');
+const uf = selectId('UFup');
+const cidade = selectId('cidadecup');
+const rua = selectId('ruacup');
+const numero = selectId('numerocup');
+
 
 const formc = selectId('formdp');//contatos
 const cel1 = selectId('cel1');
@@ -87,137 +94,100 @@ function errorMessage(message){
 const errorListUl = document.querySelector('#error-list ul');
 const errorList = selectId('#error-list');
 
-
-// //validação para campos vazios - area contratante
-
-// //validação para campos vazios - dados pessoais
-// formdp1.addEventListener("submit", function(e){
-//     errorListUl.innerHTML = "";
-
-//     if(empty(nome)){
-//         errorMessage("Campo <b>nome</b> não preenchido");
-//     }
-//     if(empty(cpf)){
-//         errorMessage("Campo <b>CPF</b> não preenchido");
-//     }
-//     if(empty(nascimento)){
-//         errorMessage("Campo <b>Data de nascimento</b> não preenchido");
-//     }
-//     if(errorListUl.querySelectorAll('li').length > 0){
-//         e.preventDefault();
-//         errorList.hidden = "";
-//     }
-
-// })
-
-
-// //validação para campos vazios - endereço
-// forme.addEventListener("submit", function(e){
-//     errorListUl.innerHTML = "";
-
-//     if(empty(cep)){
-//         errorMessage("Campo <b>CEP</b> não preenchido");
-//     }
-//     if(empty(UF)){
-//         errorMessage("Campo <b>UF</b> não preenchido");
-//     }
-//     if(empty(cidade)){
-//         errorMessage("Campo <b>Cidade</b> não preenchido");
-//     }
-//     if(empty(rua)){
-//         errorMessage("Campo <b>Logradouro</b> não preenchido");
-//     }
-//     if(empty(numero)){
-//         errorMessage("Campo <b>Número</b> não preenchido");
-//     }
-   
-//     if(errorListUl.querySelectorAll('li').length > 0){
-//         e.preventDefault();
-//         errorList.hidden = "";
-//     }
-
-// })
-
-// //validação para campos vazios - contatos
-// formc.addEventListener("submit", function(e){
-//     errorListUl.innerHTML = "";
-
-//     if(empty(cel1)){
-//         errorMessage("Campo <b>Celular principal</b> não preenchido");
-//     }
-//     if(empty(email1)){
-//         errorMessage("Campo <b>E-mail principal</b> não preenchido");
-//     }
+//form post cep
+if(forme){
+    if (forme) {
+        function limpaFormsc() {
+            //Limpa valores do formulário.
+            uf.value=("");
+            cidade.value=("");
+            rua.value=("");
+        }
+          
+        function callbackEndereco(conteudo) {
+          if (!("erro" in conteudo)) {
+            //Atualiza os campos com os valores.
+            uf.value=(conteudo.uf);
+            cidade.value=(conteudo.localidade);
+            rua.value=(conteudo.logradouro);
+          } else {
+            //CEP não Encontrado.
+            errorCepp.innerHTML = ""
+            limpaFormsc();
+            errorCepp.innerHTML += `
+            <div class="alert alert-warning alert-dismissible fade show d-flex justify-content-start align-items-center  m-0 pt-1 pb-1 pl-2 pr-3" role="alert">
+                CEP não encontrado.
+                <button type="button" class="close m-0 pt-1 pb-1 pl-1 pr-2" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            `
+            }
+        }
+          
+        function pesquisacepc(valor) {
+          const cep = valor.replace(/\D/g, '');
+          if (cep != "") {
+            const validacep = /^[0-9]{8}$/;
+            if(validacep.test(cep)) {
+                uf.value="...";
+                cidade.value="...";
+                rua.value="...";
+          
+                const script = document.createElement('script');
+                script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=callbackEndereco';
+                document.body.appendChild(script);
+            } else {
+                    //cep é inválido.
+                    errorCepp.innerHTML = ""
+                    limpaFormsc();
+                    errorCepp.innerHTML += `
+                    <div class="alert alert-warning alert-dismissible fade show d-flex justify-content-start align-items-center m-0 pt-1 pb-1 pl-2 pr-3" role="alert">
+                        Formato de CEP inválido.
+                        <button type="button" class="close m-0 pt-1 pb-1 pl-1 pr-2" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    `
+                    };
+          } else{
+                    //cep sem valor, limpa formulário.
+                    limpaFormsc();
+                };
+        };
     
-//     if(errorListUl.querySelectorAll('li').length > 0){
-//         e.preventDefault();
-//         errorList.hidden = "";
-//     }
-
-// })
-
-// //validação para campos vazios - conta
-// formcon.addEventListener("submit", function(e){
-//     errorListUl.innerHTML = "";
-
-//     if(empty(senha1)){
-//         errorMessage("Campo <b>Senha atual</b> não preenchido");
-//     }
-//     if(empty(senha2)){
-//         errorMessage("Campo <b>Nova senha</b> não preenchido");
-//     }
-//     if(empty(email)){
-//         errorMessage("Campo <b>E-mail de cadastro</b> não preenchido");
-//     }
+        // button de busca cep no modo post
+        buttonCepp.addEventListener('click', function () {
+            pesquisacep(cepp.value);
+        });
     
-//     if(errorListUl.querySelectorAll('li').length > 0){
-//         e.preventDefault();
-//         errorList.hidden = "";
-//     }
+        //validação para campos vazios - endereço
+        formep.addEventListener("submit", function(e){
+            errorListUl.innerHTML = "";
+            if(empty(cepp)){
+                errorMessage("Campo <b>CEP</b> não preenchido");
+            }
+            if(empty(ufp)){
+                errorMessage("Campo <b>UF</b> não preenchido");
+            }
+            if(empty(cidadep)){
+                errorMessage("Campo <b>Cidade</b> não preenchido");
+            }
+            if(empty(ruap)){
+                errorMessage("Campo <b>Logradouro</b> não preenchido");
+            }
+            if(empty(numerop)){
+                errorMessage("Campo <b>Número</b> não preenchido");
+            }
+            if(errorListUl.querySelectorAll('li').length > 0){
+                e.preventDefault();
+                errorList.hidden = "";
+            }
+        });
+    };
+    
 
-// })
-
-// //validação para campos vazios - area prestador
-
-// //validação para campos vazios - profissionais
-// formprop.addEventListener("submit", function(e){
-//     errorListUl.innerHTML = "";
-
-//     if(empty(profissao)){
-//         errorMessage("Campo <b>Profissão</b> não preenchido");
-//     }
-//     if(empty(data)){
-//         errorMessage("Campo <b>Data que iniciou na profissão</b> não preenchido");
-//     }
-//     if(empty(habilidades)){
-//         errorMessage("Campo <b>Descrição</b> não preenchido");
-//     }
-//     if(errorListUl.querySelectorAll('li').length > 0){
-//         e.preventDefault();
-//         errorList.hidden = "";
-//     }
-
-// })
-
-// //validação para campos vazios - dados pessoais
-// formdpp.addEventListener("submit", function(e){
-//     errorListUl.innerHTML = "";
-
-//     if(empty(nomep)){
-//         errorMessage("Campo <b>nome</b> não preenchido");
-//     }
-//     if(empty(cpfp)){
-//         errorMessage("Campo <b>CPF</b> não preenchido");
-//     }
-//     if(empty(nascimentop)){
-//         errorMessage("Campo <b>Data de nascimento</b> não preenchido");
-//     }
-//     if(errorListUl.querySelectorAll('li').length > 0){
-//         e.preventDefault();
-//         errorList.hidden = "";
-//     }
-
-// })
+}
 
 // condição quando o formulário de endereço modo post aparecer
 if (formep) {
