@@ -15,7 +15,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">CEP</span>
                 </div>
-                <input type="number" name="contratanteCep" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cep" placeholder="CEP - apenas números" maxlength="8" value="<%= cliente_endereco.cep %>"> 
+                <input type="number" name="contratanteCep" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cepcp" placeholder="CEP - apenas números" maxlength="8" value="<%= cliente_endereco.cep %>"> 
               </div>
             </div>
 
@@ -37,7 +37,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">UF</span>
                 </div>
-                <input type="text" name="contratanteUf" class="form-control campoMeusDadosStyle campoDadoReadonly" id="UF" placeholder="Estado - UF" maxlength="2" value="<%= cliente_endereco.uf %>">
+                <input type="text" name="contratanteUf" class="form-control campoMeusDadosStyle campoDadoReadonly" id="UFc" placeholder="Estado - UF" maxlength="2" value="<%= cliente_endereco.uf %>">
               </div>
             </div>
             <!-- input cidade -->
@@ -47,7 +47,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">Cidade</span>
                 </div>
-                <input type="text" name="contratanteCidade" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cidade" placeholder="Digite sua cidade" value="<%= cliente_endereco.cidade %>">
+                <input type="text" name="contratanteCidade" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cidadecp" placeholder="Digite sua cidade" value="<%= cliente_endereco.cidade %>">
               </div>
             </div>
           </div>
@@ -61,7 +61,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">Rua</span>
                 </div>
-                <input type="text" name="contratanteRua" class="form-control campoMeusDadosStyle campoDadoReadonly" id="rua" placeholder="Digite sua rua" value="<%= cliente_endereco.logradouro %>">
+                <input type="text" name="contratanteRua" class="form-control campoMeusDadosStyle campoDadoReadonly" id="ruacp" placeholder="Digite sua rua" value="<%= cliente_endereco.logradouro %>">
               </div>
             </div>
           </div>
@@ -75,7 +75,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text etiquetaCampo">Nº</span>
                 </div>
-                <input type="number" name="contratanteN" class="form-control campoMeusDadosStyle campoDadoReadonly" id="numero" placeholder="Número" value="<%= cliente_endereco.numero %>">
+                <input type="number" name="contratanteN" class="form-control campoMeusDadosStyle campoDadoReadonly" id="numerocp" placeholder="Número" value="<%= cliente_endereco.numero %>">
               </div>
             </div>
             <!-- input complemento -->
@@ -121,7 +121,7 @@
            
            
       
-            <form action="/usuario/area-contratante/meus-dados/<%=data.cliente.id%>/endereco" id="forme" method="POST"> 
+            <form action="/usuario/area-contratante/meus-dados/<%=data.cliente.id%>/endereco" id="formecup" method="POST"> 
       
               <!-- input linha 1 -->
               <div class="form-row">
@@ -132,7 +132,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text etiquetaCampo">CEP</span>
                     </div>
-                    <input type="number" name="contratanteCep" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cep" placeholder="CEP - apenas números" maxlength="8" pattern="[0-9]+$" > 
+                    <input type="number" name="contratanteCep" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cepcup" placeholder="CEP - apenas números" maxlength="8" pattern="[0-9]+$" > 
                   </div>
                 </div>
       
@@ -154,7 +154,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text etiquetaCampo">UF</span>
                     </div>
-                    <input type="text" name="contratanteUf" class="form-control campoMeusDadosStyle campoDadoReadonly" id="UF" placeholder="Estado - UF" maxlength="2" >
+                    <input type="text" name="contratanteUf" class="form-control campoMeusDadosStyle campoDadoReadonly" id="UFup" placeholder="Estado - UF" maxlength="2" >
                   </div>
                 </div>
                 <!-- input cidade -->
@@ -164,7 +164,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text etiquetaCampo">Cidade</span>
                     </div>
-                    <input type="text" name="contratanteCidade" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cidade" placeholder="Digite sua cidade" >
+                    <input type="text" name="contratanteCidade" class="form-control campoMeusDadosStyle campoDadoReadonly" id="cidadecup" placeholder="Digite sua cidade" >
                   </div>
                 </div>
               </div>
@@ -178,7 +178,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text etiquetaCampo">Rua</span>
                     </div>
-                    <input type="text" name="contratanteRua" class="form-control campoMeusDadosStyle campoDadoReadonly" id="rua" placeholder="Digite sua rua" >
+                    <input type="text" name="contratanteRua" class="form-control campoMeusDadosStyle campoDadoReadonly" id="ruacup" placeholder="Digite sua rua" >
                   </div>
                 </div>
               </div>
@@ -192,7 +192,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text etiquetaCampo">Nº</span>
                     </div>
-                    <input type="number" name="contratanteN" class="form-control campoMeusDadosStyle campoDadoReadonly" id="numero" placeholder="Número" pattern="[0-9]+$" >
+                    <input type="number" name="contratanteN" class="form-control campoMeusDadosStyle campoDadoReadonly" id="numerocup" placeholder="Número" pattern="[0-9]+$" >
                   </div>
                 </div>
                 <!-- input complemento -->
