@@ -90,7 +90,14 @@
                                     <%= pedido.formaPag %>
                                 </li>
 
-                                <button class="btn btn-outline-success m-1">4x de 250,00</button>
+                                <button class="btn btn-outline-success m-1">
+                                    <% if (pedido.valor != null) { %>
+                                        <%= pedido.valor %>
+                                    <% } else { %>
+                                        A combinar
+                                    <% } %>
+                                    
+                                </button>
                             </ul>
                         </div>
                     </div>
