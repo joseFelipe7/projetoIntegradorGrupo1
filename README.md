@@ -18,7 +18,7 @@
   - Projeto está rodando na porta 5620....então digite no seu navegador: localhost:5620/home; 
   - BD está rodando na porta 3306.
   
-  - Para utilizar o newslwtter e recuperar senha tem que configurar um arquivo `email.js` na pasta raiz da aplicação; 
+  - Para utilizar o newsletter e recuperar senha tem que configurar um arquivo `email.js` na pasta raiz da aplicação; 
   - Temos um arquivo exemplo de como deve ser a configuração do arquivo `email.js`, você pode conferir o exemplo no arquivo `emailExemplo.js`.
  
  ### informações adicionais
