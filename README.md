@@ -9,17 +9,17 @@
   O sistema busca facilitar a comunicação entre prestadores de serviços e contratantes de maneira fácil e intuitiva.
 
  ### Aviso
-  - Lembre de usar o comando `npm install` para instalar as dependências do projeto;
-  - Lembre de usar o comando `npx sequelize db:create` para criar o banco de dados;
-  - Lembre de usar o comando `npx sequelize db:migrate` para rodar as migrations e preencher o BD com tabelas;
-  - Lembre de usar o comando `npx sequelize db:seed:all` para rodar as seeders e preencher as tabelas com dados;
-  - Lembre de usar o comando `npm start` para rodar o projeto.
+  - Usar o comando `npm install` para instalar as dependências do projeto;
+  - Usar o comando `npx sequelize db:create` para criar o banco de dados;
+  - Usar o comando `npx sequelize db:migrate` para rodar as migrations e preencher o BD com tabelas;
+  - Usar o comando `npx sequelize db:seed:all` para rodar as seeders e preencher as tabelas com dados;
+  - Usar o comando `npm start` para rodar o projeto.
   
   - Projeto está rodando na porta 5620....então digite no seu navegador: localhost:5620/home; 
   - BD está rodando na porta 3306.
   
-  - Para utilizar o newsletter e recuperar senha tem que configurar um arquivo `email.js` na pasta raiz da aplicação; 
-  - Temos um arquivo exemplo de como deve ser a configuração do arquivo `email.js`, você pode conferir o exemplo no arquivo `emailExemplo.js`.
+  - Para utilizar o newsletter e recuperar senha tem que configurar um arquivo `email.js` na pasta `config` da aplicação; 
+  - Temos um arquivo exemplo na pasta `config` de como deve ser a configuração do arquivo `email.js`, você pode conferir o exemplo no arquivo `emailExemplo.js`.
  
  ### informações adicionais
    - [Densenvolvido na Digital House](https://www.digitalhouse.com/br/)
