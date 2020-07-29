@@ -1,4 +1,4 @@
-const pathPadrao = "/prestador/lista";
+const hrefPrestadorLista = "http://localhost:5620/prestador/lista";
 const inputPesquisa = document.getElementById('pesquisa-listaPrestadores');
 const inputServicos = document.querySelectorAll('#selecionar-servicos li input');
 const inputAvalicao = document.querySelectorAll('#selecionar-avaliacao li input');
@@ -14,10 +14,10 @@ if (inputPesquisa) {
   // evento para pesquisa pelo input de pesquisa
   buttonPesquisa.addEventListener('click', function () {
     let textoPesquisa = inputPesquisa.value
-    if (document.location.pathname !== pathPadrao) {
-      document.location.pathname = pathPadrao + "/" + textoPesquisa;
+    if (document.location.href !== hrefPrestadorLista) {
+      document.location.href = hrefPrestadorLista + "/" + textoPesquisa;
     } else {
-      document.location.pathname += "/" + textoPesquisa;
+      document.location.href += "/" + textoPesquisa;
   }
 });
 
@@ -25,10 +25,10 @@ if (inputPesquisa) {
   inputPesquisa.addEventListener('keyup', function (event) {
     let textoPesquisa = inputPesquisa.value
     if (this.value.length > 0 && event.key == 'Enter') {
-      if (document.location.pathname !== pathPadrao) {
-        document.location.pathname = pathPadrao + "/" + textoPesquisa;
+      if (document.location.href !== hrefPrestadorLista) {
+        document.location.href = hrefPrestadorLista + "/" + textoPesquisa;
       } else {
-        document.location.pathname += "/" + textoPesquisa;
+        document.location.href += "/" + textoPesquisa;
     }
   }
 });
@@ -37,17 +37,17 @@ if (inputPesquisa) {
 // evento para limpar pesquisa e voltar a página inicial
 if (buttonLimpaPesquisaTexto != null) {
   buttonLimpaPesquisaTexto.addEventListener('click', function () {
-    document.location.pathname = pathPadrao;
+    document.location.href = hrefPrestadorLista;
   });
 };
 
 // evento para filtro pelo inputs de serviços
 inputServicos.forEach(servico => {
   servico.addEventListener('click', function () {
-    if (document.location.pathname !== pathPadrao) {
-      document.location.pathname = pathPadrao + "/categoria/" + servico.value;
+    if (document.location.href !== hrefPrestadorLista) {
+      document.location.href = hrefPrestadorLista + "/categoria/" + servico.value;
     } else {
-      document.location.pathname += "/categoria/" + servico.value;
+      document.location.href = hrefPrestadorLista + "/categoria/" + servico.value;
     }
   });
 });
@@ -56,8 +56,8 @@ inputServicos.forEach(servico => {
 // evento para filtro pelo inputs de avaliação
 inputAvalicao.forEach(avaliacao => {
   avaliacao.addEventListener('click', function () {
-    if (document.location.pathname !== pathPadrao) {
-      document.location.pathname += `/${avaliacao.value}`;
+    if (document.location.href !== hrefPrestadorLista) {
+      document.location.href += `/${avaliacao.value}`;
     }
   });
 });
